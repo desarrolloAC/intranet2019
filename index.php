@@ -316,7 +316,7 @@
 		<!--INICIO NUEVO INGRESO-->
 		<div id="nuevoIngreso">
 			
-			<h1 id="tituloNuevoIngreso">Nuevo Ingreso hhhhhhh</h1>
+			<h1 id="tituloNuevoIngreso">Nuevo Ingreso</h1>
 
 		</div>
 		<!--FIN NUEVO INGRESO-->

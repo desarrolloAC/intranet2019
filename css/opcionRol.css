@@ -1,0 +1,296 @@
+div[id="contenedor_tabla_rol"]{
+  position: relative; width: 35cm; height: 21cm; left: 8cm; top: -11.5cm;
+  display: none;
+  overflow: auto;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(69,69,69);
+}
+
+/*DISEÑO DE LA TABLA USUARIOS*/
+table[id="tabla_rol"]{
+  border-collapse: collapse;
+  border-left: transparent;
+  border-right: transparent;
+  word-break: break-all;
+}
+
+tr[id="titulo_columnas"]{
+  background-color: rgb(69,69,69);
+  color: rgb(255,255,255);
+  text-align: center;
+  font-family: "Abyssinica SIL";
+  font-size: 16px;
+
+}
+
+tr[id="datos_usuario"]{
+  background-color: rgb(255,255,255);
+  color: rgb(0,0,0);
+  text-align: center;
+  font-family: "Abyssinica SIL";
+  font-size: 16px;
+}
+
+tr[id="datos_usuario"]:hover{
+  background-color: rgb(193,193,193);
+  cursor: pointer;
+}
+/*FIN DEL DISEÑO TABLA USUARIOS*/
+
+/*BOTON REGISTRAR UN USUARIO*/
+a[id="btnRegistrarUsuario"]{
+  position width: 100px; height: 30px;
+  background: rgb(241,129,3);/*NARANJA*/
+  color: rgb(255,255,255);
+  font-weight: bold;
+  border-radius: 1rem;
+  border:none;
+  padding-top: 0.5cm;
+  cursor: pointer;
+  box-shadow: 0px 7px 0px 0px #0A0A0A;
+  transition: all 100ms linear;
+  touch-callout: none;
+  user-select: none;
+}
+
+a[id="btnRegistrarUsuario"]:active{
+  top: 5px;
+  box-shadow: 0px 0px 0px 0px #0A0A0A;
+}
+/*FIN DEL BOTON REGISTARA UN NUEVO USUARIO*/
+
+/*INICIO DE DISEÑO BOTON EDITAR*/
+a[id="btnEditar"]{
+  position width: 100px; height: 30px;
+  background: rgb(241,129,3);/*NARANJA*/
+  color: rgb(255,255,255);
+  font-weight: bold;
+  border-radius: 1rem;
+  border:none;
+  padding-top: 0.5cm;
+  cursor: pointer;
+  box-shadow: 0px 7px 0px 0px #0A0A0A;
+  transition: all 100ms linear;
+  touch-callout: none;
+  user-select: none;
+}
+
+a[id="btnEditar"]:active{
+  top: 5px;
+  box-shadow: 0px 0px 0px 0px #0A0A0A;
+}
+/*FIN DEL DISEÑO BOTON EDITAR*/
+
+/*INPUT BUSCAR*/
+input[id="txtBuscarRol"]{
+  position: relative; width: 10cm; height: 28px; left: 6.5cm;
+  background-image: url(../imagenes/menu/botonesTablas/btnBuscar.png);
+  background-repeat: no-repeat;
+  background-position: 2px 2px;
+  text-align: center;
+  border-radius: 0.5rem;
+  border:none;
+}
+/*FIN DEL INPUT BUSCAR*/
+
+/*INCIO DEL BOTON BUSCAR*/
+button[id="btnBuscarRol"]{
+  position: relative; width: 100px; height: 30px; left: 6.7cm;
+  background: rgb(241,129,3);/*NARANJA*/
+  color: rgb(255,255,255);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border:none;
+  cursor: pointer;
+  box-shadow: 0px 5px 0px 0px #0A0A0A;
+  transition: all 100ms linear;
+  touch-callout: none;
+  user-select: none;
+}
+
+/*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
+button[id="btnBuscarUsuario"]:active {
+  top: 2px;
+  box-shadow: 0px 0px 0px 0px #0A0A0A;    
+}
+/*FIN DEL BOTON BUSCAR*/
+
+/*INICIO DEL DISEÑO BOTON ESTATUS*/
+
+a[id="btnActivo"]{
+  position width: 100px; height: 30px;
+  background: rgb(31,181,31);/*VERDE*/
+  color: rgb(31,181,31);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 1rem;
+  border:none;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0px 7px 0px 0px #0A0A0A;
+  transition: all 100ms linear;
+  touch-callout: none;
+  user-select: none;
+}
+
+a[id="btnActivo"]:active {
+  top: 2px;
+  box-shadow: 0px 0px 0px 0px #0A0A0A;    
+}
+
+a[id="btnDesactivado"]{
+  position width: 100px; height: 30px;
+  background: rgb(255,87,51);/*ROJO*/
+  color: rgb(255,87,51);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 1rem;
+  border:none;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0px 7px 0px 0px #0A0A0A;
+  transition: all 100ms linear;
+  touch-callout: none;
+  user-select: none;
+}
+
+a[id="btnDesactivado"]:active {
+  top: 2px;
+  box-shadow: 0px 0px 0px 0px #0A0A0A;    
+}
+
+/*FIN DISEÑO BOTON ESTATUS*/
+
+img#imgDesactivar{
+  width: 18px;
+}
+
+/************************************************************************************/
+/******************************INICIO DEL DISEÑO FORMULARIO**************************/
+/************************************************************************************/
+
+/*CONTENEDOR DE LA PANTALLA MODAL FONDO BLANCO*/
+div[class="contenedor_formulario_rol"]{
+
+}
+/*FIN DEL CONTENEDOR DE LA PANTALLA MODAL FONDO BLANCO*/
+
+table[id="tabla_formulario_rol"]{
+  border-collapse: collapse;
+  border-color: transparent;
+  border-bottom-color: rgb(0,0,0);
+  border-right-color: rgb(0,0,0);
+  border-left-color: rgb(0,0,0);
+  width: 100%;
+}
+
+tr[id="titulo_columna_formulario"]{
+  background-color: rgb(69,69,69);
+}
+
+/*TITULO DEL FORMULARIO*/
+h1[id="titulo_registro_usuario"]{
+    color: rgb(255,255,255);
+    text-align: center;
+    font-family: "Abyssinica SIL";
+    font-size: 20px;
+}
+/*FIN DEL TITULO DEL FORMULARIO*/
+
+/*ETIQUETAS DE LAS CAJAS DE TEXTO*/
+h5[id="label_cajas_texto"]{
+  color: rgb(0,0,0);
+  text-align: left;
+  margin: 0;
+}
+/*FIN DE LAS ETIQUETAS DE LAS CAJAS DE TEXTO*/
+
+/*DISEÑO DE LAS CAJAS DE TEXTO*/
+input[id="caja_formulario_usuario"]{
+  position: relative; width: 100%; height: 28px; top: 0px;
+  border-radius: 0.5rem;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: rgb(69,69,69);
+  font-family: "Abyssinica SIL";
+  font-size: 16px;
+}
+/*FIN DEL DISEÑO DE LAS CAJAS DE TEXTO*/
+
+/*DISEÑO DE LOS COMBOS*/
+select[id="combos_formulario_usuario"]{
+  position: relative; width: 100%; height: 29.5px;
+  margin-left: 0%;
+  border-radius: 0.5rem;
+  background-color: rgb(255,255,255);
+  border-width: 0.5px;
+  border-color: rgb(69,69,69);
+  font-family: "Abyssinica SIL";
+  font-size: 16px;
+}
+/*FIN DEL DISEÑO DE LOS COMBOS*/
+
+/*BOTON REGISTAR*/
+input[id="btnRegistrar"]{
+  position: relative; width: 100%; height: 30px; left: 0cm;
+  background: rgb(241,129,3);/*NARANJA*/
+  color: rgb(255,255,255);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border:none;
+  cursor: pointer;
+  box-shadow: 0px 5px 0px 0px #0A0A0A;
+  transition: all 100ms linear;
+  touch-callout: none;
+  user-select: none;
+  font-family: "Abyssinica SIL";
+  font-size: 14px;
+}
+
+/*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
+input[id="btnRegistrar"]:active {
+  top: 2px;
+  box-shadow: 0px 0px 0px 0px #0A0A0A;    
+}
+/*FIN DEL BOTON REGISTRAR*/
+
+/*BOTON LIMPIAR*/
+input[id="btnLimpiar"]{
+  position: relative; width: 100%; height: 30px; left: 0cm;
+  background: rgb(241,129,3);/*NARANJA*/
+  color: rgb(255,255,255);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border:none;
+  cursor: pointer;
+  box-shadow: 0px 5px 0px 0px #0A0A0A;
+  transition: all 100ms linear;
+  touch-callout: none;
+  user-select: none;
+  font-family: "Abyssinica SIL";
+  font-size: 14px;
+}
+
+/*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
+input[id="btnLimpiar"]:active {
+  top: 2px;
+  box-shadow: 0px 0px 0px 0px #0A0A0A;    
+}
+/*FIN BOTON LIMPIAR*/
+
+/*CAMBIAR EL COLOR DE LA LETRA DEL PLACENHOLDER*/
+input::-webkit-input-placeholder {
+  color: rgb(0,0,0);
+}
+input:-moz-placeholder {
+ color: rgb(0,0,0);
+}
+input:-ms-input-placeholder { 
+  color: rgb(0,0,0);
+}
+/*CAMBIAR EL COLOR DE LA LETRA DEL PLACENHOLDER*/
+
+/************************************************************************************/
+/******************************FIN DEL DISEÑO FORMULARIO*****************************/
+/************************************************************************************/

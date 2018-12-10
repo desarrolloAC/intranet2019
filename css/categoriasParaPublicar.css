@@ -1,0 +1,91 @@
+div#contenedor_tabla_pcategorias{
+	position: relative; width: 35cm; height: 21cm; left: 8cm; top: -11.5cm;
+	overflow: auto;
+	display: none;
+  	border-width: 1px;
+  	border-style: solid;
+  	border-color: rgb(69,69,69);
+}
+
+#flip, #flip1, #flip2, #flip3, #flip4, #flip5, #flip6, #flip7, #flip8{
+position: relative; width: 100%; height: 20px;
+text-align: center;
+background-color: rgb(241,129,3);
+border: solid 1px rgb(255,255,255);
+}
+
+.flips {
+position: relative;
+width: 400px;
+height: 20px;
+/* padding: 5px; */
+text-align: center;
+background-color: rgb(247, 165, 81);
+border: solid 1px rgb(255,255,255);
+
+}
+
+.panel{
+position: relative;
+width: 400px;
+height: auto;
+background-color: rgb(247, 165, 81);
+border: solid 1px rgb(255,255,255);
+/* padding: 50px; */
+display: none;
+ 
+}
+
+#panel, #panel1, #panel2, #panel3, #panel4, #panel5, #panel6, #panel7, #panel8{
+position: relative; width: 100%; height: 400px;
+background-color: rgb(69,69,69);
+border: solid 1px rgb(255,255,255);
+/*padding: 50px;*/
+display: none;
+}
+
+div[id="flip"], 
+div[id="flip1"], 
+div[id="flip2"], 
+div[id="flip3"], 
+div[id="flip4"], 
+div[id="flip5"],
+div[id="flip6"],
+div[id="flip7"],
+div[id="flip8"]{
+color: rgb(255,255,255);
+font-family: "Arial";
+font-size: 18px;
+cursor: pointer;
+}
+
+h4[id="titulo_panel"]{
+text-align: center;
+color: rgb(255,255,255);
+}
+
+a#botones{
+text-decoration: none;
+display: block;
+margin: 30px;
+text-align: center;
+border-style: solid;
+border-radius: 1rem;
+border-color: rgb(255,255,255);
+height: 40px;
+color: rgb(255,255,255);
+transition: 1s ease-in-out;
+}
+
+a#botones:hover{
+transition: 1s ease-in-out;
+background-color: rgb(241,129,3);
+color: rgb(255,255,255);
+font-weight: bold;
+}
+
+a#botones:focus{
+background-color: rgb(241,129,3);
+color: rgb(255,255,255);
+font-weight: bold;
+}

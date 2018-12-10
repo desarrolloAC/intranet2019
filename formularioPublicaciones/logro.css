@@ -1,0 +1,140 @@
+/****************************INICIO DISEÑO VENTANA MODAL FORMULARIO************************************/
+.contenedorFormulario{
+z-index: 1001;
+width: 100%;
+height: 100%;
+position: fixed; top: 0; bottom: 0; right: 0; left: 0;
+background: rgba(0,0,0,0.8);
+opacity: 0;
+transition: opacity 400ms ease-in;
+pointer-events: none;
+}
+
+.contenedorFormulario:target{
+opacity: 1;
+pointer-events: auto;
+}
+
+.contenedorFormulario > div#formularioLogro{
+z-index: 1001;
+width: 12cm;
+height: 15cm;
+position: relative; top: 1cm;
+margin: 0% auto;
+padding: 5px 20px 13px 20px;
+border-radius: 10px;
+background: rgb(255,255,255);
+transition: opacity 400ms ease-in-out;
+background-image: url("../imagenes/plantillas/png/logro.png");
+background-repeat: no-repeat;
+background-position: 0px 0px;
+background-size: 13.1cm 15.5cm;
+}
+
+.cerrar{
+background: #606061;
+color: rgb(255,255,255);
+line-height: 25px;
+position: absolute;
+right: 10px;
+text-align: center;
+top: 0px;
+width: 24px;
+text-decoration: none;
+font-weight: bold;
+border-radius: 12px;
+box-shadow: 1px 1px 3px #000;
+}
+.cerrar:hover{
+background: rgb(67,67,67); 
+}
+/****************************FIN DISEÑO VENTANA MODAL FORMULARIO************************************/
+
+input#txtCodigoSubCategoriaLogro{
+	position: absolute;
+	visibility: hidden;
+}
+
+input#txtTituloLogro{
+	position: absolute; top: 1.9cm; left: 0cm;
+	width: 7.8cm;
+	height: 0.5cm;
+	font-size: 14px;
+	border-color: rgb(69,69,69);
+}
+
+textarea#txtContenidoLogro{
+	position: absolute; top: 3cm; left: 0cm;
+	max-width: 7.7cm;
+	max-height: 7cm;
+	min-width: 7.7cm;
+	min-height: 7cm;
+	width: 7.7cm;
+	height: 7cm;
+	font-size: 14px;
+	border-color: rgb(69,69,69);
+}
+
+input#txtNombreCompletoLogro{
+	position: absolute; top: 11.5cm;
+	width: 6cm;
+	height: 0.5cm;
+}
+
+select#txtDpto1{
+	position: absolute; top: 12.5cm;
+	width: 6.1cm;
+}
+
+select#txtCargo1{
+	position: absolute; top: 13.5cm;
+	width: 6.1cm;
+}
+
+input#ncaracteresLogro{
+	position: absolute; top: 10.2cm; left: 2.5cm;
+	border:none;
+	background-color: transparent;
+	font-weight: bold;
+}
+
+label#tituloCaracteresLogro{
+	position: absolute; top: 10.2cm; left: 3.5cm;
+	font-weight: bold;
+}
+
+input#btnImagenLogro{
+	position: absolute; top: 9cm; left: 9.1cm;
+	margin-top: 1cm;
+	color: transparent;
+}
+
+input#btnImagen1Logro{
+	position: absolute; top: 12cm; left: 9.1cm;
+	margin-top: 1cm;
+	color: transparent;
+}
+
+/*BOTON REGISTAR*/
+input#btnRegistrarLogro{
+  position: absolute; width: 50%; height: 20px; left: 0.5cm; top: 14.6cm;
+  background: rgb(241,129,3);/*NARANJA*/
+  color: rgb(255,255,255);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border:none;
+  cursor: pointer;
+  box-shadow: 0px 5px 0px 0px #0A0A0A;
+  transition: all 100ms linear;
+  touch-callout: none;
+  user-select: none;
+  font-family: "Arial";
+  font-size: 14px;
+}
+
+/*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
+input#btnRegistrarLogro:active {
+  top: 14.7cm;
+  box-shadow: 0px 0px 0px 0px #0A0A0A;    
+}
+/*FIN DEL BOTON REGISTRAR*/

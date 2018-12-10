@@ -1,0 +1,196 @@
+div#contendorTablaMenu{
+	position: relative;
+	width: 70%;
+	height: 100%;	
+	background-color: rgb(69,69,69);
+}
+
+#menuv li ul{
+	display:none;
+}
+
+li{
+	margin: 1cm;
+}
+
+h1#tituloMenu{
+	margin: 0;
+	font-size: 25px;
+	font-family: "Arial";
+	text-align: center;
+	color: rgb(255,255,255);
+}
+
+/*OPCION CARGO*/
+a#opcionCag{
+	padding: 15px 110px 15px 95px;
+	margin-left: -1.8cm; 
+	text-decoration: none;
+	font-family: "Arial";
+	font-size: 18px;
+	color: rgb(255,255,255);
+	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/cargo.png);
+	background-repeat: no-repeat;
+	background-position: -15px -5px;
+}
+/*FIN OPCION CARGO*/
+
+/*OPCION CATEGORIA*/
+a#opcionCategoria{
+	padding: 15px 80px 15px 95px;
+	margin-left: -1.8cm;
+	text-decoration: none;
+	font-family: "Arial";
+	font-size: 18px;
+	color: rgb(255,255,255);
+	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/categoria.png);
+	background-repeat: no-repeat;
+	background-position: -15px -5px;
+}
+/*FIN OPCION CATEGORIA*/
+
+/*OPCION SUBCATEGORIA*/
+a#subcategoria{
+	padding: 15px 50px 15px 95px;
+	margin-left: -1.8cm;
+	text-decoration: none;
+	font-family: "Arial";
+	font-size: 18px;
+	color: rgb(255,255,255);
+	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/subcategoria.png);
+	background-repeat: no-repeat;
+	background-position: -15px -5px;
+}
+/*FIN OPCION SUBCATEGORIA*/
+
+/*OPCION DEPARTAMENTO*/
+a#opcionDpto{
+	padding: 15px 45px 15px 95px;
+	margin-left: -1.8cm;
+	text-decoration: none;
+	font-family: "Arial";
+	font-size: 18px;
+	color: rgb(255,255,255);
+	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/departamentos.png);
+	background-repeat: no-repeat;
+	background-position: -15px -5px;
+}
+/*FIN OPCION DEPARTAMENTO*/
+
+/*OPCION DIRECTORIO*/
+a#opcionDirectorio{
+	padding: 15px 80px 15px 95px;
+	margin-left: -1.8cm;
+	text-decoration: none;
+	font-family: "Arial";
+	font-size: 18px;
+	color: rgb(255,255,255);
+	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/directorio.png);
+	background-repeat: no-repeat;
+	background-position: -15px -5px;
+}
+/*FIN OPCION DIRECTORIO*/
+
+/*OPCION ORGANIZACION*/
+a#opcionOrg{
+	padding: 15px 54px 15px 95px;
+	margin-left: -1.8cm;
+	text-decoration: none;
+	font-family: "Arial";
+	font-size: 18px;
+	color: rgb(255,255,255);
+	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/organizacion.png);
+	background-repeat: no-repeat;
+	background-position: -15px -5px;
+}
+/*FIN OPCION ORGANIZACION*/
+
+/*OPCION PUBLICACION*/
+a#opcionPub{
+	padding: 15px 68px 15px 95px;
+	margin-left: -1.8cm;
+	text-decoration: none;
+	font-family: "Arial";
+	font-size: 18px;
+	color: rgb(255,255,255);
+	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/publicacion.png);
+	background-repeat: no-repeat;
+	background-position: -15px -5px;
+}
+/*FIN OPCION PUBLICACION*/
+
+/*OPCION CATEGORIA*/
+a#pcategorias{
+	padding: 15px 80px 15px 50px;
+	margin-left: -2.5cm;
+	text-decoration: none;
+	font-family: "Arial";
+	font-size: 18px;
+	color: rgb(255,255,255);
+	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/categoria.png);
+	background-repeat: no-repeat;
+	background-position: -15px -5px;
+}
+/*FIN OPCION CATEGORIA*/
+
+/*OPCION CATEGORIA DENTRO DE PUBLICACION*/
+a#categoria{
+	padding: 15px 80px 15px 95px;
+	margin-left: -1.8cm;
+	text-decoration: none;
+	font-family: "Arial";
+	font-size: 18px;
+	color: rgb(255,255,255);
+	background-image: url(../../imagenes/menu/botonesMenu/categoria.png);
+	background-repeat: no-repeat;
+	background-position: -15px -5px;
+}
+/*FIN DE OPCION CATEGORIA DENTRO DE PUBLICACION*/
+
+/*OPCION ROL*/
+a#opcionRol{
+	padding: 15px 130px 15px 95px;
+	margin-left: -1.8cm;
+	text-decoration: none;
+	font-family: "Arial";
+	font-size: 18px;
+	color: rgb(255,255,255);
+	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/roles.png);
+	background-repeat: no-repeat;
+	background-position: -15px -5px;
+}
+/*FIN OPCION ROL*/
+
+/*OPCION USUARIO*/
+a#opcionUsuario{
+	padding: 15px 97px 15px 95px;
+	margin-left: -1.8cm;
+	text-decoration: none;
+	font-family: "Arial";
+	font-size: 18px;
+	color: rgb(255,255,255);
+	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/usuario.png);
+	background-repeat: no-repeat;
+	background-position: -15px -5px;
+}
+/*FIN OPCION USUARIO*/
+
+a.efectoMenu:hover{
+	 background-color: rgb(193,193,193);
+  	 cursor: pointer;
+  	 transition: 2s linear;
+  	 opacity: 0.4;
+}
+
+a.efectoMenu:focus{
+	 background-color: rgb(241,129,3);
+  	 cursor: pointer;
+  	 transition: 2s linear;
+  	 opacity: 0.4;
+}
+
+a.efectoMenu:active{
+	 background-color: rgb(193,193,193);
+  	 cursor: pointer;
+  	 transition: 2s linear;
+}

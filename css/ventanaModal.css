@@ -1,0 +1,47 @@
+/*INICIO DISEÑO VENTANA MODAL FORMULARIO*/
+.contenedor_formulario{
+  z-index: 1001;
+  width: 100%;
+  height: 100%;
+  position: fixed; top: 0; bottom: 0; right: 0; left: 0;
+  background: rgba(0,0,0,0.8);
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.contenedor_formulario:target{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contenedor_formulario > div{
+  z-index: 1001;
+  width: 30cm;
+  height: 20cm;
+  position: relative; top: 5cm;
+  margin: 0% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: rgb(255,255,255);
+  transition: opacity 400ms ease-in;
+}
+
+.cerrar{
+  background: #606061;
+  color: rgb(255,255,255);
+  line-height: 25px;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  top: 0px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  box-shadow: 1px 1px 3px #000;
+}
+.cerrar:hover{
+  background: rgb(67,67,67); 
+}
+/*FIN DISEÑO VENTANA MODAL*/

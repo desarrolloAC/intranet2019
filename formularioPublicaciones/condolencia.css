@@ -1,0 +1,105 @@
+/****************************INICIO DISEÑO VENTANA MODAL FORMULARIO************************************/
+.contenedorFormulario{
+z-index: 1001;
+width: 100%;
+height: 100%;
+position: fixed; top: 0; bottom: 0; right: 0; left: 0;
+background: rgba(0,0,0,0.8);
+opacity: 0;
+transition: opacity 400ms ease-in;
+pointer-events: none;
+}
+
+.contenedorFormulario:target{
+opacity: 1;
+pointer-events: auto;
+}
+
+.contenedorFormulario > div#formularioCondolencia{
+z-index: 1001;
+width: 12cm;
+height: 15cm;
+position: relative; top: 1cm;
+margin: 0% auto;
+padding: 5px 20px 13px 20px;
+border-radius: 10px;
+background: rgb(255,255,255);
+transition: opacity 400ms ease-in-out;
+background-image: url("../imagenes/plantillas/png/condolencia.png");
+background-repeat: no-repeat;
+background-position: 0px 0px;
+background-size: 13.1cm 15.5cm;
+}
+
+.cerrar{
+background: #606061;
+color: rgb(255,255,255);
+line-height: 25px;
+position: absolute;
+right: 10px;
+text-align: center;
+top: 0px;
+width: 24px;
+text-decoration: none;
+font-weight: bold;
+border-radius: 12px;
+box-shadow: 1px 1px 3px #000;
+}
+.cerrar:hover{
+background: rgb(67,67,67); 
+}
+/****************************FIN DISEÑO VENTANA MODAL FORMULARIO************************************/
+
+input#txtCodigoSubCategoriaCondolencia{
+	position: absolute;
+	visibility: hidden;
+}
+
+textarea#txtContenidoCondolencia{
+	position: absolute; top: 4cm; left: 2cm;
+	max-width: 8.9cm;
+	max-height: 5cm;
+	min-width: 8.9cm;
+	min-height: 5cm;
+	width: 8.9cm;
+	height: 5cm;
+	font-size: 14px;
+	border-color: rgb(69,69,69);
+}
+
+input#ncaracteresCondolencia{
+	position: absolute; top: 9.2cm; left: 6.8cm;
+	border:none;
+	background-color: transparent;
+	font-weight: bold;
+}
+
+label#tituloCaracteresCondolencia{
+	position: absolute; top: 9.2cm; left: 7.7cm;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+/*BOTON REGISTAR*/
+input#btnRegistrarCondolencia{
+  position: absolute; width: 50%; height: 20px; left: 3.1cm; top: 14cm;
+  background: rgb(241,129,3);/*NARANJA*/
+  color: rgb(255,255,255);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border:none;
+  cursor: pointer;
+  box-shadow: 0px 5px 0px 0px #0A0A0A;
+  transition: all 100ms linear;
+  touch-callout: none;
+  user-select: none;
+  font-family: "Arial";
+  font-size: 14px;
+}
+
+/*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
+input#btnRegistrarCondolencia:active {
+  top: 14cm;
+  box-shadow: 0px 0px 0px 0px #0A0A0A;    
+}
+/*FIN DEL BOTON REGISTRAR*/

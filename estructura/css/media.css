@@ -121,17 +121,19 @@
 	/****************************************CAPUSLA INFORMATIVA****************************************************/
 
 	/****************************************SALAS******************************************************************/
+/*
 	div#salas{
 		z-index: 1;
 		position: relative;
 		width: 7.8cm;
 		height: 9.8cm;
 		margin-top: 0.1cm;
-		/*background-color: rgb(50,30,20);*/
+		background-color: rgb(50,30,20);
 		overflow-y: auto;
 		border-style: solid;
 		border-color: rgb(69,69,69);
 	}
+*/
 
 	h1#tituloSalas{
 		margin-top: 0cm;

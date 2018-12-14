@@ -20,8 +20,10 @@
 
 	<link rel="stylesheet" type="text/css" href="estructura/css/index.css" media="all">
 	<link rel="stylesheet" type="text/css" href="estructura/css/media.css" media="all">
-	<link rel="stylesheet" type="text/css" href="css/indexNoticiaCapsulaInformativa.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all">
 	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
@@ -121,24 +123,9 @@
                                             <li> <a href="php/visorpdf.php?id=iso3" title="">Norma ISO 9001:2015</a></li>
 	   						                <li><a href="php/visorpdf.php?id=iso4" title="">Norma ISO 9001:2008 </a></li>
 	   						                <li> <a href="php/visorpdf.php?id=iso5" title="">Norma ISO 9004:2010</a></li>
-	   						                     
-	   						                    
-	   						                    
-	   						               
-	   						                
-	   						                
-	   						                
-	   						                
 	   						            </ul>
-	   						            
-	   						            
 	   						       </li>
-	   						       
-	   						       
 	   						   </ul>
-	   						   
-	   						
-	   						
 	   					</li>  					
 	   				</ul>
 	   				<!--FIN DEL SUBMENU INFORMACION PARA EL TRABAJO-->
@@ -264,7 +251,7 @@
 		<!--FIN CAPSULA INFORMATIVA-->
 
 		<!--INICIO SALAS-->
-		<div id="salas">
+		<div class="container" id="salas">
 		
 			<h1 id="tituloSalas">Salas</h1>
 
@@ -342,14 +329,16 @@
 		<!--INICIO VIDEO-->
 		<div id="video">
 		  
-			 <video class="video-source" src="../POLITICA-20181212-173623.webm" type="video/webm"  autoplay controls > ;
-    </video> 
+			 <video class="video-source" src="assets/video/POLITICA-20181212-173623.webm" type="video/webm"  autoplay controls > </video> 
                     
                 
-                
-                
+					
 					
 		</div>
+		
+		<script>
+		  const video = new Vue()
+		</script>
 		<!--FIN VIDEO-->
 
 		<!--INICIO INVITACION-->

@@ -23,7 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all">
 	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 </head>
 
 <body>
@@ -250,7 +250,29 @@
 		</div>
 		<!--FIN CAPSULA INFORMATIVA-->
 
-		<!--INICIO SALAS-->
+
+
+		<!--INICIO VIDEO-->
+		<div id="video">
+		  
+			 <video class="video-source" src="assets/video/POLITICA-20181212-173623.webm" type="video/webm"  autoplay controls > </video> 
+                    
+                
+					
+					
+		</div>
+		
+		<script>
+		  const video = new Vue({
+              el: '#video',
+              data: {
+                  
+              }
+          }):
+		</script>
+		<!--FIN VIDEO-->
+		
+				<!--INICIO SALAS-->
 		<div class="container" id="salas">
 		
 			<h1 id="tituloSalas">Salas</h1>
@@ -325,21 +347,6 @@
 		
 		</div>
 		<!--FIN SALAS-->
-
-		<!--INICIO VIDEO-->
-		<div id="video">
-		  
-			 <video class="video-source" src="assets/video/POLITICA-20181212-173623.webm" type="video/webm"  autoplay controls > </video> 
-                    
-                
-					
-					
-		</div>
-		
-		<script>
-		  const video = new Vue()
-		</script>
-		<!--FIN VIDEO-->
 
 		<!--INICIO INVITACION-->
 		<div id="invitacion">
@@ -465,7 +472,9 @@
 		
 	</div>
 	<!--FIN CONTENEDOR DE CONTENIDOS-->
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.js"></script>
 </body>
 
 </html>

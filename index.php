@@ -8,9 +8,11 @@
 	<meta name="viewport" content="width=device-width,device-height initial-scale=1.5"/>
 
 	<link rel="stylesheet" type="text/css" href="css/index/index.css" media="all"/>
-	<link rel="stylesheet" type="text/css" href="estructura/css/media.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
 	<link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all"/>
 	
+    <link rel="stylesheet" type="text/css" href="estructura/css/media.css" media="all"/>
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -41,12 +43,10 @@
 	   				<!--SUBMENU DE ACTUALIDAD-->
 	   				<ul>
 	   					<li>
-                      
-	   						<a  id="upa"   href="visorpdf.php" title="">Últimos proyectos y acuerdos</a>
-	   	
+	   						<a id="upa"   href="visorpdf.php" title="">Últimos proyectos y acuerdos</a>
 	   					</li>
 	   					<li>
-	   						<a d="upa"   href="visorpdf.php" title="">Próximos eventos</a>
+	   						<a id="upa"   href="visorpdf.php" title="">Próximos eventos</a>
 	   					</li>
 	   					<li>
 	   						<a href="#" title="">Boletín de noticias</a>
@@ -126,15 +126,7 @@
 			   
 			   	<li>
 			   		<a href="directorio.php" title="">Directorio</a>
-			   	</li><?php
-	
-	include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';
-
-	$conexion = conectar();
-
-	include $_SERVER["DOCUMENT_ROOT"].'/intranet/mostrarNoticiasEnIndex/capsulaInformativa.php';
-
-?>
+			   	</li>
 
 
 			   	<li>
@@ -172,27 +164,32 @@
       
 
 		<!--INICIO CAPSULA INFORMATIVA-->
-		<div id="capuslaInformativa">
+		<div id="capuslaInformativa" class="container-fluid capuslaInformativa">
 
-            <h1 id="tituloCapsulaInformativa">Capsula Informativa</h1>
-
-            <div  v-for="item in list">
-                <a id="n" :href="'detalleNoticiaAVIF.php?n=' + item.publicacion_id">
-                    <div id="contenedorNoticiaCapsulaInformativa">
-                        <div id="tituloNoticiaCapsulaInformativa">'
-                            <h5 id="tituloAvanceInformativo">{{ item.titulo }}</h5>
+           <div class="row">
+               <div class="col col-lg-12">
+                   <h1 class="tituloCapsulaInformativa">Capsula Informativa</h1>
+               </div>
+           </div>
+            
+            <div class="row">
+                <div class="parent-pub"  v-for="item in list">
+                    <div class="contenedorNoticiaCapsulaInformativa">
+                        <div class="tituloNoticiaCapsulaInformativa">'
+                            <h5 class="tituloAvanceInformativo">{{ item.titulo }}</h5>
                         </div>
-                        <div id="imagenAvanceInformativo">
-                            <img id="imagenAvanceInformativo2" :src="item.imagen" alt="Avance informativo">
+                        <div class="imagenAvanceInformativo">
+                             <a class="n" :href="'detalleNoticiaAVIF.php?n=' + item.publicacion_id"><img id="imagenAvanceInformativo2" :src="item.imagen" alt="Avance informativo"></a>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
+            
 		</div>
 		
 		<script type="text/javascript">
             
-            const publicacionesUrl = 'http://192.168.30.25/intranet/php/index/consultaPublicaciones.php';
+            const publicacionesUrl = 'php/index/consultaPublicaciones.php';
             const capuslaInformativa = new Vue({
                 el: '#capuslaInformativa',
                 created: function() {
@@ -353,7 +350,7 @@
 		
 		<script type="text/javascript">
             
-            const salasUrl = 'http://192.168.30.25/intranet/php/index/consultaSalas.php';
+            const salasUrl = 'php/index/consultaSalas.php';
             const salas = new Vue({
                 el: '#salas',
                 created: function() {

@@ -45,10 +45,17 @@ div#imagenAvanceInformativo{
 	border-style: solid;
 	width: 3.9cm;
 	height: 3.9cm;
-	background-image: url("../imagenes/plantillas/png/avanceInformativo.png");
+/*	background-image: url("../../imagenes/plantillas/png/avanceInformativo.png");*/
 	background-repeat: no-repeat;
 	background-position: 0cm 1.2cm;
 	background-size: 5cm 2.7cm;
+}
+
+#imagenAvanceInformativo2 {
+    display: block;
+    position: relative;
+    width: 3.9cm;
+    height: 3.9cm;
 }
 /*******************************IMAGEN PLANTILLA AVANCE INFORMATIVO*******************************/
 
@@ -58,7 +65,7 @@ div#imagenBoletinInformativo{
 	border-style: solid;
 	width: 9.9cm;
 	height: 5.9cm;
-	background-image: url("../imagenes/plantillas/png/boletinInformativo.png");
+	background-image: url("../../imagenes/plantillas/png/boletinInformativo.png");
 	background-repeat: no-repeat;
 	background-position: 0cm 1.2cm;
 	background-size: 11cm 4.7cm;
@@ -71,7 +78,7 @@ div#imagenComunicado{
 	border-style: solid;
 	width: 9.9cm;
 	height: 5.9cm;
-	background-image: url("../imagenes/plantillas/png/comunicado.png");
+	background-image: url("../../imagenes/plantillas/png/comunicado.png");
 	background-repeat: no-repeat;
 	background-position: 0cm 1.2cm;
 	background-size: 11cm 4.7cm;
@@ -83,7 +90,7 @@ div#imagenGeneral{
 	border-style: solid;
 	width: 9.9cm;
 	height: 5.9cm;
-	background-image: url("../imagenes/plantillas/png/invitacionGeneral.png");
+	background-image: url("../../imagenes/plantillas/png/invitacionGeneral.png");
 	background-repeat: no-repeat;
 	background-position: 0cm 1.2cm;
 	background-size: 11cm 4.7cm;

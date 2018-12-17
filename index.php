@@ -1,29 +1,20 @@
-<?php
-	
-	include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';
-
-	$conexion = conectar();
-
-	include $_SERVER["DOCUMENT_ROOT"].'/intranet/mostrarNoticiasEnIndex/capsulaInformativa.php';
-
-?>
-
 <!DOCTYPE html>
 
 <html>
 
 <head>
-
 	<title>Intranet Alkes Corp, S.A</title>
 
-	<meta name="viewport" content="width=device-width,device-height initial-scale=1.5">
+	<meta name="viewport" content="width=device-width,device-height initial-scale=1.5"/>
 
-	<link rel="stylesheet" type="text/css" href="estructura/css/index.css" media="all">
-	<link rel="stylesheet" type="text/css" href="estructura/css/media.css" media="all">
-	<link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/index/index.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="estructura/css/media.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all"/>
 	
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.js"></script>
 </head>
 
 <body>
@@ -135,7 +126,16 @@
 			   
 			   	<li>
 			   		<a href="directorio.php" title="">Directorio</a>
-			   	</li>
+			   	</li><?php
+	
+	include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';
+
+	$conexion = conectar();
+
+	include $_SERVER["DOCUMENT_ROOT"].'/intranet/mostrarNoticiasEnIndex/capsulaInformativa.php';
+
+?>
+
 
 			   	<li>
 			   		<a href="#" title="">Descargas</a>
@@ -161,7 +161,7 @@
 			   	</li>
 
 			   	<li>
-			   		<a href="../Alkes/index.html" title="">Reservar Sala De Reunion</a>
+			   		<a href="#" title="">Reservar Sala De Reunion</a>
 			   	</li>
 
 			</ul>
@@ -169,312 +169,448 @@
 		</div>
 		<!--FIN CONTENEDOR TOP-->
 
+      
+
 		<!--INICIO CAPSULA INFORMATIVA-->
 		<div id="capuslaInformativa">
 
-			<h1 id="tituloCapsulaInformativa">Capsula Informativa</h1>
+            <h1 id="tituloCapsulaInformativa">Capsula Informativa</h1>
 
-			<?php
-
-			while ($mostrarAVIF = mysql_fetch_array($verAVIF)) 
-			{				
-				echo '<a id="n" href="detalleNoticiaAVIF.php?n='.$mostrarAVIF["n"].'">
-						<div id="contenedorNoticiaCapsulaInformativa">
-
-							<div id="tituloNoticiaCapsulaInformativa">'
-							.'<h5 id="tituloAvanceInformativo">'.$mostrarAVIF['Titulo'].'</h5>'.'
-							</div>
-
-							<div id="imagenAvanceInformativo">
-							</div>
-
-					  	</div>
-					</a>
-				';
-			}
-
-			while ($mostrarBOIF = mysql_fetch_array($verBOIF)) 
-			{
-				echo '<a id="n" href="detalleNoticiaBOIF.php?n='.$mostrarBOIF["n"].'">
-						<div id="contenedorNoticiaCapsulaInformativa">
-
-							<div id="tituloNoticiaCapsulaInformativa">'
-							.'<h5 id="tituloAvanceInformativo">'.$mostrarBOIF['Titulo'].'</h5>'.'
-							</div>
-
-							<div id="imagenBoletinInformativo">
-							</div>
-
-						  </div>
-					  </a>
-				';
-			}
-
-			while ($mostrarCOMU = mysql_fetch_array($verCOMU)) 
-			{
-				echo '<a id="n" href="detalleNoticiaCOMU.php?n='.$mostrarCOMU["n"].'">
-						<div id="contenedorNoticiaCapsulaInformativa">
-
-							<div id="tituloNoticiaCapsulaInformativa">'
-							.'<h5 id="tituloAvanceInformativo">'.$mostrarCOMU['Titulo'].'</h5>'.'
-							</div>
-
-							<div id="imagenComunicado">
-							</div>
-
-						</div>
-					  </a>
-				';
-			}
-                       while ($mostrarINGE = mysql_fetch_array($verINGE)) 
-			{
-				echo '<a id="n" href="detalleNoticiaINGE.php?n='.$mostrarINGE["n"].'">
-						<div id="contenedorNoticiaCapsulaInformativa">
-
-							<div id="tituloNoticiaCapsulaInformativa">'
-							.'<h5 id="tituloAvanceInformativo">'.$mostrarINGE['Titulo'].'</h5>'.'
-							</div>
-
-							<div id="imagenGeneral">
-							</div>
-
-						  </div>
-					  </a>
-				';
-			}
-			
-             
-            
-			?>
-
+            <div  v-for="item in list">
+                <a id="n" :href="'detalleNoticiaAVIF.php?n=' + item.publicacion_id">
+                    <div id="contenedorNoticiaCapsulaInformativa">
+                        <div id="tituloNoticiaCapsulaInformativa">'
+                            <h5 id="tituloAvanceInformativo">{{ item.titulo }}</h5>
+                        </div>
+                        <div id="imagenAvanceInformativo">
+                            <img id="imagenAvanceInformativo2" :src="item.imagen" alt="Avance informativo">
+                        </div>
+                    </div>
+                </a>
+            </div>
 		</div>
+		
+		<script type="text/javascript">
+            
+            const publicacionesUrl = 'http://192.168.30.25/intranet/php/index/consultaPublicaciones.php';
+            const capuslaInformativa = new Vue({
+                el: '#capuslaInformativa',
+                created: function() {
+                    this.getPublicaciones();
+                },
+                data: {
+                    list: []
+                },
+                methods: {
+                    getPublicaciones: function() {
+                        this.$http.get(publicacionesUrl).then((responsed) => {
+                            this.list = responsed.body;
+                        });
+                    }
+                }
+            });
+            
+        </script>
 		<!--FIN CAPSULA INFORMATIVA-->
 
 
 
 		<!--INICIO VIDEO-->
-		<div id="video">
-		  
-			 <video class="video-source" src="assets/video/POLITICA-20181212-173623.webm" type="video/webm"  autoplay controls > </video> 
-                    
-                
-					
-					
+        <div class="container-fluid video">
+		    <div class="row">
+                <div class="col col-lg-2">
+                   <!--vacio-->
+                </div>
+                <div class="col col-lg-8">
+                    <video class="video-source" src="assets/video/POLITICA-20181212-173623.webm" type="video/webm"  autoplay controls > </video> 
+                </div>
+                <div class="col col-lg-2">
+                   <!--vacio-->
+                </div>
+		    </div>
+		</div>
+
+       	<!--INICIO INVITACION-->
+        <div id="invitacion" class="container-fluid invitacion">
+		    <div class="row">
+                <div class="col col-lg-12">
+                    <h1 class="tituloInvitaciones">Invitaciones</h1>
+                </div>  
+		    </div>
+		    <div class="row">
+                 <div class="col col-lg-2">
+                    <!--vacio-->
+                 </div>
+		         <div class="col col-lg-8 nuestrasPaginas">
+
+                   <!--TITULO -->
+                    <h1 id="tituloNuestrasPaginas">Nuestras Paginas</h1>
+
+                    <!--INICIO DIV EFECTO SLIDER-->
+                    <div class="slider">
+                        <ul>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Alkes Corp, S.A</h1>
+                                        <img  class="image-slider" src="imagenes/footer/logo_alkes.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>		
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Industrias El Caiman</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_iec.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Venezolana De Frutas</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_venfruca.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Fruttech</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_fruttech.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>					
+                        </ul>
+                    </div>                
+                </div>
+                <div class="col col-lg-2">
+                   <!--vacio-->
+               </div>
+		    </div>
 		</div>
 		
-		<script>
-		  const video = new Vue({
-              el: '#video',
+        <script>
+		  const invitacion = new Vue({
+              el: '#invitacion',
               data: {
                   
               }
-          }):
+          });
 		</script>
-		<!--FIN VIDEO-->
 		
-				<!--INICIO SALAS-->
-		<div class="container" id="salas">
+		<!--INICIO SALAS-->
+        <div id="salas" class="container-fluid salas">
+		    <div class="row">
+                <div class="col col-lg-2">
+                   <!--vacio-->
+                </div>
+                <div class="col col-lg-8">
+                    <table class="tablaSala" border="0">
+                        <tr class="colorFondo">
+                            <td>Dia</td>
+                            <td>Mes</td>
+                            <td>Año</td>
+                            <td>Sala</td>
+                            <td>Inicio</td>
+                            <td>Fin</td>
+                            <td>Usuario</td>
+                            <td>Estado</td>
+                        </tr>
+                        <tr class="colorDato" v-for="item in list">
+                            <td>
+                                <h5>{{ item.dia }}</h5>	
+                            </td>
+                            <td>
+                                <h5>{{ item.mes }}</h5>	
+                            </td>
+                            <td>
+                                <h5>{{ item.ano }}</h5>	
+                            </td>
+                            <td>
+                                <h5>{{ item.salas }}</h5>	
+                            </td>
+                            <td>
+                                <h5>{{ item.hora_inicio }}</h5>			
+                            </td>
+                            <td>
+                                <h5>{{ item.hora_final }}</h5>	
+                            </td>
+                            <td>
+                                <h5>{{ item.usuario }}</h5>	
+                            </td>
+                            <td>
+                                <h5>{{ item.reservado }}</h5>	
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col col-lg-2">
+                   <!--vacio-->
+               </div>
+		    </div>
+		</div>
 		
-			<h1 id="tituloSalas">Salas</h1>
+		<script type="text/javascript">
+            
+            const salasUrl = 'http://192.168.30.25/intranet/php/index/consultaSalas.php';
+            const salas = new Vue({
+                el: '#salas',
+                created: function() {
+                    this.getSalas();
+                },
+                data: {
+                    list: []
+                },
+                methods: {
+                    getSalas: function() {
+                        this.$http.get(salasUrl).then((responsed) => {
+                            this.list = responsed.body;
+                        });
+                    }
+                }
+            });
+            
+        </script>
 
-			<?php
-				
-				$conexion = conectar();
-
-				$consultaSala = "SELECT t1.days  	AS Dia,
-										t1.moth  	AS Mes,
-										t1.yeart 	AS A,
-										t1.space 	AS Sala,
-										t2.cince 	AS Hora_Inicio,
-										t2.until 	AS Hora_Final,
-										t2.user  	AS Usuario,
-										t2.isreserved 	AS Reservado
-									FROM availability t1 INNER JOIN reservation t2 ON t1.availability_id = t2.availability_id
-									WHERE t2.isreserved = 'Y'";
-
-				$resultado = mysql_query($consultaSala,$conexion);
-				
-			?>
-
-			<table id="tablaSala" border="0">				
-				<tr id="colorFondo">
-					<td>Dia</td>
-					<td>Mes</td>
-					<td>Año</td>
-					<td>Sala</td>
-					<td>Inicio</td>
-					<td>Fin</td>
-					<td>Usuario</td>
-					<td>Estado</td>
-				</tr>
-				<?php
-					while ($mostrarSala=mysql_fetch_array($resultado))
-					{
-				?>
-				
-				<tr id="colorDato">
-					<!--<marquee scrolldelay="100" scrollamount="5" direction="up" loop="infinite">-->
-					<td>
-						<h5><?php echo $mostrarSala["Dia"]; ?></h5>	
-					</td>
-					<td>
-						<h5><?php echo $mostrarSala["Mes"]; ?></h5>	
-					</td>
-					<td>
-						<h5><?php echo $mostrarSala["A"]; ?></h5>	
-					</td>
-					<td>
-						<h5><?php echo $mostrarSala["Sala"]; ?></h5>	
-					</td>
-					<td>
-						<h5><?php echo $mostrarSala["Hora_Inicio"]; ?></h5>	
-					</td>
-					<td>
-						<h5><?php echo $mostrarSala["Hora_Final"]; ?></h5>	
-					</td>
-					<td>
-						<h5><?php echo $mostrarSala["Usuario"]; ?></h5>	
-					</td>
-					<td>
-						<h5><?php echo $mostrarSala["Reservado"]; ?></h5>	
-					</td>
-					<!--</marquee>-->
-				</tr>				
-				<?php
-					}
-				?>				
-			</table>
 		
-		</div>
-		<!--FIN SALAS-->
-
-		<!--INICIO INVITACION-->
-		<div id="invitacion">
-			
-			<h1 id="tituloInvitaciones">Invitaciones</h1>
-
-		</div>
-		<!--FIN INVITACION-->			
-
-		<!--INICIO BANNER-->
-		<div id="banner">
-			
-		</div>
-		<!--FIN BANNER-->
-
 		<!--INICIO CUMPLEAÑEROS DEL MES-->
-		<div id="cumpleMes">
-			
-			<h1 id="tituloCumpleMes">Cumpleañeros Del Mes</h1>
+        <div id="cumpleMes" class="container-fluid cumpleMes">
+		    <div class="row">
+                <div class="col col-lg-12">
+                    <h1 class="tituloCumpleMes">Cumpleañeros Del Mes</h1>
+                </div>  
+		    </div>
+		    <div class="row">
+                 <div class="col col-lg-2">
+                    <!--vacio-->
+                 </div>
+		         <div class="col col-lg-8 nuestrasPaginas">
 
+                   <!--TITULO -->
+                    <h1 id="tituloNuestrasPaginas">Nuestras Paginas</h1>
+
+                    <!--INICIO DIV EFECTO SLIDER-->
+                    <div class="slider">
+                        <ul>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Alkes Corp, S.A</h1>
+                                        <img  class="image-slider" src="imagenes/footer/logo_alkes.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>		
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Industrias El Caiman</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_iec.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Venezolana De Frutas</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_venfruca.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Fruttech</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_fruttech.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>					
+                        </ul>
+                    </div>                
+                </div>
+                <div class="col col-lg-2">
+                   <!--vacio-->
+               </div>
+		    </div>
 		</div>
-		<!--FIN CUMPLEAÑEROS DEL MES-->
+		
+		<script>
+		  const cumpleMes = new Vue({
+              el: '#cumpleMes',
+              data: {
+                  
+              }
+          });
+		</script>
+				
+        <!--INICIO INFOGRAFIA-->
+		<div class="container-fluid infografia">
+		    <div class="row">
+                <div class="col col-lg-12">
+                    <img src="assets/image/gg.jpg" class="img-fluid image-infografia" alt="Infografia"/>
+                </div>  
+		    </div>
+		</div>
 
 		<!--INICIO NUEVO INGRESO-->
-		<div id="nuevoIngreso">
-			
-			<h1 id="tituloNuevoIngreso">Nuevo Ingreso</h1>
+		<div id="nuevoIngreso" class="container-fluid nuevoIngreso">
+		    <div class="row">
+                <div class="col col-lg-12">
+                    <h1 class="tituloNuevoIngreso">Nuevo Ingreso</h1>
+                </div>  
+		    </div>
+		    <div class="row">
+                 <div class="col col-lg-2">
+                    <!--vacio-->
+                 </div>
+		         <div class="col col-lg-8 nuestrasPaginas">
 
+                   <!--TITULO -->
+                    <h1 id="tituloNuestrasPaginas">Nuestras Paginas</h1>
+
+                    <!--INICIO DIV EFECTO SLIDER-->
+                    <div class="slider">
+                        <ul>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Alkes Corp, S.A</h1>
+                                        <img  class="image-slider" src="imagenes/footer/logo_alkes.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>		
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Industrias El Caiman</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_iec.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Venezolana De Frutas</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_venfruca.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Fruttech</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_fruttech.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>					
+                        </ul>
+                    </div>                
+                </div>
+                <div class="col col-lg-2">
+                   <!--vacio-->
+               </div>
+		    </div>
 		</div>
-		<!--FIN NUEVO INGRESO-->
-
-		<!--INICIO INFOGRAFIA-->
-		<div id="infografia">
-			
-		</div>
-		<!--FIN INFOGRAFIA-->
-
-		<!--INICIO FOLLETO INFORMATIVO-->
-		<div id="folletoInformativo">
-			
-			<h1 id="tituloFolletoInformativo">Folleto Informativo</h1>
-
-		</div>
-		<!--FIN FOLLETO INFORMATIVO-->
-
-		<!--INICIO NUESTRAS PAGINAS-->
-		<div id="nuestrasPaginas">
-			
-			<h1 id="tituloNuestrasPaginas">Nuestras Paginas</h1>
-
-			<!--INICIO DIV EFECTO SLIDER-->
-			<div class="slider">
-				<ul>
-					<li>
-				  		<a id="enlaceAlkes" href="#">				  			
-				  			<div id="alkes">
-				  				
-				  				<h1 id="tituloAlkes">Alkes Corp, S.A</h1>
-
-				  				<img id="imagenAlkes" src="imagenes/footer/logo_alkes.png" alt="">
-																								
-				  			</div>
-				  		</a>
-				 	</li>		
-					<li>
-						<a id="enlaceIEC" href="#">				  			
-				  			<div id="caiman">
-				  				
-				  				<h1 id="tituloCaiman">Industrias El Caiman</h1>
-
-				  				<img id="imagenCaiman" src="imagenes/footer/logo_iec.png" alt="">
-																								
-				  			</div>
-				  		</a>
-					</li>
-					<li>
-						<a id="enlaceVenfruca" href="#">				  			
-				  			<div id="venfruca">
-				  				
-				  				<h1 id="tituloVenfruca">Venezolana De Frutas</h1>
-
-				  				<img id="imagenVenfruca" src="imagenes/footer/logo_venfruca.png" alt="">
-																								
-				  			</div>
-				  		</a>
-					</li>
-					<li>
-						<a id="enlaceFruttech" href="#">				  			
-				  			<div id="fruttech">
-				  				
-				  				<h1 id="tituloFruttech">Fruttech</h1>
-
-				  				<img id="imagenFruttech" src="imagenes/footer/logo_fruttech.png" alt="">
-																								
-				  			</div>
-				  		</a>
-					</li>					
-				</ul>
-			</div>
-			<!--FIN DIV EFECTO SLIDER-->
-		</div>
-		<!--INICIO NUESTRAS PAGINAS-->
-
-		<!--INICIO NUESTRAS REDES-->
-		<div id="nuestrasRedes">
-			
-			<h1 id="tituloNuestrasRedes">Nuestras Redes Sociales</h1>
-
-			<img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/f.png" width="65">
-
-			<img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/instagram.png" width="65">
-			
-			<img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/twitter.png" width="65">
-
-		</div>
-		<!--INICIO NUESTRAS REDES-->
-
-		<!--INICIO COPYRING-->
-		<div id="copy">
-			<h3 id="derechoAutor">Copyright © 2018 Intranet Corporativa Rights Reserved. </h3>
-		</div>
-		<!--FIN COPYRING-->
 		
+		<script>
+		  const nuevoIngreso = new Vue({
+              el: '#nuevoIngreso',
+              data: {
+                  
+              }
+          });
+		</script>
+
+        <!--INICIO INFOGRAFIA-->
+		<div class="container-fluid infografia">
+		    <div class="row">
+                <div class="col col-lg-12">
+                
+                </div>  
+		    </div>
+		</div>
+
+		<!--INICIO FOOTER-->
+        <div class="container-fluid">
+           
+            <!--FILA 1-->
+            <div class="row">
+               
+                <!--INICIO FOLLETO INFORMATIVO-->
+                <div class="col col-lg-3 folletoInformativo">
+                    <h1 id="tituloFolletoInformativo">Folleto Informativo</h1>
+                </div>
+
+                <!--INICIO NUESTRAS REDES-->
+                <div class="col col-lg-6 nuestrasPaginas">
+
+                   <!--TITULO -->
+                    <h1 id="tituloNuestrasPaginas">Nuestras Paginas</h1>
+
+                    <!--INICIO DIV EFECTO SLIDER-->
+                    <div class="slider">
+                        <ul>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Alkes Corp, S.A</h1>
+                                        <img  class="image-slider" src="imagenes/footer/logo_alkes.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>		
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Industrias El Caiman</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_iec.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Venezolana De Frutas</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_venfruca.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link-slider" href="#">				  			
+                                    <div class="div-slider">
+                                        <h1 class="title-slider ">Fruttech</h1>
+                                        <img class="image-slider" src="imagenes/footer/logo_fruttech.png" alt=""/>
+                                    </div>
+                                </a>
+                            </li>					
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                 <!--INICIO NUESTRAS REDES-->
+                <div class="col col-lg-3 nuestrasRedes">
+                    <h1 id="tituloNuestrasRedes">Nuestras Redes Sociales</h1>
+                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/f.png" width="65">
+                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/instagram.png" width="65">
+                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/twitter.png" width="65">
+                </div>
+            </div>
+            
+            <!--FILA 2-->
+            <div class="row">
+                <!--INICIO COPYRING-->
+                <div class="col-sm-12 copy">
+                    <h3 id="derechoAutor">Copyright © 2018 Intranet Corporativa Rights Reserved. </h3>
+                </div>
+            </div>
+            
+        </div>
+        <!--FIN FOOTER-->
+
+        
 	</div>
-	<!--FIN CONTENEDOR DE CONTENIDOS-->
     
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.js"></script>
+
 </body>
 
 </html>

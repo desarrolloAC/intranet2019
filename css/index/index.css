@@ -1,0 +1,404 @@
+
+body{
+	margin: 0cm;
+	padding: 0cm;
+}
+
+div#contenedorContenido{
+	position: relative;
+	width: 100%;
+	/*border-style: solid;*/
+}
+
+/****************************************TOP********************************************************************/
+div#contenedorTop{
+	z-index: 99;
+	position: fixed;
+	top: 0cm;
+	width: 100%;
+	height: 3cm;
+	background-color: rgb(241,129,3);
+}
+
+img#logoAlkes{
+	position: absolute; left: -3cm; top: 0.2cm;
+	width: 12cm;
+	height: 2.5cm;
+	cursor: pointer;
+}
+
+img#logoUsuario{
+	position: absolute; left: 33.2cm; top: 0.4cm;
+	width: 2cm;
+	height: 2cm;
+	border-radius: 1rem;
+	transition: 1s ease-in-out;	
+}
+
+img#logoUsuario:hover{
+	background-color: rgb(69,69,69);
+	transition: 1s ease-in-out;
+	border-radius: 1rem;
+	cursor: pointer;
+}
+
+.contenedor_menu{
+	z-index: 99;
+	position: fixed; left: 20%;
+	width: 100%;
+	margin-top: 4.5%;	
+}
+
+.menu {
+	margin:0px;
+	padding:0px;
+	margin-top: 3%;
+	margin-left: 8cm;
+	font-family: "Arial";
+	font-size: 14px;
+}
+
+ul, ol {
+	list-style:none;
+}
+
+.menu > li {
+	float:left;
+}
+
+.menu li a {
+	background: rgb(241,129,3);/*NARANJA*/
+	color:#fff;
+	text-decoration:none;
+	padding:10px 30px;
+	display:block;
+}
+
+.menu li a:hover {
+	background-color: rgb(69,69,69);
+	transform: scale(1.1);
+	transition: 1s ease-in-out;
+}
+
+.menu li ul {
+	display:none;
+	position:absolute;
+	min-width:140px;
+}
+
+.menu li:hover > ul {
+	display:block;
+	margin-left: -3.4%;
+}
+
+.menu li ul li {
+	position:relative;
+}
+
+.menu li ul li ul {
+	right:-140px;
+	top:0px;
+}
+/****************************************TOP********************************************************************/
+
+
+
+/****************************************CAPUSLA INFORMATIVA****************************************************/
+div#capuslaInformativa{
+	z-index: 1;
+	position: relative;
+	width: 100%;
+	height: 8cm;
+	margin-top: 3.1cm;
+	background-color: rgb(69,69,69);
+	overflow-y: auto;
+}
+
+h1#tituloCapsulaInformativa{
+	position: relative; top: 0.3cm;
+	text-align: center;
+	color: rgb(255,255,255);
+    font-family: sans-serif;  /*willians  */
+    font-size: 1400;  /*willians */
+}
+
+/****************************************CAPUSLA INFORMATIVA****************************************************/
+
+div#contenedorMedio{
+	z-index: 1;
+	position: relative; top: 0.2cm;
+	width: 100%;
+	height: 10cm;
+	background-color: rgb(69,69,69);
+}
+
+
+
+
+/****************************************VIDEO******************************************************************/
+.video{
+    position: static;
+	height: auto;
+}
+
+.video-source {
+    position: static;
+    width: 880;
+    height: 450;
+}
+/****************************************VIDEO******************************************************************/
+
+
+
+
+/****************************************SALAS******************************************************************/
+.salas {
+    position: static;
+    width: 100%;
+	height: 10cm;
+	background-color: white;
+	overflow-y: auto;
+}
+
+.tituloSalas {
+	margin-top: 0cm;
+	text-align: center;
+	color: rgb(0,0,0);
+}
+
+.tablaSala {
+	position: relative; top: 0.6cm; left: 0cm;
+	width: 100%;
+	border-collapse: collapse;
+	border-bottom-style: solid;
+	border-right-style: solid;
+
+}
+
+.colorFondo {
+	text-align: center;
+	font-weight: bold;
+	background-color: rgb(69,69,69);
+	color: rgb(255,255,255);
+}
+
+.colorDato {
+	text-align: center;
+}
+/****************************************SALAS******************************************************************/
+
+
+
+
+
+
+/****************************************INVITACIONES***********************************************************/
+.invitacion{
+	position: static;
+	width: 100%;
+	height: 10cm;
+	background-color: rgb(20,50,100);
+}
+
+.tituloInvitaciones{
+	margin-top: 0cm;
+	text-align: center;
+	color: rgb(255,255,255);
+}
+/****************************************INVITACIONES***********************************************************/
+
+
+
+
+/****************************************CUMPLEAÑEROS DEL MES***************************************************/
+.cumpleMes {
+	position: static;
+	width: 100%;
+	height: 10cm;
+	background-color: rgb(0,100,200);
+}
+
+.tituloCumpleMes {
+	margin-top: 0cm;
+	text-align: center;
+	color: rgb(255,255,255);
+}
+/****************************************CUMPLEAÑEROS DEL MES***************************************************/
+
+
+
+
+/****************************************NUEVO INGRESO**********************************************************/
+.nuevoIngreso {
+	position: static;
+	width: 100%;
+	height: 10cm;
+	background-color: rgb(0,200,255);
+}
+
+.tituloNuevoIngreso {
+	margin-top: 0cm;
+	text-align: center;
+	color: rgb(255,255,255);
+}
+/****************************************NUEVO INGRESO**********************************************************/
+
+
+
+
+/**************************************** INICIO INFOGRAFIA*************************************************************/
+
+.infografia {
+	position: static;
+	height: 13cm;
+	background-color: rgb(100,20,255);
+}
+
+.image-infografia {
+    height: 2cm;
+    position: relative;
+}
+/****************************************FIN INFOGRAFIA*************************************************************/
+
+
+
+
+
+/****************************************FOLLETO INFORMATIVO****************************************************/
+.folletoInformativo{
+	height: 8cm;
+	background-color: rgb(241,129,3);
+}
+
+h1#tituloFolletoInformativo{
+	margin-top: 0cm;
+	text-align: center;
+	color: rgb(255,255,255);
+}
+/****************************************FOLLETO INFORMATIVO****************************************************/
+
+
+
+
+/****************************************NUESTRAS PAGINAS*******************************************************/
+.nuestrasPaginas{
+	height: 8cm;
+	background-color: rgb(69,69,69);
+}
+
+h1#tituloNuestrasPaginas{
+	margin-top: 0cm;
+	text-align: center;
+	color: black;
+}
+
+/**************************************** INICIO SLIDER *******************************************************/
+
+.slider {
+	position: relative; left: 0cm; top: -1.5cm;
+	width: 100%;
+	height: 8cm;
+	margin: auto;
+	overflow: hidden;
+}
+
+.slider ul {
+	display: flex;
+	padding: 0;
+	width: 500%;	
+	animation: cambio 10s infinite alternate linear;
+}
+
+.slider li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider img {
+	width: 100%;
+}
+
+@keyframes cambio {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -125%;}
+	45% {margin-left: -125%;}
+	
+	50% {margin-left: -250%;}
+	70% {margin-left: -250%;}
+	
+	75% {margin-left: -375%;}
+	100% {margin-left: -375%;}
+}
+
+.link-slider {
+    text-decoration: none;
+	color: rgb(255,255,255);
+}
+
+.div-slider {
+    position: relative; left: 0px; top: 1cm;
+	border-style: solid;
+	width: 14cm;
+	height: 6cm;
+}
+
+.title-slider {
+    position: relative; left: 5.5cm; top: -0.2cm;
+}
+
+.image-slider {
+    position: relative; top: -1cm; left: 1cm;
+	width: 3cm;
+	height: 4cm;
+	border-style: solid;
+}
+
+/**************************************** INICIO SLIDER *******************************************************/
+
+
+
+/****************************************NUESTRAS PAGINAS*******************************************************/
+
+/****************************************NUESTRAS REDES*********************************************************/
+.nuestrasRedes{
+    position: static;
+	height: 8cm;
+	background-color: rgb(241,129,3);
+}
+
+h1#tituloNuestrasRedes{
+	margin-top: 0cm;
+	text-align: center;
+	color: rgb(255,255,255);
+}
+
+img#imagenFacebook{
+	display: block;
+	margin-top: 0.5cm;
+	margin-left: 4cm;
+	transition: 2s ease-in-out;
+}
+
+img#imagenFacebook:hover{
+	transition: 2s ease-in-out;
+	transform: rotate(360deg);
+	cursor: pointer;
+}
+/****************************************NUESTRAS REDES*********************************************************/
+
+/****************************************COPY*******************************************************************/
+.copy {
+	position: static;
+	height: 2cm;
+	background-color: rgb(241,129,3);
+}
+
+h3#derechoAutor{
+	position: relative; top: 0.2cm;
+	text-align: center;
+	margin: 0cm;
+	color: rgb(255,255,255);
+}
+/****************************************COPY*******************************************************************/

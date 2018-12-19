@@ -1,24 +1,34 @@
 <?php
     @session_start();
     
-    require_once '../conexion/conexion.php';
-    require_once 'estadosLogin.php';
+    include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';
+    include $_SERVER["DOCUMENT_ROOT"].'/intranet/php/estadosLogin.php';
 
-$conexion =conectar();
+    $conexion =conectar();
  
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
+<title>Intranet Alkes Corp, S.A</title>
+	
+	<meta name="viewport" content="width=device-width,device-height initial-scale=1.5"/>
+	<meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
+	<meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
+    <link rel="stylesheet" type="text/css" href="css/login/login.css">
+	
+   
+   
+    <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
     
-    <title>Intranet Alkes Corp</title>
-
-    <link rel="stylesheet" type="text/css" href="../estructura/css/estructura.css">
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
-
-    <script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="../js/selectPerfiles.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+        crossorigin="anonymous"/>
 
 </head>
 
@@ -29,8 +39,8 @@ $conexion =conectar();
 
     <!--INICIO CONTENEDOR LOGO ALKES-->
     <div id="contenedorLogo">
-      <a href="../home.php">
-        <img class="logo" src="..\imagenes\top\logoAlkes.png" width="500" height="100">
+      <a href="index.html">
+        <img class="logo" src="imagenes\top\logoAlkes.png" width="500" height="100">
       </a>
     </div>
     <!--FIN CONTENEDOR LOGO ALKES-->
@@ -39,7 +49,7 @@ $conexion =conectar();
     <div id="contenedorNombreUsuario">
       
       <!--INICIO ICONO DE USUARIO-->
-      <img id="iconoUsuario" src="..\imagenes/top/usuario.png" width="60" height="60" title="Nombre De Usuario">
+      <img id="iconoUsuario" src="imagenes/top/usuario.png" width="60" height="60" title="Nombre De Usuario">
       <!--FIN ICONO DE USUARIO-->   
       
     </div>
@@ -50,7 +60,7 @@ $conexion =conectar();
 
   <!--INICIO DEL DISEÑO FORMULARIO LOGIN-->
   <div class="contenedor_login">
-    <form id="formulario" method="POST" action="inicioSesion.php">
+    <form id="formulario" method="POST" action="php/inicioSesion.php">
           <table id="tabla_login" border="1" width="642" cellpadding="0">
             <thead>
               <tr>
@@ -107,81 +117,6 @@ $conexion =conectar();
       </div>
       <!--FIN DEL DISEÑO FORMULARIO LOGIN-->
 
-  <!--INICIO CONTENEDOR PIE DE PAGINA-->
-  <div id="contenedorPiePagina">
-      
-      <!--DISEÑO DEL FOLLETO INFORMATIVO-->
-      <div id="contenedorFolletoInformativo">
-        <h1 id="tituloFolletoInformativo">Folleto Informativo</h1>
-      </div>
-      <!--FIN DEL DIV FOLLETO INFORMATIVO-->
-
-      <!--DISEÑO DEL FOLLETO INFORMATIVO-->
-      <div id="contenedorLogoEmpresas">
-        <h1 id="tituloNuestrasPaginas">Nuestras Paginas</h1>
-
-        <div class="slider">
-          <ul>
-            <li>
-                <a href="#">
-                  <img src="../imagenes/footer/logo_alkes.png" alt="">
-                </a>
-            </li>   
-            <li>
-              <a href="">
-                  <img src="../imagenes/footer/logo_fruttech.png"  alt="">
-                </a>
-            </li>
-            <li>
-              <a href="">
-                  <img src="../imagenes/footer/logo_iec.png"  alt="">
-                </a>
-            </li>
-            <li>
-              <a href="">
-                  <img src="../imagenes/footer/logo_Tkr.png"  alt="">
-                </a>
-            </li>
-            <li>
-              <a href="">
-                  <img src="../imagenes/footer/logo_venfruca.png"  alt="">
-                </a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-      <!--FIN DEL DIV FOLLETO INFORMATIVO-->
-
-      <div id="contenedorRedesSociales">
-        <p id="tituloNuestrasRedesSociales">Nuestras Redes Sociales</p>
-
-        <div id="contenedorLogoFacebook">
-          <center>
-            <img id="imagenFacebook" class="efectoRotarRedesSociales" src="../imagenes/footer/f.png" width="65">
-          </center>
-        </div>
-
-        <div id="contenedorLogoInstagram">
-          <center>
-            <img id="imagenFacebook" class="efectoRotarRedesSociales" src="../imagenes/footer/instagram.png" width="65">
-          </center>
-        </div>
-
-        <div id="contenedorLogoTwitter">
-          <center>
-            <img id="imagenFacebook" class="efectoRotarRedesSociales" src="../imagenes/footer/twitter.png" width="65">
-          </center>
-        </div>
-
-      </div>
-        
-      <div id="contenedorDerechoAutor">
-        <h3 id="derechoAutor">Copyright © 2018 Intranet Corporativa Rights Reserved. </h3>
-      </div>
-
-  </div>
-  <!--FIN CONTENEDOR PIE DE PAGINA-->
 
 </body>
 

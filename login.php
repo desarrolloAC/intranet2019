@@ -191,12 +191,11 @@
                         </div>
                         
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Acepto los terminos y condiciones</label>
+                            <a class="olvido_contrasena" href="recuperarPassLogin.php">¿Olvidó Su Contraseña?</a>
                         </div>
                         <br>
                         <button type="submit" class="btn Ingresar">Ingresar</button>
-                        <a class="olvido_contrasena" href="php/recuperarPassLogin.php">¿Olvidó Su Contraseña?</a>
+                        
                         
                     </form>
                     

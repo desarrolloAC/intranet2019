@@ -25,7 +25,7 @@ img#logoUsuario{
 }
 
 img#logoUsuario:hover{
-	background-color: rgb(69,69,69);
+	background-color: var(--gris2-color);
 	transition: 1s ease-in-out;
 	border-radius: 1rem;
 	cursor: pointer;
@@ -56,15 +56,15 @@ ul, ol {
 }
 
 .menu li a {
-	background: rgb(241,129,3);/*NARANJA*/
-	color:#fff;
+	background: var(--naraja-color);
+	color:var(--blanco-color);
 	text-decoration:none;
 	padding:10px 30px;
 	display:block;
 }
 
 .menu li a:hover {
-	background-color: rgb(69,69,69);
+	background-color: var(--gris2-color);
 	transform: scale(1.1);
 	transition: 1s ease-in-out;
 }
@@ -110,7 +110,7 @@ ul, ol {
 	position: relative;
 	height: 10cm;
 	background-color: var(--gris2-color);
-	overflow-x: scroll;
+	overflow-x: auto;
     padding: 0px;
     margin: 0px;
 }
@@ -127,7 +127,7 @@ ul, ol {
 .tituloCapsulaInformativa {
 	position: relative; top: 0.3cm;
 	text-align: center;
-	color: rgb(255,255,255);
+	color: var(--blanco-color);
     font-family: sans-serif;  /*willians  */
     font-size: 1400;  /*willians */
 }
@@ -141,7 +141,7 @@ ul, ol {
 
 .n{
 	text-decoration: none;
-	color: rgb(0,0,0);
+	color: var(--negro-color);
 }
 
 .contenedorNoticiaCapsulaInformativa {
@@ -174,7 +174,7 @@ ul, ol {
 
 .tituloAvanceInformativo{
 	position: absolute; left: 0.2cm; top: -0.5cm;
-	color: rgb(255,255,255);
+	color: var(--blanco-color);
 	font-weight: bold;
 	font-size: 16px;
 	font-family: "Arial";
@@ -207,13 +207,13 @@ ul, ol {
     position: static;
     width: 100%;
 	height: 15cm;
-	background-color: white;
+	background-color: var(--blanco-color);
 }
 
 .tituloSalas {
 	margin-top: 0cm;
 	text-align: center;
-	color: rgb(0,0,0);
+	color: var(--negro-color);
 }
 
 .tablaSala {
@@ -228,8 +228,8 @@ ul, ol {
 .colorFondo {
 	text-align: center;
 	font-weight: bold;
-	background-color: rgb(69,69,69);
-	color: rgb(255,255,255);
+	background-color: var(--gris2-color);
+	color: var(--blanco-color);
 }
 
 .colorDato {
@@ -238,6 +238,27 @@ ul, ol {
 
 /****************************************SALAS******************************************************************/
 
+
+
+
+/****************************************CANVAS******************************************************************/
+
+.canvas {
+    width: 100%;
+	height: 11cm;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.iFrameKey {
+    position: relative;
+    width: 100%;
+    height: 11cm;
+    border: none;
+    overflow:hidden;
+}
+
+/****************************************CANVAS******************************************************************/
 
 
 
@@ -258,20 +279,6 @@ ul, ol {
     position: relative;
 }
 
-
-.canvas {
-	height: 11cm;
-/*	background-color: rgb(241,129,3);*/
-}
-
-#iframeKey {
-            position: relative;
-            width: 100%;
-            height: 10cm;
-            border: none;
-            overflow:hidden;
-        }
-
 /****************************************FIN INFOGRAFIA*************************************************************/
 
 
@@ -281,24 +288,24 @@ ul, ol {
 /**************************************** FOOTERR ***************************************************/
 .folletoInformativo{
 	height: 8cm;
-	background-color: rgb(241,129,3);
+	background-color: var(--naraja-color);
 }
 
 h1#tituloFolletoInformativo{
 	margin-top: 0cm;
 	text-align: center;
-	color: rgb(255,255,255);
+	color: var(--blanco-color);
 }
 
 .nuestrasPaginas{
 	height: 8cm;
-	background-color: rgb(69,69,69);
+	background-color: var(--gris2-color);
 }
 
 h1#tituloNuestrasPaginas{
 	margin-top: 0cm;
 	text-align: center;
-	color: black;
+	color: var(--negro-color);
 }
 
 .slider {
@@ -341,7 +348,7 @@ h1#tituloNuestrasPaginas{
 
 .link-slider {
     text-decoration: none;
-	color: rgb(255,255,255);
+	color: var(--blanco-color);
 }
 
 .div-slider {
@@ -365,13 +372,13 @@ h1#tituloNuestrasPaginas{
 .nuestrasRedes{
     position: static;
 	height: 8cm;
-	background-color: rgb(241,129,3);
+	background-color: var(--naraja-color);
 }
 
 h1#tituloNuestrasRedes{
 	margin-top: 0cm;
 	text-align: center;
-	color: rgb(255,255,255);
+	color: var(--blanco-color);
 }
 
 img#imagenFacebook{
@@ -390,14 +397,14 @@ img#imagenFacebook:hover{
 .copy {
 	position: static;
 	height: 2cm;
-	background-color: rgb(241,129,3);
+	background-color: var(--naraja-color);
 }
 
 h3#derechoAutor{
 	position: relative; top: 0.2cm;
 	text-align: center;
 	margin: 0cm;
-	color: rgb(255,255,255);
+	color: var(--blanco-color);
 }
 
 

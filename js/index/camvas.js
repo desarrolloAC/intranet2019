@@ -1,11 +1,11 @@
-// Init Stats
-//var stats = new Stats();
-//stats.setMode(0);
-//stats.domElement.style.position = 'absolute';
-//stats.domElement.style.left = '0px';
-//stats.domElement.style.top = '0px';
-//document.body.appendChild(stats.domElement);
-
+/*
+ * requestAnimationFrame pollyfill
+ */
+if (!window.requestAnimationFrame) {
+	window.requestAnimationFrame = (window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function (callback) {
+		return window.setTimeout(callback, 1000 / 60);
+	});
+}
 
 
 /*!
@@ -161,9 +161,9 @@
 			callback();
 
 			this.rAF = window.requestAnimationFrame(function () {
-				stats.begin();
+				//stats.begin();
 				this.loop(callback);
-				stats.end();
+				//stats.end();
 			}.bind(this));
 		};
 
@@ -217,7 +217,7 @@
 })($, window);
 
 // Init plugin
-$('#hh').constellation({
+$('canvas').constellation({
 	star: {
 		width: 3
 	},

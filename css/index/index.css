@@ -1,97 +1,3 @@
-/****************************************TOP********************************************************************/
-
-.contenedorTop {
-	z-index: 99;
-	position: fixed;
-	top: 0cm;
-	width: 100%;
-	height: 3cm;
-	background-color: var(--naraja-color);
-}
-
-img#logoAlkes{
-	position: absolute; left: -3cm; top: 0.2cm;
-	width: 12cm;
-	height: 2.5cm;
-	cursor: pointer;
-}
-
-img#logoUsuario{
-	position: absolute; left: 33.2cm; top: 0.4cm;
-	width: 2cm;
-	height: 2cm;
-	border-radius: 1rem;
-	transition: 1s ease-in-out;	
-}
-
-img#logoUsuario:hover{
-	background-color: var(--gris2-color);
-	transition: 1s ease-in-out;
-	border-radius: 1rem;
-	cursor: pointer;
-}
-
-.contenedor_menu{
-	z-index: 99;
-	position: fixed; left: 20%;
-	width: 100%;
-	margin-top: 4.5%;	
-}
-
-.menu {
-	margin:0px;
-	padding:0px;
-	margin-top: 3%;
-	margin-left: 8cm;
-	font-family: "Arial";
-	font-size: 14px;
-}
-
-ul, ol {
-	list-style:none;
-}
-
-.menu > li {
-	float:left;
-}
-
-.menu li a {
-	background: var(--naraja-color);
-	color:var(--blanco-color);
-	text-decoration:none;
-	padding:10px 30px;
-	display:block;
-}
-
-.menu li a:hover {
-	background-color: var(--gris2-color);
-	transform: scale(1.1);
-	transition: 1s ease-in-out;
-}
-
-.menu li ul {
-	display:none;
-	position:absolute;
-	min-width:140px;
-}
-
-.menu li:hover > ul {
-	display:block;
-	margin-left: -3.4%;
-}
-
-.menu li ul li {
-	position:relative;
-}
-
-.menu li ul li ul {
-	right:-140px;
-	top:0px;
-}
-/****************************************TOP********************************************************************/
-
-
-
 /**************************************** main ********************************************************************/
 
 
@@ -132,6 +38,14 @@ ul, ol {
     font-size: 1400;  /*willians */
 }
 
+.tituloCapsulaInformativa2 {
+	position: relative; top: 0.3cm;
+	text-align: center;
+	color: var(--negro-color);
+    font-family: sans-serif;  /*willians  */
+    font-size: 1400;  /*willians */
+}
+
 .parent-pub {
     display: flex;
     flex-direction: row;
@@ -142,6 +56,21 @@ ul, ol {
 .n{
 	text-decoration: none;
 	color: var(--negro-color);
+}
+
+
+
+a:link    { 
+    box-shadow: var(--negro-color);
+}
+a:visited { 
+    box-shadow: var(--negro-color);
+}
+a:hover   { 
+    box-shadow: var(--negro-color);
+}
+a:active  { 
+    box-shadow: var(--negro-color);
 }
 
 .contenedorNoticiaCapsulaInformativa {
@@ -163,6 +92,9 @@ ul, ol {
 	transition: 1s ease-in-out;
 	cursor: pointer;
 	transform: scale(0.9);
+    box-shadow:  5px 5px 5px 5px var(--negro-color);
+    border: none;
+    text-decoration: none;
 }
 
 .tituloNoticiaCapsulaInformativa {
@@ -172,12 +104,24 @@ ul, ol {
 	background: rgb(241,129,3);/*NARANJA*/
 }
 
+.tituloNoticiaCapsulaInformativa:hover {
+    box-shadow:  5px 5px 5px 5px var(--negro-color);
+    border: none;
+    text-decoration: none;
+}
+
 .tituloAvanceInformativo{
 	position: absolute; left: 0.2cm; top: -0.5cm;
 	color: var(--blanco-color);
 	font-weight: bold;
 	font-size: 16px;
 	font-family: "Arial";
+}
+
+.tituloAvanceInformativo:hover {
+     box-shadow:  5px 5px 5px 5px var(--negro-color);
+    border: none;
+    text-decoration: none;
 }
 
 /****************************************CAPUSLA INFORMATIVA****************************************************/
@@ -267,16 +211,14 @@ ul, ol {
 
 .infografia {
     position: relative;
-	height: 13cm;
-	background-color: rgb(100,20,255);
-	overflow-x: scroll;
+	height: auto;
     padding: 0px;
     margin: 0px;
 }
 
 .image-infografia {
-    height: 2cm;
     position: relative;
+    width: 100%;
 }
 
 /****************************************FIN INFOGRAFIA*************************************************************/
@@ -287,7 +229,7 @@ ul, ol {
 
 /**************************************** FOOTERR ***************************************************/
 .folletoInformativo{
-	height: 8cm;
+	height: 10cm;
 	background-color: var(--naraja-color);
 }
 
@@ -298,18 +240,18 @@ h1#tituloFolletoInformativo{
 }
 
 .nuestrasPaginas{
-	height: 8cm;
+	height: 10cm;
 	background-color: var(--gris2-color);
 }
 
 h1#tituloNuestrasPaginas{
 	margin-top: 0cm;
 	text-align: center;
-	color: var(--negro-color);
+	color: var(--blanco-color);
 }
 
 .slider {
-	position: relative; left: 0cm; top: -1.5cm;
+	position: relative; left: 0cm; top: 0cm;
 	width: 100%;
 	height: 8cm;
 	margin: auto;
@@ -352,10 +294,11 @@ h1#tituloNuestrasPaginas{
 }
 
 .div-slider {
-    position: relative; left: 0px; top: 1cm;
-	border-style: solid;
-	width: 14cm;
-	height: 6cm;
+    position: relative; 
+    left: 0px; 
+    top: 0cm;
+	width: 100%;
+	height: 8cm;
 }
 
 .title-slider {
@@ -363,15 +306,13 @@ h1#tituloNuestrasPaginas{
 }
 
 .image-slider {
-    position: relative; top: -1cm; left: 1cm;
+    position: relative; top: 0cm; left: 0cm;
 	width: 3cm;
 	height: 4cm;
-	border-style: solid;
 }
 
 .nuestrasRedes{
-    position: static;
-	height: 8cm;
+	height: 10cm;
 	background-color: var(--naraja-color);
 }
 

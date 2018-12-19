@@ -21,6 +21,7 @@
 		<!--INICIO LLAMADA DE ARCHIVOS CSS-->
 		<link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
 		<link rel="stylesheet" type="text/css" href="estructura/css/tablaMenuVertical.css">
+		
 		<link rel="stylesheet" type="text/css" href="css/opcionCargo.css">
 		<link rel="stylesheet" type="text/css" href="css/opcionCategoria.css">
 		<link rel="stylesheet" type="text/css" href="css/opcionDepartamento.css">
@@ -31,6 +32,7 @@
 		<link rel="stylesheet" type="text/css" href="css/opcionSubcategoria.css">
 		<link rel="stylesheet" type="text/css" href="css/opcionUsuario.css">
 		<link rel="stylesheet" type="text/css" href="css/categoriasParaPublicar.css">
+		
 		<link rel="stylesheet" type="text/css" href="formularioPublicaciones/avanceInformativo.css">
 		<link rel="stylesheet" type="text/css" href="formularioPublicaciones/boletinInformativo.css">
 		<link rel="stylesheet" type="text/css" href="formularioPublicaciones/comunicado.css">

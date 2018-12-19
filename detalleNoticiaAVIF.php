@@ -36,12 +36,13 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=0.8.0">
 	
-    <link rel="stylesheet" type="text/css" href="css/index/index.css" media="all"/>
 	<link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/detalleNoticiaAVIF.css" media="screen">
 
+    <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
+
     
 	
 </head>

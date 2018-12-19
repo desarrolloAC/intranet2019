@@ -5,10 +5,7 @@
 		overflow-x: hidden;
 	}
 
-	div#contenedorContenido{
-		position: relative;
-		width: 50.8cm;
-	}
+
 
 	/****************************************TOP********************************************************************/
 
@@ -93,14 +90,7 @@
 	}
 	/****************************************TOP********************************************************************/
 
-	/****************************************CAPUSLA INFORMATIVA****************************************************/
-	div#capuslaInformativa{
-		position: relative;
-		width: 50.7cm;
-		height: 10cm;
-		margin-top: 3.1cm;
-		background-color: var( --gris2-color);
-	}
+
 
 	h1#tituloCapsulaInformativa{
 		position: relative;
@@ -170,11 +160,7 @@
 	padding: 0cm;
 	}
 
-	div#contenedorContenido{
-	position: relative;
-	width: 100%;
-	/*border-style: solid;*/
-	}
+
 
 
 
@@ -259,16 +245,7 @@
 	}
 	/****************************************TOP********************************************************************/
 
-	/****************************************CAPUSLA INFORMATIVA****************************************************/
-	div#capuslaInformativa{
-		z-index: 1;
-		position: relative;
-		width: 100%;
-		height: 8cm;
-		margin-top: 3.1cm;
-		background-color: rgb(69,69,69);
-		overflow-y: auto;
-	}
+
 
 	h1#tituloCapsulaInformativa{
 		position: relative; top: -0.4cm;

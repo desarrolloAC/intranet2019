@@ -19,6 +19,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.js"></script>
+	
+	<script src="js/jquery-3.3.1.js"></script>
+    <script src="js/index/camvas.js"></script>
+
 </head>
 
 <body>
@@ -162,10 +166,7 @@
 
 
 <!--INICIO CONTENEDOR DE CONTENIDOS-->
-<main id="contenedorContenido">
-
-
-
+<main class="contenedorContenido">
 
     <!--INICIO CAPSULA INFORMATIVA-->
     <div id="capuslaInformativa" class="container-fluid capuslaInformativa">
@@ -217,22 +218,42 @@
 
 
     <!--INICIO VIDEO-->
-    <div class="container-fluid video">
+    <div id="video" class="container-fluid video">
         <div class="row">
-            <div class="col col-lg-2">
+            <div class="col col-lg-3">
                <!--vacio-->
             </div>
-            <div class="col col-lg-8">
-                <video class="video-source" src="assets/video/POLITICA-20181212-173623.webm" type="video/webm"  autoplay controls > </video> 
+            <div class="col col-lg-6">
+                <video src="assets/video/POLITICA-20181212-173623.webm" type="video/webm" width="880" autoplay controls></video> 
             </div>
-            <div class="col col-lg-2">
+            <div class="col col-lg-3">
                <!--vacio-->
             </div>
         </div>
     </div>
+    
+    <script>
+      const video = new Vue({
+          el: '#video',
+          created: function() {
+               this.getPublicaciones();
+          },
+          data: {
+              list: []
+          },
+           methods: {
+                getPublicaciones: function() {
+            
+                }
+           }
+      });
+    </script>
+    <!--FIN VIDEO-->
 
+   
+   
     <!--INICIO INVITACION-->
-    <div id="capuslaInformativa" class="container-fluid capuslaInformativa">
+    <div id="invitacion" class="container-fluid capuslaInformativa2">
 
        <div class="row">
            <div class="col col-lg-12">
@@ -257,33 +278,24 @@
 
     <script type="text/javascript">
 
-//            const publicacionesUrl = 'php/index/consultaPublicacionesInfo.php';
-//            const capuslaInformativa = new Vue({
-//                el: '#capuslaInformativa',
-//                created: function() {
-//                    this.getPublicaciones();
-//                },
-//                data: {
-//                    list: []
-//                },
-//                methods: {
-//                    getPublicaciones: function() {
-//                        this.$http.get(publicacionesUrl).then((responsed) => {
-//                            this.list = responsed.body;
-//                        });
-//                    }
-//                }
-//            });
+            const invitacionUrl = 'php/index/consultaPublicacionesInvitaciones.php';
+            const invitacion = new Vue({
+                el: '#invitacion',
+                created: function() {
+                    this.getPublicaciones();
+                },
+                data: {
+                    list: []
+                },
+                methods: {
+                    getPublicaciones: function() {
+                        this.$http.get(invitacionUrl).then((responsed) => {
+                            this.list = responsed.body;
+                        });
+                    }
+                }
+            });
 
-    </script>
-
-    <script>
-      const invitacion = new Vue({
-          el: '#invitacion',
-          data: {
-
-          }
-      });
     </script>
     <!--FIN CAPSULA INVITACION-->
 
@@ -291,10 +303,10 @@
     <!--INICIO SALAS-->
     <div id="salas" class="container-fluid salas">
         <div class="row">
-            <div class="col col-lg-2">
+            <div class="col col-lg-3">
                <!--vacio-->
             </div>
-            <div class="col col-lg-8">
+            <div class="col col-lg-6">
                 <table class="tablaSala" border="0">
                     <tr class="colorFondo">
                         <td>Dia</td>
@@ -334,7 +346,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="col col-lg-2">
+            <div class="col col-lg-3">
                <!--vacio-->
            </div>
         </div>
@@ -361,10 +373,13 @@
         });
 
     </script>
+    <!--FIN SALAS-->
 
-
+   
+   
+   
     <!--INICIO CUMPLEAÑEROS DEL MES-->
-    <div id="capuslaInformativa" class="container-fluid capuslaInformativa">
+    <div id="cumpleMes" class="container-fluid capuslaInformativa2">
 
        <div class="row">
            <div class="col col-lg-12">
@@ -387,26 +402,58 @@
 
     </div>
 
-    <script>
-      const cumpleMes = new Vue({
-          el: '#cumpleMes',
-          data: {
+    <script type="text/javascript">
 
-          }
-      });
+        const cumpleMesnUrl = 'php/index/consultaPublicacionesCumpleMes.php';
+        const cumpleMes = new Vue({
+            el: '#cumpleMes',
+            created: function() {
+                this.getPublicaciones();
+            },
+            data: {
+                list: []
+            },
+            methods: {
+                getPublicaciones: function() {
+                    this.$http.get(cumpleMesnUrl).then((responsed) => {
+                        this.list = responsed.body;
+                    });
+                }
+            }
+        });
+
     </script>
+    <!--FIN CUMPLEAÑEROS DEL MES-->
+    
+    
+    
+    
 
-    <!--INICIO INFOGRAFIA-->
-    <div class="container-fluid infografia">
+    <!--INICIO CANVAS-->
+    <div class="container-fluid canvas">
         <div class="row">
             <div class="col col-lg-12">
-                <img src="assets/image/gg.jpg" class="img-fluid image-infografia" alt="Infografia"/>
+                <iframe 
+                    id="iFrameKey" 
+                    src="animate.html" 
+                    scrolling="no"
+                    name="Costelacion" 
+                    allowfullscreen="true" 
+                    sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts" 
+                    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor" 
+                    allowtransparency="true" 
+                    allowpaymentrequest="true">
+                </iframe>
             </div>  
         </div>
     </div>
+    <!--FIN CANVAS-->
 
+   
+   
+   
     <!--INICIO NUEVO INGRESO-->
-    <div id="capuslaInformativa" class="container-fluid capuslaInformativa">
+    <div id="nuevoIngreso" class="container-fluid capuslaInformativa2">
 
        <div class="row">
            <div class="col col-lg-12">
@@ -429,26 +476,42 @@
 
     </div>
 
-    <script>
-      const nuevoIngreso = new Vue({
-          el: '#nuevoIngreso',
-          data: {
+    <script type="text/javascript">
 
-          }
-      });
+        const nuevoIngresoUrl = 'php/index/consultaPublicacionesCumpleMes.php';
+        const nuevoIngreso = new Vue({
+            el: '#nuevoIngreso',
+            created: function() {
+                this.getPublicaciones();
+            },
+            data: {
+                list: []
+            },
+            methods: {
+                getPublicaciones: function() {
+                    this.$http.get(nuevoIngresoUrl).then((responsed) => {
+                        this.list = responsed.body;
+                    });
+                }
+            }
+        });
+
     </script>
 
     <!--INICIO INFOGRAFIA-->
     <div class="container-fluid infografia">
         <div class="row">
             <div class="col col-lg-12">
-
+                <img src="assets/image/gg.jpg" class="img-fluid image-infografia" alt="Infografia"/>
             </div>  
         </div>
     </div>
+    <!--FIN INFOGRAFIA-->
+    
+    
 
     <!--INICIO FOOTER-->
-    <div class="container-fluid">
+    <footer class="container-fluid">
 
         <!--FILA 1-->
         <div class="row">
@@ -521,7 +584,7 @@
             </div>
         </div>
 
-    </div>
+    </footer>
     <!--FIN FOOTER-->
 
 

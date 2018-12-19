@@ -28,7 +28,7 @@
       $_SESSION['Cedula'] = $row["Cedula"];               
                     
       echo'<script language="javascript"> 
-            location.href="perfilesLogin.php";
+            location.href="../perfilesLogin.php";
           </script>';         
                                                  
     }else{        

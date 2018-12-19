@@ -35,225 +35,179 @@
 	<title>Intranet Alkes Corp, S.A</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=0.8.0">
-	<link rel="stylesheet" type="text/css" href="estructura/css/index.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="estructura/css/media.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="css/indexNoticiaCapsulaInformativa.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="css/detalleNoticiaAVIF.css" media="screen">
+	
+    <link rel="stylesheet" type="text/css" href="css/index/index.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/detalleNoticiaAVIF.css" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
+    
 	
 </head>
 
 <body>
 
-	<!--INICIO CONTENEDOR DE CONTENIDOS-->
-	<div id="contenedorContenido">
 
-		<!--INICIO CONTENEDOR TOP-->
-		<div id="contenedorTop">
+<!--INICIO CONTENEDOR TOP-->
+<header class="contenedorTop">
 
-			<a href="index.php">
-				<img id="logoAlkes" src="imagenes/top/logoAlkes.png">
-			</a>
+    <a href="index.html">
+        <img id="logoAlkes" src="imagenes/top/logoAlkes.png">
+    </a>
+    <a href="login.php">
+        <img id="logoUsuario" src="imagenes/top/usuario.png">
+    </a>
+    
+    <ul class="menu">							
+        <!--OPCION ACTUALIDAD-->
+        <li>
+            <a href="#" title="">Actualidad</a>
 
-			<a href="login.php">
-				<img id="logoUsuario" src="imagenes/top/usuario.png">
-			</a>
+            <!--SUBMENU DE ACTUALIDAD-->
+            <ul>
+                <li>
+                    <a id="upa"   href="visorpdf.php" title="">Últimos proyectos y acuerdos</a>
+                </li>
+                <li>
+                    <a id="upa"   href="visorpdf.php" title="">Próximos eventos</a>
+                </li>
+                <li>
+                    <a href="#" title="">Boletín de noticias</a>
+                </li>
+            </ul>
+            <!--FIN DEL SUBMENU ACTUALIDAD-->
 
-			<ul class="menu">							
-	   			<!--OPCION ACTUALIDAD-->
-	   			<li>
-	   				<a href="#" title="">Actualidad</a>
+        </li>
+        <!--FIN DE LA OPCION ACTUALIDAD-->
 
-	   				<!--SUBMENU DE ACTUALIDAD-->
-	   				<ul>
-	   					<li>
-	   						<a href="#" title="">Últimos proyectos y acuerdos</a>
-	   					</li>
-	   					<li>
-	   						<a href="#" title="">Próximos eventos</a>
-	   					</li>
-	   					<li>
-	   						<a href="#" title="">Boletín de noticias</a>
-	   					</li>
-	   				</ul>
-	   				<!--FIN DEL SUBMENU ACTUALIDAD-->
+        <!--OPCION INFORMACION-->
+        <li>
+            <a href="#" title="">Informacion</a>
 
-	   			</li>
-	   			<!--FIN DE LA OPCION ACTUALIDAD-->
+            <!--SUBMENU DE INFORMACION-->
+            <ul>
+                <li>
+                    <a href="#" title="">Mensajes de la CEO</a>
+                </li>
+                <li>
+                    <a href="#" title="">Misión y Visión Corporativa</a>
+                </li>
+                <li>
+                    <a href="#" title="">Directorio de la organización</a>
+                </li>
+                <li>
+                    <a href="#" title="">Políticas y procedimientos</a>
+                </li>
+                <li>
+                    <a href="#" title="">Resultados generales</a>
+                </li>
+            </ul>
+            <!--FIN DEL SUBMENU INFORMACION-->
 
-	   			<!--OPCION INFORMACION-->
-			   	<li>
-			   		<a href="#" title="">Informacion</a>
+        </li>
+        <!--FIN DE LA OPCION INFORMACION-->
 
-			   		<!--SUBMENU DE INFORMACION-->
-	   				<ul>
-	   					<li>
-	   						<a href="#" title="">Mensajes de la CEO</a>
-	   					</li>
-	   					<li>
-	   						<a href="#" title="">Misión y Visión Corporativa</a>
-	   					</li>
-	   					<li>
-	   						<a href="#" title="">Directorio de la organización</a>
-	   					</li>
-	   					<li>
-	   						<a href="#" title="">Políticas y procedimientos</a>
-	   					</li>
-	   					<li>
-	   						<a href="#" title="">Resultados generales</a>
-	   					</li>
-	   				</ul>
-	   				<!--FIN DEL SUBMENU INFORMACION-->
+        <!--OPCION INFORMACION PARA EL TRABAJO-->
+        <li>
+            <a href="#" title="">Informacion para el trabajo</a>
 
-			   	</li>
-			   	<!--FIN DE LA OPCION INFORMACION-->
+            <!--SUBMENU DE INFORMACION PARA EL TRABAJO-->
+            <ul>
+                <li>
+                    <a href="#" title="">Acceso a documentos, estudios, informes</a>
+                </li>
+                <li>
+                    <a href="#" title="">Manuales y procedimientos de trabajo</a>
+                </li>
+                <li>
+                    <a href="#" title="">Directorio de la organización</a>
+                </li>
+                <li>
+                    <a href="#" title="">Políticas y procedimientos</a>
+                </li> 
+                <li>
+                    <a href="#" title="">Informacion de Documentos de SIG</a>
+                       <ul>
+                           <li>
+                               <a href="#" title="">Norma ISO  </a>
+                                <ul>
+                                    <li><a href="php/visorpdf.php?id=iso0" title="">Norma BASC 4:2012</a></li>
+                                    <li><a href="php/visorpdf.php?id=iso1" title="">Norma ISO 22000:2005 </a></li>
+                                    <li><a href="php/visorpdf.php?id=iso2" title="">Norma ISO 19011:2011</a></li>
+                                    <li><a href="php/visorpdf.php?id=iso3" title="">Norma ISO 9001:2015</a></li>
+                                    <li><a href="php/visorpdf.php?id=iso4" title="">Norma ISO 9001:2008 </a></li>
+                                    <li><a href="php/visorpdf.php?id=iso5" title="">Norma ISO 9004:2010</a></li>
+                                </ul>
+                           </li>
+                       </ul>
+                </li>  					
+            </ul>
+            <!--FIN DEL SUBMENU INFORMACION PARA EL TRABAJO-->
 
-			   	<!--OPCION INFORMACION PARA EL TRABAJO-->
-			   	<li>
-			   		<a href="#" title="">Informacion para el trabajo</a>
+        </li>
+        <!--FIN DE LA OPCION INFORMACION PARA EL TRABAJO-->
 
-			   		<!--SUBMENU DE INFORMACION PARA EL TRABAJO-->
-	   				<ul>
-	   					<li>
-	   						<a href="#" title="">Acceso a documentos, estudios, informes</a>
-	   					</li>
-	   					<li>
-	   						<a href="#" title="">Manuales y procedimientos de trabajo</a>
-	   					</li>
-	   					<li>
-	   						<a href="#" title="">Directorio de la organización</a>
-	   					</li>
-	   					<li>
-	   						<a href="#" title="">Políticas y procedimientos</a>
-	   					</li>   					
-	   				</ul>
-	   				<!--FIN DEL SUBMENU INFORMACION PARA EL TRABAJO-->
+        <li>
+            <a href="directorio.php" title="">Directorio</a>
+        </li>
 
-			   	</li>
-			   	<!--FIN DE LA OPCION INFORMACION PARA EL TRABAJO-->
-			   
-			   	<li>
-			   		<a href="directorio.php" title="">Directorio</a>
-			   	</li>
 
-			   	<li>
-			   		<a href="#" title="">Descargas</a>
-			   	</li>
+        <li>
+            <a href="#" title="">Descargas</a>
 
-			   	<li>
-			   		<a href="../Alkes/index.html" title="">Reservar Sala De Reunion</a>
-			   	</li>
+            <ul>
+                <li>
+                    <a href="#" title="">Gestión Humana</a>
 
-			</ul>
+                    <ul>
 
-		</div>
-		<!--FIN CONTENEDOR TOP-->
+                       <li>
+                        <a href="php/Descargas.php?id=1" title="">Formato Unico</a>
+                       </li>
 
-		<?php
-					    
-			while ($mostrarAVIF = mysql_fetch_row($result))
-	    	{
+                     </ul>
+                    <a href="#" title="">Mercadeo</a>
+                    <a href="#" title="">Cuentas por Pagar</a>
+
+                </li>
+
+            </ul>
+
+        </li>
+
+        <li>
+            <a href="#" title="">Reservar Sala De Reunion</a>
+        </li>
+
+    </ul>
+
+</header>
+<!--FIN CONTENEDOR TOP-->
+
 		
-				echo '<div id="contenidoAVIF">
+<!--INICIO CONTENEDOR DE CONTENIDOS-->
+<main id="contenedorContenido">
 
-						<div id="contenidoPlantilla">
-							'."	<h1 id='titulo'>"	.$mostrarAVIF[7].	"</h1>".'
-								<h5 id="org">'		.$mostrarAVIF[1].	"</h5>".'
-								<textarea id="contenido" readonly>'		.$mostrarAVIF[9].	"</textarea>".'
-						</div>
-					
-					</div>';
-	   		}	
-		?>
-		
+<?php
 
-		<!--INICIO FOLLETO INFORMATIVO-->
-		<div id="folletoInformativo">
-			
-			<h1 id="tituloFolletoInformativo">Folleto Informativo</h1>
+    while ($mostrarAVIF = mysql_fetch_row($result))
+    {
 
-		</div>
-		<!--FIN FOLLETO INFORMATIVO-->
+        echo '<div id="contenidoAVIF">
 
-		<!--INICIO NUESTRAS PAGINAS-->
-		<div id="nuestrasPaginas">
-			
-			<h1 id="tituloNuestrasPaginas">Nuestras Paginas</h1>
+                <div id="contenidoPlantilla">
+                    '."	<h1 id='titulo'>"	.$mostrarAVIF[7].	"</h1>".'
+                        <h5 id="org">'		.$mostrarAVIF[1].	"</h5>".'
+                        <textarea id="contenido" readonly>'		.$mostrarAVIF[9].	"</textarea>".'
+                </div>
 
-			<!--INICIO DIV EFECTO SLIDER-->
-			<div class="slider">
-				<ul>
-					<li>
-				  		<a id="enlaceAlkes" href="#">				  			
-				  			<div id="alkes">
-				  				
-				  				<h1 id="tituloAlkes">Alkes Corp, S.A</h1>
+            </div>';
+    }	
+?>
 
-				  				<img id="imagenAlkes" src="imagenes/footer/logo_alkes.png" alt="">
-																								
-				  			</div>
-				  		</a>
-				 	</li>		
-					<li>
-						<a id="enlaceIEC" href="#">				  			
-				  			<div id="caiman">
-				  				
-				  				<h1 id="tituloCaiman">Industrias El Caiman</h1>
-
-				  				<img id="imagenCaiman" src="imagenes/footer/logo_iec.png" alt="">
-																								
-				  			</div>
-				  		</a>
-					</li>
-					<li>
-						<a id="enlaceVenfruca" href="#">				  			
-				  			<div id="venfruca">
-				  				
-				  				<h1 id="tituloVenfruca">Venezolana De Frutas</h1>
-
-				  				<img id="imagenVenfruca" src="imagenes/footer/logo_venfruca.png" alt="">
-																								
-				  			</div>
-				  		</a>
-					</li>
-					<li>
-						<a id="enlaceFruttech" href="#">				  			
-				  			<div id="fruttech">
-				  				
-				  				<h1 id="tituloFruttech">Fruttech</h1>
-
-				  				<img id="imagenFruttech" src="imagenes/footer/logo_fruttech.png" alt="">
-																								
-				  			</div>
-				  		</a>
-					</li>					
-				</ul>
-			</div>
-			<!--FIN DIV EFECTO SLIDER-->
-		</div>
-		<!--INICIO NUESTRAS PAGINAS-->
-
-		<!--INICIO NUESTRAS REDES-->
-		<div id="nuestrasRedes">
-			
-			<h1 id="tituloNuestrasRedes">Nuestras Redes Sociales</h1>
-
-			<img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/f.png" width="65">
-
-			<img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/instagram.png" width="65">
-			
-			<img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/twitter.png" width="65">
-
-		</div>
-		<!--INICIO NUESTRAS REDES-->
-
-		<!--INICIO COPYRING-->
-		<div id="copy">
-			<h3 id="derechoAutor">Copyright © 2018 Intranet Corporativa Rights Reserved. </h3>
-		</div>
-		<!--FIN COPYRING-->
-		
-	</div>
-	<!--FIN CONTENEDOR DE CONTENIDOS-->
+</main>
+<!--FIN CONTENEDOR DE CONTENIDOS-->
 
 </body>
 

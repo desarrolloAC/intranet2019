@@ -196,7 +196,7 @@
                         </div>
                         <br>
                         <button type="submit" class="btn Ingresar">Ingresar</button>
-                        <a id="olvido_contrasena" href="php/recuperarPassLogin.php">¿Olvidó Su Contraseña?</a>
+                        <a class="olvido_contrasena" href="php/recuperarPassLogin.php">¿Olvidó Su Contraseña?</a>
                         
                     </form>
                     

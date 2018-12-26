@@ -3,29 +3,29 @@
 <html lang="es">
 
 <head>
-	<title>Intranet Alkes Corp, S.A</title>
+    <title>Intranet Alkes Corp, S.A</title>
+    <meta name="viewport" content="width=device-width,device-height initial-scale=1.5"/>
+    <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
+    <meta charset="utf-8">
 
-	<meta name="viewport" content="width=device-width,device-height initial-scale=1.5"/>
-	<meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
-	<meta charset="utf-8">
-	
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
-             crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css" media="all"/>
 
-	<link rel="stylesheet" type="text/css" href="css/index/index.css" media="all"/>
-	<link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all"/>
-	
+    <link rel="stylesheet" type="text/css" href="css/index/index.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all"/>
+
     <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
 
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/vue-resource.min.js"></script>
 
 
-
+<!--
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.js"></script>
-	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.js"></script>
+-->
+
 </head>
 
 <body>
@@ -39,8 +39,8 @@
     <a href="login.php">
         <img id="logoUsuario" src="imagenes/top/usuario.png">
     </a>
-    
-    <ul class="menu">							
+
+    <ul class="menu">
         <!--OPCION ACTUALIDAD-->
         <li>
             <a href="#" title="">Actualidad</a>
@@ -106,7 +106,7 @@
                 </li>
                 <li>
                     <a href="#" title="">Políticas y procedimientos</a>
-                </li> 
+                </li>
                 <li>
                     <a href="#" title="">Informacion de Documentos de SIG</a>
                        <ul>
@@ -122,7 +122,7 @@
                                 </ul>
                            </li>
                        </ul>
-                </li>  					
+                </li>
             </ul>
             <!--FIN DEL SUBMENU INFORMACION PARA EL TRABAJO-->
 
@@ -227,14 +227,14 @@
                <!--vacio-->
             </div>
             <div class="col col-lg-6">
-                <video src="assets/video/POLITICA-20181212-173623.webm" type="video/webm" width="880" autoplay controls></video> 
+                <video src="assets/video/POLITICA-20181212-173623.webm" type="video/webm" width="880" autoplay controls></video>
             </div>
             <div class="col col-lg-3">
                <!--vacio-->
             </div>
         </div>
     </div>
-    
+
     <script>
       const video = new Vue({
           el: '#video',
@@ -246,15 +246,15 @@
           },
            methods: {
                 getPublicaciones: function() {
-            
+
                 }
            }
       });
     </script>
     <!--FIN VIDEO-->
 
-   
-   
+
+
     <!--INICIO INVITACION-->
     <div id="invitacion" class="container-fluid capuslaInformativa2">
 
@@ -305,13 +305,13 @@
 
     <!--INICIO SALAS-->
     <div id="salas" class="container-fluid salas">
-       
+
        <div class="row">
            <div class="col col-lg-12">
                <h1 class="tituloCapsulaInformativa2">Salas Reservadas Hoy</h1>
            </div>
        </div>
-       
+
         <div class="row">
             <div class="col col-lg-3">
                <!--vacio-->
@@ -330,28 +330,28 @@
                     </tr>
                     <tr class="colorDato" v-for="item in list">
                         <td>
-                            <h5>{{ item.dia }}</h5>	
+                            <h5>{{ item.dia }}</h5>
                         </td>
                         <td>
-                            <h5>{{ item.mes }}</h5>	
+                            <h5>{{ item.mes }}</h5>
                         </td>
                         <td>
-                            <h5>{{ item.ano }}</h5>	
+                            <h5>{{ item.ano }}</h5>
                         </td>
                         <td>
-                            <h5>{{ item.salas }}</h5>	
+                            <h5>{{ item.salas }}</h5>
                         </td>
                         <td>
-                            <h5>{{ item.hora_inicio }}</h5>			
+                            <h5>{{ item.hora_inicio }}</h5>
                         </td>
                         <td>
-                            <h5>{{ item.hora_final }}</h5>	
+                            <h5>{{ item.hora_final }}</h5>
                         </td>
                         <td>
-                            <h5>{{ item.usuario }}</h5>	
+                            <h5>{{ item.usuario }}</h5>
                         </td>
                         <td>
-                            <h5>{{ item.reservado }}</h5>	
+                            <h5>{{ item.reservado }}</h5>
                         </td>
                     </tr>
                 </table>
@@ -360,7 +360,7 @@
                <!--vacio-->
            </div>
         </div>
-        
+
     </div>
 
     <script type="text/javascript">
@@ -386,9 +386,9 @@
     </script>
     <!--FIN SALAS-->
 
-   
-   
-   
+
+
+
     <!--INICIO CUMPLEAÑEROS DEL MES-->
     <div id="cumpleMes" class="container-fluid capuslaInformativa2">
 
@@ -435,30 +435,30 @@
 
     </script>
     <!--FIN CUMPLEAÑEROS DEL MES-->
-    
-    
-    
-    
+
+
+
+
 
     <!--INICIO CANVAS-->
     <div class="canvas">
-        <iframe 
-            class="iFrameKey" 
-            src="js/index/animate.html" 
+        <iframe
+            class="iFrameKey"
+            src="js/index/animate.html"
             scrolling="no"
-            name="Costelacion" 
-            allowfullscreen="true" 
-            sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts" 
-            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor" 
-            allowtransparency="true" 
+            name="Costelacion"
+            allowfullscreen="true"
+            sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts"
+            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor"
+            allowtransparency="true"
             allowpaymentrequest="true">
         </iframe>
     </div>
     <!--FIN CANVAS-->
 
-   
-   
-   
+
+
+
     <!--INICIO NUEVO INGRESO-->
     <div id="nuevoIngreso" class="container-fluid capuslaInformativa2">
 
@@ -512,9 +512,9 @@
         </div>
     </div>
     <!--FIN INFOGRAFIA-->
-    
+
 </main>
-    
+
 <!--INICIO FOOTER-->
 <footer class="container-fluid">
 
@@ -537,33 +537,33 @@
             <div class="slider">
                 <ul>
                     <li>
-                        <a class="link-slider" href="http://alkes-corp.com/index.php/es/" target="_blank">				  			
+                        <a class="link-slider" href="http://alkes-corp.com/index.php/es/" target="_blank">
                             <div class="div-slider">
                                 <img  class="image-slider" src="imagenes/footer/logo_alkes.png" alt=""/>
                             </div>
                         </a>
-                    </li>		
+                    </li>
                     <li>
-                        <a class="link-slider" href="http://www.industriaselcaiman.com.ve/index.php/es/" target="_blank">				  			
+                        <a class="link-slider" href="http://www.industriaselcaiman.com.ve/index.php/es/" target="_blank">
                             <div class="div-slider">
                                 <img class="image-slider" src="imagenes/footer/logo_iec.png" alt=""/>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a class="link-slider" href="http://venfruca.com/index.php/es/" target="_blank">				  			
+                        <a class="link-slider" href="http://venfruca.com/index.php/es/" target="_blank">
                             <div class="div-slider">
                                 <img class="image-slider" src="imagenes/footer/logo_venfruca.png" alt=""/>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a class="link-slider" href="http://www.fruttech.com/index.php/es/" target="_blank">				  			
+                        <a class="link-slider" href="http://www.fruttech.com/index.php/es/" target="_blank">
                            <div class="div-slider">
                                 <img class="image-slider" src="imagenes/footer/logo_fruttech.png" alt=""/>
                             </div>
                         </a>
-                    </li>					
+                    </li>
                 </ul>
             </div>
 
@@ -588,7 +588,7 @@
 
 </footer>
 <!--FIN FOOTER-->
-    
+
 </body>
 
 </html>

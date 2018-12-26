@@ -23,13 +23,13 @@ $result = mysql_query($sql, $conexion);
 $list = null;
 
 
-while ($mostrarAVIF = mysql_fetch_array($result)) {
+while ($row = mysql_fetch_array($result)) {
 
     $inst = new Noticia();
-    $inst->setOrganization($mostrarAVIF["Nombre"]);
-    $inst->setTitulo($mostrarAVIF['Titulo']);
-    $inst->setContenido($mostrarAVIF['Contenido']);
-    $inst->setImagen($mostrarAVIF['Foto']);
+    $inst->setOrganization($row["Nombre"]);
+    $inst->setTitulo($row['Titulo']);
+    $inst->setContenido($row['Contenido']);
+    $inst->setImagen($row['Foto']);
 
     $list = $inst;
 }

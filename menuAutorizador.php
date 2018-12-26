@@ -164,7 +164,7 @@
 
 			<!--INICIO CONTENEDOR LOGO ALKES-->
 			<div id="contenedorLogo">
-				<a href="index.html">
+				<a href="index.php">
 					<img class="logo" src="imagenes\top\logoAlkes.png" width="500" height="100" title="Nombre De Usuario">
 				</a>
 			</div>

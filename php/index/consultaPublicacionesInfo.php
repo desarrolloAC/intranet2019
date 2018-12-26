@@ -29,12 +29,12 @@ $list = array();
 
 
 
-while ($mostrarAVIF = mysql_fetch_array($verAVIF)) {		
+while ($row = mysql_fetch_array($verAVIF)) {		
     
     $inst = new Publicaciones();
-    $inst->setPublicacionId($mostrarAVIF["n"]);
-    $inst->setTitulo($mostrarAVIF['Titulo']);
-    $inst->setImagen($mostrarAVIF['Foto']);
+    $inst->setPublicacionId($row["n"]);
+    $inst->setTitulo($row['Titulo']);
+    $inst->setImagen($row['Foto']);
         
     array_push($list, $inst);
     

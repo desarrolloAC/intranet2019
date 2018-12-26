@@ -1,5 +1,5 @@
 <?php
-	
+
 	include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';
 
 	$conexion = conectar();
@@ -20,10 +20,10 @@ $sql = "SELECT pub.ID_Publicacion AS n,
                             pub.F_Publicacion
                     FROM    publicacion pub INNER JOIN subcategoria subc    ON pub.ID_Subcategoria  = subc.ID_Subcategoria
                                         INNER JOIN categoria cat        ON cat.ID_Categoria     = subc.ID_Categoria
-                    WHERE cat.ID_Categoria = 'CAIF' AND pub.ID_Subcategoria='AVIF' AND pub.Estatus='A' AND pub.Estado='PUBLICADA' AND pub.ID_Publicacion = $n;"; 
+                    WHERE cat.ID_Categoria = 'CAIF' AND pub.ID_Subcategoria='AVIF' AND pub.Estatus='A' AND pub.Estado='PUBLICADA' AND pub.ID_Publicacion = $n;";
 
 	$result = mysql_query($sql,$conexion);
-	
+
 ?>
 
 <!DOCTYPE html>
@@ -43,8 +43,8 @@ $sql = "SELECT pub.ID_Publicacion AS n,
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
 
-    
-	
+
+
 </head>
 
 <body>
@@ -58,8 +58,8 @@ $sql = "SELECT pub.ID_Publicacion AS n,
     <a href="login.php">
         <img id="logoUsuario" src="imagenes/top/usuario.png">
     </a>
-    
-    <ul class="menu">							
+
+    <ul class="menu">
         <!--OPCION ACTUALIDAD-->
         <li>
             <a href="#" title="">Actualidad</a>
@@ -125,7 +125,7 @@ $sql = "SELECT pub.ID_Publicacion AS n,
                 </li>
                 <li>
                     <a href="#" title="">Políticas y procedimientos</a>
-                </li> 
+                </li>
                 <li>
                     <a href="#" title="">Informacion de Documentos de SIG</a>
                        <ul>
@@ -141,7 +141,7 @@ $sql = "SELECT pub.ID_Publicacion AS n,
                                 </ul>
                            </li>
                        </ul>
-                </li>  					
+                </li>
             </ul>
             <!--FIN DEL SUBMENU INFORMACION PARA EL TRABAJO-->
 
@@ -188,26 +188,44 @@ $sql = "SELECT pub.ID_Publicacion AS n,
 
 
 
-		
+
 <!--INICIO CONTENEDOR DE CONTENIDOS-->
 <main id="contenedorContenido">
 
-<?php
+<div id="contenidoAVIF">
 
-    while ($mostrarAVIF = mysql_fetch_row($result))
-    {
+        <div id="contenidoPlantilla">
+            <h1 id='titulo'>{{ titulo }}</h1>
+            <h5 id="org">{{ org }}</h5>
+            <textarea id="contenido" readonly>{{ contenido }}</textarea>
+        </div>
 
-        echo '<div id="contenidoAVIF">
+    </div>
 
-                <div id="contenidoPlantilla">
-                    '."	<h1 id='titulo'>"	.$mostrarAVIF[7].	"</h1>".'
-                        <h5 id="org">'		.$mostrarAVIF[1].	"</h5>".'
-                        <textarea id="contenido" readonly>'		.$mostrarAVIF[9].	"</textarea>".'
-                </div>
+    <script type="text/javascript">
 
-            </div>';
-    }	
-?>
+        const detatalleUrl = 'php/detalleNoticia/detalleNoticia.php';
+        const deatalle = new Vue({
+            el: '#contenidoAVIF',
+            created: function() {
+                this.getPublicaciones();
+            },
+            data: {
+                titulo: '',
+                org: '',
+                contenido: '',
+                imagen: ''
+            },
+            methods: {
+                getPublicaciones: function() {
+                    this.$http.get(publicacionesUrl).then((responsed) => {
+                        //this.list = responsed.body;
+                    });
+                }
+            }
+        });
+
+    </script>
 
 </main>
 <!--FIN CONTENEDOR DE CONTENIDOS-->

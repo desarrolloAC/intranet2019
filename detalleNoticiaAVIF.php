@@ -31,19 +31,20 @@ $sql = "SELECT pub.ID_Publicacion AS n,
 <html>
 
 <head>
-
     <title>Intranet Alkes Corp, S.A</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=0.8.0">
+    <meta name="viewport" content="width=device-width,device-height initial-scale=1.5"/>
+    <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
+    <meta charset="utf-8">
 
     <link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="css/detalleNoticiaAVIF.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/detalle/detalleNoticiaAVIF.css" media="screen">
 
     <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
 
-
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/vue-resource.min.js"></script>
 
 </head>
 
@@ -190,36 +191,55 @@ $sql = "SELECT pub.ID_Publicacion AS n,
 
 
 <!--INICIO CONTENEDOR DE CONTENIDOS-->
-<main id="contenedorContenido">
+<main class="contenedorContenido">
 
-<div id="contenidoAVIF">
-
+    <div id="contenidoAVIF">
         <div id="contenidoPlantilla">
+            <img id="imagen-detalle" :src="imagen" alt="Detalle de la noticia">
             <h1 id='titulo'>{{ titulo }}</h1>
             <h5 id="org">{{ org }}</h5>
             <textarea id="contenido" readonly>{{ contenido }}</textarea>
         </div>
-
     </div>
 
     <script type="text/javascript">
 
-        const detatalleUrl = 'php/detalleNoticia/detalleNoticia.php';
+        function obtenerValorParametro(sParametroNombre) {
+
+            var sPaginaURL = window.location.search.substring(1);
+            var sURLVariables = sPaginaURL.split('&');
+
+            for (var i = 0; i < sURLVariables.length; i++) {
+                var sParametro = sURLVariables[i].split('=');
+                if (sParametro[0] == sParametroNombre) {
+                    return sParametro[1];
+                }
+            }
+
+            return '';
+        }
+
+        const detatalleUrl = 'php/detalleNoticia/detalleNoticia.php?n='+obtenerValorParametro('n');
+        console.log(detatalleUrl);
+
         const deatalle = new Vue({
             el: '#contenidoAVIF',
             created: function() {
                 this.getPublicaciones();
             },
             data: {
-                titulo: '',
                 org: '',
+                titulo: '',
                 contenido: '',
                 imagen: ''
             },
             methods: {
                 getPublicaciones: function() {
-                    this.$http.get(publicacionesUrl).then((responsed) => {
-                        //this.list = responsed.body;
+                    this.$http.get(detatalleUrl).then((responsed) => {
+                        this.org = responsed.body.org;
+                        this.titulo = responsed.body.title;
+                        this.contenido = responsed.body.content;
+                        this.imagen = responsed.body.image;
                     });
                 }
             }

@@ -100,11 +100,6 @@
         <!--FIN DE LA OPCION INFORMACION PARA EL TRABAJO-->
 
         <li>
-            <a href="directorio.php">Directorio</a>
-        </li>
-
-
-        <li>
             <a href="#" title="">Descargas</a>
 
             <ul>
@@ -125,6 +120,10 @@
 
             </ul>
 
+        </li>
+
+        <li>
+            <a href="directorio.php">Directorio</a>
         </li>
 
         <li>

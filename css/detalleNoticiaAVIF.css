@@ -19,11 +19,7 @@ h1#titulo{
 	position: relative; top: 6cm;
 }
 
-h5#org{
-	position: absolute; top: 2.6cm; left: 8.3cm;
-	color: rgb(255,255,255);
-	font-size: 22px;
-}
+
 
 textarea#contenido{
 	position: relative; top: 6.5cm; left: 0.1cm;
@@ -59,7 +55,7 @@ textarea#contenido{
 	}
 
 	h5#org{
-		position: absolute; top: 3cm; left: 8.3cm;
+		position: absolute; top: 3cm; left: 7.5cm;
 		color: rgb(255,255,255);
 		font-size: 22px;
 	}

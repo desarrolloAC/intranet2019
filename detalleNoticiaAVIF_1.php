@@ -1,3 +1,31 @@
+<?php
+	
+	include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';
+
+	$conexion = conectar();
+
+	$n = $_GET['n'];
+
+$sql = "SELECT pub.ID_Publicacion AS n,
+                            pub.ID_Organizacion AS org,
+                            pub.ID_Subcategoria,
+                            cat.ID_Categoria,
+                            cat.Nombre AS Categoria,
+                            subc.Nombre AS SubCategoria,
+                            pub.Estatus,
+                            pub.Titulo AS Titulo,
+                            pub.Foto,
+                            pub.Contenido,
+                            pub.CreatedBy,
+                            pub.F_Publicacion
+                    FROM    publicacion pub INNER JOIN subcategoria subc    ON pub.ID_Subcategoria  = subc.ID_Subcategoria
+                                        INNER JOIN categoria cat        ON cat.ID_Categoria     = subc.ID_Categoria
+                    WHERE cat.ID_Categoria = 'CAIF' AND pub.ID_Subcategoria='AVIF' AND pub.Estatus='A' AND pub.Estado='PUBLICADA' AND pub.ID_Publicacion = $n;"; 
+
+	$result = mysql_query($sql,$conexion);
+	
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -16,9 +44,6 @@
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
 
     
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.js"></script>
-	
 	
 </head>
 
@@ -167,40 +192,22 @@
 <!--INICIO CONTENEDOR DE CONTENIDOS-->
 <main id="contenedorContenido">
 
-    <div id="contenidoAVIF">
+<?php
 
-        <div id="contenidoPlantilla">
-            <h1 id='titulo'>{{ titulo }}</h1>
-            <h5 id="org">{{ org }}</h5>
-            <textarea id="contenido" readonly>{{ contenido }}</textarea>
-        </div>
+    while ($mostrarAVIF = mysql_fetch_row($result))
+    {
 
-    </div>
+        echo '<div id="contenidoAVIF">
 
-    <script type="text/javascript">
+                <div id="contenidoPlantilla">
+                    '."	<h1 id='titulo'>"	.$mostrarAVIF[7].	"</h1>".'
+                        <h5 id="org">'		.$mostrarAVIF[1].	"</h5>".'
+                        <textarea id="contenido" readonly>'		.$mostrarAVIF[9].	"</textarea>".'
+                </div>
 
-        const detatalleUrl = 'php/detalleNoticia/detalleNoticia.php';
-        const deatalle = new Vue({
-            el: '#contenidoAVIF',
-            created: function() {
-                this.getPublicaciones();
-            },
-            data: {
-                titulo: '',
-                org: '',
-                contenido: '',
-                imagen: ''
-            },
-            methods: {
-                getPublicaciones: function() {
-                    this.$http.get(publicacionesUrl).then((responsed) => {
-                        //this.list = responsed.body;
-                    });
-                }
-            }
-        });
-
-    </script>
+            </div>';
+    }	
+?>
 
 </main>
 <!--FIN CONTENEDOR DE CONTENIDOS-->

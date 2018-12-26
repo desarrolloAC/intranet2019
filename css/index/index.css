@@ -58,7 +58,9 @@
 	color: var(--negro-color);
 }
 
-
+a   { 
+    color: var(--negro-color);
+}
 
 a:link    { 
     box-shadow: var(--negro-color);
@@ -67,10 +69,11 @@ a:visited {
     box-shadow: var(--negro-color);
 }
 a:hover   { 
-    box-shadow: var(--negro-color);
+    color: var(--negro-color);
 }
 a:active  { 
     box-shadow: var(--negro-color);
+    background-color: transparent;
 }
 
 .contenedorNoticiaCapsulaInformativa {
@@ -95,6 +98,10 @@ a:active  {
     box-shadow:  5px 5px 5px 5px var(--negro-color);
     border: none;
     text-decoration: none;
+}
+
+.contenedorNoticiaCapsulaInformativa:active {
+    background-color: black;
 }
 
 .tituloNoticiaCapsulaInformativa {

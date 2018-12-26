@@ -34,8 +34,8 @@
            if($row = mysql_fetch_array($rs)) {                                          
                //Asignamos el Rol a una variable de Sesión, para usarla en el Contexto.
                $_SESSION['ID_Rol']= $row['ID_Rol']; 
-               echo $_SESSION['ID_Rol'];
-                 switch ($_SESSION['ID_Rol']) {
+
+               switch ($_SESSION['ID_Rol']) {
                      
                     case TypeUsuario::ADMINISTRADOR:
                          /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/                        

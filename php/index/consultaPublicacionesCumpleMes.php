@@ -23,7 +23,7 @@ $queryAVIF = "SELECT 	pub.ID_Publicacion AS n,
 			                        INNER JOIN categoria cat        ON cat.ID_Categoria     = subc.ID_Categoria
 			WHERE cat.ID_Categoria = 'CAIF' AND pub.ID_Subcategoria='AVIF' AND pub.Estatus='A' AND cat.Estatus='A' AND subc.Estatus='A' AND pub.Estado='PUBLICADA'";
 
-$verAVIF = mysql_query($queryAVIF,$conexion);
+$verAVIF = mysql_query($queryAVIF, $conexion);
 
 $list = array();
 

@@ -1,65 +1,16 @@
-<?php
-	
-	include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';
 
-	$conexion = conectar();
-
-	$n = $_GET['n'];
-
-$sql = "SELECT pub.ID_Publicacion AS n,
-                            pub.ID_Organizacion AS org,
-                            pub.ID_Subcategoria,
-                            cat.ID_Categoria,
-                            cat.Nombre AS Categoria,
-                            subc.Nombre AS SubCategoria,
-                            pub.Estatus,
-                            pub.Titulo AS Titulo,
-                            pub.Foto,
-                            pub.Contenido,
-                            pub.CreatedBy,
-                            pub.F_Publicacion
-                    FROM    publicacion pub INNER JOIN subcategoria subc    ON pub.ID_Subcategoria  = subc.ID_Subcategoria
-                                        INNER JOIN categoria cat        ON cat.ID_Categoria     = subc.ID_Categoria
-                    WHERE cat.ID_Categoria = 'CAIF' AND pub.ID_Subcategoria='AVIF' AND pub.Estatus='A' AND pub.Estado='PUBLICADA' AND pub.ID_Publicacion = $n;"; 
-
-	$result = mysql_query($sql,$conexion);
-	
-?>
-
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-    <title>Intranet Alkes Corp, S.A</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=0.8.0">
-
-    <link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="css/detalleNoticiaAVIF.css" media="screen">
-
-    <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
-
-    
-	
-</head>
-
-<body>
 
 <!--INICIO CONTENEDOR TOP-->
 <header class="contenedorTop">
 
-    <a href="index.html">
+    <a href="index.php">
         <img id="logoAlkes" src="imagenes/top/logoAlkes.png">
     </a>
     <a href="login.php">
         <img id="logoUsuario" src="imagenes/top/usuario.png">
     </a>
-    
-    <ul class="menu">							
+
+    <ul class="menu">
         <!--OPCION ACTUALIDAD-->
         <li>
             <a href="#" title="">Actualidad</a>
@@ -125,7 +76,7 @@ $sql = "SELECT pub.ID_Publicacion AS n,
                 </li>
                 <li>
                     <a href="#" title="">Políticas y procedimientos</a>
-                </li> 
+                </li>
                 <li>
                     <a href="#" title="">Informacion de Documentos de SIG</a>
                        <ul>
@@ -141,7 +92,7 @@ $sql = "SELECT pub.ID_Publicacion AS n,
                                 </ul>
                            </li>
                        </ul>
-                </li>  					
+                </li>
             </ul>
             <!--FIN DEL SUBMENU INFORMACION PARA EL TRABAJO-->
 
@@ -184,34 +135,3 @@ $sql = "SELECT pub.ID_Publicacion AS n,
 
 </header>
 <!--FIN CONTENEDOR TOP-->
-
-
-
-
-		
-<!--INICIO CONTENEDOR DE CONTENIDOS-->
-<main id="contenedorContenido">
-
-<?php
-
-    while ($mostrarAVIF = mysql_fetch_row($result))
-    {
-
-        echo '<div id="contenidoAVIF">
-
-                <div id="contenidoPlantilla">
-                    '."	<h1 id='titulo'>"	.$mostrarAVIF[7].	"</h1>".'
-                        <h5 id="org">'		.$mostrarAVIF[1].	"</h5>".'
-                        <textarea id="contenido" readonly>'		.$mostrarAVIF[9].	"</textarea>".'
-                </div>
-
-            </div>';
-    }	
-?>
-
-</main>
-<!--FIN CONTENEDOR DE CONTENIDOS-->
-
-</body>
-
-</html>

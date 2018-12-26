@@ -205,7 +205,7 @@
                        
                         <div class="form-group">
                             <label for="txtOrg">Organización</label>
-                            <select class="form-control2" id="txtOrg" name='txtOrg'>
+                            <select class="form-control" id="txtOrg" name='txtOrg'>
                                <option>Organizacion</option>
                                <?php
                                     if ($row = mysql_fetch_array($rs)) {
@@ -220,7 +220,7 @@
                         
                         <div class="form-group">
                             <label for="txtPerfil">Perfil</label>
-                            <select class="form-control2" id="txtPerfil" name="txtPerfil">
+                            <select class="form-control" id="txtPerfil" name="txtPerfil">
                                  <option>Perfil Usuario</option>
                             </select>
                         </div>

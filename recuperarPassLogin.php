@@ -61,7 +61,7 @@
                       <select name='txtOrg' class='combos_formulario_usuario' id='txtOrg' required >
                         <option> Organización </option>
                         <?php
-                            $query="  SELECT  DISTINCT(o.ID_Organizacion),o.Nombre
+                            $sql="  SELECT  DISTINCT(o.ID_Organizacion),o.Nombre
                                       FROM        org_usuario_rol oru
                                       RIGHT  JOIN usuario      u  ON (oru.Cedula          =  u.Cedula)
                                       RIGHT  JOIN organizacion o  ON (oru.ID_Organizacion =  o.ID_Organizacion)
@@ -69,7 +69,7 @@
                                       AND  oru.Estatus='A'
                                       AND    o.Estatus='A'
                                       AND    u.Estatus='A' ";
-                            $rs=mysql_query($query,$conexion);
+                            $rs=mysql_query($sql,$conexion);
                             if($row = mysql_fetch_array($rs)){
                                 do{
                                     echo "<option value='$row[ID_Organizacion]'> $row[Nombre] </option>";
@@ -101,4 +101,3 @@
 </body>
 
 </html>
-

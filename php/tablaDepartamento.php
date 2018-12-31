@@ -39,8 +39,8 @@
 									<tr>
 											<td>
 												<?php
-										            $conexion = conectar();										            
-										            $sqlOrg = mysql_query(" SELECT ID_Organizacion,Nombre FROM organizacion WHERE estatus = 'A' ", $conexion);		            
+										            $conexion = conectar();
+										            $sqlOrg = mysql_query(" SELECT ID_Organizacion,Nombre FROM organizacion WHERE estatus = 'A' ", $conexion);
 									        	?>
 												    <h5 id="label_cajas_texto">Organizacion</h5>
 												    <select id="combos_formulario_usuario" name="txtOrg" required >
@@ -53,33 +53,33 @@
 											    ?>
 												    </select>
 											</td>
-										</tr>			
+										</tr>
 									<tr>
 										<td>
 											<h5 id="label_cajas_texto">Descripcion Departamento</h5>
 											<input type="text" id="caja_formulario_usuario" name="txtDesc" maxlength="255" required>
 										</td>
-									</tr>														
+									</tr>
 									<tr>
 										<td>
 											<input type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar">
 										</td>
 									</tr>
 								</table>
-							</form>											
+							</form>
 						</div>
 						<!--FIN DEL DISEÑO FORMULARIO CREAR USUARIO-->
 					</div>
 					<!--FIN DIV FORMULARIO-->
 				</div>
-				<!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->							
-			<td colspan="12">					
+				<!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
+			<td colspan="12">
 				<form method="POST">
 					<input type="text" name="txtBuscarDepartamento" id="txtBuscarDepartamento" placeholder="Buscar Nombre" maxlength="40">
 
 					<button type="submit" name="btnBuscarDepartamento" id="btnBuscarDepartamento" title="Buscar un departamento">Buscar</button>
 				</form>
-			</td>				
+			</td>
 		</tr>
 		<tr id="titulo_columnas">
 			<td width="800px">
@@ -113,11 +113,11 @@
 			<td width="800px">
 				<h5>Fecha Actualización</h5>
 			</td>
-			
+
 			<td width="800px">
 				<h5>Edicion</h5>
 			</td>
-			
+
 			<td width="400px">
 				<h5>Acción</h5>
 			</td>
@@ -128,25 +128,25 @@
 
 			/*include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';*/
 
-           	$conexion = conectar();			
+           	$conexion = conectar();
 						/*FIN DE LAS VARIABLES DE CONSULTA*/
 
 						if(isset($_POST["txtBuscarDepartamento"]))
 						{
 
 							$nombre  =	$_POST["txtBuscarDepartamento"];
-							$where   =  " where nombre like '%".$nombre."%'";			
-						
+							$where   =  " where nombre like '%".$nombre."%'";
+
 							$consultaDepartamento = mysql_query(" SELECT DISTINCT(dpto.ID_Departamento) as codigo,
-							                                          dpto.nombre as nombre, 
+							                                          dpto.nombre as nombre,
 							                                          dpto.estatus as estatus,
 							                                          dpto.Created,
 						                                              dpto.CreatedBy,
 						                                              dpto.Updated,
 						                                              dpto.UpdatedBy,
 						                                              dpto.Descripcion
-						                                         FROM departamento dpto                                              
-				                                                 $where 
+						                                         FROM departamento dpto
+				                                                 $where
 				                                                 ORDER BY dpto.ID_Departamento ", $conexion);
 				           if(mysql_num_rows($consultaDepartamento)==0)
 							{
@@ -154,15 +154,15 @@
 							}
 			            }else{
 			                 $consultaDepartamento = mysql_query(" SELECT DISTINCT(dpto.ID_Departamento) as codigo,
-							                                          dpto.nombre as nombre, 
+							                                          dpto.nombre as nombre,
 							                                          dpto.estatus as estatus,
 							                                          dpto.Created,
 						                                              dpto.CreatedBy,
 						                                              dpto.Updated,
 						                                              dpto.UpdatedBy,
 						                                              dpto.Descripcion
-						                                         FROM departamento dpto                                              
-				                                              
+						                                         FROM departamento dpto
+
 				                                               ORDER BY dpto.ID_Departamento ", $conexion);
 			            }
 			            while($mostrarDepartamento = mysql_fetch_array($consultaDepartamento))
@@ -178,11 +178,11 @@
 			</td>
 
 			<td>
-				<h5><?php 
+				<h5><?php
 	                        switch ($mostrarDepartamento['estatus']) {
 	                        	case 'A':
 	                        		echo "ACTIVA";
-	                        		break;                        	
+	                        		break;
 	                        	default:
 	                        		echo "INACTIVA";
 	                        		break;
@@ -196,14 +196,14 @@
 			</td>
 
 			<td>
-				<h5><?php				                                      						 
-								$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-								         FROM   usuario 
+				<h5><?php
+								$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+								         FROM   usuario
 								         WHERE  Cedula='$mostrarDepartamento[CreatedBy]' ";
-								$rs=mysql_query($query,$conexion);
+								$rs=mysql_query($sql,$conexion);
 								$row = mysql_fetch_array($rs);
-								echo  $row['Nombre'] ;						 									
-								mysql_free_result($rs);					
+								echo  $row['Nombre'] ;
+								mysql_free_result($rs);
 						?></h5>
 			</td>
 
@@ -212,14 +212,14 @@
 			</td>
 
 			<td>
-				<h5><?php				                                      						 
-								$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-								         FROM   usuario 
+				<h5><?php
+								$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+								         FROM   usuario
 								         WHERE  Cedula='$mostrarDepartamento[UpdatedBy]' ";
-								$rs=mysql_query($query,$conexion);
+								$rs=mysql_query($sql,$conexion);
 								$row = mysql_fetch_array($rs);
-								echo  $row['Nombre'] ;						 									
-								mysql_free_result($rs);					
+								echo  $row['Nombre'] ;
+								mysql_free_result($rs);
 						?></h5>
 			</td>
 
@@ -227,7 +227,7 @@
 				<h5><?php echo $mostrarDepartamento['Updated'];?></h5>
 			</td>
 
-			<td>					
+			<td>
 			<a href='#<?php echo $mostrarDepartamento['codigo'];?>' id="btnEditar">
 						<img src='imagenes/menu/botonesTablas/btnEditar.png'>
 					</a>
@@ -253,7 +253,7 @@
 												<h5 id='label_cajas_texto'>Código</h5>
 												<input type='text' id='caja_formulario_usuario' required name='txtCodigoDepartamento' maxlength='4' readonly value='<?php echo $mostrarDepartamento['codigo'] ?>'>
 											</td>
-                                        </tr>									
+                                        </tr>
 										<tr>
 											<td>
 												<h5 id='label_cajas_texto'>Categoria</h5>
@@ -263,8 +263,8 @@
 										<tr>
 											<td>
 												<?php
-										            $conexion = conectar();										            
-										            $sqlOrg = mysql_query(" SELECT ID_Organizacion,Nombre FROM organizacion WHERE estatus = 'A' ", $conexion);		            
+										            $conexion = conectar();
+										            $sqlOrg = mysql_query(" SELECT ID_Organizacion,Nombre FROM organizacion WHERE estatus = 'A' ", $conexion);
 									        	?>
 												    <h5 id="label_cajas_texto">Organizacion</h5>
 												    <select id="combos_formulario_usuario" name="txtOrg" required >
@@ -277,13 +277,13 @@
 											    ?>
 												    </select>
 											</td>
-										</tr>			
+										</tr>
 										<tr>
 											<td>
 												<h5 id='label_cajas_texto'>Descripción</h5>
 												<input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarDepartamento['Descripcion']; ?>'>
 											</td>
-										</tr>									
+										</tr>
 										<tr>
 											<td colspan='2'>
 												<input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
@@ -293,7 +293,7 @@
 								</form>
 							 </div>
 						 </div>
-					</div>											
+					</div>
 			</td>
 			<td width="70px;">
 				<?php
@@ -326,5 +326,5 @@
 <?php
 	if (isset($mensajeError)) {
     	 echo $mensajeError;
-    }       
-?>			
+    }
+?>

@@ -1,6 +1,6 @@
 <?php
-    
-    //CUANDO LA SESSION ESTA INICIADA APARECE EL NOMBRE DEL USUARIO 
+
+    //CUANDO LA SESSION ESTA INICIADA APARECE EL NOMBRE DEL USUARIO
     @session_start();
      //require_once('estadoPublicacion/estadoPublicacion.php');
     require_once('conexion/conexion.php');
@@ -20,7 +20,7 @@
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+
 		<!--INICIO LLAMADA DE ARCHIVOS CSS-->
 		<link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
 		<link rel="stylesheet" type="text/css" href="estructura/css/tablaMenuVertical.css">
@@ -52,14 +52,14 @@
 		<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
 		<script type="text/javascript" src="js/listaMenu.js"></script>
 		<script type="text/javascript" src="js/selectdependientes.js"></script>
-		<script type="text/javascript" src="js/efectoBandeja.js"></script>	
+		<script type="text/javascript" src="js/efectoBandeja.js"></script>
 		<script type="text/javascript" src="js/setInterval.js"></script>
 		<script src="js/efectoCategoriasParaPublicar.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
-		<!--FIN LLAMADA ARCHIVOS JS-->	
+		<!--FIN LLAMADA ARCHIVOS JS-->
 
 		<style type="text/css">
-			
+
 			div#contenedorNombreUsuario{
 				position: relative; top: 2.7cm; left: -0.4cm;
 				float: right;
@@ -69,7 +69,7 @@
 				z-index: 2;
 				position: relative; left: -18cm; top: 1cm;
 				width: 7cm;
-				height: 1cm;				
+				height: 1cm;
 				float: right;
 				padding: 0.2cm;
 			}
@@ -130,12 +130,12 @@
 			@keyframes fondo{
 				0%{
 					background-color: rgb(69,69,69);
-					transition: 1s ease-in-out;					
+					transition: 1s ease-in-out;
 				}
 				100%{
 					background-color: rgb(241,129,3);
 					color: rgb(69,69,69);
-				}				
+				}
 			}
 
 			div#nNotificacion{
@@ -175,77 +175,77 @@
 				<a href="#" id="abrirBandeja">Bandeja De Entrada
 					<img id="imagenBandeja" src="imagenes/top/bandeja.png">
 
-					<?php 
+					<?php
 					$conexion=conectar();
 
 					$numero="SELECT COUNT(leido) AS n FROM notificacion where leido=0";
 
-					$consulta=mysql_query($numero,$conexion);
+					$sql=mysql_query($numero,$conexion);
 
-					while ($ver=mysql_fetch_array($consulta))
+					while ($ver=mysql_fetch_array($sql))
 					{
 						echo "<div id='nNotificacion'>"."<h5 id='rNumero'>".$ver["n"]."</h5>"."</div>";
 					}
 				?>
 				</a>
-				
+
 				<div id="contenidoBandeja">
-				    
+
 						<?php
 
 							$conexion=conectar();
 
 							$sql=" SELECT * FROM notificacion WHERE leido=0 ORDER BY ID_Notificacion DESC ";
-														 
+
 							$rs=mysql_query($sql,$conexion);
 
 							while ($row=mysql_fetch_array($rs)) {
 
 								 switch ($_SESSION['ID_Rol']) {
 						            case TypeUsuario::ADMINISTRADOR:
-						                 /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/ 
+						                 /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/
 							                switch ($row['Estado_Public']) {
 										     	case EstadoPublicacion::RECHAZADO_A:
-										     	      echo "<div id='contenedorNotificaciones'> 
+										     	      echo "<div id='contenedorNotificaciones'>
 										     	      			<a id='enlaceNotificaciones' href='#$row[ID_Publicacion]'> $row[Mensaje]</a>
 										     	      		</div>";
 										     	    break;
 										     	case EstadoPublicacion::RECHAZADO_E:
-										     	      echo "<div id='contenedorNotificaciones'> 
+										     	      echo "<div id='contenedorNotificaciones'>
 										     	      			<a id='enlaceNotificaciones' href='#$row[ID_Publicacion]'> $row[Mensaje]</a>
-										     	      		</div>";										     	      		
+										     	      		</div>";
 										     		 break;
 										     	case EstadoPublicacion::REVISION_E:
-										     	     echo "<div id='contenedorNotificaciones'> 
+										     	     echo "<div id='contenedorNotificaciones'>
 										     	      			<a id='enlaceNotificaciones' href='#$row[ID_Publicacion]'> $row[Mensaje]</a>
-										     	      		</div>";									     	    
+										     	      		</div>";
 										     	     break;
 										     	case EstadoPublicacion::REVISION_A:
-										     	      echo "<div id='contenedorNotificaciones'> 
+										     	      echo "<div id='contenedorNotificaciones'>
 										     	      			<a id='enlaceNotificaciones' href='#$row[ID_Publicacion]'> $row[Mensaje]</a>
 										     	      		</div>";
 										     		break;
 										     	case EstadoPublicacion::PUBLICADA:
-										     		  echo "<div id='contenedorNotificaciones'> 
+										     		  echo "<div id='contenedorNotificaciones'>
 										     	      			<a id='enlaceNotificaciones' href='#$row[ID_Publicacion]'> $row[Mensaje]</a>
-										     	      		</div>";	
+										     	      		</div>";
 										     		break;
-										     	default:// EstadoPublicacion::BORR:;  
-										     	      
+										     	default:// EstadoPublicacion::BORR:;
+
 										     		break;
-										    } //FIN SWITCH        
+										    } //FIN SWITCH
 						                break;
 						            case TypeUsuario::AUTORIZADOR:
-								              /*INGRESAR EL USUARIO COMO AUTORIZADOR*/  
+								              /*INGRESAR EL USUARIO COMO AUTORIZADOR*/
 							                switch ($row['Estado_Public']) {
 										     	case EstadoPublicacion::RECHAZADO_A:
-										     	   	
+
 										     		break;
 										     	case EstadoPublicacion::RECHAZADO_E:
-										     		 
+
 										     		 break;
 										     	case EstadoPublicacion::REVISION_E:
-											            
+
 										     		 break;
 										     	case EstadoPublicacion::REVISION_A:
 										              echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
@@ -254,40 +254,40 @@
 										     	      echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
 													 break;
 										     	default:
-										     		   	
+
 										     		break;
-										    } //FIN SWITCH       	
+										    } //FIN SWITCH
 						                break;
 						            case TypeUsuario::EDITOR:
-						                  /*INGRESAR EL USUARIO COMO EDITOR*/                       
+						                  /*INGRESAR EL USUARIO COMO EDITOR*/
 						            		switch ($row['Estado_Public']) {
 										     	case EstadoPublicacion::RECHAZADO_A:
 										     		  echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
 										     		break;
-										     	case EstadoPublicacion::RECHAZADO_E:					     	     
-										     	 
+										     	case EstadoPublicacion::RECHAZADO_E:
+
 										     		 break;
 										     	case EstadoPublicacion::REVISION_E:
 											          echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
 											         break;
 										     	case EstadoPublicacion::REVISION_A:
-										     		 
+
 										     		break;
 										     	case EstadoPublicacion::PUBLICADA:
 										     	      echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
 										     		break;
 										     	default:
-										     		   
+
 										     		break;
-										    } //FIN SWITCH  EDITOR      	
-						                break; 
+										    } //FIN SWITCH  EDITOR
+						                break;
 						            case TypeUsuario::PUBLICADOR:
-						                /*INGRESAR EL USUARIO COMO EDITOR*/  
+						                /*INGRESAR EL USUARIO COMO EDITOR*/
 						               		switch ($row['Estado_Public']) {
 										     	case EstadoPublicacion::RECHAZADO_A:
-										     		 
+
 										     		break;
-										     	case EstadoPublicacion::RECHAZADO_E:  
+										     	case EstadoPublicacion::RECHAZADO_E:
 										     	      echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
 										     		 break;
 										     	case EstadoPublicacion::REVISION_E:
@@ -298,33 +298,33 @@
 										     		   echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
 										     		break;
 										     	default:
-											          
+
 										     		break;
-										    } //FIN SWITCH PUBLICADOR        
-						                break;                   
+										    } //FIN SWITCH PUBLICADOR
+						                break;
 						            default: //PUBLICADOR
-						                  					                           
+
 						                break;
 						        }//FIN DE SWITCH PRINCIPAL ROL
-								 
+
 							}
 							mysql_free_result($rs);
 						?>
-					
+
 				</div>
 			</div>
 			<!--FIN CONTENEDOR BANDEJA DE ENTRADA-->
 
 			<!--INICIO CONTENEDOR NOMBRE USUARIO-->
 			<div id="contenedorNombreUsuario">
-				
+
 				<!--INICIO DE TABLA CONTENEDORA DE DATOS INICIO DE SESION-->
 				<table border="0" id="tabla_datos_inicio_de_sesion">
 					<tr>
 						<td>
 							<!--INICIO ICONO DE USUARIO-->
 							<img id="iconoUsuario" src="imagenes/top/u.png" title="Nombre De Usuario">
-							<!--FIN ICONO DE USUARIO-->	
+							<!--FIN ICONO DE USUARIO-->
 						</td>
 						<td>
 							<span id="nombreUsuario">
@@ -332,7 +332,7 @@
 							</span>
 						</td>
 						<td rowspan="3">
-							<form id="formularioCerrarSesion" method="POST" action="php/cerrarSesion.php">	
+							<form id="formularioCerrarSesion" method="POST" action="php/cerrarSesion.php">
 								<a href="php/cerrarSesion.php">
 									<img id="iconoSalir" src="imagenes/top/salir.png" width="60" height="60" title="Cerrar Session">
 								</a>
@@ -343,7 +343,7 @@
 						<td>
 							<!--INICIO ICONO DE USUARIO-->
 							<img id="iconoRol" src="imagenes/top/r.png" title="Nombre Del Rol">
-							<!--FIN ICONO DE USUARIO-->	
+							<!--FIN ICONO DE USUARIO-->
 						</td>
 						<td>
 							<span id="nombreRol">
@@ -365,7 +365,7 @@
 						<td>
 							<!--INICIO ICONO DE USUARIO-->
 							<img id="iconoOrganizacion" src="imagenes/top/o.png" title="Nombre De La Organizacion">
-							<!--FIN ICONO DE USUARIO-->	
+							<!--FIN ICONO DE USUARIO-->
 						</td>
 						<td>
 							<span id="nombreOrganizacion">
@@ -380,20 +380,20 @@
 									$org=mysql_fetch_array($nombreOrg);
 
 									echo $org['Nombre'];
-								?>					
+								?>
 							</span>
 						</td>
 					</tr>
 				</table>
 				<!--FIN DE TABLA CONTENEDORA DE DATOS INICIO DE SESION-->
 			</div>
-			<!--FIN CONTENEDOR NOMBRE USUARIO-->			
+			<!--FIN CONTENEDOR NOMBRE USUARIO-->
 		</div>
 		<!--FIN DEL CONTENEDOR CABECERA-->
-	   
-	   <!--INICIO CONTENEDOR MENU-->	   
-		<div id="contenedorMenu">			
-			<!--INICIO TABLA CONTENEDOR MENU-->			
+
+	   <!--INICIO CONTENEDOR MENU-->
+		<div id="contenedorMenu">
+			<!--INICIO TABLA CONTENEDOR MENU-->
 			<div id="contendorTablaMenu">
 
 				<h1 id="tituloMenu">Menu</h1>
@@ -401,9 +401,9 @@
 				<ul id="menuv">
 					<!--<li><a href="#" class="efectoMenu" id="opcionCag">Cargo</a></li>
 					<li><a href="#" class="efectoMenu" id="opcionCategoria">Categoria</a></li>
-					<li><a href="#" class="efectoMenu" id="subcategoria">SubCategoria</a></li>					
+					<li><a href="#" class="efectoMenu" id="subcategoria">SubCategoria</a></li>
 					<li><a href="#" class="efectoMenu" id="opcionDpto">Departamento</a></li>
-					<li><a href="#" class="efectoMenu" id="opcionDirectorio">Directorio</a></li>			
+					<li><a href="#" class="efectoMenu" id="opcionDirectorio">Directorio</a></li>
 					<li><a href="#" class="efectoMenu" id="opcionOrg">Organizacion</a></li>-->
 					<li><a href="#" class="efectoMenu" id="opcionPub">Publicacion</a>
 						<ul id="c">
@@ -417,23 +417,23 @@
 					<li><a href="#" class="efectoMenu" id="opcionRol">Rol</a></li>
 					<li><a href="#" class="efectoMenu" id="opcionUsuario">Usuario</a></li>-->
 				</ul>
-				
+
 			</div>
 			<!--FIN TABLA CONTENEDOR MENU-->
 		</div>
 		<!--FIN CONTENEDOR MENU-->
-		
+
 		<div class="contenedorContenidos">
 			<!--*******************************************************************************-->
 			<!--**************INICIO DE LA OPCION PUBLICAR**************-->
 			<!--*******************************************************************************-->
 			<div id='contenedor_tabla_publicacion'>
 				<?php include ('php/tablaPublicacion.php'); ?>
-			</div>	
+			</div>
 
 			<div id='contenedor_tabla_pcategorias'>
 				<?php include $_SERVER["DOCUMENT_ROOT"].'/intranet/php/tablaCategoriasParaPublicar.php'; ?>
-			</div>				
+			</div>
 			<!--*******************************************************************************-->
 						<!--**************FIN DE LA OPCION PUBLICAR**************-->
 			<!--*******************************************************************************-->
@@ -458,7 +458,7 @@
 						  		<a href="#">
 						  			<img src="imagenes/footer/logo_alkes.png" alt="">
 						  		</a>
-						 	</li>		
+						 	</li>
 							<li>
 								<a href="">
 						  			<img src="imagenes/footer/logo_fruttech.png"  alt="">
@@ -507,7 +507,7 @@
 					</div>
 
 				</div>
-					
+
 				<div id="contenedorDerechoAutor">
 					<h3 id="derechoAutor">Copyright © 2018 Intranet Corporativa Rights Reserved. </h3>
 				</div>

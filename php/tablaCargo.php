@@ -2,7 +2,7 @@
   @session_start();
   /*include $_SERVER['DOCUMENT_ROOT'].'/intranet/conexion/conexion.php';*/
 ?>
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>	
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
 <!--<script type="text/javascript" src="js/validarCkeditor.js"></script>-->
 <script type="text/javascript" src="js/validar.js"></script>
@@ -47,8 +47,8 @@
 										<tr>
 											<td>
 												<?php
-										            $conexion = conectar();										            
-										            $sqldpto = mysql_query(" SELECT ID_Departamento,Nombre FROM departamento WHERE estatus = 'A' ", $conexion);		            
+										            $conexion = conectar();
+										            $sqldpto = mysql_query(" SELECT ID_Departamento,Nombre FROM departamento WHERE estatus = 'A' ", $conexion);
 									        	?>
 												    <h5 id="label_cajas_texto">Departamento</h5>
 												    <select id="combos_formulario_usuario" name="txtDep" required >
@@ -61,29 +61,29 @@
 											    ?>
 												    </select>
 											</td>
-										</tr>			
+										</tr>
 										<tr>
 											<td>
 												<h5 id="label_cajas_texto">Descripcion Cargo</h5>
 												<input type="text" id="caja_formulario_usuario" id="caja_formulario_usuario" name="txtDesc"  required>
 
 											</td>
-										</tr>													
+										</tr>
 										<tr>
 											<td colspan="2">
 												<input type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar">
-											</td> 
+											</td>
 										</tr>
 									</table>
-								</form>											
+								</form>
 						  </div>
 							<!--FIN DEL DISEÑO FORMULARIO CREAR USUARIO-->
 						</div>
 						<!--FIN DIV FORMULARIO-->
 					</div>
-					<!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->	
-				</td>						
-				<td colspan="12">					
+					<!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
+				</td>
+				<td colspan="12">
 					<form method="POST">
 						<input type="text" name="txtBuscarCargo" id="txtBuscarCargo" placeholder="Buscar Por Nombre" maxlength="40">
 
@@ -97,13 +97,13 @@
 				</td>
 				<td width="800px">
 					<h5>Nombre</h5>
-				</td>			
+				</td>
 				<td width="800px">
 					<h5>Estatus</h5>
 				</td>
 				<td width="800px">
 					<h5>Descripción</h5>
-				</td>		
+				</td>
 				<td width="800px">
 					<h5>Creada Por</h5>
 				</td>
@@ -130,7 +130,7 @@
 				</td>
 				<td width="800px">
 					<h5>Edición</h5>
-				</td>			
+				</td>
 				<td width="400px">
 					<h5>Acción</h5>
 				</td>
@@ -138,25 +138,25 @@
 	</thead>
 	<tbody>
 					<?php
-			            $conexion = conectar();			
+			            $conexion = conectar();
 						/*FIN DE LAS VARIABLES DE CONSULTA*/
 
 						if(isset($_POST["txtBuscarCargo"]))
 						{
 
 							$nombre  =	$_POST["txtBuscarCargo"];
-							$where   =  " where nombre like '%".$nombre."%'";			
-						
+							$where   =  " where nombre like '%".$nombre."%'";
+
 							$consultaCargo = mysql_query(" SELECT DISTINCT(car.ID_Cargo) as codigo,
-							                                          car.nombre as nombre, 
+							                                          car.nombre as nombre,
 							                                          car.estatus as estatus,
 							                                          car.Created,
 						                                              car.CreatedBy,
 						                                              car.Updated,
 						                                              car.UpdatedBy,
 						                                              car.Descripcion
-						                                         FROM cargo car                                              
-				                                                 $where 
+						                                         FROM cargo car
+				                                                 $where
 				                                                 ORDER BY car.ID_Cargo ", $conexion);
 				           if(mysql_num_rows($consultaCargo)==0)
 							{
@@ -164,15 +164,15 @@
 							}
 			            }else{
 			                 $consultaCargo = mysql_query(" SELECT DISTINCT(car.ID_Cargo) as codigo,
-							                                          car.nombre as nombre, 
+							                                          car.nombre as nombre,
 							                                          car.estatus as estatus,
 							                                          car.Created,
 						                                              car.CreatedBy,
 						                                              car.Updated,
 						                                              car.UpdatedBy,
 						                                              car.Descripcion
-						                                         FROM cargo car                                              
-				                                              
+						                                         FROM cargo car
+
 				                                               ORDER BY car.ID_Cargo ", $conexion);
 			            }
 			            while($mostrarCargo = mysql_fetch_array($consultaCargo))
@@ -188,17 +188,17 @@
 				</td>
 
 				<td>
-					<h5><?php 
+					<h5><?php
 	                        switch ($mostrarCargo['estatus']) {
 	                        	case 'A':
 	                        		echo "ACTIVA";
-	                        		break;                        	
+	                        		break;
 	                        	default:
 	                        		echo "INACTIVA";
 	                        		break;
 	                         }
 
-					       ?>				       
+					       ?>
 					</h5>
 				</td>
 
@@ -208,14 +208,14 @@
 
 				<td>
 					<h5>
-		            	<?php				                                      						 
-								$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-								         FROM   usuario 
+		            	<?php
+								$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+								         FROM   usuario
 								         WHERE  Cedula='$mostrarCargo[CreatedBy]' ";
-								$rs=mysql_query($query,$conexion);
+								$rs=mysql_query($sql,$conexion);
 								$row = mysql_fetch_array($rs);
-								echo  $row['Nombre'] ;						 									
-								mysql_free_result($rs);					
+								echo  $row['Nombre'] ;
+								mysql_free_result($rs);
 						?>
 				    </h5>
 				</td>
@@ -226,14 +226,14 @@
 
 				<td>
 					<h5>
-		            	<?php				                                      						 
-								$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-								         FROM   usuario 
+		            	<?php
+								$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+								         FROM   usuario
 								         WHERE  Cedula='$mostrarCargo[UpdatedBy]' ";
-								$rs=mysql_query($query,$conexion);
+								$rs=mysql_query($sql,$conexion);
 								$row = mysql_fetch_array($rs);
-								echo  $row['Nombre'] ;						 									
-								mysql_free_result($rs);					
+								echo  $row['Nombre'] ;
+								mysql_free_result($rs);
 						?>
 				    </h5>
 				</td>
@@ -258,7 +258,7 @@
 					<h5></h5>
 				</td>
 
-				<td>					
+				<td>
 					<a href='#<?php echo $mostrarCargo['codigo'];?>' id="btnEditar">
 						<img src='imagenes/menu/botonesTablas/btnEditar.png'>
 					</a>
@@ -284,7 +284,7 @@
 												<h5 id='label_cajas_texto'>Código</h5>
 												<input type='text' id='caja_formulario_usuario' required name='txtCodigo' maxlength='4' readonly value='<?php echo $mostrarCargo['codigo'] ?>'>
 											</td>
-                                        </tr>									
+                                        </tr>
 										<tr>
 											<td>
 												<h5 id='label_cajas_texto'>Nombre Del Cargo</h5>
@@ -294,8 +294,8 @@
 										<tr>
 											<td>
 												<?php
-										            $conexion = conectar();										            
-										            $sqldpto = mysql_query(" SELECT ID_Departamento,Nombre FROM departamento WHERE estatus = 'A' ", $conexion);		            
+										            $conexion = conectar();
+										            $sqldpto = mysql_query(" SELECT ID_Departamento,Nombre FROM departamento WHERE estatus = 'A' ", $conexion);
 									        	?>
 												    <h5 id="label_cajas_texto">Departamento</h5>
 												    <select id="combos_formulario_usuario" name="txtDep" required >
@@ -308,13 +308,13 @@
 											    ?>
 												    </select>
 											</td>
-										</tr>					
+										</tr>
 										<tr>
 											<td>
 												<h5 id='label_cajas_texto'>Descripción</h5>
 												<input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarCargo['Descripcion']; ?>'>
 											</td>
-										</tr>									
+										</tr>
 										<tr>
 											<td colspan='2'>
 												<input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
@@ -324,7 +324,7 @@
 								</form>
 							 </div>
 						 </div>
-					</div>														
+					</div>
 				</td>
 
 				<td width="70px;">
@@ -351,10 +351,10 @@
 				</td>
 		 </tr>
 	 <?php } ?><!--FIN DEL WHILE-->
-	</tbody>    
-</table>	
+	</tbody>
+</table>
  <?php
     if (isset($mensajeError)) {
     	 echo $mensajeError;
-    }       
- ?>		
+    }
+ ?>

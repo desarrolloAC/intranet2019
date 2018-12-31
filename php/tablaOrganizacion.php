@@ -35,27 +35,27 @@
 											<h5 id="label_cajas_texto">Nombre De La Organizacion</h5>
 											<input type="text" id="caja_formulario_usuario" name="txtNombreOrganizacion" maxlength="100" required>
 										</td>
-									</tr>													
+									</tr>
 									<tr>
 										<td>
 											<input type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar">
-										</td> 
+										</td>
 									</tr>
 								</table>
-							</form>											
+							</form>
 						</div>
 						<!--FIN DEL DISEÑO FORMULARIO CREAR USUARIO-->
 					</div>
 					<!--FIN DIV FORMULARIO-->
 				</div>
-				<!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->							
-			<td colspan="12">					
+				<!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
+			<td colspan="12">
 				<form method="POST">
 					<input type="text" name="txtBuscarOrganizacion" id="txtBuscarOrganizacion" placeholder="Buscar Nombre" maxlength="40">
 
 					<button type="submit" name="btnBuscarOrganizacion" id="btnBuscarOrganizacion" title="Buscar una organizacion">Buscar</button>
 				</form>
-			</td>				
+			</td>
 		</tr>
 		<tr id="titulo_columnas">
 			<td width="800px">
@@ -85,11 +85,11 @@
 			<td width="800px">
 				<h5>Fecha Actualización</h5>
 			</td>
-			
+
 			<td width="800px">
 				<h5>Edicion</h5>
 			</td>
-			
+
 			<td width="400px">
 				<h5>Acción</h5>
 			</td>
@@ -101,23 +101,23 @@
 			/*include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';*/
 
            	$conexion = conectar();
-						
+
 
 						if(isset($_POST["txtBuscarOrganizacion"]))
 						{
 
 							$nombre  =	$_POST["txtBuscarOrganizacion"];
-							$where   =  " where nombre like '%".$nombre."%'";			
-						
+							$where   =  " where nombre like '%".$nombre."%'";
+
 							$consultaOrganizacion = mysql_query(" SELECT DISTINCT(org.ID_Organizacion) as codigo,
-							                                          org.nombre as nombre, 
+							                                          org.nombre as nombre,
 							                                          org.estatus as estatus,
 							                                          org.Created,
 						                                              org.CreatedBy,
 						                                              org.Updated,
-						                                              org.UpdatedBy                                     
-						                                         FROM organizacion org                                              
-				                                                 $where 
+						                                              org.UpdatedBy
+						                                         FROM organizacion org
+				                                                 $where
 				                                                 ORDER BY org.ID_Organizacion ", $conexion);
 				           if(mysql_num_rows($consultaOrganizacion)==0)
 							{
@@ -125,14 +125,14 @@
 							}
 			            }else{
 			                 $consultaOrganizacion = mysql_query(" SELECT DISTINCT(org.ID_Organizacion) as codigo,
-							                                          org.nombre as nombre, 
+							                                          org.nombre as nombre,
 							                                          org.estatus as estatus,
 							                                          org.Created,
 						                                              org.CreatedBy,
 						                                              org.Updated,
-						                                              org.UpdatedBy                                    
-						                                         FROM organizacion org                                              
-				                                              
+						                                              org.UpdatedBy
+						                                         FROM organizacion org
+
 				                                               ORDER BY org.ID_Organizacion ", $conexion);
 			            }
 			            while($mostrarOrganizacion = mysql_fetch_array($consultaOrganizacion))
@@ -148,11 +148,11 @@
 			</td>
 
 			<td>
-				<h5><?php 
+				<h5><?php
 	                        switch ($mostrarOrganizacion['estatus']) {
 	                        	case 'A':
 	                        		echo "ACTIVA";
-	                        		break;                        	
+	                        		break;
 	                        	default:
 	                        		echo "INACTIVA";
 	                        		break;
@@ -162,14 +162,14 @@
 			</td>
 
 			<td>
-				<h5><?php				                                      						 
-								$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-								         FROM   usuario 
+				<h5><?php
+								$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+								         FROM   usuario
 								         WHERE  Cedula='$mostrarOrganizacion[CreatedBy]' ";
-								$rs=mysql_query($query,$conexion);
+								$rs=mysql_query($sql,$conexion);
 								$row = mysql_fetch_array($rs);
-								echo  $row['Nombre'] ;						 									
-								mysql_free_result($rs);					
+								echo  $row['Nombre'] ;
+								mysql_free_result($rs);
 						?></h5>
 			</td>
 
@@ -178,14 +178,14 @@
 			</td>
 
 			<td>
-				<h5><?php				                                      						 
-								$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-								         FROM   usuario 
+				<h5><?php
+								$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+								         FROM   usuario
 								         WHERE  Cedula='$mostrarOrganizacion[UpdatedBy]' ";
-								$rs=mysql_query($query,$conexion);
+								$rs=mysql_query($sql,$conexion);
 								$row = mysql_fetch_array($rs);
-								echo  $row['Nombre'] ;						 									
-								mysql_free_result($rs);					
+								echo  $row['Nombre'] ;
+								mysql_free_result($rs);
 						?></h5>
 			</td>
 
@@ -193,7 +193,7 @@
 				<h5><?php echo $mostrarOrganizacion['Updated'];?></h5>
 			</td>
 
-			<td>					
+			<td>
 			<a href='#<?php echo $mostrarOrganizacion['codigo'];?>' id="btnEditar">
 						<img src='imagenes/menu/botonesTablas/btnEditar.png'>
 					</a>
@@ -219,13 +219,13 @@
 												<h5 id='label_cajas_texto'>Código</h5>
 												<input type='text' id='caja_formulario_usuario' required name='txtCodigoOrganizacion' maxlength='4' readonly value='<?php echo $mostrarOrganizacion['codigo'] ?>'>
 											</td>
-                                        </tr>									
+                                        </tr>
 										<tr>
 											<td>
 												<h5 id='label_cajas_texto'>Nombre Organizacion</h5>
 												<input type='text' id='caja_formulario_usuario' required name='txtNombreOrganizacion' maxlength='100' value='<?php echo $mostrarOrganizacion['nombre'] ?>'>
 											</td>
-										</tr>															
+										</tr>
 										<tr>
 											<td colspan='2'>
 												<input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
@@ -235,7 +235,7 @@
 								</form>
 							 </div>
 						 </div>
-					</div>											
+					</div>
 			</td>
 			<td width="70px;">
 				<?php
@@ -268,5 +268,5 @@
 <?php
 	if (isset($mensajeError)) {
     	 echo $mensajeError;
-    }       	
-?>			
+    }
+?>

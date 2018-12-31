@@ -1,17 +1,17 @@
-<?php 
+<?php
 
 	@session_start();
-	
-	$query = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='COMU'";
-						
-	$subc = mysql_query($query,$conexion);
+
+	$sql = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='COMU'";
+
+	$subc = mysql_query($sql,$conexion);
 
 	$selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION[ID_Organizacion]'";
 
 	$nombreOrg = mysql_query($selectOrg,$conexion);
 
 	$org=mysql_fetch_array($nombreOrg);
-	
+
 ?>
 
 <!DOCTYPE html>
@@ -25,17 +25,17 @@
 	<link rel="stylesheet" type="text/css" href="comunicado.css">
 
 	<SCRIPT LANGUAGE="JavaScript">
-     
+
         function textCounter(field, countfield, maxlimit) {
-        if (field.value.length > maxlimit) 
+        if (field.value.length > maxlimit)
         field.value = field.value.substring(0, maxlimit);
 
-        else 
+        else
         countfield.value = maxlimit - field.value.length;
         }
-     
+
     </script>
-        
+
 
 </head>
 
@@ -45,14 +45,14 @@
 
 	<!--INICIO DIV CONTENEDOR FORMULARIO-->
 	<div id="formularioComunicado" class="contenedorFormulario">
-				
+
 		<div id="formularioComunicado">
 
 			<a href="#" class="cerrar">X</a>
 
 			<form method="POST" action="php/registrarComunicado.php">
-				
-				<input id="txtCodigoSubCategoriaComunicado" type="text" name="txtCodigoSubCategoriaComunicado" value="<?php 
+
+				<input id="txtCodigoSubCategoriaComunicado" type="text" name="txtCodigoSubCategoriaComunicado" value="<?php
 					while($ver = mysql_fetch_array($subc))
 					{
 						echo $ver['ID_Subcategoria'];

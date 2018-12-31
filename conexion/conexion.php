@@ -6,20 +6,24 @@
 function conectar() {
 
 	//REALIZO LA CONEXION A MYSQL
-	if (!($link = mysql_connect("192.168.30.90","workbench","12345678"))) {
-	   	echo"Error conectando a la base de datos.";
-	 	exit();
-	}
+	$link = mysqli_connect("localhost","root","12345678","intranet");
+
+    //VERIFICANDO LA CONEXION.
+    if (mysqli_connect_errno()) {
+        echo "Error al conectar con MySQL: " . mysqli_connect_error();
+        exit();
+    }
 
 	//SELECCIONO LA BASE DE DATOS QUE VOY A USAR
-	if (!mysql_select_db("intranet", $link)) {
+	if (!mysqli_select_db($link, "intranet")) {
 		echo"Error seleccionando la Base de Datos.";
 		exit();
 	 }
 
-	mysql_query('SET NAMES UTF8');
+	mysqli_query($link, "SET NAMES UTF8");
 	return $link;
 
  }//FIN DE LA FUNCION CONECTAR
+
 
 ?>

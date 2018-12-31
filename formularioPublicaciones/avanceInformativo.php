@@ -1,17 +1,17 @@
-<?php 
+<?php
 
 	@session_start();
-	
-	$query = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='AVIF'";
-						
-	$subc = mysql_query($query,$conexion);
+
+	$sql = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='AVIF'";
+
+	$subc = mysql_query($sql,$conexion);
 
 	$selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION[ID_Organizacion]'";
 
 	$nombreOrg = mysql_query($selectOrg,$conexion);
 
 	$org=mysql_fetch_array($nombreOrg);
-	
+
  ?>
 
 <!DOCTYPE html>
@@ -26,17 +26,17 @@
     <script type="text/javascript" src="../js/functions.js"></script>
 
 	<SCRIPT LANGUAGE="JavaScript">
-     
+
         function textCounter(field, countfield, maxlimit) {
-        if (field.value.length > maxlimit) 
+        if (field.value.length > maxlimit)
         field.value = field.value.substring(0, maxlimit);
 
-        else 
+        else
         countfield.value = maxlimit - field.value.length;
         }
-     
+
     </script>
-        
+
 
 </head>
 
@@ -44,16 +44,16 @@
 
 
 	<!--<a href="#formularioAvanceInformativo">abrir</a>-->
-	 
+
 
 	<!--INICIO DIV CONTENEDOR FORMULARIO-->
 	<div id="formularioAvanceInformativo" class="contenedorFormulario">
-						
+
 			<div id="formularioAvanceInformativo">
 
 				<a href="#" class="cerrar">X</a>
-				
-				<form method="POST" action="php/registrarPublicacion.php" enctype="multipart/form-data" class="formulario">		
+
+				<form method="POST" action="php/registrarPublicacion.php" enctype="multipart/form-data" class="formulario">
 
 				<input id="txtCodigoSubCategoriaAvanceInformativo" type="text" name="txtCodigoSubCategoriaAvanceInformativo" value="<?php while($ver = mysql_fetch_array($subc))
 					{

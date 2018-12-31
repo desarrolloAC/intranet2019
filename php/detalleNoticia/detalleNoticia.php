@@ -1,7 +1,7 @@
 <?php
 
-include_once $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';
-include_once $_SERVER["DOCUMENT_ROOT"].'/intranet/php/detalleNoticia/Noticia.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/detalleNoticia/Noticia.php';
 
 $conexion = conectar();
 
@@ -12,18 +12,19 @@ $sql = "SELECT pub.ID_Publicacion AS n,
                          pub.Titulo AS Titulo,
                          pub.Contenido,
                          pub.Foto
-                    FROM publicacion pub INNER JOIN subcategoria subc    ON pub.ID_Subcategoria  = subc.ID_Subcategoria
-                                         INNER JOIN categoria cat        ON cat.ID_Categoria     = subc.ID_Categoria
-                                         INNER JOIN organizacion org     ON org.ID_Organizacion  = pub.ID_Organizacion
+                    FROM publicacion pub
+                    INNER JOIN subcategoria subc    ON pub.ID_Subcategoria  = subc.ID_Subcategoria
+                    INNER JOIN categoria cat        ON cat.ID_Categoria     = subc.ID_Categoria
+                    INNER JOIN organizacion org     ON org.ID_Organizacion  = pub.ID_Organizacion
                     WHERE cat.ID_Categoria = 'CAIF' AND pub.ID_Subcategoria='AVIF' AND pub.Estatus='A' AND pub.Estado='PUBLICADA' AND pub.ID_Publicacion = $n;";
 
 
-$result = mysql_query($sql, $conexion);
+$rs = mysqli_query($conexion, $sql);
 
 $list = null;
 
 
-while ($row = mysql_fetch_array($result)) {
+while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
 
     $inst = new Noticia();
     $inst->setOrganization($row["Nombre"]);
@@ -35,4 +36,3 @@ while ($row = mysql_fetch_array($result)) {
 }
 
 echo json_encode($list);
-

@@ -3,90 +3,90 @@
 		require_once('../conexion/conexion.php');
 		require_once('estadosLogin.php');
 		$conexion       = conectar();
-		
-		$codigo         = trim($_POST['txtCodigoOrganizacion']);
-		$nombre         = $_POST['txtNombreOrganizacion'];		
-		
-		//REALIZO LA CONSULTA COMPARANDO LA VARIABLE ENVIADA PARA VER SI YA EXISTE EN EL SISTEMA
-		$consulta = mysql_query("SELECT * FROM organizacion WHERE ID_Organizacion ='$codigo'");
-		$vcodigo = mysql_num_rows($consulta);  
 
-	    if(!empty($vcodigo)){ 
-	    
+		$codigo         = trim($_POST['txtCodigoOrganizacion']);
+		$nombre         = $_POST['txtNombreOrganizacion'];
+
+		//REALIZO LA CONSULTA COMPARANDO LA VARIABLE ENVIADA PARA VER SI YA EXISTE EN EL SISTEMA
+		$sql = mysql_query("SELECT * FROM organizacion WHERE ID_Organizacion ='$codigo'");
+		$vcodigo = mysql_num_rows($sql);
+
+	    if(!empty($vcodigo)){
+
 		switch ($_SESSION['ID_Rol']) {
 	        case TypeUsuario::ADMINISTRADOR:
-	                                    
-	            echo'<script language="javascript">  
-	                    alert("El Código: '.$codigo.' Ya Existe. Ingrese uno Diferente. ");      
+
+	            echo'<script language="javascript">
+	                    alert("El Código: '.$codigo.' Ya Existe. Ingrese uno Diferente. ");
 	                    location.href="../menuAdministrador.php";
 	                 </script>';
 	            break;
 	         case TypeUsuario::AUTORIZADOR:
-	                               
-	            echo'<script language="javascript">        
-	                alert("El Código: '.$codigo.' Ya Existe. Ingrese uno Diferente. "); 
+
+	            echo'<script language="javascript">
+	                alert("El Código: '.$codigo.' Ya Existe. Ingrese uno Diferente. ");
 	                 location.href="../menuAutorizador.php";
 	                 </script>';
 	            break;
 	         case TypeUsuario::EDITOR:
-	                                  
-	            echo'<script language="javascript">        
-	                 alert("El Código: '.$codigo.' Ya Existe. Ingrese uno Diferente. "); 
+
+	            echo'<script language="javascript">
+	                 alert("El Código: '.$codigo.' Ya Existe. Ingrese uno Diferente. ");
 	                 location.href="../menuEditor.php";
 	                 </script>';
 	            break;
 	         case TypeUsuario::PUBLICADOR:
-	              
-	            echo'<script language="javascript">        
-	                 alert("El Código: '.$codigo.' Ya Existe. Ingrese uno Diferente. "); 
+
+	            echo'<script language="javascript">
+	                 alert("El Código: '.$codigo.' Ya Existe. Ingrese uno Diferente. ");
 	                 location.href="../menuPublicador.php";
 	            </script>';
-	            break;                    
-	        default: //LECTOR
-	               
 	            break;
-	    } 
-	  
+	        default: //LECTOR
+
+	            break;
+	    }
+
 		}
 		else{
-		  
-		   $query = " INSERT INTO organizacion VALUES ('$codigo','$nombre',DEFAULT,NOW(),'$_SESSION[Cedula]',NOW(),'$_SESSION[Cedula]',NULL)";
 
-		   $agregarOrganizacion  = mysql_query ($query,$conexion);
+		   $sql = " INSERT INTO organizacion VALUES ('$codigo','$nombre',DEFAULT,NOW(),'$_SESSION[Cedula]',NOW(),'$_SESSION[Cedula]',NULL)";
+
+		   $agregarOrganizacion  = mysql_query ($sql,$conexion);
 
 		   switch ($_SESSION['ID_Rol']) {
 		        case TypeUsuario::ADMINISTRADOR:
-		                                 
-		            echo'<script language="javascript">        
+
+		            echo'<script language="javascript">
 		                 alert("Registro Creado con éxito");
 		                 location.href="../menuAdministrador.php";
-		                 </script>';  
+		                 </script>';
 		            break;
 		         case TypeUsuario::AUTORIZADOR:
-		                                  
-		            echo'<script language="javascript">        
-		                 alert("Registro Creado con éxito"); 
+
+		            echo'<script language="javascript">
+		                 alert("Registro Creado con éxito");
 		                 location.href="../menuAutorizador.php";
 		                 </script>';
 		            break;
 		         case TypeUsuario::EDITOR:
-		                                   
-		            echo'<script language="javascript">        
-		                 alert("Registro Creado con éxito"); 
+
+		            echo'<script language="javascript">
+		                 alert("Registro Creado con éxito");
 		                 location.href="../menuEditor.php";
 		                 </script>';
 		            break;
 		         case TypeUsuario::PUBLICADOR:
-		              
-		            echo'<script language="javascript">        
+
+		            echo'<script language="javascript">
 		                  alert("Registro Creado con éxito");
 		                 location.href="../menuPublicador.php";
 		            </script>';
-		            break;                    
-		        default: //LECTOR
-		              
 		            break;
-		    }  
+		        default: //LECTOR
+
+		            break;
+		    }
 		}
-  
+
 ?>

@@ -1,7 +1,7 @@
 <?php
-	
+
 /***************************************VER LAS DE AVANCE INFORMATIVO*******************************/
-$queryAVIF = "SELECT 	pub.ID_Publicacion AS n,
+$sql = "SELECT 	pub.ID_Publicacion AS n,
 			        	pub.ID_Organizacion,
 			        	pub.ID_Subcategoria,
 			        	cat.ID_Categoria,
@@ -19,7 +19,7 @@ $queryAVIF = "SELECT 	pub.ID_Publicacion AS n,
 			                        INNER JOIN categoria cat        ON cat.ID_Categoria     = subc.ID_Categoria
 			WHERE cat.ID_Categoria = 'CAIF' AND pub.ID_Subcategoria='AVIF' AND pub.Estatus='A' AND cat.Estatus='A' AND subc.Estatus='A' AND pub.Estado='PUBLICADA'";
 
-$verAVIF = mysql_query($queryAVIF,$conexion);
+$rs = mysql_query($sql,$conexion);
 /***************************************VER LAS DE AVANCE INFORMATIVO*******************************/
 
 /***************************************VER LAS DE BOLETIN INFORMATIVO******************************/

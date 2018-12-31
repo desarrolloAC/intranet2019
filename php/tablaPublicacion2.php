@@ -7,7 +7,7 @@
 
 <script type="text/javascript" src="js/subCategoriaParaRegistrar.js"></script>
 <script type="text/javascript" src="js/subCategoriaParaEditar.js"></script>
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>	
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
 
 <table id="tabla_publicacion" border="1">
@@ -52,10 +52,10 @@
 												<select name='txtCodigoC' class='combos_formulario_usuario' id='txtCodigoC' required >
 												<option> Categoría </option>";
 
-												$query=" SELECT c.ID_Categoria,c.Nombre FROM categoria c WHERE c.Estatus='A'";
-												$rs=mysql_query($query,$conexion);
+												$sql=" SELECT c.ID_Categoria,c.Nombre FROM categoria c WHERE c.Estatus='A'";
+												$rs=mysql_query($sql,$conexion);
 												if($row = mysql_fetch_array($rs)){
-													do{										
+													do{
 													   echo "<option value='$row[ID_Categoria]'> $row[Nombre] </option>";
 													}while ($row=mysql_fetch_array($rs));
 												}
@@ -76,42 +76,42 @@
 										<td id="color_fondo_cajas">
 									         	<h5 id="label_cajas_texto">Subir Imagen</h5>
 										        <input type="file" name="btnImagen" id="btnImage" required>
-										</td>													
-									</tr>	
+										</td>
+									</tr>
 									<tr>
 										<td>
 											<h5 id="label_cajas_texto">Contenido de la Publicación</h5>
-											
+
 											 <textarea name="contenido" id="contenido" rows="80" cols="640" >
-								                 
+
 								            </textarea>
 								            <script>
-								                
+
 											CKEDITOR.replace( 'contenido' );
 								            </script>
 										</td>
-									</tr>																			
+									</tr>
 									<tr>
 										<td>
 											<input type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar">
-		                                </td>		                                 
+		                                </td>
 									</tr>
 								</table>
-							</form>											
+							</form>
 						</div>
 						<!--FIN DEL DISEÑO FORMULARIO CREAR USUARIO-->
 					</div>
 					<!--FIN DIV FORMULARIO-->
 				</div>
-				<!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->	
-			</td>						
-			<td colspan="12">					
+				<!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
+			</td>
+			<td colspan="12">
 				<form method="POST" action=''>
 					<input type="text" name="txtbuscar" id="txtBuscarPublicacion" placeholder="Buscar Por Título" maxlength="40">
 
 					<button type="submit" name="btnBuscarPublicacion" id="btnBuscarPublicacion" title="Buscar una Publicación">Buscar</button>
-				</form>				
-			</td>				
+				</form>
+			</td>
 		</tr>
 		<tr id="titulo_columnas">
 			<td width="800px">
@@ -128,7 +128,7 @@
 			<td width="800px">
 				<h5>Subcategoría</h5>
 			</td>
-					
+
 			<td width="800px">
 				<h5>Estatus</h5>
 			</td>
@@ -156,7 +156,7 @@
 			</td>
 			<td width="800px">
 				<h5>Edición</h5>
-			</td>			
+			</td>
 			<td width="100px">
 				<h5>Acción</h5>
 			</td>
@@ -168,17 +168,17 @@
       switch ($_SESSION['ID_Rol']) {
 
             case TypeUsuario::ADMINISTRADOR:
-                 /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/ 
+                 /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/
                         if(isset($_POST['txtbuscar'])){
 
                             $titulo =	$_POST['txtbuscar'];
-                            $where  =   " WHERE  pub.titulo like '%".$titulo."%' 
-                                            AND  pub.ID_Organizacion='$_SESSION[ID_Organizacion]' ";	
+                            $where  =   " WHERE  pub.titulo like '%".$titulo."%'
+                                            AND  pub.ID_Organizacion='$_SESSION[ID_Organizacion]' ";
 
-	                        $query="SELECT      DISTINCT(pub.ID_Publicacion),
-								                pub.titulo as titulo, 
-								                pub.estatus as estatus, 
-								                pub.contenido as contenido,                	
+	                        $sql="SELECT      DISTINCT(pub.ID_Publicacion),
+								                pub.titulo as titulo,
+								                pub.estatus as estatus,
+								                pub.contenido as contenido,
 								                pub.ID_Subcategoria,
 								                pub.foto,
 								                pub.Estado,
@@ -195,20 +195,20 @@
 								   RIGHT JOIN   organizacion      o ON (oru.ID_Organizacion=o.ID_Organizacion)
 								   RIGHT JOIN   publicacion     pub ON (u.Cedula=pub.Cedula)
 
-								   $where     
+								   $where
 								   ORDER BY     pub.ID_Publicacion DESC";
 
-						    $consultaPublicacion = mysql_query($query, $conexion);
+						    $consultaPublicacion = mysql_query($sql, $conexion);
 
-						    if(mysql_num_rows($consultaPublicacion)==0){														    	
+						    if(mysql_num_rows($consultaPublicacion)==0){
 								$mensajeError = "<h1 id='mensaje_error'style='color: rgb(69,69,69); text-aling: center;'>No existen registros que coincidan con su criterio de busqueda.</h1>";
 							}
 						}else{
 
-							$query="SELECT  DISTINCT(pub.ID_Publicacion),
-							                pub.titulo as titulo, 
-							                pub.estatus as estatus, 
-							                pub.contenido as contenido,                	
+							$sql="SELECT  DISTINCT(pub.ID_Publicacion),
+							                pub.titulo as titulo,
+							                pub.estatus as estatus,
+							                pub.contenido as contenido,
 							                pub.ID_Subcategoria,
 							                pub.foto,
 							                pub.Estado,
@@ -224,26 +224,26 @@
 							   RIGHT JOIN   rol               r ON (oru.ID_Rol=r.ID_Rol)
 							   RIGHT JOIN   organizacion      o ON (oru.ID_Organizacion=o.ID_Organizacion)
 							   RIGHT JOIN   publicacion     pub ON (u.Cedula=pub.Cedula)
-							   WHERE        pub.ID_Organizacion='$_SESSION[ID_Organizacion]'      
+							   WHERE        pub.ID_Organizacion='$_SESSION[ID_Organizacion]'
 							   ORDER BY     pub.ID_Publicacion DESC";
 
-					        $consultaPublicacion = mysql_query($query, $conexion);							
+					        $consultaPublicacion = mysql_query($sql, $conexion);
 						}
 
                 break;
              case TypeUsuario::AUTORIZADOR:
-                 /*INGRESAR EL USUARIO COMO AUTORIZADOR*/  
+                 /*INGRESAR EL USUARIO COMO AUTORIZADOR*/
                         if(isset($_SESSION['txtbuscar'])){
-                        	
-                            $titulo =	$_SESSION['txtbuscar'];
-                            $where  =   " WHERE  pub.titulo like '%".$titulo."%' 
-                                            AND  pub.estado IN('RECHAZADO_A','REVISION_A','PUBLICADA') 
-                                            AND  pub.ID_Organizacion='$_SESSION[ID_Organizacion]' ";	
 
-	                        $query="SELECT      DISTINCT(pub.ID_Publicacion),
-								                pub.titulo as titulo, 
-								                pub.estatus as estatus, 
-								                pub.contenido as contenido,                	
+                            $titulo =	$_SESSION['txtbuscar'];
+                            $where  =   " WHERE  pub.titulo like '%".$titulo."%'
+                                            AND  pub.estado IN('RECHAZADO_A','REVISION_A','PUBLICADA')
+                                            AND  pub.ID_Organizacion='$_SESSION[ID_Organizacion]' ";
+
+	                        $sql="SELECT      DISTINCT(pub.ID_Publicacion),
+								                pub.titulo as titulo,
+								                pub.estatus as estatus,
+								                pub.contenido as contenido,
 								                pub.ID_Subcategoria,
 								                pub.foto,
 								                pub.Estado,
@@ -259,20 +259,20 @@
 								   RIGHT JOIN   rol               r ON (oru.ID_Rol=r.ID_Rol)
 								   RIGHT JOIN   organizacion      o ON (oru.ID_Organizacion=o.ID_Organizacion)
 								   RIGHT JOIN   publicacion     pub ON (u.Cedula=pub.Cedula)
-								   $where     
+								   $where
 								   ORDER BY     pub.ID_Publicacion DESC ";
 
-						    $consultaPublicacion = mysql_query($query, $conexion);
+						    $consultaPublicacion = mysql_query($sql, $conexion);
 
-						    if(mysql_num_rows($consultaPublicacion)==0){														    	
+						    if(mysql_num_rows($consultaPublicacion)==0){
 								$mensajeError = "<h1 id='mensaje_error'style='color: rgb(69,69,69); text-aling: center;'>No existen registros que coincidan con su criterio de busqueda.</h1>";
 							}
 						}else{
 
-							$query="SELECT  DISTINCT(pub.ID_Publicacion),
-							                pub.titulo as titulo, 
-							                pub.estatus as estatus, 
-							                pub.contenido as contenido,                	
+							$sql="SELECT  DISTINCT(pub.ID_Publicacion),
+							                pub.titulo as titulo,
+							                pub.estatus as estatus,
+							                pub.contenido as contenido,
 							                pub.ID_Subcategoria,
 							                pub.foto,
 							                pub.Estado,
@@ -289,25 +289,25 @@
 							   RIGHT JOIN   organizacion      o ON (oru.ID_Organizacion=o.ID_Organizacion)
 							   RIGHT JOIN   publicacion     pub ON (u.Cedula=pub.Cedula)
 							   WHERE        pub.estado IN('RECHAZADO_A','REVISION_A','PUBLICADA')
-							     AND        pub.ID_Organizacion='$_SESSION[ID_Organizacion]'        
+							     AND        pub.ID_Organizacion='$_SESSION[ID_Organizacion]'
 							   ORDER BY     pub.ID_Publicacion DESC";
 
-					        $consultaPublicacion = mysql_query($query, $conexion);							
-						}	
+					        $consultaPublicacion = mysql_query($sql, $conexion);
+						}
                 break;
              case TypeUsuario::EDITOR:
-                  /*INGRESAR EL USUARIO COMO EDITOR*/                       
+                  /*INGRESAR EL USUARIO COMO EDITOR*/
                         if(isset($_SESSION['txtbuscar'])){
-                        	
-                            $titulo =	$_SESSION['txtbuscar'];
-                            $where  =   " WHERE  pub.titulo like '%".$titulo."%' 
-                                            AND  pub.estado IN('REVISION_A','REVISION_E','RECHAZADO_E','RECHAZADO_A') 
-                                            AND  pub.ID_Organizacion='$_SESSION[ID_Organizacion]' ";	
 
-	                        $query="SELECT      DISTINCT(pub.ID_Publicacion),
-								                pub.titulo as titulo, 
-								                pub.estatus as estatus, 
-								                pub.contenido as contenido,                	
+                            $titulo =	$_SESSION['txtbuscar'];
+                            $where  =   " WHERE  pub.titulo like '%".$titulo."%'
+                                            AND  pub.estado IN('REVISION_A','REVISION_E','RECHAZADO_E','RECHAZADO_A')
+                                            AND  pub.ID_Organizacion='$_SESSION[ID_Organizacion]' ";
+
+	                        $sql="SELECT      DISTINCT(pub.ID_Publicacion),
+								                pub.titulo as titulo,
+								                pub.estatus as estatus,
+								                pub.contenido as contenido,
 								                pub.ID_Subcategoria,
 								                pub.foto,
 								                pub.Estado,
@@ -323,20 +323,20 @@
 								   RIGHT JOIN   rol               r ON (oru.ID_Rol=r.ID_Rol)
 								   RIGHT JOIN   organizacion      o ON (oru.ID_Organizacion=o.ID_Organizacion)
 								   RIGHT JOIN   publicacion     pub ON (u.Cedula=pub.Cedula)
-								   $where     
+								   $where
 								   ORDER BY     pub.ID_Publicacion DESC";
 
-						    $consultaPublicacion = mysql_query($query, $conexion);
+						    $consultaPublicacion = mysql_query($sql, $conexion);
 
-						    if(mysql_num_rows($consultaPublicacion)==0){														    	
+						    if(mysql_num_rows($consultaPublicacion)==0){
 								$mensajeError = "<h1 id='mensaje_error'style='color: rgb(69,69,69); text-aling: center;'>No existen registros que coincidan con su criterio de busqueda.</h1>";
 							}
 						}else{
 
-							$query="SELECT  DISTINCT(pub.ID_Publicacion),
-							                pub.titulo as titulo, 
-							                pub.estatus as estatus, 
-							                pub.contenido as contenido,                	
+							$sql="SELECT  DISTINCT(pub.ID_Publicacion),
+							                pub.titulo as titulo,
+							                pub.estatus as estatus,
+							                pub.contenido as contenido,
 							                pub.ID_Subcategoria,
 							                pub.foto,
 							                pub.Estado,
@@ -352,27 +352,27 @@
 							   RIGHT JOIN   rol               r ON (oru.ID_Rol=r.ID_Rol)
 							   RIGHT JOIN   organizacion      o ON (oru.ID_Organizacion=o.ID_Organizacion)
 							   RIGHT JOIN   publicacion     pub ON (u.Cedula=pub.Cedula)
-							   WHERE        pub.estado IN('REVISION_A','REVISION_E','RECHAZADO_E','RECHAZADO_A') 
-							     AND        pub.ID_Organizacion='$_SESSION[ID_Organizacion]'       
+							   WHERE        pub.estado IN('REVISION_A','REVISION_E','RECHAZADO_E','RECHAZADO_A')
+							     AND        pub.ID_Organizacion='$_SESSION[ID_Organizacion]'
 							   ORDER BY     pub.ID_Publicacion DESC ";
 
-					        $consultaPublicacion = mysql_query($query, $conexion);							
-						}	
-                break; 
+					        $consultaPublicacion = mysql_query($sql, $conexion);
+						}
+                break;
              case TypeUsuario::PUBLICADOR:
-                /*INGRESAR EL USUARIO COMO EDITOR*/  
+                /*INGRESAR EL USUARIO COMO EDITOR*/
                         if(isset($_SESSION['txtbuscar'])){
-                        	
-                            $titulo =	$_SESSION['txtbuscar'];
-                            $where  =   " WHERE  pub.titulo like '%".$titulo."%' 
-                                            AND  pub.Cedula='$_SESSION[Cedula]' 
-                                            AND  pub.estado IN('PUBLICADA','RECHAZADO_E','BORR','REVISION_E','REVISION_A') 
-                                            AND  pub.ID_Organizacion='$_SESSION[ID_Organizacion]' ";	
 
-	                        $query="SELECT      DISTINCT(pub.ID_Publicacion),
-								                pub.titulo as titulo, 
-								                pub.estatus as estatus, 
-								                pub.contenido as contenido,                	
+                            $titulo =	$_SESSION['txtbuscar'];
+                            $where  =   " WHERE  pub.titulo like '%".$titulo."%'
+                                            AND  pub.Cedula='$_SESSION[Cedula]'
+                                            AND  pub.estado IN('PUBLICADA','RECHAZADO_E','BORR','REVISION_E','REVISION_A')
+                                            AND  pub.ID_Organizacion='$_SESSION[ID_Organizacion]' ";
+
+	                        $sql="SELECT      DISTINCT(pub.ID_Publicacion),
+								                pub.titulo as titulo,
+								                pub.estatus as estatus,
+								                pub.contenido as contenido,
 								                pub.ID_Subcategoria,
 								                pub.foto,
 								                pub.Estado,
@@ -388,20 +388,20 @@
 								   RIGHT JOIN   rol               r ON (oru.ID_Rol=r.ID_Rol)
 								   RIGHT JOIN   organizacion      o ON (oru.ID_Organizacion=o.ID_Organizacion)
 								   RIGHT JOIN   publicacion     pub ON (u.Cedula=pub.Cedula)
-								   $where     
+								   $where
 								   ORDER BY     pub.ID_Publicacion DESC ";
 
-						    $consultaPublicacion = mysql_query($query, $conexion);
+						    $consultaPublicacion = mysql_query($sql, $conexion);
 
-						    if(mysql_num_rows($consultaPublicacion)==0){														    	
+						    if(mysql_num_rows($consultaPublicacion)==0){
 								$mensajeError = "<h1 id='mensaje_error'style='color: rgb(69,69,69); text-aling: center;'>No existen registros que coincidan con su criterio de busqueda.</h1>";
 							}
 						}else{
 
-							$query="SELECT  DISTINCT(pub.ID_Publicacion),
-							                pub.titulo as titulo, 
-							                pub.estatus as estatus, 
-							                pub.contenido as contenido,                	
+							$sql="SELECT  DISTINCT(pub.ID_Publicacion),
+							                pub.titulo as titulo,
+							                pub.estatus as estatus,
+							                pub.contenido as contenido,
 							                pub.ID_Subcategoria,
 							                pub.foto,
 							                pub.Estado,
@@ -417,16 +417,16 @@
 							   RIGHT JOIN   rol               r ON (oru.ID_Rol=r.ID_Rol)
 							   RIGHT JOIN   organizacion      o ON (oru.ID_Organizacion=o.ID_Organizacion)
 							   RIGHT JOIN   publicacion     pub ON (u.Cedula=pub.Cedula)
-							   WHERE        pub.Cedula='$_SESSION[Cedula]' 
-							     AND        pub.estado IN('PUBLICADA','RECHAZADO_E','REVISION_A','BORR','REVISION_E') 
-							     AND        pub.ID_Organizacion='$_SESSION[ID_Organizacion]'        
+							   WHERE        pub.Cedula='$_SESSION[Cedula]'
+							     AND        pub.estado IN('PUBLICADA','RECHAZADO_E','REVISION_A','BORR','REVISION_E')
+							     AND        pub.ID_Organizacion='$_SESSION[ID_Organizacion]'
 							   ORDER BY     pub.ID_Publicacion DESC";
 
-					        $consultaPublicacion = mysql_query($query, $conexion);							
+					        $consultaPublicacion = mysql_query($sql, $conexion);
 						}
-                break;                   
+                break;
              default: //
-                 echo ' <h5></h5>';						                           
+                 echo ' <h5></h5>';
                 break;
       }
 
@@ -439,44 +439,44 @@
 			</td>
 
 			<td>
-				<h5><?php echo $mostrarPublicacion['titulo'];?></h5>					
+				<h5><?php echo $mostrarPublicacion['titulo'];?></h5>
 			</td>
 			<td>
 				<h5>
-					 <?php				                                      						 
-						$query=" SELECT ( SELECT Nombre 
+					 <?php
+						$sql=" SELECT ( SELECT Nombre
 						                  FROM categoria
 						                  WHERE ID_Categoria=s.ID_Categoria) as Nombre,
-						                  ( SELECT ID_Categoria 
+						                  ( SELECT ID_Categoria
 						                  FROM categoria
 						                  WHERE ID_Categoria=s.ID_Categoria) as ID_Categoria
 						         FROM   subcategoria s
 						         WHERE  s.ID_Subcategoria='$mostrarPublicacion[ID_Subcategoria]'";
-						$rs=mysql_query($query,$conexion);
+						$rs=mysql_query($sql,$conexion);
 						$row = mysql_fetch_array($rs);
 						echo  $row['Nombre'] ;
-						$_SESSION['ID_Categoria']=$row['ID_Categoria'];									
-						mysql_free_result($rs);						
-					 ?>	
+						$_SESSION['ID_Categoria']=$row['ID_Categoria'];
+						mysql_free_result($rs);
+					 ?>
 				</h5>
 			</td>
 			<td>
 				<h5>
 					 <?php
-						                                       						 
-						$query=" SELECT Nombre 
+
+						$sql=" SELECT Nombre
 						         FROM subcategoria
 						         WHERE ID_Subcategoria='$mostrarPublicacion[ID_Subcategoria]'";
-						      $rs=mysql_query($query,$conexion);
+						      $rs=mysql_query($sql,$conexion);
 						    $row = mysql_fetch_array($rs);
-						   echo  $row['Nombre'] ;												
-						mysql_free_result($rs);	
-					 ?>	
+						   echo  $row['Nombre'] ;
+						mysql_free_result($rs);
+					 ?>
 				</h5>
 			</td>
 			<td>
 				<h5>
-					<?php 				       								    
+					<?php
 				       switch ($mostrarPublicacion['Estado']) {
 					     	case EstadoPublicacion::RECHAZADO_A:
 					     		 echo 'RECHAZADA POR AUTORIZADOR';
@@ -494,9 +494,9 @@
 					     		 echo 'PUBLICADA';
 					     		break;
 					     	default: //BORR
-					     		echo 'BORRADOR';    
-					     		break;  
-				       }									      
+					     		echo 'BORRADOR';
+					     		break;
+				       }
 				    ?>
 				</h5>
 			</td>
@@ -505,14 +505,14 @@
 			</td>
             <td>
             	<h5>
-	            	<?php				                                      						 
-							$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-							         FROM   usuario 
+	            	<?php
+							$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+							         FROM   usuario
 							         WHERE  Cedula='$mostrarPublicacion[CreatedBy]' ";
-							$rs=mysql_query($query,$conexion);
+							$rs=mysql_query($sql,$conexion);
 							$row = mysql_fetch_array($rs);
-							echo  $row['Nombre'] ;						 									
-							mysql_free_result($rs);					
+							echo  $row['Nombre'] ;
+							mysql_free_result($rs);
 					?>
 			    </h5>
 			</td>
@@ -522,14 +522,14 @@
 			</td>
 			<td>
 				<h5>
-	            	<?php				                                      						 
-							$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-							         FROM   usuario 
+	            	<?php
+							$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+							         FROM   usuario
 							         WHERE  Cedula='$mostrarPublicacion[UpdatedBy]' ";
-							$rs=mysql_query($query,$conexion);
+							$rs=mysql_query($sql,$conexion);
 							$row = mysql_fetch_array($rs);
-							echo  $row['Nombre'] ;						 									
-							mysql_free_result($rs);					
+							echo  $row['Nombre'] ;
+							mysql_free_result($rs);
 					?>
 			    </h5>
 			</td>
@@ -538,14 +538,14 @@
 			</td>
 			<td>
 				<h5>
-	            	<?php				                                      						 
-							$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-							         FROM   usuario 
+	            	<?php
+							$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+							         FROM   usuario
 							         WHERE  Cedula='$mostrarPublicacion[PublicatedBy]' ";
-							$rs=mysql_query($query,$conexion);
+							$rs=mysql_query($sql,$conexion);
 							$row = mysql_fetch_array($rs);
-							echo  $row['Nombre'] ;						 									
-							mysql_free_result($rs);					
+							echo  $row['Nombre'] ;
+							mysql_free_result($rs);
 					?>
 			    </h5>
 			</td>
@@ -557,55 +557,55 @@
 				   switch ($_SESSION['ID_Rol']) {
 
 					            case TypeUsuario::ADMINISTRADOR:
-					                 /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/ 
+					                 /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/
 						                switch ($mostrarPublicacion['Estado']) {
 									     	case EstadoPublicacion::RECHAZADO_A:
 									     	    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
 													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-												     </a>";		     	   
+												     </a>";
 
 									     		break;
 									     	case EstadoPublicacion::RECHAZADO_E:
 									     	    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
 													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-												     </a>";	
+												     </a>";
 
 									     		 break;
 									     	case EstadoPublicacion::REVISION_E:
 									     	     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
 													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-												     </a>";	
-									     	    
+												     </a>";
+
 									     	     break;
 									     	case EstadoPublicacion::REVISION_A:
 									     	     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
 													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-												     </a>";	
+												     </a>";
 
 									     		break;
 									     	case EstadoPublicacion::PUBLICADA:
 									     		 echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
 													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-												     </a>";	
+												     </a>";
 									     		break;
-									     	default:// EstadoPublicacion::BORR:;  
+									     	default:// EstadoPublicacion::BORR:;
 									     	    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
 													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-												     </a>";	
+												     </a>";
 									     		break;
-									    } //FIN SWITCH        
+									    } //FIN SWITCH
 					                break;
 					            case TypeUsuario::AUTORIZADOR:
-							              /*INGRESAR EL USUARIO COMO AUTORIZADOR*/  
+							              /*INGRESAR EL USUARIO COMO AUTORIZADOR*/
 							                switch ($mostrarPublicacion['Estado']) {
 										     	case EstadoPublicacion::RECHAZADO_A:
-										     	   	
+
 										     		break;
 										     	case EstadoPublicacion::RECHAZADO_E:
-										     		 
+
 										     		 break;
 										     	case EstadoPublicacion::REVISION_E:
-											            
+
 										     		 break;
 										     	case EstadoPublicacion::REVISION_A:
 										                 echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
@@ -613,23 +613,23 @@
 												           </a>";
 											         break;
 										     	case EstadoPublicacion::PUBLICADA:
-										     	   
+
 													 break;
 										     	default:
-										     		
+
 										     		break;
-										    } //FIN SWITCH       	
+										    } //FIN SWITCH
 					                break;
 					            case TypeUsuario::EDITOR:
-					                  /*INGRESAR EL USUARIO COMO EDITOR*/                       
+					                  /*INGRESAR EL USUARIO COMO EDITOR*/
 					                		switch ($mostrarPublicacion['Estado']) {
 										     	case EstadoPublicacion::RECHAZADO_A:
 										     		   echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
 													         <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												           </a>";
 										     		break;
-										     	case EstadoPublicacion::RECHAZADO_E:					     	     
-										     	 
+										     	case EstadoPublicacion::RECHAZADO_E:
+
 										     		 break;
 										     	case EstadoPublicacion::REVISION_E:
 											             echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
@@ -637,22 +637,22 @@
 												           </a>";
 											         break;
 										     	case EstadoPublicacion::REVISION_A:
-										     		 
+
 										     		break;
 										     	case EstadoPublicacion::PUBLICADA:
 										     		break;
 										     	default:
-										     		 
+
 										     		break;
-										    } //FIN SWITCH  EDITOR      	
-					                break; 
+										    } //FIN SWITCH  EDITOR
+					                break;
 					            case TypeUsuario::PUBLICADOR:
-					                /*INGRESAR EL USUARIO COMO EDITOR*/  
+					                /*INGRESAR EL USUARIO COMO EDITOR*/
 					               		switch ($mostrarPublicacion['Estado']) {
 									     	case EstadoPublicacion::RECHAZADO_A:
-									     		 
+
 									     		break;
-									     	case EstadoPublicacion::RECHAZADO_E:  
+									     	case EstadoPublicacion::RECHAZADO_E:
 									     	           echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
 													           <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												            </a>";
@@ -660,7 +660,7 @@
 									     	case EstadoPublicacion::REVISION_E:
 									     		 break;
 									     	case EstadoPublicacion::REVISION_A:
-										        
+
 									     		// echo "REVISION_P";
 									     		break;
 									     	case EstadoPublicacion::PUBLICADA:
@@ -671,10 +671,10 @@
 													           <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												            </a>";
 									     		break;
-									    } //FIN SWITCH PUBLICADOR        
-					                break;                   
+									    } //FIN SWITCH PUBLICADOR
+					                break;
 					            default: //PUBLICADOR
-					                 echo ' <h5></h5>';						                           
+					                 echo ' <h5></h5>';
 					                break;
                    }//FIN DE SWITCH PRINCIPAL ROL
 				?>
@@ -694,13 +694,13 @@
 									<td colspan='2'>
 										<h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
 									</td>
-								</tr>								
+								</tr>
 								<tr>
 									<td><h5></h5>
 										<input type='hidden' class='caja_formulario_usuario' readonly="readonly" name='txtCodigoP' maxlength='3' value='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>'>
 									</td>
 								</tr>
-								<tr>				
+								<tr>
 									<td>
 										<h5 id='label_cajas_texto'>Título</h5>
 										<input type='text' class='caja_formulario_usuario' id='txtTituloP' required name='txtTituloP' maxlength='100' value='<?php echo $mostrarPublicacion['titulo']; ?>'>
@@ -715,15 +715,15 @@
 												<select name='txtCodigoCat' class='combos_formulario_usuario' id='txtCodigoCat' required >
 												<option> Categoría </option>";
 
-												$query=" SELECT ID_Categoria, Nombre 
-												         FROM categoria 
+												$sql=" SELECT ID_Categoria, Nombre
+												         FROM categoria
 												         WHERE Estatus='A'";
-												$rs=mysql_query($query,$conexion);
+												$rs=mysql_query($sql,$conexion);
 												if($row = mysql_fetch_array($rs)){
 													do{
-												 if ($_SESSION['ID_Categoria']==$row['ID_Categoria']) 
+												 if ($_SESSION['ID_Categoria']==$row['ID_Categoria'])
 													 	 echo "<option value='$row[ID_Categoria]' selected='selected'> $row[Nombre] </option>";
-													 else																				
+													 else
 													   echo "<option value='$row[ID_Categoria]'> $row[Nombre] </option>";
 													}while ($row=mysql_fetch_array($rs));
 												}
@@ -740,85 +740,85 @@
 													<select name='txtCodigoSubC' class='combos_formulario_usuario' id='txtCodigoSubC' required>
 													<option> SubCategoría </option>";
 
-													$query=" SELECT ID_Subcategoria,Nombre FROM subcategoria ";
-													$rs=mysql_query($query,$conexion);
+													$sql=" SELECT ID_Subcategoria,Nombre FROM subcategoria ";
+													$rs=mysql_query($sql,$conexion);
 													if($row = mysql_fetch_array($rs)){
 														do{
-														 if ($mostrarPublicacion['ID_Subcategoria']==$row[ID_Subcategoria]) 
+														 if ($mostrarPublicacion['ID_Subcategoria']==$row[ID_Subcategoria])
 														 	 echo "<option value='$row[ID_Subcategoria]' selected='selected'> $row[Nombre] </option>";
-														 else																				
+														 else
 														   echo "<option value='$row[ID_Subcategoria]'> $row[Nombre] </option>";
 														}while ($row=mysql_fetch_array($rs));
 													}
 													mysql_free_result($rs);
 													echo "</select>";
 											?>
-									 </td>													
-								</tr>                                              
-								<tr>	
+									 </td>
+								</tr>
+								<tr>
 								     <td id="color_fondo_cajas">
 									     <h5 id="label_cajas_texto">Seleccionar Imagen</h5>
 										     <input type="file" name="btnImagen" id="btnImage">
 
 										 <h5><img src="<?php echo $mostrarPublicacion['foto'];?>" id="imagen" width='100' height='100'></h5>
-									 </td>													
+									 </td>
 								</tr>
 								<tr>
 									 <td>
-										<?php				        
+										<?php
 						                 switch ($_SESSION['ID_Rol']) {
 						                    case TypeUsuario::ADMINISTRADOR:
-						                         /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/                        
+						                         /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/
 						                        echo"
-						                              <h5 id='label_cajas_texto'>Observaciones de la Edición</h5>			
+						                              <h5 id='label_cajas_texto'>Observaciones de la Edición</h5>
 														 <textarea name='motivo' id='motivo' rows='10' cols='80' >
-											                 $mostrarPublicacion[motivo] 
+											                 $mostrarPublicacion[motivo]
 											            </textarea>
-											            <script>							               
+											            <script>
 											                CKEDITOR.replace( 'motivo' );
 											            </script>";
 						                        break;
 						                     case TypeUsuario::AUTORIZADOR:
-						                         /*INGRESAR EL USUARIO COMO AUTORIZADOR*/                      
+						                         /*INGRESAR EL USUARIO COMO AUTORIZADOR*/
 						                        echo"
-						                              <h5 id='label_cajas_texto'>Observaciones de la Edición</h5>			
+						                              <h5 id='label_cajas_texto'>Observaciones de la Edición</h5>
 														 <textarea name='motivo' id='motivo' rows='10' cols='80' >
-											                 $mostrarPublicacion[motivo] 
+											                 $mostrarPublicacion[motivo]
 											            </textarea>
-											            <script>							               
+											            <script>
 											                CKEDITOR.replace( 'motivo' );
 											            </script>";
 						                        break;
 						                     case TypeUsuario::EDITOR:
-						                          /*INGRESAR EL USUARIO COMO EDITOR*/                       
+						                          /*INGRESAR EL USUARIO COMO EDITOR*/
 						                        echo"
-						                              <h5 id='label_cajas_texto'>Observaciones de la Edición</h5>			
+						                              <h5 id='label_cajas_texto'>Observaciones de la Edición</h5>
 														 <textarea name='motivo' id='motivo' rows='10' cols='80' >
-											                 $mostrarPublicacion[motivo] 
+											                 $mostrarPublicacion[motivo]
 											            </textarea>
-											            <script>							               
+											            <script>
 											                CKEDITOR.replace( 'motivo' );
 											            </script>";
-						                        break;                    
+						                        break;
 						                     default: //LECTOR
-						                         echo ' <h5></h5>';						                           
+						                         echo ' <h5></h5>';
 						                        break;
 							                }
-							              ?> 		          
+							              ?>
 									 </td>
 								</tr>
 								<tr>
 									<td>
 										<h5 id="label_cajas_texto">Contenido</h5>
-										
+
 										 <textarea name="contenido2" id="contenido2" rows="10" cols="80" required>
 							                <?php echo $mostrarPublicacion['contenido']; ?>
 							            </textarea>
-							            <script>							               
+							            <script>
 							                CKEDITOR.replace( 'contenido2' );
 							            </script>
 									</td>
-								</tr>	
+								</tr>
 								<tr>
 									<td colspan='2'>
 										<input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
@@ -837,7 +837,7 @@
 				  switch ($_SESSION['ID_Rol']) {
 
 					            case TypeUsuario::ADMINISTRADOR:
-					                 /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/ 
+					                 /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/
 						                switch ($mostrarPublicacion['Estado']) {
 									     	case EstadoPublicacion::RECHAZADO_A:
 									     	     echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A&usuario=$_SESSION[Cedula]' title='Rechazada por el Autorizador' style='display: none;'>
@@ -895,10 +895,10 @@
 										         </a>";
 									     		//echo EstadoPublicacion::BORR:;
 									     		break;
-									    } //FIN SWITCH        
+									    } //FIN SWITCH
 					                break;
 					             case TypeUsuario::AUTORIZADOR:
-					                 /*INGRESAR EL USUARIO COMO AUTORIZADOR*/  
+					                 /*INGRESAR EL USUARIO COMO AUTORIZADOR*/
 					                switch ($mostrarPublicacion['Estado']) {
 								     	case EstadoPublicacion::RECHAZADO_A:
 								     	    // echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A' title='Rechazada por el Autorizador'>Rechazada por Autorizador</a>";
@@ -909,10 +909,10 @@
 								     		// echo "RECHAZADO_E";
 								     		 break;
 								     	case EstadoPublicacion::REVISION_E:
-									         
+
 								     		 break;
 								     	case EstadoPublicacion::REVISION_A:
-								     
+
 									         echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
 									         	<img id='imagenBoton' src='imagenes/menu/botonesTablas/regresar.png'>
 									         </a>";
@@ -936,10 +936,10 @@
 								     	default:
 								     		//echo EstadoPublicacion::BORR:;
 								     		break;
-								    } //FIN SWITCH       	
+								    } //FIN SWITCH
 					                break;
 					             case TypeUsuario::EDITOR:
-					                  /*INGRESAR EL USUARIO COMO EDITOR*/                       
+					                  /*INGRESAR EL USUARIO COMO EDITOR*/
 					                		switch ($mostrarPublicacion['Estado']) {
 										     	case EstadoPublicacion::RECHAZADO_A:
 										     		 echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
@@ -950,7 +950,7 @@
 										     		 </a>";
 										     		// echo "RECHAZADO_A";
 										     		break;
-										     	case EstadoPublicacion::RECHAZADO_E:					     	     
+										     	case EstadoPublicacion::RECHAZADO_E:
 										     		// echo "RECHAZADO_E";
 										     		 break;
 										     	case EstadoPublicacion::REVISION_E:
@@ -969,10 +969,10 @@
 										     	default:
 										     		//echo EstadoPublicacion::BORR:;
 										     		break;
-										    } //FIN SWITCH  EDITOR      	
-					                break; 
+										    } //FIN SWITCH  EDITOR
+					                break;
 					             case TypeUsuario::PUBLICADOR:
-					                /*INGRESAR EL USUARIO COMO EDITOR*/  
+					                /*INGRESAR EL USUARIO COMO EDITOR*/
 					               		switch ($mostrarPublicacion['Estado']) {
 									     	case EstadoPublicacion::RECHAZADO_A:
 									     		// echo "RECHAZADO_A";
@@ -986,7 +986,7 @@
 									     	case EstadoPublicacion::REVISION_E:
 									     		 break;
 									     	case EstadoPublicacion::REVISION_A:
-										        
+
 									     		// echo "REVISION_P";
 									     		break;
 									     	case EstadoPublicacion::PUBLICADA:
@@ -998,25 +998,23 @@
 										         </a>";
 									     		//echo EstadoPublicacion::BORR:;
 									     		break;
-									    } //FIN SWITCH PUBLICADOR        
-					                break;                   
-					             default: //PUBLICADOR
-					                 echo ' <h5></h5>';						                           
+									    } //FIN SWITCH PUBLICADOR
 					                break;
-                   }//FIN DE SWITCH PRINCIPAL ROL					
+					             default: //PUBLICADOR
+					                 echo ' <h5></h5>';
+					                break;
+                   }//FIN DE SWITCH PRINCIPAL ROL
 				?>
 			</td>
 
 	    </tr>
      <?php
-        } 
+        }
      ?><!--FIN DEL WHILE-->
-	</tbody>	 
+	</tbody>
 </table>
 <?php
     if (isset($mensajeError)) {
     	 echo $mensajeError;
-    }       
- ?>	
-	 
-   
+    }
+ ?>

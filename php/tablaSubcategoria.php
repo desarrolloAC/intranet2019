@@ -33,15 +33,15 @@
 										<td>
 											<h5 id="label_cajas_texto">Nombre De La SubCategoría</h5>
 											<input type="text" id="caja_formulario_usuario" name="txtNombreSubCategoria" maxlength="60" required>
-										</td>																						
-									</tr>	
+										</td>
+									</tr>
 									<tr>
 										<td>
-												<?php														           
+												<?php
 
-										            $conexion = conectar();													            
-										            
-										            $sqlSubCate = mysql_query(" SELECT * FROM categoria WHERE estatus = 'A' ", $conexion);		            
+										            $conexion = conectar();
+
+										            $sqlSubCate = mysql_query(" SELECT * FROM categoria WHERE estatus = 'A' ", $conexion);
 									        	?>
 												<h5 id="label_cajas_texto">Categoría</h5>
 												<select id="combos_formulario_usuario" name="txtCodigoCategoria">
@@ -61,28 +61,28 @@
 												<input type="text" id="caja_formulario_usuario" id="caja_formulario_usuario" name="txtDesc"  required>
 
 											</td>
-									</tr>										
+									</tr>
 									<tr>
 										<td colspan="2">
 											<input type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar">
 										</td>
 									</tr>
 								</table>
-							</form>											
+							</form>
 						</div>
 						<!--FIN DEL DISEÑO FORMULARIO CREAR SUBCATEGORÍA-->
 					</div>
 					<!--FIN DIV FORMULARIO-->
 				</div>
-				<!--FIN DEL CONTENEDOR FORMULARIO SUBCATEGORÍA MODAL-->							
+				<!--FIN DEL CONTENEDOR FORMULARIO SUBCATEGORÍA MODAL-->
 			</td>
-			<td colspan="12">					
+			<td colspan="12">
 				<form method="POST">
 					<input type="text" name="txtBuscarSubCategoria" id="txtBuscarSubCategoria" placeholder="Buscar Por Nombre" maxlength="40">
 
 					<button type="submit" name="btnBuscarSubCategoria" id="btnBuscarSubCategoria" title="Buscar una Subcategoria">Buscar</button>
 				</form>
-			</td>				
+			</td>
 		</tr>
 		<tr id="titulo_columnas">
 				<td width="800px">
@@ -90,13 +90,13 @@
 				</td>
 				<td width="10px">
 					<h5>Nombre</h5>
-				</td>			
+				</td>
 				<td width="800px">
 					<h5>Estatus</h5>
 				</td>
 				<td width="800px">
 					<h5>Descripción</h5>
-				</td>		
+				</td>
 				<td width="800px">
 					<h5>Creada Por</h5>
 				</td>
@@ -123,34 +123,34 @@
 				</td>
 				<td width="800px">
 					<h5>Edición</h5>
-				</td>			
+				</td>
 				<td width="100px" colspan="2">
 					<h5>Acción</h5>
 				</td>
-		 </tr>		 
+		 </tr>
 	</thead>
-    <tbody>		 
+    <tbody>
 
-            <?php	            		
+            <?php
 				/*FIN DE LAS VARIABLES DE CONSULTA*/
 
 				if(isset($_POST["txtBuscarSubCategoria"]))
 				{
 
 					$nombre  =	$_POST["txtBuscarSubCategoria"];
-					$where   =  " where nombre like '%".$nombre."%'";			
-				
+					$where   =  " where nombre like '%".$nombre."%'";
+
 					$consultaSubCategoria = mysql_query(" SELECT DISTINCT(cat.ID_Subcategoria) as codigo,
 						                                      cat.ID_Categoria,
-					                                          cat.nombre as nombre, 
+					                                          cat.nombre as nombre,
 					                                          cat.estatus as estatus,
 					                                          cat.Created,
 				                                              cat.CreatedBy,
 				                                              cat.Updated,
 				                                              cat.UpdatedBy,
 				                                              cat.Descripcion
-				                                         FROM subcategoria cat                                               
-		                                                 $where 
+				                                         FROM subcategoria cat
+		                                                 $where
 		                                                 ORDER BY cat.ID_SubCategoria ", $conexion);
 		           if(mysql_num_rows($consultaSubCategoria)==0)
 					{
@@ -159,15 +159,15 @@
 	            }else{
 	                 $consultaSubCategoria = mysql_query(" SELECT DISTINCT(cat.ID_Subcategoria) as codigo,
 				 	                                          cat.ID_Categoria,
-				 	                                          cat.nombre as nombre, 
+				 	                                          cat.nombre as nombre,
 					                                          cat.estatus as estatus,
 					                                          cat.Created,
 				                                              cat.CreatedBy,
 				                                              cat.Updated,
 				                                              cat.UpdatedBy,
 				                                              cat.Descripcion
-				                                         FROM subcategoria cat                                              
-		                                              
+				                                         FROM subcategoria cat
+
 		                                               ORDER BY cat.ID_Subcategoria ", $conexion);
 	            }
             while($mostrarSubCategoria = mysql_fetch_array($consultaSubCategoria))
@@ -183,17 +183,17 @@
 			</td>
 
 			<td>
-				<h5><?php 
+				<h5><?php
                         switch ($mostrarSubCategoria['estatus']) {
                         	case 'A':
                         		echo "ACTIVA";
-                        		break;                        	
+                        		break;
                         	default:
                         		echo "INACTIVA";
                         		break;
                          }
 
-				       ?>				       
+				       ?>
 				</h5>
 			</td>
 
@@ -203,14 +203,14 @@
 
 			<td>
 				<h5>
-	            	<?php				                                      						 
-							$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-							         FROM   usuario 
+	            	<?php
+							$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+							         FROM   usuario
 							         WHERE  Cedula='$mostrarSubCategoria[CreatedBy]' ";
-							$rs=mysql_query($query,$conexion);
+							$rs=mysql_query($sql,$conexion);
 							$row = mysql_fetch_array($rs);
-							echo  $row['Nombre'] ;						 									
-							mysql_free_result($rs);					
+							echo  $row['Nombre'] ;
+							mysql_free_result($rs);
 					?>
 			    </h5>
 			</td>
@@ -221,14 +221,14 @@
 
 			<td>
 				<h5>
-	            	<?php				                                      						 
-							$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-							         FROM   usuario 
+	            	<?php
+							$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+							         FROM   usuario
 							         WHERE  Cedula='$mostrarSubCategoria[UpdatedBy]' ";
-							$rs=mysql_query($query,$conexion);
+							$rs=mysql_query($sql,$conexion);
 							$row = mysql_fetch_array($rs);
-							echo  $row['Nombre'] ;						 									
-							mysql_free_result($rs);					
+							echo  $row['Nombre'] ;
+							mysql_free_result($rs);
 					?>
 			    </h5>
 			</td>
@@ -252,9 +252,9 @@
 			<td>
 				<h5></h5>
 			</td>
-				
-			<td>					
-			 
+
+			<td>
+
 				<a href='#<?php echo $mostrarSubCategoria['codigo']; ?>' id="btnEditar">
 					<img src='imagenes/menu/botonesTablas/btnEditar.png'>
 				</a>
@@ -289,20 +289,20 @@
 									</tr>
 									<tr>
 										<td>
-											 <?php														            
-										            
-										        $sqlCate = mysql_query(" SELECT * FROM categoria WHERE estatus = 'A' ", $conexion);		            
+											 <?php
+
+										        $sqlCate = mysql_query(" SELECT * FROM categoria WHERE estatus = 'A' ", $conexion);
 									        	?>
 												<h5 id="label_cajas_texto">Categoría</h5>
 												<select id="combos_formulario_usuario" name="txtCodigoCategoria">
 													<option value=""> </option>
 													<?php
 										        		while($sCategoria = mysql_fetch_array($sqlCate))
-										        		{  
-										        		  if ($sCategoria['ID_Categoria']==$mostrarSubCategoria['ID_Categoria']) 
+										        		{
+										        		  if ($sCategoria['ID_Categoria']==$mostrarSubCategoria['ID_Categoria'])
 										        		  	echo"<option value='$sCategoria[ID_Categoria]' selected >$sCategoria[Nombre]</option>";
 										        		  else
-										        		    echo"<option value='$sCategoria[ID_Categoria]'>$sCategoria[Nombre]</option>";									        			
+										        		    echo"<option value='$sCategoria[ID_Categoria]'>$sCategoria[Nombre]</option>";
 										        		}//FIN DEL WHILE
 										     ?>
 										        </select>
@@ -313,7 +313,7 @@
 											<h5 id='label_cajas_texto'>Descripción</h5>
 											<input type='text' id='caja_formulario_usuario' name='txtDesc' value='<?php echo $mostrarSubCategoria['Descripcion']; ?>'>
 										</td>
-									</tr>									
+									</tr>
 									<tr>
 										<td colspan='2'>
 											<input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
@@ -323,7 +323,7 @@
 							</form>
 						</div>
 					</div>
-				</div>		 								
+				</div>
 			</td>
 			<td width="70px;">
 					<?php
@@ -349,14 +349,14 @@
 			</td>
 		</tr>
 		   <?php
-		     } 
-		   ?><!--FIN DEL WHILE-->	 
+		     }
+		   ?><!--FIN DEL WHILE-->
    </tbody>
-	    
-</table>	
+
+</table>
 
  <?php
     if (isset($mensajeError)) {
     	 echo $mensajeError;
-    }       
- ?>		
+    }
+ ?>

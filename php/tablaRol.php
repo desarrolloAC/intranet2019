@@ -40,28 +40,28 @@
 											<h5 id="label_cajas_texto">Descripción Del Rol</h5>
 											<input type="text" id="caja_formulario_usuario" name="txtDesc" maxlength="255" required>
 										</td>
-									</tr>														
+									</tr>
 									<tr>
 										<td>
 											<input type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar">
 										</td>
 									</tr>
 								</table>
-							</form>											
+							</form>
 						</div>
 						<!--FIN DEL DISEÑO FORMULARIO CREAR USUARIO-->
 					</div>
 					<!--FIN DIV FORMULARIO-->
 				</div>
-				<!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->	
-			</td>						
-			<td colspan="12">					
+				<!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
+			</td>
+			<td colspan="12">
 				<form method="POST">
 					<input type="text" name="txtBuscarRol" id="txtBuscarRol" placeholder="Buscar por nombre" maxlength="40">
 
 					<button type="submit" name="btnBuscarRol" id="btnBuscarRol" title="Buscar un rol">Buscar</button>
 				</form>
-			</td>				
+			</td>
 		</tr>
 
 		<tr id="titulo_columnas">
@@ -70,13 +70,13 @@
 				</td>
 				<td width="800px">
 					<h5>Nombre</h5>
-				</td>			
+				</td>
 				<td width="800px">
 					<h5>Estatus</h5>
 				</td>
 				<td width="800px">
 					<h5>Descripción</h5>
-				</td>		
+				</td>
 				<td width="800px">
 					<h5>Creado Por</h5>
 				</td>
@@ -103,35 +103,35 @@
 				</td>
 				<td width="800px">
 					<h5>Edición</h5>
-				</td>			
+				</td>
 				<td width="100px">
 					<h5>Acción</h5>
 				</td>
-		 </tr>		 
+		 </tr>
 	</thead>
 	</thead>
-    <tbody>		 
+    <tbody>
 
             <?php
-	            $conexion = conectar();			
+	            $conexion = conectar();
 				/*FIN DE LAS VARIABLES DE CONSULTA*/
 
 				if(isset($_POST["txtBuscarRol"]))
 				{
 
 					$nombre  =	$_POST["txtBuscarRol"];
-					$where   =  " where nombre like '%".$nombre."%'";			
-				
+					$where   =  " where nombre like '%".$nombre."%'";
+
 					$consultarol = mysql_query(" SELECT DISTINCT(cat.ID_Rol) as codigo,
-					                                          cat.nombre as nombre, 
+					                                          cat.nombre as nombre,
 					                                          cat.estatus as estatus,
 					                                          cat.Created,
 				                                              cat.CreatedBy,
 				                                              cat.Updated,
 				                                              cat.UpdatedBy,
 				                                              cat.Descripcion
-				                                         FROM rol cat                                               
-		                                                 $where 
+				                                         FROM rol cat
+		                                                 $where
 		                                                 ORDER BY cat.ID_Rol ", $conexion);
 		           if(mysql_num_rows($consultarol)==0)
 					{
@@ -139,15 +139,15 @@
 					}
 	            }else{
 	                 $consultarol = mysql_query(" SELECT DISTINCT(cat.ID_Rol) as codigo,
-				 	                                          cat.nombre as nombre, 
+				 	                                          cat.nombre as nombre,
 					                                          cat.estatus as estatus,
 					                                          cat.Created,
 				                                              cat.CreatedBy,
 				                                              cat.Updated,
 				                                              cat.UpdatedBy,
 				                                              cat.Descripcion
-				                                         FROM rol cat                                              
-		                                              
+				                                         FROM rol cat
+
 		                                               ORDER BY cat.ID_Rol ", $conexion);
 	            }
             while($mostrarRol = mysql_fetch_array($consultarol))
@@ -163,17 +163,17 @@
 			</td>
 
 			<td>
-				<h5><?php 
+				<h5><?php
                         switch ($mostrarRol['estatus']) {
                         	case 'A':
                         		echo "ACTIVA";
-                        		break;                        	
+                        		break;
                         	default:
                         		echo "INACTIVA";
                         		break;
                          }
 
-				       ?>				       
+				       ?>
 				</h5>
 			</td>
 
@@ -183,14 +183,14 @@
 
 			<td>
 				<h5>
-	            	<?php				                                      						 
-							$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-							         FROM   usuario 
+	            	<?php
+							$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+							         FROM   usuario
 							         WHERE  Cedula='$mostrarRol[CreatedBy]' ";
-							$rs=mysql_query($query,$conexion);
+							$rs=mysql_query($sql,$conexion);
 							$row = mysql_fetch_array($rs);
-							echo  $row['Nombre'] ;						 									
-							mysql_free_result($rs);					
+							echo  $row['Nombre'] ;
+							mysql_free_result($rs);
 					?>
 			    </h5>
 			</td>
@@ -201,14 +201,14 @@
 
 			<td>
 				<h5>
-	            	<?php				                                      						 
-							$query=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-							         FROM   usuario 
+	            	<?php
+							$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+							         FROM   usuario
 							         WHERE  Cedula='$mostrarRol[UpdatedBy]' ";
-							$rs=mysql_query($query,$conexion);
+							$rs=mysql_query($sql,$conexion);
 							$row = mysql_fetch_array($rs);
-							echo  $row['Nombre'] ;						 									
-							mysql_free_result($rs);					
+							echo  $row['Nombre'] ;
+							mysql_free_result($rs);
 					?>
 			    </h5>
 			</td>
@@ -233,8 +233,8 @@
 				<h5></h5>
 			</td>
 
-			<td>					
-			
+			<td>
+
 				<a href="#<?php echo $mostrarRol['codigo']; ?>" id="btnEditar" >
 					<img src='imagenes/menu/botonesTablas/btnEditar.png'>
 				</a>
@@ -272,7 +272,7 @@
 										<h5 id='label_cajas_texto'>Descripción Rol</h5>
 										<input type='text' id='caja_formulario_usuario' name='txtDesc' maxlength="255" value='<?php echo $mostrarRol['Descripcion']; ?>'>
 									</td>
-								</tr>										
+								</tr>
 								<tr>
 									<td colspan='2'>
 										<input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
@@ -283,7 +283,7 @@
 						</div>
 					</div>
 				</div>
-			 								
+
 		    </td>
 			<td width="70px;">
 				     <?php
@@ -314,5 +314,5 @@
  <?php
     if (isset($mensajeError)) {
     	 echo $mensajeError;
-    }       
- ?>		
+    }
+ ?>

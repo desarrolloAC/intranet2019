@@ -1,14 +1,12 @@
 <?php
 
-error_reporting(E_ALL);
-
 include $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/directorio/Directorio.php';
 
 
 $conexion = conectar();
 
-$query = "SELECT
+$sql = "SELECT
             us.foto AS foto,
             CONCAT(us.PNombre,' ',us.SNombre,' ',us.PApellido,' ',us.SApellido) AS nc,
             us.Sexo,
@@ -19,17 +17,17 @@ $query = "SELECT
             us.Correo,
             us.Direccion
           FROM usuario us
-          RIGHT JOIN cargo car         ON car.ID_Cargo = us.ID_Cargo
-          RIGHT JOIN departamento dpto ON dpto.ID_Departamento = car.ID_Departamento
-          RIGHT JOIN organizacion org  ON org.ID_Organizacion = dpto.ID_Organizacion
+          INNER JOIN cargo car         ON car.ID_Cargo = us.ID_Cargo
+          INNER JOIN departamento dpto ON dpto.ID_Departamento = car.ID_Departamento
+          INNER JOIN organizacion org  ON org.ID_Organizacion = dpto.ID_Organizacion
           WHERE us.Estatus = 'A'
           ORDER BY us.Cedula;";
 
-$rs = mysql_query($query, $conexion);
+$rs = mysqli_query($conexion, $sql);
 
 $list = [];
 
-while ($row = mysql_fetch_array($rs)) {
+while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
 
     $inst = new Directorio();
     $inst->setFoto($row["foto"]);

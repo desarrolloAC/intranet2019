@@ -4,7 +4,7 @@
 .contenedorContenido {
     position: relative;
     top: 3cm;
-	width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -13,37 +13,43 @@
 
 /****************************************CAPUSLA INFORMATIVA****************************************************/
 .capuslaInformativa2 {
-	position: relative;
-	height: 10cm;
-	background-color: var(--gris2-color);
-	overflow-x: auto;
+    position: relative;
+    height: 10cm;
+    background-color: var(--gris2-color);
+    overflow-x: auto;
     padding: 0px;
     margin: 0px;
 }
 
 .capuslaInformativa {
-	position: relative;
-	height: 13cm;
-	background-color: var(--gris2-color);
-	overflow-x: scroll;
+    position: relative;
+    height: 13cm;
+    background-color: var(--gris2-color);
+    overflow-x: scroll;
     padding: 0px;
     margin: 0px;
 }
 
 .tituloCapsulaInformativa {
-	position: relative; top: 0.3cm;
-	text-align: center;
-	color: var(--blanco-color);
-    font-family: sans-serif;  /*willians  */
-    font-size: 1400;  /*willians */
+    position: relative;
+    top: 0.3cm;
+    text-align: center;
+    color: var(--blanco-color);
+    font-family: sans-serif;
+    /*willians  */
+    font-size: 1400;
+    /*willians */
 }
 
 .tituloCapsulaInformativa2 {
-	position: relative; top: 0.3cm;
-	text-align: center;
-	color: var(--negro-color);
-    font-family: sans-serif;  /*willians  */
-    font-size: 1400;  /*willians */
+    position: relative;
+    top: 0.3cm;
+    text-align: center;
+    color: var(--negro-color);
+    font-family: sans-serif;
+    /*willians  */
+    font-size: 1400;
+    /*willians */
 }
 
 .parent-pub {
@@ -53,49 +59,54 @@
     height: 8cm;
 }
 
-.n{
-	text-decoration: none;
-	color: var(--negro-color);
-}
-
-a   { 
+.n {
+    text-decoration: none;
     color: var(--negro-color);
 }
 
-a:link    { 
-    box-shadow: var(--negro-color);
-}
-a:visited { 
-    box-shadow: var(--negro-color);
-}
-a:hover   { 
+a {
     color: var(--negro-color);
 }
-a:active  { 
+
+a:link {
+    box-shadow: var(--negro-color);
+}
+
+a:visited {
+    box-shadow: var(--negro-color);
+}
+
+a:hover {
+    color: var(--negro-color);
+}
+
+a:active {
     box-shadow: var(--negro-color);
     background-color: transparent;
 }
 
 .contenedorNoticiaCapsulaInformativa {
-	position: relative; left: 0cm; top: 0cm;
-	border-style: solid;
-	border-width: 0.1px;
-	width: 10cm;
-	height: 6cm;
-	box-shadow: 5px 5px 5px 5px;
-	opacity: 0.7;
-	transition: 1s ease-in-out;
-	display: inline-block;
-	margin-left: 1cm;
-	margin-top: 1cm;
+    position: relative;
+    left: 0cm;
+    top: 0cm;
+    border-style: solid;
+    border-width: 0.1px;
+    width: 10cm;
+    height: 6cm;
+    box-shadow: 5px 5px 5px 5px;
+    opacity: 0.7;
+    transition: 1s ease-in-out;
+    display: inline-block;
+    margin-left: 1cm;
+    margin-top: 1cm;
 }
 
 .contenedorNoticiaCapsulaInformativa:hover {
-	opacity: 1;
-	transition: 1s ease-in-out;
-	cursor: pointer;
-	transform: scale(0.9);
-    box-shadow:  5px 5px 5px 5px var(--negro-color);
+    opacity: 1;
+    transition: 1s ease-in-out;
+    cursor: pointer;
+    transform: scale(0.9);
+    box-shadow: 5px 5px 5px 5px var(--negro-color);
     border: none;
     text-decoration: none;
 }
@@ -105,28 +116,31 @@ a:active  {
 }
 
 .tituloNoticiaCapsulaInformativa {
-	position: absolute;
-	width: 10cm;
-	height: 1.3cm;
-	background: rgb(241,129,3);/*NARANJA*/
+    position: absolute;
+    width: 10cm;
+    height: 1.3cm;
+    background: rgb(241, 129, 3);
+    /*NARANJA*/
 }
 
 .tituloNoticiaCapsulaInformativa:hover {
-    box-shadow:  5px 5px 5px 5px var(--negro-color);
+    box-shadow: 5px 5px 5px 5px var(--negro-color);
     border: none;
     text-decoration: none;
 }
 
-.tituloAvanceInformativo{
-	position: absolute; left: 0.2cm; top: -0.5cm;
-	color: var(--blanco-color);
-	font-weight: bold;
-	font-size: 16px;
-	font-family: "Arial";
+.tituloAvanceInformativo {
+    position: absolute;
+    left: 0.2cm;
+    top: -0.5cm;
+    color: var(--blanco-color);
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Arial";
 }
 
 .tituloAvanceInformativo:hover {
-     box-shadow:  5px 5px 5px 5px var(--negro-color);
+    box-shadow: 5px 5px 5px 5px var(--negro-color);
     border: none;
     text-decoration: none;
 }
@@ -139,9 +153,9 @@ a:active  {
 
 /****************************************VIDEO******************************************************************/
 
-.video{
+.video {
     position: static;
-	height: auto;
+    height: auto;
     padding-top: 100px;
     padding-bottom: 100px;
 }
@@ -157,34 +171,36 @@ a:active  {
 .salas {
     position: static;
     width: 100%;
-	height: 15cm;
-	background-color: var(--blanco-color);
+    height: 15cm;
+    background-color: var(--blanco-color);
 }
 
 .tituloSalas {
-	margin-top: 0cm;
-	text-align: center;
-	color: var(--negro-color);
+    margin-top: 0cm;
+    text-align: center;
+    color: var(--negro-color);
 }
 
 .tablaSala {
-	position: relative; top: 0.6cm; left: 0cm;
-	width: 100%;
-	border-collapse: collapse;
-	border-bottom-style: solid;
-	border-right-style: solid;
+    position: relative;
+    top: 0.6cm;
+    left: 0cm;
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom-style: solid;
+    border-right-style: solid;
     overflow-y: scroll;
 }
 
 .colorFondo {
-	text-align: center;
-	font-weight: bold;
-	background-color: var(--gris2-color);
-	color: var(--blanco-color);
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--gris2-color);
+    color: var(--blanco-color);
 }
 
 .colorDato {
-	text-align: center;
+    text-align: center;
 }
 
 /****************************************SALAS******************************************************************/
@@ -196,7 +212,7 @@ a:active  {
 
 .canvas {
     width: 100%;
-	height: 11cm;
+    height: 11cm;
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -206,7 +222,7 @@ a:active  {
     width: 100%;
     height: 11cm;
     border: none;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 /****************************************CANVAS******************************************************************/
@@ -218,9 +234,10 @@ a:active  {
 
 .infografia {
     position: relative;
-	height: auto;
+    height: auto;
     padding: 0px;
     margin: 0px;
+    top: 0cm;
 }
 
 .image-infografia {
@@ -235,124 +252,157 @@ a:active  {
 
 
 /**************************************** FOOTERR ***************************************************/
-.folletoInformativo{
-	height: 10cm;
-	background-color: var(--naraja-color);
+
+.footer {
+    position: relative;
+    top: 3cm;
 }
 
-h1#tituloFolletoInformativo{
-	margin-top: 0cm;
-	text-align: center;
-	color: var(--blanco-color);
+.folletoInformativo {
+    height: 10cm;
+    background-color: var(--naraja-color);
 }
 
-.nuestrasPaginas{
-	height: 10cm;
-	background-color: var(--gris2-color);
+h1#tituloFolletoInformativo {
+    margin-top: 0cm;
+    text-align: center;
+    color: var(--blanco-color);
 }
 
-h1#tituloNuestrasPaginas{
-	margin-top: 0cm;
-	text-align: center;
-	color: var(--blanco-color);
+.nuestrasPaginas {
+    height: 10cm;
+    background-color: var(--gris2-color);
+}
+
+h1#tituloNuestrasPaginas {
+    margin-top: 0cm;
+    text-align: center;
+    color: var(--blanco-color);
 }
 
 .slider {
-	position: relative; left: 0cm; top: 0cm;
-	width: 100%;
-	height: 8cm;
-	margin: auto;
-	overflow: hidden;
+    position: relative;
+    left: 0cm;
+    top: 0cm;
+    width: 100%;
+    height: 8cm;
+    margin: auto;
+    overflow: hidden;
 }
 
 .slider ul {
-	display: flex;
-	padding: 0;
-	width: 500%;	
-	animation: cambio 10s infinite alternate linear;
+    display: flex;
+    padding: 0;
+    width: 500%;
+    animation: cambio 10s infinite alternate linear;
 }
 
 .slider li {
-	width: 100%;
-	list-style: none;
+    width: 100%;
+    list-style: none;
 }
 
 .slider img {
-	width: 100%;
+    width: 100%;
 }
 
 @keyframes cambio {
-	0% {margin-left: 0;}
-	20% {margin-left: 0;}
-	
-	25% {margin-left: -125%;}
-	45% {margin-left: -125%;}
-	
-	50% {margin-left: -250%;}
-	70% {margin-left: -250%;}
-	
-	75% {margin-left: -375%;}
-	100% {margin-left: -375%;}
+    0% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -125%;
+    }
+
+    45% {
+        margin-left: -125%;
+    }
+
+    50% {
+        margin-left: -250%;
+    }
+
+    70% {
+        margin-left: -250%;
+    }
+
+    75% {
+        margin-left: -375%;
+    }
+
+    100% {
+        margin-left: -375%;
+    }
 }
 
 .link-slider {
     text-decoration: none;
-	color: var(--blanco-color);
+    color: var(--blanco-color);
 }
 
 .div-slider {
-    position: relative; 
-    left: 0px; 
+    position: relative;
+    left: 0px;
     top: 0cm;
-	width: 100%;
-	height: 8cm;
+    width: 100%;
+    height: 8cm;
 }
 
 .title-slider {
-    position: relative; left: 5.5cm; top: -0.2cm;
+    position: relative;
+    left: 5.5cm;
+    top: -0.2cm;
 }
 
 .image-slider {
-    position: relative; top: 0cm; left: 0cm;
-	width: 3cm;
-	height: 4cm;
+    position: relative;
+    top: 0cm;
+    left: 0cm;
+    width: 3cm;
+    height: 4cm;
 }
 
-.nuestrasRedes{
-	height: 10cm;
-	background-color: var(--naraja-color);
+.nuestrasRedes {
+    height: 10cm;
+    background-color: var(--naraja-color);
 }
 
-h1#tituloNuestrasRedes{
-	margin-top: 0cm;
-	text-align: center;
-	color: var(--blanco-color);
+h1#tituloNuestrasRedes {
+    margin-top: 0cm;
+    text-align: center;
+    color: var(--blanco-color);
 }
 
-img#imagenFacebook{
-	display: block;
-	margin-top: 0.5cm;
-	margin-left: 4cm;
-	transition: 2s ease-in-out;
+img#imagenFacebook {
+    display: block;
+    margin-top: 0.5cm;
+    margin-left: 4cm;
+    transition: 2s ease-in-out;
 }
 
-img#imagenFacebook:hover{
-	transition: 2s ease-in-out;
-	transform: rotate(360deg);
-	cursor: pointer;
+img#imagenFacebook:hover {
+    transition: 2s ease-in-out;
+    transform: rotate(360deg);
+    cursor: pointer;
 }
 
 .copy {
-	position: static;
-	height: 2cm;
-	background-color: var(--naraja-color);
+    position: static;
+    height: 2cm;
+    background-color: var(--naraja-color);
 }
 
-h3#derechoAutor{
-	position: relative; top: 0.2cm;
-	text-align: center;
-	margin: 0cm;
-	color: var(--blanco-color);
+h3#derechoAutor {
+    position: relative;
+    top: 0.2cm;
+    text-align: center;
+    margin: 0cm;
+    color: var(--blanco-color);
 }
 
 

@@ -1,11 +1,11 @@
 <?php
 
-include_once $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php'; 
-include_once $_SERVER["DOCUMENT_ROOT"].'/intranet/php/index/Publicaciones.php'; 
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/index/Publicaciones.php';
 
 $conexion = conectar();
 
-$queryAVIF = "SELECT 	pub.ID_Publicacion AS n,
+$sql = "SELECT 	pub.ID_Publicacion AS n,
 			        	pub.ID_Organizacion,
 			        	pub.ID_Subcategoria,
 			        	cat.ID_Categoria,
@@ -23,21 +23,20 @@ $queryAVIF = "SELECT 	pub.ID_Publicacion AS n,
 			                        INNER JOIN categoria cat        ON cat.ID_Categoria     = subc.ID_Categoria
 			WHERE cat.ID_Categoria = 'CAIF' AND pub.ID_Subcategoria='AVIF' AND pub.Estatus='A' AND cat.Estatus='A' AND subc.Estatus='A' AND pub.Estado='PUBLICADA'";
 
-$verAVIF = mysql_query($queryAVIF,$conexion);
+$rs = mysqli_query($conexion, $sql);
 
 $list = array();
 
 
 
-while ($row = mysql_fetch_array($verAVIF)) {		
-    
+while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+
     $inst = new Publicaciones();
     $inst->setPublicacionId($row["n"]);
     $inst->setTitulo($row['Titulo']);
     $inst->setImagen($row['Foto']);
-        
+
     array_push($list, $inst);
-    
 }
 
 echo json_encode($list);

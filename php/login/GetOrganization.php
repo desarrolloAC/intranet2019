@@ -8,20 +8,20 @@ include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/login/Organization.php';
 
 
 $conexion = conectar();
-$cedula   = $_SESSION['Cedula'];
+$cedula = $_SESSION['Cedula'];
 
-$query = "SELECT DISTINCT(o.ID_Organizacion), o.Nombre
+$sql = "SELECT DISTINCT(o.ID_Organizacion), o.Nombre
     FROM org_usuario_rol oru
     RIGHT  JOIN usuario      u  ON (oru.Cedula          =  u.Cedula)
     RIGHT  JOIN organizacion o  ON (oru.ID_Organizacion =  o.ID_Organizacion)
     WHERE  u.Cedula ='$cedula'
     AND oru.Estatus='A' AND o.Estatus='A' AND u.Estatus='A';";
 
-$rs = mysql_query($query, $conexion);
+$rs = mysqli_query($conexion, $sql);
 
 $list = [];
 
-while ($row = mysql_fetch_array($rs)) {
+while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
 
     $inst = new Organization();
     $inst->setKey($row["ID_Organizacion"]);

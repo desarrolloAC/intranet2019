@@ -20,12 +20,6 @@
     <script src="js/lib/vue.js"></script>
     <script src="js/lib/vue-resource.min.js"></script>
 
-
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.js"></script>
--->
-
 </head>
 
 <body>
@@ -391,28 +385,28 @@
                         <li>
                             <a class="link-slider" href="http://alkes-corp.com/index.php/es/" target="_blank">
                                 <div class="div-slider">
-                                    <img class="image-slider" src="imagenes/footer/logo_alkes.png" alt="" />
+                                    <img class="image-slider" src="assets/image/footer/logo_alkes.png" alt="" />
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a class="link-slider" href="http://www.industriaselcaiman.com.ve/index.php/es/" target="_blank">
                                 <div class="div-slider">
-                                    <img class="image-slider" src="imagenes/footer/logo_iec.png" alt="" />
+                                    <img class="image-slider" src="assets/image/footer/logo_iec.png" alt="" />
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a class="link-slider" href="http://venfruca.com/index.php/es/" target="_blank">
                                 <div class="div-slider">
-                                    <img class="image-slider" src="imagenes/footer/logo_venfruca.png" alt="" />
+                                    <img class="image-slider" src="assets/image/footer/logo_venfruca.png" alt="" />
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a class="link-slider" href="http://www.fruttech.com/index.php/es/" target="_blank">
                                 <div class="div-slider">
-                                    <img class="image-slider" src="imagenes/footer/logo_fruttech.png" alt="" />
+                                    <img class="image-slider" src="assets/image/footer/logo_fruttech.png" alt="" />
                                 </div>
                             </a>
                         </li>
@@ -424,9 +418,9 @@
             <!--INICIO NUESTRAS REDES-->
             <div class="col col-lg-3 nuestrasRedes">
                 <h1 id="tituloNuestrasRedes">Nuestras Redes Sociales</h1>
-                <img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/f.png" width="65">
-                <img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/instagram.png" width="65">
-                <img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/twitter.png" width="65">
+                <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/f.png" width="65">
+                <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/instagram.png" width="65">
+                <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/twitter.png" width="65">
             </div>
         </div>
 

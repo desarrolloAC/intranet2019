@@ -1,15 +1,18 @@
 <?php
 
+session_start();
+
 include $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/notificaciones/Notificaciones.php';
+include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
 
 $conexion = conectar();
 
+
 switch ($_SESSION['ID_Rol']) {
 
     case TypeUsuario::ADMINISTRADOR:
-
         $sql = "SELECT
             n.ID_Publicacion,
             n.Estado_Public,
@@ -18,9 +21,9 @@ switch ($_SESSION['ID_Rol']) {
            INNER JOIN usuario u ON(n.CreatedBy = u.Cedula)
            INNER JOIN org_usuario_rol oru ON(oru.Cedula = u.Cedula)
            INNER JOIN rol rl ON(rl.ID_Rol = oru.ID_Rol)
-           WHERE leido = 0 AND rl.ID_Rol = 'ADM';";
-
-        $rs = mysqli_query($conexion, $sql);
+           WHERE leido = 0 AND rl.ID_Rol = 'ADM' OR rl.ID_Rol = 'AUT'
+           OR rl.ID_Rol = 'EDT' OR rl.ID_Rol = 'LEC' OR rl.ID_Rol = 'PUB'
+           ORDER BY ID_Notificacion DESC;";
 
         break;
 
@@ -34,9 +37,8 @@ switch ($_SESSION['ID_Rol']) {
            INNER JOIN usuario u ON(n.CreatedBy = u.Cedula)
            INNER JOIN org_usuario_rol oru ON(oru.Cedula = u.Cedula)
            INNER JOIN rol rl ON(rl.ID_Rol = oru.ID_Rol)
-           WHERE leido = 0 AND rl.ID_Rol = 'ADM';";
-
-        $rs = mysqli_query($conexion, $sql);
+           WHERE leido = 0 AND rl.ID_Rol = 'AUT'
+           ORDER BY ID_Notificacion DESC;";
 
         break;
 
@@ -50,9 +52,8 @@ switch ($_SESSION['ID_Rol']) {
            INNER JOIN usuario u ON(n.CreatedBy = u.Cedula)
            INNER JOIN org_usuario_rol oru ON(oru.Cedula = u.Cedula)
            INNER JOIN rol rl ON(rl.ID_Rol = oru.ID_Rol)
-           WHERE leido = 0 AND rl.ID_Rol = 'ADM';";
-
-        $rs = mysqli_query($conexion, $sql);
+           WHERE leido = 0 AND rl.ID_Rol = 'EDT'
+           ORDER BY ID_Notificacion DESC;";
 
         break;
 
@@ -66,9 +67,8 @@ switch ($_SESSION['ID_Rol']) {
            INNER JOIN usuario u ON(n.CreatedBy = u.Cedula)
            INNER JOIN org_usuario_rol oru ON(oru.Cedula = u.Cedula)
            INNER JOIN rol rl ON(rl.ID_Rol = oru.ID_Rol)
-           WHERE leido = 0 AND rl.ID_Rol = 'ADM';";
-
-        $rs = mysqli_query($conexion, $sql);
+           WHERE leido = 0 AND rl.ID_Rol = 'LEC'
+           ORDER BY ID_Notificacion DESC;";
 
         break;
 
@@ -82,9 +82,8 @@ switch ($_SESSION['ID_Rol']) {
            INNER JOIN usuario u ON(n.CreatedBy = u.Cedula)
            INNER JOIN org_usuario_rol oru ON(oru.Cedula = u.Cedula)
            INNER JOIN rol rl ON(rl.ID_Rol = oru.ID_Rol)
-           WHERE leido = 0 AND rl.ID_Rol = 'ADM';";
-
-        $rs = mysqli_query($conexion, $sql);
+           WHERE leido = 0 AND rl.ID_Rol = 'PUB'
+           ORDER BY ID_Notificacion DESC;";
 
         break;
 
@@ -92,6 +91,9 @@ switch ($_SESSION['ID_Rol']) {
 
         break;
 }
+
+
+$rs = mysqli_query($conexion, $sql);
 
 
 $list = [];

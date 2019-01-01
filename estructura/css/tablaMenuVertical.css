@@ -1,7 +1,7 @@
 div#contendorTablaMenu{
 	position: relative;
 	width: 70%;
-	height: 100%;	
+	height: 100%;
 	background-color: rgb(69,69,69);
 }
 
@@ -24,12 +24,12 @@ h1#tituloMenu{
 /*OPCION CARGO*/
 a#opcionCag{
 	padding: 15px 110px 15px 95px;
-	margin-left: -1.8cm; 
+	margin-left: -1.8cm;
 	text-decoration: none;
 	font-family: "Arial";
 	font-size: 18px;
 	color: rgb(255,255,255);
-	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/cargo.png);
+	background-image: url(../../assets/image/ImagenesBotonesMenuVertical/cargo.png);
 	background-repeat: no-repeat;
 	background-position: -15px -5px;
 }
@@ -43,7 +43,7 @@ a#opcionCategoria{
 	font-family: "Arial";
 	font-size: 18px;
 	color: rgb(255,255,255);
-	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/categoria.png);
+	background-image: url(../../assets/image/ImagenesBotonesMenuVertical/categoria.png);
 	background-repeat: no-repeat;
 	background-position: -15px -5px;
 }
@@ -57,7 +57,7 @@ a#subcategoria{
 	font-family: "Arial";
 	font-size: 18px;
 	color: rgb(255,255,255);
-	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/subcategoria.png);
+	background-image: url(../../assets/image/ImagenesBotonesMenuVertical/subcategoria.png);
 	background-repeat: no-repeat;
 	background-position: -15px -5px;
 }
@@ -71,7 +71,7 @@ a#opcionDpto{
 	font-family: "Arial";
 	font-size: 18px;
 	color: rgb(255,255,255);
-	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/departamentos.png);
+	background-image: url(../../assets/image/ImagenesBotonesMenuVertical/departamentos.png);
 	background-repeat: no-repeat;
 	background-position: -15px -5px;
 }
@@ -85,7 +85,7 @@ a#opcionDirectorio{
 	font-family: "Arial";
 	font-size: 18px;
 	color: rgb(255,255,255);
-	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/directorio.png);
+	background-image: url(../../assets/image/ImagenesBotonesMenuVertical/directorio.png);
 	background-repeat: no-repeat;
 	background-position: -15px -5px;
 }
@@ -99,7 +99,7 @@ a#opcionOrg{
 	font-family: "Arial";
 	font-size: 18px;
 	color: rgb(255,255,255);
-	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/organizacion.png);
+	background-image: url(../../assets/image/ImagenesBotonesMenuVertical/organizacion.png);
 	background-repeat: no-repeat;
 	background-position: -15px -5px;
 }
@@ -113,7 +113,7 @@ a#opcionPub{
 	font-family: "Arial";
 	font-size: 18px;
 	color: rgb(255,255,255);
-	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/publicacion.png);
+	background-image: url(../../assets/image/ImagenesBotonesMenuVertical/publicacion.png);
 	background-repeat: no-repeat;
 	background-position: -15px -5px;
 }
@@ -127,7 +127,7 @@ a#pcategorias{
 	font-family: "Arial";
 	font-size: 18px;
 	color: rgb(255,255,255);
-	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/categoria.png);
+	background-image: url(../../assets/image/ImagenesBotonesMenuVertical/categoria.png);
 	background-repeat: no-repeat;
 	background-position: -15px -5px;
 }
@@ -141,7 +141,7 @@ a#categoria{
 	font-family: "Arial";
 	font-size: 18px;
 	color: rgb(255,255,255);
-	background-image: url(../../imagenes/menu/botonesMenu/categoria.png);
+	background-image: url(../../assets/image/menu/botonesMenu/categoria.png);
 	background-repeat: no-repeat;
 	background-position: -15px -5px;
 }
@@ -155,7 +155,7 @@ a#opcionRol{
 	font-family: "Arial";
 	font-size: 18px;
 	color: rgb(255,255,255);
-	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/roles.png);
+	background-image: url(../../assets/image/ImagenesBotonesMenuVertical/roles.png);
 	background-repeat: no-repeat;
 	background-position: -15px -5px;
 }
@@ -169,7 +169,7 @@ a#opcionUsuario{
 	font-family: "Arial";
 	font-size: 18px;
 	color: rgb(255,255,255);
-	background-image: url(../../imagenes/ImagenesBotonesMenuVertical/usuario.png);
+	background-image: url(../../assets/image/ImagenesBotonesMenuVertical/usuario.png);
 	background-repeat: no-repeat;
 	background-position: -15px -5px;
 }

@@ -2,182 +2,35 @@
 <div id="contenedorCabecera">
 
     <!--INICIO CONTENEDOR LOGO ALKES-->
-    <div id="contenedorLogo">
-        <a href="index.html">
-            <img class="logo" src="imagenes\top\logoAlkes.png" width="500" height="100">
-        </a>
 
+    <div id="contenedorLogo">
+        <a href="index.php">
+            <img class="logo" src="assets/image/top/logoAlkes.png" width="500" height="100">
+        </a>
     </div>
+
     <!--FIN CONTENEDOR LOGO ALKES-->
 
 
     <!--INICIO CONTENEDOR BANDEJA DE ENTRADA -->
+
     <div id="bandeja">
 
         <a href="#" id="abrirBandeja">Bandeja De Entrada
-            <img id="imagenBandeja" src="imagenes/top/bandeja.png">
-
-            <?php
-            $conexion = conectar();
-            $numero = "SELECT COUNT(leido) AS n FROM notificacion where leido=0";
-            $sql = mysqli_query($conexion, $numero);
-
-            while ($ver = mysqli_fetch_array($sql, MYSQLI_ASSOC)) {
-                echo "<div id='nNotificacion'>" . "<h5 id='rNumero'>" . $ver["n"] . "</h5>" . "</div>";
-            }
-            ?>
-
+            <img id="imagenBandeja" src="assets/image/top/bandeja.png">
+            <div id='nNotificacion'>
+                <h5 id='rNumero'>{{ num }}</h5>
+            </div>
         </a>
-
-
 
         <div id="contenidoBandeja">
 
-            <?php
-            $conexion = conectar();
-            $sql = " SELECT * FROM notificacion WHERE leido=0 ORDER BY ID_Notificacion DESC ";
-            $rs = mysqli_query($conexion, $sql);
+            <div v-for="item in list" id="contenedorNotificaciones">
+                <a id="enlaceNotificaciones" :href="'#' + item.publicacion_id">{{ item.mensaje }}</a>
+            </div>
 
-            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-
-                switch ($_SESSION['ID_Rol']) {
-
-                    case TypeUsuario::ADMINISTRADOR:
-
-                        /* INGRESAR EL USUARIO COMO ADMINISTRADOR */
-                        switch ($row['Estado_Public']) {
-
-                            case EstadoPublicacion::RECHAZADO_A:
-                                echo "<div id='contenedorNotificaciones'>
-                               <a id='enlaceNotificaciones' href='#$row[ID_Publicacion]'> $row[Mensaje]</a>
-                             </div>";
-                                break;
-
-                            case EstadoPublicacion::RECHAZADO_E:
-                                echo "<div id='contenedorNotificaciones'>
-                               <a id='enlaceNotificaciones' href='#$row[ID_Publicacion]'> $row[Mensaje]</a>
-                             </div>";
-                                break;
-
-                            case EstadoPublicacion::REVISION_E:
-                                echo "<div id='contenedorNotificaciones'>
-                               <a id='enlaceNotificaciones' href='#$row[ID_Publicacion]'> $row[Mensaje]</a>
-                             </div>";
-                                break;
-
-                            case EstadoPublicacion::REVISION_A:
-                                echo "<div id='contenedorNotificaciones'>
-                               <a id='enlaceNotificaciones' href='#$row[ID_Publicacion]'> $row[Mensaje]</a>
-                             </div>";
-                                break;
-
-                            case EstadoPublicacion::PUBLICADA:
-                                echo "<div id='contenedorNotificaciones'>
-                               <a id='enlaceNotificaciones' href='#$row[ID_Publicacion]'> $row[Mensaje]</a>
-                             </div>";
-                                break;
-
-                            default:// EstadoPublicacion::BORR:;
-                                break;
-                        } //FIN SWITCH
-
-                        break;
-
-                    case TypeUsuario::AUTORIZADOR:
-
-                        /* INGRESAR EL USUARIO COMO AUTORIZADOR */
-
-                        switch ($row['Estado_Public']) {
-
-                            case EstadoPublicacion::RECHAZADO_A:
-                                break;
-
-                            case EstadoPublicacion::RECHAZADO_E:
-                                break;
-
-                            case EstadoPublicacion::REVISION_E:
-                                break;
-
-                            case EstadoPublicacion::REVISION_A:
-                                echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
-                                break;
-
-                            case EstadoPublicacion::PUBLICADA:
-                                echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
-                                break;
-
-                            default:
-                                break;
-                        } //FIN SWITCH
-
-                        break;
-
-                    case TypeUsuario::EDITOR:
-
-                        /* INGRESAR EL USUARIO COMO EDITOR */
-
-                        switch ($row['Estado_Public']) {
-
-                            case EstadoPublicacion::RECHAZADO_A:
-                                echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
-                                break;
-
-                            case EstadoPublicacion::RECHAZADO_E:
-                                break;
-
-                            case EstadoPublicacion::REVISION_E:
-                                echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
-                                break;
-
-                            case EstadoPublicacion::REVISION_A:
-                                break;
-
-                            case EstadoPublicacion::PUBLICADA:
-                                echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
-                                break;
-
-                            default:
-                                break;
-                        } //FIN SWITCH  EDITOR
-
-                        break;
-
-                    case TypeUsuario::PUBLICADOR:
-
-                        /* INGRESAR EL USUARIO COMO EDITOR */
-
-                        switch ($row['Estado_Public']) {
-
-                            case EstadoPublicacion::RECHAZADO_A:
-                                break;
-
-                            case EstadoPublicacion::RECHAZADO_E:
-                                echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
-                                break;
-
-                            case EstadoPublicacion::REVISION_E:
-                                break;
-
-                            case EstadoPublicacion::REVISION_A:
-                                break;
-
-                            case EstadoPublicacion::PUBLICADA:
-                                echo "<li> <a href='#$row[ID_Publicacion]'> $row[Mensaje] </a> </li>";
-                                break;
-
-                            default:
-
-                                break;
-                        } //FIN SWITCH PUBLICADOR
-
-                        break;
-
-                    default: //PUBLICADOR
-                        break;
-                }//FIN DE SWITCH PRINCIPAL ROL
-            }
-            ?>
         </div>
+
     </div>
 
     <!--FIN CONTENEDOR BANDEJA DE ENTRADA-->
@@ -194,20 +47,20 @@
             <tr>
                 <td>
                     <!--INICIO ICONO DE USUARIO-->
-                    <img id="iconoUsuario" src="imagenes/top/u.png" title="Nombre De Usuario">
+                    <img id="iconoUsuario" src="assets/image/top/u.png" title="Nombre De Usuario">
                     <!--FIN ICONO DE USUARIO-->
                 </td>
 
                 <td>
                     <span id="nombreUsuario">
-                        <?php echo $_SESSION['Correo']; ?>
+                        {{ user.correo }}
                     </span>
                 </td>
 
                 <td rowspan="3">
                     <form id="formularioCerrarSesion" method="POST" action="php/cerrarSesion.php">
                         <a href="php/cerrarSesion.php">
-                            <img id="iconoSalir" src="imagenes/top/salir.png" width="60" height="60" title="Cerrar Session">
+                            <img id="iconoSalir" src="assets/image/top/salir.png" width="60" height="60" title="Cerrar Session">
                         </a>
                     </form>
                 </td>
@@ -216,19 +69,13 @@
             <tr>
                 <td>
                     <!--INICIO ICONO DE USUARIO-->
-                    <img id="iconoRol" src="imagenes/top/r.png" title="Nombre Del Rol">
+                    <img id="iconoRol" src="assets/image/top/r.png" title="Nombre Del Rol">
                     <!--FIN ICONO DE USUARIO-->
                 </td>
 
                 <td>
                     <span id="nombreRol">
-                        <?php
-                        $conexion = conectar();
-                        $select = "SELECT Nombre FROM rol WHERE ID_Rol = '$_SESSION[ID_Rol]'";
-                        $nombreRol = mysqli_query($conexion, $select);
-                        $rol = mysqli_fetch_array($nombreRol, MYSQLI_ASSOC);
-                        echo $rol['Nombre'];
-                        ?>
+                        {{ user.cargo }}
                     </span>
                 </td>
             </tr>
@@ -236,20 +83,13 @@
             <tr>
                 <td>
                     <!--INICIO ICONO DE USUARIO-->
-                    <img id="iconoOrganizacion" src="imagenes/top/o.png" title="Nombre De La Organizacion">
+                    <img id="iconoOrganizacion" src="assets/image/top/o.png" title="Nombre De La Organizacion">
                     <!--FIN ICONO DE USUARIO-->
                 </td>
 
                 <td>
                     <span id="nombreOrganizacion">
-                        <?php
-                        $conexion = conectar();
-                        $selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION[ID_Organizacion]'";
-                        $nombreOrg = mysqli_query($conexion, $selectOrg);
-                        $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
-                        echo $org['Nombre'];
-                        ?>
-
+                        {{ user.org }}
                     </span>
                 </td>
             </tr>
@@ -263,3 +103,44 @@
 </div>
 
 <!--FIN DEL CONTENEDOR CABECERA-->
+
+<script type="text/javascript">
+    const contenidoBandeja = new Vue({
+        el: '#contenedorCabecera',
+        created: function() {
+            this.getPublicaciones();
+            this.getUsuarioActual();
+            this.getNumeroNotificaciones();
+        },
+        data: {
+            list: [],
+            user: '',
+            num: 0
+        },
+        methods: {
+            getPublicaciones: function() {
+                const contenidoBandejaUrl = 'php/notificaciones/GetNotificaciones.php';
+
+                this.$http.get(contenidoBandejaUrl).then((responsed) => {
+                    this.list = responsed.body;
+                });
+            },
+            getUsuarioActual: function() {
+                const usuarioActualUrl = 'php/notificaciones/GetUsuarioActual.php';
+
+                this.$http.get(usuarioActualUrl).then((responsed) => {
+                    this.user = responsed.body[0];
+                });
+            },
+            getNumeroNotificaciones: function() {
+                const numeroUrl = 'php/notificaciones/GetNumeroNotificaciones.php';
+
+                this.$http.get(numeroUrl).then((responsed) => {
+                    this.num = responsed.body.n;
+                    console.log(this.num);
+                });
+            }
+        }
+    });
+
+</script>

@@ -58,6 +58,8 @@ include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
         <script src="js/efectoCategoriasParaPublicar.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
 
+        <script src="js/lib/vue.js"></script>
+        <script src="js/lib/vue-resource.min.js"></script>
         <!--FIN LLAMADA ARCHIVOS JS-->
 
 
@@ -209,33 +211,8 @@ include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
         <!--INICIO CONTENEDOR MENU-->
 
-        <div id="contenedorMenu">
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdmin.php'; ?>
 
-            <!--INICIO TABLA CONTENEDOR MENU-->
-
-            <div id="contendorTablaMenu">
-                <h1 id="tituloMenu">Menu</h1>
-                <ul id="menuv">
-                    <li><a href="#" class="efectoMenu" id="opcionCag">Cargo</a></li>
-                    <li><a href="#" class="efectoMenu" id="opcionCategoria">Categoria</a></li>
-                    <li><a href="#" class="efectoMenu" id="subcategoria">SubCategoria</a></li>
-                    <li><a href="#" class="efectoMenu" id="opcionDpto">Departamento</a></li>
-                    <li><a href="#" class="efectoMenu" id="opcionOrg">Organizacion</a></li>
-                    <li><a href="#" class="efectoMenu" id="opcionPub">Publicacion</a>
-                        <ul id="c">
-                            <li><a href="#" class="efectoMenu" id="pcategorias">Categorias</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="efectoMenu" id="opcionRol">Rol</a></li>
-                    <li><a href="#" class="efectoMenu" id="opcionUsuario">Usuario</a></li>
-                </ul>
-
-
-            </div>
-
-            <!--FIN TABLA CONTENEDOR MENU-->
-
-        </div>
 
         <!--FIN CONTENEDOR MENU-->
 
@@ -245,7 +222,9 @@ include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
         <div class="contenedorContenidos">
 
-
+            <div id='contenedor_tabla_publicacion'>
+                <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/tablaPublicacion.php'; ?>
+            </div>
 
         </div>
         <!--FIN DEL CONTENEDOR CONTENIDOS-->

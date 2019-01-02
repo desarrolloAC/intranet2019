@@ -4,6 +4,7 @@
 		require_once('estadosLogin.php');
 
 		$conexion       = conectar();
+
 			//REALIZO LA CONSULTA COMPARANDO LA VARIABLE ENVIADA PARA VER SI YA EXISTE EN EL SISTEMA
              $cedula            = $_POST['txtCedula'];
              $createdBy 	    = $_SESSION['Cedula'];
@@ -12,12 +13,12 @@
 			 $type              = $_FILES['btnImagen']['type'];
 			 $date              = date("Y-m-d_His");// date('Y-m-d i:m:s');
 			 $ruta              = $_FILES['btnImagen']['tmp_name'];
-			 $destino_temp      = '/intranet/imagenes/fotoPublicaciones/'.$date.strstr($foto,'.');
+			 $destino_temp      = '/intranet/assets/image/fotoPublicaciones/'.$date.strstr($foto,'.');
 			 $destino           = $_SERVER['DOCUMENT_ROOT'].$destino_temp;
 			 $organizacion      = $_SESSION['ID_Organizacion'];
 
-			 $sql = mysql_query(" SELECT * FROM usuario WHERE cedula ='$cedula'",$conexion);
-			 $codigo  = mysql_num_rows($sql);
+			 $sql = mysqli_query($conexion,"SELECT * FROM usuario WHERE cedula ='$cedula'");
+			 $codigo  = mysqli_num_rows($sql);
 
 
 		if(!empty($codigo)){
@@ -100,8 +101,8 @@
 
 
 		    	 	 	 $sql1 =" INSERT INTO seguridad VALUES (NULL,'$txtCorreo',DEFAULT, SHA1('$clave1'),'$pre', '$res'); ";
-	                     mysql_query($sql1,$conexion)or die(mysql_error());
-                         mysql_query("COMMIT");
+	                     mysqli_query($conexion,$sql1) or die(mysqli_error());
+                         mysqli_query($conexion,"COMMIT");
 
 						 $sql2=" INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
 						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo,Telefono, Sexo, Direccion,
@@ -111,16 +112,18 @@
 						               '$txttelefono','$cbSexo', '$dir', DEFAULT, '$destino_temp', CURRENT_TIMESTAMP, '$createdBy',
 						              CURRENT_TIMESTAMP, '$createdBy'); ";
 
-						 mysql_query($sql2,$conexion)or die(mysql_error());
-						 $q2=mysql_affected_rows();
-						 	 mysql_query("COMMIT");
+						 mysqli_query($conexion,$sql2) or die(mysqli_error());
+
+                        $q2=mysqli_affected_rows($conexion);
+
+                        mysqli_query($conexion,"COMMIT");
 
 					  if ($q2>0) {
                         $sql3=" INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
 						         VALUES ('$organizacion', '$rol', '$txtCedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
 
-                        mysql_query($sql3,$conexion) or die(mysql_error());
- 						$q3=mysql_affected_rows();
+                        mysqli_query($conexion,$sql3) or die(mysqli_error());
+ 						$q3=mysqli_affected_rows($conexion);
  					   }
 					 if ($q3>0) {
 							switch ($_SESSION['ID_Rol']) {

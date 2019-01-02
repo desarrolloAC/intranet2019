@@ -1,5 +1,6 @@
 <?php
-		@session_start();
+		session_start();
+
 		require_once('../conexion/conexion.php');
 		require_once('estadosLogin.php');
 		$conexion       = conectar();
@@ -8,8 +9,8 @@
 		$nombre         = $_POST['txtNombreOrganizacion'];
 
 		//REALIZO LA CONSULTA COMPARANDO LA VARIABLE ENVIADA PARA VER SI YA EXISTE EN EL SISTEMA
-		$sql = mysql_query("SELECT * FROM organizacion WHERE ID_Organizacion ='$codigo'");
-		$vcodigo = mysql_num_rows($sql);
+		$sql = mysqli_query($conexion,"SELECT * FROM organizacion WHERE ID_Organizacion ='$codigo'");
+		$vcodigo = mysqli_num_rows($sql);
 
 	    if(!empty($vcodigo)){
 
@@ -52,7 +53,7 @@
 
 		   $sql = " INSERT INTO organizacion VALUES ('$codigo','$nombre',DEFAULT,NOW(),'$_SESSION[Cedula]',NOW(),'$_SESSION[Cedula]',NULL)";
 
-		   $agregarOrganizacion  = mysql_query ($sql,$conexion);
+		   $agregarOrganizacion  = mysqli_query ($conexion,$sql);
 
 		   switch ($_SESSION['ID_Rol']) {
 		        case TypeUsuario::ADMINISTRADOR:

@@ -11,8 +11,8 @@
 
 
 		//REALIZO LA CONSULTA COMPARANDO LA VARIABLE ENVIADA PARA VER SI YA EXISTE EN EL SISTEMA
-		$sql = mysql_query("SELECT * FROM cargo WHERE ID_Cargo ='$codigo'");
-		$vcodigo = mysql_num_rows($sql);
+		$sql = mysqli_query($conexion,"SELECT * FROM cargo WHERE ID_Cargo ='$codigo'");
+		$vcodigo = mysqli_num_rows($sql);
 
 	    if(!empty($vcodigo)){
 
@@ -56,7 +56,7 @@
 		   $sql = " INSERT INTO cargo
 		              VALUES      ('$codigo','$dpto','$nombre',DEFAULT,NOW(),'$_SESSION[Cedula]',NOW(),'$_SESSION[Cedula]','$descripcion')";
 
-		   $agregarcargo = mysql_query ($sql,$conexion);
+		   $agregarcargo = mysqli_query ($conexion,$sql);
 
 
 		   switch ($_SESSION['ID_Rol']) {

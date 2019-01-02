@@ -8,14 +8,13 @@
 	         FROM estados as e inner join municipios as m using(ID_ESTADO)
 	         WHERE e.ID_ESTADO='$_GET[elegido]'";
 
-			$rs=mysql_query($sql,$link);
+			$rs=mysqli_query($link,$sql);
 
 			echo " <option value=''>Municipio</option>";
-			 while ($row=mysql_fetch_array($rs)){
+			 while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 
 			   echo "<option value='$row[0]'> $row[1] </option>";
 			}
 
-			mysql_free_result($rs);
 	}
 ?>

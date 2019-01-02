@@ -137,7 +137,6 @@
 
                 this.$http.get(numeroUrl).then((responsed) => {
                     this.num = responsed.body.n;
-                    console.log(this.num);
                 });
             }
         }

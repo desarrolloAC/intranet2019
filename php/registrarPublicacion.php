@@ -1,34 +1,34 @@
 <?php
 
 	@session_start();
-	require_once('../conexion/conexion.php');	
+	require_once('../conexion/conexion.php');
 	require_once('estadosLogin.php');
-     
+
 	$conexion = conectar();
-	
+
 	//DECLARO LAS VARIABLES QUE AGARRA LOS VALORES DE LOS INPUT
-	$idPublicacion 		= mysql_insert_id();
-	$idOrganizacion 	= $_SESSION['ID_Organizacion'];	
+	$idPublicacion 		= mysqli_insert_id($conexion);
+	$idOrganizacion 	= $_SESSION['ID_Organizacion'];
 	$idSubCategoria 	= $_POST['txtCodigoSubCategoriaAvanceInformativo'];
 	$cedula 			= $_SESSION['Cedula'];
 	$contenido 			= $_POST['txtContenidoAvanceInformativo'];
 	if (isset($_FILES['archivo']['error'])) {
-		$error          = $_FILES['archivo']['error']; 
+		$error          = $_FILES['archivo']['error'];
 	}
 	if (isset( $_FILES['archivo']['name'])) {
 		$foto              	=$_FILES['archivo']['name'];
 	}
-	
+
 	if (isset($_FILES['archivo']['type'])) {
-		$type              	= $_FILES['archivo']['type']; 
-	}	
+		$type              	= $_FILES['archivo']['type'];
+	}
 	$date              	= date("Y-m-d_His");// date('Y-m-d i:m:s');
-	$titulo 			= $_POST['txtTituloAvanceInformativo'];	
+	$titulo 			= $_POST['txtTituloAvanceInformativo'];
 	$created 			= date("Y-m-d H:i:s");
 	$createdBy 			= $_SESSION['Cedula'];
 	$updated 			= date("Y-m-d H:i:s");
 	$updateBy 			= $_SESSION['Cedula'];
-		 
+
     if($error)
     {
 		switch($error)
@@ -54,52 +54,52 @@
 	else
 	{
 		//si no hay error entonces $_FILES[’nombre del_archivo’][’error’] es 0
-		if ((isset($foto) && ($error == UPLOAD_ERR_OK))) 
+		if ((isset($foto) && ($error == UPLOAD_ERR_OK)))
 		{
 		    $ruta              = $_FILES['archivo']['tmp_name'];
-			$destino_temp      = '/intranet/imagenes/fotoPublicaciones/'.$date.strstr($foto,'.');
+			$destino_temp      = '/intranet/assets/image/fotoPublicaciones/'.$date.strstr($foto,'.');
 			$destino           = $_SERVER['DOCUMENT_ROOT'].$destino_temp;
-			copy($ruta,$destino);			
+			copy($ruta,$destino);
 	    }//FIN DEL IF
 	    else
 	    {
-		   echo "El archivo no se ha podido copiar en el directorio.";     
+		   echo "El archivo no se ha podido copiar en el directorio.";
 	    }//FIN DEL ESE
     }//FIN DEL ELSE
-  
- 	$agregarPublicacion = mysql_query("INSERT INTO publicacion VALUES(NULL,'$idOrganizacion','$idSubCategoria','$cedula','$contenido',DEFAULT,'$destino_temp','$titulo',DEFAULT,NULL,now(),'$createdBy',now(),'$updateBy',NULL,NULL)",$conexion);
- 	 
+
+ 	$agregarPublicacion = mysqli_query($conexion,"INSERT INTO publicacion VALUES(NULL,'$idOrganizacion','$idSubCategoria','$cedula','$contenido',DEFAULT,'$destino_temp','$titulo',DEFAULT,NULL,now(),'$createdBy',now(),'$updateBy',NULL,NULL)");
+
 	switch ($_SESSION['ID_Rol']) {
         case TypeUsuario::ADMINISTRADOR:
-             //INGRESAR EL USUARIO COMO ADMINISTRADOR                        
-            echo'<script language="javascript">        
+             //INGRESAR EL USUARIO COMO ADMINISTRADOR
+            echo'<script language="javascript">
                  alert("Publicacion Realizada Con Exito");
                  location.href="../menuAdministrador.php";
                  </script>';
             break;
          case TypeUsuario::AUTORIZADOR:
-             /*INGRESAR EL USUARIO COMO AUTORIZADOR  */                      
-            echo'<script language="javascript">        
+             /*INGRESAR EL USUARIO COMO AUTORIZADOR  */
+            echo'<script language="javascript">
                  alert("Publicacion Realizada Con Exito");
                  location.href="../menuAutorizador.php";
                  </script>';
             break;
          case TypeUsuario::EDITOR:
-              /*INGRESAR EL USUARIO COMO EDITOR */                        
-            echo'<script language="javascript">        
+              /*INGRESAR EL USUARIO COMO EDITOR */
+            echo'<script language="javascript">
                  alert("Publicacion Realizada Con Exito");
                  location.href="../menuEditor.php";
                  </script>';
             break;
          case TypeUsuario::PUBLICADOR:
-             /*INGRESAR EL USUARIO COMO PUBLICADOR */  
-            echo'<script language="javascript">        
+             /*INGRESAR EL USUARIO COMO PUBLICADOR */
+            echo'<script language="javascript">
                  alert("Publicacion Realizada Con Exito");
                  location.href="../menuPublicador.php";
             </script>';
-            break;                    
-        default: //LECTOR
-                
             break;
-    } 
+        default: //LECTOR
+
+            break;
+    }
 ?>

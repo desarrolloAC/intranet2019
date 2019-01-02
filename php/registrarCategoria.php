@@ -1,17 +1,20 @@
 <?php
 
-    @session_start();
+    session_start();
+
 	require_once('../conexion/conexion.php');
 	require_once('estadosLogin.php');
+
     $conexion = conectar();
+
 	//DECLARO LAS VARIABLES QUE AGARRA LOS VALORES DE LOS INPUT
 	$codigo         = trim($_POST['txtCodigoCategoria']);
 	$nombre         = $_POST['txtNombreCategoria'];
 	$descripcion    = $_POST['txtDesc'];
 
 	//REALIZO LA CONSULTA COMPARANDO LA VARIABLE ENVIADA PARA VER SI YA EXISTE EN EL SISTEMA
-	$sql = mysql_query("SELECT * FROM categoria WHERE ID_Categoria ='$codigo'",$conexion);
-	$vcodigo = mysql_num_rows($sql);
+	$sql = mysqli_query($conexion,"SELECT * FROM categoria WHERE ID_Categoria ='$codigo'");
+	$vcodigo = mysqli_num_rows($sql);
 
 	if(!empty($vcodigo))
 	{
@@ -54,7 +57,7 @@
 	else
 	{
 	   $sql=" INSERT INTO categoria VALUES('$codigo','$nombre',DEFAULT,NOW(),'$_SESSION[Cedula]',NOW(),'$_SESSION[Cedula]','$descripcion')";
-	   $agregarCategoria = mysql_query ($sql,$conexion);
+	   $agregarCategoria = mysqli_query ($conexion,$sql);
 
 
 	   switch ($_SESSION['ID_Rol']) {

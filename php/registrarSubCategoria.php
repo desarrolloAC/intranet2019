@@ -1,8 +1,10 @@
 <?php
 
-	@session_start();
+	session_start();
+
 	require_once('../conexion/conexion.php');
 	require_once('estadosLogin.php');
+
     $conexion = conectar();
 
 	$codigo         = trim($_POST['txtCodigoSubCategoria']);
@@ -11,8 +13,8 @@
 	$descripcion    = $_POST['txtDesc'];
 
 	//REALIZO LA CONSULTA COMPARANDO LA VARIABLE ENVIADA PARA VER SI YA EXISTE EN EL SISTEMA
-	$sql = mysql_query("SELECT * FROM subcategoria WHERE ID_Subcategoria ='$codigo'");
-	$vcodigo = mysql_num_rows($sql);
+	$sql = mysqli_query($conexion,"SELECT * FROM subcategoria WHERE ID_Subcategoria ='$codigo'");
+	$vcodigo = mysqli_num_rows($sql);
 
 	if(!empty($vcodigo))
 	{
@@ -57,7 +59,7 @@
 	   $sql = " INSERT INTO subcategoria
 	              VALUES      ('$codigo','$codigo_cate','$nombre',DEFAULT,NOW(),'$_SESSION[Cedula]',NOW(),'$_SESSION[Cedula]','$descripcion')";
 
-	   $agregarCategoria = mysql_query ($sql,$conexion);
+	   $agregarCategoria = mysqli_query($conexion,$sql);
 
 
 	   switch ($_SESSION['ID_Rol']) {

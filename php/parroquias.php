@@ -9,14 +9,13 @@
 		         FROM municipios as m inner join parroquias as p using(ID_MUNICIPIO)
 		         WHERE m.ID_MUNICIPIO='$_GET[elegido]'";
 
-				$rs=mysql_query($sql,$link);
+				$rs=mysqli_query($link,$sql);
 
 				echo " <option value=''>Parroquia</option>";
-				while ($row=mysql_fetch_array($rs)){
+				while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 
 				echo "<option value='$row[0]'> $row[1] </option>";
 				}
 
-				mysql_free_result($rs);
 	}
 ?>

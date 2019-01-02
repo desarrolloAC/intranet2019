@@ -1,7 +1,9 @@
 <?php
-		@session_start();
+		session_start();
+
 		require_once('../conexion/conexion.php');
 		require_once('estadosLogin.php');
+
 		$conexion       = conectar();
 
 		$codigo         = trim($_POST['txtCodigoDepartamento']);
@@ -11,8 +13,8 @@
 
 
 		//REALIZO LA CONSULTA COMPARANDO LA VARIABLE ENVIADA PARA VER SI YA EXISTE EN EL SISTEMA
-		$sql = mysql_query("SELECT * FROM departamento WHERE ID_Departamento ='$codigo'");
-		$vcodigo = mysql_num_rows($sql);
+		$sql = mysqli_query($conexion,"SELECT * FROM departamento WHERE ID_Departamento ='$codigo'");
+		$vcodigo = mysqli_num_rows($sql);
 
 	    if(!empty($vcodigo)){
 
@@ -56,7 +58,7 @@
 		   $sql = " INSERT INTO departamento
 		              VALUES      ('$codigo','$dpto','$nombre',DEFAULT,NOW(),'$_SESSION[Cedula]',NOW(),'$_SESSION[Cedula]','$descripcion')";
 
-		   $agregarcargo = mysql_query ($sql,$conexion);
+		   $agregarcargo = mysqli_query($conexion,$sql);
 
 
 		   switch ($_SESSION['ID_Rol']) {

@@ -58,6 +58,8 @@ if (!isset($_SESSION['Correo']))
     <script src="js/efectoCategoriasParaPublicar.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
 
+    <script src="js/efectoCategoriasParaPublicar.js" type="text/javascript" charset="utf-8"></script>
+
     <script src="js/lib/vue.js"></script>
     <script src="js/lib/vue-resource.min.js"></script>
     <!--FIN LLAMADA ARCHIVOS JS-->

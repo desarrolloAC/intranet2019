@@ -1,9 +1,12 @@
 <?php
-    @session_start();
-    require_once('../conexion/conexion.php'); 
-    require_once('estadosLogin.php');      
+
+    session_start();
+
+    require_once('../conexion/conexion.php');
+    require_once('estadosLogin.php');
+
 	$conexion =  conectar();
-	 
+
 	$cedula         	= $_POST["txtCedula"];
 	$pNombre			= $_POST["txtpNombre"];
 	$sNombre			= $_POST["txtsNombre"];
@@ -14,7 +17,7 @@
 	$departamento		= $_POST["txtDpto"];
 	$cargo				= $_POST["cbCargo"];
 	$correo				= $_POST["txtCorreo"];
-	$pass				= $_POST["txtPass"]; 
+	$pass				= $_POST["txtPass"];
 	$rol				= $_POST["cbRol"];
 
 	$pais				= $_POST["pai"];
@@ -22,18 +25,19 @@
 	$municipio			= $_POST["mun"];
 	$ciudad				= $_POST["ciu"];
 	$parroquia			= $_POST["par"];
-	$Direccion          = $_POST["dir"]; 
-													
+	$Direccion          = $_POST["dir"];
+
     $foto           	= $_FILES['btnImagen']['name'];
 	$error              = $_FILES['btnImagen']['error'];
 	$ruta           	= $_FILES['btnImagen']['tmp_name'];
 	$date              	= date("Y-m-d_his");// date('Y-m-d i:m:s');
-	$destino_temp       = '/intranet/imagenes/fotoPublicaciones/'.$date.strstr($foto,'.');
+	$destino_temp       = '/intranet/assets/image/fotoPublicaciones/'.$date.strstr($foto,'.');
 	$destino        	= $_SERVER['DOCUMENT_ROOT'].$destino_temp;
-	 if($error)
-    {
-		switch($error)
-		{
+
+
+if($error) {
+
+		 switch($error) {
 			case 1: // UPLOAD_ERR_INI_SIZE
 			echo "El tamaño del archivo supera el límite permitido
 			por el servidor (argumento upload_max_filesize del archivo
@@ -47,14 +51,14 @@
 			echo "El envío del archivo se ha interrumpido durante
 			la transferencia.";
 			break;
-			case 4: // UPLOAD_ERR_NO_FILE			 
-    
+			case 4: // UPLOAD_ERR_NO_FILE
+
 			    if (isset($_POST["txtPass"])) {
 
-			    	$editar = "    UPDATE usuario 
-								   Set  
+			    	$editar = "    UPDATE usuario
+								   Set
 													PNombre 		='$pNombre',
-													SNombre			='$sNombre',			
+													SNombre			='$sNombre',
 													PApellido		='$pApellido',
 													SApellido 		='$sApellido',
 													Sexo 			='$sexo',
@@ -67,29 +71,29 @@
 													ID_Organizacion ='$organizacion',
 													Direccion       ='$Direccion'
 
-								   WHERE 	        cedula		    ='$cedula'"; 
+								   WHERE 	        cedula		    ='$cedula'";
 
-					$seguridad=	"  UPDATE seguridad 
-								   Set  
-													CLAVE 		=SHA1('$pass')																								 		
-								   WHERE 	        CORREO		='$correo'"; 
+					$seguridad=	"  UPDATE seguridad
+								   Set
+													CLAVE 		=SHA1('$pass')
+								   WHERE 	        CORREO		='$correo'";
 
-				    $roles=	"      UPDATE org_usuario_rol 
-								   Set  
-													ID_Rol 		='$rol'																								 		
-								   WHERE 	        cedula		='$cedula' AND ID_Organizacion='$organizacion' ";	  
+				    $roles=	"      UPDATE org_usuario_rol
+								   Set
+													ID_Rol 		='$rol'
+								   WHERE 	        cedula		='$cedula' AND ID_Organizacion='$organizacion' ";
 
 					//SE LEE LA VARIABLE QUERY CON LA INSTRUCCION SQL
-					mysql_query($editar,$conexion); 
-					mysql_query($seguridad,$conexion);
-					mysql_query($roles,$conexion); 					  
+					mysqli_query($conexion,$editar);
+					mysqli_query($conexion,$seguridad);
+					mysqli_query($conexion,$roles);
 
 			    }else{
 
-			    	$editar = "    UPDATE usuario 
-								   Set  
+			    	$editar = "    UPDATE usuario
+								   Set
 													PNombre 		='$pNombre',
-													SNombre			='$sNombre',			
+													SNombre			='$sNombre',
 													PApellido		='$pApellido',
 													SApellido 		='$sApellido',
 													Sexo 			='$sexo',
@@ -100,34 +104,34 @@
 													ID_Parroquia    ='$parroquia',
 													ID_Ciudad       ='$ciudad',
 													ID_Organizacion ='$organizacion',
-													Direccion       ='$Direccion'													 		
-								   WHERE 	        cedula		    ='$cedula'";  
+													Direccion       ='$Direccion'
+								   WHERE 	        cedula		    ='$cedula'";
 
-				    $roles=	"      UPDATE org_usuario_rol 
-								   Set  
-													ID_Rol 		='$rol'																								 		
-								   WHERE 	        cedula		='$cedula' AND ID_Organizacion='$organizacion' ";	
+				    $roles=	"      UPDATE org_usuario_rol
+								   Set
+													ID_Rol 		='$rol'
+								   WHERE 	        cedula		='$cedula' AND ID_Organizacion='$organizacion' ";
 					//SE LEE LA VARIABLE QUERY CON LA INSTRUCCION SQL
-					mysql_query($editar,$conexion); 
-					mysql_query($roles,$conexion); 
+					mysqli_query($conexion,$editar);
+					mysqli_query($conexion,$roles);
 			    }
-						 
+
 			break;
 		}//FIN DEL SWITCH CASE
 	}//FIN DEL IF
 	else
 	{
 		//si no hay error entonces $_FILES[’nombre del_archivo’][’error’] es 0
-		if ((isset($foto) && ($error == UPLOAD_ERR_OK))) 
+		if ((isset($foto) && ($error == UPLOAD_ERR_OK)))
 		{
 		    copy($ruta,$destino);
 
 			  if (isset($_POST["txtPass"])) {
 
-			    	$editar = "    UPDATE usuario 
-								   Set  
+			    	$editar = "    UPDATE usuario
+								   Set
 													PNombre 		='$pNombre',
-													SNombre			='$sNombre',			
+													SNombre			='$sNombre',
 													PApellido		='$pApellido',
 													SApellido 		='$sApellido',
 													Sexo 			='$sexo',
@@ -139,28 +143,28 @@
 													ID_Parroquia    ='$parroquia',
 													ID_Ciudad       ='$ciudad',
 													ID_Organizacion ='$organizacion',
-													Direccion       ='$Direccion'													 		
-								   WHERE 	        cedula		    ='$cedula'"; 
+													Direccion       ='$Direccion'
+								   WHERE 	        cedula		    ='$cedula'";
 
-					$seguridad=	"  UPDATE seguridad 
-								   Set  
-													CLAVE 		=SHA1('$pass')																								 		
-								   WHERE 	        CORREO		='$correo'"; 
+					$seguridad=	"  UPDATE seguridad
+								   Set
+													CLAVE 		=SHA1('$pass')
+								   WHERE 	        CORREO		='$correo'";
 
-				    $roles=	"      UPDATE org_usuario_rol 
-								   Set  
-													ID_Rol 		='$rol'																								 		
-								   WHERE 	        cedula		='$cedula' AND ID_Organizacion='$organizacion' ";	  
+				    $roles=	"      UPDATE org_usuario_rol
+								   Set
+													ID_Rol 		='$rol'
+								   WHERE 	        cedula		='$cedula' AND ID_Organizacion='$organizacion' ";
 					//SE LEE LA VARIABLE QUERY CON LA INSTRUCCION SQL
-					mysql_query($editar,$conexion); 
-					mysql_query($seguridad,$conexion);
-					mysql_query($roles,$conexion);    
+					mysqli_query($conexion,$editar);
+					mysqli_query($conexion,$seguridad);
+					mysqli_query($conexion,$roles);
 			    }else{
 
-			    	$editar = "    UPDATE usuario 
-								   Set  
+			    	$editar = "    UPDATE usuario
+								   Set
 													PNombre 		='$pNombre',
-													SNombre			='$sNombre',			
+													SNombre			='$sNombre',
 													PApellido		='$pApellido',
 													SApellido 		='$sApellido',
 													Sexo 			='$sexo',
@@ -172,61 +176,60 @@
 													ID_Parroquia    ='$parroquia',
 													ID_Ciudad       ='$ciudad',
 													ID_Organizacion ='$organizacion',
-													Direccion       ='$Direccion'													 		
-								   WHERE 	        cedula		    ='$cedula'";  
+													Direccion       ='$Direccion'
+								   WHERE 	        cedula		    ='$cedula'";
 
-				    $roles=	"      UPDATE org_usuario_rol 
-								   Set  
-													ID_Rol 		='$rol'																								 		
-								   WHERE 	        cedula		='$cedula' AND ID_Organizacion='$organizacion' ";	
+				    $roles=	"      UPDATE org_usuario_rol
+								   Set
+													ID_Rol 		='$rol'
+								   WHERE 	        cedula		='$cedula' AND ID_Organizacion='$organizacion' ";
 					//SE LEE LA VARIABLE QUERY CON LA INSTRUCCION SQL
-					mysql_query($editar,$conexion); 
-					mysql_query($roles,$conexion); 
+					mysqli_query($conexion,$editar);
+					mysqli_query($conexion,$roles);
 			    }
-						  
-			
+
+
 	    }//FIN DEL IF
 	    else
 	    {
 		   echo "El Archivo no se ha Podido Copiar en el Directorio.";
-		     
+
 	    }//FIN DEL ESE
     }//FIN DEL ELSE
- 
+
     switch ($_SESSION['ID_Rol']) {
         case TypeUsuario::ADMINISTRADOR:
-             /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/                        
-            echo'<script language="javascript">        
+             /*INGRESAR EL USUARIO COMO ADMINISTRADOR*/
+            echo'<script language="javascript">
                   alert("Registro Actualizado Con Exito");
                  location.href="../menuAdministrador.php";
                  </script>';
             break;
          case TypeUsuario::AUTORIZADOR:
-             /*INGRESAR EL USUARIO COMO AUTORIZADOR*/                      
-            echo'<script language="javascript">        
+             /*INGRESAR EL USUARIO COMO AUTORIZADOR*/
+            echo'<script language="javascript">
                   alert("Registro Actualizado Con Exito");
                  location.href="../menuAutorizador.php";
                  </script>';
             break;
          case TypeUsuario::EDITOR:
-              /*INGRESAR EL USUARIO COMO EDITOR*/                       
-            echo'<script language="javascript">        
+              /*INGRESAR EL USUARIO COMO EDITOR*/
+            echo'<script language="javascript">
                   alert("Registro Actualizado Con Exito");
                  location.href="../menuEditor.php";
                  </script>';
             break;
          case TypeUsuario::PUBLICADOR:
              /*INGRESAR EL USUARIO COMO PUBLICADOR*/
-            echo'<script language="javascript">        
+            echo'<script language="javascript">
                   alert("Registro Actualizado Con Exito");
                  location.href="../menuPublicador.php";
             </script>';
-            break;                    
-        default: //LECTOR
-                
             break;
-    } 
+        default: //LECTOR
+
+            break;
+    }
 
 
 ?>
- 

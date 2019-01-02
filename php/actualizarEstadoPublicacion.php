@@ -3,7 +3,7 @@
 	@session_start();
 
     require_once('../conexion/conexion.php');
-    require_once('estadosLogin.php');    
+    require_once('estadosLogin.php');
 	$conexion =  conectar();
 
 	$id_publicacion		= $_GET['codigo'];
@@ -12,35 +12,35 @@
     }
 	$estado 	        = $_GET['estado'];
     $usuario            = $_GET['usuario'];
-    
+
 
    if (isset($_GET['estatus'])) {
-       $estatus = $_GET['estatus'];                
-         
-            $updEstado = " UPDATE  publicacion 
+       $estatus = $_GET['estatus'];
+
+            $updEstado = " UPDATE  publicacion
                               SET  Estatus         ='$estatus',
                                    UpdatedBy       ='$usuario',
-                                   Updated         = now() 
-                            WHERE id_publicacion='$id_publicacion'"; 
+                                   Updated         = now()
+                            WHERE id_publicacion='$id_publicacion'";
    }else{
 
          if (isset($_GET['fecha'])) {
-           $updEstado = " UPDATE publicacion 
+           $updEstado = " UPDATE publicacion
                              SET Estado    ='$estado',
                                  UpdatedBy ='$usuario',
                                  Updated   = now(),
-                                 F_Publicacion   = now()  
+                                 F_Publicacion   = now()
                            WHERE id_publicacion='$id_publicacion'";
           }else{
-            $updEstado = " UPDATE publicacion 
+            $updEstado = " UPDATE publicacion
                              SET Estado    ='$estado',
                                  UpdatedBy ='$usuario',
-                                 Updated   = now() 
+                                 Updated   = now()
                            WHERE id_publicacion='$id_publicacion'";
-         } 
+         }
   }
-   
-    mysql_query($updEstado,$conexion);
+
+    mysqli_query($conexion,$updEstado);
 
 
        if (isset($estado)) {
@@ -51,35 +51,35 @@
 
     switch ($_SESSION['ID_Rol']) {
         case TypeUsuario::ADMINISTRADOR:
-           
-           echo'<script language="javascript">        
+
+           echo'<script language="javascript">
                  alert("Registro Actualizado Con Exito");
                  location.href="../menuAdministrador.php";
                  </script>';
             break;
          case TypeUsuario::AUTORIZADOR:
-                                 
-            echo'<script language="javascript">        
+
+            echo'<script language="javascript">
                  alert("Registro Actualizado Con Exito");
                  location.href="../menuAutorizador.php";
                  </script>';
             break;
          case TypeUsuario::EDITOR:
-                                 
-            echo'<script language="javascript">        
+
+            echo'<script language="javascript">
                  alert("Registro Actualizado Con Exito");
                  location.href="../menuEditor.php";
                  </script>';
             break;
          case TypeUsuario::PUBLICADOR:
-             
-            echo'<script language="javascript">        
+
+            echo'<script language="javascript">
                  alert("Registro Actualizado Con Exito");
                  location.href="../menuPublicador.php";
             </script>';
-            break;                    
+            break;
         default: //LECTOR
-                
+
             break;
     }
 
@@ -87,10 +87,10 @@
    function insertNotificacion($usuario,$estado,$createdby,$id_publicacion){
 
         $conexion=conectar();
-        
+
         $query=" SELECT PNombre, PApellido FROM usuario WHERE Cedula='$usuario' ";
-        $rs=mysql_query($query,$conexion);
-        $row=mysql_fetch_array($rs);
+        $rs=mysqli_query($conexion,$query);
+        $row=mysqli_fetch_array($rs,MYSQLI_ASSOC);
 
 
         switch ($estado) {
@@ -110,12 +110,12 @@
                  $msg = "$row[PNombre] $row[PApellido], ha Realizado una Nueva Publicación.";
                 break;
             default: //BORR
-                $msg = ' ';    
-                break;  
-       }  
+                $msg = ' ';
+                break;
+       }
 
-       $sql=" INSERT INTO notificacion (ID_Notificacion, ID_Publicacion, CreatedBy, Estado_Public, Mensaje, leido, Fecha) 
+       $sql=" INSERT INTO notificacion (ID_Notificacion, ID_Publicacion, CreatedBy, Estado_Public, Mensaje, leido, Fecha)
               VALUES (NULL, '$id_publicacion', '$usuario', '$estado', '$msg', DEFAULT, CURRENT_TIMESTAMP);";
-        mysql_query($sql,$conexion);
+        mysqli_query($conexion,$sql);
    }
 ?>

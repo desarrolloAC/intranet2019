@@ -1,280 +1,207 @@
 <?php
+//CUANDO LA SESSION ESTA INICIADA APARECE EL NOMBRE DEL USUARIO
+@session_start();
+//require_once('estadoPublicacion/estadoPublicacion.php');
+require_once('conexion/conexion.php');
 
-    //CUANDO LA SESSION ESTA INICIADA APARECE EL NOMBRE DEL USUARIO
-    @session_start();
-     //require_once('estadoPublicacion/estadoPublicacion.php');
-    require_once('conexion/conexion.php');
-
-    include $_SERVER["DOCUMENT_ROOT"].'/intranet/php/estadoPublicacion.php';
-    include $_SERVER["DOCUMENT_ROOT"].'/intranet/php/estadosLogin.php';
-    //SI EL USUARIO NO ESTA REGISTRADO NO PODRA VISUALIZAR LA PAGINA HASTA NO ESTAR LOGEADO Y LO LLEVARA DIRECTO AL LOGIN
-    if(!isset($_SESSION['Correo'])) header("Location: login.php")
-?>
+include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadoPublicacion.php';
+include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
+//SI EL USUARIO NO ESTA REGISTRADO NO PODRA VISUALIZAR LA PAGINA HASTA NO ESTAR LOGEADO Y LO LLEVARA DIRECTO AL LOGIN
+if (!isset($_SESSION['Correo']))
+    header("Location: login.php")
+    ?>
 
 <!DOCTYPE html>
 
 <html>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--INICIO LLAMADA DE ARCHIVOS CSS-->
-    <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
-    <link rel="stylesheet" type="text/css" href="estructura/css/tablaMenuVertical.css">
-    <link rel="stylesheet" type="text/css" href="css/opcionCargo.css">
-    <link rel="stylesheet" type="text/css" href="css/opcionCategoria.css">
-    <link rel="stylesheet" type="text/css" href="css/opcionDepartamento.css">
-    <link rel="stylesheet" type="text/css" href="css/opcionDirectorio.css">
-    <link rel="stylesheet" type="text/css" href="css/opcionOrganizacion.css">
-    <link rel="stylesheet" type="text/css" href="css/opcionPublicacion.css">
-    <link rel="stylesheet" type="text/css" href="css/opcionRol.css">
-    <link rel="stylesheet" type="text/css" href="css/opcionSubcategoria.css">
-    <link rel="stylesheet" type="text/css" href="css/opcionUsuario.css">
-    <link rel="stylesheet" type="text/css" href="css/categoriasParaPublicar.css">
-    <link rel="stylesheet" type="text/css" href="formularioPublicaciones/avanceInformativo.css">
-    <link rel="stylesheet" type="text/css" href="formularioPublicaciones/boletinInformativo.css">
-    <link rel="stylesheet" type="text/css" href="formularioPublicaciones/comunicado.css">
-    <link rel="stylesheet" type="text/css" href="formularioPublicaciones/invitacionGeneral.css">
-    <link rel="stylesheet" type="text/css" href="formularioPublicaciones/nuevoIngresoAscenso.css">
-    <link rel="stylesheet" type="text/css" href="formularioPublicaciones/logro.css">
-    <link rel="stylesheet" type="text/css" href="formularioPublicaciones/postulate.css">
-    <link rel="stylesheet" type="text/css" href="formularioPublicaciones/cumpleMes.css">
-    <!--<link rel="stylesheet" type="text/css" href="formularioPublicaciones/nacimiento.css">-->
-    <link rel="stylesheet" type="text/css" href="formularioPublicaciones/promocionEscolar.css">
-    <link rel="stylesheet" type="text/css" href="formularioPublicaciones/condolencia.css">
-    <!--FIN DE LLAMADA ARCHIVOS CSS-->
+        <!--INICIO LLAMADA DE ARCHIVOS CSS-->
+        <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
+        <link rel="stylesheet" type="text/css" href="estructura/css/tablaMenuVertical.css">
+        <link rel="stylesheet" type="text/css" href="css/opcionCargo.css">
+        <link rel="stylesheet" type="text/css" href="css/opcionCategoria.css">
+        <link rel="stylesheet" type="text/css" href="css/opcionDepartamento.css">
+        <link rel="stylesheet" type="text/css" href="css/opcionDirectorio.css">
+        <link rel="stylesheet" type="text/css" href="css/opcionOrganizacion.css">
+        <link rel="stylesheet" type="text/css" href="css/opcionPublicacion.css">
+        <link rel="stylesheet" type="text/css" href="css/opcionRol.css">
+        <link rel="stylesheet" type="text/css" href="css/opcionSubcategoria.css">
+        <link rel="stylesheet" type="text/css" href="css/opcionUsuario.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriasParaPublicar.css">
+        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/avanceInformativo.css">
+        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/boletinInformativo.css">
+        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/comunicado.css">
+        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/invitacionGeneral.css">
+        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/nuevoIngresoAscenso.css">
+        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/logro.css">
+        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/postulate.css">
+        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/cumpleMes.css">
+        <!--<link rel="stylesheet" type="text/css" href="formularioPublicaciones/nacimiento.css">-->
+        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/promocionEscolar.css">
+        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/condolencia.css">
+        <!--FIN DE LLAMADA ARCHIVOS CSS-->
 
-    <!--INICIO LLAMADA ARCHIVOS JS-->
-    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="js/listaMenu.js"></script>
-    <script type="text/javascript" src="js/selectdependientes.js"></script>
-    <script type="text/javascript" src="js/efectoBandeja.js"></script>
-    <script type="text/javascript" src="js/setInterval.js"></script>
-    <script src="js/efectoCategoriasParaPublicar.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
+        <!--INICIO LLAMADA ARCHIVOS JS-->
+        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="js/listaMenu.js"></script>
+        <script type="text/javascript" src="js/selectdependientes.js"></script>
+        <script type="text/javascript" src="js/efectoBandeja.js"></script>
+        <script type="text/javascript" src="js/setInterval.js"></script>
+        <script src="js/efectoCategoriasParaPublicar.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
 
-    <script src="js/lib/vue.js"></script>
-    <script src="js/lib/vue-resource.min.js"></script>
-    <!--FIN LLAMADA ARCHIVOS JS-->
+        <script src="js/lib/vue.js"></script>
+        <script src="js/lib/vue-resource.min.js"></script>
+        <!--FIN LLAMADA ARCHIVOS JS-->
 
-    <style type="text/css">
-        div#contenedorNombreUsuario {
-            position: relative;
-            top: 2.7cm;
-            left: -0.4cm;
-            float: right;
-        }
+        <style type="text/css">
+            div#contenedorNombreUsuario {
+                position: relative;
+                top: 2.7cm;
+                left: -0.4cm;
+                float: right;
+            }
 
-        div#bandeja {
-            z-index: 2;
-            position: relative;
-            left: -18cm;
-            top: 1cm;
-            width: 7cm;
-            height: 1cm;
-            float: right;
-            padding: 0.2cm;
-        }
+            div#bandeja {
+                z-index: 2;
+                position: relative;
+                left: -18cm;
+                top: 1cm;
+                width: 7cm;
+                height: 1cm;
+                float: right;
+                padding: 0.2cm;
+            }
 
-        div#bandeja {
-            background-color: rgb(69, 69, 69);
-            transition: 1s ease-in-out;
-            cursor: pointer;
-            border-radius: 1rem;
-        }
-
-        a#abrirBandeja {
-            z-index: 2;
-            position: relative;
-            top: 0.2cm;
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-            font-weight: bold;
-            margin-left: 0.5cm;
-        }
-
-        img#imagenBandeja {
-            z-index: 2;
-            position: relative;
-            float: left;
-        }
-
-        div#contenidoBandeja {
-            z-index: 2;
-            position: relative;
-            top: -1.2cm;
-            left: -0.2cm;
-            width: 10cm;
-            height: 7cm;
-            background-color: rgb(69, 69, 69);
-            border-radius: 1rem;
-            overflow: auto;
-        }
-
-        div#contenedorNotificaciones {
-            position: relative;
-            width: 9.6cm;
-            height: 2cm;
-            margin-bottom: 0.5cm;
-            text-align: center;
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-color: rgb(255, 255, 255);
-            transition: 1s ease-in-out;
-            font-weight: bold;
-            animation: fondo 5s infinite;
-        }
-
-        a#enlaceNotificaciones {
-            position: relative;
-            top: 0.8cm;
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-            animation: fondo 5s infinite;
-        }
-
-        @keyframes fondo {
-            0% {
+            div#bandeja {
                 background-color: rgb(69, 69, 69);
                 transition: 1s ease-in-out;
+                cursor: pointer;
+                border-radius: 1rem;
             }
 
-            100% {
-                background-color: rgb(241, 129, 3);
-                color: rgb(69, 69, 69);
+            a#abrirBandeja {
+                z-index: 2;
+                position: relative;
+                top: 0.2cm;
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                font-weight: bold;
+                margin-left: 0.5cm;
             }
-        }
 
-        div#nNotificacion {
-            z-index: 3;
-            position: relative;
-            top: -1.4cm;
-            left: 6cm;
-            color: rgb(255, 255, 255);
-            background-color: rgb(69, 69, 69);
-            width: 0.7cm;
-            height: 0.7cm;
-            border-radius: 2rem;
-        }
+            img#imagenBandeja {
+                z-index: 2;
+                position: relative;
+                float: left;
+            }
 
-        h5#rNumero {
-            position: relative;
-            top: 0.1cm;
-            left: 0cm;
-            font-size: 20px;
-            text-align: center;
-        }
+            div#contenidoBandeja {
+                z-index: 2;
+                position: relative;
+                top: -1.2cm;
+                left: -0.2cm;
+                width: 10cm;
+                height: 7cm;
+                background-color: rgb(69, 69, 69);
+                border-radius: 1rem;
+                overflow: auto;
+            }
 
-    </style>
+            div#contenedorNotificaciones {
+                position: relative;
+                width: 9.6cm;
+                height: 2cm;
+                margin-bottom: 0.5cm;
+                text-align: center;
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+                border-color: rgb(255, 255, 255);
+                transition: 1s ease-in-out;
+                font-weight: bold;
+                animation: fondo 5s infinite;
+            }
 
-</head>
+            a#enlaceNotificaciones {
+                position: relative;
+                top: 0.8cm;
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                animation: fondo 5s infinite;
+            }
 
-<body>
+            @keyframes fondo {
+                0% {
+                    background-color: rgb(69, 69, 69);
+                    transition: 1s ease-in-out;
+                }
 
-    <!--INICIO CONTENEDOR CABECERA-->
+                100% {
+                    background-color: rgb(241, 129, 3);
+                    color: rgb(69, 69, 69);
+                }
+            }
 
-    <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/topAdmin.php'; ?>
+            div#nNotificacion {
+                z-index: 3;
+                position: relative;
+                top: -1.4cm;
+                left: 6cm;
+                color: rgb(255, 255, 255);
+                background-color: rgb(69, 69, 69);
+                width: 0.7cm;
+                height: 0.7cm;
+                border-radius: 2rem;
+            }
 
-    <!--FIN DEL CONTENEDOR CABECERA-->
+            h5#rNumero {
+                position: relative;
+                top: 0.1cm;
+                left: 0cm;
+                font-size: 20px;
+                text-align: center;
+            }
 
-    <!--INICIO CONTENEDOR MENU-->
+        </style>
 
-    <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdmin.php'; ?>
+    </head>
 
-    <!--FIN CONTENEDOR MENU-->
+    <body>
 
-    <div class="contenedorContenidos">
-        <!--*******************************************************************************-->
-        <!--**************INICIO DE LA OPCION PUBLICAR**************-->
-        <!--*******************************************************************************-->
-        <div id='contenedor_tabla_publicacion'>
-            <?php include ('php/tablaPublicacion.php'); ?>
-        </div>
+        <!--INICIO CONTENEDOR CABECERA-->
 
-        <div id='contenedor_tabla_pcategorias'>
-            <?php include $_SERVER["DOCUMENT_ROOT"].'/intranet/php/tablaCategoriasParaPublicar.php'; ?>
-        </div>
-        <!--*******************************************************************************-->
-        <!--**************FIN DE LA OPCION PUBLICAR**************-->
-        <!--*******************************************************************************-->
-    </div>
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/topAdmin.php'; ?>
 
-    <!--INICIO CONTENEDOR PIE DE PAGINA-->
-    <div id="contenedorPiePagina">
+        <!--FIN DEL CONTENEDOR CABECERA-->
 
-        <!--DISEÑO DEL FOLLETO INFORMATIVO-->
-        <div id="contenedorFolletoInformativo">
-            <h1 id="tituloFolletoInformativo">Folleto Informativo</h1>
-        </div>
-        <!--FIN DEL DIV FOLLETO INFORMATIVO-->
+        <!--INICIO CONTENEDOR MENU-->
 
-        <!--DISEÑO DEL FOLLETO INFORMATIVO-->
-        <div id="contenedorLogoEmpresas">
-            <h1 id="tituloNuestrasPaginas">Nuestras Paginas</h1>
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdmin.php'; ?>
 
-            <div class="slider">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <img src="imagenes/footer/logo_alkes.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="imagenes/footer/logo_fruttech.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="imagenes/footer/logo_iec.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="imagenes/footer/logo_Tkr.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="imagenes/footer/logo_venfruca.png" alt="">
-                        </a>
-                    </li>
-                </ul>
+        <!--FIN CONTENEDOR MENU-->
+
+        <div class="contenedorContenidos">
+            <!--*******************************************************************************-->
+            <!--**************INICIO DE LA OPCION PUBLICAR**************-->
+            <!--*******************************************************************************-->
+            <div id='contenedor_tabla_publicacion'>
+                <?php include ('php/tablaPublicacion.php'); ?>
             </div>
 
-        </div>
-        <!--FIN DEL DIV FOLLETO INFORMATIVO-->
-
-        <div id="contenedorRedesSociales">
-            <p id="tituloNuestrasRedesSociales">Nuestras Redes Sociales</p>
-
-            <div id="contenedorLogoFacebook">
-                <center>
-                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/f.png" width="65">
-                </center>
+            <div id='contenedor_tabla_pcategorias'>
+                <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/tablaCategoriasParaPublicar.php'; ?>
             </div>
-
-            <div id="contenedorLogoInstagram">
-                <center>
-                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/instagram.png" width="65">
-                </center>
-            </div>
-
-            <div id="contenedorLogoTwitter">
-                <center>
-                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="imagenes/footer/twitter.png" width="65">
-                </center>
-            </div>
-
+            <!--*******************************************************************************-->
+            <!--**************FIN DE LA OPCION PUBLICAR**************-->
+            <!--*******************************************************************************-->
         </div>
 
-        <div id="contenedorDerechoAutor">
-            <h3 id="derechoAutor">Copyright © 2018 Intranet Corporativa Rights Reserved. </h3>
-        </div>
-    </div>
-    <!--FIN CONTENEDOR PIE DE PAGINA-->
-</body>
+
+    </body>
 
 </html>

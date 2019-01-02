@@ -116,8 +116,6 @@
     </thead>
     <tbody>
         <?php
-
-
         $conexion = conectar();
         /* FIN DE LAS VARIABLES DE CONSULTA */
 
@@ -154,171 +152,171 @@
         }
         while ($mostrarCategoria = mysqli_fetch_array($consultaCategoria, MYSQLI_ASSOC)) {
             ?>
-        <tr id="datos_usuario">
-            <td>
-                <h5>
-                    <?php echo $mostrarCategoria['codigo']; ?>
-                </h5>
-            </td>
+            <tr id="datos_usuario">
+                <td>
+                    <h5>
+                        <?php echo $mostrarCategoria['codigo']; ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php echo $mostrarCategoria['nombre']; ?>
-                </h5>
-            </td>
+                <td>
+                    <h5>
+                        <?php echo $mostrarCategoria['nombre']; ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php
-        switch ($mostrarCategoria['estatus']) {
-            case 'A':
-                echo "ACTIVA";
-                break;
-            default:
-                echo "INACTIVA";
-                break;
-        }
-            ?>
-                </h5>
-            </td>
+                <td>
+                    <h5>
+                        <?php
+                        switch ($mostrarCategoria['estatus']) {
+                            case 'A':
+                                echo "ACTIVA";
+                                break;
+                            default:
+                                echo "INACTIVA";
+                                break;
+                        }
+                        ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php echo $mostrarCategoria['Descripcion']; ?>
-                </h5>
-            </td>
+                <td>
+                    <h5>
+                        <?php echo $mostrarCategoria['Descripcion']; ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php
-    $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+                <td>
+                    <h5>
+                        <?php
+                        $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
 								         FROM   usuario
 								         WHERE  Cedula='$mostrarCategoria[CreatedBy]' ";
-    $rs = mysqli_query($conexion, $sql);
-    $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
-    echo $row['Nombre'];
-    ?>
-                </h5>
-            </td>
+                        $rs = mysqli_query($conexion, $sql);
+                        $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
+                        echo $row['Nombre'];
+                        ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php echo $mostrarCategoria['Created']; ?>
-                </h5>
-            </td>
+                <td>
+                    <h5>
+                        <?php echo $mostrarCategoria['Created']; ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php
-    $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
+                <td>
+                    <h5>
+                        <?php
+                        $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
 								         FROM   usuario
 								         WHERE  Cedula='$mostrarCategoria[UpdatedBy]' ";
-    $rs = mysqli_query($conexion, $sql);
-    $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
-    echo $row['Nombre'];
-    ?>
-                </h5>
-            </td>
+                        $rs = mysqli_query($conexion, $sql);
+                        $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
+                        echo $row['Nombre'];
+                        ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php echo $mostrarCategoria['Updated']; ?>
-                </h5>
-            </td>
+                <td>
+                    <h5>
+                        <?php echo $mostrarCategoria['Updated']; ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5></h5>
-            </td>
+                <td>
+                    <h5></h5>
+                </td>
 
-            <td>
-                <h5></h5>
-            </td>
+                <td>
+                    <h5></h5>
+                </td>
 
-            <td>
-                <h5></h5>
-            </td>
+                <td>
+                    <h5></h5>
+                </td>
 
-            <td>
-                <h5></h5>
-            </td>
+                <td>
+                    <h5></h5>
+                </td>
 
-            <td>
-                <a href='#<?php echo $mostrarCategoria[' codigo']; ?>' id="btnEditar">
-                    <img src='assets/image/menu/botonesTablas/btnEditar.png'>
-                </a>
+                <td>
+                    <a href='#<?php echo $mostrarCategoria['codigo']; ?>' id="btnEditar">
+                        <img src='assets/image/menu/botonesTablas/btnEditar.png'>
+                    </a>
 
-                <div id='<?php echo $mostrarCategoria[' codigo']; ?>' class='contenedor_formulario'>
+                    <div id='<?php echo $mostrarCategoria['codigo']; ?>' class='contenedor_formulario'>
 
-                    <div id='formulario'>
+                        <div id='formulario'>
 
-                        <a href='#' class='cerrar'>X</a>
+                            <a href='#' class='cerrar'>X</a>
 
-                        <div class='contenedor_formulario_categoria'>
+                            <div class='contenedor_formulario_categoria'>
 
-                            <form method='POST' action='php/actualizarCategoria.php'>
+                                <form method='POST' action='php/actualizarCategoria.php'>
 
-                                <table id='tabla_formulario_categoria' border='0' cellpadding='7'>
-                                    <tr id='titulo_columna_formulario'>
-                                        <td colspan='2'>
-                                            <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5 id='label_cajas_texto'>Código</h5>
-                                            <input type='text' id='caja_formulario_usuario' required name='txtCodigoCategoria' maxlength='4' readonly value='<?php echo $mostrarCategoria[' codigo'] ?>'>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5 id='label_cajas_texto'>Categoria</h5>
-                                            <input type='text' id='caja_formulario_usuario' required name='txtNombreCategoria' maxlength='20' value='<?php echo $mostrarCategoria[' nombre'] ?>'>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5 id='label_cajas_texto'>Descripción</h5>
-                                            <input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarCategoria[' Descripcion']; ?>'>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan='2'>
-                                            <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </form>
+                                    <table id='tabla_formulario_categoria' border='0' cellpadding='7'>
+                                        <tr id='titulo_columna_formulario'>
+                                            <td colspan='2'>
+                                                <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 id='label_cajas_texto'>Código</h5>
+                                                <input type='text' id='caja_formulario_usuario' required name='txtCodigoCategoria' maxlength='4' readonly value='<?php echo $mostrarCategoria['codigo'] ?>'>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 id='label_cajas_texto'>Categoria</h5>
+                                                <input type='text' id='caja_formulario_usuario' required name='txtNombreCategoria' maxlength='20' value='<?php echo $mostrarCategoria['nombre'] ?>'>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 id='label_cajas_texto'>Descripción</h5>
+                                                <input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarCategoria['Descripcion']; ?>'>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan='2'>
+                                                <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </td>
+                </td>
 
-            <td width="70px;">
-                <?php
-    if ($mostrarCategoria['estatus'] == 'A') {
-        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
+                <td width="70px;">
+                    <?php
+                    if ($mostrarCategoria['estatus'] == 'A') {
+                        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
 								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
-        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar'>
+                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar'>
 								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
-    } else {
-        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar'>
+                    } else {
+                        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar'>
 								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
-        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar' style='display: none;'>
+                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar' style='display: none;'>
 								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
-    }
-    ?>
-            </td>
-        </tr>
+                    }
+                    ?>
+                </td>
+            </tr>
         <?php } ?>
         <!--FIN DEL WHILE-->
     </tbody>
 </table>
 <?php
-                if (isset($mensajeError)) {
-                    echo $mensajeError;
-                }
-                ?>
+if (isset($mensajeError)) {
+    echo $mensajeError;
+}
+?>

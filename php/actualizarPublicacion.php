@@ -67,8 +67,7 @@ if ($error) {
 						updated ='now()',
 						updatedBy ='$updatedBy'
 			WHERE id_publicacion ='$id_publicacion'";
-    }//FIN DEL IF
-    else {
+    } else {
         echo "El Archivo no se ha Podido Copiar en el Directorio.";
     }//FIN DEL ESE
 }//FIN DEL ELSE

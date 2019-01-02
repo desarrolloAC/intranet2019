@@ -39,7 +39,6 @@
                                             <h5 id="label_cajas_texto">Categoría de la Publicación: </h5>
 
                                             <?php
-
                                             $conexion = conectar();
                                             echo "
 												<select name='txtCodigoC' class='combos_formulario_usuario' id='txtCodigoC' required >
@@ -53,7 +52,6 @@
                                                 do {
 
                                                     echo "<option value='$row[ID_Categoria]'> $row[Nombre] </option>";
-
                                                 } while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
                                             }
 
@@ -162,8 +160,6 @@
     </thead>
     <tbody>
         <?php
-
-
         switch ($_SESSION['ID_Rol']) {
 
             case TypeUsuario::ADMINISTRADOR:
@@ -431,21 +427,21 @@
 
         while ($mostrarPublicacion = mysqli_fetch_array($consultaPublicacion, MYSQLI_ASSOC)) {
             ?>
-        <tr id="datos_usuario">
-            <td>
-                <h5>
-                    <?php echo $mostrarPublicacion['ID_Publicacion']; ?>
-                </h5>
-            </td>
+            <tr id="datos_usuario">
+                <td>
+                    <h5>
+                        <?php echo $mostrarPublicacion['ID_Publicacion']; ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php echo $mostrarPublicacion['titulo']; ?>
-                </h5>
-            </td>
-            <td>
-                <h5>
-                    <?php
+                <td>
+                    <h5>
+                        <?php echo $mostrarPublicacion['titulo']; ?>
+                    </h5>
+                </td>
+                <td>
+                    <h5>
+                        <?php
                         $sql = " SELECT ( SELECT Nombre
 						                  FROM categoria
 						                  WHERE ID_Categoria=s.ID_Categoria) as Nombre,
@@ -459,11 +455,11 @@
                         echo $row['Nombre'];
                         $_SESSION['ID_Categoria'] = $row['ID_Categoria'];
                         ?>
-                </h5>
-            </td>
-            <td>
-                <h5>
-                    <?php
+                    </h5>
+                </td>
+                <td>
+                    <h5>
+                        <?php
                         $sql = " SELECT Nombre
 						         FROM subcategoria
 						         WHERE ID_Subcategoria='$mostrarPublicacion[ID_Subcategoria]'";
@@ -471,11 +467,11 @@
                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                         echo $row['Nombre'];
                         ?>
-                </h5>
-            </td>
-            <td>
-                <h5>
-                    <?php
+                    </h5>
+                </td>
+                <td>
+                    <h5>
+                        <?php
                         switch ($mostrarPublicacion['Estado']) {
                             case EstadoPublicacion::RECHAZADO_A:
                                 echo 'RECHAZADA POR AUTORIZADOR';
@@ -497,16 +493,16 @@
                                 break;
                         }
                         ?>
-                </h5>
-            </td>
-            <td>
-                <h5>
-                    <?php echo $mostrarPublicacion['motivo']; ?>
-                </h5>
-            </td>
-            <td>
-                <h5>
-                    <?php
+                    </h5>
+                </td>
+                <td>
+                    <h5>
+                        <?php echo $mostrarPublicacion['motivo']; ?>
+                    </h5>
+                </td>
+                <td>
+                    <h5>
+                        <?php
                         $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
 							         FROM   usuario
 							         WHERE  Cedula='$mostrarPublicacion[CreatedBy]' ";
@@ -514,17 +510,17 @@
                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                         echo $row['Nombre'];
                         ?>
-                </h5>
-            </td>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php echo $mostrarPublicacion['Created']; ?>
-                </h5>
-            </td>
-            <td>
-                <h5>
-                    <?php
+                <td>
+                    <h5>
+                        <?php echo $mostrarPublicacion['Created']; ?>
+                    </h5>
+                </td>
+                <td>
+                    <h5>
+                        <?php
                         $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
 							         FROM   usuario
 							         WHERE  Cedula='$mostrarPublicacion[UpdatedBy]' ";
@@ -532,16 +528,16 @@
                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                         echo $row['Nombre'];
                         ?>
-                </h5>
-            </td>
-            <td>
-                <h5>
-                    <?php echo $mostrarPublicacion['Updated']; ?>
-                </h5>
-            </td>
-            <td>
-                <h5>
-                    <?php
+                    </h5>
+                </td>
+                <td>
+                    <h5>
+                        <?php echo $mostrarPublicacion['Updated']; ?>
+                    </h5>
+                </td>
+                <td>
+                    <h5>
+                        <?php
                         $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
 							         FROM   usuario
 							         WHERE  Cedula='$mostrarPublicacion[PublicatedBy]' ";
@@ -549,15 +545,15 @@
                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                         echo $row['Nombre'];
                         ?>
-                </h5>
-            </td>
-            <td>
-                <h5>
-                    <?php echo $mostrarPublicacion['F_Publicacion']; ?>
-                </h5>
-            </td>
-            <td>
-                <?php
+                    </h5>
+                </td>
+                <td>
+                    <h5>
+                        <?php echo $mostrarPublicacion['F_Publicacion']; ?>
+                    </h5>
+                </td>
+                <td>
+                    <?php
                     switch ($_SESSION['ID_Rol']) {
 
                         case TypeUsuario::ADMINISTRADOR:
@@ -683,39 +679,39 @@
                     }//FIN DE SWITCH PRINCIPAL ROL
                     ?>
 
-                <div id='<?php echo $mostrarPublicacion[' ID_Publicacion']; ?>' class='contenedor_formulario'>
+                    <div id='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>' class='contenedor_formulario'>
 
-                    <div id='formulario'>
+                        <div id='formulario'>
 
-                        <a href='#' class='cerrar'>X</a>
+                            <a href='#' class='cerrar'>X</a>
 
-                        <div class='contenedor_formulario_publicacion'>
+                            <div class='contenedor_formulario_publicacion'>
 
-                            <form method='POST' enctype='multipart/form-data' action='php/actualizarPublicacion.php'>
+                                <form method='POST' enctype='multipart/form-data' action='php/actualizarPublicacion.php'>
 
-                                <table id='tabla_formulario_publicacion' border='0' cellpadding='7'>
-                                    <tr id='titulo_columna_formulario'>
-                                        <td colspan='2'>
-                                            <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5></h5>
-                                            <input type='hidden' class='caja_formulario_usuario' readonly="readonly" name='txtCodigoP' maxlength='3' value='<?php echo $mostrarPublicacion[' ID_Publicacion']; ?>'>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5 id='label_cajas_texto'>Título</h5>
-                                            <input type='text' class='caja_formulario_usuario' id='txtTituloP' required name='txtTituloP' maxlength='100' value='<?php echo $mostrarPublicacion[' titulo']; ?>'>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5 id="label_cajas_texto">Categoría: </h5>
+                                    <table id='tabla_formulario_publicacion' border='0' cellpadding='7'>
+                                        <tr id='titulo_columna_formulario'>
+                                            <td colspan='2'>
+                                                <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5></h5>
+                                                <input type='hidden' class='caja_formulario_usuario' readonly="readonly" name='txtCodigoP' maxlength='3' value='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>'>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 id='label_cajas_texto'>Título</h5>
+                                                <input type='text' class='caja_formulario_usuario' id='txtTituloP' required name='txtTituloP' maxlength='100' value='<?php echo $mostrarPublicacion['titulo']; ?>'>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 id="label_cajas_texto">Categoría: </h5>
 
-                                            <?php
+                                                <?php
                                                 echo "
 												<select name='txtCodigoCat' class='combos_formulario_usuario' id='txtCodigoCat' required >
 												<option> Categoría </option>";
@@ -735,12 +731,12 @@
 
                                                 echo "</select>";
                                                 ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5 id="label_cajas_texto">SubCategoría: </h5>
-                                            <?php
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 id="label_cajas_texto">SubCategoría: </h5>
+                                                <?php
                                                 echo "
 													<select name='txtCodigoSubC' class='combos_formulario_usuario' id='txtCodigoSubC' required>
 													<option> SubCategoría </option>";
@@ -758,19 +754,19 @@
 
                                                 echo "</select>";
                                                 ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td id="color_fondo_cajas">
-                                            <h5 id="label_cajas_texto">Seleccionar Imagen</h5>
-                                            <input type="file" name="btnImagen" id="btnImage">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="color_fondo_cajas">
+                                                <h5 id="label_cajas_texto">Seleccionar Imagen</h5>
+                                                <input type="file" name="btnImagen" id="btnImage">
 
-                                            <h5><img src="<?php echo $mostrarPublicacion['foto']; ?>" id="imagen" width='100' height='100'></h5>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <?php
+                                                <h5><img src="<?php echo $mostrarPublicacion['foto']; ?>" id="imagen" width='100' height='100'></h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <?php
                                                 switch ($_SESSION['ID_Rol']) {
                                                     case TypeUsuario::ADMINISTRADOR:
                                                         /* INGRESAR EL USUARIO COMO ADMINISTRADOR */
@@ -810,34 +806,34 @@
                                                         break;
                                                 }
                                                 ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5 id="label_cajas_texto">Contenido</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 id="label_cajas_texto">Contenido</h5>
 
-                                            <textarea name="contenido2" id="contenido2" rows="10" cols="80" required>
+                                                <textarea name="contenido2" id="contenido2" rows="10" cols="80" required>
                                                     <?php echo $mostrarPublicacion['contenido']; ?>
                                                 </textarea>
-                                            <script>
-                                                CKEDITOR.replace('contenido2');
+                                                <script>
+                                                    CKEDITOR.replace('contenido2');
                                                 </script>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan='2'>
-                                            <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan='2'>
+                                                <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </td>
+                </td>
 
-            <td width="70px;">
-                <?php
+                <td width="70px;">
+                    <?php
                     switch ($_SESSION['ID_Rol']) {
 
                         case TypeUsuario::ADMINISTRADOR:
@@ -1029,10 +1025,10 @@
                             break;
                     }//FIN DE SWITCH PRINCIPAL ROL
                     ?>
-            </td>
+                </td>
 
-        </tr>
-        <?php
+            </tr>
+            <?php
         }
         ?>
         <!--FIN DEL WHILE-->

@@ -170,22 +170,22 @@
         }
         while ($mostrarCargo = mysqli_fetch_array($consultaCargo, MYSQLI_ASSOC)) {
             ?>
-        <tr id="datos_usuario">
-            <td>
-                <h5>
-                    <?php echo $mostrarCargo['codigo']; ?>
-                </h5>
-            </td>
+            <tr id="datos_usuario">
+                <td>
+                    <h5>
+                        <?php echo $mostrarCargo['codigo']; ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php echo $mostrarCargo['nombre']; ?>
-                </h5>
-            </td>
+                <td>
+                    <h5>
+                        <?php echo $mostrarCargo['nombre']; ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php
+                <td>
+                    <h5>
+                        <?php
                         switch ($mostrarCargo['estatus']) {
                             case 'A':
                                 echo "ACTIVA";
@@ -195,18 +195,18 @@
                                 break;
                         }
                         ?>
-                </h5>
-            </td>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php echo $mostrarCargo['Descripcion']; ?>
-                </h5>
-            </td>
+                <td>
+                    <h5>
+                        <?php echo $mostrarCargo['Descripcion']; ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php
+                <td>
+                    <h5>
+                        <?php
                         $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
 								         FROM   usuario
 								         WHERE  Cedula='$mostrarCargo[CreatedBy]' ";
@@ -214,18 +214,18 @@
                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                         echo $row['Nombre'];
                         ?>
-                </h5>
-            </td>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php echo $mostrarCargo['Created']; ?>
-                </h5>
-            </td>
+                <td>
+                    <h5>
+                        <?php echo $mostrarCargo['Created']; ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php
+                <td>
+                    <h5>
+                        <?php
                         $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
 								         FROM   usuario
 								         WHERE  Cedula='$mostrarCargo[UpdatedBy]' ";
@@ -233,101 +233,101 @@
                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                         echo $row['Nombre'];
                         ?>
-                </h5>
-            </td>
+                    </h5>
+                </td>
 
-            <td>
-                <h5>
-                    <?php echo $mostrarCargo['Updated']; ?>
-                </h5>
-            </td>
+                <td>
+                    <h5>
+                        <?php echo $mostrarCargo['Updated']; ?>
+                    </h5>
+                </td>
 
-            <td>
-                <h5></h5>
-            </td>
+                <td>
+                    <h5></h5>
+                </td>
 
-            <td>
-                <h5></h5>
-            </td>
+                <td>
+                    <h5></h5>
+                </td>
 
-            <td>
-                <h5></h5>
-            </td>
+                <td>
+                    <h5></h5>
+                </td>
 
-            <td>
-                <h5></h5>
-            </td>
+                <td>
+                    <h5></h5>
+                </td>
 
-            <td>
-                <a href='#<?php echo $mostrarCargo[' codigo']; ?>' id="btnEditar">
-                    <img src='assets/image/menu/botonesTablas/btnEditar.png'>
-                </a>
+                <td>
+                    <a href='#<?php echo $mostrarCargo['codigo']; ?>' id="btnEditar">
+                        <img src='assets/image/menu/botonesTablas/btnEditar.png'>
+                    </a>
 
-                <div id='<?php echo $mostrarCargo[' codigo']; ?>' class='contenedor_formulario'>
+                    <div id='<?php echo $mostrarCargo['codigo']; ?>' class='contenedor_formulario'>
 
-                    <div id='formulario'>
+                        <div id='formulario'>
 
-                        <a href='#' class='cerrar'>X</a>
+                            <a href='#' class='cerrar'>X</a>
 
-                        <div class='contenedor_formulario_categoria'>
+                            <div class='contenedor_formulario_categoria'>
 
-                            <form method='POST' action='php/actualizarCargo.php'>
+                                <form method='POST' action='php/actualizarCargo.php'>
 
-                                <table id='tabla_formulario_categoria' border='0' cellpadding='7'>
-                                    <tr id='titulo_columna_formulario'>
-                                        <td colspan='2'>
-                                            <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5 id='label_cajas_texto'>Código</h5>
-                                            <input type='text' id='caja_formulario_usuario' required name='txtCodigo' maxlength='4' readonly value='<?php echo $mostrarCargo[' codigo'] ?>'>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5 id='label_cajas_texto'>Nombre Del Cargo</h5>
-                                            <input type='text' id='caja_formulario_usuario' required name='txtNombre' maxlength='100' value='<?php echo $mostrarCargo[' nombre'] ?>'>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <?php
+                                    <table id='tabla_formulario_categoria' border='0' cellpadding='7'>
+                                        <tr id='titulo_columna_formulario'>
+                                            <td colspan='2'>
+                                                <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 id='label_cajas_texto'>Código</h5>
+                                                <input type='text' id='caja_formulario_usuario' required name='txtCodigo' maxlength='4' readonly value='<?php echo $mostrarCargo['codigo'] ?>'>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 id='label_cajas_texto'>Nombre Del Cargo</h5>
+                                                <input type='text' id='caja_formulario_usuario' required name='txtNombre' maxlength='100' value='<?php echo $mostrarCargo['nombre'] ?>'>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <?php
                                                 $conexion = conectar();
                                                 $sqldpto = mysqli_query($conexion, "SELECT ID_Departamento,Nombre FROM departamento WHERE estatus = 'A' ");
                                                 ?>
-                                            <h5 id="label_cajas_texto">Departamento</h5>
-                                            <select id="combos_formulario_usuario" name="txtDep" required>
-                                                <option value=""></option>
-                                                <?php
+                                                <h5 id="label_cajas_texto">Departamento</h5>
+                                                <select id="combos_formulario_usuario" name="txtDep" required>
+                                                    <option value=""></option>
+                                                    <?php
                                                     while ($mostdpto = mysqli_fetch_array($sqldpto, MYSQLI_ASSOC)) {
                                                         echo'<option value=' . $mostdpto['ID_Departamento'] . '>' . $mostdpto['Nombre'] . '</option>';
                                                     }//FIN DEL WHILE
                                                     ?>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h5 id='label_cajas_texto'>Descripción</h5>
-                                            <input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarCargo[' Descripcion']; ?>'>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan='2'>
-                                            <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </form>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 id='label_cajas_texto'>Descripción</h5>
+                                                <input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarCargo['Descripcion']; ?>'>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan='2'>
+                                                <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </td>
+                </td>
 
-            <td width="70px;">
-                <?php
+                <td width="70px;">
+                    <?php
                     if ($mostrarCargo['estatus'] == 'A') {
                         echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCargo.php?codigo=$mostrarCargo[codigo]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
 								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
@@ -344,8 +344,8 @@
 							</a>";
                     }
                     ?>
-            </td>
-        </tr>
+                </td>
+            </tr>
         <?php } ?>
         <!--FIN DEL WHILE-->
     </tbody>

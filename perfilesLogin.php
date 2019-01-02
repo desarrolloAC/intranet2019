@@ -69,23 +69,24 @@
                             </form>
 
                             <script type="text/javascript">
-    const getOrgUrl = 'http://localhost/intranet/php/login/GetOrganization.php';
-    const getOrg = new Vue({
-        el: '#txtOrg',
-        created: function () {
-            this.getPublicaciones();
-        },
-        data: {
-            list: []
-        },
-        methods: {
-            getPublicaciones: function () {
-                this.$http.get(getOrgUrl).then((responsed) => {
-                    this.list = responsed.body;
-                });
-            }
+
+const getOrgUrl = 'http://localhost/intranet/php/login/GetOrganization.php';
+const getOrg = new Vue({
+    el: '#txtOrg',
+    created: function () {
+        this.getPublicaciones();
+    },
+    data: {
+        list: []
+    },
+    methods: {
+        getPublicaciones: function () {
+            this.$http.get(getOrgUrl).then((responsed) => {
+                this.list = responsed.body;
+            });
         }
-    });
+    }
+});
 
                             </script>
 

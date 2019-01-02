@@ -25,7 +25,7 @@ if (!empty($_GET['elegido'])) {
     echo " <option value=''>Perfil Usuario</option>";
 
     while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-        echo "<option value='$row[ID_Rol]'>" . $row[Nombre] . "</option>";
+        echo "<option value='" . $row['ID_Rol'] . "'>" . $row['Nombre'] . "</option>";
     }
 }
 ?>

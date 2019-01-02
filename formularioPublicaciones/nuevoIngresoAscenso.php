@@ -14,30 +14,29 @@
 
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" type="text/css" href="nuevoIngresoAscenso.css">
+    <link rel="stylesheet" type="text/css" href="nuevoIngresoAscenso.css">
 
-	<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
 
-	<SCRIPT LANGUAGE="JavaScript">
-
+    <script>
         function textCounter(field, countfield, maxlimit) {
-        if (field.value.length > maxlimit)
-        field.value = field.value.substring(0, maxlimit);
+            if (field.value.length > maxlimit)
+                field.value = field.value.substring(0, maxlimit);
 
-        else
-        countfield.value = maxlimit - field.value.length;
+            else
+                countfield.value = maxlimit - field.value.length;
         }
 
     </script>
 
     <script type="text/javascript">
-    	$(document).ready(function(){
- 				$("#txtDpto").change(function(){
-				$("#txtCargo").load('../php/selectCargos.php?elegido=' + $(this).val());
-			});
- 		});
+        $(document).ready(function() {
+            $("#txtDpto").change(function() {
+                $("#txtCargo").load('../php/selectCargos.php?elegido=' + $(this).val());
+            });
+        });
+
     </script>
 
 
@@ -45,58 +44,58 @@
 
 <body>
 
-	<!--<a href="#formularioNuevoIngresoAscenso">abrir formulario</a>-->
+    <!--<a href="#formularioNuevoIngresoAscenso">abrir formulario</a>-->
 
-	<!--INICIO DIV CONTENEDOR FORMULARIO-->
-	<div id="formularioNuevoIngresoAscenso" class="contenedorFormulario">
+    <!--INICIO DIV CONTENEDOR FORMULARIO-->
+    <div id="formularioNuevoIngresoAscenso" class="contenedorFormulario">
 
-		<div id="formularioNuevoIngresoAscenso">
+        <div id="formularioNuevoIngresoAscenso">
 
-			<a href="#" class="cerrar">X</a>
+            <a href="#" class="cerrar">X</a>
 
-			<form method="POST" action="">
+            <form method="POST" action="">
 
-				<input id="txtCodigoSubCategoriaNuevoAscenso" type="text" name="txtCodigoSubCategoriaNuevoAscenso" value="" maxlength="4">
+                <input id="txtCodigoSubCategoriaNuevoAscenso" type="text" name="txtCodigoSubCategoriaNuevoAscenso" value="" maxlength="4">
 
-				<input id="txtNombreCompletoNuevoAscenso" type="text" name="txtNombreCompletoNuevoAscenso" placeholder="Nombre Completo" required>
+                <input id="txtNombreCompletoNuevoAscenso" type="text" name="txtNombreCompletoNuevoAscenso" placeholder="Nombre Completo" required>
 
-				<?php
+                <?php
 
 					echo "
 						<select name='txtDpto' class='combos_formulario_usuario' id='txtDpto' required >
 						<option> Departamento </option>";
 
 						$sql=" SELECT d.ID_Departamento,d.Nombre FROM departamento d WHERE d.Estatus='A'";
-						$rs=mysql_query($sql,$conexion);
-						if($row = mysql_fetch_array($rs)){
+						$rs=mysqli_query($conexion,$sql);
+						if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 							do{
 							   echo "<option value='$row[ID_Departamento]'> $row[Nombre] </option>";
-							}while ($row=mysql_fetch_array($rs));
+							}while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 						}
-						mysql_free_result($rs);
-						echo "</select>";
+
+                echo "</select>";
 			 	?>
 
-			 	<select name='txtCargo' class='combos_formulario_usuario' id='txtCargo' required >
-				    <option> Cargo </option>
-				</select>
+                <select name='txtCargo' class='combos_formulario_usuario' id='txtCargo' required>
+                    <option> Cargo </option>
+                </select>
 
-				<textarea id="txtContenidoNuevoAscenso" name="txtContenidoNuevoAscenso" onKeyDown="textCounter(this.form.txtContenidoNuevoAscenso,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoNuevoAscenso,this.form.remLen,500);" placeholder="Descripcion" required></textarea>
+                <textarea id="txtContenidoNuevoAscenso" name="txtContenidoNuevoAscenso" onKeyDown="textCounter(this.form.txtContenidoNuevoAscenso,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoNuevoAscenso,this.form.remLen,500);" placeholder="Descripcion" required></textarea>
 
-				<input id="ncaracteresNuevoAscenso" readonly type=text name=remLen size=3 maxlength=3 value="500">
+                <input id="ncaracteresNuevoAscenso" readonly type=text name=remLen size=3 maxlength=3 value="500">
 
-				<label id="tituloCaracteresNuevoAscenso">Caracteres Restantes</label>
+                <label id="tituloCaracteresNuevoAscenso">Caracteres Restantes</label>
 
-				<input id="btnImagenNuevoAscenso"  type="file" name="btnImagenNuevoAscenso" required>
+                <input id="btnImagenNuevoAscenso" type="file" name="btnImagenNuevoAscenso" required>
 
-				<input id="btnRegistrarNuevoAscenso" type="submit" name="btnRegistrarNuevoAscenso" value="Registrar">
+                <input id="btnRegistrarNuevoAscenso" type="submit" name="btnRegistrarNuevoAscenso" value="Registrar">
 
-			</form>
+            </form>
 
-		</div>
+        </div>
 
-	</div>
-	<!--FIN DIV CONTENEDOR FORMULARIO-->
+    </div>
+    <!--FIN DIV CONTENEDOR FORMULARIO-->
 
 </body>
 

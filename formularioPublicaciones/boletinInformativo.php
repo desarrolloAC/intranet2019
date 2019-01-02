@@ -4,13 +4,13 @@
 
 	$sql = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='BOIF'";
 
-	$subc = mysql_query($sql,$conexion);
+	$subc = mysqli_query($conexion,$sql);
 
 	$selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION[ID_Organizacion]'";
 
-	$nombreOrg = mysql_query($selectOrg,$conexion);
+	$nombreOrg = mysqli_query($conexion,$selectOrg);
 
-	$org=mysql_fetch_array($nombreOrg);
+	$org=mysqli_fetch_array($nombreOrg,MYSQLI_ASSOC);
 
 ?>
 
@@ -20,11 +20,11 @@
 
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" type="text/css" href="boletinInformativo.css">
+    <link rel="stylesheet" type="text/css" href="boletinInformativo.css">
 
-	<SCRIPT LANGUAGE="JavaScript">
+    <script>
 
         function textCounter(field, countfield, maxlimit) {
         if (field.value.length > maxlimit)
@@ -41,44 +41,44 @@
 
 <body>
 
-	<!--<a href="#formularioBoletinInformativo">abrir formulario</a>-->
+    <!--<a href="#formularioBoletinInformativo">abrir formulario</a>-->
 
-	<!--INICIO DIV CONTENEDOR FORMULARIO-->
-	<div id="formularioBoletinInformativo" class="contenedorFormulario">
+    <!--INICIO DIV CONTENEDOR FORMULARIO-->
+    <div id="formularioBoletinInformativo" class="contenedorFormulario">
 
-		<div id="formularioBoletinInformativo">
+        <div id="formularioBoletinInformativo">
 
-			<a href="#" class="cerrar">X</a>
+            <a href="#" class="cerrar">X</a>
 
-			<form method="POST" action="php/registrarBoletinInformativo.php" enctype="multipart/form-data">
+            <form method="POST" action="php/registrarBoletinInformativo.php" enctype="multipart/form-data">
 
-				<input id="txtCodigoSubCategoriaBoletinInformativo" type="text" name="txtCodigoSubCategoriaBoletinInformativo" value="<?php while($ver = mysql_fetch_array($subc))
+                <input id="txtCodigoSubCategoriaBoletinInformativo" type="text" name="txtCodigoSubCategoriaBoletinInformativo" value="<?php while($ver = mysqli_fetch_array($subc,MYSQLI_ASSOC))
 					{
 						echo $ver['ID_Subcategoria'];
 					}	?>" maxlength="4" readonly>
 
-				<input id="txtCodigoOrganizacionBoletinInformativo" type="text" name="txtCodigoOrganizacionBoletinInformativo" value="<?php echo $org['Nombre']; ?>" maxlength="4">
+                <input id="txtCodigoOrganizacionBoletinInformativo" type="text" name="txtCodigoOrganizacionBoletinInformativo" value="<?php echo $org['Nombre']; ?>" maxlength="4">
 
-				<input id="txtTituloBoletinInformativo" type="text" name="txtTituloBoletinInformativo" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
+                <input id="txtTituloBoletinInformativo" type="text" name="txtTituloBoletinInformativo" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
 
-				<textarea id="txtContenidoBoletinInformativo" name="txtContenidoBoletinInformativo" onKeyDown="textCounter(this.form.txtContenidoBoletinInformativo,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoBoletinInformativo,this.form.remLen,500);" placeholder="Contenido De La Publicacion" required></textarea>
+                <textarea id="txtContenidoBoletinInformativo" name="txtContenidoBoletinInformativo" onKeyDown="textCounter(this.form.txtContenidoBoletinInformativo,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoBoletinInformativo,this.form.remLen,500);" placeholder="Contenido De La Publicacion" required></textarea>
 
-				<input id="ncaracteresBoletinInformativo" readonly type=text name=remLen size=3 maxlength=3 value="500">
-				<label id="tituloCaracteresBoletinInformativo">Caracteres Restantes</label>
+                <input id="ncaracteresBoletinInformativo" readonly type=text name=remLen size=3 maxlength=3 value="500">
+                <label id="tituloCaracteresBoletinInformativo">Caracteres Restantes</label>
 
-				<input id="btnImagenBoletinInformativo"  type="file" name="archivo" required>
-				<input id="btnImagenBoletinInformativo1" type="file" name="archivo1">
-				<input id="btnImagenBoletinInformativo2" type="file" name="archivo2">
-				<input id="btnImagenBoletinInformativo3" type="file" name="archivo3">
+                <input id="btnImagenBoletinInformativo" type="file" name="archivo" required>
+                <input id="btnImagenBoletinInformativo1" type="file" name="archivo1">
+                <input id="btnImagenBoletinInformativo2" type="file" name="archivo2">
+                <input id="btnImagenBoletinInformativo3" type="file" name="archivo3">
 
-				<input id="btnRegistrarBoletinInformativo" type="submit" name="btnRegistrarBoletinInformativo" value="Registrar">
+                <input id="btnRegistrarBoletinInformativo" type="submit" name="btnRegistrarBoletinInformativo" value="Registrar">
 
-			</form>
+            </form>
 
-		</div>
+        </div>
 
-	</div>
-	<!--FIN DIV CONTENEDOR FORMULARIO-->
+    </div>
+    <!--FIN DIV CONTENEDOR FORMULARIO-->
 
 </body>
 

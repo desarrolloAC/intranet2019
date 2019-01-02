@@ -1,12 +1,3 @@
-<?php
-
-  session_start();
-
-  /*include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';*/
-  include $_SERVER["DOCUMENT_ROOT"].'/intranet/php/estadoPublicacion.php';
-  include $_SERVER["DOCUMENT_ROOT"].'/intranet//php/estadosLogin.php';
-?>
-
 <script type="text/javascript" src="js/subCategoriaParaRegistrar.js"></script>
 <script type="text/javascript" src="js/subCategoriaParaEditar.js"></script>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
@@ -611,6 +602,7 @@
 									     		break;
 									    } //FIN SWITCH
 					                break;
+
 					            case TypeUsuario::AUTORIZADOR:
 							              /*INGRESAR EL USUARIO COMO AUTORIZADOR*/
 							                switch ($mostrarPublicacion['Estado']) {
@@ -735,7 +727,7 @@
 												$sql=" SELECT ID_Categoria, Nombre
 												         FROM categoria
 												         WHERE Estatus='A'";
-												$rs=mysqli_query($sql,$conexion);
+												$rs=mysqli_query($conexion,$sql);
 												if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 													do{
 												 if ($_SESSION['ID_Categoria']==$row['ID_Categoria'])

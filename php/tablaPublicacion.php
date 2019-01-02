@@ -8,7 +8,7 @@
         <tr id="titulo_columnas">
             <td width="50" height="50" colspan="2">
                 <!--<a href="#formulario_modal_publicacion" id="btnRegistrarUsuario" title="Crear Publicación">
-                        <img src="imagenes/menu/botonesTablas/btnNuevo.png">
+                        <img src="assets/image/menu/botonesTablas/btnNuevo.png">
                 </a>-->
                 <!--INICIO DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
                 <div id="formulario_modal_publicacion" class="contenedor_formulario">
@@ -39,7 +39,7 @@
                                             <h5 id="label_cajas_texto">Categoría de la Publicación: </h5>
 
                                             <?php
-                                            			include $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+
                                             $conexion = conectar();
                                             echo "
 												<select name='txtCodigoC' class='combos_formulario_usuario' id='txtCodigoC' required >
@@ -47,11 +47,16 @@
 
                                             $sql = " SELECT c.ID_Categoria,c.Nombre FROM categoria c WHERE c.Estatus='A'";
                                             $rs = mysqli_query($conexion, $sql);
+
                                             if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+
                                                 do {
+
                                                     echo "<option value='$row[ID_Categoria]'> $row[Nombre] </option>";
+
                                                 } while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
                                             }
+
                                             echo "</select>";
                                             ?>
                                         </td>
@@ -80,6 +85,7 @@
                                             <script>
 
                                                 CKEDITOR.replace('contenido');
+
                                             </script>
                                         </td>
                                     </tr>
@@ -156,10 +162,6 @@
     </thead>
     <tbody>
         <?php
-        error_reporting(0);
-
-        session_start();
-        include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
 
         switch ($_SESSION['ID_Rol']) {
@@ -563,36 +565,36 @@
                             switch ($mostrarPublicacion['Estado']) {
                                 case EstadoPublicacion::RECHAZADO_A:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+													     <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												     </a>";
 
                                     break;
                                 case EstadoPublicacion::RECHAZADO_E:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+													     <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												     </a>";
 
                                     break;
                                 case EstadoPublicacion::REVISION_E:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+													     <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												     </a>";
 
                                     break;
                                 case EstadoPublicacion::REVISION_A:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+													     <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												     </a>";
 
                                     break;
                                 case EstadoPublicacion::PUBLICADA:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+													     <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												     </a>";
                                     break;
                                 default:// EstadoPublicacion::BORR:;
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-													     <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+													     <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												     </a>";
                                     break;
                             } //FIN SWITCH
@@ -611,7 +613,7 @@
                                     break;
                                 case EstadoPublicacion::REVISION_A:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-													         <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+													         <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												           </a>";
                                     break;
                                 case EstadoPublicacion::PUBLICADA:
@@ -627,7 +629,7 @@
                             switch ($mostrarPublicacion['Estado']) {
                                 case EstadoPublicacion::RECHAZADO_A:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-													         <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+													         <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												           </a>";
                                     break;
                                 case EstadoPublicacion::RECHAZADO_E:
@@ -635,7 +637,7 @@
                                     break;
                                 case EstadoPublicacion::REVISION_E:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-													         <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+													         <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												           </a>";
                                     break;
                                 case EstadoPublicacion::REVISION_A:
@@ -656,7 +658,7 @@
                                     break;
                                 case EstadoPublicacion::RECHAZADO_E:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-													           <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+													           <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												            </a>";
                                     break;
                                 case EstadoPublicacion::REVISION_E:
@@ -670,7 +672,7 @@
                                     break;
                                 default:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-													           <img src='imagenes/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+													           <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
 												            </a>";
                                     break;
                             } //FIN SWITCH PUBLICADOR
@@ -843,72 +845,72 @@
                             switch ($mostrarPublicacion['Estado']) {
                                 case EstadoPublicacion::RECHAZADO_A:
                                     echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A&usuario=$_SESSION[Cedula]' title='Rechazada por el Autorizador' style='display: none;'>
-									     	     		<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png'>
+									     	     		<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
 									     	     	  </a>";
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
-									     		 	<img id='imagenBoton' src='imagenes/menu/botonesTablas/regresar.png'>
+									     		 	<img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
 									     		 </a>";
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Reenviar a Autorizador'>
-									     		 	<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png'>
+									     		 	<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
 									     		 </a>";
                                     // echo "RECHAZADO_A";
                                     break;
                                 case EstadoPublicacion::RECHAZADO_E:
                                     echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Rechazada por Editor' style='display: none;'>
-									     	     	<img id='imagenBoton' src='imagenes/menu/botonesTablas/regresar.png'>
+									     	     	<img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
 									     	     </a>";
                                     echo"<a id='btnDesactivado' name='btnDesactivado'	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
-									     		 	<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png'>
+									     		 	<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
 									     		 </a>";
                                     // echo "RECHAZADO_E";
                                     break;
                                 case EstadoPublicacion::REVISION_E:
                                     echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Revisión del Editor' style='display: none;'>
-									     	     	<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png'>
+									     	     	<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
 									     	     </a>";
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
-										         	<img id='imagenBoton' src='imagenes/menu/botonesTablas/regresar.png'>
+										         	<img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
 										         </a>";
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Enviar a Autorizador'>
-									     		 	<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png'>
+									     		 	<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
 									     		 </a>";
                                     break;
                                 case EstadoPublicacion::REVISION_A:
                                     echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Revisión Final' style='display: none;'>
-									     	     	<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png' title='Editar Publicación'>
+									     	     	<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png' title='Editar Publicación'>
 									     	     </a>";
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
-										         	<img id='imagenBoton' src='imagenes/menu/botonesTablas/regresar.png'>
+										         	<img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
 										         </a>";
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=PUBLICADA&fecha=f&usuario=$_SESSION[Cedula]' title='Publicar'>
-									     		 	<img id='imagenBoton' src='imagenes/menu/botonesTablas/publicar.png'>
+									     		 	<img id='imagenBoton' src='assets/image/menu/botonesTablas/publicar.png'>
 									     		 </a>";
                                     // echo "REVISION_P";
                                     break;
                                 case EstadoPublicacion::PUBLICADA:
                                     if ($mostrarPublicacion['estatus'] == 'A') {
                                         echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
-															<img id='imagenBoton' src='imagenes/menu/botonesTablas/btnOffOn.png'>
+															<img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
 														</a>";
                                         echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar'>
-															<img id='imagenBoton' src='imagenes/menu/botonesTablas/btnOffOn.png'>
+															<img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
 														</a>";
                                     } else {
                                         echo"<a id='btnActivo'      name='btnActivo' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar'>
-															<img id='imagenBoton' src='imagenes/menu/botonesTablas/btnOffOn.png'>
+															<img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
 														</a>";
                                         echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar' style='display: none;'>
-															<img id='imagenBoton' src='imagenes/menu/botonesTablas/btnOffOn.png'>
+															<img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
 														</a>";
                                     }
 
                                     break;
                                 default:
                                     echo"<a id='btnActivo' 		name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=BORR&usuario=$_SESSION[Cedula]' title='Estado Borrador' style='display: none;'>
-									     	     	<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png'>
+									     	     	<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
 									     	     </a>";
                                     echo"<a id='btnDesactivado' 	name='btnDesactivado'	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Enviar a Editor'>
-										         	<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png'>
+										         	<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
 										         </a>";
                                     //echo EstadoPublicacion::BORR:;
                                     break;
@@ -931,27 +933,27 @@
                                 case EstadoPublicacion::REVISION_A:
 
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
-									         	<img id='imagenBoton' src='imagenes/menu/botonesTablas/regresar.png'>
+									         	<img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
 									         </a>";
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=PUBLICADA&fecha=f&usuario=$_SESSION[Cedula]' title='Publicar'>
-								     		 	<img id='imagenBoton' src='imagenes/menu/botonesTablas/publicar.png'>
+								     		 	<img id='imagenBoton' src='assets/image/menu/botonesTablas/publicar.png'>
 								     		 </a>";
                                     // echo "REVISION_P";
                                     break;
                                 case EstadoPublicacion::PUBLICADA:
                                     if ($mostrarPublicacion['estatus'] == 'A') {
                                         echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
-															<img id='imagenBoton' src='imagenes/menu/botonesTablas/btnOffOn.png'>
+															<img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
 														</a>";
                                         echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar'>
-															<img id='imagenBoton' src='imagenes/menu/botonesTablas/btnOffOn.png'>
+															<img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
 														</a>";
                                     } else {
                                         echo"<a id='btnActivo'      name='btnActivo' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar'>
-															<img id='imagenBoton' src='imagenes/menu/botonesTablas/btnOffOn.png'>
+															<img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
 														</a>";
                                         echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar' style='display: none;'>
-															<img id='imagenBoton' src='imagenes/menu/botonesTablas/btnOffOn.png'>
+															<img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
 														</a>";
                                     }
                                     break;
@@ -965,10 +967,10 @@
                             switch ($mostrarPublicacion['Estado']) {
                                 case EstadoPublicacion::RECHAZADO_A:
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
-										     		 	<img id='imagenBoton' src='imagenes/menu/botonesTablas/regresar.png'>
+										     		 	<img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
 										     		 </a>";
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Reenviar a Autorizador'>
-										     		 	<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png'>
+										     		 	<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
 										     		 </a>";
                                     // echo "RECHAZADO_A";
                                     break;
@@ -977,10 +979,10 @@
                                     break;
                                 case EstadoPublicacion::REVISION_E:
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
-											         	<img id='imagenBoton' src='imagenes/menu/botonesTablas/regresar.png'>
+											         	<img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
 											         </a>";
                                     echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Enviar a Autorizador'>
-										     		 	<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png'>
+										     		 	<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
 										     		 </a>";
                                     break;
                                 case EstadoPublicacion::REVISION_A:
@@ -1001,7 +1003,7 @@
                                     break;
                                 case EstadoPublicacion::RECHAZADO_E:
                                     echo"<a id='btnDesactivado' name='btnDesactivado'	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
-									     		 	<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png'>
+									     		 	<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
 									     		 </a>";
                                     // echo "RECHAZADO_E";
                                     break;
@@ -1016,7 +1018,7 @@
                                     break;
                                 default:
                                     echo"<a id='btnDesactivado' 	name='btnDesactivado'	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Enviar a Editor'>
-										         	<img id='imagenBoton' src='imagenes/menu/botonesTablas/siguiente.png'>
+										         	<img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
 										         </a>";
                                     //echo EstadoPublicacion::BORR:;
                                     break;

@@ -4,53 +4,53 @@
 
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" type="text/css" href="condolencia.css">
+    <link rel="stylesheet" type="text/css" href="condolencia.css">
 
-	<SCRIPT LANGUAGE="JavaScript">
-     
+    <script>
+
         function textCounter(field, countfield, maxlimit) {
-        if (field.value.length > maxlimit) 
+        if (field.value.length > maxlimit)
         field.value = field.value.substring(0, maxlimit);
 
-        else 
+        else
         countfield.value = maxlimit - field.value.length;
         }
-     
+
     </script>
-        
+
 
 </head>
 
 <body>
 
-	<!--<a href="#formularioAvanceInformativo">abrir formulario</a>-->
+    <!--<a href="#formularioAvanceInformativo">abrir formulario</a>-->
 
-	<!--INICIO DIV CONTENEDOR FORMULARIO-->
-	<div id="formularioCondolencia" class="contenedorFormulario">
-				
-		<div id="formularioCondolencia">
+    <!--INICIO DIV CONTENEDOR FORMULARIO-->
+    <div id="formularioCondolencia" class="contenedorFormulario">
 
-			<a href="#" class="cerrar">X</a>
+        <div id="formularioCondolencia">
 
-			<form method="POST" action="">
-				
-				<input id="txtCodigoSubCategoriaCondolencia" type="text" name="txtCodigoSubCategoriaCondolencia" value="" maxlength="4">
+            <a href="#" class="cerrar">X</a>
 
-				<textarea id="txtContenidoCondolencia" name="txtContenidoCondolencia" onKeyDown="textCounter(this.form.txtContenidoCondolencia,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoCondolencia,this.form.remLen,500);" placeholder="Descripcion" required></textarea>
+            <form method="POST" action="">
 
-				<input id="ncaracteresCondolencia" readonly type=text name=remLen size=3 maxlength=3 value="500">
-				<label id="tituloCaracteresCondolencia">Caracteres Restantes</label>
-				
-				<input id="btnRegistrarCondolencia" type="submit" name="btnRegistrarCondolencia" value="Registrar">
+                <input id="txtCodigoSubCategoriaCondolencia" type="text" name="txtCodigoSubCategoriaCondolencia" value="" maxlength="4">
 
-			</form>
+                <textarea id="txtContenidoCondolencia" name="txtContenidoCondolencia" onKeyDown="textCounter(this.form.txtContenidoCondolencia,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoCondolencia,this.form.remLen,500);" placeholder="Descripcion" required></textarea>
 
-		</div>
+                <input id="ncaracteresCondolencia" readonly type=text name=remLen size=3 maxlength=3 value="500">
+                <label id="tituloCaracteresCondolencia">Caracteres Restantes</label>
 
-	</div>
-	<!--FIN DIV CONTENEDOR FORMULARIO-->
+                <input id="btnRegistrarCondolencia" type="submit" name="btnRegistrarCondolencia" value="Registrar">
+
+            </form>
+
+        </div>
+
+    </div>
+    <!--FIN DIV CONTENEDOR FORMULARIO-->
 
 </body>
 

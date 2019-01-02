@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $conexion = conectar();
 ?>
 
@@ -11,7 +10,7 @@
         <tr id="titulo_columnas" class="ancho">
             <td width="50" height="50" colspan="2" class="ancho">
                 <a href="#formulario_modal_usuario" id="btnRegistrarUsuario" title="Registar un usuario">
-                    <img src="imagenes/menu/botonesTablas/btnNuevo.png">
+                    <img src="assets/image/menu/botonesTablas/btnNuevo.png">
                 </a>
 
                 <!--INICIO DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
@@ -105,8 +104,8 @@
 															    echo "<option value='$row[ID_Rol]'> $row[Nombre] </option>";
 															    }while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 															}
-														 mysql_free_result($rs);
-													echo "</select>";
+
+                                            echo "</select>";
 												?>
                                         </td>
                                     </tr>
@@ -159,11 +158,11 @@
 														<option>Pais </option>";
 
 														$sql="SELECT * FROM paises";
-														$rs=mysql_query($conexion,$sql);
-															if($row = mysql_fetch_array($rs,MYSQLI_ASSOC)){
+														$rs=mysqli_query($conexion,$sql);
+															if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 															  do{
 															    echo "<option value='$row[0]'> $row[1] </option>";
-															    }while ($row=mysql_fetch_array($rs,MYSQLI_ASSOC));
+															    }while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 															}
 
                                             echo "</select>";
@@ -295,7 +294,7 @@
 							$ced     =	$_POST["txtBuscarUsuario"];
 							$where   =  " where u.Cedula like '%".$ced."%' AND o.ID_Organizacion='$_SESSION[ID_Organizacion]'";
 
-							$consultarUsuario = mysql_query("SELECT DISTINCT(u.Cedula) as codigo,
+							$consultarUsuario = mysqli_query($conexion,"SELECT DISTINCT(u.Cedula) as codigo,
 																       CONCAT(u.PNombre,' ',    SUBSTRING(u.SNombre,1,1)) as nombre,
 																       CONCAT(u.PApellido,' ',  SUBSTRING(u.SApellido,1,1) ) as  Apellido,
 																       u.PNombre,
@@ -325,13 +324,13 @@
 																LEFT JOIN cargo         c ON (c.ID_Cargo=u.ID_Cargo)
                                                                 LEFT JOIN departamento  d ON (c.ID_Departamento=d.ID_Departamento)
                                                                 $where
-				                                                ORDER BY u.Cedula ", $conexion);
-				           if(mysql_num_rows($consultarUsuario)==0)
+				                                                ORDER BY u.Cedula ");
+				           if(mysqli_num_rows($consultarUsuario)==0)
 							{
 								$mensajeError = "<h1 id='mensaje_error'style='color: rgb(69,69,69); text-aling: center;'>No existen registros que coincidan con su criterio de busqueda.</h1>";
 							}
 			            }else{
-			                 $consultarUsuario = mysql_query(" SELECT DISTINCT(u.Cedula) as codigo,
+			                 $consultarUsuario = mysqli_query($conexion," SELECT DISTINCT(u.Cedula) as codigo,
 																       CONCAT(u.PNombre,' ',    SUBSTRING(u.SNombre,1,1)) as nombre,
 																       CONCAT(u.PApellido,' ',  SUBSTRING(u.SApellido,1,1) ) as  Apellido,
 																       u.PNombre,
@@ -361,10 +360,10 @@
 																LEFT JOIN cargo         c ON (c.ID_Cargo=u.ID_Cargo)
                                                                 LEFT JOIN departamento  d ON (c.ID_Departamento=d.ID_Departamento)
                                                                 WHERE     o.ID_Organizacion='$_SESSION[ID_Organizacion]'
-				                                                ORDER BY u.Cedula  ", $conexion);
+				                                                ORDER BY u.Cedula  ");
 			            }
-			            while($mostrarUsuario = mysql_fetch_array($consultarUsuario))
-			            {
+			            while($mostrarUsuario = mysqli_fetch_array($consultarUsuario,MYSQLI_ASSOC)) {
+
 			        ?>
         <tr id="datos_usuario" class="ancho">
             <td class="ancho">
@@ -448,7 +447,7 @@
             <td class="ancho">
 
                 <a href='#<?php echo $mostrarUsuario[' codigo']; ?>' id='btnEditar'>
-                    <img src='imagenes/menu/botonesTablas/btnEditar.png'>
+                    <img src='assets/image/menu/botonesTablas/btnEditar.png'>
                 </a>
 
                 <div id='<?php echo $mostrarUsuario[' codigo']; ?>' class='contenedor_formulario'>
@@ -525,23 +524,23 @@
 													<option> Organización </option>";
 
 													$sql=" SELECT d.ID_Organizacion,d.Nombre FROM organizacion d WHERE d.Estatus='A'";
-													$rs=mysql_query($sql,$conexion);
-													if($row = mysql_fetch_array($rs)){
+													$rs=mysqli_query($conexion,$sql);
+													if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 														do{
 														  if ($row['Nombre']==$mostrarUsuario['organizacion']) {
 														  	 echo "<option selected value='$row[ID_Organizacion]'> $row[Nombre] </option>";									# code...
 														  }	else
 														      echo "<option value='$row[ID_Organizacion]'> $row[Nombre] </option>";
 
-														}while ($row=mysql_fetch_array($rs));
+														}while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 													}
-													mysql_free_result($rs);
-													echo "</select>";
+
+                            echo "</select>";
 											 ?>
                                         </td>
                                         <td>
                                             <h5 id='label_cajas_texto'>Cargo</h5>
-                                            </select>
+
                                             <?php
 
 												 echo "
@@ -549,8 +548,8 @@
 													<option> Cargo </option>";
 
 													$sql=" SELECT d.ID_Cargo,d.Nombre FROM cargo d WHERE d.Estatus='A'";
-													$rs=mysql_query($sql,$conexion);
-													if($row = mysql_fetch_array($rs)){
+													$rs=mysqli_query($conexion,$sql);
+													if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 														do{
 														 if ($row['Nombre']==$mostrarUsuario['cargo']) {
 														 	echo "<option selected value='$row[ID_Cargo]'> $row[Nombre] </option>";
@@ -558,10 +557,10 @@
 														 	echo "<option   value='$row[ID_Cargo]'> $row[Nombre] </option>";
 														 }
 
-														}while ($row=mysql_fetch_array($rs));
+														}while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 													}
-													mysql_free_result($rs);
-													echo "</select>";
+
+                                            echo "</select>";
 										?>
                                         </td>
                                         <td>
@@ -579,8 +578,8 @@
 													<option> Departamento </option>";
 
 													$sql=" SELECT d.ID_Departamento,d.Nombre FROM departamento d WHERE d.Estatus='A'";
-													$rs=mysql_query($sql,$conexion);
-													if($row = mysql_fetch_array($rs)){
+													$rs=mysqli_query($conexion,$sql);
+													if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 														do{
 														 if ($row['Nombre']==$mostrarUsuario['departamento']) {
 														 	echo "<option selected value='$row[ID_Departamento]'> $row[Nombre] </option>";
@@ -588,10 +587,10 @@
 														 	echo "<option   value='$row[ID_Departamento]'> $row[Nombre] </option>";
 														 }
 
-														}while ($row=mysql_fetch_array($rs));
+														}while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 													}
-													mysql_free_result($rs);
-													echo "</select>";
+
+                            echo "</select>";
 											 ?>
                                         </td>
                                         <td>
@@ -620,8 +619,8 @@
 													<option> Rol </option>";
 
 													$sql=" SELECT d.ID_Rol,d.Nombre FROM rol d WHERE d.Estatus='A'";
-													$rs=mysql_query($sql,$conexion);
-													if($row = mysql_fetch_array($rs)){
+													$rs=mysqli_query($conexion,$sql);
+													if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 														do{
 														 if ($row['Nombre']==$mostrarUsuario['rol']) {
 														 	echo "<option selected value='$row[ID_Rol]'> $row[Nombre] </option>";
@@ -629,10 +628,10 @@
 														 	echo "<option   value='$row[ID_Rol]'> $row[Nombre] </option>";
 														 }
 
-														}while ($row=mysql_fetch_array($rs));
+														}while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 													}
-													mysql_free_result($rs);
-												echo "</select>";
+
+                            echo "</select>";
 										?>
                                         </td>
                                         <td>
@@ -644,8 +643,8 @@
 														<option>Pais </option>";
 
 														$sql="SELECT * FROM paises";
-														$rs=mysql_query($sql,$conexion);
-															if($row = mysql_fetch_array($rs)){
+														$rs=mysqli_query($sql,$conexion);
+															if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 															  do{
 															    if ($row['ID_PAIS']== $mostrarUsuario['ID_Pais']) {
 															    	echo "<option selected value='$row[ID_PAIS]'> $row[PAIS] </option>";
@@ -653,10 +652,10 @@
 															    	echo "<option  value='$row[ID_PAIS]'> $row[PAIS] </option>";
 															    }
 
-															    }while ($row=mysql_fetch_array($rs));
+															    }while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 															}
-														 mysql_free_result($rs);
-													echo "</select>";
+
+                            echo "</select>";
 												?>
                                         </td>
                                     </tr>
@@ -670,8 +669,8 @@
 													<option>Estado </option>";
 
 													$sql="SELECT * FROM estados";
-													$rs=mysql_query($sql,$conexion);
-														if($row = mysql_fetch_array($rs)){
+													$rs=mysqli_query($sql,$conexion);
+														if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 														  do{
 														    if ($row['ID_ESTADO']== $mostrarUsuario['ID_Estado']) {
 														    	echo "<option selected value='$row[ID_ESTADO]'> $row[ESTADO] </option>";
@@ -679,10 +678,10 @@
 														    	echo "<option  value='$row[ID_ESTADO]'> $row[ESTADO] </option>";
 														    }
 
-														    }while ($row=mysql_fetch_array($rs));
+														    }while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 														}
-													 mysql_free_result($rs);
-												echo "</select>";
+
+                            echo "</select>";
 											?>
                                         </td>
                                         <td>
@@ -694,8 +693,8 @@
 													<option>Municipio </option>";
 
 													$sql="SELECT * FROM municipios";
-													$rs=mysql_query($sql,$conexion);
-														if($row = mysql_fetch_array($rs)){
+													$rs=mysqli_query($sql,$conexion);
+														if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 														  do{
 														    if ($row['ID_MUNICIPIO']== $mostrarUsuario['ID_Municipio']) {
 														    	echo "<option selected value='$row[ID_MUNICIPIO]'> $row[MUNICIPIO] </option>";
@@ -703,10 +702,10 @@
 														    	echo "<option  value='$row[ID_MUNICIPIO]'> $row[MUNICIPIO] </option>";
 														    }
 
-														    }while ($row=mysql_fetch_array($rs));
+														    }while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 														}
-													 mysql_free_result($rs);
-												echo "</select>";
+
+                            echo "</select>";
 											?>
                                         </td>
                                         <td>
@@ -718,8 +717,8 @@
 													<option>Ciudad </option>";
 
 													$sql="SELECT * FROM ciudades";
-													$rs=mysql_query($sql,$conexion);
-														if($row = mysql_fetch_array($rs)){
+													$rs=mysqli_query($conexion,$sql);
+														if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 														  do{
 														    if ($row['ID_CIUDAD']== $mostrarUsuario['ID_Ciudad']) {
 														    	echo "<option selected value='$row[ID_CIUDAD]'> $row[CIUDAD] </option>";
@@ -727,10 +726,10 @@
 														    	echo "<option  value='$row[ID_CIUDAD]'> $row[CIUDAD] </option>";
 														    }
 
-														    }while ($row=mysql_fetch_array($rs));
+														    }while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 														}
-													 mysql_free_result($rs);
-												echo "</select>";
+
+                            echo "</select>";
 											?>
                                         </td>
                                     </tr>
@@ -744,8 +743,8 @@
 													<option>Parroquia </option>";
 
 													$sql="SELECT * FROM parroquias";
-													$rs=mysql_query($sql,$conexion);
-														if($row = mysql_fetch_array($rs)){
+													$rs=mysqli_query($conexion,$sql);
+														if($row = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
 														  do{
 														    if ($row['ID_PARROQUIA']== $mostrarUsuario['ID_Parroquia']) {
 														    	echo "<option selected value='$row[ID_PARROQUIA]'> $row[PARROQUIA] </option>";
@@ -753,10 +752,10 @@
 														    	echo "<option  value='$row[ID_PARROQUIA]'> $row[PARROQUIA] </option>";
 														    }
 
-														    }while ($row=mysql_fetch_array($rs));
+														    }while ($row=mysqli_fetch_array($rs,MYSQLI_ASSOC));
 														}
-													 mysql_free_result($rs);
-												echo "</select>";
+
+                            echo "</select>";
 											?>
                                         </td>
                                         <td colspan="2">
@@ -782,21 +781,21 @@
 					if($mostrarUsuario['Estatus'] == 'A')
 					{
 						echo"<a id='btnActivo' name='btnActivo' href='opcionUsuario/actualizarEstado.php?cedula=$mostrarUsuario[codigo]&estatus=A' title='Activar' style='display: none;'>
-							<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 
 						echo"<a id='btnDesactivado' name='btnDesactivado' href='opcionUsuario/actualizarEstado.php?cedula=$mostrarUsuario[codigo]&estatus=D' title='Desactivar'>
-							<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 					}
 					else
 					{
 						echo"<a id='btnActivo' name='btnActivo' href='opcionUsuario/actualizarEstado.php?cedula=$mostrarUsuario[codigo]&estatus=A' title='Activar'>
-							<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 
 						echo"<a id='btnDesactivado' name='btnDesactivado' href='opcionUsuario/actualizarEstado.php?cedula=$mostrarUsuario[codigo]&estatus=D' title='Desactivar' style='display: none;'>
-							<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 					}
 					?>

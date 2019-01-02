@@ -3,7 +3,7 @@
         <tr id="titulo_columnas">
             <td width="50" height="50" colspan="2">
                 <a href="#formulario_modal_organizacion" id="btnRegistrarUsuario" title="Registar un usuario">
-                    <img src="imagenes/menu/botonesTablas/btnNuevo.png">
+                    <img src="assets/image/menu/botonesTablas/btnNuevo.png">
                 </a>
 
                 <!--INICIO DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
@@ -98,8 +98,7 @@
     <tbody>
         <?php
 
-			include $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
- error_reporting(0);
+
            	$conexion = conectar();
 
 
@@ -119,12 +118,14 @@
 						                                         FROM organizacion org
 				                                                 $where
 				                                                 ORDER BY org.ID_Organizacion ");
-				           if(mysqli_num_rows($consultaOrganizacion)==0)
-							{
+
+				           if(mysqli_num_rows($consultaOrganizacion)==0) {
+
 								$mensajeError = "<h1 id='mensaje_error'style='color: rgb(69,69,69); text-aling: center;'>No existen registros que coincidan con su criterio de busqueda.</h1>";
 							}
+
 			            }else{
-			                 $consultaOrganizacion = mysqli_query(" SELECT DISTINCT(org.ID_Organizacion) as codigo,
+			                 $consultaOrganizacion = mysqli_query($conexion," SELECT DISTINCT(org.ID_Organizacion) as codigo,
 							                                          org.nombre as nombre,
 							                                          org.estatus as estatus,
 							                                          org.Created,
@@ -132,11 +133,10 @@
 						                                              org.Updated,
 						                                              org.UpdatedBy
 						                                         FROM organizacion org
-
 				                                               ORDER BY org.ID_Organizacion ");
 			            }
-			            while($mostrarOrganizacion = mysqli_fetch_array($consultaOrganizacion,MYSQLI_ASSOC))
-			            {
+
+			            while($mostrarOrganizacion = mysqli_fetch_array($consultaOrganizacion,MYSQLI_ASSOC)) {
         ?>
         <tr id="datos_usuario">
             <td>
@@ -173,7 +173,7 @@
 								$sql=" SELECT CONCAT(PNombre,' ', PApellido) as Nombre
 								         FROM   usuario
 								         WHERE  Cedula='$mostrarOrganizacion[CreatedBy]' ";
-								$rs=mysqli_query($conexion.$sql);
+								$rs=mysqli_query($conexion,$sql);
 								$row = mysqli_fetch_array($rs,MYSQLI_ASSOC);
 								echo  $row['Nombre'] ;
 
@@ -209,7 +209,7 @@
 
             <td>
                 <a href='#<?php echo $mostrarOrganizacion[' codigo'];?>' id="btnEditar">
-                    <img src='imagenes/menu/botonesTablas/btnEditar.png'>
+                    <img src='assets/image/menu/botonesTablas/btnEditar.png'>
                 </a>
 
                 <div id='<?php echo $mostrarOrganizacion[' codigo']; ?>' class='contenedor_formulario'>
@@ -256,21 +256,21 @@
 					if($mostrarOrganizacion['estatus'] == 'A')
 					{
 						echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoOrganizacion.php?codigo=$mostrarOrganizacion[codigo]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
-							<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 
 						echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoOrganizacion.php?codigo=$mostrarOrganizacion[codigo]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar'>
-							<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 					}
 					else
 					{
 						echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoOrganizacion.php?codigo=$mostrarOrganizacion[codigo]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar'>
-							<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 
 						echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoOrganizacion.php?codigo=$mostrarOrganizacion[codigo]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar' style='display: none;'>
-							<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 					}
 					?>

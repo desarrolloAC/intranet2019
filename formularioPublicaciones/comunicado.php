@@ -4,13 +4,13 @@
 
 	$sql = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='COMU'";
 
-	$subc = mysql_query($sql,$conexion);
+	$subc = mysqli_query($conexion,$sql);
 
 	$selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION[ID_Organizacion]'";
 
-	$nombreOrg = mysql_query($selectOrg,$conexion);
+	$nombreOrg = mysqli_query($conexion,$selectOrg);
 
-	$org=mysql_fetch_array($nombreOrg);
+	$org=mysqli_fetch_array($nombreOrg,MYSQLI_ASSOC);
 
 ?>
 
@@ -20,11 +20,11 @@
 
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" type="text/css" href="comunicado.css">
+    <link rel="stylesheet" type="text/css" href="comunicado.css">
 
-	<SCRIPT LANGUAGE="JavaScript">
+    <script>
 
         function textCounter(field, countfield, maxlimit) {
         if (field.value.length > maxlimit)
@@ -41,40 +41,40 @@
 
 <body>
 
-	<!--<a href="#formularioComunicado">abrir formulario</a>-->
+    <!--<a href="#formularioComunicado">abrir formulario</a>-->
 
-	<!--INICIO DIV CONTENEDOR FORMULARIO-->
-	<div id="formularioComunicado" class="contenedorFormulario">
+    <!--INICIO DIV CONTENEDOR FORMULARIO-->
+    <div id="formularioComunicado" class="contenedorFormulario">
 
-		<div id="formularioComunicado">
+        <div id="formularioComunicado">
 
-			<a href="#" class="cerrar">X</a>
+            <a href="#" class="cerrar">X</a>
 
-			<form method="POST" action="php/registrarComunicado.php">
+            <form method="POST" action="php/registrarComunicado.php">
 
-				<input id="txtCodigoSubCategoriaComunicado" type="text" name="txtCodigoSubCategoriaComunicado" value="<?php
-					while($ver = mysql_fetch_array($subc))
+                <input id="txtCodigoSubCategoriaComunicado" type="text" name="txtCodigoSubCategoriaComunicado" value="<?php
+					while($ver = mysqli_fetch_array($subc,MYSQLI_ASSOC))
 					{
 						echo $ver['ID_Subcategoria'];
 					}	?>" maxlength="4">
 
-				<input id="txtCodigoOrganizacionComunicado" type="text" name="txtCodigoOrganizacionComunicado" value="<?php echo $org['Nombre']; ?>" maxlength="4">
+                <input id="txtCodigoOrganizacionComunicado" type="text" name="txtCodigoOrganizacionComunicado" value="<?php echo $org['Nombre']; ?>" maxlength="4">
 
-				<input id="txtTituloComunicado" type="text" name="txtTituloComunicado" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
+                <input id="txtTituloComunicado" type="text" name="txtTituloComunicado" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
 
-				<textarea id="txtContenidoComunicado" name="txtContenidoComunicado" onKeyDown="textCounter(this.form.txtContenidoComunicado,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoComunicado,this.form.remLen,500);" placeholder="Contenido De La Publicacion" required></textarea>
+                <textarea id="txtContenidoComunicado" name="txtContenidoComunicado" onKeyDown="textCounter(this.form.txtContenidoComunicado,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoComunicado,this.form.remLen,500);" placeholder="Contenido De La Publicacion" required></textarea>
 
-				<input id="ncaracteresComunicado" readonly type=text name=remLen size=3 maxlength=3 value="500">
-				<label id="tituloCaracteresComunicado">Caracteres Restantes</label>
+                <input id="ncaracteresComunicado" readonly type=text name=remLen size=3 maxlength=3 value="500">
+                <label id="tituloCaracteresComunicado">Caracteres Restantes</label>
 
-				<input id="btnRegistrarComunicado" type="submit" name="btnRegistrarComunicado" value="Registrar">
+                <input id="btnRegistrarComunicado" type="submit" name="btnRegistrarComunicado" value="Registrar">
 
-			</form>
+            </form>
 
-		</div>
+        </div>
 
-	</div>
-	<!--FIN DIV CONTENEDOR FORMULARIO-->
+    </div>
+    <!--FIN DIV CONTENEDOR FORMULARIO-->
 
 </body>
 

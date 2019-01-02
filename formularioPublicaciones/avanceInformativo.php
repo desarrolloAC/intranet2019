@@ -4,13 +4,13 @@
 
 	$sql = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='AVIF'";
 
-	$subc = mysql_query($sql,$conexion);
+	$subc = mysqli_query($conexion,$sql);
 
 	$selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION[ID_Organizacion]'";
 
-	$nombreOrg = mysql_query($selectOrg,$conexion);
+	$nombreOrg = mysqli_query($conexion,$selectOrg);
 
-	$org=mysql_fetch_array($nombreOrg);
+	$org=mysqli_fetch_array($nombreOrg,MYSQLI_ASSOC);
 
  ?>
 
@@ -20,12 +20,11 @@
 
 <head>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="avanceInformativo.css">
-	<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="../js/functions.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="avanceInformativo.css">
 
-	<SCRIPT LANGUAGE="JavaScript">
+
+    <script>
 
         function textCounter(field, countfield, maxlimit) {
         if (field.value.length > maxlimit)
@@ -43,52 +42,52 @@
 <body>
 
 
-	<!--<a href="#formularioAvanceInformativo">abrir</a>-->
+    <!--<a href="#formularioAvanceInformativo">abrir</a>-->
 
 
-	<!--INICIO DIV CONTENEDOR FORMULARIO-->
-	<div id="formularioAvanceInformativo" class="contenedorFormulario">
+    <!--INICIO DIV CONTENEDOR FORMULARIO-->
+    <div id="formularioAvanceInformativo" class="contenedorFormulario">
 
-			<div id="formularioAvanceInformativo">
+        <div id="formularioAvanceInformativo">
 
-				<a href="#" class="cerrar">X</a>
+            <a href="#" class="cerrar">X</a>
 
-				<form method="POST" action="php/registrarPublicacion.php" enctype="multipart/form-data" class="formulario">
+            <form method="POST" action="php/registrarPublicacion.php" enctype="multipart/form-data" class="formulario">
 
-				<input id="txtCodigoSubCategoriaAvanceInformativo" type="text" name="txtCodigoSubCategoriaAvanceInformativo" value="<?php while($ver = mysql_fetch_array($subc))
+                <input id="txtCodigoSubCategoriaAvanceInformativo" type="text" name="txtCodigoSubCategoriaAvanceInformativo" value="<?php while($ver = mysqli_fetch_array($subc,MYSQLI_ASSOC))
 					{
 						echo $ver['ID_Subcategoria'];
 					}	?>" maxlength="4" readonly>
 
-				<input id="txtCodigoOrganizacionAvanceInformativo" type="text" name="txtCodigoOrganizacionAvanceInformativo" value="<?php echo $org['Nombre']; ?>" maxlength="4" readonly>
+                <input id="txtCodigoOrganizacionAvanceInformativo" type="text" name="txtCodigoOrganizacionAvanceInformativo" value="<?php echo $org['Nombre']; ?>" maxlength="4" readonly>
 
-				<input id="txtTituloAvanceInformativo" type="text" name="txtTituloAvanceInformativo" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
+                <input id="txtTituloAvanceInformativo" type="text" name="txtTituloAvanceInformativo" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
 
-				<textarea id="txtContenidoAvanceInformativo" name="txtContenidoAvanceInformativo" onKeyDown="textCounter(this.form.txtContenidoAvanceInformativo,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoAvanceInformativo,this.form.remLen,500);" placeholder="Contenido De La Publicacion" required></textarea>
+                <textarea id="txtContenidoAvanceInformativo" name="txtContenidoAvanceInformativo" onKeyDown="textCounter(this.form.txtContenidoAvanceInformativo,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoAvanceInformativo,this.form.remLen,500);" placeholder="Contenido De La Publicacion" required></textarea>
 
-				<input id="ncaracteresAvanceInformativo" readonly type=text name=remLen size=3 maxlength=3 value="500">
-				<label id="tituloCaracteresAvanceInformativo">Caracteres Restantes</label>
+                <input id="ncaracteresAvanceInformativo" readonly type=text name=remLen size=3 maxlength=3 value="500">
+                <label id="tituloCaracteresAvanceInformativo">Caracteres Restantes</label>
 
-				<input id="btnImagenAvanceInformativo"  type="file" name="archivo" required>
-				<img id="imgSalida" width="26%" height="21%" src=""/>
+                <input id="btnImagenAvanceInformativo" type="file" name="archivo" required>
+                <img id="imgSalida" width="26%" height="21%" src="" />
 
-				<input id="btnImagenAvanceInformativo1" type="file" name="archivo1">
-				<img id="imgSalida1" width="26%" height="21%" src=""/>
+                <input id="btnImagenAvanceInformativo1" type="file" name="archivo1">
+                <img id="imgSalida1" width="26%" height="21%" src="" />
 
-				<input id="btnImagenAvanceInformativo2" type="file" name="archivo2">
-				<img id="imgSalida2" width="26%" height="21%" src=""/>
+                <input id="btnImagenAvanceInformativo2" type="file" name="archivo2">
+                <img id="imgSalida2" width="26%" height="21%" src="" />
 
-				<input id="btnImagenAvanceInformativo3" type="file" name="archivo3">
-				<img id="imgSalida3" width="26%" height="21%" src=""/>
+                <input id="btnImagenAvanceInformativo3" type="file" name="archivo3">
+                <img id="imgSalida3" width="26%" height="21%" src="" />
 
-				<input id="btnRegistrarAvanceInformativo" type="submit" name="btnRegistrarAvanceInformativo" value="Registrar">
+                <input id="btnRegistrarAvanceInformativo" type="submit" name="btnRegistrarAvanceInformativo" value="Registrar">
 
-		</form>
+            </form>
 
-		</div>
+        </div>
 
-	</div>
-	<!--FIN DIV CONTENEDOR FORMULARIO-->
+    </div>
+    <!--FIN DIV CONTENEDOR FORMULARIO-->
 
 </body>
 

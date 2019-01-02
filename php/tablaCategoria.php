@@ -1,7 +1,3 @@
-<?php
-session_start();
-/* require_once$_SERVER['DOCUMENT_ROOT'].'/intranet/conexion/conexion.php'; */
-?>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
 <!--<script type="text/javascript" src="js/validarCkeditor.js"></script>-->
@@ -12,7 +8,7 @@ session_start();
         <tr id="titulo_columnas">
             <td width="50" height="50" colspan="2">
                 <a href="#formulario_modal_categoria" id="btnRegistrarUsuario" title="Registar Categoría">
-                    <img src="imagenes/menu/botonesTablas/btnNuevo.png">
+                    <img src="assets/image/menu/botonesTablas/btnNuevo.png">
                 </a>
 
                 <!--INICIO DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
@@ -120,7 +116,7 @@ session_start();
     </thead>
     <tbody>
         <?php
-        include $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+
 
         $conexion = conectar();
         /* FIN DE LAS VARIABLES DE CONSULTA */
@@ -248,7 +244,7 @@ session_start();
 
             <td>
                 <a href='#<?php echo $mostrarCategoria[' codigo']; ?>' id="btnEditar">
-                    <img src='imagenes/menu/botonesTablas/btnEditar.png'>
+                    <img src='assets/image/menu/botonesTablas/btnEditar.png'>
                 </a>
 
                 <div id='<?php echo $mostrarCategoria[' codigo']; ?>' class='contenedor_formulario'>
@@ -301,17 +297,17 @@ session_start();
                 <?php
     if ($mostrarCategoria['estatus'] == 'A') {
         echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
-								<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
         echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar'>
-								<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
     } else {
         echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar'>
-								<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
         echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?codigo=$mostrarCategoria[codigo]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar' style='display: none;'>
-								<img src='imagenes/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
     }
     ?>

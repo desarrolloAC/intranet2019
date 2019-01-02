@@ -1,20 +1,21 @@
 <?php
-	require_once('../conexion/conexion.php');
-	if (!empty($_GET['elegido'])) {
 
-	$link=conectar();
+require_once('../conexion/conexion.php');
 
-	$sql=" SELECT id_estado,estado
+if (!empty($_GET['elegido'])) {
+
+    $link = conectar();
+
+    $sql = " SELECT id_estado,estado
 	         FROM paises as p inner join estados e using(ID_PAIS)
 	         WHERE p.ID_PAIS='$_GET[elegido]'";
 
-		$rs=mysql_query($sql,$link);
+    $rs = mysqli_query($link, $sql);
 
-		echo " <option value=''>Estado</option>";
-		while ($row=mysql_fetch_array($rs)){
-			echo "<option value='$row[0]'>".$row[1]."</option>";
-		}
+    echo " <option value=''>Estado</option>";
 
-		mysql_free_result($rs);
-	}
+    while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+        echo "<option value='$row[0]'>" . $row[1] . "</option>";
+    }
+}
 ?>

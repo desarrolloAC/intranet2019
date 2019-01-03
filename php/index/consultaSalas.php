@@ -1,7 +1,7 @@
-<?php 
+<?php
 
-include_once $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php'; 
-include_once $_SERVER["DOCUMENT_ROOT"].'/intranet/php/index/Salas.php'; 
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/index/Salas.php';
 
 $conexion = conectar();
 
@@ -16,14 +16,14 @@ $consultaSala = "SELECT t1.days  	AS Dia,
                     FROM availability t1 INNER JOIN reservation t2 ON t1.availability_id = t2.availability_id
                     WHERE t2.isreserved = 'Y'";
 
-$resultado = mysql_query($consultaSala, $conexion);
+$resultado = mysqli_query($conexion, $consultaSala);
 
 $list = array();
 
 
 
-while ($mostrarSala = mysql_fetch_array($resultado)) {
-    
+while ($mostrarSala = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
+
     $inst = new Salas();
     $inst->setDia($mostrarSala["Dia"]);
     $inst->setMes($mostrarSala["Mes"]);
@@ -35,9 +35,7 @@ while ($mostrarSala = mysql_fetch_array($resultado)) {
     $inst->setReservado($mostrarSala["Reservado"]);
 
     array_push($list, $inst);
-    
 }
 
 echo json_encode($list);
-
 ?>

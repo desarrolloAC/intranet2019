@@ -12,8 +12,7 @@ if (!empty($_GET['elegido'])) {
     $rs = mysqli_query($link, $sql);
 
     echo " <option value=''>Parroquia</option>";
-    while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-
+    while ($row = mysqli_fetch_array($rs, MYSQLI_NUM)) {
         echo "<option value='$row[0]'> $row[1] </option>";
     }
 }

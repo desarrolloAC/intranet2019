@@ -9,6 +9,8 @@ $conexion = conectar();
     <thead>
         <tr id="titulo_columnas" class="ancho">
             <td width="50" height="50" colspan="2" class="ancho">
+
+
                 <a href="#formulario_modal_usuario" id="btnRegistrarUsuario" title="Registar un usuario">
                     <img src="assets/image/menu/botonesTablas/btnNuevo.png">
                 </a>
@@ -23,7 +25,7 @@ $conexion = conectar();
                         <!--INICIO DEL DISEÑO FORMULARIO CREAR USUARIO-->
                         <div class="contenedor_formulario_usuario">
 
-                            <form method="POST" enctype="multipart/form-data" action="php/registroUsuario.php">
+                            <form method="POST" action="php/registroUsuario.php" enctype="multipart/form-data">
 
                                 <table id="tabla_formulario_usuario" border="0" cellpadding="7">
                                     <tr id="titulo_columna_formulario" class="ancho">
@@ -68,8 +70,9 @@ $conexion = conectar();
                                             <h5 id="label_cajas_texto"> Departamento </h5>
                                             <?php
                                             echo "
-													<select name='txtDpto' class='combos_formulario_usuario' id='txtDpto' required >
-													<option> Departamento </option>";
+
+                                            <select name='txtDpto' class='combos_formulario_usuario' id='txtDpto' required >
+                                            <option> Departamento </option>";
 
                                             $sql = " SELECT d.ID_Departamento,d.Nombre FROM departamento d WHERE d.Estatus='A'";
                                             $rs = mysqli_query($conexion, $sql);
@@ -84,16 +87,27 @@ $conexion = conectar();
                                         </td>
                                         <td class="ancho">
                                             <h5 id="label_cajas_texto"> Cargo </h5>
-                                            <select name='txtCargo' class='combos_formulario_usuario' id='txtCargo' required>
-                                                <option> Cargo </option>
-                                            </select>
+                                            <?php
+                                            echo "<select name='cbCargo' id='combos_formulario_usuario'   required >
+                                                    <option> Cargo </option>";
+
+                                            $sql = " SELECT d.ID_Cargo,d.Nombre FROM cargo d WHERE d.Estatus='A'";
+                                            $rs = mysqli_query($conexion, $sql);
+                                            if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+                                                do {
+                                                    echo "<option   value='$row[ID_Cargo]'> $row[Nombre] </option>";
+                                                } while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
+                                            }
+
+                                            echo "</select>";
+                                            ?>
                                         </td>
                                         <td class="ancho">
                                             <h5 id="label_cajas_texto">Rol</h5>
                                             <?php
                                             echo "
-														<select name='rol' id='rol'  class='combos_formulario_usuario'   required >
-														<option>Rol </option>";
+                                            <select name='rol' id='rol'  class='combos_formulario_usuario'   required >
+                                            <option>Rol </option>";
 
                                             $sql = "SELECT * FROM rol WHERE estatus='A' ORDER BY Nombre ";
                                             $rs = mysqli_query($conexion, $sql);
@@ -151,15 +165,16 @@ $conexion = conectar();
                                             <h5 id="label_cajas_texto">Pais</h5>
                                             <?php
                                             echo "
-														<select name='pai' id='pai'  class='combos_formulario_usuario' required >
-														<option>Pais </option>";
+                                                <select name='pai' id='pai'  class='combos_formulario_usuario' required >
+                                                <option>Pais </option>";
 
                                             $sql = "SELECT * FROM paises";
                                             $rs = mysqli_query($conexion, $sql);
+
                                             if ($row = mysqli_fetch_array($rs, MYSQLI_NUM)) {
                                                 do {
                                                     echo "<option value='$row[0]'> $row[1] </option>";
-                                                } while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
+                                                } while ($row = mysqli_fetch_array($rs, MYSQLI_NUM));
                                             }
 
                                             echo "</select>";
@@ -515,6 +530,8 @@ $conexion = conectar();
 
                                                 $sql = " SELECT d.ID_Organizacion,d.Nombre FROM organizacion d WHERE d.Estatus='A'";
                                                 $rs = mysqli_query($conexion, $sql);
+
+
                                                 if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
                                                     do {
                                                         if ($row['Nombre'] == $mostrarUsuario['organizacion']) {
@@ -560,8 +577,8 @@ $conexion = conectar();
                                                 <h5 id="label_cajas_texto"> Departamento </h5>
                                                 <?php
                                                 echo "
-													<select name='txtDpto' class='combos_formulario_usuario' id='txtDpto' required >
-													<option> Departamento </option>";
+                                                <select name='txtDpto1' class='combos_formulario_usuario' id='txtDpto1' required >
+                                                <option> Departamento </option>";
 
                                                 $sql = " SELECT d.ID_Departamento,d.Nombre FROM departamento d WHERE d.Estatus='A'";
                                                 $rs = mysqli_query($conexion, $sql);

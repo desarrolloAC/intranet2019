@@ -156,7 +156,7 @@ $conexion = conectar();
 
                                             $sql = "SELECT * FROM paises";
                                             $rs = mysqli_query($conexion, $sql);
-                                            if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+                                            if ($row = mysqli_fetch_array($rs, MYSQLI_NUM)) {
                                                 do {
                                                     echo "<option value='$row[0]'> $row[1] </option>";
                                                 } while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
@@ -510,8 +510,8 @@ $conexion = conectar();
                                                 <h5 id="label_cajas_texto"> Organización </h5>
                                                 <?php
                                                 echo "
-													<select name='cbOrganizacion' class='combos_formulario_usuario' id='cbOrganizacion' required >
-													<option> Organización </option>";
+						 <select name='cbOrganizacion' class='combos_formulario_usuario' id='cbOrganizacion' required >
+						 <option> Organización </option>";
 
                                                 $sql = " SELECT d.ID_Organizacion,d.Nombre FROM organizacion d WHERE d.Estatus='A'";
                                                 $rs = mysqli_query($conexion, $sql);
@@ -625,7 +625,7 @@ $conexion = conectar();
 														<option>Pais </option>";
 
                                                 $sql = "SELECT * FROM paises";
-                                                $rs = mysqli_query($sql, $conexion);
+                                                $rs = mysqli_query($conexion, $sql);
                                                 if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
                                                     do {
                                                         if ($row['ID_PAIS'] == $mostrarUsuario['ID_Pais']) {
@@ -649,7 +649,7 @@ $conexion = conectar();
 													<option>Estado </option>";
 
                                                 $sql = "SELECT * FROM estados";
-                                                $rs = mysqli_query($sql, $conexion);
+                                                $rs = mysqli_query($conexion, $sql);
                                                 if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
                                                     do {
                                                         if ($row['ID_ESTADO'] == $mostrarUsuario['ID_Estado']) {
@@ -671,7 +671,7 @@ $conexion = conectar();
 													<option>Municipio </option>";
 
                                                 $sql = "SELECT * FROM municipios";
-                                                $rs = mysqli_query($sql, $conexion);
+                                                $rs = mysqli_query($conexion, $sql);
                                                 if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
                                                     do {
                                                         if ($row['ID_MUNICIPIO'] == $mostrarUsuario['ID_Municipio']) {

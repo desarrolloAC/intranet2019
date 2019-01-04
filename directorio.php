@@ -120,7 +120,7 @@
                     methods: {
 
                         getDirectorio: function() {
-                            const dirUrl = 'http://localhost/intranet/php/directorio/GetDirectorio.php';
+                            const dirUrl = 'php/directorio/GetDirectorio.php';
                             this.$http.get(dirUrl).then((responsed) => {
                                 this.list = responsed.body;
                             });
@@ -128,7 +128,7 @@
 
                         searchDirectorio: function() {
                             const search = $('#txtBuscarDirectorio').val();
-                            const dirUrl = 'http://localhost/intranet/php/directorio/SearchDirectorio.php';
+                            const dirUrl = 'php/directorio/SearchDirectorio.php';
                             this.$http.get(dirUrl, {
                                 params: {
                                     search: search

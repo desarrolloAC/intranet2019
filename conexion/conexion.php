@@ -5,8 +5,8 @@
 
 function conectar() {
 
-	//REALIZO LA CONEXION A MYSQL
-	$link = mysqli_connect("localhost","root","12345678","intranet");
+    //REALIZO LA CONEXION A MYSQL
+    $link = mysqli_connect("192.168.30.90", "root", "12345678", "intranet");
 
     //VERIFICANDO LA CONEXION.
     if (mysqli_connect_errno()) {
@@ -14,16 +14,15 @@ function conectar() {
         exit();
     }
 
-	//SELECCIONO LA BASE DE DATOS QUE VOY A USAR
-	if (!mysqli_select_db($link, "intranet")) {
-		echo"Error seleccionando la Base de Datos.";
-		exit();
-	 }
+    //SELECCIONO LA BASE DE DATOS QUE VOY A USAR
+    if (!mysqli_select_db($link, "intranet")) {
+        echo"Error seleccionando la Base de Datos.";
+        exit();
+    }
 
-	mysqli_query($link, "SET NAMES UTF8");
-	return $link;
+    mysqli_query($link, "SET NAMES UTF8");
+    return $link;
+}
 
- }//FIN DE LA FUNCION CONECTAR
-
-
+//FIN DE LA FUNCION CONECTAR
 ?>

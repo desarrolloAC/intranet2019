@@ -70,7 +70,7 @@
 
                             <script type="text/javascript">
 
-const getOrgUrl = 'http://localhost/intranet/php/login/GetOrganization.php';
+const getOrgUrl = 'php/login/GetOrganization.php';
 const getOrg = new Vue({
     el: '#txtOrg',
     created: function () {

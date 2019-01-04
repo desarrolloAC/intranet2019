@@ -238,11 +238,6 @@
                 </td>
 
                 <td>
-
-                    <script>
-                        console.log("<?php echo $mostrarRol['codigo']; ?>");
-                    </script>
-
                     <a href="#<?php echo $mostrarRol['codigo']; ?>" id="btnEditar">
                         <img src='assets/image/menu/botonesTablas/btnEditar.png'>
                     </a>

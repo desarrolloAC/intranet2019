@@ -1,7 +1,7 @@
 $(document).ready(function(){
 		$("a[id='opcionPub']").on("click", function() {
-			
-			$("#c").toggle(300);	
+
+			$("#c").toggle(300);
 			$("div[id='contenedor_tabla_publicacion']").show(); //muestro mediante id
 
 			$("div[id='contenedor_tabla_categoria']").hide();

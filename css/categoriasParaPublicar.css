@@ -33,7 +33,7 @@ background-color: rgb(247, 165, 81);
 border: solid 1px rgb(255,255,255);
 /* padding: 50px; */
 display: none;
- 
+
 }
 
 #panel, #panel1, #panel2, #panel3, #panel4, #panel5, #panel6, #panel7, #panel8{
@@ -44,11 +44,11 @@ border: solid 1px rgb(255,255,255);
 display: none;
 }
 
-div[id="flip"], 
-div[id="flip1"], 
-div[id="flip2"], 
-div[id="flip3"], 
-div[id="flip4"], 
+div[id="flip"],
+div[id="flip1"],
+div[id="flip2"],
+div[id="flip3"],
+div[id="flip4"],
 div[id="flip5"],
 div[id="flip6"],
 div[id="flip7"],

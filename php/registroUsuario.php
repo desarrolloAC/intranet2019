@@ -64,39 +64,38 @@ switch ($error) {
 
         if (isset($pass)) {
 
+            $seguridad = "INSERT INTO seguridad VALUES (NULL,'$correo',DEFAULT, SHA1('$clave1'),'$pre', '$res');";
+
             $ed = "INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
-						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo,Telefono, Sexo, Direccion,
+						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo, Sexo, Direccion,
 						                     Estatus, Created, CreatedBy, Updated, UpdatedBy) VALUE (
             '$cedula','$cargo',$pais,$estado,$municipio,
-            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$sexo','$Direccion'
-            DEFAULT, CURRENT_TIMESTAMP, '$createdBy',
-            CURRENT_TIMESTAMP, '$createdBy');";
-
-            $seguridad = "INSERT INTO seguridad VALUES (NULL,'$correo',DEFAULT, SHA1('$clave1'),'$pre', '$res');";
+            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$sexo','$Direccion',
+            DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
 
             $roles = " INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
 						         VALUES ('$organizacion', '$rol', '$cedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
 
             //SE LEE LA VARIABLE QUERY CON LA INSTRUCCION SQL
-            mysqli_query($conexion, $ed);
-            mysqli_query($conexion, $seguridad);
-            mysqli_query($conexion, $roles);
+            mysqli_query($conexion, $seguridad) or die(mysqli_error($conexion));
+            mysqli_query($conexion, $ed) or die(mysqli_error($conexion));
+            mysqli_query($conexion, $roles) or die(mysqli_error($conexion));
             mysqli_query($conexion, "COMMINT");
         } else {
 
             $ed = "INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
-						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo,Telefono, Sexo, Direccion,
+						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo, Sexo, Direccion,
 						                     Estatus, Created, CreatedBy, Updated, UpdatedBy) VALUE (
             '$cedula','$cargo',$pais,$estado,$municipio,
-            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$sexo','$Direccion'
+            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$correo','$sexo','$Direccion',
             DEFAULT, CURRENT_TIMESTAMP, '$createdBy',
             CURRENT_TIMESTAMP, '$createdBy');";
 
             $roles = "INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
 						         VALUES ('$organizacion', '$rol', '$txtCedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
 
-            mysqli_query($conexion, $ed);
-            mysqli_query($conexion, $roles);
+            mysqli_query($conexion, $ed) or die(mysqli_error($conexion));
+            mysqli_query($conexion, $roles) or die(mysqli_error($conexion));
             mysqli_query($conexion, "COMMINT");
         }
 
@@ -108,39 +107,39 @@ switch ($error) {
 
         if (isset($pass)) {
 
+            $seguridad = "INSERT INTO seguridad VALUES (NULL,'$correo',DEFAULT, SHA1('$pass'),'$pre', '$res');";
+
             $ed = "INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
-						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo,Telefono, Sexo, Direccion,
+						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo, Sexo, Direccion,
 						                     Estatus, Foto, Created, CreatedBy, Updated, UpdatedBy) VALUE (
             '$cedula','$cargo',$pais,$estado,$municipio,
-            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$sexo','$Direccion'
+            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$correo','$sexo','$Direccion',
             DEFAULT, '$destino_temp', CURRENT_TIMESTAMP, '$createdBy',
             CURRENT_TIMESTAMP, '$createdBy');";
-
-            $seguridad = "INSERT INTO seguridad VALUES (NULL,'$correo',DEFAULT, SHA1('$pass'),'$pre', '$res');";
 
             $roles = " INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
 						         VALUES ('$organizacion', '$rol', '$cedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
 
             //SE LEE LA VARIABLE QUERY CON LA INSTRUCCION SQL
-            mysqli_query($conexion, $ed);
-            mysqli_query($conexion, $seguridad);
-            mysqli_query($conexion, $roles);
+            mysqli_query($conexion, $seguridad) or die(mysqli_error($conexion));
+            mysqli_query($conexion, $ed) or die(mysqli_error($conexion));
+            mysqli_query($conexion, $roles) or die(mysqli_error($conexion));
             mysqli_query($conexion, "COMMINT");
         } else {
 
             $ed = "INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
-						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo,Telefono, Sexo, Direccion,
+						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo, Sexo, Direccion,
 						                     Estatus, Foto, Created, CreatedBy, Updated, UpdatedBy) VALUE (
             '$cedula','$cargo',$pais,$estado,$municipio,
-            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$sexo','$Direccion'
+            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$correo','$sexo','$Direccion'
             DEFAULT, '$destino_temp', CURRENT_TIMESTAMP, '$createdBy',
             CURRENT_TIMESTAMP, '$createdBy');";
 
             $roles = "INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
 						         VALUES ('$organizacion', '$rol', '$txtCedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
 
-            mysqli_query($conexion, $ed);
-            mysqli_query($conexion, $roles);
+            mysqli_query($conexion, $ed) or die(mysqli_error($conexion));
+            mysqli_query($conexion, $roles) or die(mysqli_error($conexion));
             mysqli_query($conexion, "COMMINT");
         }
 }//FIN Del switch

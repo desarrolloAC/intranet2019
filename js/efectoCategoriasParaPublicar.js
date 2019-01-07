@@ -1,71 +1,80 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    		$("#flip").click(function(){
+    $("#flip").click((e) => {
 
-        		$("#panel").slideToggle("slow");
-	});
+        e.preventDefault();
+
+        var t = $(this);
+        var tp = t.next();
+        var p = t.parent().siblings().find('div#panel');
+
+        tp.slideToggle();
+        p.slideUp();
+
+    });
+
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-    		$("#flip1").click(function(){
+    $("#flip1").click(function () {
 
-        		$("#panel1").slideToggle("slow");
-	});
+        $("#panel1").slideToggle("slow");
+    });
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-    		$("#flip2").click(function(){
+    $("#flip2").click(function () {
 
-        		$("#panel2").slideToggle("slow");
-	});
+        $("#panel2").slideToggle("slow");
+    });
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-    		$("#flip3").click(function(){
+    $("#flip3").click(function () {
 
-        		$("#panel3").slideToggle("slow");
-	});
+        $("#panel3").slideToggle("slow");
+    });
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-    		$("#flip4").click(function(){
+    $("#flip4").click(function () {
 
-        		$("#panel4").slideToggle("slow");
-	});
+        $("#panel4").slideToggle("slow");
+    });
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-    		$("#flip5").click(function(){
+    $("#flip5").click(function () {
 
-        		$("#panel5").slideToggle("slow");
-	});
+        $("#panel5").slideToggle("slow");
+    });
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-    		$("#flip6").click(function(){
+    $("#flip6").click(function () {
 
-        		$("#panel6").slideToggle("slow");
-	});
+        $("#panel6").slideToggle("slow");
+    });
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-    		$("#flip7").click(function(){
+    $("#flip7").click(function () {
 
-        		$("#panel7").slideToggle("slow");
-	});
+        $("#panel7").slideToggle("slow");
+    });
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-    		$("#flip8").click(function(){
+    $("#flip8").click(function () {
 
-        		$("#panel8").slideToggle("slow");
-	});
+        $("#panel8").slideToggle("slow");
+    });
 });

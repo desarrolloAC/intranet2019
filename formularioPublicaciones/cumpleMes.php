@@ -1,24 +1,8 @@
-<?php
-	/*include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php';
+<link rel="stylesheet" type="text/css" href="cumpleMes.css">
 
-	@session_start();
+<script>
 
-	$conexion = conectar();*/
-
-?>
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="cumpleMes.css">
-
-    <script>
-
-        function textCounter(field, countfield, maxlimit) {
+    function textCounter(field, countfield, maxlimit) {
         if (field.value.length > maxlimit)
         field.value = field.value.substring(0, maxlimit);
 
@@ -29,28 +13,25 @@
     </script>
 
 
-</head>
 
-<body>
+<!--<a href="#formularioAvanceInformativo">abrir formulario</a>-->
 
-    <!--<a href="#formularioAvanceInformativo">abrir formulario</a>-->
+<!--INICIO DIV CONTENEDOR FORMULARIO-->
+<div id="formularioCumpleMes" class="contenedorFormulario">
 
-    <!--INICIO DIV CONTENEDOR FORMULARIO-->
-    <div id="formularioCumpleMes" class="contenedorFormulario">
+    <div id="formularioCumpleMes">
 
-        <div id="formularioCumpleMes">
+        <a href="#" class="cerrar">X</a>
 
-            <a href="#" class="cerrar">X</a>
+        <form method="POST" action="">
 
-            <form method="POST" action="">
+            <input id="txtCodigoSubCategoriaCumpleMes" type="text" name="txtCodigoSubCategoriaCumpleMes" value="" maxlength="4">
 
-                <input id="txtCodigoSubCategoriaCumpleMes" type="text" name="txtCodigoSubCategoriaCumpleMes" value="" maxlength="4">
+            <input id="txtNombreCompletoCumpleMes" type="text" name="txtNombreCompletoCumpleMes" value="" maxlength="100" placeholder="Nombre Completo" required>
 
-                <input id="txtNombreCompletoCumpleMes" type="text" name="txtNombreCompletoCumpleMes" value="" maxlength="100" placeholder="Nombre Completo" required>
+            <input id="txtFechaCumpleMes" type="date" name="txtFechaCumpleMes" required>
 
-                <input id="txtFechaCumpleMes" type="date" name="txtFechaCumpleMes" required>
-
-                <?php
+            <?php
 
 					echo "
 						<select name='txtDpto2' class='combos_formulario_usuario' id='txtDpto2' required >
@@ -67,18 +48,14 @@
                 echo "</select>";
 			 	?>
 
-                <input id="btnImagenCumpleMes" type="file" name="btnImagenCumpleMes" required>
-                <input id="btnImagen1CumpleMes" type="file" name="btnImagen1CumpleMes" required>
+            <input id="btnImagenCumpleMes" type="file" name="btnImagenCumpleMes" required>
+            <input id="btnImagen1CumpleMes" type="file" name="btnImagen1CumpleMes" required>
 
-                <input id="btnRegistrarCumpleMes" type="submit" name="btnRegistrarCumpleMes" value="Registrar">
+            <input id="btnRegistrarCumpleMes" type="submit" name="btnRegistrarCumpleMes" value="Registrar">
 
-            </form>
-
-        </div>
+        </form>
 
     </div>
-    <!--FIN DIV CONTENEDOR FORMULARIO-->
 
-</body>
-
-</html>
+</div>
+<!--FIN DIV CONTENEDOR FORMULARIO-->

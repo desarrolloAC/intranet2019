@@ -14,19 +14,13 @@
 
 ?>
 
-<!DOCTYPE html>
 
-<html>
 
-<head>
+<link rel="stylesheet" type="text/css" href="comunicado.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
 
-    <link rel="stylesheet" type="text/css" href="comunicado.css">
-
-    <script>
-
-        function textCounter(field, countfield, maxlimit) {
+    function textCounter(field, countfield, maxlimit) {
         if (field.value.length > maxlimit)
         field.value = field.value.substring(0, maxlimit);
 
@@ -37,45 +31,39 @@
     </script>
 
 
-</head>
 
-<body>
 
-    <!--<a href="#formularioComunicado">abrir formulario</a>-->
+<!--<a href="#formularioComunicado">abrir formulario</a>-->
 
-    <!--INICIO DIV CONTENEDOR FORMULARIO-->
-    <div id="formularioComunicado" class="contenedorFormulario">
+<!--INICIO DIV CONTENEDOR FORMULARIO-->
+<div id="formularioComunicado" class="contenedorFormulario">
 
-        <div id="formularioComunicado">
+    <div id="formularioComunicado">
 
-            <a href="#" class="cerrar">X</a>
+        <a href="#" class="cerrar">X</a>
 
-            <form method="POST" action="php/registrarComunicado.php">
+        <form method="POST" action="php/registrarComunicado.php">
 
-                <input id="txtCodigoSubCategoriaComunicado" type="text" name="txtCodigoSubCategoriaComunicado" value="<?php
+            <input id="txtCodigoSubCategoriaComunicado" type="text" name="txtCodigoSubCategoriaComunicado" value="<?php
 					while($ver = mysqli_fetch_array($subc,MYSQLI_ASSOC))
 					{
 						echo $ver['ID_Subcategoria'];
 					}	?>" maxlength="4">
 
-                <input id="txtCodigoOrganizacionComunicado" type="text" name="txtCodigoOrganizacionComunicado" value="<?php echo $org['Nombre']; ?>" maxlength="4">
+            <input id="txtCodigoOrganizacionComunicado" type="text" name="txtCodigoOrganizacionComunicado" value="<?php echo $org['Nombre']; ?>" maxlength="4">
 
-                <input id="txtTituloComunicado" type="text" name="txtTituloComunicado" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
+            <input id="txtTituloComunicado" type="text" name="txtTituloComunicado" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
 
-                <textarea id="txtContenidoComunicado" name="txtContenidoComunicado" onKeyDown="textCounter(this.form.txtContenidoComunicado,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoComunicado,this.form.remLen,500);" placeholder="Contenido De La Publicacion" required></textarea>
+            <textarea id="txtContenidoComunicado" name="txtContenidoComunicado" onKeyDown="textCounter(this.form.txtContenidoComunicado,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoComunicado,this.form.remLen,500);" placeholder="Contenido De La Publicacion" required></textarea>
 
-                <input id="ncaracteresComunicado" readonly type=text name=remLen size=3 maxlength=3 value="500">
-                <label id="tituloCaracteresComunicado">Caracteres Restantes</label>
+            <input id="ncaracteresComunicado" readonly type=text name=remLen size=3 maxlength=3 value="500">
+            <label id="tituloCaracteresComunicado">Caracteres Restantes</label>
 
-                <input id="btnRegistrarComunicado" type="submit" name="btnRegistrarComunicado" value="Registrar">
+            <input id="btnRegistrarComunicado" type="submit" name="btnRegistrarComunicado" value="Registrar">
 
-            </form>
-
-        </div>
+        </form>
 
     </div>
-    <!--FIN DIV CONTENEDOR FORMULARIO-->
 
-</body>
-
-</html>
+</div>
+<!--FIN DIV CONTENEDOR FORMULARIO-->

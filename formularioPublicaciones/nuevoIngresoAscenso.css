@@ -1,125 +1,149 @@
 /****************************INICIO DISEÑO VENTANA MODAL FORMULARIO************************************/
-.contenedorFormulario{
-z-index: 1001;
-width: 100%;
-height: 100%;
-position: fixed; top: 0; bottom: 0; right: 0; left: 0;
-background: rgba(0,0,0,0.8);
-opacity: 0;
-transition: opacity 400ms ease-in;
-pointer-events: none;
+.contenedorFormulario {
+    z-index: 1001;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
 }
 
-.contenedorFormulario:target{
-opacity: 1;
-pointer-events: auto;
+.contenedorFormulario:target {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.contenedorFormulario > div#formularioNuevoIngresoAscenso{
-z-index: 1001;
-width: 12cm;
-height: 15cm;
-position: relative; top: 1cm;
-margin: 0% auto;
-padding: 5px 20px 13px 20px;
-border-radius: 10px;
-background: rgb(255,255,255);
-transition: opacity 400ms ease-in-out;
-background-image: url("../imagenes/plantillas/png/ingresoAscensos.png");
-background-repeat: no-repeat;
-background-position: 0px 0px;
-background-size: 13.1cm 15.5cm;
+.contenedorFormulario > div#formularioNuevoIngresoAscenso {
+    z-index: 1001;
+    width: 12cm;
+    height: 15cm;
+    position: relative;
+    top: 1cm;
+    margin: 0% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    transition: opacity 400ms ease-in-out;
+    background-image: url("../assets/image/plantillas/png/ingresoAscensos.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: 13.1cm 15.5cm;
 }
 
-.cerrar{
-background: #606061;
-color: rgb(255,255,255);
-line-height: 25px;
-position: absolute;
-right: 10px;
-text-align: center;
-top: 0px;
-width: 24px;
-text-decoration: none;
-font-weight: bold;
-border-radius: 12px;
-box-shadow: 1px 1px 3px #000;
+.cerrar {
+    background: #606061;
+    color: rgb(255, 255, 255);
+    line-height: 25px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 0px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 1px 1px 3px #000;
 }
-.cerrar:hover{
-background: rgb(67,67,67); 
+
+.cerrar:hover {
+    background: rgb(67, 67, 67);
 }
+
 /****************************FIN DISEÑO VENTANA MODAL FORMULARIO************************************/
 
-input#txtCodigoSubCategoriaNuevoAscenso{
-	position: absolute;
-	visibility: hidden;
+input#txtCodigoSubCategoriaNuevoAscenso {
+    position: absolute;
+    visibility: hidden;
 }
 
-input#txtNombreCompletoNuevoAscenso{
-	position: absolute; top: 3cm;
-	width: 6cm;
-	height: 0.5cm;
+input#txtNombreCompletoNuevoAscenso {
+    position: absolute;
+    top: 3cm;
+    width: 6cm;
+    height: 0.5cm;
 }
 
-select#txtDpto{
-	position: absolute; top: 4cm;
-	width: 6.1cm;
+select#txtDpto {
+    position: absolute;
+    top: 4cm;
+    width: 6.1cm;
 }
 
-select#txtCargo{
-	position: absolute; top: 4.9cm;
-	width: 6.1cm;
+select#txtCargo {
+    position: absolute;
+    top: 4.9cm;
+    width: 6.1cm;
 }
 
-textarea#txtContenidoNuevoAscenso{
-	position: absolute; top: 10cm; left: 0.9cm;
-	max-width: 10.8cm;
-	max-height: 3.8cm;
-	min-width: 10.8cm;
-	min-height: 3.8cm;
-	width: 10.8cm;
-	height: 3.8cm;
-	font-size: 14px;
-	border-color: rgb(69,69,69);
+textarea#txtContenidoNuevoAscenso {
+    position: absolute;
+    top: 10cm;
+    left: 0.9cm;
+    max-width: 10.8cm;
+    max-height: 3.8cm;
+    min-width: 10.8cm;
+    min-height: 3.8cm;
+    width: 10.8cm;
+    height: 3.8cm;
+    font-size: 14px;
+    border-color: rgb(69, 69, 69);
 }
 
-input#ncaracteresNuevoAscenso{
-	position: absolute; top: 14cm; left: 7cm;
-	border:none;
-	background-color: transparent;
-	font-weight: bold;
+input#ncaracteresNuevoAscenso {
+    position: absolute;
+    top: 14cm;
+    left: 7cm;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
 }
 
-label#tituloCaracteresNuevoAscenso{
-	position: absolute; top: 14cm; left: 8cm;
-	font-weight: bold;
+label#tituloCaracteresNuevoAscenso {
+    position: absolute;
+    top: 14cm;
+    left: 8cm;
+    font-weight: bold;
 }
 
-input#btnImagenNuevoAscenso{
-	position: absolute; top: 6.5cm; left: 5cm;
-	color: transparent;
+input#btnImagenNuevoAscenso {
+    position: absolute;
+    top: 6.5cm;
+    left: 5cm;
+    color: transparent;
 }
 
 /*BOTON REGISTAR*/
-input#btnRegistrarNuevoAscenso{
-  position: absolute; width: 85%; height: 20px; left: 0.8cm; top: 14.6cm;
-  background: rgb(241,129,3);/*NARANJA*/
-  color: rgb(255,255,255);
-  font-weight: bold;
-  border-radius: 0.5rem;
-  border:none;
-  cursor: pointer;
-  box-shadow: 0px 5px 0px 0px #0A0A0A;
-  transition: all 100ms linear;
-  touch-callout: none;
-  user-select: none;
-  font-family: "Arial";
-  font-size: 14px;
+input#btnRegistrarNuevoAscenso {
+    position: absolute;
+    width: 85%;
+    height: 20px;
+    left: 0.8cm;
+    top: 14.6cm;
+    background: rgb(241, 129, 3);
+    /*NARANJA*/
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 5px 0px 0px #0A0A0A;
+    transition: all 100ms linear;
+    touch-callout: none;
+    user-select: none;
+    font-family: "Arial";
+    font-size: 14px;
 }
 
 /*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
 input#btnRegistrarNuevoAscenso:active {
-  top: 14.7cm;
-  box-shadow: 0px 0px 0px 0px #0A0A0A;    
+    top: 14.7cm;
+    box-shadow: 0px 0px 0px 0px #0A0A0A;
 }
+
 /*FIN DEL BOTON REGISTRAR*/

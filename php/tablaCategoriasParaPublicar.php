@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="../css/categoriasParaPublicar.css">
 
-
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 
 <!--INICIO DE LA TABLA CATEGORIAS PARA PUBLICAR-->
@@ -11,11 +11,11 @@
             <div id="panel">
                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                 <a id="botones" href="#formularioAvanceInformativo">Avance Informativo</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/avanceInformativo.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/avanceInformativo.php'; ?>
                 <a id="botones" href="#formularioBoletinInformativo">Boletin Informativo</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/boletinInformativo.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/boletinInformativo.php'; ?>
                 <a id="botones" href="#formularioComunicado">Comunicado</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/comunicado.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/comunicado.php'; ?>
             </div>
         </td>
         <td>
@@ -23,7 +23,7 @@
             <div id="panel1">
                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                 <a id="botones" href="#formularioInvitacionGeneral">Generales</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/invitacionGeneral.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/invitacionGeneral.php'; ?>
                 <a id="botones" href="">Flayers</a>
             </div>
         </td>
@@ -34,13 +34,13 @@
             <div id="panel2">
                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                 <a id="botones" href="#formularioNuevoIngresoAscenso">Nuevo Ingreso</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/nuevoIngresoAscenso.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/nuevoIngresoAscenso.php'; ?>
                 <a id="botones" href="#formularioNuevoIngresoAscenso">Ascenso</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/nuevoIngresoAscenso.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/nuevoIngresoAscenso.php'; ?>
                 <a id="botones" href="#formularioLogro">Logro Extracurricular</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/logro.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/logro.php'; ?>
                 <a id="botones" href="#formularioPostulate">Postulate</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/postulate.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/postulate.php'; ?>
             </div>
         </td>
         <td>
@@ -48,11 +48,11 @@
             <div id="panel3">
                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                 <a id="botones" href="#formularioCumpleMes">Cumpleañero Del Mes</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/cumpleMes.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/cumpleMes.php'; ?>
                 <a id="botones" href="">Nacimiento</a>
                 <?php //include $_SERVER['DOCUMENT_ROOT'].'/intranetPrueba/formularioPublicaciones/postulate.php'; ?>
                 <a id="botones" href="#formularioPromocionEscolar">Promocion Escolar</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/promocionEscolar.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/promocionEscolar.php'; ?>
             </div>
         </td>
     </tr>
@@ -79,7 +79,7 @@
             <div id="panel6">
                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                 <a id="botones" href="#formularioCondolencia">Condolencia</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/condolencia.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/condolencia.php'; ?>
             </div>
         </td>
     </tr>

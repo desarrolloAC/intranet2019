@@ -14,19 +14,12 @@
 
 ?>
 
-<!DOCTYPE html>
 
-<html>
+<link rel="stylesheet" type="text/css" href="boletinInformativo.css">
 
-<head>
+<script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="boletinInformativo.css">
-
-    <script>
-
-        function textCounter(field, countfield, maxlimit) {
+    function textCounter(field, countfield, maxlimit) {
         if (field.value.length > maxlimit)
         field.value = field.value.substring(0, maxlimit);
 
@@ -37,49 +30,41 @@
     </script>
 
 
-</head>
+<!--<a href="#formularioBoletinInformativo">abrir formulario</a>-->
 
-<body>
+<!--INICIO DIV CONTENEDOR FORMULARIO-->
+<div id="formularioBoletinInformativo" class="contenedorFormulario">
 
-    <!--<a href="#formularioBoletinInformativo">abrir formulario</a>-->
+    <div id="formularioBoletinInformativo">
 
-    <!--INICIO DIV CONTENEDOR FORMULARIO-->
-    <div id="formularioBoletinInformativo" class="contenedorFormulario">
+        <a href="#" class="cerrar">X</a>
 
-        <div id="formularioBoletinInformativo">
+        <form method="POST" action="php/registrarBoletinInformativo.php" enctype="multipart/form-data">
 
-            <a href="#" class="cerrar">X</a>
-
-            <form method="POST" action="php/registrarBoletinInformativo.php" enctype="multipart/form-data">
-
-                <input id="txtCodigoSubCategoriaBoletinInformativo" type="text" name="txtCodigoSubCategoriaBoletinInformativo" value="<?php while($ver = mysqli_fetch_array($subc,MYSQLI_ASSOC))
+            <input id="txtCodigoSubCategoriaBoletinInformativo" type="text" name="txtCodigoSubCategoriaBoletinInformativo" value="<?php while($ver = mysqli_fetch_array($subc,MYSQLI_ASSOC))
 					{
 						echo $ver['ID_Subcategoria'];
 					}	?>" maxlength="4" readonly>
 
-                <input id="txtCodigoOrganizacionBoletinInformativo" type="text" name="txtCodigoOrganizacionBoletinInformativo" value="<?php echo $org['Nombre']; ?>" maxlength="4">
+            <input id="txtCodigoOrganizacionBoletinInformativo" type="text" name="txtCodigoOrganizacionBoletinInformativo" value="<?php echo $org['Nombre']; ?>" maxlength="4">
 
-                <input id="txtTituloBoletinInformativo" type="text" name="txtTituloBoletinInformativo" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
+            <input id="txtTituloBoletinInformativo" type="text" name="txtTituloBoletinInformativo" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
 
-                <textarea id="txtContenidoBoletinInformativo" name="txtContenidoBoletinInformativo" onKeyDown="textCounter(this.form.txtContenidoBoletinInformativo,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoBoletinInformativo,this.form.remLen,500);" placeholder="Contenido De La Publicacion" required></textarea>
+            <textarea id="txtContenidoBoletinInformativo" name="txtContenidoBoletinInformativo" onKeyDown="textCounter(this.form.txtContenidoBoletinInformativo,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoBoletinInformativo,this.form.remLen,500);" placeholder="Contenido De La Publicacion" required></textarea>
 
-                <input id="ncaracteresBoletinInformativo" readonly type=text name=remLen size=3 maxlength=3 value="500">
-                <label id="tituloCaracteresBoletinInformativo">Caracteres Restantes</label>
+            <input id="ncaracteresBoletinInformativo" readonly type=text name=remLen size=3 maxlength=3 value="500">
+            <label id="tituloCaracteresBoletinInformativo">Caracteres Restantes</label>
 
-                <input id="btnImagenBoletinInformativo" type="file" name="archivo" required>
-                <input id="btnImagenBoletinInformativo1" type="file" name="archivo1">
-                <input id="btnImagenBoletinInformativo2" type="file" name="archivo2">
-                <input id="btnImagenBoletinInformativo3" type="file" name="archivo3">
+            <input id="btnImagenBoletinInformativo" type="file" name="archivo" required>
+            <input id="btnImagenBoletinInformativo1" type="file" name="archivo1">
+            <input id="btnImagenBoletinInformativo2" type="file" name="archivo2">
+            <input id="btnImagenBoletinInformativo3" type="file" name="archivo3">
 
-                <input id="btnRegistrarBoletinInformativo" type="submit" name="btnRegistrarBoletinInformativo" value="Registrar">
+            <input id="btnRegistrarBoletinInformativo" type="submit" name="btnRegistrarBoletinInformativo" value="Registrar">
 
-            </form>
-
-        </div>
+        </form>
 
     </div>
-    <!--FIN DIV CONTENEDOR FORMULARIO-->
 
-</body>
-
-</html>
+</div>
+<!--FIN DIV CONTENEDOR FORMULARIO-->

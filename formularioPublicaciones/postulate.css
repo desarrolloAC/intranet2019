@@ -1,166 +1,199 @@
 /****************************INICIO DISEÑO VENTANA MODAL FORMULARIO************************************/
-.contenedorFormulario{
-z-index: 1001;
-width: 100%;
-height: 100%;
-position: fixed; top: 0; bottom: 0; right: 0; left: 0;
-background: rgba(0,0,0,0.8);
-opacity: 0;
-transition: opacity 400ms ease-in;
-pointer-events: none;
+.contenedorFormulario {
+    z-index: 1001;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
 }
 
-.contenedorFormulario:target{
-opacity: 1;
-pointer-events: auto;
+.contenedorFormulario:target {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.contenedorFormulario > div#formularioPostulate{
-z-index: 1001;
-width: 12cm;
-height: 15cm;
-position: relative; top: 1cm;
-margin: 0% auto;
-padding: 5px 20px 13px 20px;
-border-radius: 10px;
-background: rgb(255,255,255);
-transition: opacity 400ms ease-in-out;
-background-image: url("../imagenes/plantillas/png/postulate.png");
-background-repeat: no-repeat;
-background-position: 0px 0px;
-background-size: 13.1cm 15.5cm;
+.contenedorFormulario > div#formularioPostulate {
+    z-index: 1001;
+    width: 12cm;
+    height: 15cm;
+    position: relative;
+    top: 1cm;
+    margin: 0% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    transition: opacity 400ms ease-in-out;
+    background-image: url("../assets/image/plantillas/png/postulate.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: 13.1cm 15.5cm;
 }
 
-.cerrar{
-background: #606061;
-color: rgb(255,255,255);
-line-height: 25px;
-position: absolute;
-right: 10px;
-text-align: center;
-top: 0px;
-width: 24px;
-text-decoration: none;
-font-weight: bold;
-border-radius: 12px;
-box-shadow: 1px 1px 3px #000;
+.cerrar {
+    background: #606061;
+    color: rgb(255, 255, 255);
+    line-height: 25px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 0px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 1px 1px 3px #000;
 }
-.cerrar:hover{
-background: rgb(67,67,67); 
+
+.cerrar:hover {
+    background: rgb(67, 67, 67);
 }
+
 /****************************FIN DISEÑO VENTANA MODAL FORMULARIO************************************/
 
-input#txtCodigoSubCategoriaPostulate{
-	position: absolute;
-	visibility: hidden;
+input#txtCodigoSubCategoriaPostulate {
+    position: absolute;
+    visibility: hidden;
 }
 
-input#txtCodigoOrganizacionPostulate{
-	position: absolute; top: 1.8cm; left: 4.3cm;
-	width: 2.1cm;
-	height: 0.7cm;
-	background-color: transparent;
-	border-color: rgb(69,69,69);
-	color: rgb(255,255,255);
-	font-weight: bold;
-	font-size: 14px;
+input#txtCodigoOrganizacionPostulate {
+    position: absolute;
+    top: 1.8cm;
+    left: 4.3cm;
+    width: 2.1cm;
+    height: 0.7cm;
+    background-color: transparent;
+    border-color: rgb(69, 69, 69);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 14px;
 }
 
-textarea#txtContenidoPostulate{
-	position: absolute; top: 1.8cm; left: 0.1cm;
-	max-width: 4cm;
-	max-height: 8.3cm;
-	min-width: 4cm;
-	min-height: 8.3cm;
-	width: 4cm;
-	height: 8.3cm;
-	font-size: 14px;
-	border-color: rgb(69,69,69);
+textarea#txtContenidoPostulate {
+    position: absolute;
+    top: 1.8cm;
+    left: 0.1cm;
+    max-width: 4cm;
+    max-height: 8.3cm;
+    min-width: 4cm;
+    min-height: 8.3cm;
+    width: 4cm;
+    height: 8.3cm;
+    font-size: 14px;
+    border-color: rgb(69, 69, 69);
 }
 
-textarea#txtPosicionesPostulate{
-	position: absolute; top: 4.3cm; left: 4.5cm;
-	max-width: 7cm;
-	max-height: 2.6cm;
-	min-width: 7cm;
-	min-height: 2.6cm;
-	width: 7cm;
-	height: 2.6cm;
-	font-size: 14px;
-	border-color: rgb(69,69,69);
+textarea#txtPosicionesPostulate {
+    position: absolute;
+    top: 4.3cm;
+    left: 4.5cm;
+    max-width: 7cm;
+    max-height: 2.6cm;
+    min-width: 7cm;
+    min-height: 2.6cm;
+    width: 7cm;
+    height: 2.6cm;
+    font-size: 14px;
+    border-color: rgb(69, 69, 69);
 }
 
-textarea#txtResponsabilidadesPostulate{
-	position: absolute; top: 7.5cm; left: 4.5cm;
-	max-width: 7cm;
-	max-height: 2.6cm;
-	min-width: 7cm;
-	min-height: 2.6cm;
-	width: 7cm;
-	height: 2.6cm;
-	font-size: 14px;
-	border-color: rgb(69,69,69);
+textarea#txtResponsabilidadesPostulate {
+    position: absolute;
+    top: 7.5cm;
+    left: 4.5cm;
+    max-width: 7cm;
+    max-height: 2.6cm;
+    min-width: 7cm;
+    min-height: 2.6cm;
+    width: 7cm;
+    height: 2.6cm;
+    font-size: 14px;
+    border-color: rgb(69, 69, 69);
 }
 
-input#ncaracteresPostulate{
-	position: absolute; top: 10.3cm; left: 0.1cm;
-	border:none;
-	background-color: transparent;
-	font-weight: bold;
+input#ncaracteresPostulate {
+    position: absolute;
+    top: 10.3cm;
+    left: 0.1cm;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
 }
 
-label#tituloCaracteresPostulate{
-	position: absolute; top: 10.3cm; left: 1cm;
-	font-weight: bold;
-	font-size: 13.3px;
+label#tituloCaracteresPostulate {
+    position: absolute;
+    top: 10.3cm;
+    left: 1cm;
+    font-weight: bold;
+    font-size: 13.3px;
 }
 
-input#ncaracteresPostulate1{
-	position: absolute; top: 10.3cm; left: 7.5cm;
-	border:none;
-	background-color: transparent;
-	font-weight: bold;
+input#ncaracteresPostulate1 {
+    position: absolute;
+    top: 10.3cm;
+    left: 7.5cm;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
 }
 
-label#tituloCaracteresPostulate1{
-	position: absolute; top: 10.3cm; left: 8.4cm;
-	font-weight: bold;
-	font-size: 13.3px;
+label#tituloCaracteresPostulate1 {
+    position: absolute;
+    top: 10.3cm;
+    left: 8.4cm;
+    font-weight: bold;
+    font-size: 13.3px;
 }
 
-input#ncaracteresPostulate2{
-	position: absolute; top: 7.1cm; left: 7.5cm;
-	border:none;
-	background-color: transparent;
-	font-weight: bold;
+input#ncaracteresPostulate2 {
+    position: absolute;
+    top: 7.1cm;
+    left: 7.5cm;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
 }
 
-label#tituloCaracteresPostulate2{
-	position: absolute; top: 7.1cm; left: 8.4cm;
-	font-weight: bold;
-	font-size: 13.3px;
+label#tituloCaracteresPostulate2 {
+    position: absolute;
+    top: 7.1cm;
+    left: 8.4cm;
+    font-weight: bold;
+    font-size: 13.3px;
 }
 
 /*BOTON REGISTAR*/
-input#btnRegistrarPostulate{
-  position: absolute; width: 50%; height: 20px; left: 0.8cm; top: 14.6cm;
-  background: rgb(241,129,3);/*NARANJA*/
-  color: rgb(255,255,255);
-  font-weight: bold;
-  border-radius: 0.5rem;
-  border:none;
-  cursor: pointer;
-  box-shadow: 0px 5px 0px 0px #0A0A0A;
-  transition: all 100ms linear;
-  touch-callout: none;
-  user-select: none;
-  font-family: "Arial";
-  font-size: 14px;
+input#btnRegistrarPostulate {
+    position: absolute;
+    width: 50%;
+    height: 20px;
+    left: 0.8cm;
+    top: 14.6cm;
+    background: rgb(241, 129, 3);
+    /*NARANJA*/
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 5px 0px 0px #0A0A0A;
+    transition: all 100ms linear;
+    touch-callout: none;
+    user-select: none;
+    font-family: "Arial";
+    font-size: 14px;
 }
 
 /*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
 input#btnRegistrarPostulate:active {
-  top: 14.7cm;
-  box-shadow: 0px 0px 0px 0px #0A0A0A;    
+    top: 14.7cm;
+    box-shadow: 0px 0px 0px 0px #0A0A0A;
 }
+
 /*FIN DEL BOTON REGISTRAR*/

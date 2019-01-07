@@ -1,16 +1,8 @@
-<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="postulate.css">
 
-<html>
+<script>
 
-<head>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="postulate.css">
-
-    <script>
-
-        function textCounter(field, countfield, maxlimit) {
+    function textCounter(field, countfield, maxlimit) {
         if (field.value.length > maxlimit)
         field.value = field.value.substring(0, maxlimit);
 
@@ -21,50 +13,44 @@
     </script>
 
 
-</head>
 
-<body>
 
-    <!--<a href="#formularioPostulate">abrir formulario</a>-->
+<!--<a href="#formularioPostulate">abrir formulario</a>-->
 
-    <!--INICIO DIV CONTENEDOR FORMULARIO-->
-    <div id="formularioPostulate" class="contenedorFormulario">
+<!--INICIO DIV CONTENEDOR FORMULARIO-->
+<div id="formularioPostulate" class="contenedorFormulario">
 
-        <div id="formularioPostulate">
+    <div id="formularioPostulate">
 
-            <a href="#" class="cerrar">X</a>
+        <a href="#" class="cerrar">X</a>
 
-            <form method="POST" action="">
+        <form method="POST" action="">
 
-                <input id="txtCodigoSubCategoriaPostulate" type="text" name="txtCodigoSubCategoriaPostulate" value="" maxlength="4">
+            <input id="txtCodigoSubCategoriaPostulate" type="text" name="txtCodigoSubCategoriaPostulate" value="" maxlength="4">
 
-                <input id="txtCodigoOrganizacionPostulate" type="text" name="txtCodigoOrganizacionPostulate" value="" maxlength="4">
+            <input id="txtCodigoOrganizacionPostulate" type="text" name="txtCodigoOrganizacionPostulate" value="" maxlength="4">
 
-                <textarea id="txtContenidoPostulate" name="txtContenidoPostulate" onKeyDown="textCounter(this.form.txtContenidoPostulate,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoPostulate,this.form.remLen,500);" placeholder="Requisitos" required></textarea>
+            <textarea id="txtContenidoPostulate" name="txtContenidoPostulate" onKeyDown="textCounter(this.form.txtContenidoPostulate,this.form.remLen,500);" onKeyUp="textCounter(this.form.txtContenidoPostulate,this.form.remLen,500);" placeholder="Requisitos" required></textarea>
 
-                <input id="ncaracteresPostulate" readonly type=text name=remLen size=3 maxlength=3 value="500">
-                <label id="tituloCaracteresPostulate">Caracteres Restantes</label>
+            <input id="ncaracteresPostulate" readonly type=text name=remLen size=3 maxlength=3 value="500">
+            <label id="tituloCaracteresPostulate">Caracteres Restantes</label>
 
-                <textarea id="txtPosicionesPostulate" onKeyDown="textCounter(this.form.txtPosicionesPostulate,this.form.remLen1,500);" onKeyUp="textCounter(this.form.txtPosicionesPostulate,this.form.remLen1,500);" placeholder="Posiciones" required></textarea>
+            <textarea id="txtPosicionesPostulate" onKeyDown="textCounter(this.form.txtPosicionesPostulate,this.form.remLen1,500);" onKeyUp="textCounter(this.form.txtPosicionesPostulate,this.form.remLen1,500);" placeholder="Posiciones" required></textarea>
 
-                <input id="ncaracteresPostulate2" readonly type=text name=remLen1 size=3 maxlength=3 value="500">
+            <input id="ncaracteresPostulate2" readonly type=text name=remLen1 size=3 maxlength=3 value="500">
 
-                <label id="tituloCaracteresPostulate2">Caracteres Restantes</label>
+            <label id="tituloCaracteresPostulate2">Caracteres Restantes</label>
 
-                <textarea id="txtResponsabilidadesPostulate" onKeyDown="textCounter(this.form.txtResponsabilidadesPostulate,this.form.remLen2,500);" onKeyUp="textCounter(this.form.txtResponsabilidadesPostulate,this.form.remLen2,500);" placeholder="Responsabilidades" required></textarea>
+            <textarea id="txtResponsabilidadesPostulate" onKeyDown="textCounter(this.form.txtResponsabilidadesPostulate,this.form.remLen2,500);" onKeyUp="textCounter(this.form.txtResponsabilidadesPostulate,this.form.remLen2,500);" placeholder="Responsabilidades" required></textarea>
 
-                <input id="ncaracteresPostulate1" readonly type=text name=remLen2 size=3 maxlength=3 value="500">
-                <label id="tituloCaracteresPostulate1">Caracteres Restantes</label>
+            <input id="ncaracteresPostulate1" readonly type=text name=remLen2 size=3 maxlength=3 value="500">
+            <label id="tituloCaracteresPostulate1">Caracteres Restantes</label>
 
-                <input id="btnRegistrarPostulate" type="submit" name="btnRegistrarPostulate" value="Registrar">
+            <input id="btnRegistrarPostulate" type="submit" name="btnRegistrarPostulate" value="Registrar">
 
-            </form>
-
-        </div>
+        </form>
 
     </div>
-    <!--FIN DIV CONTENEDOR FORMULARIO-->
 
-</body>
-
-</html>
+</div>
+<!--FIN DIV CONTENEDOR FORMULARIO-->

@@ -1,162 +1,181 @@
 <?php
 
-@session_start();
-
+session_start();
 
 require_once('../conexion/conexion.php');
 require_once('estadosLogin.php');
 
 $conexion = conectar();
-//REALIZO LA CONSULTA COMPARANDO LA VARIABLE ENVIADA PARA VER SI YA EXISTE EN EL SISTEMA
-$cedula = $_POST['txtCedula'];
+
+
 $createdBy = $_SESSION['Cedula'];
 
-$error = $_FILES['btnImagen']['error'];
+$cedula = $_POST["txtCedula"];
+$pNombre = $_POST["txtpNombre"];
+$sNombre = $_POST["txtsNombre"];
+$pApellido = $_POST["txtpApellido"];
+$sApellido = $_POST["txtsApellido"];
+$sexo = $_POST["cbSexo"];
+$departamento = $_POST["txtDpto"];
+$cargo = $_POST["cbCargo"];
+$correo = $_POST["txtCorreo"];
+$pass = $_POST["clave1"];
+$rol = $_POST["rol"];
+
+$pais = $_POST["pai"];
+$estado = $_POST["edo"];
+$municipio = $_POST["mun"];
+$ciudad = $_POST["ciu"];
+$parroquia = $_POST["par"];
+$Direccion = $_POST["dir"];
+
+$pre = $_POST["pre"];
+$res = $_POST["res"];
+
 $foto = $_FILES['btnImagen']['name'];
-$type = $_FILES['btnImagen']['type'];
-
-$date = date("Y-m-d_His"); // date('Y-m-d i:m:s');
-
+$error = $_FILES['btnImagen']['error'];
 $ruta = $_FILES['btnImagen']['tmp_name'];
+$date = date("Y-m-d_his"); // date('Y-m-d i:m:s');
 $destino_temp = 'assets/image/directorio/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
+
 $organizacion = $_SESSION['ID_Organizacion'];
 
-$consulta = mysqli_query($conexion, "SELECT * FROM usuario WHERE cedula ='$cedula'");
-$codigo = mysqli_num_rows($consulta);
 
+switch ($error) {
 
-if (!empty($codigo)) {
+    case 1: // UPLOAD_ERR_INI_SIZE
+        echo "El tamaño del archivo supera el límite permitido
+                    por el servidor (argumento upload_max_filesize del archivo
+                    php.ini).";
+        break;
 
-    switch ($_SESSION['ID_Rol']) {
-        case TypeUsuario::ADMINISTRADOR:
+    case 2: // UPLOAD_ERR_FORM_SIZE
+        echo " El tamaño del archivo supera el límite permitido
+                    por el formulario (argumento post_max_size del archivo php.ini).";
+        break;
 
-            echo'<script language="javascript">
-		                    alert("La Cédula N°:  ' . $cedula . ' Ya Existe. Ingrese una Diferente. ");
-		                    location.href="../menuAdministrador.php";
-		                 </script>';
-            break;
-        case TypeUsuario::AUTORIZADOR:
+    case 3: // UPLOAD_ERR_PARTIAL
+        echo "El envío del archivo se ha interrumpido durante
+                    la transferencia.";
+        break;
 
-            echo'<script language="javascript">
-		                alert("La Cédula N°:  ' . $cedula . ' Ya Existe. Ingrese una Diferente. ");
-		                 location.href="../menuAutorizador.php";
-		                 </script>';
-            break;
-        case TypeUsuario::EDITOR:
+    case 4: // UPLOAD_ERR_NO_FILE
 
-            echo'<script language="javascript">
-		                 alert("La Cédula N°:  ' . $cedula . ' Ya Existe. Ingrese una Diferente. ");
-		                 location.href="../menuEditor.php";
-		                 </script>';
-            break;
-        case TypeUsuario::PUBLICADOR:
+        if (isset($pass)) {
 
-            echo'<script language="javascript">
-		                 alert("La Cédula N°:  ' . $cedula . ' Ya Existe. Ingrese una Diferente. ");
-		                 location.href="../menuPublicador.php";
-		            </script>';
-            break;
-        default: //LECTOR
-
-            break;
-    }
-} else {
-
-    if ($error) {
-        switch ($error) {
-            case 1: // UPLOAD_ERR_INI_SIZE
-                echo "El tamaño del archivo supera el límite permitido
-						por el servidor (argumento upload_max_filesize del archivo
-						php.ini).";
-                break;
-            case 2: // UPLOAD_ERR_FORM_SIZE
-                echo " El tamaño del archivo supera el límite permitido
-						por el formulario (argumento post_max_size del archivo php.ini).";
-                break;
-            case 3: // UPLOAD_ERR_PARTIAL
-                echo "El envío del archivo se ha interrumpido durante
-						la transferencia.";
-                break;
-            case 4: // UPLOAD_ERR_NO_FILE
-                echo "El tamaño del archivo que ha enviado es nulo.";
-                break;
-        }//FIN DEL SWITCH CASE if($error)
-    }//FIN DEL IF if($error)
-    else {
-        //si no hay error entonces $_FILES[’nombre del_archivo’][’error’] es 0
-        if ((isset($foto) && ($error == UPLOAD_ERR_OK))) {
-            copy($ruta, $destino);
-        }//FIN DEL If de UPLOAD_ERR_OK
-        else {
-            echo "El archivo no se ha podido copiar en el directorio.";
-        }//FIN DEL If de UPLOAD_ERR_OK
-    }//FIN DEL ELSE ($error)
-    if (array_key_exists("btnRegistrar", $_POST)) {
-        foreach ($_POST as $key => $value)
-            ${$key} = $value;
-
-
-
-
-        $sql1 = " INSERT INTO seguridad VALUES (NULL,'$txtCorreo',DEFAULT, SHA1('$clave1'),'$pre', '$res'); ";
-        mysqli_query($conexion, $sql1);
-        mysqli_query($conexion, "COMMIT");
-
-        $sql2 = " INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
+            $ed = "INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
 						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo,Telefono, Sexo, Direccion,
-						                     Estatus, Foto, Created, CreatedBy, Updated, UpdatedBy)
-						              VALUES ('$txtCedula', '$txtCargo', '$pai', '$edo', '$mun', '$par', '$ciu',
-						              '$txtpNombre', '$txtsNombre', '$txtpApellido', '$txtsApellido', '$txtCorreo',
-						               '$txttelefono','$cbSexo', '$dir', DEFAULT, '$destino_temp', CURRENT_TIMESTAMP, '$createdBy',
-						              CURRENT_TIMESTAMP, '$createdBy'); ";
+						                     Estatus, Created, CreatedBy, Updated, UpdatedBy) VALUE (
+            '$cedula','$cargo',$pais,$estado,$municipio,
+            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$sexo','$Direccion'
+            DEFAULT, CURRENT_TIMESTAMP, '$createdBy',
+            CURRENT_TIMESTAMP, '$createdBy');";
 
-        mysqli_query($conexion, $sql2);
-        $q2 = mysqli_affected_rows($conexion);
-        mysqli_query($conexion, "COMMIT");
+            $seguridad = "INSERT INTO seguridad VALUES (NULL,'$correo',DEFAULT, SHA1('$clave1'),'$pre', '$res');";
 
-        if ($q2 > 0) {
-            $sql3 = " INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
+            $roles = " INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
+						         VALUES ('$organizacion', '$rol', '$cedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
+
+            //SE LEE LA VARIABLE QUERY CON LA INSTRUCCION SQL
+            mysqli_query($conexion, $ed);
+            mysqli_query($conexion, $seguridad);
+            mysqli_query($conexion, $roles);
+            mysqli_query($conexion, "COMMINT");
+        } else {
+
+            $ed = "INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
+						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo,Telefono, Sexo, Direccion,
+						                     Estatus, Created, CreatedBy, Updated, UpdatedBy) VALUE (
+            '$cedula','$cargo',$pais,$estado,$municipio,
+            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$sexo','$Direccion'
+            DEFAULT, CURRENT_TIMESTAMP, '$createdBy',
+            CURRENT_TIMESTAMP, '$createdBy');";
+
+            $roles = "INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
 						         VALUES ('$organizacion', '$rol', '$txtCedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
 
-            mysqli_query($conexion, $sql3);
-            $q3 = mysqli_affected_rows($conexion);
+            mysqli_query($conexion, $ed);
+            mysqli_query($conexion, $roles);
+            mysqli_query($conexion, "COMMINT");
         }
-        if ($q3 > 0) {
-            switch ($_SESSION['ID_Rol']) {
-                case TypeUsuario::ADMINISTRADOR:
 
-                    echo'<script language="javascript">
-					                 alert("Usuario Creado con Éxito.");
-					                 location.href="../menuAdministrador.php";
-					                 </script>';
-                    break;
-                case TypeUsuario::AUTORIZADOR:
+        break;
 
-                    echo'<script language="javascript">
-					                 alert("Usuario Creado con Éxito.");
-					                 location.href="../menuAutorizador.php";
-					                 </script>';
-                    break;
-                case TypeUsuario::EDITOR:
+    default :
 
-                    echo'<script language="javascript">
-					                 alert("Usuario Creado con Éxito.");
-					                 location.href="../menuEditor.php";
-					                 </script>';
-                    break;
-                case TypeUsuario::PUBLICADOR:
+        copy($ruta, $destino);
 
-                    echo'<script language="javascript">
-					                  alert("Usuario Creado con Éxito.");
-					                 location.href="../menuPublicador.php";
-					                </script>';
-                    break;
-                default: //LECTOR
+        if (isset($pass)) {
 
-                    break;
-            } // fin del switch switch ($_SESSION
+            $ed = "INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
+						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo,Telefono, Sexo, Direccion,
+						                     Estatus, Foto, Created, CreatedBy, Updated, UpdatedBy) VALUE (
+            '$cedula','$cargo',$pais,$estado,$municipio,
+            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$sexo','$Direccion'
+            DEFAULT, '$destino_temp', CURRENT_TIMESTAMP, '$createdBy',
+            CURRENT_TIMESTAMP, '$createdBy');";
+
+            $seguridad = "INSERT INTO seguridad VALUES (NULL,'$correo',DEFAULT, SHA1('$pass'),'$pre', '$res');";
+
+            $roles = " INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
+						         VALUES ('$organizacion', '$rol', '$cedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
+
+            //SE LEE LA VARIABLE QUERY CON LA INSTRUCCION SQL
+            mysqli_query($conexion, $ed);
+            mysqli_query($conexion, $seguridad);
+            mysqli_query($conexion, $roles);
+            mysqli_query($conexion, "COMMINT");
+        } else {
+
+            $ed = "INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
+						                     ID_Ciudad, PNombre, SNombre, PApellido, SApellido, Correo,Telefono, Sexo, Direccion,
+						                     Estatus, Foto, Created, CreatedBy, Updated, UpdatedBy) VALUE (
+            '$cedula','$cargo',$pais,$estado,$municipio,
+            $parroquia,$ciudad,'$pNombre','$sNombre','$pApellido','$sApellido','$sexo','$Direccion'
+            DEFAULT, '$destino_temp', CURRENT_TIMESTAMP, '$createdBy',
+            CURRENT_TIMESTAMP, '$createdBy');";
+
+            $roles = "INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
+						         VALUES ('$organizacion', '$rol', '$txtCedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
+
+            mysqli_query($conexion, $ed);
+            mysqli_query($conexion, $roles);
+            mysqli_query($conexion, "COMMINT");
         }
-    }
+}//FIN Del switch
+
+switch ($_SESSION['ID_Rol']) {
+    case TypeUsuario::ADMINISTRADOR:
+        /* INGRESAR EL USUARIO COMO ADMINISTRADOR */
+        echo'<script language="javascript">
+                  alert("Usuario Creado con Éxito.");
+                 location.href="../menuAdministrador.php";
+                 </script>';
+        break;
+    case TypeUsuario::AUTORIZADOR:
+        /* INGRESAR EL USUARIO COMO AUTORIZADOR */
+        echo'<script language="javascript">
+                  alert("Usuario Creado con Éxito.");
+                 location.href="../menuAutorizador.php";
+                 </script>';
+        break;
+    case TypeUsuario::EDITOR:
+        /* INGRESAR EL USUARIO COMO EDITOR */
+        echo'<script language="javascript">
+                  alert("Usuario Creado con Éxito.");
+                 location.href="../menuEditor.php";
+                 </script>';
+        break;
+    case TypeUsuario::PUBLICADOR:
+        /* INGRESAR EL USUARIO COMO PUBLICADOR */
+        echo'<script language="javascript">
+                  alert("Usuario Creado con Éxito.");
+                 location.href="../menuPublicador.php";
+            </script>';
+        break;
+    default: //LECTOR
+
+        break;
 }
 ?>

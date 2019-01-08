@@ -13,12 +13,9 @@ $idOrganizacion = $_SESSION['ID_Organizacion'];
 $idSubCategoria = $_POST['txtCodigoSubCategoriaAvanceInformativo'];
 $cedula = $_SESSION['Cedula'];
 $contenido = $_POST['txtContenidoAvanceInformativo'];
-
-
 if (isset($_FILES['archivo']['error'])) {
     $error = $_FILES['archivo']['error'];
 }
-
 if (isset($_FILES['archivo']['name'])) {
     $foto = $_FILES['archivo']['name'];
 }
@@ -26,7 +23,6 @@ if (isset($_FILES['archivo']['name'])) {
 if (isset($_FILES['archivo']['type'])) {
     $type = $_FILES['archivo']['type'];
 }
-
 $date = date("Y-m-d_His"); // date('Y-m-d i:m:s');
 $titulo = $_POST['txtTituloAvanceInformativo'];
 $created = date("Y-m-d H:i:s");
@@ -35,7 +31,6 @@ $updated = date("Y-m-d H:i:s");
 $updateBy = $_SESSION['Cedula'];
 
 if ($error) {
-
     switch ($error) {
         case 1: // UPLOAD_ERR_INI_SIZE
             echo "El tamaño del archivo supera el límite permitido

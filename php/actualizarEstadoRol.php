@@ -11,9 +11,9 @@ $estatus = $_GET['estatus'];
 $usuario = $_GET['usuario'];
 
 $updEstado = " UPDATE  rol
-	                  SET  Estatus         ='$estatus',
-	                       UpdatedBy       ='$usuario',
-	                       Updated         = now()
+	                  SET  Estatus = '$estatus',
+	                       UpdatedBy = '$usuario',
+	                       Updated = now()
 	                WHERE  ID_Rol='$ID_Rol'";
 
 mysqli_query($conexion, $updEstado);

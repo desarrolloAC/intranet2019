@@ -81,6 +81,7 @@ switch ($error) {
             mysqli_query($conexion, $ed) or die(mysqli_error($conexion));
             mysqli_query($conexion, $roles) or die(mysqli_error($conexion));
             mysqli_query($conexion, "COMMINT");
+            //
         } else {
 
             $ed = "INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
@@ -92,11 +93,12 @@ switch ($error) {
             CURRENT_TIMESTAMP, '$createdBy');";
 
             $roles = "INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
-						         VALUES ('$organizacion', '$rol', '$txtCedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
+						         VALUES ('$organizacion', '$rol', '$cedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
 
             mysqli_query($conexion, $ed) or die(mysqli_error($conexion));
             mysqli_query($conexion, $roles) or die(mysqli_error($conexion));
             mysqli_query($conexion, "COMMINT");
+            //
         }
 
         break;
@@ -136,7 +138,7 @@ switch ($error) {
             CURRENT_TIMESTAMP, '$createdBy');";
 
             $roles = "INSERT INTO org_usuario_rol (ID_Organizacion, ID_Rol, Cedula, Estatus, Created, CreatedBy, Updated, UpdatedBy)
-						         VALUES ('$organizacion', '$rol', '$txtCedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
+						         VALUES ('$organizacion', '$rol', '$cedula', DEFAULT, CURRENT_TIMESTAMP, '$createdBy', CURRENT_TIMESTAMP, '$createdBy');";
 
             mysqli_query($conexion, $ed) or die(mysqli_error($conexion));
             mysqli_query($conexion, $roles) or die(mysqli_error($conexion));

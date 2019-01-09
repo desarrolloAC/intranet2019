@@ -1,3 +1,13 @@
+<?php
+@session_start();
+
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
+
+$selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION[ID_Organizacion]'";
+$nombreOrg = mysqli_query($conexion, $selectOrg);
+$org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
+?>
 <link rel="stylesheet" type="text/css" href="postulate.css">
 
 <script>
@@ -17,7 +27,6 @@
 
 
 
-
 <!--<a href="#formularioPostulate">abrir formulario</a>-->
 
 <!--INICIO DIV CONTENEDOR FORMULARIO-->
@@ -29,9 +38,9 @@
 
         <form method="POST" action="php/publicaciones/registrarPublicacionPostulate.php">
 
-            <input id="txtCodigoSubCategoriaPostulate" type="text" name="txtCodigoSubCategoriaPostulate" value="" maxlength="4">
+            <input id="txtCodigoSubCategoriaPostulate" type="text" name="txtCodigoSubCategoriaPostulate" value="POST" maxlength="4" readonly>
 
-            <input id="txtCodigoOrganizacionPostulate" type="text" name="txtCodigoOrganizacionPostulate" value="" maxlength="4">
+            <input id="txtCodigoOrganizacionPostulate" type="text" name="txtCodigoOrganizacionPostulate" value="<?php echo $org['Nombre']; ?>" maxlength="4">
 
             <textarea id="txtContenidoPostulate"
                       name="txtContenidoPostulate"
@@ -73,4 +82,3 @@
     </div>
 
 </div>
-<!--FIN DIV CONTENEDOR FORMULARIO-->

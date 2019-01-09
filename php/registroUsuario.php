@@ -32,11 +32,13 @@ $Direccion = $_POST["dir"];
 
 $pre = $_POST["pre"];
 $res = $_POST["res"];
+$date = date("Y-m-d_his");
+
 
 $foto = $_FILES['btnImagen']['name'];
 $error = $_FILES['btnImagen']['error'];
 $ruta = $_FILES['btnImagen']['tmp_name'];
-$date = date("Y-m-d_his"); // date('Y-m-d i:m:s');
+
 $destino_temp = 'assets/image/directorio/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 

@@ -8,11 +8,13 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 <script>
     function textCounter(field, countfield, maxlimit) {
 
-        if (field.value.length > maxlimit)
+        if (field.value.length > maxlimit) {
             field.value = field.value.substring(0, maxlimit);
 
-        else
+        } else {
             countfield.value = maxlimit - field.value.length;
+
+        }
     }
 
 </script>
@@ -39,11 +41,16 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
         <form method="POST" action="php/publicaciones/registrarPublicacionLogroExtraCurriculare.php">
 
-            <input id="txtCodigoSubCategoriaLogro" type="text" name="txtCodigoSubCategoriaLogro" value="" maxlength="4">
+            <input id="txtCodigoSubCategoriaLogro" type="text" name="txtCodigoSubCategoriaLogro" value="LOEX" maxlength="4">
 
             <input id="txtTituloLogro" type="text" name="txtTituloLogro" value="" maxlength="100" placeholder="Tipo De Logro" required>
 
-            <textarea id="txtContenidoLogro" name="txtContenidoLogro" onKeyDown="textCounter(this.form.txtContenidoLogro, this.form.remLen, 500);" onKeyUp="textCounter(this.form.txtContenidoLogro, this.form.remLen, 500);" placeholder="Descripcion" required></textarea>
+            <textarea id="txtContenidoLogro"
+                      name="txtContenidoLogro"
+                      onKeyDown="textCounter(this.form.txtContenidoLogro, this.form.remLen, 500);"
+                      onKeyUp="textCounter(this.form.txtContenidoLogro, this.form.remLen, 500);"
+                      placeholder="Descripcion"
+                      required></textarea>
 
             <input id="ncaracteresLogro" readonly type=text name=remLen size=3 maxlength=3 value="500">
 
@@ -71,7 +78,6 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
             </select>
 
             <input id="btnImagenLogro" type="file" name="btnImagenLogro" required>
-            <input id="btnImagenLogro1" type="file" name="btnImagenLogro1" required>
 
             <input id="btnRegistrarLogro" type="submit" name="btnRegistrarLogro" value="Registrar">
 

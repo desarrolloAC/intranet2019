@@ -4,9 +4,6 @@
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
-$sql = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='AVIF'";
-$subc = mysqli_query($conexion, $sql);
-
 $selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION[ID_Organizacion]'";
 $nombreOrg = mysqli_query($conexion, $selectOrg);
 
@@ -51,11 +48,7 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 
         <form method="POST" action="php/publicaciones/registrarPublicacionAvanceInformativo.php" enctype="multipart/form-data" class="formulario">
 
-            <input id="txtCodigoSubCategoriaAvanceInformativo" type="text" name="txtCodigoSubCategoriaAvanceInformativo" value="<?php
-            while ($ver = mysqli_fetch_array($subc, MYSQLI_ASSOC)) {
-                echo $ver['ID_Subcategoria'];
-            }
-            ?>" maxlength="4" readonly>
+            <input id="txtCodigoSubCategoriaAvanceInformativo" type="text" name="txtCodigoSubCategoriaAvanceInformativo" value="AVIF" maxlength="4" readonly>
 
             <input id="txtCodigoOrganizacionAvanceInformativo" type="text" name="txtCodigoOrganizacionAvanceInformativo" value="<?php echo $org['Nombre']; ?>" maxlength="4" readonly>
 

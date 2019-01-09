@@ -8,6 +8,7 @@ $selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION
 $nombreOrg = mysqli_query($conexion, $selectOrg);
 $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 ?>
+
 <link rel="stylesheet" type="text/css" href="postulate.css">
 
 <script>

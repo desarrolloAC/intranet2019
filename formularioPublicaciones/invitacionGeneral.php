@@ -4,9 +4,6 @@
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
-$sql = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='INVI'";
-$subc = mysqli_query($conexion, $sql);
-
 $selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION[ID_Organizacion]'";
 $nombreOrg = mysqli_query($conexion, $selectOrg);
 $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
@@ -30,11 +27,6 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 
 </script>
 
-
-
-
-<!--<a href="#formularioInvitacionGeneral">abrir formulario</a>-->
-
 <!--INICIO DIV CONTENEDOR FORMULARIO-->
 <div id="formularioInvitacionGeneral" class="contenedorFormulario">
 
@@ -44,13 +36,14 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 
         <form method="POST" action="php/publicaciones/registrarPublicacionInvitacionesGeneral.php">
 
-            <input id="txtCodigoSubCategoriaInvitacionGeneral" type="text" name="txtCodigoSubCategoriaInvitacionGeneral" value="<?php
-            while ($ver = mysql_fetch_array($subc)) {
-                echo $ver['ID_Subcategoria'];
-            }
-            ?>" maxlength="4" readonly>
+            <input id="txtCodigoSubCategoriaInvitacionGeneral" type="text" name="txtCodigoSubCategoriaInvitacionGeneral" value="GENE" maxlength="4" readonly>
 
-            <textarea id="txtContenidoInvitacionGeneral" name="txtContenidoInvitacionGeneral" onKeyDown="textCounter(this.form.txtContenidoInvitacionGeneral, this.form.remLen, 500);" onKeyUp="textCounter(this.form.txtContenidoInvitacionGeneral, this.form.remLen, 500);" placeholder="Contenido De La Publicacion" required></textarea>
+            <textarea id="txtContenidoInvitacionGeneral"
+                      name="txtContenidoInvitacionGeneral"
+                      onKeyDown="textCounter(this.form.txtContenidoInvitacionGeneral, this.form.remLen, 500);"
+                      onKeyUp="textCounter(this.form.txtContenidoInvitacionGeneral, this.form.remLen, 500);"
+                      placeholder="Contenido De La Publicacion"
+                      required></textarea>
 
             <input id="ncaracteresInvitacionGeneral" readonly type=text name=remLen size=3 maxlength=3 value="500">
 

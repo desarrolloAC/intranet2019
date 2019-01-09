@@ -6,14 +6,10 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
 $selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION[ID_Organizacion]'";
 $nombreOrg = mysqli_query($conexion, $selectOrg);
-
 $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 ?>
 
-
-
 <link rel="stylesheet" type="text/css" href="avanceInformativo.css">
-
 
 <script>
 
@@ -32,13 +28,6 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 
 </script>
 
-
-
-
-
-<!--<a href="#formularioAvanceInformativo">abrir</a>-->
-
-
 <!--INICIO DIV CONTENEDOR FORMULARIO-->
 <div id="formularioAvanceInformativo" class="contenedorFormulario">
 
@@ -54,21 +43,31 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 
             <input id="txtTituloAvanceInformativo" type="text" name="txtTituloAvanceInformativo" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
 
-            <textarea id="txtContenidoAvanceInformativo" name="txtContenidoAvanceInformativo" onKeyDown="textCounter(this.form.txtContenidoAvanceInformativo, this.form.remLen, 500);" onKeyUp="textCounter(this.form.txtContenidoAvanceInformativo, this.form.remLen, 500);" placeholder="Contenido De La Publicacion" required></textarea>
+            <textarea id="txtContenidoAvanceInformativo"
+                      name="txtContenidoAvanceInformativo"
+                      onKeyDown="textCounter(this.form.txtContenidoAvanceInformativo, this.form.remLen, 500);"
+                      onKeyUp="textCounter(this.form.txtContenidoAvanceInformativo, this.form.remLen, 500);"
+                      placeholder="Contenido De La Publicacion"
+                      required></textarea>
 
             <input id="ncaracteresAvanceInformativo" readonly type=text name=remLen size=3 maxlength=3 value="500">
+
             <label id="tituloCaracteresAvanceInformativo">Caracteres Restantes</label>
 
             <input id="btnImagenAvanceInformativo" type="file" name="archivo" required>
+
             <img id="imgSalida" width="26%" height="21%" src="" />
 
             <input id="btnImagenAvanceInformativo1" type="file" name="archivo1">
+
             <img id="imgSalida1" width="26%" height="21%" src="" />
 
             <input id="btnImagenAvanceInformativo2" type="file" name="archivo2">
+
             <img id="imgSalida2" width="26%" height="21%" src="" />
 
             <input id="btnImagenAvanceInformativo3" type="file" name="archivo3">
+
             <img id="imgSalida3" width="26%" height="21%" src="" />
 
             <input id="btnRegistrarAvanceInformativo" type="submit" name="btnRegistrarAvanceInformativo" value="Registrar">

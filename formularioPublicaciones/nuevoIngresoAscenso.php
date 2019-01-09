@@ -2,16 +2,21 @@
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 ?>
+
 <link rel="stylesheet" type="text/css" href="nuevoIngresoAscenso.css">
 
-
 <script>
+
     function textCounter(field, countfield, maxlimit) {
-        if (field.value.length > maxlimit)
+
+        if (field.value.length > maxlimit) {
             field.value = field.value.substring(0, maxlimit);
 
-        else
+        } else {
             countfield.value = maxlimit - field.value.length;
+
+        }
+
     }
 
 </script>
@@ -25,10 +30,6 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
     });
 
 </script>
-
-
-
-<!--<a href="#formularioNuevoIngresoAscenso">abrir formulario</a>-->
 
 <!--INICIO DIV CONTENEDOR FORMULARIO-->
 <div id="formularioNuevoIngresoAscenso" class="contenedorFormulario">
@@ -64,7 +65,12 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
                 <option> Cargo </option>
             </select>
 
-            <textarea id="txtContenidoNuevoAscenso" name="txtContenidoNuevoAscenso" onKeyDown="textCounter(this.form.txtContenidoNuevoAscenso, this.form.remLen, 500);" onKeyUp="textCounter(this.form.txtContenidoNuevoAscenso, this.form.remLen, 500);" placeholder="Descripcion" required></textarea>
+            <textarea id="txtContenidoNuevoAscenso"
+                      name="txtContenidoNuevoAscenso"
+                      onKeyDown="textCounter(this.form.txtContenidoNuevoAscenso, this.form.remLen, 500);"
+                      onKeyUp="textCounter(this.form.txtContenidoNuevoAscenso, this.form.remLen, 500);"
+                      placeholder="Descripcion"
+                      required></textarea>
 
             <input id="ncaracteresNuevoAscenso" readonly type=text name=remLen size=3 maxlength=3 value="500">
 

@@ -3,18 +3,17 @@
 <script>
 
     function textCounter(field, countfield, maxlimit) {
-        if (field.value.length > maxlimit)
+
+        if (field.value.length > maxlimit) {
             field.value = field.value.substring(0, maxlimit);
 
-        else
+        } else {
             countfield.value = maxlimit - field.value.length;
+
+        }
     }
 
 </script>
-
-
-
-<!--<a href="#formulario">abrir formulario</a>-->
 
 <!--INICIO DIV CONTENEDOR FORMULARIO-->
 <div id="formularioPromocionEscolar" class="contenedorFormulario">
@@ -29,7 +28,12 @@
 
             <input id="txtNombreCompletoPromocionEscolar" type="text" name="txtNombreCompletoPromocionEscolar" value="" maxlength="100" placeholder="Nombre Completo" required>
 
-            <textarea id="txtContenidoPromocionEscolar" name="txtContenidoPromocionEscolar" onKeyDown="textCounter(this.form.txtContenidoPromocionEscolar, this.form.remLen, 500);" onKeyUp="textCounter(this.form.txtContenidoPromocionEscolar, this.form.remLen, 500);" placeholder="Descripcion" required></textarea>
+            <textarea id="txtContenidoPromocionEscolar"
+                      name="txtContenidoPromocionEscolar"
+                      onKeyDown="textCounter(this.form.txtContenidoPromocionEscolar, this.form.remLen, 500);"
+                      onKeyUp="textCounter(this.form.txtContenidoPromocionEscolar, this.form.remLen, 500);"
+                      placeholder="Descripcion"
+                      required></textarea>
 
             <input id="ncaracteresPromocionEscolar" readonly type=text name=remLen size=3 maxlength=3 value="500">
 

@@ -1,14 +1,14 @@
 <?php
 @session_start();
 
-$sql = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='BOIF'";
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
+$sql = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='BOIF'";
 $subc = mysqli_query($conexion, $sql);
 
 $selectOrg = "SELECT Nombre FROM organizacion WHERE ID_Organizacion = '$_SESSION[ID_Organizacion]'";
-
 $nombreOrg = mysqli_query($conexion, $selectOrg);
-
 $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 ?>
 
@@ -18,11 +18,14 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 <script>
 
     function textCounter(field, countfield, maxlimit) {
-        if (field.value.length > maxlimit)
+
+        if (field.value.length > maxlimit) {
             field.value = field.value.substring(0, maxlimit);
 
-        else
+        } else {
             countfield.value = maxlimit - field.value.length;
+
+        }
     }
 
 </script>

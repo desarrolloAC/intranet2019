@@ -1,6 +1,9 @@
 <?php
 @session_start();
 
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
+
 $sql = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='COMU'";
 $subc = mysqli_query($conexion, $sql);
 
@@ -41,7 +44,7 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 
         <a href="#" class="cerrar">X</a>
 
-        <form method="POST" action="php/publicaciones/registrarPublicacionFallecimiento.php">
+        <form method="POST" action="php/publicaciones/registrarPublicacionComunicado.php">
 
             <input id="txtCodigoSubCategoriaComunicado" type="text" name="txtCodigoSubCategoriaComunicado" value="<?php
             while ($ver = mysqli_fetch_array($subc, MYSQLI_ASSOC)) {

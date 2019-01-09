@@ -2,8 +2,8 @@
 
 session_start();
 
-require_once('../conexion/conexion.php');
-require_once('estadosLogin.php');
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
 $conexion = conectar();
 
@@ -64,7 +64,7 @@ else {
 }//FIN DEL ELSE
 
 $agregarPublicacion = mysqli_query($conexion, "INSERT INTO publicacion
-VALUES(NULL,'$idOrganizacion','$idSubCategoria','$cedula','$contenido',DEFAULT,'$destino_temp','$titulo',DEFAULT,NULL,now(),'$createdBy',now(),'$updateBy',NULL,NULL)");
+VALUES (NULL,'$idOrganizacion','$idSubCategoria','$cedula','$contenido',DEFAULT,'$destino_temp','$titulo',DEFAULT,NULL,now(),'$createdBy',now(),'$updateBy',NULL,NULL)");
 
 switch ($_SESSION['ID_Rol']) {
     case TypeUsuario::ADMINISTRADOR:

@@ -2,8 +2,9 @@
 
 session_start();
 
-require_once('../conexion/conexion.php');
-require_once('estadosLogin.php');
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
+
 
 $conexion = conectar();
 

@@ -1,6 +1,9 @@
 <?php
 @session_start();
 
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
+
 $sql = "SELECT ID_Subcategoria FROM subcategoria WHERE ID_Subcategoria='AVIF'";
 $subc = mysqli_query($conexion, $sql);
 

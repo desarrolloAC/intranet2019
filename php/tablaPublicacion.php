@@ -39,6 +39,8 @@
                                             <h5 id="label_cajas_texto">Categoría de la Publicación: </h5>
 
                                             <?php
+                                            include_once $_SERVER['DOCUMENT_ROOT'] . '/intranet/conexion/conexion.php';
+
                                             $conexion = conectar();
                                             echo "
 												<select name='txtCodigoC' class='combos_formulario_usuario' id='txtCodigoC' required >
@@ -160,6 +162,8 @@
     </thead>
     <tbody>
         <?php
+        $consultaPublicacion;
+
         switch ($_SESSION['ID_Rol']) {
 
             case TypeUsuario::ADMINISTRADOR:

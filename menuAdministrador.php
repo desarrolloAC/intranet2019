@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-include $_SERVER['DOCUMENT_ROOT'] . '/intranet/conexion/conexion.php';
-include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadoPublicacion.php';
-include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/intranet/conexion/conexion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadoPublicacion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
 //SI EL USUARIO NO ESTA REGISTRADO NO PODRA VISUALIZAR LA PAGINA HASTA NO ESTAR LOGEADO Y LO LLEVARA DIRECTO AL LOGIN
 if (!isset($_SESSION['Correo']))

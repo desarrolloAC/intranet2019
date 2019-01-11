@@ -34,18 +34,18 @@ switch ($error) {
 
     case 1: // UPLOAD_ERR_INI_SIZE
         echo "El tamaño del archivo supera el límite permitido
-			por el servidor (argumento upload_max_filesize del archivo
-			php.ini).";
+            por el servidor (argumento upload_max_filesize del archivo
+            php.ini).";
         break;
 
     case 2: // UPLOAD_ERR_FORM_SIZE
         echo " El tamaño del archivo supera el límite permitido
-			por el formulario (argumento post_max_size del archivo php.ini).";
+               por el formulario (argumento post_max_size del archivo php.ini).";
         break;
 
     case 3: // UPLOAD_ERR_PARTIAL
         echo "El envío del archivo se ha interrumpido durante
-			la transferencia.";
+	      la transferencia.";
         break;
 
     case 4: // UPLOAD_ERR_NO_FILE

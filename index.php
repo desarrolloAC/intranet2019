@@ -55,23 +55,24 @@
             </div>
 
             <script type="text/javascript">
-    const publicacionesUrl = 'php/index/consultaPublicacionesInfo.php';
-    const capuslaInformativa = new Vue({
-        el: '#capuslaInformativa',
-        created: function () {
-            this.getPublicaciones();
-        },
-        data: {
-            list: []
-        },
-        methods: {
-            getPublicaciones: function () {
-                this.$http.get(publicacionesUrl).then((responsed) => {
-                    this.list = responsed.body;
-                });
-            }
+
+const publicacionesUrl = 'php/index/consultaPublicacionesInfo.php';
+const capuslaInformativa = new Vue({
+    el: '#capuslaInformativa',
+    created: function () {
+        this.getPublicaciones();
+    },
+    data: {
+        list: []
+    },
+    methods: {
+        getPublicaciones: function () {
+            this.$http.get(publicacionesUrl).then((responsed) => {
+                this.list = responsed.body;
+            });
         }
-    });
+    }
+});
 
             </script>
             <!--FIN CAPSULA INFORMATIVA-->

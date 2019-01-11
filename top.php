@@ -125,7 +125,7 @@
         </li>
 
         <li>
-            <a href="../alkes/index.html">Reservar Sala De Reunion</a>
+            <a href="reserva.php">Reservar Sala De Reunion</a>
         </li>
 
     </ul>

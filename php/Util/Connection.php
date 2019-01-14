@@ -56,7 +56,7 @@ class Connection implements IConnection {
         } catch (\Exception $exc) {
             echo $exc->getMessage();
         } finally {
-            
+
         }
     }
 

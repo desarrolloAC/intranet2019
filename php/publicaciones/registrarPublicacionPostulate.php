@@ -17,12 +17,7 @@ $createdBy = $_SESSION['Cedula'];
 $updateBy = $_SESSION['Cedula'];
 
 
-$insert = "INSERT INTO `publicacion`(`ID_Publicacion`, `ID_Organizacion`, `ID_Subcategoria`, `Cedula`, `Contenido`, "
-        . "`Contenido2`, `Contenido3`, `Contenido4`, `Contenido5`, `Estatus`, `Foto`, `Titulo`, `Estado`, `Motivo`, "
-        . "`Created`, `CreatedBy`, `Updated`, `UpdatedBy`, `PublicatedBy`, `F_Publicacion`)"
-        . "VALUES (NULL,'$idOrganizacion','$idSubCategoria','$cedula','$contenido1',"
-        . "'$contenido2','$contenido3','NULL','NULL',DEFAULT,NULL,'$titulo',DEFAULT,NULL,"
-        . "CURRENT_TIMESTAMP,'$createdBy',CURRENT_TIMESTAMP,'$updateBy',NULL,NULL)";
+$insert = " CALL sp_RegistroAvanceInf(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 mysqli_query($conexion, $insert) or die(mysqli_error($conexion));
 

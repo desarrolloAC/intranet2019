@@ -21,9 +21,21 @@ $updated = date("Y-m-d H:i:s");
 $updateBy = $_SESSION['Cedula'];
 
 
-$foto = $_FILES['btnImagen']['name'];
-$error = $_FILES['btnImagen']['error'];
-$ruta = $_FILES['btnImagen']['tmp_name'];
+$foto = $_FILES['archivo']['name'];
+$error = $_FILES['archivo']['error'];
+$ruta = $_FILES['archivo']['tmp_name'];
+
+$foto1 = $_FILES['archivo1']['name'];
+$error1 = $_FILES['archivo1']['error'];
+$ruta1 = $_FILES['archivo1']['tmp_name'];
+
+$foto2 = $_FILES['archivo2']['name'];
+$error2 = $_FILES['archivo2']['error'];
+$ruta2 = $_FILES['archivo2']['tmp_name'];
+
+$foto3 = $_FILES['archivo3']['name'];
+$error3 = $_FILES['archivo3']['error'];
+$ruta3 = $_FILES['archivo3']['tmp_name'];
 
 
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
@@ -56,12 +68,7 @@ switch ($error) {
 
         copy($ruta, $destino);
 
-        $insert = "INSERT INTO `publicacion`(`ID_Publicacion`, `ID_Organizacion`, `ID_Subcategoria`, `Cedula`, `Contenido`, "
-                . "`Contenido2`, `Contenido3`, `Contenido4`, `Contenido5`, `Estatus`, `Foto`, `Titulo`, `Estado`, `Motivo`, "
-                . "`Created`, `CreatedBy`, `Updated`, `UpdatedBy`, `PublicatedBy`, `F_Publicacion`)"
-                . "VALUES (NULL, ?, ?, ?, ?,"
-                . "NULL, NULL, NULL, NULL, DEFAULT, ?, ?, DEFAULT, NULL,"
-                . "CURRENT_TIMESTAMP, ?, CURRENT_TIMESTAMP, ?, NULL, NULL);";
+        $insert = " CALL sp_RegistroAvanceInf(?, ?, ?, ?, ?, ?, ?, ?);";
 
         $stmt = mysqli_prepare($conexion, $insert);
         $stmt->bind_param("ssssssss",

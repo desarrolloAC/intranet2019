@@ -8,9 +8,9 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 $conexion = conectar();
 
 $idOrganizacion = $_SESSION['ID_Organizacion'];
-$idSubCategoria = $_POST['txtCodigoSubCategoriaLogro'];
-$titulo = $_POST['txtTituloLogro'];
-$contenido = $_POST['txtContenidoLogro'];
+$idSubCategoria = $_POST['txtCodigoSubCategoriaComunicado'];
+$titulo = $_POST['txtTituloComunicado'];
+$contenido = $_POST['txtContenidoComunicado'];
 
 
 $cedula = $_SESSION['Cedula'];
@@ -19,11 +19,6 @@ $created = date("Y-m-d H:i:s");
 $createdBy = $_SESSION['Cedula'];
 $updated = date("Y-m-d H:i:s");
 $updateBy = $_SESSION['Cedula'];
-
-
-$foto = $_FILES['btnImagen']['name'];
-$error = $_FILES['btnImagen']['error'];
-$ruta = $_FILES['btnImagen']['tmp_name'];
 
 
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
@@ -56,12 +51,7 @@ switch ($error) {
 
         copy($ruta, $destino);
 
-        $insert = "INSERT INTO `publicacion`(`ID_Publicacion`, `ID_Organizacion`, `ID_Subcategoria`, `Cedula`, `Contenido`, "
-                . "`Contenido2`, `Contenido3`, `Contenido4`, `Contenido5`, `Estatus`, `Foto`, `Titulo`, `Estado`, `Motivo`, "
-                . "`Created`, `CreatedBy`, `Updated`, `UpdatedBy`, `PublicatedBy`, `F_Publicacion`)"
-                . "VALUES (NULL, ?, ?, ?, ?,"
-                . "NULL, NULL, NULL, NULL, DEFAULT, ?, ?, DEFAULT, NULL,"
-                . "CURRENT_TIMESTAMP, ?, CURRENT_TIMESTAMP, ?, NULL, NULL);";
+        $insert = " CALL sp_RegistroComunicado(?, ?, ?, ?, ?, ?, ?, ?);";
 
         $stmt = mysqli_prepare($conexion, $insert);
         $stmt->bind_param("ssssssss",

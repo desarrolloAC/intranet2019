@@ -56,12 +56,7 @@ switch ($error) {
 
         copy($ruta, $destino);
 
-        $insert = "INSERT INTO `publicacion`(`ID_Publicacion`, `ID_Organizacion`, `ID_Subcategoria`, `Cedula`, `Contenido`, "
-                . "`Contenido2`, `Contenido3`, `Contenido4`, `Contenido5`, `Estatus`, `Foto`, `Titulo`, `Estado`, `Motivo`, "
-                . "`Created`, `CreatedBy`, `Updated`, `UpdatedBy`, `PublicatedBy`, `F_Publicacion`)"
-                . "VALUES (NULL, ?, ?, ?, ?,"
-                . "NULL, NULL, NULL, NULL, DEFAULT, ?, ?, DEFAULT, NULL,"
-                . "CURRENT_TIMESTAMP, ?, CURRENT_TIMESTAMP, ?, NULL, NULL);";
+        $insert = " CALL sp_RegistroAvanceInf(?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         $stmt = mysqli_prepare($conexion, $insert);
         $stmt->bind_param("ssssssss",

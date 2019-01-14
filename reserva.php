@@ -41,7 +41,7 @@
                     </td>
 
                     <td colspan="3" width="200">
-                        <select id="cb_organizacion" onchange="colocarMes(this);">
+                        <select id="cb_organizacion" v-on:change="colocarMes">
                             <option>Mes</option>
                             <option>Enero</option>
                             <option>Febrero</option>
@@ -190,50 +190,190 @@
                 <table id="tabla_disponibilidad" border="0">
 
                     <tr id="titulo_disponibilidad">
-                        <td colspan="3">
+                        <td colspan="4">
                             <h1>Reservar Horas</h1>
+                            <center>
+                                <input class="cerrar" v-on:click="eventoOcultarPanelReserva" type="submit" name="btnCerrar" value="Completar">
+                            </center>
                         </td>
-
-                        <td colspan="1">
-                    <center>
-                        <input class="cerrar" onClick="eventoOcultarPanelReserva(this);" type="submit" name="btnCerrar" value="Completar">
-                    </center>
-                    </td>
                     </tr>
 
                     <tr id="titulo_lista">
-                        <td>
+                        <td style="width: 150px">
                             <h5>Hora De Inicio</h5>
                         </td>
-                        <td>
+                        <td style="width: 150px">
                             <h5>Hora Final</h5>
                         </td>
                         <td>
                             <h5>Usuario</h5>
                         </td>
-                        <td>
+                        <td style="width: 200px">
                             <h5>Reservar</h5>
                         </td>
                     </tr>
 
-                    <tr v-for="(item, index) in list" id="fondo">
+                     <tr id="fondo">
                         <td>
-                            <h5 :id="'cince_' + index">{{ item.cince }}</h5>
+                            <h5 id="cince_0"></h5>
                         </td>
                         <td>
-                            <h5 :id="'until_' + index">{{ item.until }}</h5>
+                            <h5 id="until_0"></h5>
                         </td>
                         <td>
-                            <h5 :id="'usu_' + index">{{ item.user }}</h5>
+                            <h5 id="usu_0"></h5>
                         </td>
                         <td>
-                    <center>
-                        <input :id="'reserva_' + index" class="reservar" onClick="eventoReserva(this);" type="submit" name="btnReservar" value="Reservar">
-                            <input :id="'cancelar_' + index" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
-                    </center>
-                    </td>
+                            <center>
+                                <input id="reserva_0" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
+                                <input id="cancelar_0" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                            </center>
+                        </td>
                     <tr>
 
+                    <tr id="fondo">
+                        <td>
+                            <h5 id="cince_1"></h5>
+                        </td>
+                        <td>
+                            <h5 id="until_1"></h5>
+                        </td>
+                        <td>
+                            <h5 id="usu_1"></h5>
+                        </td>
+                        <td>
+                            <center>
+                                <input id="reserva_1" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
+                                <input id="cancelar_1" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                            </center>
+                        </td>
+                    <tr>
+
+                    <tr id="fondo">
+                        <td>
+                            <h5 id="cince_2"></h5>
+                        </td>
+                        <td>
+                            <h5 id="until_2"></h5>
+                        </td>
+                        <td>
+                            <h5 id="usu_2"></h5>
+                        </td>
+                        <td>
+                            <center>
+                                <input id="reserva_2" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
+                                <input id="cancelar_2" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                            </center>
+                        </td>
+                    </tr>
+
+                    <tr id="fondo">
+                        <td>
+                            <h5 id="cince_3"></h5>
+                        </td>
+                        <td>
+                            <h5 id="until_3"></h5>
+                        </td>
+                        <td>
+                            <h5 id="usu_3"></h5>
+                        </td>
+                        <td>
+                            <center>
+                                <input id="reserva_3" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
+                                <input id="cancelar_3" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                            </center>
+                        </td>
+                    <tr>
+
+                    <tr id="fondo">
+                        <td>
+                            <h5 id="cince_4"></h5>
+                        </td>
+                        <td>
+                            <h5 id="until_4"></h5>
+                        </td>
+                        <td>
+                            <h5 id="usu_4"></h5>
+                        </td>
+                        <td>
+                            <center>
+                                <input id="reserva_4" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
+                                <input id="cancelar_4" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                            </center>
+                        </td>
+                    <tr>
+
+                    <tr id="fondo">
+                        <td>
+                            <h5 id="cince_5"></h5>
+                        </td>
+                        <td>
+                            <h5 id="until_5"></h5>
+                        </td>
+                        <td>
+                            <h5 id="usu_5"></h5>
+                        </td>
+                        <td>
+                            <center>
+                                <input id="reserva_5" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
+                                <input id="cancelar_5" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                            </center>
+                        </td>
+                    <tr>
+
+                    <tr id="fondo">
+                        <td>
+                            <h5 id="cince_6"></h5>
+                        </td>
+                        <td>
+                            <h5 id="until_6"></h5>
+                        </td>
+                        <td>
+                            <h5 id="usu_6"></h5>
+                        </td>
+                        <td>
+                            <center>
+                                <input id="reserva_6" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
+                                <input id="cancelar_6" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                            </center>
+                        </td>
+                    <tr>
+
+                    <tr id="fondo">
+                        <td>
+                            <h5 id="cince_7"></h5>
+                        </td>
+                        <td>
+                            <h5 id="until_7"></h5>
+                        </td>
+                        <td>
+                            <h5 id="usu_7"></h5>
+                        </td>
+                        <td>
+                            <center>
+                                <input id="reserva_7" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
+                                <input id="cancelar_7" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                            </center>
+                        </td>
+                    <tr>
+
+                    <tr id="fondo">
+                        <td>
+                            <h5 id="cince_8"></h5>
+                        </td>
+                        <td>
+                            <h5 id="until_8"></h5>
+                        </td>
+                        <td>
+                            <h5 id="usu_8"></h5>
+                        </td>
+                        <td>
+                            <center>
+                                <input id="reserva_8" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
+                                <input id="cancelar_8" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                            </center>
+                        </td>
+                    <tr>
 
                 </table>
 

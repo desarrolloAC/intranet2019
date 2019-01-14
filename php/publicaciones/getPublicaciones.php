@@ -4,9 +4,11 @@ session_start();
 
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/publicaciones/Publicaciones.php';
+
 
 $conexion = conectar();
-
+$sql = "";
 
 switch ($_SESSION['ID_Rol']) {
 
@@ -16,7 +18,6 @@ switch ($_SESSION['ID_Rol']) {
         $sql = "SELECT  DISTINCT(pub.ID_Publicacion),
                 pub.titulo as titulo,
                 pub.estatus as estatus,
-                pub.contenido as contenido,
                 pub.ID_Subcategoria,
                 pub.foto,
                 pub.Estado,
@@ -46,7 +47,6 @@ switch ($_SESSION['ID_Rol']) {
         $sql = "SELECT  DISTINCT(pub.ID_Publicacion),
                 pub.titulo as titulo,
                 pub.estatus as estatus,
-                pub.contenido as contenido,
                 pub.ID_Subcategoria,
                 pub.foto,
                 pub.Estado,
@@ -74,7 +74,6 @@ switch ($_SESSION['ID_Rol']) {
         $sql = "SELECT  DISTINCT(pub.ID_Publicacion),
                 pub.titulo as titulo,
                 pub.estatus as estatus,
-                pub.contenido as contenido,
                 pub.ID_Subcategoria,
                 pub.foto,
                 pub.Estado,
@@ -104,7 +103,6 @@ switch ($_SESSION['ID_Rol']) {
         $sql = "SELECT  DISTINCT(pub.ID_Publicacion),
                     pub.titulo as titulo,
                     pub.estatus as estatus,
-                    pub.contenido as contenido,
                     pub.ID_Subcategoria,
                     pub.foto,
                     pub.Estado,
@@ -134,22 +132,25 @@ switch ($_SESSION['ID_Rol']) {
 }
 
 
-$consultaPublicacion = mysqli_query($conexion, $sql);
+$rs = mysqli_query($conexion, $sql) or die(mysqli_error($conexion));
 
 $list = [];
 
-while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+while ($row = mysqli_fetch_assoc($rs)) {
 
-    $inst = new Directorio();
-    $inst->setFoto($row["foto"]);
-    $inst->setNombreCompleto($row['nc']);
-    $inst->setSexo($row["Sexo"]);
-    $inst->setOrganizacion($row['organizacion']);
-    $inst->setDepartamento($row['departamento']);
-    $inst->setCargo($row["cargo"]);
-    $inst->setTelefono($row['Telefono']);
-    $inst->setCorreo($row["Correo"]);
-    $inst->setDireccion($row['Direccion']);
+    $inst = new Publicaciones();
+    $inst->setTitulo($row["titulo"]);
+    $inst->setStatus($row['estatus']);
+    $inst->setSubCategoriaId($row['ID_Subcategoria']);
+    $inst->setFoto($row['foto']);
+    $inst->setEstado($row["Estado"]);
+    $inst->setMotivo($row['motivo']);
+    $inst->setCreated($row["Created"]);
+    $inst->setCreatedBy($row['CreatedBy']);
+    $inst->setUpdated($row["Updated"]);
+    $inst->setUpdatedBy($row['UpdatedBy']);
+    $inst->setF_Publicacion($row["F_Publicacion"]);
+    $inst->setPublicatedBy($row['PublicatedBy']);
 
     array_push($list, $inst);
 }

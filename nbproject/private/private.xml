@@ -19,13 +19,6 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/var/www/html/intranet/php/CommandHandler/AddAvailabilityCommandHandler.php</file>
-            <file>file:/var/www/html/intranet/php/UnitOfWork/ReservationUnitOfWork.php</file>
-            <file>file:/var/www/html/intranet/js/reserva/lista_salas.js</file>
-            <file>file:/var/www/html/intranet/reserva.php</file>
-            <file>file:/var/www/html/intranet/php/AddAvailability.php</file>
-            <file>file:/var/www/html/intranet/php/Repository/AvailabilityRepository.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

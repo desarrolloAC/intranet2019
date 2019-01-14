@@ -430,6 +430,7 @@ const inavilitarFormCalendario = () => {
  * @constant {{Function}}
  */
 const validarReserva = () => {
+
     let success = 0;
 
     if (availability.space == null || availability.space == "" ||

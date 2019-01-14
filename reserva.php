@@ -26,6 +26,7 @@
         <main class="contenedor_calendario">
 
             <table id="calendario" border="0">
+
                 <tr id="titulo_mes">
                     <td colspan="7">
                         <h1>Consultar Disponibilidad</h1>

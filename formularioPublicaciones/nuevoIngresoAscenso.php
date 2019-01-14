@@ -65,8 +65,8 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
                 <option> Cargo </option>
             </select>
 
-            <textarea id="txtContenidoNuevoAscenso"
-                      name="txtContenidoNuevoAscenso"
+            <textarea id="txtDescripcionNuevoAscenso"
+                      name="txtDescripcionNuevoAscenso"
                       onKeyDown="textCounter(this.form.txtContenidoNuevoAscenso, this.form.remLen, 500);"
                       onKeyUp="textCounter(this.form.txtContenidoNuevoAscenso, this.form.remLen, 500);"
                       placeholder="Descripcion"
@@ -78,7 +78,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
             <input id="btnImagenNuevoAscenso" type="file" name="btnImagenNuevoAscenso" required>
 
-            <input id="btnRegistrarNuevoAscenso" type="submit" name="btnRegistrarNuevoAscenso" value="Registrar">
+                 <input id="btnRegistrarNuevoAscenso" type="submit" name="btnRegistrarNuevoAscenso" value="Registrar">
 
         </form>
 

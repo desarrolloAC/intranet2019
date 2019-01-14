@@ -18,13 +18,16 @@ $ruta = $_FILES['btnImagenCumpleMes']['tmp_name'];
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
-$fecha = $_POST['txtFechaCumpleMes'];
-$nombreCompleto = $_POST['txtNombreCompletoCumpleMes'];
-$departamento = $_POST['txtDpto2'];
-
 
 $createdBy = $_SESSION['Cedula'];
 $updateBy = $_SESSION['Cedula'];
+
+
+$nombreCompleto = $_POST['txtNombreCompletoCumpleMes'];
+$departamento = $_POST['txtDpto2'];
+$fecha = $_POST['txtFechaCumpleMes'];
+
+
 
 switch ($error) {
 
@@ -52,7 +55,7 @@ switch ($error) {
 
         copy($ruta, $destino);
 
-        $insert = " CALL sp_RegistroCumpleañoMes(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $insert = " CALL sp_RegistroCumpleañoMes(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 
         $stmt = mysqli_prepare($conexion, $insert);
@@ -60,13 +63,12 @@ switch ($error) {
                 $idOrganizacion,
                 $idSubCategoria,
                 $cedula,
-                $contenido,
+                $destino_temp,
                 $createdBy,
                 $updateBy,
                 $nombreCompleto,
                 $departamento,
-                $fecha,
-                $destino_temp
+                $fecha
         );
 
         $stmt->execute();

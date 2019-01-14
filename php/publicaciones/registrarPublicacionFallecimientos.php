@@ -9,20 +9,12 @@ $conexion = conectar();
 
 $idOrganizacion = $_SESSION['ID_Organizacion'];
 $idSubCategoria = $_POST['txtCodigoSubCategoriaCondolencia'];
-$contenido = $_POST['txtContenidoCondolencia'];
-
-
 $cedula = $_SESSION['Cedula'];
-$date = date("Y-m-d_His");
-$created = date("Y-m-d H:i:s");
 $createdBy = $_SESSION['Cedula'];
-$updated = date("Y-m-d H:i:s");
 $updateBy = $_SESSION['Cedula'];
+$contenido = $_POST['txtContenidoCondolencia'];
+$date = date("Y-m-d_His");
 
-
-
-$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
-$destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
 
 switch ($error) {
@@ -51,7 +43,7 @@ switch ($error) {
 
         copy($ruta, $destino);
 
-        $insert = " CALL sp_RegistroFallecimiento(?, ?, ?, ?, ?, ?, ?, ?);";
+        $insert = " CALL sp_RegistroFallecimiento(?, ?, ?, ?, ?, ?);";
 
 
         $stmt = mysqli_prepare($conexion, $insert);
@@ -60,8 +52,6 @@ switch ($error) {
                 $idSubCategoria,
                 $cedula,
                 $contenido,
-                $destino_temp,
-                $titulo,
                 $createdBy,
                 $updateBy
         );

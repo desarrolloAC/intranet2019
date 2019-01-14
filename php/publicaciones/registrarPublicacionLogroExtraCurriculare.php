@@ -9,25 +9,23 @@ $conexion = conectar();
 
 $idOrganizacion = $_SESSION['ID_Organizacion'];
 $idSubCategoria = $_POST['txtCodigoSubCategoriaLogro'];
-$titulo = $_POST['txtTituloLogro'];
-$contenido = $_POST['txtContenidoLogro'];
-
 
 $cedula = $_SESSION['Cedula'];
-$date = date("Y-m-d_His");
-$created = date("Y-m-d H:i:s");
-$createdBy = $_SESSION['Cedula'];
-$updated = date("Y-m-d H:i:s");
-$updateBy = $_SESSION['Cedula'];
-
-
 $foto = $_FILES['btnImagen']['name'];
 $error = $_FILES['btnImagen']['error'];
 $ruta = $_FILES['btnImagen']['tmp_name'];
 
-
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
+
+$createdBy = $_SESSION['Cedula'];
+$updateBy = $_SESSION['Cedula'];
+
+$tipoDeLogro = $_POST['txtTituloLogro'];
+$descripcion = $_POST['txtContenidoLogro'];
+$colaborador = $_POST['txtNombreCompletoLogro'];
+$departamento = $_POST ['txtDpto'];
+$cargo = $_POST ['txtCargo'];
 
 
 switch ($error) {
@@ -56,7 +54,7 @@ switch ($error) {
 
         copy($ruta, $destino);
 
-        $insert = " CALL sp_RegistroAvanceInf(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $insert = " CALL sp_RegistroAvanceInf(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 
         $stmt = mysqli_prepare($conexion, $insert);
@@ -64,11 +62,14 @@ switch ($error) {
                 $idOrganizacion,
                 $idSubCategoria,
                 $cedula,
-                $contenido,
                 $destino_temp,
-                $titulo,
                 $createdBy,
-                $updateBy
+                $updateBy,
+                $tipoDeLogro,
+                $descripcion,
+                $colaborador,
+                $departamento,
+                $cargo
         );
 
         $stmt->execute();

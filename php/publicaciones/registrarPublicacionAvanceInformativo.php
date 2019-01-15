@@ -8,90 +8,92 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 $conexion = conectar();
 
 $idOrganizacion = $_SESSION['ID_Organizacion'];
-$idSubCategoria = $_POST['txtCodigoSubCategoriaLogro'];
-$titulo = $_POST['txtTituloLogro'];
-$contenido = $_POST['txtContenidoLogro'];
-
-
+$idSubCategoria = $_POST['txtCodigoSubCategoriaAvanceInformativo'];
+$titulo = $_POST['txtTituloAvanceInformativo'];
+$contenido = $_POST['txtContenidoAvanceInformativo'];
 $cedula = $_SESSION['Cedula'];
-$date = date("Y-m-d_His");
-$created = date("Y-m-d H:i:s");
 $createdBy = $_SESSION['Cedula'];
-$updated = date("Y-m-d H:i:s");
 $updateBy = $_SESSION['Cedula'];
 
+$date = date("Y-m-d_His");
 
 $foto = $_FILES['archivo']['name'];
 $error = $_FILES['archivo']['error'];
 $ruta = $_FILES['archivo']['tmp_name'];
-
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
 $foto1 = $_FILES['archivo1']['name'];
 $error1 = $_FILES['archivo1']['error'];
 $ruta1 = $_FILES['archivo1']['tmp_name'];
-
-$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
-$destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
+$destino_temp1 = 'assets/image/fotoPublicaciones/' . $date . strstr($foto1, '.');
+$destino1 = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp1;
 
 $foto2 = $_FILES['archivo2']['name'];
 $error2 = $_FILES['archivo2']['error'];
 $ruta2 = $_FILES['archivo2']['tmp_name'];
-
-$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
-$destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
+$destino_temp2 = 'assets/image/fotoPublicaciones/' . $date . strstr($foto2, '.');
+$destino2 = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp2;
 
 $foto3 = $_FILES['archivo3']['name'];
 $error3 = $_FILES['archivo3']['error'];
 $ruta3 = $_FILES['archivo3']['tmp_name'];
+$destino_temp3 = 'assets/image/fotoPublicaciones/' . $date . strstr($foto3, '.');
+$destino3 = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp3;
 
-$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
-$destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
+if ($error == 1 || $error1 == 1 || $error2 == 1 || $error3 == 1) {
+    
+    echo "El tamaño del archivo supera el límite permitido
+        por el servidor (argumento upload_max_filesize del archivo
+        php.ini).";
+    
+} elseif ($error == 2 || $error1 == 2 || $error2 == 2 || $error3 == 2) {
+    
+    echo " El tamaño del archivo supera el límite permitido
+        por el formulario (argumento post_max_size del archivo php.ini).";
+    
+} elseif ($error == 3 || $error1 == 3 || $error2 == 3 || $error3 == 3) {
+    
+    echo "El envío del archivo se ha interrumpido durante
+        la transferencia.";
+    
+} elseif ($error == 4 || $error1 == 4 || $error2 == 4 || $error3 == 4) {
+    
+    echo "El tamaño del archivo que ha enviado es nulo.";
+    
+} else {
+    
+    copy($ruta, $destino);
+    copy($ruta1, $destino1);
+    copy($ruta2, $destino2);
+    copy($ruta3, $destino3);
 
-switch ($error) {
+    $insert = " CALL sp_RegistroAvanceInf(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
-    case 1: // UPLOAD_ERR_INI_SIZE
-        echo "El tamaño del archivo supera el límite permitido
-			por el servidor (argumento upload_max_filesize del archivo
-			php.ini).";
-        break;
+    $stmt = mysqli_prepare($conexion, $insert);
+    $stmt->bind_param("sssssssssss",
+            $idOrganizacion,
+            $idSubCategoria,
+            $cedula,
+            $titulo,
+            $createdBy,
+            $updateBy,
+            $contenido,
+            $destino_temp,
+            $destino_temp1,
+            $destino_temp2,
+            $destino_temp3
+            
+            
+    );
 
-    case 2: // UPLOAD_ERR_FORM_SIZE
-        echo " El tamaño del archivo supera el límite permitido
-			por el formulario (argumento post_max_size del archivo php.ini).";
-        break;
-
-    case 3: // UPLOAD_ERR_PARTIAL
-        echo "El envío del archivo se ha interrumpido durante
-			la transferencia.";
-        break;
-
-    case 4: // UPLOAD_ERR_NO_FILE
-        echo "El tamaño del archivo que ha enviado es nulo.";
-        break;
-
-    default :
-
-        copy($ruta, $destino);
-
-        $insert = " CALL sp_RegistroAvanceInf(?, ?, ?, ?, ?, ?, ?, ?);";
-
-        $stmt = mysqli_prepare($conexion, $insert);
-        $stmt->bind_param("ssssssss",
-                $idOrganizacion,
-                $idSubCategoria,
-                $cedula,
-                $contenido,
-                $destino_temp,
-                $titulo,
-                $createdBy,
-                $updateBy
-        );
-
-        $stmt->execute();
+    $stmt->execute() or die (mysqli_error($conexion));
+    
 }
+
+
+
 
 
 switch ($_SESSION['ID_Rol']) {

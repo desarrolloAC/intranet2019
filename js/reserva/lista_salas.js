@@ -421,7 +421,12 @@ const disponibilidad = new Vue({
 
     },
     data: {
-        userState: "",
+        userState: {
+            state: ""
+        },
+        keyState: {
+            state: ""
+        },
         user: {
             pNombre: "",
             sNombre: "",
@@ -557,7 +562,7 @@ const disponibilidad = new Vue({
             .done((payload) => {
 
                 if (payload !== 'null') {
-                    this.userState = payload;
+                    this.userState.state = payload;
                 }
 
             })
@@ -566,7 +571,7 @@ const disponibilidad = new Vue({
 
             });
 
-            return this.userState === "";
+            return this.userState.state === "";
 
         },
         validarEmail: function (email) {
@@ -643,6 +648,16 @@ const disponibilidad = new Vue({
             this.control();
 
         },
+        validarKey: function (key) {
+
+            if (this.keyState === key) {
+                return true;
+
+            } else {
+                return false;
+
+            }
+        },
         enviarCorreo: function (correo) {
 
             $.ajax({
@@ -654,9 +669,12 @@ const disponibilidad = new Vue({
                     correo: correo
                 }
 
-            }).done((payload) => {
+            })
+            .done((payload) => {
 
-
+                if (payload !== 'null') {
+                    this.keyState.state = payload;
+                }
 
             })
             .fail((ex) => {
@@ -683,8 +701,9 @@ const disponibilidad = new Vue({
 
             this.enviarCorreo(correo);
 
+            let key = prompt("Dime la clave.");
 
-            let correo = prompt("Dime tu correo para poder reservar.");
+
 
         }
     }

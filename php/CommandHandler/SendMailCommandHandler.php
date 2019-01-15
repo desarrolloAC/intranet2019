@@ -64,6 +64,8 @@ class SendMailCommandHandler implements ICommandHandler {
                 $this->subject,
                 $this->generateMensager()
         );
+
+        echo $this->key;
     }
 
     private function generateMensager() {

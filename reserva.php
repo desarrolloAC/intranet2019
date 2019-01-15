@@ -226,7 +226,7 @@
                         <td>
                             <center>
                                 <input id="reserva_0" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
-                                <input id="cancelar_0" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                                <input id="cancelar_0" class="reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="Cancelar">
                             </center>
                         </td>
                     <tr>
@@ -244,7 +244,7 @@
                         <td>
                             <center>
                                 <input id="reserva_1" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
-                                <input id="cancelar_1" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                                <input id="cancelar_1" class="reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="Cancelar">
                             </center>
                         </td>
                     <tr>
@@ -262,7 +262,7 @@
                         <td>
                             <center>
                                 <input id="reserva_2" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
-                                <input id="cancelar_2" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                                <input id="cancelar_2" class="reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="Cancelar">
                             </center>
                         </td>
                     </tr>
@@ -280,7 +280,7 @@
                         <td>
                             <center>
                                 <input id="reserva_3" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
-                                <input id="cancelar_3" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                                <input id="cancelar_3" class="reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="Cancelar">
                             </center>
                         </td>
                     <tr>
@@ -298,7 +298,7 @@
                         <td>
                             <center>
                                 <input id="reserva_4" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
-                                <input id="cancelar_4" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                                <input id="cancelar_4" class="reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="Cancelar">
                             </center>
                         </td>
                     <tr>
@@ -316,7 +316,7 @@
                         <td>
                             <center>
                                 <input id="reserva_5" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
-                                <input id="cancelar_5" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                                <input id="cancelar_5" class="reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="Cancelar">
                             </center>
                         </td>
                     <tr>
@@ -334,7 +334,7 @@
                         <td>
                             <center>
                                 <input id="reserva_6" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
-                                <input id="cancelar_6" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                                <input id="cancelar_6" class="reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="Cancelar">
                             </center>
                         </td>
                     <tr>
@@ -352,7 +352,7 @@
                         <td>
                             <center>
                                 <input id="reserva_7" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
-                                <input id="cancelar_7" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                                <input id="cancelar_7" class="reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="Cancelar">
                             </center>
                         </td>
                     <tr>
@@ -370,7 +370,7 @@
                         <td>
                             <center>
                                 <input id="reserva_8" class="reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Reservar">
-                                <input id="cancelar_8" class="reservar" onClick="eventoCancelar(this);" type="submit" name="btnCancelar" value="Cancelar">
+                                <input id="cancelar_8" class="reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="Cancelar">
                             </center>
                         </td>
                     <tr>

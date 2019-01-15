@@ -13,51 +13,22 @@ $cedula = $_SESSION['Cedula'];
 $createdBy = $_SESSION['Cedula'];
 $updateBy = $_SESSION['Cedula'];
 $contenido = $_POST['txtContenidoCondolencia'];
-$date = date("Y-m-d_His");
 
 
-
-switch ($error) {
-
-    case 1: // UPLOAD_ERR_INI_SIZE
-        echo "El tamaño del archivo supera el límite permitido
-			por el servidor (argumento upload_max_filesize del archivo
-			php.ini).";
-        break;
-
-    case 2: // UPLOAD_ERR_FORM_SIZE
-        echo " El tamaño del archivo supera el límite permitido
-			por el formulario (argumento post_max_size del archivo php.ini).";
-        break;
-
-    case 3: // UPLOAD_ERR_PARTIAL
-        echo "El envío del archivo se ha interrumpido durante
-			la transferencia.";
-        break;
-
-    case 4: // UPLOAD_ERR_NO_FILE
-        echo "El tamaño del archivo que ha enviado es nulo.";
-        break;
-
-    default :
-
-        copy($ruta, $destino);
-
-        $insert = " CALL sp_RegistroFallecimiento(?, ?, ?, ?, ?, ?);";
+$insert = " CALL sp_RegistroFallecimiento(?, ?, ?, ?, ?, ?);";
 
 
-        $stmt = mysqli_prepare($conexion, $insert);
-        $stmt->bind_param("ssssssss",
-                $idOrganizacion,
-                $idSubCategoria,
-                $cedula,
-                $contenido,
-                $createdBy,
-                $updateBy
-        );
+$stmt = mysqli_prepare($conexion, $insert);
+$stmt->bind_param("ssssss",
+        $idOrganizacion,
+        $idSubCategoria,
+        $cedula,
+        $contenido,
+        $createdBy,
+        $updateBy
+);
 
-        $stmt->execute();
-}
+$stmt->execute() or die (mysqli_error($conexion));
 
 
 switch ($_SESSION['ID_Rol']) {

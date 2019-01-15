@@ -22,7 +22,7 @@
 
         <a href="#" class="cerrar">X</a>
 
-        <form method="POST" action="php/publicaciones/registrarPublicacionFallecimiento.php">
+        <form method="POST" action="php/publicaciones/registrarPublicacionFallecimientos.php">
 
             <input id="txtCodigoSubCategoriaCondolencia" type="text" name="txtCodigoSubCategoriaCondolencia" value="COND" maxlength="4">
 

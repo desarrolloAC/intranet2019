@@ -34,7 +34,7 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 
         <a href="#" class="cerrar">X</a>
 
-        <form method="POST" action="php/publicaciones/registrarPublicacionInvitacionesGeneral.php">
+        <form method="POST" action="php/publicaciones/registrarPublicacionInvitacionesGenerales.php">
 
             <input id="txtCodigoSubCategoriaInvitacionGeneral" type="text" name="txtCodigoSubCategoriaInvitacionGeneral" value="GENE" maxlength="4" readonly>
 

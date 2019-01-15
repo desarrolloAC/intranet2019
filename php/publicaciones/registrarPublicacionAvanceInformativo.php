@@ -25,18 +25,26 @@ $foto = $_FILES['archivo']['name'];
 $error = $_FILES['archivo']['error'];
 $ruta = $_FILES['archivo']['tmp_name'];
 
+$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
+$destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
+
 $foto1 = $_FILES['archivo1']['name'];
 $error1 = $_FILES['archivo1']['error'];
 $ruta1 = $_FILES['archivo1']['tmp_name'];
+
+$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
+$destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
 $foto2 = $_FILES['archivo2']['name'];
 $error2 = $_FILES['archivo2']['error'];
 $ruta2 = $_FILES['archivo2']['tmp_name'];
 
+$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
+$destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
+
 $foto3 = $_FILES['archivo3']['name'];
 $error3 = $_FILES['archivo3']['error'];
 $ruta3 = $_FILES['archivo3']['tmp_name'];
-
 
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;

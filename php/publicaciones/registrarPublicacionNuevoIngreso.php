@@ -56,7 +56,7 @@ switch ($error) {
 
 
         $stmt = mysqli_prepare($conexion, $insert);
-        $stmt->bind_param("ssssssss",
+        $stmt->bind_param("sssssssss",
                 $idOrganizacion,
                 $idSubCategoria,
                 $cedula,

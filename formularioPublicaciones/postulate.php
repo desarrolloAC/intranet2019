@@ -76,7 +76,10 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 
             <label id="tituloCaracteresPostulate1">Caracteres Restantes</label>
 
-           
+            <input id="txtCorreo" type="text" name="txtCorreo" value="" maxlength="100" placeholder="Correo" required>
+
+            <input id="txtFecha" type="date" name="txtFecha" required>
+            
             <input id="btnRegistrarPostulate" type="submit" name="btnRegistrarPostulate" value="Registrar">
 
         </form>

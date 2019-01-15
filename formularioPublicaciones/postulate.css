@@ -167,7 +167,21 @@ label#tituloCaracteresPostulate2 {
     font-weight: bold;
     font-size: 13.3px;
 }
+input#txtCorreo {
+    position: absolute;
+    top: 11.5cm;
+    width: 6cm;
+    height: 0.5cm;
+}
 
+input#txtFecha {
+    position: absolute;
+    top: 12.5cm;
+    width: 3.5cm;
+    height: 0.5cm;
+    font-size: 14px;
+    border-color: rgb(69, 69, 69);
+}
 /*BOTON REGISTAR*/
 input#btnRegistrarPostulate {
     position: absolute;

@@ -24,13 +24,13 @@ namespace Mailer;
  *
  * @author brayan
  */
-class Correo {
+class EMail {
 
     private $from;
     private $to;
     private $subject;
     private $messager;
-    
+
     public function __construct() {
         
     }
@@ -66,6 +66,5 @@ class Correo {
     public function setMessager($messager) {
         $this->messager = $messager;
     }
-
 
 }

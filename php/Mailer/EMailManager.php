@@ -20,29 +20,26 @@
 namespace Mailer;
 
 use PHPMailer\PHPMailer\PHPMailer;
-use Mailer\Correo;
+use Mailer\EMail;
 
 /**
  * Description of Mail
  *
  * @author brayan
  */
-class Mail {
-    
+class EMailManager {
+
     const SMTP_DEBUG = 0;
     const SMTP_AUTH = true;
-    
     const HOST = "smtp.gmail.com";
     const PORT = 587;
-    
     const USERNAME = "reservaintranet@gmail.com";
     const PASSWORD = 'intranet2018';
-    
 
     private $mail;
-    
+
     public function __construct() {
-        
+
         $this->mail = new PHPMailer();
         $this->mail->isSMTP();
         $this->mail->Host = self::HOST;
@@ -50,54 +47,49 @@ class Mail {
         $this->mail->SMTPDebug = self::SMTP_DEBUG;
         $this->mail->SMTPAuth = self::SMTP_AUTH;
         $this->mail->Username = self::USERNAME;
-        $this->mail->Password = self::PASSWORD;        
+        $this->mail->Password = self::PASSWORD;
         $this->mail->CharSet = PHPMailer::CHARSET_UTF8;
-        
     }
 
     /**
      * enviar un correo.
-     * 
+     *
      * @param string $from
      * @param string $to
      * @param string $subject
      * @param string $messager
      */
     public function send($from, $to, $subject, $messager) {
-        
+
         $this->mail->setFrom($from);
         $this->mail->addAddress($to);
         $this->mail->Subject = $subject;
         $this->mail->msgHTML($messager);
-        
+
         if (!$this->mail->send()) {
             echo 'Mailer Error: ' . $this->mail->ErrorInfo;
-            
         } else {
             echo 'Message sent!';
-            
         }
     }
-    
+
     /**
      * enviar un correo.
-     * 
+     *
      * @param Correo $correo
      */
     public function sendEmail($correo) {
-        
+
         $this->mail->setFrom($correo->getFrom());
         $this->mail->addAddress($correo->getTo());
         $this->mail->Subject = $correo->getSubject();
         $this->mail->msgHTML($correo->getMessager());
-        
+
         if (!$this->mail->send()) {
             echo 'Mailer Error: ' . $this->mail->ErrorInfo;
-            
         } else {
             echo 'Message sent!';
-            
         }
     }
-}
 
+}

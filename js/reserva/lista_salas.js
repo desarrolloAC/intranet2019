@@ -638,32 +638,54 @@ const disponibilidad = new Vue({
         },
         eventoOcultarPanelReserva: function (event) {
 
-            this.control();
             this.ocultarPanelDisponivilidad();
             this.avilitarFormCalendario();
+            this.control();
+
+        },
+        enviarCorreo: function (correo) {
+
+            $.ajax({
+                url: "php/SendMail.php",
+                type: "GET",
+                contentType: "application/x-www-form-urlencoded;charset=utf-8;",
+                crossDomain: true,
+                data: {
+                    correo: correo
+                }
+
+            }).done((payload) => {
+
+
+
+            })
+            .fail((ex) => {
+                alert("Error al consultar el usuario, el estatus es: " + ex.status);
+
+            });
+
+        },
+        eventoCancelar: function (event) {
+
+            let id = parseInt(event.id.substring(8));
+
+            let correo = prompt("Dime tu correo para poder reservar.");
+
+            if (this.validarUsuario(correo)) {
+                alert("Estimado usuario, Debe colocar la informacion correctamente.");
+                return;
+            }
+
+            if (this.validarSiExisteElUsuario(correo)) {
+                alert("Estimado usuario, El correo que ingreso no existe.");
+                return;
+            }
+
+            this.enviarCorreo(correo);
+
+
+            let correo = prompt("Dime tu correo para poder reservar.");
 
         }
-//        eventoCancelar = (event) => {
-//
-//            let id = parseInt(event.id.substring(8));
-//
-//            let correo = prompt("Dime tu correo para poder cancelar.");
-//
-//            if (validarUsuario(correo)) {
-//                alert("Estimado usuario, Debe colocar la informacion correctamente.");
-//                return;
-//            }
-//
-//            consultarUsuario(correo);
-//
-//            let user = $('#usu_' + id).val();
-//
-//            if (user !== correo) {
-//                alert("Estimado usuario, Uted no puede cancelar la reserva por no ser quien la creo.");
-//            }
-//            if (user === correo) {
-//                alert("Exito");
-//            }
-//        }
     }
 });

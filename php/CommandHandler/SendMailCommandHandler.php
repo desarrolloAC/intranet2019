@@ -19,7 +19,7 @@
 
 namespace CommandHandler;
 
-use Mailer\Mail;
+use Mailer\EMailManager;
 use Util\ICommandHandler;
 
 /**
@@ -28,69 +28,75 @@ use Util\ICommandHandler;
  * @author brayan
  */
 class SendMailCommandHandler implements ICommandHandler {
-    
+    //"brayanmartinez827@gmail.com"
+    //"reservaintranet@gmail.com",
+    //"willians.vasquez@alkescorp.com",
+    //"jose.birriel@alkescorp.com",
+    //"Ruth.sukerman@alkescorp.com",
+    //"vnunez@alkescorp.com",
+    //"walquiria.urdaneta@alkescorp.com",
+
     /**
      * Este es el mailer.
-     * @var Mail 
+     * @var Mail
      */
     private $mailer;
-    
+    private $key;
+    private $from;
+    private $to;
+    private $subject;
+
     public function __construct() {
-        $this->mailer = new Mail();
+        $this->mailer = new EMailManager();
+        $this->key = $this->generateCode();
+        $this->from = "reservaintranet@gmail.com";
+        $this->to = "";
+        $this->subject = "Eliminar reserva";
     }
 
     public function handler($handler) {
-        
-        $key = substr(md5($this->getRealIP(). rand(1, 1000000)), 0, 8);
-        
-        $html = "<h1>Codigo de comfirmacion</h1><br>".
-                "<p>Estas es una prueba para saber si  puedo enviar correos desde php Jajajajajajajaja. </p><br>".
-                "<p>Estas es la clave ".$key." para eliminar </p>";
-        
+
+        $this->to = $handler;
+
         $this->mailer->send(
-            "reservaintranet@gmail.com",
-            //"willians.vasquez@alkescorp.com", 
-            //"jose.birriel@alkescorp.com",
-            //"Ruth.sukerman@alkescorp.com",
-            //"vnunez@alkescorp.com",    
-            //"brayanmartinez827@gmail.com",  
-            //"walquiria.urdaneta@alkescorp.com",
-            $handler,    
-            "Eliminar reserva",
-            $html
+                $this->from,
+                $this->to,
+                $this->subject,
+                $this->generateMensager()
         );
-        
     }
-    
+
+    private function generateMensager() {
+        return "<h1>Codigo de comfirmacion</h1><br>" .
+                "<p>Estas es una prueba para saber si  puedo enviar correos desde php Jajajajajajajaja. </p><br>" .
+                "<p>Estas es la clave " . $this->key . " para eliminar </p>";
+    }
+
+    private function generateCode() {
+        return substr(md5($this->getRealIP() . rand(1, 1000000)), 0, 8);
+    }
+
     private function getRealIP() {
 
-        if (isset($_SERVER["HTTP_CLIENT_IP"])){
+        if (isset($_SERVER["HTTP_CLIENT_IP"])) {
 
             return $_SERVER["HTTP_CLIENT_IP"];
-
-        }elseif (isset($_SERVER["HTTP_X_FORWARDED_FOR"])){
+        } elseif (isset($_SERVER["HTTP_X_FORWARDED_FOR"])) {
 
             return $_SERVER["HTTP_X_FORWARDED_FOR"];
-
-        }elseif (isset($_SERVER["HTTP_X_FORWARDED"])){
+        } elseif (isset($_SERVER["HTTP_X_FORWARDED"])) {
 
             return $_SERVER["HTTP_X_FORWARDED"];
-
-        }elseif (isset($_SERVER["HTTP_FORWARDED_FOR"])){
+        } elseif (isset($_SERVER["HTTP_FORWARDED_FOR"])) {
 
             return $_SERVER["HTTP_FORWARDED_FOR"];
-
-        }elseif (isset($_SERVER["HTTP_FORWARDED"])){
+        } elseif (isset($_SERVER["HTTP_FORWARDED"])) {
 
             return $_SERVER["HTTP_FORWARDED"];
-
-        }else{
+        } else {
 
             return $_SERVER["REMOTE_ADDR"];
-
         }
-    }      
+    }
 
 }
-
-

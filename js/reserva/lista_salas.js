@@ -1,6 +1,8 @@
 const root = {
     data: {
-        controlFormCalendario: true,
+        controlFormCalendario: {
+            state: true
+        },
         availability: {
             availability_id: 0,
             isactive: "",
@@ -115,7 +117,9 @@ const root = {
     },
     methods: {
         control: function () {
-            this.controlFormCalendario = !this.controlFormCalendario;
+
+            this.controlFormCalendario.state = !this.controlFormCalendario.state;
+
         },
         bindMap: function (a, b, c) {
 
@@ -312,7 +316,7 @@ const calendario = new Vue({
         eventoFormCalendario: function (event) {
 
             //valida si se puede modificar la reserva.
-            if (this.controlFormCalendario == false) {
+            if (this.controlFormCalendario.state === false) {
                 alert("Estimado usuario, ya se ah seleccionado una opcion.");
                 return;
             }
@@ -634,9 +638,9 @@ const disponibilidad = new Vue({
         },
         eventoOcultarPanelReserva: function (event) {
 
+            this.control();
             this.ocultarPanelDisponivilidad();
             this.avilitarFormCalendario();
-            this.control();
 
         }
 //        eventoCancelar = (event) => {

@@ -89,7 +89,9 @@ textarea#txtContenidoAvanceInformativo{
 }
 
 input#ncaracteresAvanceInformativo{
-	position: absolute; top: 15.2cm; left: 2.5cm;
+	position: absolute; 
+        top: 15.2cm; 
+        left: 2.5cm;
 	border:none;
 	background-color: transparent;
 	font-weight: bold;

@@ -53,12 +53,20 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
             <label id="tituloCaracteresBoletinInformativo">Caracteres Restantes</label>
 
             <input id="btnImagenBoletinInformativo" type="file" name="archivo" required>
+            
+            
 
-            <input id="btnImagenBoletinInformativo1" type="file" name="archivo1">
+            <input id="btnImagenBoletinInformativo1" type="file" name="archivo1" >
+            
+            
 
-            <input id="btnImagenBoletinInformativo2" type="file" name="archivo2">
+            <input id="btnImagenBoletinInformativo2" type="file" name="archivo2" >
+            
+            
 
             <input id="btnImagenBoletinInformativo3" type="file" name="archivo3">
+            
+            
 
             <input id="btnRegistrarBoletinInformativo" type="submit" name="btnRegistrarBoletinInformativo" value="Registrar">
 

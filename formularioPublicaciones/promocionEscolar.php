@@ -40,7 +40,7 @@
             <label id="tituloCaracteresPromocionEscolar">Caracteres Restantes</label>
 
             <input id="btnImagenPromocionEscolar" type="file" name="btnImagenPromocionEscolar" required>
-
+             
             <input id="btnRegistrarPromocionEscolar" type="submit" name="btnRegistrarPromocionEscolar" value="Registrar">
 
         </form>

@@ -8,16 +8,13 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 $conexion = conectar();
 
 $idOrganizacion = $_SESSION['ID_Organizacion'];
-$idSubCategoria = $_POST['txtCodigoSubCategoriaLogro'];
-$titulo = $_POST['txtTituloLogro'];
-$contenido = $_POST['txtContenidoLogro'];
+$idSubCategoria = $_POST['txtCodigoSubCategoriaPromocionEscolar'];
+$nombreCompleto = $_POST['txtNombreCompletoPromocionEscolar'];
+$contenido = $_POST['txtContenidoPromocionEscolar'];
 
 
 $cedula = $_SESSION['Cedula'];
-$date = date("Y-m-d_His");
-$created = date("Y-m-d H:i:s");
 $createdBy = $_SESSION['Cedula'];
-$updated = date("Y-m-d H:i:s");
 $updateBy = $_SESSION['Cedula'];
 
 
@@ -56,18 +53,18 @@ switch ($error) {
 
         copy($ruta, $destino);
 
-        $insert = " CALL sp_RegistroAvanceInf(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $insert = " CALL sp_Registropromoescolar(?, ?, ?, ?, ?, ?, ?, ?);";
 
         $stmt = mysqli_prepare($conexion, $insert);
         $stmt->bind_param("ssssssss",
                 $idOrganizacion,
                 $idSubCategoria,
                 $cedula,
-                $contenido,
                 $destino_temp,
-                $titulo,
                 $createdBy,
-                $updateBy
+                $updateBy,
+                $nombreCompleto,
+                $contenido
         );
 
         $stmt->execute();
@@ -79,14 +76,14 @@ switch ($_SESSION['ID_Rol']) {
     case TypeUsuario::ADMINISTRADOR:
         echo'<script language="javascript">
                 alert("Publicacion Realizada Con Exito");
-                location.href="../menuAdministrador.php";
+                location.href="../../menuAdministrador.php";
             </script>';
         break;
 
     case TypeUsuario::AUTORIZADOR:
         echo'<script language="javascript">
                 alert("Publicacion Realizada Con Exito");
-                location.href="../menuAutorizador.php";
+                location.href="../../menuAutorizador.php";
             </script>';
         break;
 

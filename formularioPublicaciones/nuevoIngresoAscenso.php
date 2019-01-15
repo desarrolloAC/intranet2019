@@ -43,8 +43,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
             <input id="txtCodigoSubCategoriaNuevoAscenso" type="text" name="txtCodigoSubCategoriaNuevoAscenso" value="" maxlength="4">
 
             <input id="txtNombreCompletoNuevoAscenso" type="text" name="txtNombreCompletoNuevoAscenso" placeholder="Nombre Completo" required>
-
-            <?php
+             <?php
             echo "
                 <select name='txtDpto' class='combos_formulario_usuario' id='txtDpto' required >
                 <option> Departamento </option>";
@@ -60,13 +59,12 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
             echo "</select>";
             ?>
-
             <select name='txtCargo' class='combos_formulario_usuario' id='txtCargo' required>
                 <option> Cargo </option>
             </select>
 
-            <textarea id="txtDescripcionNuevoAscenso"
-                      name="txtDescripcionNuevoAscenso"
+            <textarea id="txtContenidoNuevoAscenso"
+                      name="txtContenidoNuevoAscenso"
                       onKeyDown="textCounter(this.form.txtContenidoNuevoAscenso, this.form.remLen, 500);"
                       onKeyUp="textCounter(this.form.txtContenidoNuevoAscenso, this.form.remLen, 500);"
                       placeholder="Descripcion"
@@ -75,10 +73,18 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
             <input id="ncaracteresNuevoAscenso" readonly type=text name=remLen size=3 maxlength=3 value="500">
 
             <label id="tituloCaracteresNuevoAscenso">Caracteres Restantes</label>
+            
+            
 
             <input id="btnImagenNuevoAscenso" type="file" name="btnImagenNuevoAscenso" required>
-
-                 <input id="btnRegistrarNuevoAscenso" type="submit" name="btnRegistrarNuevoAscenso" value="Registrar">
+            
+            <?php
+            $sql = " SELECT * FROM organizacion o WHERE o.Estatus = 'A' AND o.ID_Organizacion = '" . $_SESSION['ID_Organizacion'] . "';";
+            $rs = mysqli_query($conexion, $sql) or die(mysqli_error($conexion));
+            $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
+            echo '<img src="' . $row[foto] . '" type="image/png" width="100" height="100"></img>';
+            ?>
+            <input id="btnRegistrarNuevoAscenso" type="submit" name="btnRegistrarNuevoAscenso" value="Registrar">
 
         </form>
 

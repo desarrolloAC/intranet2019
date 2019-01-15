@@ -33,7 +33,7 @@
     background-image: url("../assets/image/plantillas/png/boletinInformativo.png");
     background-repeat: no-repeat;
     background-position: 0px 0px;
-    background-size: 13.1cm 15.5cm;
+    background-size: 13.1cm 17.3cm;
 }
 
 .cerrar {
@@ -84,6 +84,7 @@ input#txtTituloBoletinInformativo {
     height: 0.5cm;
     font-size: 14px;
     border-color: rgb(69, 69, 69);
+    border-width: 1px;
 }
 
 textarea#txtContenidoBoletinInformativo {
@@ -102,7 +103,7 @@ textarea#txtContenidoBoletinInformativo {
 
 input#ncaracteresBoletinInformativo {
     position: absolute;
-    top: 13.9cm;
+    top: 15.2cm; 
     left: 2.5cm;
     border: none;
     background-color: transparent;
@@ -111,38 +112,38 @@ input#ncaracteresBoletinInformativo {
 
 label#tituloCaracteresBoletinInformativo {
     position: absolute;
-    top: 13.9cm;
+    top: 15.2cm;
     left: 3.5cm;
     font-weight: bold;
 }
 
 input#btnImagenBoletinInformativo {
     position: absolute;
-    top: 0.3cm;
+    top: -0.3cm;
     left: 9.1cm;
     margin-top: 1cm;
     color: transparent;
 }
 
 input#btnImagenBoletinInformativo1 {
-    position: absolute;
-    top: 3.8cm;
-    left: 9.1cm;
-    margin-top: 1cm;
-    color: transparent;
+   position: absolute; 
+   top: 3.8cm; 
+   left: 9.1cm;
+   margin-top: 1cm;
+   color: transparent;
 }
 
 input#btnImagenBoletinInformativo2 {
-    position: absolute;
-    top: 9.1cm;
-    left: 9.1cm;
-    margin-top: 1cm;
-    color: transparent;
+  position: absolute; 
+  top: 7.9cm; 
+  left: 9.1cm;
+  margin-top: 1cm;
+  color: transparent;
 }
 
 input#btnImagenBoletinInformativo3 {
-    position: absolute;
-    top: 12.6cm;
+    position: absolute; 
+    top: 11.9cm; 
     left: 9.1cm;
     margin-top: 1cm;
     color: transparent;

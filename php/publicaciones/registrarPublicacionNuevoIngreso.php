@@ -24,7 +24,7 @@ $updateBy = $_SESSION['Cedula'];
 $colaborador = $_POST['txtNombreCompletoNuevoAscenso'];
 $departamento = $_POST['txtDpto'];
 $cargo = $_POST['txtCargo'];
-$descripcion = $_POST['txtDescripcionNuevoAscenso'];
+$descripcion = $_POST['txtContenidoNuevoAscenso'];
 
 switch ($error) {
 
@@ -52,7 +52,7 @@ switch ($error) {
 
         copy($ruta, $destino);
 
-        $insert = " CALL sp_RegistroAvanceInf(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $insert = " CALL sp_RegistroNuevoIngreso(?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 
         $stmt = mysqli_prepare($conexion, $insert);
@@ -77,28 +77,28 @@ switch ($_SESSION['ID_Rol']) {
     case TypeUsuario::ADMINISTRADOR:
         echo'<script language="javascript">
                 alert("Publicacion Realizada Con Exito");
-                location.href="../menuAdministrador.php";
+                location.href="../../menuAdministrador.php";
             </script>';
         break;
 
     case TypeUsuario::AUTORIZADOR:
         echo'<script language="javascript">
                 alert("Publicacion Realizada Con Exito");
-                location.href="../menuAutorizador.php";
+                location.href="../../menuAutorizador.php";
             </script>';
         break;
 
     case TypeUsuario::EDITOR:
         echo'<script language="javascript">
                 alert("Publicacion Realizada Con Exito");
-                location.href="../menuEditor.php";
+                location.href="../../menuEditor.php";
             </script>';
         break;
 
     case TypeUsuario::PUBLICADOR:
         echo'<script language="javascript">
                 alert("Publicacion Realizada Con Exito");
-                location.href="../menuPublicador.php";
+                location.href="../../menuPublicador.php";
             </script>';
         break;
 

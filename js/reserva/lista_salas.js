@@ -117,7 +117,6 @@ const root = {
     },
     methods: {
         control: function () {
-
             this.controlFormCalendario.state = !this.controlFormCalendario.state;
 
         },
@@ -193,37 +192,37 @@ const calendario = new Vue({
                     id: this.availability.availability_id
                 }
             })
-                    .done((payload) => {
+            .done((payload) => {
 
-                        let obj = JSON.parse(payload);
+                let obj = JSON.parse(payload);
 
-                        this.bindMap(this.reservation, obj, (a, b) => {
+                this.bindMap(this.reservation, obj, (a, b) => {
 
-                            a.reservation_id = b.reservation_id;
-                            a.isactive = b.isactive;
-                            a.created = b.created;
-                            a.updated = b.updated;
-                            a.cince = b.cince;
-                            a.until = b.until;
-                            a.user = b.user;
-                            a.isreserved = b.isreserved;
-                            a.availability_id = b.availability_id;
+                    a.reservation_id = b.reservation_id;
+                    a.isactive = b.isactive;
+                    a.created = b.created;
+                    a.updated = b.updated;
+                    a.cince = b.cince;
+                    a.until = b.until;
+                    a.user = b.user;
+                    a.isreserved = b.isreserved;
+                    a.availability_id = b.availability_id;
 
-                        });
+                });
 
-                    })
-                    .fail((ex) => {
-                        alert("Error al consultar las reservaciones, el estatus es: " + ex.status);
+            })
+            .fail((ex) => {
+                alert("Error al consultar las reservaciones, el estatus es: " + ex.status);
 
-                    })
-                    .always(() => {
-                        this.colocarInformacion();
+            })
+            .always(() => {
+                this.colocarInformacion();
 
-                    })
-                    .always(() => {
-                        this.mostrarPanelDisponibilidad();
+            })
+            .always(() => {
+                this.mostrarPanelDisponibilidad();
 
-                    });
+            });
 
         },
         consultarDisponivilidad: function () {
@@ -240,28 +239,28 @@ const calendario = new Vue({
                     yeart: this.availability.yeart
                 }
             })
-                    .done((payload) => {
+            .done((payload) => {
 
-                        let obj = JSON.parse(payload);
+                let obj = JSON.parse(payload);
 
-                        this.availability.availability_id = obj.availability_id;
-                        this.availability.isactive = obj.isactive;
-                        this.availability.created = obj.created;
-                        this.availability.updated = obj.updated;
-                        this.availability.space = obj.space;
-                        this.availability.days = obj.days;
-                        this.availability.moth = obj.moth;
-                        this.availability.yeart = obj.yeart;
+                this.availability.availability_id = obj.availability_id;
+                this.availability.isactive = obj.isactive;
+                this.availability.created = obj.created;
+                this.availability.updated = obj.updated;
+                this.availability.space = obj.space;
+                this.availability.days = obj.days;
+                this.availability.moth = obj.moth;
+                this.availability.yeart = obj.yeart;
 
-                    })
-                    .fail((ex) => {
-                        alert("Error al consultar disponibilidad, el estatus es: " + ex.status);
+            })
+            .fail((ex) => {
+                alert("Error al consultar disponibilidad, el estatus es: " + ex.status);
 
-                    })
-                    .always(() => {
-                        this.consultarReservas();
+            })
+            .always(() => {
+                this.consultarReservas();
 
-                    });
+            });
 
         },
         inavilitarFormCalendario: function () {
@@ -475,36 +474,36 @@ const disponibilidad = new Vue({
                 }
 
             })
-                    .done((payload) => {
+            .done((payload) => {
 
-                        let obj = JSON.parse(payload);
+                let obj = JSON.parse(payload);
 
-                        this.bindMap(this.reservation, obj, (a, b) => {
+                this.bindMap(this.reservation, obj, (a, b) => {
 
-                            a.reservation_id = b.reservation_id;
-                            a.isactive = b.isactive;
-                            a.created = b.created;
-                            a.updated = b.updated;
-                            a.cince = b.cince;
-                            a.until = b.until;
-                            a.user = b.user;
-                            a.isreserved = b.isreserved;
-                            a.availability_id = b.availability_id;
-                        });
+                    a.reservation_id = b.reservation_id;
+                    a.isactive = b.isactive;
+                    a.created = b.created;
+                    a.updated = b.updated;
+                    a.cince = b.cince;
+                    a.until = b.until;
+                    a.user = b.user;
+                    a.isreserved = b.isreserved;
+                    a.availability_id = b.availability_id;
+                });
 
-                    })
-                    .fail((ex) => {
-                        alert("Error al actualizar la reservacion, el estatus es: " + ex.status);
+            })
+            .fail((ex) => {
+                alert("Error al actualizar la reservacion, el estatus es: " + ex.status);
 
-                    })
-                    .always(() => {
-                        this.colocarInformacion();
+            })
+            .always(() => {
+                this.colocarInformacion();
 
-                    })
-                    .always(() => {
-                        this.completed();
+            })
+            .always(() => {
+                this.completed();
 
-                    });
+            });
 
         },
         consultarUsuario: function (correo, id) {
@@ -519,33 +518,33 @@ const disponibilidad = new Vue({
                 }
 
             })
-                    .done((payload) => {
+            .done((payload) => {
 
-                        let obj = JSON.parse(payload);
+                let obj = JSON.parse(payload);
 
-                        this.user.pNombre = obj.pNombre;
-                        this.user.sNombre = obj.sNombre;
-                        this.user.pApellido = obj.pApellido;
-                        this.user.sApellido = obj.sApellido;
-                        this.user.correo = obj.correo;
+                this.user.pNombre = obj.pNombre;
+                this.user.sNombre = obj.sNombre;
+                this.user.pApellido = obj.pApellido;
+                this.user.sApellido = obj.sApellido;
+                this.user.correo = obj.correo;
 
-                    })
-                    .fail((ex) => {
-                        alert("Error al consultar el usuario, el estatus es: " + ex.status);
+            })
+            .fail((ex) => {
+                alert("Error al consultar el usuario, el estatus es: " + ex.status);
 
-                    })
-                    .always(() => {
-                        this.cambiarUsuario(id);
+            })
+            .always(() => {
+                this.cambiarUsuario(id);
 
-                    })
-                    .always(() => {
-                        this.cambiarEstado(id);
+            })
+            .always(() => {
+                this.cambiarEstado(id);
 
-                    })
-                    .always(() => {
-                        this.actualizarReserva(id);
+            })
+            .always(() => {
+                this.actualizarReserva(id);
 
-                    })
+            });
 
         },
         validarSiExisteElUsuario: function (correo) {
@@ -560,17 +559,17 @@ const disponibilidad = new Vue({
                     correo: correo
                 }
             })
-                    .done((payload) => {
+            .done((payload) => {
 
-                        if (payload !== 'null') {
-                            this.userState.state = payload;
-                        }
+                if (payload !== 'null') {
+                    this.userState.state = payload;
+                }
 
-                    })
-                    .fail((ex) => {
-                        alert("Error al consultar el usuario, el estatus es: " + ex.status);
+            })
+            .fail((ex) => {
+                alert("Error al consultar el usuario, el estatus es: " + ex.status);
 
-                    });
+            });
 
             return this.userState.state === "";
 
@@ -671,17 +670,17 @@ const disponibilidad = new Vue({
                 }
 
             })
-                    .done((payload) => {
+            .done((payload) => {
 
-                        if (payload !== 'null') {
-                            this.keyState.state = payload;
-                        }
-                        console.log(this.keyState.state);
-                    })
-                    .fail((ex) => {
-                        alert("Error al consultar el usuario, el estatus es: " + ex.status);
+                if (payload !== 'null') {
+                    this.keyState.state = payload;
+                }
+                console.log(this.keyState.state);
+            })
+            .fail((ex) => {
+                alert("Error al consultar el usuario, el estatus es: " + ex.status);
 
-                    });
+            });
 
         },
         eventoCancelar: function (event) {

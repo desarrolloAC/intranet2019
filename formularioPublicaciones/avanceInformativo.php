@@ -25,7 +25,7 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
         }
 
     }
-    
+
     function getFileSize (fileName) {
         if (document.layers) {
           if (navigator.javaEnabled()) {
@@ -54,9 +54,9 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
           return file.Size;
         }
     }
-    
+
     function remove(){
-        
+
         var n=frm.elements.length
         var temp=new Array(n);
         for(i=0;i<=n-1;i++)

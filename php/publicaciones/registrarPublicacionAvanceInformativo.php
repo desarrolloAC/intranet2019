@@ -43,43 +43,39 @@ $destino3 = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp3;
 
 
 if ($error == 1 || $error1 == 1 || $error2 == 1 || $error3 == 1) {
-    
-    die ( "El tamaño del archivo supera el límite permitido
+
+    die("El tamaño del archivo supera el límite permitido
         por el servidor (argumento upload_max_filesize del archivo
         php.ini).");
-    
 } elseif ($error == 2 || $error1 == 2 || $error2 == 2 || $error3 == 2) {
-    
-    die (" El tamaño del archivo supera el límite permitido
+
+    die(" El tamaño del archivo supera el límite permitido
         por el formulario (argumento post_max_size del archivo php.ini).");
-    
 } elseif ($error == 3 || $error1 == 3 || $error2 == 3 || $error3 == 3) {
-    
-    die ("El envío del archivo se ha interrumpido durante
+
+    die("El envío del archivo se ha interrumpido durante
         la transferencia.");
-    
 } elseif ($error == 4 || $error1 == 4 || $error2 == 4 || $error3 == 4) {
-    
-    die ("El tamaño del archivo que ha enviado es nulo.");
-    
+
+    die("El tamaño del archivo que ha enviado es nulo.");
 } else {
-    
+
     if (!copy($ruta, $destino)) {
-        die ( "Error al copiar 1  $destino \n");
+        die("Error al copiar 1  $destino \n");
     }
-    
+
     if (!copy($ruta1, $destino1)) {
-        die ( "Error al copiar 2 $destino1 \n");
+        die("Error al copiar 2 $destino1 \n");
     }
-    
+
     if (!copy($ruta2, $destino2)) {
-        die ( "Error al copiar  3 $destino2 \n");
+        die("Error al copiar  3 $destino2 \n");
     }
-    
+
     if (!copy($ruta3, $destino3)) {
-        die ( "Error al copiar 4 $destino3 \n");
+        die("Error al copiar 4 $destino3 \n");
     }
-    
+
 
     $insert = " CALL sp_RegistroAvanceInf(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
@@ -96,12 +92,9 @@ if ($error == 1 || $error1 == 1 || $error2 == 1 || $error3 == 1) {
             $destino_temp1,
             $destino_temp2,
             $destino_temp3
-            
-            
     );
 
-    $stmt->execute() or die (mysqli_error($conexion));
-    
+    $stmt->execute() or die(mysqli_error($conexion));
 }
 
 
@@ -139,5 +132,4 @@ switch ($_SESSION['ID_Rol']) {
 
         break;
 }
-
 ?>

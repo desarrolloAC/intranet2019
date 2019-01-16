@@ -75,29 +75,29 @@ class SendMailCommandHandler implements ICommandHandler {
     }
 
     private function generateCode() {
-        return substr(md5($this->getRealIP() . rand(1, 1000000)), 0, 8);
+        return substr(md5($this->getRealIP() . rand(1, 1000000)), 0, 6);
     }
 
     private function getRealIP() {
 
         if (isset($_SERVER["HTTP_CLIENT_IP"])) {
-
             return $_SERVER["HTTP_CLIENT_IP"];
+
         } elseif (isset($_SERVER["HTTP_X_FORWARDED_FOR"])) {
-
             return $_SERVER["HTTP_X_FORWARDED_FOR"];
+
         } elseif (isset($_SERVER["HTTP_X_FORWARDED"])) {
-
             return $_SERVER["HTTP_X_FORWARDED"];
+
         } elseif (isset($_SERVER["HTTP_FORWARDED_FOR"])) {
-
             return $_SERVER["HTTP_FORWARDED_FOR"];
+
         } elseif (isset($_SERVER["HTTP_FORWARDED"])) {
-
             return $_SERVER["HTTP_FORWARDED"];
-        } else {
 
+        } else {
             return $_SERVER["REMOTE_ADDR"];
+
         }
     }
 

@@ -692,6 +692,16 @@ const disponibilidad = new Vue({
             });
 
         },
+        validarIdentidad: function (key) {
+
+            if (this.keyState === key) {
+                return true;
+
+            } else {
+                return false;
+
+            }
+        },
         validarKey: function (key) {
 
             if (this.keyState === key) {

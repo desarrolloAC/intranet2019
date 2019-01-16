@@ -51,7 +51,7 @@ class SendMailCommandHandler implements ICommandHandler {
         $this->key = $this->generateCode();
         $this->from = "reservaintranet@gmail.com";
         $this->to = "";
-        $this->subject = "Eliminar reserva";
+        $this->subject = "Eliminar reserva de salas";
     }
 
     public function handler($handler) {

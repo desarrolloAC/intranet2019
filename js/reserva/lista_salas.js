@@ -439,8 +439,11 @@ const disponibilidad = new Vue({
             console.log("completada la transaccion...");
 
         },
-        cambiarUsuario: function (id) {
+        cambiarUsuarioEliminar: function (id) {
+            this.reservation[id].user = '-';
 
+        },
+        cambiarUsuario: function (id) {
             this.reservation[id].user = this.user.correo;
 
         },
@@ -648,6 +651,47 @@ const disponibilidad = new Vue({
             this.control();
 
         },
+        consultarUsuarioCancelar: function (correo, id) {
+
+            $.ajax({
+                url: "php/GetUser.php",
+                type: "GET",
+                contentType: "application/x-www-form-urlencoded;charset=utf-8;",
+                crossDomain: true,
+                data: {
+                    correo: correo
+                }
+
+            })
+            .done((payload) => {
+
+                let obj = JSON.parse(payload);
+
+                this.user.pNombre = obj.pNombre;
+                this.user.sNombre = obj.sNombre;
+                this.user.pApellido = obj.pApellido;
+                this.user.sApellido = obj.sApellido;
+                this.user.correo = obj.correo;
+
+            })
+            .fail((ex) => {
+                alert("Error al consultar el usuario, el estatus es: " + ex.status);
+
+            })
+            .always(() => {
+                this.cambiarUsuarioEliminar(id);
+
+            })
+            .always(() => {
+                this.cambiarEstado(id);
+
+            })
+            .always(() => {
+                this.actualizarReserva(id);
+
+            });
+
+        },
         validarKey: function (key) {
 
             if (this.keyState === key) {
@@ -675,7 +719,7 @@ const disponibilidad = new Vue({
                 if (payload !== 'null') {
                     this.keyState.state = payload;
                 }
-                console.log(this.keyState.state);
+
             })
             .fail((ex) => {
                 alert("Error al consultar el usuario, el estatus es: " + ex.status);
@@ -685,7 +729,7 @@ const disponibilidad = new Vue({
         },
         eventoCancelar: function (event) {
 
-            let id = parseInt(event.target.id.substring(8));
+            let id = parseInt(event.target.id.substring(9));
 
             let correo = prompt("Dime tu correo para poder reservar.");
 
@@ -709,12 +753,7 @@ const disponibilidad = new Vue({
                 return;
             }
 
-            //cambia el estado del modelo reservation con el usuario que esta en la base de datos.
-            /*
-             esto hay que cambiarlo esta es la parte que falta
-             
-             */
-            this.consultarUsuario(correo, id);
+            this.consultarUsuarioCancelar(correo, id);
 
         }
     }

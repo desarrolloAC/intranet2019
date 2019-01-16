@@ -9,14 +9,15 @@ $conexion = conectar();
 
 $idOrganizacion = $_SESSION['ID_Organizacion'];
 $idSubCategoria = $_POST['txtCodigoSubCategoriaInvitacionGeneral'];
-$titulo = $_POST['txtTituloLogro'];
-$contenido = $_POST['txtContenidoInvitacionGeneral2'];
-
-
 $cedula = $_SESSION['Cedula'];
-$date = date("Y-m-d_His");
 $createdBy = $_SESSION['Cedula'];
 $updateBy = $_SESSION['Cedula'];
+$contenido = $_POST['txtContenidoInvitacionGeneral'];
+$contenido1 = $_POST['txtContenidoInvitacionGeneral2'];
+
+
+$date = date("Y-m-d_His");
+
 
 switch ($error) {
 
@@ -52,13 +53,13 @@ switch ($error) {
                 $idOrganizacion,
                 $idSubCategoria,
                 $cedula,
-                $contenido,
-                $destino_temp,
                 $createdBy,
-                $updateBy
+                $updateBy,
+                $contenido,
+                $contenido1
         );
 
-        $stmt->execute();
+        $stmt->execute() or die(mysqli_error($conexion));
 }
 
 

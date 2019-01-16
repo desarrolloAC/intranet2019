@@ -11,13 +11,6 @@ $idOrganizacion = $_SESSION['ID_Organizacion'];
 $idSubCategoria = $_POST['txtCodigoSubCategoriaLogro'];
 
 $cedula = $_SESSION['Cedula'];
-$foto = $_FILES['btnImagen']['name'];
-$error = $_FILES['btnImagen']['error'];
-$ruta = $_FILES['btnImagen']['tmp_name'];
-
-$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
-$destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
-
 $createdBy = $_SESSION['Cedula'];
 $updateBy = $_SESSION['Cedula'];
 
@@ -27,7 +20,12 @@ $colaborador = $_POST['txtNombreCompletoLogro'];
 $departamento = $_POST ['txtDpto'];
 $cargo = $_POST ['txtCargo'];
 
+$foto = $_FILES['btnImagen']['name'];
+$error = $_FILES['btnImagen']['error'];
+$ruta = $_FILES['btnImagen']['tmp_name'];
 
+$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
+$destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 switch ($error) {
 
     case 1: // UPLOAD_ERR_INI_SIZE
@@ -62,17 +60,17 @@ switch ($error) {
                 $idOrganizacion,
                 $idSubCategoria,
                 $cedula,
-                $destino_temp,
                 $createdBy,
                 $updateBy,
                 $tipoDeLogro,
                 $descripcion,
                 $colaborador,
                 $departamento,
-                $cargo
+                $cargo,
+                $destino_temp
         );
 
-        $stmt->execute();
+        $stmt->execute() or die(mysqli_error($conexion));
 }
 
 

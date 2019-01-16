@@ -763,7 +763,16 @@ const disponibilidad = new Vue({
                 return;
             }
 
+<<<<<<< HEAD
+            //cambia el estado del modelo reservation con el usuario que esta en la base de datos.
+            /*
+             esto hay que cambiarlo esta es la parte que falta
+
+             */
+            this.consultarUsuario(correo, id);
+=======
             this.consultarUsuarioCancelar(correo, id);
+>>>>>>> brayan
 
         }
     }

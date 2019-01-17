@@ -24,7 +24,7 @@
 
         <form method="POST" action="php/publicaciones/registrarPublicacionPromocionEscolar.php">
 
-            <input id="txtCodigoSubCategoriaPromocionEscolar" type="text" name="txtCodigoSubCategoriaPromocionEscolar" value="" maxlength="4">
+            <input id="txtCodigoSubCategoriaPromocionEscolar" type="text" name="txtCodigoSubCategoriaPromocionEscolar" value="POES" maxlength="4">
 
             <input id="txtNombreCompletoPromocionEscolar" type="text" name="txtNombreCompletoPromocionEscolar" value="" maxlength="100" placeholder="Nombre Completo" required>
 
@@ -40,7 +40,7 @@
             <label id="tituloCaracteresPromocionEscolar">Caracteres Restantes</label>
 
             <input id="btnImagenPromocionEscolar" type="file" name="btnImagenPromocionEscolar" required>
-             
+
             <input id="btnRegistrarPromocionEscolar" type="submit" name="btnRegistrarPromocionEscolar" value="Registrar">
 
         </form>

@@ -9,20 +9,16 @@ $conexion = conectar();
 
 $idOrganizacion = $_SESSION['ID_Organizacion'];
 $idSubCategoria = $_POST['txtCodigoSubCategoriaPromocionEscolar'];
-$nombreCompleto = $_POST['txtNombreCompletoPromocionEscolar'];
-$contenido = $_POST['txtContenidoPromocionEscolar'];
-
-
 $cedula = $_SESSION['Cedula'];
 $createdBy = $_SESSION['Cedula'];
 $updateBy = $_SESSION['Cedula'];
 
+$nombreCompleto = $_POST['txtNombreCompletoPromocionEscolar'];
+$contenido = $_POST['txtContenidoPromocionEscolar'];
 
 $foto = $_FILES['btnImagen']['name'];
 $error = $_FILES['btnImagen']['error'];
 $ruta = $_FILES['btnImagen']['tmp_name'];
-
-
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
@@ -60,14 +56,14 @@ switch ($error) {
                 $idOrganizacion,
                 $idSubCategoria,
                 $cedula,
-                $destino_temp,
                 $createdBy,
                 $updateBy,
                 $nombreCompleto,
-                $contenido
+                $contenido,
+                $destino_temp
         );
 
-        $stmt->execute();
+        $stmt->execute() or die(mysqli_error($conexion));
 }
 
 

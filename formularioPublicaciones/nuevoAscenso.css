@@ -57,6 +57,7 @@
 
 /****************************FIN DISEÑO VENTANA MODAL FORMULARIO************************************/
 
+
 input#txtCodigoSubCategoriaNuevoAscenso {
     position: absolute;
     visibility: hidden;
@@ -69,7 +70,33 @@ input#txtNombreCompletoNuevoAscenso {
     height: 0.5cm;
 }
 
-input#ncaracteresNuevoAscenso{
+select#txtDpto {
+    position: absolute;
+    top: 4cm;
+    width: 6.1cm;
+}
+
+select#txtCargo {
+    position: absolute;
+    top: 4.9cm;
+    width: 6.1cm;
+}
+
+textarea#txtContenidoNuevoAscenso {
+    position: absolute;
+    top: 10cm;
+    left: 0.9cm;
+    max-width: 10.8cm;
+    max-height: 3.8cm;
+    min-width: 10.8cm;
+    min-height: 3.8cm;
+    width: 10.8cm;
+    height: 3.8cm;
+    font-size: 14px;
+    border-color: rgb(69, 69, 69);
+}
+
+input#ncaracteresNuevoAscenso {
     position: absolute;
     top: 14cm;
     left: 7cm;
@@ -78,14 +105,14 @@ input#ncaracteresNuevoAscenso{
     font-weight: bold;
 }
 
-label#tituloCaracteresNuevoAscenso{
+label#tituloCaracteresNuevoAscenso {
     position: absolute;
     top: 14cm;
     left: 8cm;
     font-weight: bold;
 }
 
-input#btnImagenNuevoAscenso{
+input#btnImagenNuevoAscenso {
     position: absolute;
     top: 6.5cm;
     left: 5cm;
@@ -93,7 +120,7 @@ input#btnImagenNuevoAscenso{
 }
 
 /*BOTON REGISTAR*/
-input#btnRegistrarNuevoAscenso{
+input#btnRegistrarNuevoAscenso {
     position: absolute;
     width: 85%;
     height: 20px;
@@ -119,5 +146,4 @@ input#btnRegistrarNuevoAscenso:active {
     top: 14.7cm;
     box-shadow: 0px 0px 0px 0px #0A0A0A;
 }
-
 /*FIN DEL BOTON REGISTRAR*/

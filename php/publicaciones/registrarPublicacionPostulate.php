@@ -21,7 +21,7 @@ $updateBy = $_SESSION['Cedula'];
 
 
 
-$insert = " CALL sp_RegistroPostulacion(?, ?, ?, ?, null, null, ?, ?, ?, ?, ?, ?);";
+$insert = " CALL sp_RegistroPostulacion(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 
 $stmt = mysqli_prepare($conexion, $insert);
@@ -38,7 +38,7 @@ $stmt->bind_param("ssssssssss",
         $contenido5
 );
 
-$stmt->execute() or die (mysqli_error($conexion));
+$stmt->execute() or die(mysqli_error($conexion));
 
 
 switch ($_SESSION['ID_Rol']) {

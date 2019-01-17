@@ -38,7 +38,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
         <a href="#" class="cerrar">X</a>
 
-        <form method="POST" action="php/publicaciones/registrarPublicacionNuevoAscenso.php">
+        <form method="POST" action="php/publicaciones/registrarNuevoAscenso.php">
 
             <input id="txtCodigoSubCategoriaNuevoAscenso" type="text" name="txtCodigoSubCategoriaNuevoAscenso" value="NUAS" maxlength="4">
 

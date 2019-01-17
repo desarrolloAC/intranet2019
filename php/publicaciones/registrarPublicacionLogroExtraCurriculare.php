@@ -15,7 +15,7 @@ $createdBy = $_SESSION['Cedula'];
 $updateBy = $_SESSION['Cedula'];
 
 $tipoDeLogro = $_POST['txtTituloLogro'];
-$descripcion = $_POST['txtContenidoLogro'];
+$contenido = $_POST['txtContenidoLogro'];
 $colaborador = $_POST['txtNombreCompletoLogro'];
 $departamento = $_POST ['txtDpto'];
 $cargo = $_POST ['txtCargo'];
@@ -63,7 +63,7 @@ switch ($error) {
                 $createdBy,
                 $updateBy,
                 $tipoDeLogro,
-                $descripcion,
+                $contenido,
                 $colaborador,
                 $departamento,
                 $cargo,

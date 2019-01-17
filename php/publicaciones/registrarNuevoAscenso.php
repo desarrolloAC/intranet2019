@@ -54,7 +54,7 @@ switch ($error) {
 
         copy($ruta, $destino);
 
-        $insert = " CALL sp_RegistroNuevoIngreso(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $insert = " CALL sp_RegistroAscenso(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 
         $stmt = mysqli_prepare($conexion, $insert);

@@ -3,7 +3,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 ?>
 
-<link rel="stylesheet" type="text/css" href="nuevoIngresoAscenso.css">
+<link rel="stylesheet" type="text/css" href="nuevoAscenso.css">
 
 <script>
 
@@ -32,20 +32,20 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 </script>
 
 <!--INICIO DIV CONTENEDOR FORMULARIO-->
-<div id="formularioNuevoIngresoAscenso" class="contenedorFormulario">
+<div id="formularioNuevoAscenso" class="contenedorFormulario">
 
     <div id="formularioNuevoIngresoAscenso">
 
         <a href="#" class="cerrar">X</a>
 
-        <form method="POST" action="php/publicaciones/registrarPublicacionNuevoIngreso.php">
+        <form method="POST" action="php/publicaciones/registrarPublicacionNuevoAscenso.php">
 
-            <input id="txtCodigoSubCategoriaNuevoAscenso" type="text" name="txtCodigoSubCategoriaNuevoAscenso" value="NUIN" maxlength="4">
+            <input id="txtCodigoSubCategoriaNuevoAscenso" type="text" name="txtCodigoSubCategoriaNuevoAscenso" value="NUAS" maxlength="4">
 
             <input id="txtNombreCompletoNuevoAscenso" type="text" name="txtNombreCompletoNuevoAscenso" placeholder="Nombre Completo" required>
             <?php
             echo "
-                <select name='txtDpto' class='combos_formulario_usuario' id='txtDpto' required >
+                <select name='txtDpto' class='combos_formulario_usuario' id='txtDpto1' required >
                 <option> Departamento </option>";
 
             $sql = " SELECT d.ID_Departamento,d.Nombre FROM departamento d WHERE d.Estatus='A'";
@@ -59,7 +59,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
             echo "</select>";
             ?>
-            <select name='txtCargo' class='combos_formulario_usuario' id='txtCargo' required>
+            <select name='txtCargo' class='combos_formulario_usuario' id='txtCargo1' required>
                 <option> Cargo </option>
             </select>
 

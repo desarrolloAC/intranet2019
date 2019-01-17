@@ -35,8 +35,8 @@
                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                 <a id="botones" href="#formularioNuevoIngresoAscenso">Nuevo Ingreso</a>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/nuevoIngresoAscenso.php'; ?>
-                <a id="botones" href="#formularioNuevoIngresoAscenso">Ascenso</a>
-                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/nuevoIngresoAscenso.php'; ?>
+                <a id="botones" href="#formularioNuevoAscenso">Ascenso</a>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/nuevoAscenso.php'; ?>
                 <a id="botones" href="#formularioLogro">Logro Extracurricular</a>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/logro.php'; ?>
                 <a id="botones" href="#formularioPostulate">Postulate</a>

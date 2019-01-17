@@ -1,5 +1,5 @@
 /****************************INICIO DISEÑO VENTANA MODAL FORMULARIO************************************/
-.contenedorFormulario{
+.contenedorFormulario {
     z-index: 1001;
     width: 100%;
     height: 100%;
@@ -19,7 +19,7 @@
     pointer-events: auto;
 }
 
-.contenedorFormulario > div#formularioNuevoIngresoAscenso {
+.contenedorFormulario > div#formularioNuevoIngresoAscenso{
     z-index: 1001;
     width: 12cm;
     height: 15cm;
@@ -69,33 +69,7 @@ input#txtNombreCompletoNuevoAscenso {
     height: 0.5cm;
 }
 
-select#txtDpto {
-    position: absolute;
-    top: 4cm;
-    width: 6.1cm;
-}
-
-select#txtCargo {
-    position: absolute;
-    top: 4.9cm;
-    width: 6.1cm;
-}
-
-textarea#txtContenidoNuevoAscenso {
-    position: absolute;
-    top: 10cm;
-    left: 0.9cm;
-    max-width: 10.8cm;
-    max-height: 3.8cm;
-    min-width: 10.8cm;
-    min-height: 3.8cm;
-    width: 10.8cm;
-    height: 3.8cm;
-    font-size: 14px;
-    border-color: rgb(69, 69, 69);
-}
-
-input#ncaracteresNuevoAscenso {
+input#ncaracteresNuevoAscenso{
     position: absolute;
     top: 14cm;
     left: 7cm;
@@ -104,14 +78,14 @@ input#ncaracteresNuevoAscenso {
     font-weight: bold;
 }
 
-label#tituloCaracteresNuevoAscenso {
+label#tituloCaracteresNuevoAscenso{
     position: absolute;
     top: 14cm;
     left: 8cm;
     font-weight: bold;
 }
 
-input#btnImagenNuevoAscenso {
+input#btnImagenNuevoAscenso{
     position: absolute;
     top: 6.5cm;
     left: 5cm;
@@ -119,7 +93,7 @@ input#btnImagenNuevoAscenso {
 }
 
 /*BOTON REGISTAR*/
-input#btnRegistrarNuevoAscenso {
+input#btnRegistrarNuevoAscenso{
     position: absolute;
     width: 85%;
     height: 20px;

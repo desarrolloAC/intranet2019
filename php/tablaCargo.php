@@ -87,7 +87,7 @@
             </td>
         </tr>
         <tr id="titulo_columnas">
-            <td width="800px">
+            <td width="300px">
                 <h5>Código</h5>
             </td>
             <td width="800px">
@@ -111,24 +111,10 @@
             <td width="800px">
                 <h5>Fecha Actualización</h5>
             </td>
-<!--
-            <td width="0px">
-                <h5></h5>
-            </td>
-            <td width="0px">
-                <h5></h5>
-            </td>
-            <td width="0px">
-                <h5></h5>
-            </td>
-            <td width="0px">
-                <h5></h5>
-            </td>
--->
-            <td width="800px">
+            <td width="300px">
                 <h5>Edición</h5>
             </td>
-            <td width="400px">
+            <td width="300px">
                 <h5>Acción</h5>
             </td>
         </tr>
@@ -244,23 +230,6 @@
                     </h5>
                 </td>
 
-<!--
-                <td>
-                    <h5></h5>
-                </td>
-
-                <td>
-                    <h5></h5>
-                </td>
-
-                <td>
-                    <h5></h5>
-                </td>
-
-                <td>
-                    <h5></h5>
-                </td>
--->
 
                 <td>
                     <a href='#<?php echo $mostrarCargo['codigo']; ?>' id="btnEditar">

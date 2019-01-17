@@ -86,7 +86,7 @@
                 <h5>Fecha Actualización</h5>
             </td>
 
-            <td width="800px">
+            <td width="400px">
                 <h5>Edicion</h5>
             </td>
 

@@ -1,7 +1,7 @@
 <table id="tabla_subcategoria" border="1">
     <thead>
         <tr id="titulo_columnas">
-            <td width="50" height="50" colspan="2">
+            <td  height="50" colspan="2">
                 <a href="#formulario_modal_subcategoria" id="btnRegistrarUsuario" title="Registar Subcategoría">
                     <img src="assets/image/menu/botonesTablas/btnNuevo.png">
                 </a>
@@ -74,7 +74,7 @@
                 </div>
                 <!--FIN DEL CONTENEDOR FORMULARIO SUBCATEGORÍA MODAL-->
             </td>
-            <td colspan="12">
+            <td colspan="8">
                 <form method="POST">
                     <input type="text" name="txtBuscarSubCategoria" id="txtBuscarSubCategoria" placeholder="Buscar Por Nombre" maxlength="40">
 
@@ -83,46 +83,34 @@
             </td>
         </tr>
         <tr id="titulo_columnas">
-            <td width="800px">
+            <td width="600px">
                 <h5>Código</h5>
             </td>
-            <td width="10px">
+            <td width="600px">
                 <h5>Nombre</h5>
             </td>
-            <td width="800px">
+            <td width="600px">
                 <h5>Estatus</h5>
             </td>
-            <td width="800px">
+            <td width="1200px">
                 <h5>Descripción</h5>
             </td>
-            <td width="800px">
+            <td width="600px">
                 <h5>Creada Por</h5>
             </td>
             <td width="800px">
                 <h5>Fecha Creación</h5>
             </td>
-            <td width="800px">
+            <td width="600px">
                 <h5>Actualizada Por</h5>
             </td>
             <td width="800px">
                 <h5>Fecha Actualización</h5>
             </td>
-            <td width="0px">
-                <h5></h5>
-            </td>
-            <td width="0px">
-                <h5></h5>
-            </td>
-            <td width="0px">
-                <h5></h5>
-            </td>
-            <td width="0px">
-                <h5></h5>
-            </td>
-            <td width="800px">
+            <td width="300px">
                 <h5>Edición</h5>
             </td>
-            <td width="100px" colspan="2">
+            <td width="300px" colspan="2">
                 <h5>Acción</h5>
             </td>
         </tr>
@@ -238,22 +226,6 @@
                     <h5>
                         <?php echo $mostrarSubCategoria['Updated']; ?>
                     </h5>
-                </td>
-
-                <td>
-                    <h5></h5>
-                </td>
-
-                <td>
-                    <h5></h5>
-                </td>
-
-                <td>
-                    <h5></h5>
-                </td>
-
-                <td>
-                    <h5></h5>
                 </td>
 
                 <td>

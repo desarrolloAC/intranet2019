@@ -81,23 +81,23 @@
             </td>
         </tr>
         <tr id="titulo_columnas">
-            <td width="800px">
+            <td width="600px">
                 <h5>Código</h5>
             </td>
 
-            <td width="800px">
+            <td width="600px">
                 <h5>Nombre</h5>
             </td>
 
-            <td width="800px">
+            <td width="600px">
                 <h5>Estatus</h5>
             </td>
 
-            <td width="800px">
+            <td width="1200px">
                 <h5>Descripción</h5>
             </td>
 
-            <td width="800px">
+            <td width="600px">
                 <h5>Creada Por</h5>
             </td>
 
@@ -105,7 +105,7 @@
                 <h5>Fecha Creación</h5>
             </td>
 
-            <td width="800px">
+            <td width="600px">
                 <h5>Actualizada Por</h5>
             </td>
 
@@ -113,11 +113,11 @@
                 <h5>Fecha Actualización</h5>
             </td>
 
-            <td width="800px">
+            <td width="300px">
                 <h5>Edicion</h5>
             </td>
 
-            <td width="400px">
+            <td width="300px">
                 <h5>Acción</h5>
             </td>
         </tr>

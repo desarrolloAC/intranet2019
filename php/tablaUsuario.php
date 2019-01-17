@@ -286,11 +286,11 @@ $conexion = conectar();
                 <h5>Rol</h5>
             </td>
 
-            <td width="100px" class="ancho">
+            <td width="100px">
                 <h5>Edicion</h5>
             </td>
 
-            <td width="100px" colspan="2" class="ancho">
+            <td width="100px">
                 <h5>Acción</h5>
             </td>
         </tr>

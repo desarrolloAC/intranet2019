@@ -55,7 +55,7 @@
                 </div>
                 <!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
             </td>
-            <td colspan="12">
+            <td colspan="8">
                 <form method="POST">
                     <input type="text" name="txtBuscarRol" id="txtBuscarRol" placeholder="Buscar por nombre" maxlength="40">
 
@@ -65,46 +65,34 @@
         </tr>
 
         <tr id="titulo_columnas">
-            <td width="800px">
+            <td width="600px">
                 <h5>Código</h5>
             </td>
-            <td width="800px">
+            <td width="600px">
                 <h5>Nombre</h5>
             </td>
-            <td width="800px">
+            <td width="600px">
                 <h5>Estatus</h5>
             </td>
-            <td width="800px">
+            <td width="1200px">
                 <h5>Descripción</h5>
             </td>
-            <td width="800px">
+            <td width="600px">
                 <h5>Creado Por</h5>
             </td>
             <td width="800px">
                 <h5>Fecha Creación</h5>
             </td>
-            <td width="800px">
+            <td width="600px">
                 <h5>Actualizado Por</h5>
             </td>
             <td width="800px">
                 <h5>Fecha Actualización</h5>
             </td>
-            <td width="0px">
-                <h5></h5>
-            </td>
-            <td width="0px">
-                <h5></h5>
-            </td>
-            <td width="0px">
-                <h5></h5>
-            </td>
-            <td width="0px">
-                <h5></h5>
-            </td>
-            <td width="800px">
+            <td width="300px">
                 <h5>Edición</h5>
             </td>
-            <td width="100px">
+            <td width="300px">
                 <h5>Acción</h5>
             </td>
         </tr>
@@ -219,22 +207,6 @@
                     <h5>
                         <?php echo $mostrarRol['Updated']; ?>
                     </h5>
-                </td>
-
-                <td>
-                    <h5></h5>
-                </td>
-
-                <td>
-                    <h5></h5>
-                </td>
-
-                <td>
-                    <h5></h5>
-                </td>
-
-                <td>
-                    <h5></h5>
                 </td>
 
                 <td>

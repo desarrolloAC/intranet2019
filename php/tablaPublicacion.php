@@ -112,7 +112,7 @@
             </td>
         </tr>
         <tr id="titulo_columnas">
-            <td width="800px">
+            <td width="600px">
                 <h5>Código</h5>
             </td>
             <td width="800px">
@@ -152,10 +152,10 @@
             <td width="800px">
                 <h5>Fecha Publicación</h5>
             </td>
-            <td width="800px">
+            <td width="300px">
                 <h5>Edición</h5>
             </td>
-            <td width="100px">
+            <td width="300px">
                 <h5>Acción</h5>
             </td>
         </tr>

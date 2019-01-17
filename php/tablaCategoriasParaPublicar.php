@@ -24,7 +24,7 @@
                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                 <a id="botones" href="#formularioInvitacionGeneral">Generales</a>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/invitacionGeneral.php'; ?>
-                <a id="botones" href="">Flayers</a>
+                <a id="botones" href="#">Flayers</a>
             </div>
         </td>
     </tr>

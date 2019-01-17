@@ -692,23 +692,25 @@ const disponibilidad = new Vue({
             });
 
         },
-        validarIdentidad: function (key) {
+        validarIdentidad: function (correo, id) {
 
-            if (this.keyState === key) {
-                return true;
+            let original = $('#usu_'+id).text();
+
+            if (original.trim() === correo.trim()) {
+                return false;
 
             } else {
-                return false;
+                return true;
 
             }
         },
         validarKey: function (key) {
 
-            if (this.keyState === key) {
-                return true;
+            if (this.keyState.trim() === key.trim()) {
+                return false;
 
             } else {
-                return false;
+                return true;
 
             }
         },
@@ -750,6 +752,11 @@ const disponibilidad = new Vue({
 
             if (this.validarSiExisteElUsuario(correo)) {
                 alert("Estimado usuario, El correo que ingreso no existe.");
+                return;
+            }
+
+            if (this.validarIdentidad(correo, id)) {
+                alert("Estimado usuario, Usted no es la persona que creo la reserva.");
                 return;
             }
 

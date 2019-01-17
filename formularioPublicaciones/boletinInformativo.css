@@ -118,7 +118,7 @@ input#btnImagenBoletinInformativo {
     margin-top: 1cm;
     color: transparent;
 }
-img#imgSalida{
+img#bolimgSalida{
     position: absolute; top: 1.3cm; left: 9.1cm;
 }
 
@@ -129,7 +129,7 @@ input#btnImagenBoletinInformativo1 {
     margin-top: 1cm;
     color: transparent;
 }
-img#imgSalida1{
+img#bolimgSalida1{
     position: absolute; top: 5.4cm; left: 9.1cm;
 }
 
@@ -140,7 +140,7 @@ input#btnImagenBoletinInformativo2 {
     margin-top: 1cm;
     color: transparent;
 }
-img#imgSalida2{
+img#bolimgSalida2{
     position: absolute; top: 9.5cm; left: 9.1cm;
 }
 input#btnImagenBoletinInformativo3 {
@@ -150,7 +150,7 @@ input#btnImagenBoletinInformativo3 {
     margin-top: 1cm;
     color: transparent;
 }
-img#imgSalida3{
+img#bolimgSalida3{
     position: absolute; top: 13.5cm; left: 9.1cm;
 }
 /*BOTON REGISTAR*/

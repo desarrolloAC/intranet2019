@@ -85,5 +85,5 @@ button[id="btnBuscarDirectorio"]{
 /*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
 button[id="btnBuscarDirectorio"]:active {
   top: 2px;
-  box-shadow: 0px 0px 0px 0px #0A0A0A;    
+  box-shadow: 0px 0px 0px 0px #0A0A0A;
 }

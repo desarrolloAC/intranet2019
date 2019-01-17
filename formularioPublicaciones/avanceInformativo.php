@@ -18,7 +18,6 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
         if (field.value.length > maxlimit) {
             field.value = field.value.substring(0, maxlimit);
 
-
         } else {
             countfield.value = maxlimit - field.value.length;
 

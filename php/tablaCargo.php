@@ -78,7 +78,7 @@
                 </div>
                 <!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
             </td>
-            <td colspan="12">
+            <td colspan="8">
                 <form method="POST">
                     <input type="text" name="txtBuscarCargo" id="txtBuscarCargo" placeholder="Buscar Por Nombre" maxlength="40">
 
@@ -111,6 +111,7 @@
             <td width="800px">
                 <h5>Fecha Actualización</h5>
             </td>
+<!--
             <td width="0px">
                 <h5></h5>
             </td>
@@ -123,6 +124,7 @@
             <td width="0px">
                 <h5></h5>
             </td>
+-->
             <td width="800px">
                 <h5>Edición</h5>
             </td>
@@ -242,6 +244,7 @@
                     </h5>
                 </td>
 
+<!--
                 <td>
                     <h5></h5>
                 </td>
@@ -257,6 +260,7 @@
                 <td>
                     <h5></h5>
                 </td>
+-->
 
                 <td>
                     <a href='#<?php echo $mostrarCargo['codigo']; ?>' id="btnEditar">

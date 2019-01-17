@@ -17,12 +17,10 @@ $(document).ready(function () {
     });
 
     $("#txtDpto").change(() => {
-        alert($("#txtDpto").val());
         $("#txtCargo").load('php/selectCargos.php?elegido=' + $("#txtDpto").val());
     });
 
     $("#txtDpto1").change(() => {
-        alert($("#txtDpto1").val());
         $("#txtCargo1").load('php/selectCargos.php?elegido=' + $("#txtDpto1").val());
     });
 

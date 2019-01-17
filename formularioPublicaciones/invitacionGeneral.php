@@ -56,7 +56,7 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
             $sql = " SELECT * FROM organizacion o WHERE o.Estatus = 'A' AND o.ID_Organizacion = '" . $_SESSION['ID_Organizacion'] . "';";
             $rs = mysqli_query($conexion, $sql) or die(mysqli_error($conexion));
             $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
-            echo '<img src="' . $row['foto'] . '" type="image/png" width="100" height="100"></img>';
+            echo '<img class="logoInvitacionGeneral" src="' . $row['foto'] . '" type="image/png" width="100" height="100"></img>';
             ?>
             <input id="btnRegistrarInvitacionGeneral" type="submit" name="btnRegistrarInvitacionGeneral" value="Registrar">
 

@@ -64,7 +64,7 @@ input#txtCodigoOrganizacionAvanceInformativo{
 	text-align: center;
 	color: rgb(255,255,255);
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 12px;
 }
 
 input#txtTituloAvanceInformativo{
@@ -89,8 +89,8 @@ textarea#txtContenidoAvanceInformativo{
 }
 
 input#ncaracteresAvanceInformativo{
-	position: absolute; 
-        top: 15.2cm; 
+	position: absolute;
+        top: 15.2cm;
         left: 2.5cm;
 	border:none;
 	background-color: transparent;

@@ -13,6 +13,11 @@
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
+.logoInvitacionGeneral {
+    position: relative;
+    top: 400px;
+    left: 5px;
+}
 
 .contenedorFormulario:target {
     opacity: 1;

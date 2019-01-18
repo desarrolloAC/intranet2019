@@ -34,7 +34,7 @@ class Connection implements IConnection {
     private $port = '3306';
     private $user = 'root';
     private $password = '12345678';
-    private $database = 'intranet';
+    private $database = 'intranet_test';
 
     /**
      * Construstor de esta clase.

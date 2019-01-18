@@ -6,7 +6,7 @@
 function conectar() {
 
     //REALIZO LA CONEXION A MYSQL
-    $link = mysqli_connect("192.168.30.90", "root", "12345678", "intranet");
+    $link = mysqli_connect("192.168.30.90", "root", "12345678", "intranet_test");
 
     //VERIFICANDO LA CONEXION.
     if (mysqli_connect_errno()) {

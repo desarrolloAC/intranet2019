@@ -13,7 +13,11 @@
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
-
+.logoLogro {
+    position: relative;
+    top: 450px;
+    left: 350px;
+}
 .contenedorFormulario:target {
     opacity: 1;
     pointer-events: auto;

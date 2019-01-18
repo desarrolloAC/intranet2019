@@ -13,7 +13,11 @@
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
-
+.logoCumpleMes {
+    position: relative;
+    top: 380px;
+    left: 370px;
+}
 .contenedorFormulario:target {
     opacity: 1;
     pointer-events: auto;

@@ -13,7 +13,11 @@
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
-
+.logoNuevoIngreso {
+    position: relative;
+    top: 30px;
+    left: 240px;
+}
 .contenedorFormulario:target {
     opacity: 1;
     pointer-events: auto;

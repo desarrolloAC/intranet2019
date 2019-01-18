@@ -78,11 +78,12 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
             </select>
 
             <input id="btnImagenLogro" type="file" name="btnImagenLogro" required>
+
             <?php
             $sql = " SELECT * FROM organizacion o WHERE o.Estatus = 'A' AND o.ID_Organizacion = '" . $_SESSION['ID_Organizacion'] . "';";
             $rs = mysqli_query($conexion, $sql) or die(mysqli_error($conexion));
             $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
-            echo '<img src="' . $row[foto] . '" type="image/png" width="100" height="100"></img>';
+            echo '<img class="logoLogro" src="' . $row['foto'] . '" type="image/png" width="100" height="100"></img>';
             ?>
             <input id="btnRegistrarLogro" type="submit" name="btnRegistrarLogro" value="Registrar">
 

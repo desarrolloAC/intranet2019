@@ -214,7 +214,7 @@ if (!isset($_SESSION['Correo']))
 
         <!--INICIO CONTENEDOR MENU-->
 
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdmin.php'; ?>
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdminBackup.php'; ?>
 
         <!--FIN CONTENEDOR MENU-->
 

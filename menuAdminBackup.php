@@ -9,17 +9,16 @@ switch ($_SESSION['ID_Rol']) {
             <div id="contendorTablaMenu">
                 <h1 id="tituloMenu">Menu</h1>
                 <ul id="menuv">
-                    <li><a href="usuario.php" class="efectoMenu" id="opcionUsuario">Usuario</a></li>
-                    <li><a href="rol.php" class="efectoMenu" id="opcionRol">Rol</a></li>
-                    <li><a href="cargo.php" class="efectoMenu" id="opcionCag">Cargo</a></li>
-                    <li><a href="organizacion.php" class="efectoMenu" id="opcionOrg">Organizacion</a></li>
-                    <li><a href="departamento.php" class="efectoMenu" id="opcionDpto">Departamento</a></li>
-                    <li><a href="categoria.php" class="efectoMenu" id="opcionCategoria">Categoria</a></li>
-                    <li><a href="subcategoria.php" class="efectoMenu" id="subcategoria">SubCategoria</a></li>
+                    <li><a href="#" class="efectoMenu" id="opcionUsuario">Usuario</a></li>
+                    <li><a href="#" class="efectoMenu" id="opcionRol">Rol</a></li>
+                    <li><a href="#" class="efectoMenu" id="opcionCag">Cargo</a></li>
+                    <li><a href="#" class="efectoMenu" id="opcionOrg">Organizacion</a></li>
+                    <li><a href="#" class="efectoMenu" id="opcionDpto">Departamento</a></li>
+                    <li><a href="#" class="efectoMenu" id="opcionCategoria">Categoria</a></li>
+                    <li><a href="#" class="efectoMenu" id="subcategoria">SubCategoria</a></li>
                     <li><a href="#" class="efectoMenu" id="opcionPub">Publicacion</a>
                         <ul id="c">
-                            <li><a href="publicacion.php" class="efectoMenu" id="pcategorias">Ver</a></li>
-                            <li><a href="categoriaparapublicar.php" class="efectoMenu" id="pcategorias">Registrar</a></li>
+                            <li><a href="#" class="efectoMenu" id="pcategorias">Categorias</a></li>
                         </ul>
                     </li>
 
@@ -39,9 +38,9 @@ switch ($_SESSION['ID_Rol']) {
             <div id="contendorTablaMenu">
                 <h1 id="tituloMenu">Menu</h1>
                 <ul id="menuv">
-                    <li><a href="publicacion.php" class="efectoMenu" id="opcionPub">Publicacion</a>
+                    <li><a href="#" class="efectoMenu" id="opcionPub">Publicacion</a>
                         <ul id="c">
-                            <li><a href="categoriaparapublicar.php" class="efectoMenu" id="pcategorias">Categorias</a></li>
+                                <li><a href="#" class="efectoMenu" id="pcategorias">Categorias</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -56,9 +55,9 @@ switch ($_SESSION['ID_Rol']) {
             <div id="contendorTablaMenu">
                 <h1 id="tituloMenu">Menu</h1>
                 <ul id="menuv">
-                    <li><a href="publicacion.php" class="efectoMenu" id="opcionPub">Publicacion</a>
+                    <li><a href="#" class="efectoMenu" id="opcionPub">Publicacion</a>
                         <ul id="c">
-                            <li><a href="categoriaparapublicar.php" class="efectoMenu" id="pcategorias">Categorias</a></li>
+                                <li><a href="#" class="efectoMenu" id="pcategorias">Categorias</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -73,9 +72,9 @@ switch ($_SESSION['ID_Rol']) {
             <div id="contendorTablaMenu">
                 <h1 id="tituloMenu">Menu</h1>
                 <ul id="menuv">
-                    <li><a href="publicacion.php" class="efectoMenu" id="opcionPub">Publicacion</a>
+                    <li><a href="#" class="efectoMenu" id="opcionPub">Publicacion</a>
                         <ul id="c">
-                            <li><a href="categoriaparapublicar.php" class="efectoMenu" id="pcategorias">Categorias</a></li>
+                                <li><a href="#" class="efectoMenu" id="pcategorias">Categorias</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -90,9 +89,9 @@ switch ($_SESSION['ID_Rol']) {
             <div id="contendorTablaMenu">
                 <h1 id="tituloMenu">Menu</h1>
                 <ul id="menuv">
-                    <li><a href="publicacion.php" class="efectoMenu" id="opcionPub">Publicacion</a>
+                    <li><a href="#" class="efectoMenu" id="opcionPub">Publicacion</a>
                         <ul id="c">
-                            <li><a href="categoriaparapublicar.php" class="efectoMenu" id="pcategorias">Categorias</a></li>
+                                <li><a href="#" class="efectoMenu" id="pcategorias">Categorias</a></li>
                         </ul>
                     </li>
                 </ul>

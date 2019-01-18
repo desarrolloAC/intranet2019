@@ -1,39 +1,53 @@
 <?php
-//CUANDO LA SESSION ESTA INICIADA APARECE EL NOMBRE DEL USUARIO
-@session_start();
-//require_once('estadoPublicacion/estadoPublicacion.php');
-require_once('conexion/conexion.php');
+session_start();
 
-include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadoPublicacion.php';
-include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/intranet/conexion/conexion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadoPublicacion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
+
 //SI EL USUARIO NO ESTA REGISTRADO NO PODRA VISUALIZAR LA PAGINA HASTA NO ESTAR LOGEADO Y LO LLEVARA DIRECTO AL LOGIN
-if (!isset($_SESSION['Correo']))
-    header("Location: login.php");
+//if (!isset($_SESSION['Correo']))
+//    header("Location: login.php")
+
 ?>
 
-<!DOCTYPE html>
 
+
+<!DOCTYPE html>
 <html>
 
     <head>
-        <title>Intranet Alkes Corp</title>
-
+        <title>Intranet Alkes</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!--INICIO LLAMADA DE ARCHIVOS CSS-->
         <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
         <link rel="stylesheet" type="text/css" href="estructura/css/tablaMenuVertical.css">
+        
+        <!--
         <link rel="stylesheet" type="text/css" href="css/opcionCargo.css">
         <link rel="stylesheet" type="text/css" href="css/opcionCategoria.css">
         <link rel="stylesheet" type="text/css" href="css/opcionDepartamento.css">
-        <link rel="stylesheet" type="text/css" href="css/opcionDirectorio.css">
         <link rel="stylesheet" type="text/css" href="css/opcionOrganizacion.css">
         <link rel="stylesheet" type="text/css" href="css/opcionPublicacion.css">
         <link rel="stylesheet" type="text/css" href="css/opcionRol.css">
         <link rel="stylesheet" type="text/css" href="css/opcionSubcategoria.css">
         <link rel="stylesheet" type="text/css" href="css/opcionUsuario.css">
         <link rel="stylesheet" type="text/css" href="css/categoriasParaPublicar.css">
+        -->
+        
+        <link rel="stylesheet" type="text/css" href="css/cargo/opcionCargo.css">
+        <link rel="stylesheet" type="text/css" href="css/categoria/opcionCategoria.css">
+        <link rel="stylesheet" type="text/css" href="css/departamento/opcionDepartamento.css">
+        <link rel="stylesheet" type="text/css" href="css/organizacion/opcionOrganizacion.css">
+        <link rel="stylesheet" type="text/css" href="css/publicacion/opcionPublicacion.css">
+        <link rel="stylesheet" type="text/css" href="css/rol/opcionRol.css">
+        <link rel="stylesheet" type="text/css" href="css/subcategoria/opcionSubcategoria.css">
+        <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
+
+        <!--
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/avanceInformativo.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/boletinInformativo.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/comunicado.css">
@@ -42,23 +56,29 @@ if (!isset($_SESSION['Correo']))
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/logro.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/postulate.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/cumpleMes.css">
-        <!--<link rel="stylesheet" type="text/css" href="formularioPublicaciones/nacimiento.css">-->
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/promocionEscolar.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/condolencia.css">
+        -->
+        
         <!--FIN DE LLAMADA ARCHIVOS CSS-->
 
         <!--INICIO LLAMADA ARCHIVOS JS-->
         <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
-        <script type="text/javascript" src="js/listaMenu.js"></script>
         <script type="text/javascript" src="js/selectdependientes.js"></script>
         <script type="text/javascript" src="js/efectoBandeja.js"></script>
         <script type="text/javascript" src="js/setInterval.js"></script>
+        <script type="text/javascript" src="js/list.js"></script>
+
+
         <script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
+
 
         <script src="js/lib/vue.js"></script>
         <script src="js/lib/vue-resource.min.js"></script>
         <!--FIN LLAMADA ARCHIVOS JS-->
+
+
 
         <style type="text/css">
             div#contenedorNombreUsuario {
@@ -136,6 +156,7 @@ if (!isset($_SESSION['Correo']))
                 animation: fondo 5s infinite;
             }
 
+
             @keyframes fondo {
                 0% {
                     background-color: rgb(69, 69, 69);
@@ -170,7 +191,32 @@ if (!isset($_SESSION['Correo']))
 
         </style>
 
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(document).on('submit', '#formularioChat', function () {
+                    //Obtenemos datos formulario.
+                    var data = $(this).serialize();
+
+                    //AJAX.
+                    $.ajax({
+                        type: 'POST',
+                        url: 'mensajes/mensaje.php',
+                        data: data,
+                        success: function (data) {
+                            $('#respuesta').html(data).fadeIn();
+                        }
+                    });
+                    return false;
+                });
+
+            }); //Fin document.
+
+        </script>
     </head>
+
+
 
     <body>
 
@@ -180,27 +226,41 @@ if (!isset($_SESSION['Correo']))
 
         <!--FIN DEL CONTENEDOR CABECERA-->
 
+
+
         <!--INICIO CONTENEDOR MENU-->
 
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdminBackup.php'; ?>
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdmin.php'; ?>
 
         <!--FIN CONTENEDOR MENU-->
 
+
+
+        <!--INICIO CONTENEDOR CONTENIDOS-->
+
         <div class="contenedorContenidos">
+
+            
+
+
             <!--*******************************************************************************-->
-            <!--**************INICIO DE LA OPCION PUBLICAR**************-->
+
+            <!--**************INICIO DE LA OPCION CARGO**************-->
+
             <!--*******************************************************************************-->
-            <div id='contenedor_tabla_publicacion'>
-                <?php include ('php/tablaPublicacion.php'); ?>
+
+            <div id="contenedor_tabla_cargo">
+                <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/tablaCargo.php'; ?>
             </div>
 
-            <div id='contenedor_tabla_pcategorias'>
-                <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/tablaCategoriasParaPublicar.php'; ?>
-            </div>
             <!--*******************************************************************************-->
-            <!--**************FIN DE LA OPCION PUBLICAR**************-->
+
+            <!--**************FIN DE LA OPCION DEPARTAMENTO**************-->
+
             <!--*******************************************************************************-->
+
         </div>
+        <!--FIN DEL CONTENEDOR CONTENIDOS-->
 
 
     </body>

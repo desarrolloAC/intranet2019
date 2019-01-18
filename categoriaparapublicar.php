@@ -24,7 +24,6 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
         <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
         <link rel="stylesheet" type="text/css" href="estructura/css/tablaMenuVertical.css">
         
-        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
         <link rel="stylesheet" type="text/css" href="css/cargo/opcionCargo.css">
         <link rel="stylesheet" type="text/css" href="css/categoria/opcionCategoria.css">
         <link rel="stylesheet" type="text/css" href="css/departamento/opcionDepartamento.css">
@@ -33,6 +32,8 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
         <link rel="stylesheet" type="text/css" href="css/rol/opcionRol.css">
         <link rel="stylesheet" type="text/css" href="css/subcategoria/opcionSubcategoria.css">
         <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
+
 
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/avanceInformativo.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/boletinInformativo.css">
@@ -42,7 +43,6 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/logro.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/postulate.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/cumpleMes.css">
-        <!--<link rel="stylesheet" type="text/css" href="formularioPublicaciones/nacimiento.css">-->
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/promocionEscolar.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/condolencia.css">
         <!--FIN DE LLAMADA ARCHIVOS CSS-->
@@ -50,10 +50,11 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
         <!--INICIO LLAMADA ARCHIVOS JS-->
         <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
-        <script type="text/javascript" src="js/listaMenu.js"></script>
         <script type="text/javascript" src="js/selectdependientes.js"></script>
         <script type="text/javascript" src="js/efectoBandeja.js"></script>
         <script type="text/javascript" src="js/setInterval.js"></script>
+        <script type="text/javascript" src="js/list.js"></script>
+
 
         <script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
 

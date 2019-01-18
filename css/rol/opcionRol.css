@@ -1,12 +1,17 @@
-div[id="contenedor_tabla_directorio"]{
+div[id="contenedor_tabla_rol"]{
     position: relative; width: 35cm; height: 21cm; left: 8cm; top: -11.5cm;
-    display: none;
     overflow: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(69,69,69);
 }
 
 /*DISEÑO DE LA TABLA USUARIOS*/
-table[id="tabla_directorio"]{
+table[id="tabla_rol"]{
     border-collapse: collapse;
+    border-left: transparent;
+    border-right: transparent;
+    word-break: break-all;
 }
 
 tr[id="titulo_columnas"]{
@@ -77,8 +82,8 @@ a[id="btnEditar"]:active{
 /*FIN DEL DISEÑO BOTON EDITAR*/
 
 /*INPUT BUSCAR*/
-input[id="txtBuscarUsuario"]{
-    position: relative; width: 200px; height: 28px; left: 10cm;
+input[id="txtBuscarRol"]{
+    position: relative; width: 10cm; height: 28px; left: 6.5cm;
     background-image: url(../imagenes/menu/botonesTablas/btnBuscar.png);
     background-repeat: no-repeat;
     background-position: 2px 2px;
@@ -89,8 +94,8 @@ input[id="txtBuscarUsuario"]{
 /*FIN DEL INPUT BUSCAR*/
 
 /*INCIO DEL BOTON BUSCAR*/
-button[id="btnBuscarUsuario"]{
-    position: relative; width: 100px; height: 30px; left: 10cm;
+button[id="btnBuscarRol"]{
+    position: relative; width: 100px; height: 30px; left: 6.7cm;
     background: rgb(241,129,3);/*NARANJA*/
     color: rgb(255,255,255);
     font-weight: bold;
@@ -165,12 +170,12 @@ img#imgDesactivar{
 /************************************************************************************/
 
 /*CONTENEDOR DE LA PANTALLA MODAL FONDO BLANCO*/
-div[class="contenedor_formulario_directorio"]{
+div[class="contenedor_formulario_rol"]{
 
 }
 /*FIN DEL CONTENEDOR DE LA PANTALLA MODAL FONDO BLANCO*/
 
-table[id="tabla_formulario_directorio"]{
+table[id="tabla_formulario_rol"]{
     border-collapse: collapse;
     border-color: transparent;
     border-bottom-color: rgb(0,0,0);

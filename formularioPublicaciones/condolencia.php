@@ -25,7 +25,7 @@
         <form method="POST" action="php/publicaciones/registrarPublicacionFallecimientos.php">
 
             <input id="txtCodigoSubCategoriaCondolencia" type="text" name="txtCodigoSubCategoriaCondolencia" value="COND" maxlength="4">
-
+            <h1 class="clai"> Fallecimiento </h1>
             <textarea id="txtContenidoCondolencia"
                       name="txtContenidoCondolencia"
                       onKeyDown="textCounter(this.form.txtContenidoCondolencia, this.form.remLen, 500);"

@@ -12,7 +12,11 @@
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
-
+.logoNacimiento {
+    position: relative;
+    top: 430px;
+    left: 180px;
+}
 .contenedorFormulario:target {
     opacity: 1;
     pointer-events: auto;
@@ -63,7 +67,7 @@ input#txtCodigoSubCategoriaNacimiento {
 
 input#txtNombreCompletoNacimiento {
     position: absolute;
-    top: 3.5cm;
+    top: 4.9cm;
     left: 2.5cm;
     width: 7.8cm;
     height: 0.5cm;
@@ -73,13 +77,13 @@ input#txtNombreCompletoNacimiento {
 
 textarea#txtContenidoNacimiento {
     position: absolute;
-    top: 8.3cm;
-    left: 3.7cm;
+    top: 7.5cm;
+    left: 5.8cm;
     max-width: 5.7cm;
     max-height: 2.5cm;
     min-width: 5.7cm;
     min-height: 2.5cm;
-    width: 5.7cm;
+    width: 4cm;
     height: 2.5cm;
     font-size: 14px;
     border-color: rgb(69, 69, 69);
@@ -87,8 +91,8 @@ textarea#txtContenidoNacimiento {
 
 input#ncaracteresNacimiento {
     position: absolute;
-    top: 11cm;
-    left: 5cm;
+    top: 10cm;
+    left: 7cm;
     border: none;
     background-color: transparent;
     font-weight: bold;
@@ -96,16 +100,16 @@ input#ncaracteresNacimiento {
 
 label#tituloCaracteresNacimiento {
     position: absolute;
-    top: 11cm;
-    left: 7cm;
+    top: 10cm;
+    left: 7.8cm;
     font-weight: bold;
     font-size: 11px;
 }
 
 input#btnImagenNacimiento {
     position: absolute;
-    top: 5.2cm;
-    left: 3.1cm;
+    top: 7cm;
+    left: 2.3cm;
     margin-top: 1cm;
     color: transparent;
 }

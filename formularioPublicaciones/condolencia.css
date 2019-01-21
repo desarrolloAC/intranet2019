@@ -62,9 +62,16 @@ input#txtCodigoSubCategoriaCondolencia {
     visibility: hidden;
 }
 
+.clai {
+    position: absolute;  
+    top: 3cm;
+    left: 3cm;   
+    
+}
+
 textarea#txtContenidoCondolencia {
     position: absolute;
-    top: 4cm;
+    top: 6cm;
     left: 2cm;
     max-width: 8.9cm;
     max-height: 5cm;
@@ -78,8 +85,8 @@ textarea#txtContenidoCondolencia {
 
 input#ncaracteresCondolencia {
     position: absolute;
-    top: 9.2cm;
-    left: 6.8cm;
+    top: 11.3cm;
+    left: 6cm;
     border: none;
     background-color: transparent;
     font-weight: bold;
@@ -87,8 +94,8 @@ input#ncaracteresCondolencia {
 
 label#tituloCaracteresCondolencia {
     position: absolute;
-    top: 9.2cm;
-    left: 7.7cm;
+    top: 11.3cm;
+    left: 6.8cm;
     font-weight: bold;
     font-size: 14px;
 }

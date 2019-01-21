@@ -28,7 +28,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
         <a href="#" class="cerrar">X</a>
 
-        <form method="POST" action="php/publicaciones/registrarNacimiento.php">
+        <form method="POST" action="php/publicaciones/registrarPublicacionNacimientos.php">
 
             <input id="txtCodigoSubCategoriaNacimiento" type="text" name="txtCodigoSubCategoriaNacimiento" value="NACI" maxlength="4">
 

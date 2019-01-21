@@ -49,8 +49,8 @@
                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                 <a id="botones" href="#formularioCumpleMes">Cumpleañero Del Mes</a>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/cumpleMes.php'; ?>
-                <a id="botones" href="">Nacimiento</a>
-                <?php //include $_SERVER['DOCUMENT_ROOT'].'/intranetPrueba/formularioPublicaciones/postulate.php'; ?>
+                <a id="botones" href="#formularioNacimiento">Nacimiento</a>
+                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/nacimiento.php'; ?>
                 <a id="botones" href="#formularioPromocionEscolar">Promocion Escolar</a>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/promocionEscolar.php'; ?>
             </div>

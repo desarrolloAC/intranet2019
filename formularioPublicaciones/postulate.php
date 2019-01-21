@@ -77,9 +77,11 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
             <input id="ncaracteresPostulate1" readonly type=text name=remLen2 size=3 maxlength=3 value="500">
 
             <label id="tituloCaracteresPostulate1">Caracteres Restantes</label>
-
+            <label id="tituloCaracteresCorreo">Si estas interesado en postularte envia tu sintesis curricular a la siguiente direccion electronica: </label>
+            
             <input id="txtCorreo" type="text" name="txtCorreo" value="" maxlength="100" placeholder="Correo" required>
-
+            <label id="tituloCaracteresFecha"> Valido Hasta:</label>
+            
             <input id="txtFecha" type="date" name="txtFecha" required>
 
             <input id="btnRegistrarPostulate" type="submit" name="btnRegistrarPostulate" value="Registrar">

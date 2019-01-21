@@ -169,26 +169,39 @@ label#tituloCaracteresPostulate2 {
 }
 input#txtCorreo {
     position: absolute;
-    top: 11.5cm;
-    width: 6cm;
+    top: 12cm;
+    width: 5cm;
     height: 0.5cm;
 }
-
+label#tituloCaracteresCorreo {
+    position: absolute;
+    top: 11cm;
+    left: 0.5cm;
+    font-weight: bold;
+    font-size: 13px;
+}
 input#txtFecha {
     position: absolute;
-    top: 12.5cm;
+    top: 14cm;
     width: 3.5cm;
     height: 0.5cm;
     font-size: 14px;
     border-color: rgb(69, 69, 69);
+}
+label#tituloCaracteresFecha {
+    position: absolute;
+    top: 13.5cm;
+    left: 0.5cm;
+    font-weight: bold;
+    font-size: 13px;
 }
 /*BOTON REGISTAR*/
 input#btnRegistrarPostulate {
     position: absolute;
     width: 50%;
     height: 20px;
-    left: 0.8cm;
-    top: 14.6cm;
+    left: 3.2cm;
+    top: 14.7cm;
     background: rgb(241, 129, 3);
     /*NARANJA*/
     color: rgb(255, 255, 255);

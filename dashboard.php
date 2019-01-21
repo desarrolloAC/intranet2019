@@ -19,6 +19,7 @@ include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
         <title>Intranet Alkes</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="favicon.png" />
 
         <!--INICIO LLAMADA DE ARCHIVOS CSS-->
         <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">

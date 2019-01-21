@@ -24,19 +24,9 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
         <!--INICIO LLAMADA DE ARCHIVOS CSS-->
         <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
         <link rel="stylesheet" type="text/css" href="estructura/css/tablaMenuVertical.css">
-        
-        <!--
-        <link rel="stylesheet" type="text/css" href="css/opcionCargo.css">
-        <link rel="stylesheet" type="text/css" href="css/opcionCategoria.css">
-        <link rel="stylesheet" type="text/css" href="css/opcionDepartamento.css">
-        <link rel="stylesheet" type="text/css" href="css/opcionOrganizacion.css">
-        <link rel="stylesheet" type="text/css" href="css/opcionPublicacion.css">
-        <link rel="stylesheet" type="text/css" href="css/opcionRol.css">
-        <link rel="stylesheet" type="text/css" href="css/opcionSubcategoria.css">
-        <link rel="stylesheet" type="text/css" href="css/opcionUsuario.css">
-        <link rel="stylesheet" type="text/css" href="css/categoriasParaPublicar.css">
-        -->
-        
+
+        <link rel="icon" type="image/png" href="favicon.png" />
+
         <link rel="stylesheet" type="text/css" href="css/cargo/opcionCargo.css">
         <link rel="stylesheet" type="text/css" href="css/categoria/opcionCategoria.css">
         <link rel="stylesheet" type="text/css" href="css/departamento/opcionDepartamento.css">
@@ -47,19 +37,6 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
         <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
         <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
 
-        <!--
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/avanceInformativo.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/boletinInformativo.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/comunicado.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/invitacionGeneral.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/nuevoIngresoAscenso.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/logro.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/postulate.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/cumpleMes.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/promocionEscolar.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/condolencia.css">
-        -->
-        
         <!--FIN DE LLAMADA ARCHIVOS CSS-->
 
         <!--INICIO LLAMADA ARCHIVOS JS-->
@@ -80,6 +57,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
 
         <style type="text/css">
+
             div#contenedorNombreUsuario {
                 position: relative;
                 top: 2.7cm;
@@ -239,7 +217,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
         <div class="contenedorContenidos">
 
-            
+
             <div id='contenedor_tabla_publicacion'>
                 <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/tablaPublicacion.php'; ?>
             </div>

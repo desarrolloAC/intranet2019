@@ -16,6 +16,8 @@ $conexion = conectar();
     <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
     <meta charset="utf-8">
 
+    <link rel="icon" type="image/png" href="favicon.png" />
+
     <link rel="stylesheet" href="css/lib/bootstrap.min.css" media="all" />
 
     <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">

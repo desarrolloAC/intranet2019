@@ -7,6 +7,8 @@
         <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
         <meta charset="utf-8">
 
+        <link rel="icon" type="image/png" href="favicon.png" />
+
         <link rel="stylesheet" type="text/css" href="css/reserva/estructura.css">
         <link rel="stylesheet" type="text/css" href="css/reserva/reserva_sala.css">
 

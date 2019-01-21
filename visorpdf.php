@@ -8,6 +8,8 @@
     <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
     <meta charset="utf-8">
 
+    <link rel="icon" type="image/png" href="favicon.png" />
+
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all" />
 
     <style>
@@ -82,8 +84,7 @@
                     echo '<iframe class="frame" src="http://192.168.0.130/site/procesos/Documentos/NTC-ISO%209004.pdf" type="application/pdf" />';
                      break;
 
-
-               default:
+                default:
                     echo '<iframe class="frame" src="http://localhost/intranet/index.php" type="application/pdf" />';
             }
      ?>

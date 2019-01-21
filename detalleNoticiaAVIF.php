@@ -8,6 +8,8 @@
     <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
     <meta charset="utf-8">
 
+    <link rel="icon" type="image/png" href="favicon.png" />
+
     <link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/detalle/detalleNoticiaAVIF.css" media="screen">
 

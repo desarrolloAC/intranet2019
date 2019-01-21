@@ -6,18 +6,20 @@
 <table id="tabla_publicacion" border="1">
     <thead>
         <tr id="titulo_columnas">
-            <td width="50" height="50" colspan="2">
+
+            <td width="50" height="50" colspan="4">
+
+               <h1>Publicacion</h1>
+
                 <!--<a href="#formulario_modal_publicacion" id="btnRegistrarUsuario" title="Crear Publicación">
                         <img src="assets/image/menu/botonesTablas/btnNuevo.png">
-                </a>-->
-                <!--INICIO DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
+                </a>
                 <div id="formulario_modal_publicacion" class="contenedor_formulario">
 
                     <div id="formulario">
 
                         <a href="#" class="cerrar"> X </a>
 
-                        <!--INICIO DEL DISEÑO FORMULARIO CREAR PUBLICACION-->
                         <div class="contenedor_formulario_publicacion">
 
                             <form method="POST" enctype="multipart/form-data" action="php/registrarPublicacion.php">
@@ -39,6 +41,7 @@
                                             <h5 id="label_cajas_texto">Categoría de la Publicación: </h5>
 
                                             <?php
+
                                             include_once $_SERVER['DOCUMENT_ROOT'] . '/intranet/conexion/conexion.php';
 
                                             $conexion = conectar();
@@ -58,6 +61,7 @@
                                             }
 
                                             echo "</select>";
+
                                             ?>
                                         </td>
                                     </tr>
@@ -97,16 +101,15 @@
                                 </table>
                             </form>
                         </div>
-                        <!--FIN DEL DISEÑO FORMULARIO CREAR USUARIO-->
-                    </div>
-                    <!--FIN DIV FORMULARIO-->
+
                 </div>
-                <!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
+
+                </div>
+                -->
             </td>
-            <td colspan="12">
+            <td colspan="10">
                 <form method="POST" action=''>
                     <input type="text" name="txtbuscar" id="txtBuscarPublicacion" placeholder="Buscar Por Título" maxlength="40">
-
                     <button type="submit" name="btnBuscarPublicacion" id="btnBuscarPublicacion" title="Buscar una Publicación">Buscar</button>
                 </form>
             </td>
@@ -162,6 +165,10 @@
     </thead>
     <tbody>
         <?php
+
+        include_once $_SERVER['DOCUMENT_ROOT'] . '/intranet/conexion/conexion.php';
+        $conexion = conectar();
+
         $consultaPublicacion;
 
         switch ($_SESSION['ID_Rol']) {

@@ -86,8 +86,8 @@ a[id="btnEditar"]:active{
 
 /*INPUT BUSCAR*/
 input[id="txtBuscarUsuario"]{
-    position: relative; width: 10cm; height: 28px; left: 8cm;
-    background-image: url(../imagenes/menu/botonesTablas/btnBuscar.png);
+    position: relative; width: 10cm; height: 28px; left: 3cm;
+    background-image: url(../../assets/image/menu/botonesTablas/btnBuscar.png);
     background-repeat: no-repeat;
     background-position: 2px 2px;
     text-align: center;
@@ -98,7 +98,7 @@ input[id="txtBuscarUsuario"]{
 
 /*INCIO DEL BOTON BUSCAR*/
 button[id="btnBuscarUsuario"]{
-    position: relative; width: 100px; height: 30px; left: 8.3cm;
+    position: relative; width: 100px; height: 30px; left: 3.3cm;
     background: rgb(241,129,3);/*NARANJA*/
     color: rgb(255,255,255);
     font-weight: bold;

@@ -7,7 +7,7 @@ require_once('estadosLogin.php');
 
 $conexion = conectar();
 
-$id_publicacion = $_GET['codigo'];
+$cedula  = $_GET['cedula'];
 $usuario = $_GET['usuario'];
 $estatus = $_GET['estatus'];
 
@@ -17,7 +17,7 @@ $stmt = mysqli_prepare($conexion, $updEstado);
 $stmt->bind_param("sss",
     $estatus,
     $usuario,
-    $id_publicacion
+    $cedula
 );
 
 $stmt->execute() or die(mysqli_error($conexion));
@@ -26,7 +26,7 @@ $stmt->execute() or die(mysqli_error($conexion));
 
 echo'<script language="javascript">
         alert("Registro Actualizado Con Exito");
-        location.href="../categoria.php";
+        location.href="../usuario.php";
     </script>';
 
 ?>

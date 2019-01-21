@@ -61,10 +61,12 @@
                 </div>
                 <!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
             </td>
-            <td colspan="8">
+            <td colspan="2">
+                <h1>Categoria</h1>
+            </td>
+            <td colspan="6">
                 <form method="POST">
                     <input type="text" name="txtBuscarCategoria" id="txtBuscarCategoria" placeholder="Buscar Por Nombre" maxlength="40">
-
                     <button type="submit" name="btnBuscarCategoria" id="btnBuscarCategoria" title="Buscar una categoria">Buscar</button>
                 </form>
             </td>
@@ -268,11 +270,13 @@
                     <?php
                     if ($mostrarCategoria['estatus'] == 'A') {
                         echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCategoria.php?codigo=".$mostrarCategoria['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
-								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
-							</a>";
+                                <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+                        </a>";
+
                         echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?codigo=".$mostrarCategoria['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar'>
-								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
-							</a>";
+                                <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
+                        </a>";
+
                     } else {
                         echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCategoria.php?codigo=".$mostrarCategoria['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar'>
 								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>

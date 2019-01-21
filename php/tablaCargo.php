@@ -3,6 +3,8 @@
 <!--<script type="text/javascript" src="js/validarCkeditor.js"></script>-->
 <script type="text/javascript" src="js/validar.js"></script>
 
+
+
 <table id="tabla_cargo" border="1">
     <thead>
         <tr id="titulo_columnas">
@@ -78,10 +80,12 @@
                 </div>
                 <!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
             </td>
-            <td colspan="8">
+            <td colspan="3">
+                <h1>Cargo</h1>     
+            </td>
+            <td colspan="5">                
                 <form method="POST">
                     <input type="text" name="txtBuscarCargo" id="txtBuscarCargo" placeholder="Buscar Por Nombre" maxlength="40">
-
                     <button type="submit" name="btnBuscarCargo" id="btnBuscarCargo" title="Buscar un cargo">Buscar</button>
                 </form>
             </td>
@@ -266,17 +270,27 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <?php
-                                                $conexion = conectar();
-                                                $sqldpto = mysqli_query($conexion, "SELECT ID_Departamento,Nombre FROM departamento WHERE estatus = 'A' ");
-                                                ?>
                                                 <h5 id="label_cajas_texto">Departamento</h5>
                                                 <select id="combos_formulario_usuario" name="txtDep" required>
                                                     <option value=""></option>
                                                     <?php
-                                                    while ($mostdpto = mysqli_fetch_array($sqldpto, MYSQLI_ASSOC)) {
-                                                        echo'<option value=' . $mostdpto['ID_Departamento'] . '>' . $mostdpto['Nombre'] . '</option>';
-                                                    }//FIN DEL WHILE
+                                                    
+                                                        $conexion = conectar();
+                                                        $sqldpto = mysqli_query($conexion, "SELECT ID_Departamento,Nombre FROM departamento WHERE estatus = 'A' ");
+
+                                                        if ($row = mysqli_fetch_array($sqldpto, MYSQLI_ASSOC)) {
+                                                            do {
+                                                                if ($row['Nombre'] == $mostrarUsuario['departamento']) {
+                                                                    echo "<option selected value='".$row['ID_Departamento']."'> ".$row['Nombre']." </option>";
+                                                                    
+                                                                } else {
+                                                                    echo "<option value='".$row['ID_Departamento']."'> ".$row['Nombre']." </option>";
+                                                                    
+                                                                }
+                                                                
+                                                            } while ($row = mysqli_fetch_array($sqldpto, MYSQLI_ASSOC));
+                                                        }
+
                                                     ?>
                                                 </select>
                                             </td>

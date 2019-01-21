@@ -55,10 +55,12 @@
                 </div>
                 <!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
             </td>
-            <td colspan="8">
+            <td colspan="2">
+                <h1>Rol</h1>
+            </td>
+            <td colspan="6">
                 <form method="POST">
                     <input type="text" name="txtBuscarRol" id="txtBuscarRol" placeholder="Buscar por nombre" maxlength="40">
-
                     <button type="submit" name="btnBuscarRol" id="btnBuscarRol" title="Buscar un rol">Buscar</button>
                 </form>
             </td>

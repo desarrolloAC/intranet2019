@@ -49,10 +49,12 @@
                     <!--FIN DIV FORMULARIO-->
                 </div>
                 <!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
-            <td colspan="12">
+            <td colspan="2">
+                <h1>Organizacion</h1>
+            </td>
+            <td colspan="5">
                 <form method="POST">
                     <input type="text" name="txtBuscarOrganizacion" id="txtBuscarOrganizacion" placeholder="Buscar Nombre" maxlength="40">
-
                     <button type="submit" name="btnBuscarOrganizacion" id="btnBuscarOrganizacion" title="Buscar una organizacion">Buscar</button>
                 </form>
             </td>

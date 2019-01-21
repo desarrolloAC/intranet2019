@@ -71,11 +71,12 @@
                     </div>
                     <!--FIN DIV FORMULARIO-->
                 </div>
-                <!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
-            <td colspan="12">
+            <td colspan="2">
+                <h1>Departamento</h1>
+            </td>
+            <td colspan="6">
                 <form method="POST">
                     <input type="text" name="txtBuscarDepartamento" id="txtBuscarDepartamento" placeholder="Buscar Nombre" maxlength="40">
-
                     <button type="submit" name="btnBuscarDepartamento" id="btnBuscarDepartamento" title="Buscar un departamento">Buscar</button>
                 </form>
             </td>

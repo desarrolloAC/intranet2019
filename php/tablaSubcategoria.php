@@ -74,7 +74,10 @@
                 </div>
                 <!--FIN DEL CONTENEDOR FORMULARIO SUBCATEGORÍA MODAL-->
             </td>
-            <td colspan="8">
+            <td colspan="2">
+                <h1>SubCategoria</h1>
+            </td>
+            <td colspan="6">
                 <form method="POST">
                     <input type="text" name="txtBuscarSubCategoria" id="txtBuscarSubCategoria" placeholder="Buscar Por Nombre" maxlength="40">
 

@@ -231,7 +231,10 @@ $conexion = conectar();
                 </div>
                 <!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
             </td>
-            <td colspan="12" class="ancho">
+            <td colspan="4">
+                <h1>Usuario</h1>
+            </td>
+            <td colspan="8" class="ancho">
                 <form method="POST">
                     <input type="text" name="txtBuscarUsuario" id="txtBuscarUsuario" placeholder="Buscar Cédula" maxlength="40">
                     <button type="submit" name="btnBuscarUsuario" id="btnBuscarUsuario" title="Buscar un usuario">Buscar</button>
@@ -768,19 +771,21 @@ $conexion = conectar();
                 <td width="70px" class="ancho">
                     <?php
                     if ($mostrarUsuario['Estatus'] == 'A') {
-                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoCategoria.php?cedula=".$mostrarUsuario['codigo']."&estatus=A' title='Activar' style='display: none;'>
+
+                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
 							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 
-                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?cedula=$mostrarUsuario[codigo]&estatus=D' title='Desactivar'>
+                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar'>
 							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
                     } else {
-                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoCategoria.php?cedula=$mostrarUsuario[codigo]&estatus=A' title='Activar'>
+
+                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar'>
 							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 
-                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?cedula=$mostrarUsuario[codigo]&estatus=D' title='Desactivar' style='display: none;'>
+                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar' style='display: none;'>
 							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
                     }

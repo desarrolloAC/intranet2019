@@ -61,8 +61,8 @@ a[id="btnRegistrarUsuario"]:active{
 
 /*INPUT BUSCAR*/
 input[id="txtBuscarOrganizacion"]{
-    position: relative; width: 10cm; height: 28px; left: 6.5cm;
-    background-image: url(../imagenes/menu/botonesTablas/btnBuscar.png);
+    position: relative; width: 10cm; height: 28px; left: 3.5cm;
+    background-image: url(../../assets/image/menu/botonesTablas/btnBuscar.png);
     background-repeat: no-repeat;
     background-position: 2px 2px;
     text-align: center;
@@ -73,7 +73,7 @@ input[id="txtBuscarOrganizacion"]{
 
 /*INCIO DEL BOTON BUSCAR*/
 button[id="btnBuscarOrganizacion"]{
-    position: relative; width: 100px; height: 30px; left: 6.7cm;
+    position: relative; width: 100px; height: 30px; left: 3.7cm;
     background: rgb(241,129,3);/*NARANJA*/
     color: rgb(255,255,255);
     font-weight: bold;

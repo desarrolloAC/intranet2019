@@ -3,5 +3,5 @@
 	$_SESSION['txtbuscar'] = $_POST['txtbuscar'];	
 ?>
 <script language='javascript'>     
-     location.href='../menuAdministrador.php';
+     location.href='../publicacion.php';
 </script>

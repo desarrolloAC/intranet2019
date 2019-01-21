@@ -11,45 +11,17 @@ $ID_Cargo = $_GET['codigo'];
 $estatus = $_GET['estatus'];
 $usuario = $_GET['usuario'];
 
-$updEstado = " UPDATE  cargo
-	                  SET  Estatus         ='$estatus',
-	                       UpdatedBy       ='$usuario',
-	                       Updated         = now()
-	                WHERE  ID_Cargo='$ID_Cargo'";
+$updEstado = " UPDATE  cargo SET  "
+        . "Estatus = '$estatus',
+	    UpdatedBy = '$usuario',
+	    Updated = now()
+	    WHERE ID_Cargo='$ID_Cargo'";
 
 mysqli_query($conexion, $editar);
 
-switch ($_SESSION['ID_Rol']) {
-    case TypeUsuario::ADMINISTRADOR:
+echo'<script language="javascript">
+        alert("Registro Actualizado Con Exito");
+        location.href="../cargo.php";
+    </script>';
 
-        echo'<script language="javascript">
-                 alert("Estado Actualizado Con Exito");
-                 location.href="../menuAdministrador.php";
-                 </script>';
-        break;
-    case TypeUsuario::AUTORIZADOR:
-
-        echo'<script language="javascript">
-                 alert("Estado Actualizado Con Exito");
-                 location.href="../menuAutorizador.php";
-                 </script>';
-        break;
-    case TypeUsuario::EDITOR:
-
-        echo'<script language="javascript">
-                 alert("Estado Actualizado Con Exito");
-                 location.href="../menuEditor.php";
-                 </script>';
-        break;
-    case TypeUsuario::PUBLICADOR:
-
-        echo'<script language="javascript">
-                 alert("Estado Actualizado Con Exito");
-                 location.href="../menuPublicador.php";
-            </script>';
-        break;
-    default: //LECTOR
-
-        break;
-}
 ?>

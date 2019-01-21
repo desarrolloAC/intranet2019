@@ -6,8 +6,8 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadoPublicacion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
 //SI EL USUARIO NO ESTA REGISTRADO NO PODRA VISUALIZAR LA PAGINA HASTA NO ESTAR LOGEADO Y LO LLEVARA DIRECTO AL LOGIN
-//if (!isset($_SESSION['Correo']))
-//    header("Location: login.php")
+if (!isset($_SESSION['Correo']))
+    header("Location: login.php")
 
 ?>
 
@@ -37,18 +37,6 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
         <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
         <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
 
-        <!--
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/avanceInformativo.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/boletinInformativo.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/comunicado.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/invitacionGeneral.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/nuevoIngresoAscenso.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/logro.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/postulate.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/cumpleMes.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/promocionEscolar.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/condolencia.css">
-        -->
 
         <!--FIN DE LLAMADA ARCHIVOS CSS-->
 

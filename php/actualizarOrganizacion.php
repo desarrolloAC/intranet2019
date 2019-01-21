@@ -22,37 +22,10 @@ $editar = " UPDATE organizacion
 //SE LEE LA VARIABLE QUERY CON LA INSTRUCCION SQL
 mysqli_query($conexion, $editar);
 
-switch ($_SESSION['ID_Rol']) {
-    case TypeUsuario::ADMINISTRADOR:
+echo'<script language="javascript">
+        alert("Registro Actualizado Con Exito");
+        location.href="../organizacion.php";
+    </script>';
 
-        echo'<script language="javascript">
-                  alert("Registro Actualizado Con Exito");
-                 location.href="../menuAdministrador.php";
-                 </script>';
-        break;
-    case TypeUsuario::AUTORIZADOR:
 
-        echo'<script language="javascript">
-                  alert("Registro Actualizado Con Exito");
-                 location.href="../menuAutorizador.php";
-                 </script>';
-        break;
-    case TypeUsuario::EDITOR:
-
-        echo'<script language="javascript">
-                  alert("Registro Actualizado Con Exito");
-                 location.href="../menuEditor.php";
-                 </script>';
-        break;
-    case TypeUsuario::PUBLICADOR:
-
-        echo'<script language="javascript">
-                  alert("Registro Actualizado Con Exito");
-                 location.href="../menuPublicador.php";
-            </script>';
-        break;
-    default: //LECTOR
-
-        break;
-}
 ?>

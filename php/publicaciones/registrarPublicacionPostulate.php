@@ -41,46 +41,10 @@ $stmt->bind_param("ssssssssss",
 $stmt->execute() or die(mysqli_error($conexion));
 
 
-switch ($_SESSION['ID_Rol']) {
+echo'<script language="javascript">
+    alert("Publicacion Realizada Con Exito");
+    location.href="../../publicacion.php";
+</script>';
 
-    case TypeUsuario::ADMINISTRADOR:
 
-        //INGRESAR EL USUARIO COMO ADMINISTRADOR
-        echo'<script language="javascript">
-                 alert("Publicacion Realizada Con Exito");
-                 location.href="../../menuAdministrador.php";
-                 </script>';
-        break;
-
-    case TypeUsuario::AUTORIZADOR:
-
-        /* INGRESAR EL USUARIO COMO AUTORIZADOR  */
-        echo'<script language="javascript">
-                 alert("Publicacion Realizada Con Exito");
-                 location.href="../menuAutorizador.php";
-                 </script>';
-        break;
-
-    case TypeUsuario::EDITOR:
-
-        /* INGRESAR EL USUARIO COMO EDITOR */
-        echo'<script language="javascript">
-                 alert("Publicacion Realizada Con Exito");
-                 location.href="../menuEditor.php";
-                 </script>';
-        break;
-
-    case TypeUsuario::PUBLICADOR:
-
-        /* INGRESAR EL USUARIO COMO PUBLICADOR */
-        echo'<script language="javascript">
-                 alert("Publicacion Realizada Con Exito");
-                 location.href="../../menuPublicador.php";
-            </script>';
-        break;
-
-    default: //LECTOR
-
-        break;
-}
 ?>

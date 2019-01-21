@@ -18,76 +18,20 @@ $vcodigo = mysqli_num_rows($sql);
 
 if (!empty($vcodigo)) {
 
-    switch ($_SESSION['ID_Rol']) {
-        case TypeUsuario::ADMINISTRADOR:
-
-            echo'<script language="javascript">
-	                    alert("El Código: ' . $codigo . ' Ya Existe. Ingrese uno Diferente. ");
-	                    location.href="../menuAdministrador.php";
-	                 </script>';
-            break;
-        case TypeUsuario::AUTORIZADOR:
-
-            echo'<script language="javascript">
-	                alert("El Código: ' . $codigo . ' Ya Existe. Ingrese uno Diferente. ");
-	                 location.href="../menuAutorizador.php";
-	                 </script>';
-            break;
-        case TypeUsuario::EDITOR:
-
-            echo'<script language="javascript">
-	                 alert("El Código: ' . $codigo . ' Ya Existe. Ingrese uno Diferente. ");
-	                 location.href="../menuEditor.php";
-	                 </script>';
-            break;
-        case TypeUsuario::PUBLICADOR:
-
-            echo'<script language="javascript">
-	                 alert("El Código: ' . $codigo . ' Ya Existe. Ingrese uno Diferente. ");
-	                 location.href="../menuPublicador.php";
-	            </script>';
-            break;
-        default: //LECTOR
-
-            break;
-    }
+    echo'<script language="javascript">
+        alert("El Código: ' . $codigo . ' Ya Existe. Ingrese uno Diferente. ");
+        location.href="../categoria.php";
+     </script>';
+    
+    
 } else {
+    
     $sql = " INSERT INTO categoria VALUES('$codigo','$nombre',DEFAULT,NOW(),'$_SESSION[Cedula]',NOW(),'$_SESSION[Cedula]','$descripcion')";
     $agregarCategoria = mysqli_query($conexion, $sql);
 
-
-    switch ($_SESSION['ID_Rol']) {
-        case TypeUsuario::ADMINISTRADOR:
-
-            echo'<script language="javascript">
-	                 alert("Categoria creada con exito");
-	                 location.href="../menuAdministrador.php";
-	                 </script>';
-            break;
-        case TypeUsuario::AUTORIZADOR:
-
-            echo'<script language="javascript">
-	                 alert("Categoria creada con exito");
-	                 location.href="../menuAutorizador.php";
-	                 </script>';
-            break;
-        case TypeUsuario::EDITOR:
-
-            echo'<script language="javascript">
-	                 alert("Categoria creada con exito");
-	                 location.href="../menuEditor.php";
-	                 </script>';
-            break;
-        case TypeUsuario::PUBLICADOR:
-
-            echo'<script language="javascript">
-	                  alert("Categoria creada con exito");
-	                 location.href="../menuPublicador.php";
-	            </script>';
-            break;
-        default: //LECTOR
-
-            break;
-    }
+    echo'<script language="javascript">
+            alert("Registro Creado con éxito");
+            location.href="../categoria.php";
+        </script>';
 }
 ?>

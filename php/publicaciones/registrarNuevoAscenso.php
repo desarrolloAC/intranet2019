@@ -75,38 +75,8 @@ switch ($error) {
 }
 
 
-switch ($_SESSION['ID_Rol']) {
-
-    case TypeUsuario::ADMINISTRADOR:
-        echo'<script language="javascript">
-                alert("Publicacion Realizada Con Exito");
-                location.href="../../menuAdministrador.php";
-            </script>';
-        break;
-
-    case TypeUsuario::AUTORIZADOR:
-        echo'<script language="javascript">
-                alert("Publicacion Realizada Con Exito");
-                location.href="../../menuAutorizador.php";
-            </script>';
-        break;
-
-    case TypeUsuario::EDITOR:
-        echo'<script language="javascript">
-                alert("Publicacion Realizada Con Exito");
-                location.href="../../menuEditor.php";
-            </script>';
-        break;
-
-    case TypeUsuario::PUBLICADOR:
-        echo'<script language="javascript">
-                alert("Publicacion Realizada Con Exito");
-                location.href="../../menuPublicador.php";
-            </script>';
-        break;
-
-    default: //LECTOR
-
-        break;
-}
+echo'<script language="javascript">
+    alert("Publicacion Realizada Con Exito");
+    location.href="../../publicacion.php";
+</script>';
 ?>

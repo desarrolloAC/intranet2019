@@ -33,54 +33,16 @@ if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
     //Asignamos el Rol a una variable de Sesión, para usarla en el Contexto.
     $_SESSION['ID_Rol'] = $row['ID_Rol'];
 
-    switch ($_SESSION['ID_Rol']) {
-
-        case TypeUsuario::ADMINISTRADOR:
-            /* INGRESAR EL USUARIO COMO ADMINISTRADOR */
-            echo'<script language="javascript">
-                  alert("Bienvenido al Sistema");
-                  location.href="../../menuAdministrador.php";
-                  </script>';
-            break;
-
-        case TypeUsuario::AUTORIZADOR:
-            /* INGRESAR EL USUARIO COMO AUTORIZADOR */
-            echo'<script language="javascript">
-                  alert("Bienvenido al Sistema");
-                  location.href="../../menuAutorizador.php";
-                  </script>';
-            break;
-
-        case TypeUsuario::EDITOR:
-            /* INGRESAR EL USUARIO COMO EDITOR */
-            echo'<script language="javascript">
-                  alert("Bienvenido al Sistema");
-                  location.href="../../menuEditor.php";
-                  </script>';
-            break;
-
-        case TypeUsuario::PUBLICADOR:
-            /* INGRESAR EL USUARIO COMO PUBLICADOR */
-            @session_start();
-            echo'<script language="javascript">
-                  alert("Bienvenido al Sistema");
-                  location.href="../../menuPublicador.php";
-             </script>';
-            break;
-
-        default: //LECTOR
-            // Usuario incorrecto o no existe
-            echo'<script language="javascript">
-                      alert("Error: Usuario o contraseña incorrectos");
-                      location.href=../../login.php";
-               </script>';
-            break;
-    }
+    echo'<script language="javascript">
+            alert("Bienvenido al Sistema");
+            location.href="../../publicacion.php";
+        </script>';
+            
 } else {
 
     echo'<script language="javascript">
-          alert("Error: Los roles prporciondos son incorrectos");
-          location.href="../../login.php";
+            alert("Error: Los roles prporciondos son incorrectos");
+            location.href="../../login.php";
         </script>';
 }
 ?>

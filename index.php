@@ -69,6 +69,7 @@ const capuslaInformativa = new Vue({
     methods: {
         getPublicaciones: function () {
             this.$http.get(publicacionesUrl).then((responsed) => {
+                this.list = [];
                 this.list = responsed.body;
             });
         }
@@ -153,6 +154,7 @@ const capuslaInformativa = new Vue({
                     methods: {
                         getPublicaciones: function () {
                             this.$http.get(invitacionUrl).then((responsed) => {
+                                this.list = [];
                                 this.list = responsed.body;
                             });
                         }
@@ -236,6 +238,7 @@ const capuslaInformativa = new Vue({
                     methods: {
                         getSalas: function () {
                             this.$http.get(salasUrl).then((responsed) => {
+                                this.list = [];
                                 this.list = responsed.body;
                             });
                         }
@@ -285,6 +288,7 @@ const capuslaInformativa = new Vue({
                     methods: {
                         getPublicaciones: function () {
                             this.$http.get(cumpleMesnUrl).then((responsed) => {
+                                this.list = [];
                                 this.list = responsed.body;
                             });
                         }
@@ -345,6 +349,7 @@ const capuslaInformativa = new Vue({
                     methods: {
                         getPublicaciones: function () {
                             this.$http.get(nuevoIngresoUrl).then((responsed) => {
+                                this.list = [];
                                 this.list = responsed.body;
                             });
                         }

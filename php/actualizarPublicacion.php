@@ -76,37 +76,10 @@ if ($error) {
 
 mysqli_query($conexion, $editar);
 
-switch ($_SESSION['ID_Rol']) {
-    case TypeUsuario::ADMINISTRADOR:
-        /* INGRESAR EL USUARIO COMO ADMINISTRADOR */
-        echo'<script language="javascript">
-                  alert("Registro Actualizado Con Exito");
-                 location.href="../menuAdministrador.php";
-                 </script>';
-        break;
-    case TypeUsuario::AUTORIZADOR:
-        /* INGRESAR EL USUARIO COMO AUTORIZADOR */
-        echo'<script language="javascript">
-                  alert("Registro Actualizado Con Exito");
-                 location.href="../menuAutorizador.php";
-                 </script>';
-        break;
-    case TypeUsuario::EDITOR:
-        /* INGRESAR EL USUARIO COMO EDITOR */
-        echo'<script language="javascript">
-                  alert("Registro Actualizado Con Exito");
-                 location.href="../menuEditor.php";
-                 </script>';
-        break;
-    case TypeUsuario::PUBLICADOR:
-        /* INGRESAR EL USUARIO COMO PUBLICADOR */
-        echo'<script language="javascript">
-                  alert("Registro Actualizado Con Exito");
-                 location.href="../menuPublicador.php";
-            </script>';
-        break;
-    default: //LECTOR
+echo'<script language="javascript">
+        alert("Registro Actualizado Con Exito");
+        location.href="../publicacion.php";
+    </script>';
 
-        break;
-}
+
 ?>

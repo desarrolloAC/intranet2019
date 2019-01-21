@@ -18,37 +18,10 @@ $updEstado = " UPDATE  rol
 
 mysqli_query($conexion, $updEstado);
 
-switch ($_SESSION['ID_Rol']) {
-    case TypeUsuario::ADMINISTRADOR:
+echo'<script language="javascript">
+        alert("Registro Actualizado Con Exito");
+        location.href="../rol.php";
+    </script>';
 
-        echo'<script language="javascript">
-                 alert("Estado Actualizado Con Exito");
-                 location.href="../menuAdministrador.php";
-                 </script>';
-        break;
-    case TypeUsuario::AUTORIZADOR:
 
-        echo'<script language="javascript">
-                 alert("Estado Actualizado Con Exito");
-                 location.href="../menuAutorizador.php";
-                 </script>';
-        break;
-    case TypeUsuario::EDITOR:
-
-        echo'<script language="javascript">
-                 alert("Estado Actualizado Con Exito");
-                 location.href="../menuEditor.php";
-                 </script>';
-        break;
-    case TypeUsuario::PUBLICADOR:
-
-        echo'<script language="javascript">
-                 alert("Estado Actualizado Con Exito");
-                 location.href="../menuPublicador.php";
-            </script>';
-        break;
-    default: //LECTOR
-
-        break;
-}
 ?>

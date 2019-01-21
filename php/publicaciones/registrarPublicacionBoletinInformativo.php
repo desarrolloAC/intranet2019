@@ -96,38 +96,10 @@ if ($error == 1 || $error1 == 1 || $error2 == 1 || $error3 == 1) {
 }
 
 
-switch ($_SESSION['ID_Rol']) {
+echo'<script language="javascript">
+    alert("Publicacion Realizada Con Exito");
+    location.href="../../publicacion.php";
+</script>';
 
-    case TypeUsuario::ADMINISTRADOR:
-        echo'<script language="javascript">
-                alert("Publicacion Realizada Con Exito");
-                location.href="../../menuAdministrador.php";
-            </script>';
-        break;
 
-    case TypeUsuario::AUTORIZADOR:
-        echo'<script language="javascript">
-                alert("Publicacion Realizada Con Exito");
-                location.href="../../menuAutorizador.php";
-            </script>';
-        break;
-
-    case TypeUsuario::EDITOR:
-        echo'<script language="javascript">
-                alert("Publicacion Realizada Con Exito");
-                location.href="../../menuEditor.php";
-            </script>';
-        break;
-
-    case TypeUsuario::PUBLICADOR:
-        echo'<script language="javascript">
-                alert("Publicacion Realizada Con Exito");
-                location.href="../../menuPublicador.php";
-            </script>';
-        break;
-
-    default: //LECTOR
-
-        break;
-}
 ?>

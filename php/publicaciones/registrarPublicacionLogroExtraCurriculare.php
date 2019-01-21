@@ -26,6 +26,8 @@ $ruta = $_FILES['btnImagen']['tmp_name'];
 
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
+
+
 switch ($error) {
 
     case 1: // UPLOAD_ERR_INI_SIZE

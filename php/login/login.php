@@ -25,6 +25,7 @@ if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
     echo'<script language="javascript">
         location.href="../../perfilesLogin.php";
       </script>';
+    
 } else {
 
     echo'<script language="javascript">

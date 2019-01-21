@@ -41,7 +41,7 @@ if (!isset($_SESSION['Correo']))
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/logro.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/postulate.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/cumpleMes.css">
-        <!--<link rel="stylesheet" type="text/css" href="formularioPublicaciones/nacimiento.css">-->
+        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/nacimiento.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/promocionEscolar.css">
         <link rel="stylesheet" type="text/css" href="formularioPublicaciones/condolencia.css">
         <!--FIN DE LLAMADA ARCHIVOS CSS-->

@@ -768,19 +768,19 @@ $conexion = conectar();
                 <td width="70px" class="ancho">
                     <?php
                     if ($mostrarUsuario['Estatus'] == 'A') {
-                        echo"<a id='btnActivo' name='btnActivo' href='opcionUsuario/actualizarEstado.php?cedula=$mostrarUsuario[codigo]&estatus=A' title='Activar' style='display: none;'>
+                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoCategoria.php?cedula=".$mostrarUsuario['codigo']."&estatus=A' title='Activar' style='display: none;'>
 							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 
-                        echo"<a id='btnDesactivado' name='btnDesactivado' href='opcionUsuario/actualizarEstado.php?cedula=$mostrarUsuario[codigo]&estatus=D' title='Desactivar'>
+                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?cedula=$mostrarUsuario[codigo]&estatus=D' title='Desactivar'>
 							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
                     } else {
-                        echo"<a id='btnActivo' name='btnActivo' href='opcionUsuario/actualizarEstado.php?cedula=$mostrarUsuario[codigo]&estatus=A' title='Activar'>
+                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoCategoria.php?cedula=$mostrarUsuario[codigo]&estatus=A' title='Activar'>
 							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
 
-                        echo"<a id='btnDesactivado' name='btnDesactivado' href='opcionUsuario/actualizarEstado.php?cedula=$mostrarUsuario[codigo]&estatus=D' title='Desactivar' style='display: none;'>
+                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?cedula=$mostrarUsuario[codigo]&estatus=D' title='Desactivar' style='display: none;'>
 							<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 						</a>";
                     }

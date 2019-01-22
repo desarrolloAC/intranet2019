@@ -45,7 +45,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
             <input id="txtNombreCompletoNuevoAscenso" type="text" name="txtNombreCompletoNuevoAscenso" placeholder="Nombre Completo" required>
             <?php
             echo "
-                <select name='txtDpto' class='combos_formulario_usuario' id='txtDpto1' required >
+                <select name='txtDpto' class='combos_formulario_usuario' id='txtDpto' required >
                 <option> Departamento </option>";
 
             $sql = " SELECT d.ID_Departamento,d.Nombre FROM departamento d WHERE d.Estatus='A'";
@@ -59,7 +59,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
             echo "</select>";
             ?>
-            <select name='txtCargo' class='combos_formulario_usuario' id='txtCargo1' required>
+            <select name='txtCargo' class='combos_formulario_usuario' id='txtCargo' required>
                 <option> Cargo </option>
             </select>
 

@@ -108,7 +108,7 @@ input#ncaracteresNuevoAscenso {
     font-weight: bold;
 }
 
-label#tituloCaracteresNuevoAscenso {
+label#tituloCaracteresNuevoAscenso{
     position: absolute;
     top: 14cm;
     left: 8cm;

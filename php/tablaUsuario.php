@@ -455,8 +455,9 @@ $conexion = conectar();
                 </td>
 
                 <td class="ancho">
-
-                    <a href='#<?php echo $mostrarUsuario['codigo']; ?>' id='btnEditar'>
+                   
+                   
+                   <a href='#<?php echo $mostrarUsuario['codigo']; ?>' id='btnEditar'>
                         <img src='assets/image/menu/botonesTablas/btnEditar.png'>
                     </a>
 

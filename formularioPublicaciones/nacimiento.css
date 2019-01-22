@@ -91,7 +91,7 @@ textarea#txtContenidoNacimiento {
 
 input#ncaracteresNacimiento {
     position: absolute;
-    top: 10cm;
+    top: 10.3cm;
     left: 7cm;
     border: none;
     background-color: transparent;
@@ -100,7 +100,7 @@ input#ncaracteresNacimiento {
 
 label#tituloCaracteresNacimiento {
     position: absolute;
-    top: 10cm;
+    top: 10.3cm;
     left: 7.8cm;
     font-weight: bold;
     font-size: 11px;

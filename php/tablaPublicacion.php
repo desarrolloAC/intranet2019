@@ -557,10 +557,11 @@
                 </td>
                 <td>
                     <?php
+                    /*
                     switch ($_SESSION['ID_Rol']) {
 
                         case TypeUsuario::ADMINISTRADOR:
-                            /* INGRESAR EL USUARIO COMO ADMINISTRADOR */
+                            
                             switch ($mostrarPublicacion['Estado']) {
                                 case EstadoPublicacion::RECHAZADO_A:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
@@ -599,7 +600,7 @@
                             } //FIN SWITCH
                             break;
                         case TypeUsuario::AUTORIZADOR:
-                            /* INGRESAR EL USUARIO COMO AUTORIZADOR */
+                            
                             switch ($mostrarPublicacion['Estado']) {
                                 case EstadoPublicacion::RECHAZADO_A:
 
@@ -624,7 +625,7 @@
                             } //FIN SWITCH
                             break;
                         case TypeUsuario::EDITOR:
-                            /* INGRESAR EL USUARIO COMO EDITOR */
+                            
                             switch ($mostrarPublicacion['Estado']) {
                                 case EstadoPublicacion::RECHAZADO_A:
                                     echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
@@ -650,7 +651,7 @@
                             } //FIN SWITCH  EDITOR
                             break;
                         case TypeUsuario::PUBLICADOR:
-                            /* INGRESAR EL USUARIO COMO EDITOR */
+                            
                             switch ($mostrarPublicacion['Estado']) {
                                 case EstadoPublicacion::RECHAZADO_A:
 
@@ -679,7 +680,7 @@
                         default: //PUBLICADOR
                             echo ' <h5></h5>';
                             break;
-                    }//FIN DE SWITCH PRINCIPAL ROL
+                    }//FIN DE SWITCH PRINCIPAL ROL*/
                     ?>
 
                     <div id='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>' class='contenedor_formulario'>

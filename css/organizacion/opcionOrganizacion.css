@@ -8,10 +8,12 @@ div[id="contenedor_tabla_organizacion"]{
 
 /*DISEÑO DE LA TABLA USUARIOS*/
 table[id="tabla_organizacion"]{
-    border-collapse: collapse;
-    border-left: transparent;
-    border-right: transparent;
-    word-break: break-all;
+     border-collapse: collapse;
+     background:transparent;
+     width:100%;
+     margin:0 auto;
+     position:relative;
+     word-break: break-all;
 }
 
 tr[id="titulo_columnas"]{

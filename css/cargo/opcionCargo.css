@@ -1,3 +1,5 @@
+
+
 div[id="contenedor_tabla_cargo"]{
     position: relative; width: 35cm; height: 21cm; left: 8cm; top: -13cm;
     overflow: auto;
@@ -8,10 +10,12 @@ div[id="contenedor_tabla_cargo"]{
 
 /*DISEÑO DE LA TABLA USUARIOS*/
 table[id="tabla_cargo"]{
-    border-collapse: collapse;
-    border-left: transparent;
-    border-right: transparent;
-    word-break: break-all;
+     border-collapse: collapse;
+     background:transparent;
+     width:100%;
+     margin:0 auto;
+     position:relative;
+     word-break: break-all;
 }
 
 tr[id="titulo_columnas"]{

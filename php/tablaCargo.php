@@ -51,10 +51,12 @@
                                             <h5 id="label_cajas_texto">Departamento</h5>
                                             <select id="combos_formulario_usuario" name="txtDep" required>
                                                 <option value=""></option>
-                                                <?php
+                                            <?php
+                                                //
                                                 while ($mostdpto = mysqli_fetch_array($sqldpto, MYSQLI_ASSOC)) {
                                                     echo'<option value=' . $mostdpto['ID_Departamento'] . '>' . $mostdpto['Nombre'] . '</option>';
                                                 }//FIN DEL WHILE
+                                                //
                                                 ?>
                                             </select>
                                         </td>

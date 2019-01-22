@@ -89,17 +89,17 @@ $conexion = conectar();
                                             <h5 id="label_cajas_texto"> Cargo </h5>
                                             <?php
                                             echo "<select name='cbCargo' id='combos_formulario_usuario'   required >
-                                                    <option> Cargo </option>";
+                                                <option> Cargo </option>";
 
-                                            $sql = " SELECT d.ID_Cargo,d.Nombre FROM cargo d WHERE d.Estatus='A'";
-                                            $rs = mysqli_query($conexion, $sql);
-                                            if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                do {
-                                                    echo "<option   value='$row[ID_Cargo]'> $row[Nombre] </option>";
-                                                } while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
-                                            }
+                                                $sql = " SELECT d.ID_Cargo,d.Nombre FROM cargo d WHERE d.Estatus='A'";
+                                                $rs = mysqli_query($conexion, $sql);
+                                                if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+                                                    do {
+                                                        echo "<option   value='$row[ID_Cargo]'> $row[Nombre] </option>";
+                                                    } while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
+                                                }
 
-                                            echo "</select>";
+                                                echo "</select>";
                                             ?>
                                         </td>
                                         <td class="ancho">
@@ -168,16 +168,17 @@ $conexion = conectar();
                                                 <select name='pai' id='pai'  class='combos_formulario_usuario' required >
                                                 <option>Pais </option>";
 
-                                            $sql = "SELECT * FROM paises";
-                                            $rs = mysqli_query($conexion, $sql);
+                                                $sql = "SELECT * FROM paises";
+                                                $rs = mysqli_query($conexion, $sql);
 
-                                            if ($row = mysqli_fetch_array($rs, MYSQLI_NUM)) {
-                                                do {
-                                                    echo "<option value='$row[0]'> $row[1] </option>";
-                                                } while ($row = mysqli_fetch_array($rs, MYSQLI_NUM));
-                                            }
+                                                if ($row = mysqli_fetch_array($rs, MYSQLI_NUM)) {
+                                                    do {
+                                                        echo "<option value='$row[0]'> $row[1] </option>";
+                                                    } while ($row = mysqli_fetch_array($rs, MYSQLI_NUM));
+                                                }
 
-                                            echo "</select>";
+                                                echo "</select>";
+                                                
                                             ?>
                                         </td>
                                         <td class="ancho">

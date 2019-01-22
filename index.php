@@ -56,25 +56,25 @@
             </div>
 
             <script type="text/javascript">
-
-const publicacionesUrl = 'php/index/consultaPublicacionesInfo.php';
-const capuslaInformativa = new Vue({
-    el: '#capuslaInformativa',
-    created: function () {
-        this.getPublicaciones();
-    },
-    data: {
-        list: []
-    },
-    methods: {
-        getPublicaciones: function () {
-            this.$http.get(publicacionesUrl).then((responsed) => {
-                this.list = [];
-                this.list = responsed.body;
-            });
-        }
-    }
-});
+                //
+                const publicacionesUrl = 'php/index/consultaPublicacionesInfo.php';
+                const capuslaInformativa = new Vue({
+                    el: '#capuslaInformativa',
+                    created: function () {
+                        this.getPublicaciones();
+                    },
+                    data: {
+                        list: []
+                    },
+                    methods: {
+                        getPublicaciones: function () {
+                            this.$http.get(publicacionesUrl).then((responsed) => {
+                                this.list = [];
+                                this.list = responsed.body;
+                            });
+                        }
+                    }
+                });
 
             </script>
             <!--FIN CAPSULA INFORMATIVA-->
@@ -97,6 +97,7 @@ const capuslaInformativa = new Vue({
             </div>
 
             <script>
+                //
                 const video = new Vue({
                     el: '#video',
                     created: function () {
@@ -142,6 +143,7 @@ const capuslaInformativa = new Vue({
             </div>
 
             <script type="text/javascript">
+                //
                 const invitacionUrl = 'php/index/consultaPublicacionesInvitaciones.php';
                 const invitacion = new Vue({
                     el: '#invitacion',
@@ -226,6 +228,7 @@ const capuslaInformativa = new Vue({
             </div>
 
             <script type="text/javascript">
+                //
                 const salasUrl = 'php/index/consultaSalas.php';
                 const salas = new Vue({
                     el: '#salas',
@@ -276,6 +279,7 @@ const capuslaInformativa = new Vue({
             </div>
 
             <script type="text/javascript">
+                //
                 const cumpleMesnUrl = 'php/index/consultaPublicacionesCumpleMes.php';
                 const cumpleMes = new Vue({
                     el: '#cumpleMes',
@@ -337,6 +341,7 @@ const capuslaInformativa = new Vue({
             </div>
 
             <script type="text/javascript">
+                //
                 const nuevoIngresoUrl = 'php/index/consultaPublicacionesNuevoIngreso.php';
                 const nuevoIngreso = new Vue({
                     el: '#nuevoIngreso',

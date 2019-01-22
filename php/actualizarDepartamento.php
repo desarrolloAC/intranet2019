@@ -2,26 +2,27 @@
 
 session_start();
 
-include $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
+require_once('../conexion/conexion.php');
 require_once('estadosLogin.php');
 
 $conexion = conectar();
 
-$codigo = trim($_POST["txtCodigoDepartamento"]);
-$dpto = $_POST["txtOrg"];
-$nombre = $_POST["txtNombreDepartamento"];
-$descripcion = $_POST["txtDesc"];
-$updatedBy = $_SESSION['Cedula'];
+$ID_Departamento= $_POST["txtCodigoDepartamento"];
+$Nombre = $_POST["txtNombreDepartamento"];
+$Estatus = $_POST['estatus'];
 
-$editar = " UPDATE departamento Set    
-                    Nombre = '$nombre',
-	            ID_Organizacion = '$dpto',
-	            Descripcion = '$descripcion',
-		    updated = now(),
-                    updatedBy = '$updatedBy'
-	            WHERE ID_Departamento  ='$codigo'";
 
-mysqli_query($conexion, $editar);
+$updEstado = " UPDATE departamento SET Estatus = ?, UpdatedBy = ?, Updated = CURRENT_TIMESTAMP WHERE ID_Departamento = ? ";
+
+$stmt = mysqli_prepare($conexion, $updEstado);
+
+$stmt->bind_param("ssss",
+    $ID_Departamento,
+    $nombre,
+    $estatus 
+);
+
+$stmt->execute() or die(mysqli_error($conexion));
 
 echo'<script language="javascript">
         alert("Registro Actualizado Con Exito");

@@ -302,19 +302,21 @@
                     </div>
                 </td>
                 <td width="70px;">
+              
+		
                     <?php
                     if ($mostrarSubCategoria['estatus'] == 'A') {
-                        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoSubCategoria.php?codigo=$mostrarSubCategoria[codigo]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
+                        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoSubCategoria.php?codigo=".$mostrarSubCategoria['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
 								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
-                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoSubCategoria.php?codigo=$mostrarSubCategoria[codigo]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar'>
+                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoSubCategoria.php?codigo=".$mostrarSubCategoria['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar'>
 								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
                     } else {
-                        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoSubCategoria.php?codigo=$mostrarSubCategoria[codigo]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar'>
+                        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoSubCategoria.php?codigo=".$mostrarSubCategoria['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar'>
 								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
-                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoSubCategoria.php?codigo=$mostrarSubCategoria[codigo]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar' style='display: none;'>
+                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoSubCategoria.php?codigo=".$mostrarSubCategoria['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar' style='display: none;'>
 								<img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
 							</a>";
                     }

@@ -11,7 +11,7 @@ $ID_Organizacion = $_GET['codigo'];
 $estatus = $_GET['estatus'];
 $usuario = $_GET['usuario'];
 
-$updEstado = " UPDATE  organizacion SET  
+$updEstado = " UPDATE  organizacion SET
     Estatus      ='$estatus',
     UpdatedBy       ='$usuario',
     Updated         = now()

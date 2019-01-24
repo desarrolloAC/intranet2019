@@ -15,7 +15,6 @@ $sql = "SELECT
 	pub.Estatus,
 	pub.Titulo AS Titulo,
 	pub.Foto,
-	pub.Contenido,
 	pub.CreatedBy,
 	pub.F_Publicacion,
 	cat.Estatus,

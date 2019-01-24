@@ -28,18 +28,7 @@ use Util\ICommandHandler;
  * @author brayan
  */
 class SendMailCommandHandler implements ICommandHandler {
-    //"brayanmartinez827@gmail.com"
-    //"reservaintranet@gmail.com",
-    //"willians.vasquez@alkescorp.com",
-    //"jose.birriel@alkescorp.com",
-    //"Ruth.sukerman@alkescorp.com",
-    //"vnunez@alkescorp.com",
-    //"walquiria.urdaneta@alkescorp.com",
 
-    /**
-     * Este es el mailer.
-     * @var Mail
-     */
     private $mailer;
     private $key;
     private $from;
@@ -59,19 +48,40 @@ class SendMailCommandHandler implements ICommandHandler {
         $this->to = $handler;
 
         $this->mailer->send(
-                $this->from,
-                $this->to,
-                $this->subject,
-                $this->generateMensager()
+            $this->from,
+            $this->to,
+            $this->subject,
+            $this->generateMensager()
         );
 
         echo $this->key;
     }
 
     private function generateMensager() {
-        return "<h1>Codigo de comfirmacion</h1><br>" .
-                "<p>Estas es una prueba para saber si  puedo enviar correos desde php Jajajajajajajaja. </p><br>" .
-                "<p>Estas es la clave " . $this->key . " para eliminar </p>";
+        
+        return '<div style="width: 100%; margin: 0px; padding: 0px;">
+
+                    <div style="width: 101%; height: 550px; position: relative; top: -22px; left: -8px;">
+                        <center>
+                            <img style="width: 400px; height: 500px; position: relative; top: 20px;" src="http://192.168.30.90/intranet/assets/image/LOGO%20INTRANET%20NARANJA-01.png" alt="Alkes Corp"/>
+                        </center>
+                    </div>
+
+                    <div style="width: 101%; height: 250px; position: relative; top: -44px; left: -8px; display: flex; justify-content: center;">
+
+                        <div style="width: 40%;">
+                           <center>
+                               <p>Estimado usuario el siguiente codigo es para cancelar la reserva de sala:</p>
+                               <h1>'. $this->key .'</h1>
+                           </center>
+                        </div>
+
+                    </div>
+
+                    <div style="width: 101%; height: 100px; background-color: rgb(241, 129, 3); position: relative; top: -66px; left: -8px;">
+                    </div>
+
+                </div>';
     }
 
     private function generateCode() {

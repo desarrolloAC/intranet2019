@@ -11,11 +11,11 @@ $ID_Organizacion = $_GET['codigo'];
 $estatus = $_GET['estatus'];
 $usuario = $_GET['usuario'];
 
-$updEstado = " UPDATE  organizacion
-	                  SET  Estatus         ='$estatus',
-	                       UpdatedBy       ='$usuario',
-	                       Updated         = now()
-	                WHERE  ID_Organizacion=' $ID_Organizacion'";
+$updEstado = " UPDATE  organizacion SET  
+    Estatus      ='$estatus',
+    UpdatedBy       ='$usuario',
+    Updated         = now()
+    WHERE  ID_Organizacion=' $ID_Organizacion'";
 
 mysqli_query($conexion, $updEstado);
 

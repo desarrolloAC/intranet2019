@@ -37,19 +37,6 @@ if (!isset($_SESSION['Correo']))
         <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
         <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
 
-        <!--
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/avanceInformativo.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/boletinInformativo.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/comunicado.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/invitacionGeneral.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/nuevoIngresoAscenso.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/logro.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/postulate.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/cumpleMes.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/promocionEscolar.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/condolencia.css">
-        -->
-
         <!--FIN DE LLAMADA ARCHIVOS CSS-->
 
         <!--INICIO LLAMADA ARCHIVOS JS-->
@@ -142,7 +129,6 @@ if (!isset($_SESSION['Correo']))
                 top: 0.8cm;
                 text-decoration: none;
                 color: rgb(255, 255, 255);
-                animation: fondo 5s infinite;
             }
 
 
@@ -153,7 +139,7 @@ if (!isset($_SESSION['Correo']))
                 }
 
                 100% {
-                    background-color: rgb(241, 129, 3);
+                    background-color: rgb(167, 166, 166);
                     color: rgb(69, 69, 69);
                 }
             }

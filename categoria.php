@@ -141,7 +141,7 @@ if (!isset($_SESSION['Correo']))
                 }
 
                 100% {
-                    background-color: rgb(241, 129, 3);
+                    background-color: rgb(167, 166, 166);
                     color: rgb(69, 69, 69);
                 }
             }

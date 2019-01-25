@@ -6,8 +6,8 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadoPublicacion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
 //SI EL USUARIO NO ESTA REGISTRADO NO PODRA VISUALIZAR LA PAGINA HASTA NO ESTAR LOGEADO Y LO LLEVARA DIRECTO AL LOGIN
-//if (!isset($_SESSION['Correo']))
-//    header("Location: login.php")
+if (!isset($_SESSION['Correo']))
+    header("Location: login.php")
 
 ?>
 
@@ -128,7 +128,6 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
                 top: 0.8cm;
                 text-decoration: none;
                 color: rgb(255, 255, 255);
-                animation: fondo 5s infinite;
             }
 
 
@@ -139,7 +138,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
                 }
 
                 100% {
-                    background-color: rgb(241, 129, 3);
+                    background-color: rgb(167, 166, 166);
                     color: rgb(69, 69, 69);
                 }
             }

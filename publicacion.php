@@ -130,18 +130,17 @@ if (!isset($_SESSION['Correo']))
                 top: 0.8cm;
                 text-decoration: none;
                 color: rgb(255, 255, 255);
-                animation: fondo 5s infinite;
             }
 
 
-            @keyframes fondo {
+           @keyframes fondo {
                 0% {
                     background-color: rgb(69, 69, 69);
                     transition: 1s ease-in-out;
                 }
 
                 100% {
-                    background-color: rgb(241, 129, 3);
+                    background-color: rgb(167, 166, 166);
                     color: rgb(69, 69, 69);
                 }
             }

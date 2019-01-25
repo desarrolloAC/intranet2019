@@ -7,17 +7,22 @@ require_once('estadosLogin.php');
 
 $conexion = conectar();
 
-$ID_Organizacion = $_GET['codigo'];
 $estatus = $_GET['estatus'];
 $usuario = $_GET['usuario'];
+$ID_Organizacion = $_GET['codigo'];
 
-$updEstado = " UPDATE  organizacion SET
-    Estatus      ='$estatus',
-    UpdatedBy       ='$usuario',
-    Updated         = now()
-    WHERE  ID_Organizacion=' $ID_Organizacion'";
 
-mysqli_query($conexion, $updEstado);
+$updEstado = " UPDATE organizacion SET Estatus = ?, UpdatedBy = ?, Updated = CURRENT_TIMESTAMP WHERE ID_Organizacion = ? ";
+
+$stmt = mysqli_prepare($conexion, $updEstado);
+$stmt->bind_param("sss",
+    $estatus,
+    $usuario,
+    $ID_Organizacion
+);
+
+$stmt->execute() or die(mysqli_error($conexion));
+
 
 echo'<script language="javascript">
         alert("Registro Actualizado Con Exito");

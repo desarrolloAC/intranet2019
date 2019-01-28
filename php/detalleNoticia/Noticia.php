@@ -12,14 +12,14 @@
  * @author brayan
  */
 class Noticia implements JsonSerializable {
-    
+
     private $organization;
     private $titulo;
     private $contenido;
     private $imagen;
-    
+
     public function __construct() {
-        
+
     }
 
     public function getOrganization() {

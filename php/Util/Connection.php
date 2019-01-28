@@ -75,7 +75,7 @@ class Connection implements IConnection {
     }
 
     /**
-     * Devuelve la conexion devuelta.
+     * Devuelve la conexion.
      *
      * @return mysqli objeto de conexion.
      */

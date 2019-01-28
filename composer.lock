@@ -4,8 +4,188 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d67203b6e9fc952ae681c538683a497",
+    "content-hash": "c8cb2176abf25f1ab7b5423410bb1743",
     "packages": [
+        {
+            "name": "luxor/collections",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luxorphp/collections.git",
+                "reference": "c97898fbf984484158e6abaf0c837b82f4690faf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luxorphp/collections/zipball/c97898fbf984484158e6abaf0c837b82f4690faf",
+                "reference": "c97898fbf984484158e6abaf0c837b82f4690faf",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Luxor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Brayan Martinez",
+                    "email": "brayanmartinez827@gmail.com"
+                }
+            ],
+            "description": "Modulo para la gestión de colecciones y estructuras de datos en PHP. Aun en desarrollo ne se recomienda su uso.",
+            "homepage": "https://github.com/luxorphp/collections",
+            "keywords": [
+                "data-structure",
+                "luxor"
+            ],
+            "time": "2018-06-05T23:35:50+00:00"
+        },
+        {
+            "name": "luxor/http-controller",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luxorphp/http-controller.git",
+                "reference": "418e3faad2906fa41200d6a6f050557b0286b50a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luxorphp/http-controller/zipball/418e3faad2906fa41200d6a6f050557b0286b50a",
+                "reference": "418e3faad2906fa41200d6a6f050557b0286b50a",
+                "shasum": ""
+            },
+            "require": {
+                "luxor/collections": "^0.2",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "luxor/mysql": "^0.1",
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Luxor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Brayan Martinez",
+                    "email": "brayanmartinez827@gmail.com"
+                }
+            ],
+            "description": "Módulo para crear un controlador frontal que trabaje sobre http. Aun en desarrollo ne se recomienda su uso",
+            "homepage": "https://github.com/luxor-php/http-controller",
+            "keywords": [
+                "https",
+                "luxor"
+            ],
+            "time": "2018-06-07T22:37:12+00:00"
+        },
+        {
+            "name": "luxor/mysql",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luxorphp/mysql.git",
+                "reference": "833f7d48c064e5d3ae82ce391d6aad31e19adbfc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luxorphp/mysql/zipball/833f7d48c064e5d3ae82ce391d6aad31e19adbfc",
+                "reference": "833f7d48c064e5d3ae82ce391d6aad31e19adbfc",
+                "shasum": ""
+            },
+            "require": {
+                "luxor/sql": "^0.1",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Luxor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Brayan Martinez",
+                    "email": "brayanmartinez827@gmail.com"
+                }
+            ],
+            "description": "Implementación concreta del modulo SQL para la gestion de base de datos MySQL. Aun en desarrollo ne se recomienda su uso.",
+            "homepage": "https://github.com/luxorphp/mysql",
+            "keywords": [
+                "luxor",
+                "mysql",
+                "sql"
+            ],
+            "time": "2018-06-04T19:34:51+00:00"
+        },
+        {
+            "name": "luxor/sql",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luxorphp/sql.git",
+                "reference": "b5c9cf7eef194f813815642b8cf7b916ad0bd5d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luxorphp/sql/zipball/b5c9cf7eef194f813815642b8cf7b916ad0bd5d2",
+                "reference": "b5c9cf7eef194f813815642b8cf7b916ad0bd5d2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Luxor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Brayan Martinez",
+                    "email": "brayanmartinez827@gmail.com"
+                }
+            ],
+            "description": "Modulo que establece un estándar, para la gestión de base de datos relacionales SQL. Aun en desarrollo ne se recomienda su uso",
+            "homepage": "https://github.com/luxorphp/sql",
+            "keywords": [
+                "luxor",
+                "sql"
+            ],
+            "time": "2018-06-04T19:01:09+00:00"
+        },
         {
             "name": "phpmailer/phpmailer",
             "version": "v6.0.6",

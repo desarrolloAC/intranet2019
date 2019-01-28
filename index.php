@@ -259,7 +259,7 @@
 
                 <div class="row">
                     <div class="col col-lg-12">
-                        <h1 class="tituloCapsulaInformativa">Cumpleañero del mes</h1>
+                        <h1 class="tituloCapsulaInformativa">Talento Humano</h1>
                     </div>
                 </div>
 
@@ -321,7 +321,7 @@
 
                 <div class="row">
                     <div class="col col-lg-12">
-                        <h1 class="tituloCapsulaInformativa">Nuevo ingreso</h1>
+                        <h1 class="tituloCapsulaInformativa">Celebraciones</h1>
                     </div>
                 </div>
 

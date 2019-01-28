@@ -48,7 +48,7 @@
 
 
 <body>
-    <a href="index.html">
+    <a href="index.php">
         <img class="logoAlkes" src="assets/image/top/logoAlkes.png">
     </a>
 

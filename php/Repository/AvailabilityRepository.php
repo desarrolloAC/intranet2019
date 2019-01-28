@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2018 braya
+ * Copyright (C) 2018 brayan
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -76,6 +76,7 @@ class AvailabilityRepository {
             $this->stmt->execute();
         } catch (\Exception $exc) {
             echo $exc->getTraceAsString();
+
         } finally {
             $this->stmt->close();
         }
@@ -127,8 +128,10 @@ class AvailabilityRepository {
 
                 $result = $inst;
             }
+
         } catch (\Exception $exc) {
             echo $exc->getTraceAsString();
+
         } finally {
             $this->stmt->close();
         }

@@ -17,7 +17,7 @@ if (!isset($_SESSION['Correo']))
 <html>
 
     <head>
-        <title>Intranet Alkes</title>
+        <title>Intranet Alkes Corp, S.A</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="favicon.png" />

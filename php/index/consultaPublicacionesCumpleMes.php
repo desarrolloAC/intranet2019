@@ -29,7 +29,6 @@ $rs = mysqli_query($conexion, $sql);
 
 $list = array();
 
-
 while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
 
     $inst = new Publicaciones();

@@ -434,6 +434,7 @@
                     <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/instagram.png" width="65">
                     <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/twitter.png" width="65">
                 </div>
+
             </div>
 
             <!--FILA 2-->

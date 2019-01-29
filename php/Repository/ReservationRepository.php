@@ -66,12 +66,13 @@ class ReservationRepository {
         try {        
             $this->stmt = $this->contex->getConnection()->prepare($sql);
             $this->stmt->bind_param(
-                    'ssii', 
-                    $entity->getIsReserved(), 
-                    $entity->getUser(),
-                    $entity->getAvailabilityId(),
-                    $entity->getReservationId()
-                    );
+                'ssii', 
+                $entity->getIsReserved(), 
+                $entity->getUser(),
+                $entity->getAvailabilityId(),
+                $entity->getReservationId()
+            );
+            
             $this->stmt->execute();
         
         } catch (\Exception $exc) {
@@ -93,16 +94,17 @@ class ReservationRepository {
         
         $sql = "SELECT * FROM reservation WHERE availability_id = ?;";
         $col1;$col2;$col3;$col4;$col5;$col6;$col7;$col8;$col9;
+ 
         $result = array();
         
         try {
             $this->stmt = $this->contex->getConnection()->prepare($sql);
             $this->stmt->bind_param('i', $id);
             $this->stmt->execute();
-
-            $this->stmt->bind_result($col1,$col2,$col3,$col4,$col5,
-                    $col6,$col7,$col8,$col9);
             
+             $this->stmt->bind_result($col1,$col2,$col3,$col4,$col5,
+                    $col6,$col7,$col8,$col9);
+ 
             while ($this->stmt->fetch()) {
                 $inst = new Reservation();
                 $inst->setReservationId($col1); 
@@ -114,7 +116,7 @@ class ReservationRepository {
                 $inst->setUser($col7);
                 $inst->setIsReserved($col8);
                 $inst->setAvailabilityId($col9);
-
+ 
                 array_push($result, $inst);
             }
         

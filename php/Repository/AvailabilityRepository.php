@@ -74,6 +74,7 @@ class AvailabilityRepository {
             );
 
             $this->stmt->execute();
+            
         } catch (\Exception $exc) {
             echo $exc->getTraceAsString();
 
@@ -91,40 +92,41 @@ class AvailabilityRepository {
     public function getByEntity($entity) {
 
         $sql = "SELECT * FROM availability WHERE space = ? AND days = ? AND moth = ? AND yeart = ?;";
-        $col1;
-        $col2;
-        $col3;
-        $col4;
-        $col5;
-        $col6;
-        $col7;
-        $col8;
+        $col1; 
+        $col2; 
+        $col3; 
+        $col4; 
+        $col5; 
+        $col6; 
+        $col7; 
+        $col8; 
         $result = null;
 
         try {
             $this->stmt = $this->contex->getConnection()->prepare($sql);
             $this->stmt->bind_param(
-                    'siss',
-                    $entity->getSpace(),
-                    $entity->getDays(),
-                    $entity->getMoth(),
-                    $entity->getYeart()
+                'siss',
+                $entity->getSpace(),
+                $entity->getDays(),
+                $entity->getMoth(),
+                $entity->getYeart()
             );
+            
             $this->stmt->execute();
-
-            $this->stmt->bind_result($col1, $col2, $col3, $col4, $col5,
-                    $col6, $col7, $col8);
-
-            while ($this->stmt->fetch()) {
+            
+             $this->stmt->bind_result($col1, $col2, $col3, $col4, $col5, 
+                    $col6, $col7, $col8); 
+ 
+            while ($this->stmt->fetch()) { 
                 $inst = new Availability();
-                $inst->setAvailabilityId($col1);
-                $inst->setIsActive($col2);
-                $inst->setCreated($col3);
-                $inst->setUpdated($col4);
-                $inst->setSpace($col5);
-                $inst->setDays($col6);
-                $inst->setMoth($col7);
-                $inst->setYeart($col8);
+                $inst->setAvailabilityId($col1); 
+                $inst->setIsActive($col2); 
+                $inst->setCreated($col3); 
+                $inst->setUpdated($col4); 
+                $inst->setSpace($col5); 
+                $inst->setDays($col6); 
+                $inst->setMoth($col7); 
+                $inst->setYeart($col8); 
 
                 $result = $inst;
             }
@@ -166,10 +168,13 @@ class AvailabilityRepository {
             while ($this->stmt->fetch()) {
                 $result = $col1;
             }
+            
         } catch (\Exception $exc) {
             echo $exc->getTraceAsString();
+            
         } finally {
             $this->stmt->close();
+            
         }
 
         return $result;

@@ -1,6 +1,6 @@
-<?php
+error_reporting();<?php
 
-/* 
+/*
  * Copyright (C) 2018 braya
  *
  * This program is free software: you can redistribute it and/or modify

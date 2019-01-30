@@ -484,7 +484,7 @@
 
             <div class="row">
                 <div class="col-sm-10 copy">
-                    <h3 id="derechoAutor">Copyright © 2018 Intranet Alkes. All rights reserved.</h3>
+                    <p id="derechoAutor">Copyright © 2018 Intranet Alkes. All rights reserved.</p>
                 </div>
                 <div class="col-sm-2 redes">
                     <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/instagram.png" width="65">

@@ -219,11 +219,19 @@ if (!window.requestAnimationFrame) {
 // Init plugin
 $('canvas').constellation({
 	star: {
-		width: 3
+        color: 'rgba(255, 255, 255, .5)',
+        width: 3,
+        randomWidth: true
 	},
 	line: {
-		color: 'rgba(255, 255, 255, .5)'
+		color: 'rgba(255, 255, 255, .5)',
+        width: 0.3
 	},
-	length: (window.innerWidth / 6),
+    velocity: 0.0001,
+    length: 120,
+    distance: 50,
+	length: (window.innerWidth / 8),
 	radius: (window.innerWidth / 5)
 });
+
+

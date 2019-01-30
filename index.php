@@ -31,6 +31,52 @@
         <!--INICIO CONTENEDOR DE CONTENIDOS-->
         <main class="contenedorContenido">
 
+            <div id="empresa" class="container-fluid empresa">
+                <div class="row">
+
+                     <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="assets/image/Logos/alkescorp2.png" alt="Mi Imagen">
+                            <div class="card-body">
+                                <h4 class="card-title">Alkes Corp</h4>
+                                <a href="http://alkes-corp.com/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="assets/image/Logos/Fruttech.png" alt="Mi Imagen">
+                            <div class="card-body">
+                                <h4 class="card-title">Fruttech</h4>
+                                <a href="http://www.fruttech.com/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="assets/image/Logos/INDUSTRIAS%20EL%20CAIMAN-01.png" alt="Mi Imagen">
+                            <div class="card-body">
+                                <h4 class="card-title">Industrias el Caiman</h4>
+                                <a href="http://www.industriaselcaiman.com.ve/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" target="_blank" src="assets/image/Logos/VENFRUCA-01.png" alt="Mi Imagen">
+                            <div class="card-body">
+                                <h4 class="card-title">Venezolana de Frutas</h4>
+                                <a href="http://venfruca.com/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             <!--INICIO CAPSULA INFORMATIVA-->
             <div id="capuslaInformativa" class="container-fluid capuslaInformativa">
 
@@ -83,17 +129,16 @@
 
             <!--INICIO VIDEO-->
             <div id="video" class="container-fluid video">
+
                 <div class="row">
-                    <div class="col col-lg-3">
-                        <!--vacio-->
+                    <div class="col col-lg-6">
+                        <video src="assets/video/POLITICA-20181212-173623.webm" type="video/webm" width="880" height="594" autoplay controls></video>
                     </div>
                     <div class="col col-lg-6">
-                        <video src="assets/video/POLITICA-20181212-173623.webm" type="video/webm" width="880" autoplay controls></video>
-                    </div>
-                    <div class="col col-lg-3">
-                        <!--vacio-->
+                        <img src="assets/image/likiliki.jpg" width="880" height="594" alt="Nuestras Marcas">
                     </div>
                 </div>
+
             </div>
 
             <script>
@@ -171,16 +216,15 @@
             <div id="salas" class="container-fluid salas">
 
                 <div class="row">
-                    <div class="col col-lg-12">
-                        <h1 class="tituloCapsulaInformativa2">Salas Reservadas Hoy</h1>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col col-lg-3">
-                        <!--vacio-->
-                    </div>
                     <div class="col col-lg-6">
+                        <img src="assets/image/likiliki.jpg" width="880" height="594" alt="Nuestras Marcas">
+                    </div>
+
+                    <div class="col col-lg-6">
+                       <center>
+                            <h1 class="tituloCapsulaInformativa2">Salas Reservadas Hoy</h1>
+                       </center>
                         <table class="tablaSala" border="0">
                             <tr class="colorFondo">
                                 <td>Dia</td>
@@ -190,7 +234,6 @@
                                 <td>Inicio</td>
                                 <td>Fin</td>
                                 <td>Usuario</td>
-                                <td>Estado</td>
                             </tr>
                             <tr class="colorDato" v-for="item in list">
                                 <td>
@@ -214,15 +257,10 @@
                                 <td>
                                     <h5>{{ item.usuario }}</h5>
                                 </td>
-                                <td>
-                                    <h5>{{ item.reservado }}</h5>
-                                </td>
                             </tr>
                         </table>
                     </div>
-                    <div class="col col-lg-3">
-                        <!--vacio-->
-                    </div>
+
                 </div>
 
             </div>
@@ -302,11 +340,17 @@
             </script>
             <!--FIN CUMPLEAÑEROS DEL MES-->
 
-
-
-
-
             <!--INICIO CANVAS-->
+            <div id="resena" class="container-fluid resena">
+
+                <div class="row">
+                    <div class="col col-lg-12">
+                        <h1 class="tituloCapsulaInformativa">Reseña Alkes</h1>
+                    </div>
+                </div>
+
+            </div>
+
             <div class="canvas">
                 <iframe class="iFrameKey" src="js/index/animate.html" scrolling="no" name="Costelacion" allowfullscreen="true" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor" allowtransparency="true" allowpaymentrequest="true">
                 </iframe>

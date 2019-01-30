@@ -30,7 +30,7 @@ class Connection implements IConnection {
 
     private static $instance = null;
     private $connection = null;
-    private $host = '192.168.30.90';
+    private $host = 'localhost';
     private $port = '3306';
     private $user = 'root';
     private $password = '12345678';
@@ -55,6 +55,7 @@ class Connection implements IConnection {
             $this->connection->set_charset("utf8");
         } catch (\Exception $exc) {
             echo $exc->getMessage();
+
         } finally {
 
         }

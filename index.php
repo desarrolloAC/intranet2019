@@ -36,7 +36,7 @@
 
                      <div class="col-md-3">
                         <div class="card">
-                            <img class="card-img-top" src="assets/image/Logos/alkescorp2.png" alt="Mi Imagen">
+                            <img class="card-img-top" src="assets/image/Logos/alkescorp3.png" alt="Mi Imagen">
                             <div class="card-body">
                                 <h4 class="card-title">Alkes Corp</h4>
                                 <a href="http://alkes-corp.com/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
@@ -135,7 +135,62 @@
                         <video src="assets/video/POLITICA-20181212-173623.webm" type="video/webm" width="880" height="594" autoplay controls></video>
                     </div>
                     <div class="col col-lg-6">
-                        <img src="assets/image/likiliki.jpg" width="880" height="594" alt="Nuestras Marcas">
+
+                        <!--INICIO DIV EFECTO SLIDER-->
+                        <div class="slider">
+                            <ul>
+                                <li>
+                                    <a class="link-slider" href="#" target="_blank">
+                                        <div class="div-slider">
+                                            <img class="image-slider" src="assets/image/banner/likiliki.jpg" alt="" />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link-slider" href="#" target="_blank">
+                                        <div class="div-slider">
+                                            <img class="image-slider" src="assets/image/banner/atraccion-vodka.jpg" alt="" />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link-slider" href="#" target="_blank">
+                                        <div class="div-slider">
+                                            <img class="image-slider" src="assets/image/banner/DMWaevYWAAAwHnx.jpg" alt="" />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link-slider" href="#" target="_blank">
+                                        <div class="div-slider">
+                                            <img class="image-slider" src="assets/image/banner/nativo-fresko.png" alt="" />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link-slider" href="#" target="_blank">
+                                        <div class="div-slider">
+                                            <img class="image-slider" src="assets/image/banner/nativo2.png" alt="" />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link-slider" href="#" target="_blank">
+                                        <div class="div-slider">
+                                            <img class="image-slider" src="assets/image/banner/shake-it-latas.jpg" alt="" />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link-slider" href="#" target="_blank">
+                                        <div class="div-slider">
+                                            <img class="image-slider" src="assets/image/banner/%C3%ADndice.jpeg" alt="" />
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
 
@@ -218,7 +273,7 @@
                 <div class="row">
 
                     <div class="col col-lg-6">
-                        <img src="assets/image/likiliki.jpg" width="880" height="594" alt="Nuestras Marcas">
+                        <img src="assets/image/banner/likiliki.jpg" width="880" height="594" alt="Nuestras Marcas">
                     </div>
 
                     <div class="col col-lg-6">
@@ -410,7 +465,7 @@
             <!--INICIO INFOGRAFIA-->
             <div class="container-fluid infografia">
                 <div class="row">
-                    <img src="assets/image/infografia.jpg" class="img-fluid image-infografia" alt="Infografia" />
+                    <img src="assets/image/infografia/infografia.jpg" class="img-fluid image-infografia" alt="Infografia" />
                 </div>
             </div>
             <!--FIN INFOGRAFIA-->
@@ -420,72 +475,19 @@
         <!--INICIO FOOTER-->
         <footer class="container-fluid footer">
 
-            <!--FILA 1-->
             <div class="row">
-
-                <!--INICIO FOLLETO INFORMATIVO-->
-                <div class="col col-lg-3 folletoInformativo">
+                <div class="col col-lg-12 folletoInformativo">
                     <h1 id="tituloFolletoInformativo">Folleto Informativo</h1>
-                    <img src="assets/image/infografia.jpg" class="img-fluid image-infografia" alt="Infografia" />
+                    <img src="assets/image/banner/aaa.jpg" class="img-fluid image-infografia" alt="Infografia" />
                 </div>
-
-                <!--INICIO NUESTRAS REDES-->
-                <div class="col col-lg-6 nuestrasPaginas">
-
-                    <!--TITULO -->
-                    <h1 id="tituloNuestrasPaginas">Nuestras Paginas</h1>
-
-                    <!--INICIO DIV EFECTO SLIDER-->
-                    <div class="slider">
-                        <ul>
-                            <li>
-                                <a class="link-slider" href="http://alkes-corp.com/index.php/es/" target="_blank">
-                                    <div class="div-slider">
-                                        <img class="image-slider" src="assets/image/footer/logo_alkes.png" alt="" />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="link-slider" href="http://www.industriaselcaiman.com.ve/index.php/es/" target="_blank">
-                                    <div class="div-slider">
-                                        <img class="image-slider" src="assets/image/footer/logo_iec.png" alt="" />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="link-slider" href="http://venfruca.com/index.php/es/" target="_blank">
-                                    <div class="div-slider">
-                                        <img class="image-slider" src="assets/image/footer/logo_venfruca.png" alt="" />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="link-slider" href="http://www.fruttech.com/index.php/es/" target="_blank">
-                                    <div class="div-slider">
-                                        <img class="image-slider" src="assets/image/footer/logo_fruttech.png" alt="" />
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <!--INICIO NUESTRAS REDES-->
-                <div class="col col-lg-3 nuestrasRedes">
-                    <h1 id="tituloNuestrasRedes">Nuestras Redes Sociales</h1>
-                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/f.png" width="65">
-                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/instagram.png" width="65">
-                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/twitter.png" width="65">
-                </div>
-
             </div>
 
-            <!--FILA 2-->
             <div class="row">
-                <!--INICIO COPYRING-->
-                <div class="col-sm-12 copy">
-                    <h3 id="derechoAutor">Copyright © 2018 Intranet Corporativa Rights Reserved. </h3>
+                <div class="col-sm-10 copy">
+                    <h3 id="derechoAutor">Copyright © 2018 Intranet Alkes. All rights reserved.</h3>
+                </div>
+                <div class="col-sm-2 redes">
+                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/instagram.png" width="65">
                 </div>
             </div>
 

@@ -164,7 +164,7 @@ a:active {
 
 .video {
     position: static;
-    height: 18.5cm;
+    height: auto;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -279,7 +279,7 @@ a:active {
 
 .folletoInformativo {
     height: 10cm;
-    background-color: var(--naraja-color);
+/*    background-color: var(--naraja-color);*/
 }
 
 h1#tituloFolletoInformativo {
@@ -303,8 +303,7 @@ h1#tituloNuestrasPaginas {
     position: relative;
     left: 0cm;
     top: 0cm;
-    width: 100%;
-    height: 8cm;
+    width: 140%;
     margin: auto;
     overflow: hidden;
 }
@@ -367,9 +366,8 @@ h1#tituloNuestrasPaginas {
 .div-slider {
     position: relative;
     left: 0px;
-    top: 0cm;
+    top: 0px;
     width: 100%;
-    height: 8cm;
 }
 
 .title-slider {
@@ -382,8 +380,8 @@ h1#tituloNuestrasPaginas {
     position: relative;
     top: 0cm;
     left: 0cm;
-    width: 3cm;
-    height: 4cm;
+    width: 880px;
+    height: 594px;
 }
 
 .nuestrasRedes {
@@ -399,7 +397,7 @@ h1#tituloNuestrasRedes {
 
 img#imagenFacebook {
     display: block;
-    margin-top: 0.5cm;
+    margin-top: 0.2cm;
     margin-left: 4cm;
     transition: 2s ease-in-out;
 }
@@ -418,11 +416,14 @@ img#imagenFacebook:hover {
 
 h3#derechoAutor {
     position: relative;
-    top: 0.2cm;
-    text-align: center;
+    top: 0.7cm;
+    text-align: left;
     margin: 0cm;
     color: var(--blanco-color);
 }
 
+.redes {
+    background-color: var(--naraja-color);
+}
 
 /**************************************** FOOTER  ************************************************************/

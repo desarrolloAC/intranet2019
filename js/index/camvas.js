@@ -220,18 +220,34 @@ if (!window.requestAnimationFrame) {
 $('canvas').constellation({
 	star: {
         color: 'rgba(255, 255, 255, .5)',
-        width: 3,
+        width: 5,
         randomWidth: true
 	},
 	line: {
 		color: 'rgba(255, 255, 255, .5)',
-        width: 0.3
+        width: 0.5
 	},
     velocity: 0.0001,
     length: 120,
     distance: 50,
-	length: (window.innerWidth / 8),
+	length: (window.innerWidth / 6),
 	radius: (window.innerWidth / 5)
 });
 
+
+const modal = document.getElementById('simple-modal');
+
+$('.canvas').click((event) => {
+    modal.style.display = 'block';
+});
+
+$('#close-btn').click(() => {
+    modal.style.display = 'none';
+});
+
+$('#simple-modal').click((e) => {
+    if (e.target == modal) {
+        modal.style.display = 'none';
+    }
+});
 

@@ -140,53 +140,16 @@
                         <div class="slider">
                             <ul>
                                 <li>
-                                    <a class="link-slider" href="#" target="_blank">
-                                        <div class="div-slider">
-                                            <img class="image-slider" src="assets/image/banner/likiliki.jpg" alt="" />
-                                        </div>
-                                    </a>
+                                    <img class="img-fluid image-slider" src="assets/image/banner/BANNERS%20IEC-01.jpg" alt="" />
                                 </li>
                                 <li>
-                                    <a class="link-slider" href="#" target="_blank">
-                                        <div class="div-slider">
-                                            <img class="image-slider" src="assets/image/banner/atraccion-vodka.jpg" alt="" />
-                                        </div>
-                                    </a>
+                                    <img class="img-fluid image-slider" src="assets/image/banner/BANNERS%20IEC-08.jpg" alt="" />
                                 </li>
                                 <li>
-                                    <a class="link-slider" href="#" target="_blank">
-                                        <div class="div-slider">
-                                            <img class="image-slider" src="assets/image/banner/DMWaevYWAAAwHnx.jpg" alt="" />
-                                        </div>
-                                    </a>
+                                    <img class="img-fluid image-slider" src="assets/image/banner/BANNERS%20IEC-01.jpg" alt="" />
                                 </li>
                                 <li>
-                                    <a class="link-slider" href="#" target="_blank">
-                                        <div class="div-slider">
-                                            <img class="image-slider" src="assets/image/banner/nativo-fresko.png" alt="" />
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="link-slider" href="#" target="_blank">
-                                        <div class="div-slider">
-                                            <img class="image-slider" src="assets/image/banner/nativo2.png" alt="" />
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="link-slider" href="#" target="_blank">
-                                        <div class="div-slider">
-                                            <img class="image-slider" src="assets/image/banner/shake-it-latas.jpg" alt="" />
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="link-slider" href="#" target="_blank">
-                                        <div class="div-slider">
-                                            <img class="image-slider" src="assets/image/banner/%C3%ADndice.jpeg" alt="" />
-                                        </div>
-                                    </a>
+                                    <img class="img-fluid image-slider" src="assets/image/banner/BANNERS%20IEC-08.jpg" alt="" />
                                 </li>
                             </ul>
                         </div>
@@ -273,7 +236,7 @@
                 <div class="row">
 
                     <div class="col col-lg-6">
-                        <img src="assets/image/banner/likiliki.jpg" width="880" height="594" alt="Nuestras Marcas">
+                        <img src="assets/image/banner/likiliki.jpg" class="img-fluid" width="880" height="594" alt="Nuestras Marcas">
                     </div>
 
                     <div class="col col-lg-6">
@@ -396,7 +359,7 @@
             <!--FIN CUMPLEAÑEROS DEL MES-->
 
             <!--INICIO CANVAS-->
-            <div id="resena" class="container-fluid resena">
+            <div class="container-fluid resena">
 
                 <div class="row">
                     <div class="col col-lg-12">
@@ -406,10 +369,19 @@
 
             </div>
 
-            <div class="canvas">
-                <iframe class="iFrameKey" src="js/index/animate.html" scrolling="no" name="Costelacion" allowfullscreen="true" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor" allowtransparency="true" allowpaymentrequest="true">
-                </iframe>
+            <div class="canvas" >
+               <canvas class="iFrameKey"></canvas>
             </div>
+
+            <div id="simple-modal" class="modal">
+                <div class="modal-content">
+                    <img class="modal_img" id="close-btn" src="assets/image/index/resena.png" alt="Reseña Alkes">
+                </div>
+            </div>
+
+            <script src="js/index/zepto.min.js"></script>
+            <script src="js/index/stats.min.js"></script>
+            <script src="js/index/camvas.js"></script>
             <!--FIN CANVAS-->
 
 
@@ -465,7 +437,7 @@
             <!--INICIO INFOGRAFIA-->
             <div class="container-fluid infografia">
                 <div class="row">
-                    <img src="assets/image/infografia/infografia.jpg" class="img-fluid image-infografia" alt="Infografia" />
+                    <img src="assets/image/infografia/Que%20es%20una%20auditor%C3%ADa-02.png" class="img-fluid image-infografia" alt="Infografia" />
                 </div>
             </div>
             <!--FIN INFOGRAFIA-->
@@ -477,17 +449,17 @@
 
             <div class="row">
                 <div class="col col-lg-12 folletoInformativo">
-                    <h1 id="tituloFolletoInformativo">Folleto Informativo</h1>
-                    <img src="assets/image/banner/aaa.jpg" class="img-fluid image-infografia" alt="Infografia" />
+
+
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-sm-10 copy">
-                    <p id="derechoAutor">Copyright © 2018 Intranet Alkes. All rights reserved.</p>
+                    <p id="derechoAutor">Copyright © 2018 Intranet Alkes. All Rights Reserved.</p>
                 </div>
                 <div class="col-sm-2 redes">
-                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/instagram.png" width="65">
+                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/instagram.png" width="60">
                 </div>
             </div>
 

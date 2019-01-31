@@ -30,7 +30,7 @@ class Connection implements IConnection {
 
     private static $instance = null;
     private $connection = null;
-    private $host = 'localhost';
+    private $host = '127.0.0.1';
     private $port = '3306';
     private $user = 'root';
     private $password = '12345678';

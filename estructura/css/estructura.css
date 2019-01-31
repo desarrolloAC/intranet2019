@@ -1,7 +1,7 @@
 :root {
     --naraja-color: rgb(241, 129, 3);
     --verder-color: rgb(36, 231, 17);
-    --blanco-color: #fff; 
+    --blanco-color: #fff;
     --vinotinto-color: rgb(100, 0, 0);
     --gris-color: rgb(67, 67, 67);
     --gris2-color: rgb(69, 69, 69);
@@ -18,7 +18,7 @@ body{
 }
 
 div.contenedor{
-	position: relative; 
+	position: relative;
 	height: 20cm;
 }
 
@@ -33,7 +33,7 @@ table#tablaContenedorMenu{
 	z-index: 99;
 	position: fixed; left: 20%;
 	width: 100%;
-	margin-top: 4.5%;	
+	margin-top: 4.5%;
 }
 
 .menu {
@@ -93,7 +93,7 @@ div#contenedorCabecera{
 	z-index: 2;
 	position: fixed;
 	width: 100%;
-	height: 3cm;	
+	height: 3cm;
 	background-color: rgb(241,129,3);/*NARANJA*/
 }
 
@@ -115,36 +115,36 @@ table#tabla_datos_inicio_de_sesion{
 }
 
 img#iconoUsuario{
-	
+
 	cursor: pointer;
 }
 
 img#iconoRol{
-	
+
 	cursor: pointer;
 }
 
 img#iconoOrganizacion{
-	
+
 	cursor: pointer;
 }
 
 span#nombreUsuario{
-	
+
 	color: rgb(255,255,255);
 }
 
 span#nombreRol{
-	
+
 	color: rgb(255,255,255);
 }
 
 span#nombreOrganizacion{
-	
+
 	color: rgb(255,255,255);
 }
 
-img#iconoSalir{	
+img#iconoSalir{
 	cursor: pointer;
 	transition: 1s ease-in-out;
 }
@@ -182,7 +182,7 @@ div#contenedorPiePagina{
 	z-index: 1;
 	position: relative; top: 23.1cm;
 	width: 100%;
-	height: 10.4cm;	
+	height: 10.4cm;
 	clear: both;
 	background-color: rgb(241,129,3);/*NARANJA*/
 }
@@ -215,19 +215,13 @@ h1#tituloNuestrasPaginas{
 	font-family: "Arial";
 }
 
-/*INICIO DISEÑO GALERIA DE IMAGENES*/
-.slider {
-	position: relative; left: 0cm; top: -1.5cm;
-	width: 100%;
-	height: 8cm;
-	margin: auto;
-	overflow: hidden;
-}
+
+*/
 
 .slider ul {
 	display: flex;
 	padding: 0;
-	width: 500%;	
+	width: 500%;
 	animation: cambio 10s infinite alternate linear;
 }
 
@@ -243,13 +237,13 @@ h1#tituloNuestrasPaginas{
 @keyframes cambio {
 	0% {margin-left: 0;}
 	20% {margin-left: 0;}
-	
+
 	25% {margin-left: -100%;}
 	45% {margin-left: -100%;}
-	
+
 	50% {margin-left: -200%;}
 	70% {margin-left: -200%;}
-	
+
 	75% {margin-left: -300%;}
 	100% {margin-left: -300%;}
 }
@@ -274,7 +268,7 @@ p#tituloNuestrasRedesSociales{
 
 div#contenedorLogoFacebook
 {
-	position: relative; left: 2.3cm; top: -0.2cm;  
+	position: relative; left: 2.3cm; top: -0.2cm;
 	width: 2cm;
 	height: 2cm;
 	margin-top: 0.6cm;
@@ -283,7 +277,7 @@ div#contenedorLogoFacebook
 
 div#contenedorLogoInstagram
 {
-	position: relative; left: 2.3cm; top: -0.2cm; 
+	position: relative; left: 2.3cm; top: -0.2cm;
 	width: 2cm;
 	height: 2cm;
 	margin-top: 0.6cm;
@@ -296,7 +290,7 @@ div#contenedorLogoTwitter
 	width: 2cm;
 	height: 2cm;
 	margin-top: 0.6cm;
-	transition: 2s all ease-in-out;	
+	transition: 2s all ease-in-out;
 }
 
 .efectoRotarRedesSociales:hover{
@@ -307,7 +301,7 @@ div#contenedorLogoTwitter
 /*FIN DISEÑO CONTENEDOR REDES SOCIALES*/
 
 div#contenedorDerechoAutor{
-	position: relative; top: 0cm;	
+	position: relative; top: 0cm;
 }
 
 h3#derechoAutor{

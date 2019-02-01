@@ -31,7 +31,6 @@
 
         <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/top.php'; ?>
 
-
         <!--INICIO CONTENEDOR DE CONTENIDOS-->
         <main class="contenedorContenido">
 

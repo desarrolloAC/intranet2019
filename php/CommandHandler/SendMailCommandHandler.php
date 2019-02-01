@@ -58,12 +58,12 @@ class SendMailCommandHandler implements ICommandHandler {
     }
 
     private function generateMensager() {
-        
+
         return '<div style="width: 100%; margin: 0px; padding: 0px;">
 
                     <div style="width: 101%; height: 550px; position: relative; top: -22px; left: -8px;">
                         <center>
-                            <img style="width: 400px; height: 500px; position: relative; top: 20px;" src="http://192.168.30.90/intranet/assets/image/LOGO%20INTRANET%20NARANJA-01.png" alt="Alkes Corp"/>
+                            <img style="width: 400px; height: 500px; position: relative; top: 20px;" src="http://172.20.7.36/intranet/assets/image/reserva/LOGO%20INTRANET%20NARANJA-01.png" alt="Alkes Corp"/>
                         </center>
                     </div>
 

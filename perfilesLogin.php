@@ -2,110 +2,109 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Intranet Alkes Corp, S.A</title>
+<head>
+    <title>Intranet Alkes Corp, S.A</title>
 
-        <meta name="viewport" content="width=device-width,device-height initial-scale=1.5" />
-        <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
-        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,device-height initial-scale=1.5" />
+    <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
+    <meta charset="utf-8">
 
-        <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="favicon.png" />
 
-        <link rel="stylesheet" href="css/lib/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css" media="all" />
 
-        <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
-        <link rel="stylesheet" type="text/css" href="css/login/login.css">
+    <link rel="stylesheet" type="text/css" href="css/structura/estructura.css">
+    <link rel="stylesheet" type="text/css" href="css/login/login.css">
 
-        <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all" />
-        <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all" />
-        <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all" />
 
-        <script src="js/lib/vue.js"></script>
-        <script src="js/lib/vue-resource.min.js"></script>
-        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-        <script type="text/javascript" src="js/perfileslogin/selectPerfiles.js"></script>
-    </head>
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/vue-resource.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/perfileslogin/selectPerfiles.js"></script>
+</head>
 
-    <body>
-
-
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/top.php'; ?>
+<body>
 
 
-        <!--INICIO CONTENEDOR DE CONTENIDOS-->
-        <main class="parent">
+    <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/top.php'; ?>
 
-            <div class="container-fluid">
 
-                <div class="row">
-                    <div class="col col-lg-4">
+    <!--INICIO CONTENEDOR DE CONTENIDOS-->
+    <main class="parent">
 
-                    </div>
-                    <div class="col col-lg-4">
+        <div class="container-fluid">
 
-                        <!--INICIO DEL DISEÑO FORMULARIO LOGIN-->
-                        <div class="contenedor_login">
+            <div class="row">
+                <div class="col col-lg-4">
 
-                            <h1 class="titulo_iniciarSesion">Seleccionar Rol</h1>
+                </div>
+                <div class="col col-lg-4">
 
-                            <form method="POST" action="php/login/inicioSesion.php">
+                    <!--INICIO DEL DISEÑO FORMULARIO LOGIN-->
+                    <div class="contenedor_login">
 
-                                <div class="form-group">
-                                    <label for="txtOrg">Organización</label>
-                                    <select class="form-control2" id="txtOrg" name='txtOrg'>
-                                        <option>Organizacion</option>
-                                        <option v-for="item in list" :value='item.key'>{{ item.name }}</option>
-                                    </select>
-                                </div>
+                        <h1 class="titulo_iniciarSesion">Seleccionar Rol</h1>
 
-                                <div class="form-group">
-                                    <label for="txtPerfil">Perfil</label>
-                                    <select class="form-control2" id="txtPerfil" name="txtPerfil">
-                                        <option>Perfil Usuario</option>
-                                    </select>
-                                </div>
+                        <form method="POST" action="php/login/inicioSesion.php">
 
-                                <br>
-                                <button type="submit" class="btn Ingresar">Seleccionar</button>
+                            <div class="form-group">
+                                <label for="txtOrg">Organización</label>
+                                <select class="form-control2" id="txtOrg" name='txtOrg'>
+                                    <option>Organizacion</option>
+                                    <option v-for="item in list" :value='item.key'>{{ item.name }}</option>
+                                </select>
+                            </div>
 
-                            </form>
+                            <div class="form-group">
+                                <label for="txtPerfil">Perfil</label>
+                                <select class="form-control2" id="txtPerfil" name="txtPerfil">
+                                    <option>Perfil Usuario</option>
+                                </select>
+                            </div>
 
-                            <script type="text/javascript">
+                            <br>
+                            <button type="submit" class="btn Ingresar">Seleccionar</button>
 
-                                const getOrgUrl = 'php/login/GetOrganization.php';
-                                const getOrg = new Vue({
-                                    el: '#txtOrg',
-                                    created: function () {
-                                        this.getPublicaciones();
-                                    },
-                                    data: {
-                                        list: []
-                                    },
-                                    methods: {
-                                        getPublicaciones: function () {
-                                            this.$http.get(getOrgUrl).then((responsed) => {
-                                                this.list = responsed.body;
-                                            });
-                                        }
+                        </form>
+
+                        <script type="text/javascript">
+                            const getOrgUrl = 'php/login/GetOrganization.php';
+                            const getOrg = new Vue({
+                                el: '#txtOrg',
+                                created: function() {
+                                    this.getPublicaciones();
+                                },
+                                data: {
+                                    list: []
+                                },
+                                methods: {
+                                    getPublicaciones: function() {
+                                        this.$http.get(getOrgUrl).then((responsed) => {
+                                            this.list = responsed.body;
+                                        });
                                     }
-                                });
+                                }
+                            });
 
-                            </script>
-
-                        </div>
-                        <!--FIN DEL DISEÑO FORMULARIO LOGIN-->
+                        </script>
 
                     </div>
-                    <div class="col col-lg-4">
+                    <!--FIN DEL DISEÑO FORMULARIO LOGIN-->
 
-                    </div>
+                </div>
+                <div class="col col-lg-4">
+
                 </div>
             </div>
+        </div>
 
 
-        </main>
-        <!--FIN CONTENEDOR DE CONTENIDOS-->
+    </main>
+    <!--FIN CONTENEDOR DE CONTENIDOS-->
 
-    </body>
+</body>
 
 </html>

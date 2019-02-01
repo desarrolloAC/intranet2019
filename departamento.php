@@ -16,335 +16,335 @@ if (!isset($_SESSION['Correo']))
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Intranet Alkes Corp, S.A</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="favicon.png" />
+<head>
+    <title>Intranet Alkes Corp, S.A</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png" />
 
-        <!--INICIO LLAMADA DE ARCHIVOS CSS-->
-        <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
-        <link rel="stylesheet" type="text/css" href="estructura/css/tablaMenuVertical.css">
+    <!--INICIO LLAMADA DE ARCHIVOS CSS-->
+    <link rel="stylesheet" type="text/css" href="css/structura/estructura.css">
+    <link rel="stylesheet" type="text/css" href="css/structura/tablaMenuVertical.css">
 
-        <link rel="stylesheet" type="text/css" href="css/cargo/opcionCargo.css">
-        <link rel="stylesheet" type="text/css" href="css/categoria/opcionCategoria.css">
-        <link rel="stylesheet" type="text/css" href="css/departamento/opcionDepartamento.css">
-        <link rel="stylesheet" type="text/css" href="css/organizacion/opcionOrganizacion.css">
-        <link rel="stylesheet" type="text/css" href="css/publicacion/opcionPublicacion.css">
-        <link rel="stylesheet" type="text/css" href="css/rol/opcionRol.css">
-        <link rel="stylesheet" type="text/css" href="css/subcategoria/opcionSubcategoria.css">
-        <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
-        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
+    <link rel="stylesheet" type="text/css" href="css/cargo/opcionCargo.css">
+    <link rel="stylesheet" type="text/css" href="css/categoria/opcionCategoria.css">
+    <link rel="stylesheet" type="text/css" href="css/departamento/opcionDepartamento.css">
+    <link rel="stylesheet" type="text/css" href="css/organizacion/opcionOrganizacion.css">
+    <link rel="stylesheet" type="text/css" href="css/publicacion/opcionPublicacion.css">
+    <link rel="stylesheet" type="text/css" href="css/rol/opcionRol.css">
+    <link rel="stylesheet" type="text/css" href="css/subcategoria/opcionSubcategoria.css">
+    <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
+    <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
 
-        <!--FIN DE LLAMADA ARCHIVOS CSS-->
+    <!--FIN DE LLAMADA ARCHIVOS CSS-->
 
-        <!--INICIO LLAMADA ARCHIVOS JS-->
-        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-        <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
-        <script type="text/javascript" src="js/selectdependientes.js"></script>
-        <script type="text/javascript" src="js/efectoBandeja.js"></script>
-        <script type="text/javascript" src="js/setInterval.js"></script>
-        <script type="text/javascript" src="js/list.js"></script>
+    <!--INICIO LLAMADA ARCHIVOS JS-->
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="js/selectdependientes.js"></script>
+    <script type="text/javascript" src="js/efectoBandeja.js"></script>
+    <script type="text/javascript" src="js/setInterval.js"></script>
+    <script type="text/javascript" src="js/list.js"></script>
 
-        <script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
-
-
-        <script src="js/lib/vue.js"></script>
-        <script src="js/lib/vue-resource.min.js"></script>
-        <!--FIN LLAMADA ARCHIVOS JS-->
+    <script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
 
 
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/vue-resource.min.js"></script>
+    <!--FIN LLAMADA ARCHIVOS JS-->
 
-        <style type="text/css">
-            div#contenedorNombreUsuario {
-                position: relative;
-                top: 2.7cm;
-                left: -0.4cm;
-                float: right;
-            }
 
-            div#bandeja {
-                z-index: 2;
-                position: relative;
-                left: -18cm;
-                top: 1cm;
-                width: 7cm;
-                height: 1cm;
-                float: right;
-                padding: 0.2cm;
-            }
 
-            div#bandeja {
+    <style type="text/css">
+        div#contenedorNombreUsuario {
+            position: relative;
+            top: 2.7cm;
+            left: -0.4cm;
+            float: right;
+        }
+
+        div#bandeja {
+            z-index: 2;
+            position: relative;
+            left: -18cm;
+            top: 1cm;
+            width: 7cm;
+            height: 1cm;
+            float: right;
+            padding: 0.2cm;
+        }
+
+        div#bandeja {
+            background-color: rgb(69, 69, 69);
+            transition: 1s ease-in-out;
+            cursor: pointer;
+            border-radius: 1rem;
+        }
+
+        a#abrirBandeja {
+            z-index: 2;
+            position: relative;
+            top: 0.2cm;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            margin-left: 0.5cm;
+        }
+
+        img#imagenBandeja {
+            z-index: 2;
+            position: relative;
+            float: left;
+        }
+
+        div#contenidoBandeja {
+            z-index: 2;
+            position: relative;
+            top: -1.2cm;
+            left: -0.2cm;
+            width: 10cm;
+            height: 7cm;
+            background-color: rgb(69, 69, 69);
+            border-radius: 1rem;
+            overflow: auto;
+        }
+
+        div#contenedorNotificaciones {
+            position: relative;
+            width: 9.6cm;
+            height: 2cm;
+            margin-bottom: 0.5cm;
+            text-align: center;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-color: rgb(255, 255, 255);
+            transition: 1s ease-in-out;
+            font-weight: bold;
+            animation: fondo 5s infinite;
+        }
+
+        a#enlaceNotificaciones {
+            position: relative;
+            top: 0.8cm;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+
+
+        @keyframes fondo {
+            0% {
                 background-color: rgb(69, 69, 69);
                 transition: 1s ease-in-out;
-                cursor: pointer;
-                border-radius: 1rem;
             }
 
-            a#abrirBandeja {
-                z-index: 2;
-                position: relative;
-                top: 0.2cm;
-                text-decoration: none;
-                color: rgb(255, 255, 255);
-                font-weight: bold;
-                margin-left: 0.5cm;
+            100% {
+                background-color: rgb(167, 166, 166);
+                color: rgb(69, 69, 69);
             }
+        }
 
-            img#imagenBandeja {
-                z-index: 2;
-                position: relative;
-                float: left;
-            }
+        div#nNotificacion {
+            z-index: 3;
+            position: relative;
+            top: -1.4cm;
+            left: 6cm;
+            color: rgb(255, 255, 255);
+            background-color: rgb(69, 69, 69);
+            width: 0.7cm;
+            height: 0.7cm;
+            border-radius: 2rem;
+        }
 
-            div#contenidoBandeja {
-                z-index: 2;
-                position: relative;
-                top: -1.2cm;
-                left: -0.2cm;
-                width: 10cm;
-                height: 7cm;
-                background-color: rgb(69, 69, 69);
-                border-radius: 1rem;
-                overflow: auto;
-            }
+        h5#rNumero {
+            position: relative;
+            top: 0.1cm;
+            left: 0cm;
+            font-size: 20px;
+            text-align: center;
+        }
 
-            div#contenedorNotificaciones {
-                position: relative;
-                width: 9.6cm;
-                height: 2cm;
-                margin-bottom: 0.5cm;
-                text-align: center;
-                border-bottom-style: solid;
-                border-bottom-width: 1px;
-                border-color: rgb(255, 255, 255);
-                transition: 1s ease-in-out;
-                font-weight: bold;
-                animation: fondo 5s infinite;
-            }
-
-            a#enlaceNotificaciones {
-                position: relative;
-                top: 0.8cm;
-                text-decoration: none;
-                color: rgb(255, 255, 255);
-            }
-
-
-            @keyframes fondo {
-                0% {
-                    background-color: rgb(69, 69, 69);
-                    transition: 1s ease-in-out;
-                }
-
-                100% {
-                    background-color: rgb(167, 166, 166);
-                    color: rgb(69, 69, 69);
-                }
-            }
-
-            div#nNotificacion {
-                z-index: 3;
-                position: relative;
-                top: -1.4cm;
-                left: 6cm;
-                color: rgb(255, 255, 255);
-                background-color: rgb(69, 69, 69);
-                width: 0.7cm;
-                height: 0.7cm;
-                border-radius: 2rem;
-            }
-
-            h5#rNumero {
-                position: relative;
-                top: 0.1cm;
-                left: 0cm;
-                font-size: 20px;
-                text-align: center;
-            }
-
-        </style>
+    </style>
 
 
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $(document).on('submit', '#formularioChat', function () {
-                    //Obtenemos datos formulario.
-                    var data = $(this).serialize();
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(document).on('submit', '#formularioChat', function() {
+                //Obtenemos datos formulario.
+                var data = $(this).serialize();
 
-                    //AJAX.
-                    $.ajax({
-                        type: 'POST',
-                        url: 'mensajes/mensaje.php',
-                        data: data,
-                        success: function (data) {
-                            $('#respuesta').html(data).fadeIn();
-                        }
-                    });
-                    return false;
+                //AJAX.
+                $.ajax({
+                    type: 'POST',
+                    url: 'mensajes/mensaje.php',
+                    data: data,
+                    success: function(data) {
+                        $('#respuesta').html(data).fadeIn();
+                    }
                 });
+                return false;
+            });
 
-            }); //Fin document.
+        }); //Fin document.
 
-        </script>
-    </head>
-
-
-
-    <body>
-
-        <!--INICIO CONTENEDOR CABECERA-->
-
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/topAdmin.php'; ?>
-
-        <!--FIN DEL CONTENEDOR CABECERA-->
+    </script>
+</head>
 
 
 
-        <!--INICIO CONTENEDOR MENU-->
+<body>
 
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdmin.php'; ?>
+    <!--INICIO CONTENEDOR CABECERA-->
 
-        <!--FIN CONTENEDOR MENU-->
+    <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/topAdmin.php'; ?>
 
-
-
-        <!--INICIO CONTENEDOR CONTENIDOS-->
-
-        <div class="contenedorContenidos">
+    <!--FIN DEL CONTENEDOR CABECERA-->
 
 
 
+    <!--INICIO CONTENEDOR MENU-->
 
-            <div id="contenedor_tabla_departamento">
-                <table id="tabla_departamento" border="1">
-                    <thead>
-                        <tr id="titulo_columnas">
-                            <td width="50" height="50" colspan="2">
-                                <a href="#formulario_modal_departamento" id="btnRegistrarUsuario" title="Registar un Departamento">
-                                    <img src="assets/image/menu/botonesTablas/btnNuevo.png">
-                                </a>
+    <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdmin.php'; ?>
 
-                                <!--INICIO DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
-                                <div id="formulario_modal_departamento" class="contenedor_formulario">
+    <!--FIN CONTENEDOR MENU-->
 
-                                    <div id="formulario">
 
-                                        <a href="#" class="cerrar">X</a>
 
-                                        <!--INICIO DEL DISEÑO FORMULARIO CREAR USUARIO-->
-                                        <div class="contenedor_formulario_departamento">
+    <!--INICIO CONTENEDOR CONTENIDOS-->
 
-                                            <form method="POST" action="php/registrarDepartamento.php">
-                                                <table id="tabla_formulario_departamento" border="0" cellpadding="7">
-                                                    <tr id="titulo_columna_formulario">
-                                                        <td colspan="2">
-                                                            <h1 id="titulo_registro_departamento">Registrar Departamento</h1>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 id="label_cajas_texto">Codigo</h5>
-                                                            <input type="text" id="caja_formulario_usuario" name="txtCodigoDepartamento" maxlength="4" required>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
+    <div class="contenedorContenidos">
 
-                                                        <td>
-                                                            <h5 id="label_cajas_texto">Nombre Del Departamento</h5>
-                                                            <input type="text" id="caja_formulario_usuario" name="txtNombreDepartamento" maxlength="100" required>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <?php
+
+
+
+        <div id="contenedor_tabla_departamento">
+            <table id="tabla_departamento" border="1">
+                <thead>
+                    <tr id="titulo_columnas">
+                        <td width="50" height="50" colspan="2">
+                            <a href="#formulario_modal_departamento" id="btnRegistrarUsuario" title="Registar un Departamento">
+                                <img src="assets/image/menu/botonesTablas/btnNuevo.png">
+                            </a>
+
+                            <!--INICIO DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
+                            <div id="formulario_modal_departamento" class="contenedor_formulario">
+
+                                <div id="formulario">
+
+                                    <a href="#" class="cerrar">X</a>
+
+                                    <!--INICIO DEL DISEÑO FORMULARIO CREAR USUARIO-->
+                                    <div class="contenedor_formulario_departamento">
+
+                                        <form method="POST" action="php/registrarDepartamento.php">
+                                            <table id="tabla_formulario_departamento" border="0" cellpadding="7">
+                                                <tr id="titulo_columna_formulario">
+                                                    <td colspan="2">
+                                                        <h1 id="titulo_registro_departamento">Registrar Departamento</h1>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 id="label_cajas_texto">Codigo</h5>
+                                                        <input type="text" id="caja_formulario_usuario" name="txtCodigoDepartamento" maxlength="4" required>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>
+                                                        <h5 id="label_cajas_texto">Nombre Del Departamento</h5>
+                                                        <input type="text" id="caja_formulario_usuario" name="txtNombreDepartamento" maxlength="100" required>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <?php
                                                             $conexion = conectar();
                                                             $sqlOrg = mysqli_query($conexion, " SELECT ID_Organizacion,Nombre FROM organizacion WHERE estatus = 'A' ");
                                                             ?>
-                                                            <h5 id="label_cajas_texto">Organizacion</h5>
-                                                            <select id="combos_formulario_usuario" name="txtOrg" required>
-                                                                <option value=""></option>
-                                                                <?php
+                                                        <h5 id="label_cajas_texto">Organizacion</h5>
+                                                        <select id="combos_formulario_usuario" name="txtOrg" required>
+                                                            <option value=""></option>
+                                                            <?php
                                                                 while ($mostOrg = mysqli_fetch_array($sqlOrg, MYSQLI_ASSOC)) {
                                                                     echo'<option value=' . $mostOrg['ID_Organizacion'] . '>' . $mostOrg['Nombre'] . '</option>';
                                                                 }//FIN DEL WHILE
                                                                 ?>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 id="label_cajas_texto">Descripcion Departamento</h5>
-                                                            <input type="text" id="caja_formulario_usuario" name="txtDesc" maxlength="255" required>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </form>
-                                        </div>
-                                        <!--FIN DEL DISEÑO FORMULARIO CREAR USUARIO-->
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 id="label_cajas_texto">Descripcion Departamento</h5>
+                                                        <input type="text" id="caja_formulario_usuario" name="txtDesc" maxlength="255" required>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </form>
                                     </div>
-                                    <!--FIN DIV FORMULARIO-->
+                                    <!--FIN DEL DISEÑO FORMULARIO CREAR USUARIO-->
                                 </div>
-                            <td colspan="2">
-                                <h1>Departamento</h1>
-                            </td>
-                            <td colspan="6">
-                                <form method="POST">
-                                    <input type="text" name="txtBuscarDepartamento" id="txtBuscarDepartamento" placeholder="Buscar Nombre" maxlength="40">
-                                    <button type="submit" name="btnBuscarDepartamento" id="btnBuscarDepartamento" title="Buscar un departamento">Buscar</button>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr id="titulo_columnas">
-                            <td width="600px">
-                                <h5>Código</h5>
-                            </td>
+                                <!--FIN DIV FORMULARIO-->
+                            </div>
+                        <td colspan="2">
+                            <h1>Departamento</h1>
+                        </td>
+                        <td colspan="6">
+                            <form method="POST">
+                                <input type="text" name="txtBuscarDepartamento" id="txtBuscarDepartamento" placeholder="Buscar Nombre" maxlength="40">
+                                <button type="submit" name="btnBuscarDepartamento" id="btnBuscarDepartamento" title="Buscar un departamento">Buscar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr id="titulo_columnas">
+                        <td width="600px">
+                            <h5>Código</h5>
+                        </td>
 
-                            <td width="600px">
-                                <h5>Nombre</h5>
-                            </td>
+                        <td width="600px">
+                            <h5>Nombre</h5>
+                        </td>
 
-                            <td width="600px">
-                                <h5>Estatus</h5>
-                            </td>
+                        <td width="600px">
+                            <h5>Estatus</h5>
+                        </td>
 
-                            <td width="1200px">
-                                <h5>Descripción</h5>
-                            </td>
+                        <td width="1200px">
+                            <h5>Descripción</h5>
+                        </td>
 
-                            <td width="600px">
-                                <h5>Creada Por</h5>
-                            </td>
+                        <td width="600px">
+                            <h5>Creada Por</h5>
+                        </td>
 
-                            <td width="800px">
-                                <h5>Fecha Creación</h5>
-                            </td>
+                        <td width="800px">
+                            <h5>Fecha Creación</h5>
+                        </td>
 
-                            <td width="600px">
-                                <h5>Actualizada Por</h5>
-                            </td>
+                        <td width="600px">
+                            <h5>Actualizada Por</h5>
+                        </td>
 
-                            <td width="800px">
-                                <h5>Fecha Actualización</h5>
-                            </td>
+                        <td width="800px">
+                            <h5>Fecha Actualización</h5>
+                        </td>
 
-                            <td width="300px">
-                                <h5>Edicion</h5>
-                            </td>
+                        <td width="300px">
+                            <h5>Edicion</h5>
+                        </td>
 
-                            <td width="300px">
-                                <h5>Acción</h5>
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
+                        <td width="300px">
+                            <h5>Acción</h5>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
                         /* include $_SERVER["DOCUMENT_ROOT"].'/intranet/conexion/conexion.php'; */
 
                         $conexion = conectar();
@@ -384,22 +384,22 @@ if (!isset($_SESSION['Correo']))
                         }
                         while ($mostrarDepartamento = mysqli_fetch_array($consultaDepartamento, MYSQLI_ASSOC)) {
                             ?>
-                            <tr id="datos_usuario">
-                                <td>
-                                    <h5>
-                                        <?php echo $mostrarDepartamento['codigo']; ?>
-                                    </h5>
-                                </td>
+                    <tr id="datos_usuario">
+                        <td>
+                            <h5>
+                                <?php echo $mostrarDepartamento['codigo']; ?>
+                            </h5>
+                        </td>
 
-                                <td>
-                                    <h5>
-                                        <?php echo $mostrarDepartamento['nombre']; ?>
-                                    </h5>
-                                </td>
+                        <td>
+                            <h5>
+                                <?php echo $mostrarDepartamento['nombre']; ?>
+                            </h5>
+                        </td>
 
-                                <td>
-                                    <h5>
-                                        <?php
+                        <td>
+                            <h5>
+                                <?php
                                         switch ($mostrarDepartamento['estatus']) {
                                             case 'A':
                                                 echo "ACTIVA";
@@ -409,18 +409,18 @@ if (!isset($_SESSION['Correo']))
                                                 break;
                                         }
                                         ?>
-                                    </h5>
-                                </td>
+                            </h5>
+                        </td>
 
-                                <td>
-                                    <h5>
-                                        <?php echo $mostrarDepartamento['Descripcion']; ?>
-                                    </h5>
-                                </td>
+                        <td>
+                            <h5>
+                                <?php echo $mostrarDepartamento['Descripcion']; ?>
+                            </h5>
+                        </td>
 
-                                <td>
-                                    <h5>
-                                        <?php
+                        <td>
+                            <h5>
+                                <?php
                                         $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
                                                          FROM   usuario
                                                          WHERE  Cedula='$mostrarDepartamento[CreatedBy]' ";
@@ -428,18 +428,18 @@ if (!isset($_SESSION['Correo']))
                                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                                         echo $row['Nombre'];
                                         ?>
-                                    </h5>
-                                </td>
+                            </h5>
+                        </td>
 
-                                <td>
-                                    <h5>
-                                        <?php echo $mostrarDepartamento['Created']; ?>
-                                    </h5>
-                                </td>
+                        <td>
+                            <h5>
+                                <?php echo $mostrarDepartamento['Created']; ?>
+                            </h5>
+                        </td>
 
-                                <td>
-                                    <h5>
-                                        <?php
+                        <td>
+                            <h5>
+                                <?php
                                         $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
                                                          FROM   usuario
                                                          WHERE  Cedula='$mostrarDepartamento[UpdatedBy]' ";
@@ -447,84 +447,84 @@ if (!isset($_SESSION['Correo']))
                                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                                         echo $row['Nombre'];
                                         ?>
-                                    </h5>
-                                </td>
+                            </h5>
+                        </td>
 
-                                <td>
-                                    <h5>
-                                        <?php echo $mostrarDepartamento['Updated']; ?>
-                                    </h5>
-                                </td>
+                        <td>
+                            <h5>
+                                <?php echo $mostrarDepartamento['Updated']; ?>
+                            </h5>
+                        </td>
 
-                                <td>
-                                    <a href='#<?php echo $mostrarDepartamento['codigo']; ?>' id="btnEditar">
-                                        <img src='assets/image/menu/botonesTablas/btnEditar.png'>
-                                    </a>
+                        <td>
+                            <a href='#<?php echo $mostrarDepartamento[' codigo']; ?>' id="btnEditar">
+                                <img src='assets/image/menu/botonesTablas/btnEditar.png'>
+                            </a>
 
-                                    <div id='<?php echo $mostrarDepartamento['codigo']; ?>' class='contenedor_formulario'>
+                            <div id='<?php echo $mostrarDepartamento[' codigo']; ?>' class='contenedor_formulario'>
 
-                                        <div id='formulario'>
+                                <div id='formulario'>
 
-                                            <a href='#' class='cerrar'>X</a>
+                                    <a href='#' class='cerrar'>X</a>
 
-                                            <div class='contenedor_formulario_categoria'>
+                                    <div class='contenedor_formulario_categoria'>
 
-                                                <form method='POST' action='php/actualizarDepartamento.php'>
+                                        <form method='POST' action='php/actualizarDepartamento.php'>
 
-                                                    <table id='tabla_formulario_categoria' border='0' cellpadding='7'>
-                                                        <tr id='titulo_columna_formulario'>
-                                                            <td colspan='2'>
-                                                                <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Código</h5>
-                                                                <input type='text' id='caja_formulario_usuario' required name='txtCodigoDepartamento' maxlength='4' readonly value='<?php echo $mostrarDepartamento['codigo'] ?>'>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Categoria</h5>
-                                                                <input type='text' id='caja_formulario_usuario' required name='txtNombreDepartamento' maxlength='100' value='<?php echo $mostrarDepartamento['nombre'] ?>'>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <?php
+                                            <table id='tabla_formulario_categoria' border='0' cellpadding='7'>
+                                                <tr id='titulo_columna_formulario'>
+                                                    <td colspan='2'>
+                                                        <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Código</h5>
+                                                        <input type='text' id='caja_formulario_usuario' required name='txtCodigoDepartamento' maxlength='4' readonly value='<?php echo $mostrarDepartamento[' codigo'] ?>'>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Categoria</h5>
+                                                        <input type='text' id='caja_formulario_usuario' required name='txtNombreDepartamento' maxlength='100' value='<?php echo $mostrarDepartamento[' nombre'] ?>'>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <?php
                                                                 $conexion = conectar();
                                                                 $sqlOrg = mysqli_query($conexion, " SELECT ID_Organizacion,Nombre FROM organizacion WHERE estatus = 'A' ");
                                                                 ?>
-                                                                <h5 id="label_cajas_texto">Organizacion</h5>
-                                                                <select id="combos_formulario_usuario" name="txtOrg" required>
-                                                                    <option value=""></option>
-                                                                    <?php
+                                                        <h5 id="label_cajas_texto">Organizacion</h5>
+                                                        <select id="combos_formulario_usuario" name="txtOrg" required>
+                                                            <option value=""></option>
+                                                            <?php
                                                                     while ($mostOrg = mysqli_fetch_array($sqlOrg, MYSQLI_ASSOC)) {
                                                                         echo'<option value=' . $mostOrg['ID_Organizacion'] . '>' . $mostOrg['Nombre'] . '</option>';
                                                                     }//FIN DEL WHILE
                                                                     ?>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Descripción</h5>
-                                                                <input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarDepartamento['Descripcion']; ?>'>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan='2'>
-                                                                <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </form>
-                                            </div>
-                                        </div>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Descripción</h5>
+                                                        <input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarDepartamento[' Descripcion']; ?>'>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan='2'>
+                                                        <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </form>
                                     </div>
-                                </td>
-                                <td width="70px;">
-                                    <?php
+                                </div>
+                            </div>
+                        </td>
+                        <td width="70px;">
+                            <?php
                                     if ($mostrarDepartamento['estatus'] == 'A') {
                                         echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoDepartamento.php?codigo=".$mostrarDepartamento['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
                                             <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
@@ -543,24 +543,24 @@ if (!isset($_SESSION['Correo']))
                                         </a>";
                                     }
                                     ?>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        <!--FIN DEL WHILE-->
-                    </tbody>
-                </table>
-                <?php
+                        </td>
+                    </tr>
+                    <?php } ?>
+                    <!--FIN DEL WHILE-->
+                </tbody>
+            </table>
+            <?php
                 if (isset($mensajeError)) {
                     echo $mensajeError;
                 }
                 ?>
 
-            </div>
-
         </div>
-        <!--FIN DEL CONTENEDOR CONTENIDOS-->
+
+    </div>
+    <!--FIN DEL CONTENEDOR CONTENIDOS-->
 
 
-    </body>
+</body>
 
 </html>

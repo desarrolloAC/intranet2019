@@ -20,7 +20,7 @@ $conexion = conectar();
 
     <link rel="stylesheet" href="css/lib/bootstrap.min.css" media="all" />
 
-    <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
+    <link rel="stylesheet" type="text/css" href="css/structura/estructura.css">
     <link rel="stylesheet" type="text/css" href="css/login/login.css">
 
     <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all" />

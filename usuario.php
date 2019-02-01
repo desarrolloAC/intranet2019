@@ -16,278 +16,278 @@ if (!isset($_SESSION['Correo']))
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Intranet Alkes Corp, S.A</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>Intranet Alkes Corp, S.A</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--INICIO LLAMADA DE ARCHIVOS CSS-->
-        <link rel="stylesheet" type="text/css" href="estructura/css/estructura.css">
-        <link rel="stylesheet" type="text/css" href="estructura/css/tablaMenuVertical.css">
+    <!--INICIO LLAMADA DE ARCHIVOS CSS-->
+    <link rel="stylesheet" type="text/css" href="css/structura/estructura.css">
+    <link rel="stylesheet" type="text/css" href="css/structura/tablaMenuVertical.css">
 
-        <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="favicon.png" />
 
-        <link rel="stylesheet" type="text/css" href="css/cargo/opcionCargo.css">
-        <link rel="stylesheet" type="text/css" href="css/categoria/opcionCategoria.css">
-        <link rel="stylesheet" type="text/css" href="css/departamento/opcionDepartamento.css">
-        <link rel="stylesheet" type="text/css" href="css/organizacion/opcionOrganizacion.css">
-        <link rel="stylesheet" type="text/css" href="css/publicacion/opcionPublicacion.css">
-        <link rel="stylesheet" type="text/css" href="css/rol/opcionRol.css">
-        <link rel="stylesheet" type="text/css" href="css/subcategoria/opcionSubcategoria.css">
-        <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
-        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
+    <link rel="stylesheet" type="text/css" href="css/cargo/opcionCargo.css">
+    <link rel="stylesheet" type="text/css" href="css/categoria/opcionCategoria.css">
+    <link rel="stylesheet" type="text/css" href="css/departamento/opcionDepartamento.css">
+    <link rel="stylesheet" type="text/css" href="css/organizacion/opcionOrganizacion.css">
+    <link rel="stylesheet" type="text/css" href="css/publicacion/opcionPublicacion.css">
+    <link rel="stylesheet" type="text/css" href="css/rol/opcionRol.css">
+    <link rel="stylesheet" type="text/css" href="css/subcategoria/opcionSubcategoria.css">
+    <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
+    <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
 
-        <!--FIN DE LLAMADA ARCHIVOS CSS-->
+    <!--FIN DE LLAMADA ARCHIVOS CSS-->
 
-        <!--INICIO LLAMADA ARCHIVOS JS-->
-        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-        <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
-        <script type="text/javascript" src="js/selectdependientes.js"></script>
-        <script type="text/javascript" src="js/efectoBandeja.js"></script>
-        <script type="text/javascript" src="js/setInterval.js"></script>
-        <script type="text/javascript" src="js/list.js"></script>
+    <!--INICIO LLAMADA ARCHIVOS JS-->
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="js/selectdependientes.js"></script>
+    <script type="text/javascript" src="js/efectoBandeja.js"></script>
+    <script type="text/javascript" src="js/setInterval.js"></script>
+    <script type="text/javascript" src="js/list.js"></script>
 
-        <script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
-
-
-        <script src="js/lib/vue.js"></script>
-        <script src="js/lib/vue-resource.min.js"></script>
-        <!--FIN LLAMADA ARCHIVOS JS-->
+    <script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
 
 
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/vue-resource.min.js"></script>
+    <!--FIN LLAMADA ARCHIVOS JS-->
 
-        <style type="text/css">
-            div#contenedorNombreUsuario {
-                position: relative;
-                top: 2.7cm;
-                left: -0.4cm;
-                float: right;
-            }
 
-            div#bandeja {
-                z-index: 2;
-                position: relative;
-                left: -18cm;
-                top: 1cm;
-                width: 7cm;
-                height: 1cm;
-                float: right;
-                padding: 0.2cm;
-            }
 
-            div#bandeja {
+    <style type="text/css">
+        div#contenedorNombreUsuario {
+            position: relative;
+            top: 2.7cm;
+            left: -0.4cm;
+            float: right;
+        }
+
+        div#bandeja {
+            z-index: 2;
+            position: relative;
+            left: -18cm;
+            top: 1cm;
+            width: 7cm;
+            height: 1cm;
+            float: right;
+            padding: 0.2cm;
+        }
+
+        div#bandeja {
+            background-color: rgb(69, 69, 69);
+            transition: 1s ease-in-out;
+            cursor: pointer;
+            border-radius: 1rem;
+        }
+
+        a#abrirBandeja {
+            z-index: 2;
+            position: relative;
+            top: 0.2cm;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            margin-left: 0.5cm;
+        }
+
+        img#imagenBandeja {
+            z-index: 2;
+            position: relative;
+            float: left;
+        }
+
+        div#contenidoBandeja {
+            z-index: 2;
+            position: relative;
+            top: -1.2cm;
+            left: -0.2cm;
+            width: 10cm;
+            height: 7cm;
+            background-color: rgb(69, 69, 69);
+            border-radius: 1rem;
+            overflow: auto;
+        }
+
+        div#contenedorNotificaciones {
+            position: relative;
+            width: 9.6cm;
+            height: 2cm;
+            margin-bottom: 0.5cm;
+            text-align: center;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-color: rgb(255, 255, 255);
+            transition: 1s ease-in-out;
+            font-weight: bold;
+            animation: fondo 5s infinite;
+        }
+
+        a#enlaceNotificaciones {
+            position: relative;
+            top: 0.8cm;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+
+
+        @keyframes fondo {
+            0% {
                 background-color: rgb(69, 69, 69);
                 transition: 1s ease-in-out;
-                cursor: pointer;
-                border-radius: 1rem;
             }
 
-            a#abrirBandeja {
-                z-index: 2;
-                position: relative;
-                top: 0.2cm;
-                text-decoration: none;
-                color: rgb(255, 255, 255);
-                font-weight: bold;
-                margin-left: 0.5cm;
+            100% {
+                background-color: rgb(167, 166, 166);
+                color: rgb(69, 69, 69);
             }
+        }
 
-            img#imagenBandeja {
-                z-index: 2;
-                position: relative;
-                float: left;
-            }
+        div#nNotificacion {
+            z-index: 3;
+            position: relative;
+            top: -1.4cm;
+            left: 6cm;
+            color: rgb(255, 255, 255);
+            background-color: rgb(69, 69, 69);
+            width: 0.7cm;
+            height: 0.7cm;
+            border-radius: 2rem;
+        }
 
-            div#contenidoBandeja {
-                z-index: 2;
-                position: relative;
-                top: -1.2cm;
-                left: -0.2cm;
-                width: 10cm;
-                height: 7cm;
-                background-color: rgb(69, 69, 69);
-                border-radius: 1rem;
-                overflow: auto;
-            }
+        h5#rNumero {
+            position: relative;
+            top: 0.1cm;
+            left: 0cm;
+            font-size: 20px;
+            text-align: center;
+        }
 
-            div#contenedorNotificaciones {
-                position: relative;
-                width: 9.6cm;
-                height: 2cm;
-                margin-bottom: 0.5cm;
-                text-align: center;
-                border-bottom-style: solid;
-                border-bottom-width: 1px;
-                border-color: rgb(255, 255, 255);
-                transition: 1s ease-in-out;
-                font-weight: bold;
-                animation: fondo 5s infinite;
-            }
-
-            a#enlaceNotificaciones {
-                position: relative;
-                top: 0.8cm;
-                text-decoration: none;
-                color: rgb(255, 255, 255);
-            }
-
-
-            @keyframes fondo {
-                0% {
-                    background-color: rgb(69, 69, 69);
-                    transition: 1s ease-in-out;
-                }
-
-                100% {
-                    background-color: rgb(167, 166, 166);
-                    color: rgb(69, 69, 69);
-                }
-            }
-
-            div#nNotificacion {
-                z-index: 3;
-                position: relative;
-                top: -1.4cm;
-                left: 6cm;
-                color: rgb(255, 255, 255);
-                background-color: rgb(69, 69, 69);
-                width: 0.7cm;
-                height: 0.7cm;
-                border-radius: 2rem;
-            }
-
-            h5#rNumero {
-                position: relative;
-                top: 0.1cm;
-                left: 0cm;
-                font-size: 20px;
-                text-align: center;
-            }
-
-        </style>
+    </style>
 
 
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $(document).on('submit', '#formularioChat', function () {
-                    //Obtenemos datos formulario.
-                    var data = $(this).serialize();
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(document).on('submit', '#formularioChat', function() {
+                //Obtenemos datos formulario.
+                var data = $(this).serialize();
 
-                    //AJAX.
-                    $.ajax({
-                        type: 'POST',
-                        url: 'mensajes/mensaje.php',
-                        data: data,
-                        success: function (data) {
-                            $('#respuesta').html(data).fadeIn();
-                        }
-                    });
-                    return false;
+                //AJAX.
+                $.ajax({
+                    type: 'POST',
+                    url: 'mensajes/mensaje.php',
+                    data: data,
+                    success: function(data) {
+                        $('#respuesta').html(data).fadeIn();
+                    }
                 });
+                return false;
+            });
 
-            }); //Fin document.
+        }); //Fin document.
 
-        </script>
-    </head>
-
-
-
-    <body>
-
-        <!--INICIO CONTENEDOR CABECERA-->
-
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/topAdmin.php'; ?>
-
-        <!--FIN DEL CONTENEDOR CABECERA-->
+    </script>
+</head>
 
 
 
-        <!--INICIO CONTENEDOR MENU-->
+<body>
 
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdmin.php'; ?>
+    <!--INICIO CONTENEDOR CABECERA-->
 
-        <!--FIN CONTENEDOR MENU-->
+    <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/topAdmin.php'; ?>
+
+    <!--FIN DEL CONTENEDOR CABECERA-->
 
 
 
-        <!--INICIO CONTENEDOR CONTENIDOS-->
+    <!--INICIO CONTENEDOR MENU-->
 
-        <div class="contenedorContenidos">
+    <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdmin.php'; ?>
 
-            <div id="contenedor_tabla_usuario">
+    <!--FIN CONTENEDOR MENU-->
 
-                <?php
+
+
+    <!--INICIO CONTENEDOR CONTENIDOS-->
+
+    <div class="contenedorContenidos">
+
+        <div id="contenedor_tabla_usuario">
+
+            <?php
                 $conexion = conectar();
                 ?>
 
-                <script type="text/javascript" src="js/selectdependientes.js"></script>
-                <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+            <script type="text/javascript" src="js/selectdependientes.js"></script>
+            <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 
-                <table id="tabla_usuario" border="1">
-                    <thead>
-                        <tr id="titulo_columnas" class="ancho">
-                            <td width="50" height="50" colspan="2" class="ancho">
+            <table id="tabla_usuario" border="1">
+                <thead>
+                    <tr id="titulo_columnas" class="ancho">
+                        <td width="50" height="50" colspan="2" class="ancho">
 
 
-                                <a href="#formulario_modal_usuario" id="btnRegistrarUsuario" title="Registar un usuario">
-                                    <img src="assets/image/menu/botonesTablas/btnNuevo.png">
-                                </a>
+                            <a href="#formulario_modal_usuario" id="btnRegistrarUsuario" title="Registar un usuario">
+                                <img src="assets/image/menu/botonesTablas/btnNuevo.png">
+                            </a>
 
-                                <!--INICIO DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
-                                <div id="formulario_modal_usuario" class="contenedor_formulario">
+                            <!--INICIO DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
+                            <div id="formulario_modal_usuario" class="contenedor_formulario">
 
-                                    <div id="formulario">
+                                <div id="formulario">
 
-                                        <a href="#" class="cerrar">X</a>
+                                    <a href="#" class="cerrar">X</a>
 
-                                        <!--INICIO DEL DISEÑO FORMULARIO CREAR USUARIO-->
-                                        <div class="contenedor_formulario_usuario">
+                                    <!--INICIO DEL DISEÑO FORMULARIO CREAR USUARIO-->
+                                    <div class="contenedor_formulario_usuario">
 
-                                            <form method="POST" action="php/registroUsuario.php" enctype="multipart/form-data">
+                                        <form method="POST" action="php/registroUsuario.php" enctype="multipart/form-data">
 
-                                                <table id="tabla_formulario_usuario" border="0" cellpadding="7">
-                                                    <tr id="titulo_columna_formulario" class="ancho">
-                                                        <td colspan="3" class="ancho">
-                                                            <h1 id="titulo_registro_usuario">Registro De Usuario</h1>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="ancho">
-                                                        <td>
-                                                            <h5 id="label_cajas_texto">Cédula</h5>
-                                                            <input type="text" id="caja_formulario_usuario" name="txtCedula" maxlength="8" required>
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Primer Nombre</h5>
-                                                            <input type="text" id="caja_formulario_usuario" name="txtpNombre" maxlength="40" required>
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Primer Apellido</h5>
-                                                            <input type="text" id="caja_formulario_usuario" name="txtpApellido" maxlength="40" required>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="ancho">
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Segundo Nombre</h5>
-                                                            <input type="text" id="caja_formulario_usuario" maxlength="40" name="txtsNombre">
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Segundo Apellido</h5>
-                                                            <input type="text" id="caja_formulario_usuario" maxlength="40" name="txtsApellido">
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Género</h5>
-                                                            <select id="combos_formulario_usuario" name="cbSexo" required>
-                                                                <option value="">Seleccione</option>
-                                                                <option value="Femenino">Femenino</option>
-                                                                <option value="Masculino">Masculino</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="ancho">
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto"> Departamento </h5>
-                                                            <?php
+                                            <table id="tabla_formulario_usuario" border="0" cellpadding="7">
+                                                <tr id="titulo_columna_formulario" class="ancho">
+                                                    <td colspan="3" class="ancho">
+                                                        <h1 id="titulo_registro_usuario">Registro De Usuario</h1>
+                                                    </td>
+                                                </tr>
+                                                <tr class="ancho">
+                                                    <td>
+                                                        <h5 id="label_cajas_texto">Cédula</h5>
+                                                        <input type="text" id="caja_formulario_usuario" name="txtCedula" maxlength="8" required>
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Primer Nombre</h5>
+                                                        <input type="text" id="caja_formulario_usuario" name="txtpNombre" maxlength="40" required>
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Primer Apellido</h5>
+                                                        <input type="text" id="caja_formulario_usuario" name="txtpApellido" maxlength="40" required>
+                                                    </td>
+                                                </tr>
+                                                <tr class="ancho">
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Segundo Nombre</h5>
+                                                        <input type="text" id="caja_formulario_usuario" maxlength="40" name="txtsNombre">
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Segundo Apellido</h5>
+                                                        <input type="text" id="caja_formulario_usuario" maxlength="40" name="txtsApellido">
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Género</h5>
+                                                        <select id="combos_formulario_usuario" name="cbSexo" required>
+                                                            <option value="">Seleccione</option>
+                                                            <option value="Femenino">Femenino</option>
+                                                            <option value="Masculino">Masculino</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class="ancho">
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto"> Departamento </h5>
+                                                        <?php
                                                             echo "
 
                                                             <select name='txtDpto' class='combos_formulario_usuario' id='txtDpto' required >
@@ -303,10 +303,10 @@ if (!isset($_SESSION['Correo']))
 
                                                             echo "</select>";
                                                             ?>
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto"> Cargo </h5>
-                                                            <?php
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto"> Cargo </h5>
+                                                        <?php
                                                             echo "<select name='cbCargo' id='combos_formulario_usuario'   required >
                                                                 <option> Cargo </option>";
 
@@ -320,10 +320,10 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                             ?>
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Rol</h5>
-                                                            <?php
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Rol</h5>
+                                                        <?php
                                                             echo "
                                                             <select name='rol' id='rol'  class='combos_formulario_usuario'   required >
                                                             <option>Rol </option>";
@@ -338,51 +338,51 @@ if (!isset($_SESSION['Correo']))
 
                                                             echo "</select>";
                                                             ?>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="ancho">
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Teléfono</h5>
-                                                            <input type="text" id="caja_formulario_usuario" maxlength="200" name="txttelefono" required>
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Correo</h5>
-                                                            <input type="text" id="caja_formulario_usuario" maxlength="200" name="txtCorreo" required>
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Contraseña</h5>
-                                                            <input type="password" id="caja_formulario_usuario" maxlength="200" name="clave1" required>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="ancho">
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Repita Contraseña</h5>
-                                                            <input type="password" id="caja_formulario_usuario" maxlength="200" name="clave2" required>
-                                                        </td>
-                                                        <td>
-                                                            <h5 id="label_cajas_texto"> Pregunta Secreta </h5>
-                                                            <select name="pre" id="pre" class='combos_formulario_usuario' required>
-                                                                <option value="">Seleccionar</option>
-                                                                <option value="Nombre de tu Primera Mascota">Nombre de tu Primera Mascota</option>
-                                                                <option value="Procer de la Independencia">Procer de la Independencia</option>
-                                                                <option value="Estado de Venezuela">Estado de Venezuela</option>
-                                                                <option value="Lugar de Nacimiento de la Madre">Lugar de Nacimiento de la Madre</option>
-                                                                <option value="Lugar de Nacimiento del Padre">Lugar de Nacimiento del Padre</option>
-                                                                <option value="Mejor Amigo de la Infancia">Mejor Amigo de la Infancia</option>
-                                                                <option value="Maestro Preferido de tu Infancia">Maestro Preferido de la Infancia</option>
-                                                                <option value="Lugar Favorito">Lugar Favorito</option>
-                                                                <option value="Comida Favorita">Comida Favorita</option>
-                                                            </select>
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Respuesta Secreta</h5>
-                                                            <input type="password" id="caja_formulario_usuario" maxlength="200" name="res" required>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="ancho">
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Pais</h5>
-                                                            <?php
+                                                    </td>
+                                                </tr>
+                                                <tr class="ancho">
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Teléfono</h5>
+                                                        <input type="text" id="caja_formulario_usuario" maxlength="200" name="txttelefono" required>
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Correo</h5>
+                                                        <input type="text" id="caja_formulario_usuario" maxlength="200" name="txtCorreo" required>
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Contraseña</h5>
+                                                        <input type="password" id="caja_formulario_usuario" maxlength="200" name="clave1" required>
+                                                    </td>
+                                                </tr>
+                                                <tr class="ancho">
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Repita Contraseña</h5>
+                                                        <input type="password" id="caja_formulario_usuario" maxlength="200" name="clave2" required>
+                                                    </td>
+                                                    <td>
+                                                        <h5 id="label_cajas_texto"> Pregunta Secreta </h5>
+                                                        <select name="pre" id="pre" class='combos_formulario_usuario' required>
+                                                            <option value="">Seleccionar</option>
+                                                            <option value="Nombre de tu Primera Mascota">Nombre de tu Primera Mascota</option>
+                                                            <option value="Procer de la Independencia">Procer de la Independencia</option>
+                                                            <option value="Estado de Venezuela">Estado de Venezuela</option>
+                                                            <option value="Lugar de Nacimiento de la Madre">Lugar de Nacimiento de la Madre</option>
+                                                            <option value="Lugar de Nacimiento del Padre">Lugar de Nacimiento del Padre</option>
+                                                            <option value="Mejor Amigo de la Infancia">Mejor Amigo de la Infancia</option>
+                                                            <option value="Maestro Preferido de tu Infancia">Maestro Preferido de la Infancia</option>
+                                                            <option value="Lugar Favorito">Lugar Favorito</option>
+                                                            <option value="Comida Favorita">Comida Favorita</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Respuesta Secreta</h5>
+                                                        <input type="password" id="caja_formulario_usuario" maxlength="200" name="res" required>
+                                                    </td>
+                                                </tr>
+                                                <tr class="ancho">
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Pais</h5>
+                                                        <?php
                                                             echo "
                                                                 <select name='pai' id='pai'  class='combos_formulario_usuario' required >
                                                                 <option>Pais </option>";
@@ -399,127 +399,127 @@ if (!isset($_SESSION['Correo']))
                                                                 echo "</select>";
 
                                                             ?>
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Estado</h5>
-                                                            <select name="edo" id="edo" class='combos_formulario_usuario' id='edo' required>
-                                                                <option value="">Estado</option>
-                                                            </select>
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Municipio</h5>
-                                                            <select name="mun" id="mun" class='combos_formulario_usuario' id='mun' required>
-                                                                <option value="">Municipio</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="ancho">
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Ciudad</h5>
-                                                            <select name="ciu" id="ciu" class='combos_formulario_usuario' id='ciu' required>
-                                                                <option value="">Ciudad</option>
-                                                            </select>
-                                                        </td>
-                                                        <td class="ancho">
-                                                            <h5 id="label_cajas_texto">Parroquia</h5>
-                                                            <select name="par" id="par" class='combos_formulario_usuario' id='par' required>
-                                                                <option value="">Parroquia</option>
-                                                            </select>
-                                                        </td>
-                                                        <td id="color_fondo_cajas" class="ancho">
-                                                            <h5 id="label_cajas_texto">Subir Imagen</h5>
-                                                            <input type="file" name="btnImagen" id="btnImage" required>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="ancho">
-                                                        <td colspan="3" class="ancho">
-                                                            <h5 id="label_cajas_texto">Dirección</h5>
-                                                            <input type="text" id="caja_formulario_usuario" name="dir" required>
-                                                        </td>
-                                                    </tr>
-                                                    <tr align="center" class="ancho">
-                                                        <td colspan="3" class="ancho">
-                                                            <input type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </form>
-                                        </div>
-                                        <!--FIN DEL DISEÑO FORMULARIO CREAR USUARIO-->
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Estado</h5>
+                                                        <select name="edo" id="edo" class='combos_formulario_usuario' id='edo' required>
+                                                            <option value="">Estado</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Municipio</h5>
+                                                        <select name="mun" id="mun" class='combos_formulario_usuario' id='mun' required>
+                                                            <option value="">Municipio</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr class="ancho">
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Ciudad</h5>
+                                                        <select name="ciu" id="ciu" class='combos_formulario_usuario' id='ciu' required>
+                                                            <option value="">Ciudad</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="ancho">
+                                                        <h5 id="label_cajas_texto">Parroquia</h5>
+                                                        <select name="par" id="par" class='combos_formulario_usuario' id='par' required>
+                                                            <option value="">Parroquia</option>
+                                                        </select>
+                                                    </td>
+                                                    <td id="color_fondo_cajas" class="ancho">
+                                                        <h5 id="label_cajas_texto">Subir Imagen</h5>
+                                                        <input type="file" name="btnImagen" id="btnImage" required>
+                                                    </td>
+                                                </tr>
+                                                <tr class="ancho">
+                                                    <td colspan="3" class="ancho">
+                                                        <h5 id="label_cajas_texto">Dirección</h5>
+                                                        <input type="text" id="caja_formulario_usuario" name="dir" required>
+                                                    </td>
+                                                </tr>
+                                                <tr align="center" class="ancho">
+                                                    <td colspan="3" class="ancho">
+                                                        <input type="submit" name="btnRegistrar" id="btnRegistrar" value="Registrar">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </form>
                                     </div>
-                                    <!--FIN DIV FORMULARIO-->
+                                    <!--FIN DEL DISEÑO FORMULARIO CREAR USUARIO-->
                                 </div>
-                                <!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
-                            </td>
-                            <td colspan="4">
-                                <h1>Usuario</h1>
-                            </td>
-                            <td colspan="8" class="ancho">
-                                <form method="POST">
-                                    <input type="text" name="txtBuscarUsuario" id="txtBuscarUsuario" placeholder="Buscar Cédula" maxlength="40">
-                                    <button type="submit" name="btnBuscarUsuario" id="btnBuscarUsuario" title="Buscar un usuario">Buscar</button>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr id="titulo_columnas" class="ancho">
-                            <td width="10px" class="ancho">
-                                <h5>Cédula</h5>
-                            </td>
+                                <!--FIN DIV FORMULARIO-->
+                            </div>
+                            <!--FIN DEL CONTENEDOR FORMULARIO USUARIO MODAL-->
+                        </td>
+                        <td colspan="4">
+                            <h1>Usuario</h1>
+                        </td>
+                        <td colspan="8" class="ancho">
+                            <form method="POST">
+                                <input type="text" name="txtBuscarUsuario" id="txtBuscarUsuario" placeholder="Buscar Cédula" maxlength="40">
+                                <button type="submit" name="btnBuscarUsuario" id="btnBuscarUsuario" title="Buscar un usuario">Buscar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr id="titulo_columnas" class="ancho">
+                        <td width="10px" class="ancho">
+                            <h5>Cédula</h5>
+                        </td>
 
-                            <td width="800px" class="ancho">
-                                <h5>Nombres</h5>
-                            </td>
+                        <td width="800px" class="ancho">
+                            <h5>Nombres</h5>
+                        </td>
 
-                            <td width="800px" class="ancho">
-                                <h5>Apellidos</h5>
-                            </td>
-                            <td width="100px" class="ancho">
-                                <h5>Género</h5>
-                            </td>
+                        <td width="800px" class="ancho">
+                            <h5>Apellidos</h5>
+                        </td>
+                        <td width="100px" class="ancho">
+                            <h5>Género</h5>
+                        </td>
 
-                            <td width="100px" class="ancho">
-                                <h5>Estatus</h5>
-                            </td>
+                        <td width="100px" class="ancho">
+                            <h5>Estatus</h5>
+                        </td>
 
-                            <td width="700px" class="ancho">
-                                <h5>Correo</h5>
-                            </td>
+                        <td width="700px" class="ancho">
+                            <h5>Correo</h5>
+                        </td>
 
-                            <td width="100px" class="ancho">
-                                <h5>Teléfono</h5>
-                            </td>
+                        <td width="100px" class="ancho">
+                            <h5>Teléfono</h5>
+                        </td>
 
-                            <td width="100px" class="ancho">
-                                <h5>Dirección</h5>
-                            </td>
+                        <td width="100px" class="ancho">
+                            <h5>Dirección</h5>
+                        </td>
 
-                            <td width="800px" class="ancho">
-                                <h5>Organización</h5>
-                            </td>
+                        <td width="800px" class="ancho">
+                            <h5>Organización</h5>
+                        </td>
 
-                            <td width="800px" class="ancho">
-                                <h5>Departamento</h5>
-                            </td>
+                        <td width="800px" class="ancho">
+                            <h5>Departamento</h5>
+                        </td>
 
-                            <td width="200px" class="ancho">
-                                <h5>Cargo</h5>
-                            </td>
+                        <td width="200px" class="ancho">
+                            <h5>Cargo</h5>
+                        </td>
 
-                            <td width="100px" class="ancho">
-                                <h5>Rol</h5>
-                            </td>
+                        <td width="100px" class="ancho">
+                            <h5>Rol</h5>
+                        </td>
 
-                            <td width="100px">
-                                <h5>Edicion</h5>
-                            </td>
+                        <td width="100px">
+                            <h5>Edicion</h5>
+                        </td>
 
-                            <td width="100px">
-                                <h5>Acción</h5>
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
+                        <td width="100px">
+                            <h5>Acción</h5>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
                         /* FIN DE LAS VARIABLES DE CONSULTA */
 
                         if (isset($_POST["txtBuscarUsuario"])) {
@@ -596,31 +596,31 @@ if (!isset($_SESSION['Correo']))
                         }
                         while ($mostrarUsuario = mysqli_fetch_array($consultarUsuario, MYSQLI_ASSOC)) {
                             ?>
-                            <tr id="datos_usuario" class="ancho">
-                                <td class="ancho">
-                                    <h5>
-                                        <?php echo $mostrarUsuario['codigo']; ?>
-                                    </h5>
-                                </td>
+                    <tr id="datos_usuario" class="ancho">
+                        <td class="ancho">
+                            <h5>
+                                <?php echo $mostrarUsuario['codigo']; ?>
+                            </h5>
+                        </td>
 
-                                <td class="ancho">
-                                    <h5>
-                                        <?php echo $mostrarUsuario['nombre']; ?>
-                                    </h5>
-                                </td>
-                                <td class="ancho">
-                                    <h5>
-                                        <?php echo $mostrarUsuario['Apellido']; ?>
-                                    </h5>
-                                </td>
-                                <td class="ancho">
-                                    <h5>
-                                        <?php echo $mostrarUsuario['Sexo']; ?>
-                                    </h5>
-                                </td>
-                                <td class="ancho">
-                                    <h5>
-                                        <?php
+                        <td class="ancho">
+                            <h5>
+                                <?php echo $mostrarUsuario['nombre']; ?>
+                            </h5>
+                        </td>
+                        <td class="ancho">
+                            <h5>
+                                <?php echo $mostrarUsuario['Apellido']; ?>
+                            </h5>
+                        </td>
+                        <td class="ancho">
+                            <h5>
+                                <?php echo $mostrarUsuario['Sexo']; ?>
+                            </h5>
+                        </td>
+                        <td class="ancho">
+                            <h5>
+                                <?php
                                         switch ($mostrarUsuario['Estatus']) {
                                             case 'A':
                                                 echo "ACTIVO";
@@ -630,102 +630,102 @@ if (!isset($_SESSION['Correo']))
                                                 break;
                                         }
                                         ?>
-                                    </h5>
-                                </td>
+                            </h5>
+                        </td>
 
-                                <td class="ancho">
-                                    <h5>
-                                        <?php echo $mostrarUsuario['Correo']; ?>
-                                    </h5>
-                                </td>
+                        <td class="ancho">
+                            <h5>
+                                <?php echo $mostrarUsuario['Correo']; ?>
+                            </h5>
+                        </td>
 
-                                <td class="ancho">
-                                    <h5>
-                                        <?php echo $mostrarUsuario['Telefono']; ?>
-                                    </h5>
-                                </td>
+                        <td class="ancho">
+                            <h5>
+                                <?php echo $mostrarUsuario['Telefono']; ?>
+                            </h5>
+                        </td>
 
-                                <td class="ancho">
-                                    <h5>
-                                        <?php echo $mostrarUsuario['Direccion']; ?>
-                                    </h5>
-                                </td>
-                                <td class="ancho">
-                                    <h5>
-                                        <?php echo $mostrarUsuario['organizacion']; ?>
-                                    </h5>
-                                </td>
+                        <td class="ancho">
+                            <h5>
+                                <?php echo $mostrarUsuario['Direccion']; ?>
+                            </h5>
+                        </td>
+                        <td class="ancho">
+                            <h5>
+                                <?php echo $mostrarUsuario['organizacion']; ?>
+                            </h5>
+                        </td>
 
-                                <td class="ancho">
-                                    <h5>
-                                        <?php echo $mostrarUsuario['departamento']; ?>
-                                    </h5>
-                                </td>
+                        <td class="ancho">
+                            <h5>
+                                <?php echo $mostrarUsuario['departamento']; ?>
+                            </h5>
+                        </td>
 
-                                <td class="ancho">
-                                    <h5>
-                                        <?php echo $mostrarUsuario['cargo']; ?>
-                                    </h5>
-                                </td>
+                        <td class="ancho">
+                            <h5>
+                                <?php echo $mostrarUsuario['cargo']; ?>
+                            </h5>
+                        </td>
 
-                                <td class="ancho">
-                                    <h5>
-                                        <?php echo $mostrarUsuario['rol']; ?>
-                                    </h5>
-                                </td>
+                        <td class="ancho">
+                            <h5>
+                                <?php echo $mostrarUsuario['rol']; ?>
+                            </h5>
+                        </td>
 
-                                <td class="ancho">
+                        <td class="ancho">
 
 
-                                   <a href='#<?php echo $mostrarUsuario['codigo']; ?>' id='btnEditar'>
-                                        <img src='assets/image/menu/botonesTablas/btnEditar.png'>
-                                    </a>
+                            <a href='#<?php echo $mostrarUsuario[' codigo']; ?>' id='btnEditar'>
+                                <img src='assets/image/menu/botonesTablas/btnEditar.png'>
+                            </a>
 
-                                    <div id='<?php echo $mostrarUsuario['codigo']; ?>' class='contenedor_formulario'>
+                            <div id='<?php echo $mostrarUsuario[' codigo']; ?>' class='contenedor_formulario'>
 
-                                        <div id='formulario'>
+                                <div id='formulario'>
 
-                                            <a href='#' class='cerrar'>X</a>
+                                    <a href='#' class='cerrar'>X</a>
 
-                                            <div class='contenedor_formulario_usuario'>
+                                    <div class='contenedor_formulario_usuario'>
 
-                                                <form method='POST' action='php/actualizarUsuario.php' enctype="multipart/form-data">
+                                        <form method='POST' action='php/actualizarUsuario.php' enctype="multipart/form-data">
 
-                                                    <table id='tabla_formulario_usuario' border='0' cellpadding='7'>
-                                                        <tr id='titulo_columna_formulario'>
-                                                            <td colspan='3'>
-                                                                <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Cédula</h5>
-                                                                <input type='text' id='caja_formulario_usuario' name='txtCedula' maxlength='8' readonly value='<?php echo $mostrarUsuario['codigo']; ?>'>
-                                                            </td>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Primer Nombre</h5>
-                                                                <input type='text' id='caja_formulario_usuario' name='txtpNombre' maxlength='40' value='<?php echo $mostrarUsuario['PNombre']; ?>'>
-                                                            </td>
+                                            <table id='tabla_formulario_usuario' border='0' cellpadding='7'>
+                                                <tr id='titulo_columna_formulario'>
+                                                    <td colspan='3'>
+                                                        <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Cédula</h5>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtCedula' maxlength='8' readonly value='<?php echo $mostrarUsuario[' codigo']; ?>'>
+                                                    </td>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Primer Nombre</h5>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtpNombre' maxlength='40' value='<?php echo $mostrarUsuario[' PNombre']; ?>'>
+                                                    </td>
 
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Primer Apellido</h5>
-                                                                <input type='text' id='caja_formulario_usuario' name='txtpApellido' maxlength='40' value='<?php echo $mostrarUsuario['PApellido']; ?>'>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Segundo Nombre</h5>
-                                                                <input type='text' id='caja_formulario_usuario' maxlength='40' name='txtsNombre' value='<?php echo $mostrarUsuario['SNombre']; ?>'>
-                                                            </td>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Primer Apellido</h5>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtpApellido' maxlength='40' value='<?php echo $mostrarUsuario[' PApellido']; ?>'>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Segundo Nombre</h5>
+                                                        <input type='text' id='caja_formulario_usuario' maxlength='40' name='txtsNombre' value='<?php echo $mostrarUsuario[' SNombre']; ?>'>
+                                                    </td>
 
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Segundo Apellido</h5>
-                                                                <input type='text' id='caja_formulario_usuario' maxlength='40' name='txtsApellido' value='<?php echo $mostrarUsuario['SApellido']; ?>'>
-                                                            </td>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Género</h5>
-                                                                <select id='combos_formulario_usuario' name='cbSexo'>
-                                                                    <?php
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Segundo Apellido</h5>
+                                                        <input type='text' id='caja_formulario_usuario' maxlength='40' name='txtsApellido' value='<?php echo $mostrarUsuario[' SApellido']; ?>'>
+                                                    </td>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Género</h5>
+                                                        <select id='combos_formulario_usuario' name='cbSexo'>
+                                                            <?php
                                                                     if ($mostrarUsuario['Sexo'] == "Femenino") {
                                                                         echo "<option value=''>Seleccionar</option>";
                                                                         echo "<option selected value='Femenino'>Femenino</option>";
@@ -741,13 +741,13 @@ if (!isset($_SESSION['Correo']))
                                                                     }
                                                                     ?>
 
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id="label_cajas_texto"> Organización </h5>
-                                                                <?php
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 id="label_cajas_texto"> Organización </h5>
+                                                        <?php
                                                                 echo "
                                          <select name='cbOrganizacion' class='combos_formulario_usuario' id='cbOrganizacion' required >
                                          <option> Organización </option>";
@@ -767,11 +767,11 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                                 ?>
-                                                            </td>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Cargo</h5>
+                                                    </td>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Cargo</h5>
 
-                                                                <?php
+                                                        <?php
                                                                 echo "
                                                                     <select name='cbCargo' id='combos_formulario_usuario'   required >
                                                                     <option> Cargo </option>";
@@ -790,16 +790,16 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                                 ?>
-                                                            </td>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Correo</h5>
-                                                                <input type='text' readonly id='caja_formulario_usuario' maxlength='200' name='txtCorreo' value='<?php echo $mostrarUsuario['Correo']; ?>'>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id="label_cajas_texto"> Departamento </h5>
-                                                                <?php
+                                                    </td>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Correo</h5>
+                                                        <input type='text' readonly id='caja_formulario_usuario' maxlength='200' name='txtCorreo' value='<?php echo $mostrarUsuario[' Correo']; ?>'>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 id="label_cajas_texto"> Departamento </h5>
+                                                        <?php
                                                                 echo "
                                                                 <select name='txtDpto1' class='combos_formulario_usuario' id='txtDpto1' required >
                                                                 <option> Departamento </option>";
@@ -818,27 +818,27 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                                 ?>
-                                                            </td>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Contraseña</h5>
-                                                                <input type='password' id='caja_formulario_usuario' name='txtPass' maxlength='10' value='' placeholder="Nueva Contraseña">
-                                                            </td>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Repita Contraseña</h5>
-                                                                <input type='password' id='caja_formulario_usuario' name='txtPass2' maxlength='10' value='' placeholder="Repita Contraseña">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td id="color_fondo_cajas">
-                                                                <h5 id="label_cajas_texto">Seleccionar Imagen</h5>
-                                                                <input type="file" name="btnImagen" id="btnImage">
+                                                    </td>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Contraseña</h5>
+                                                        <input type='password' id='caja_formulario_usuario' name='txtPass' maxlength='10' value='' placeholder="Nueva Contraseña">
+                                                    </td>
+                                                    <td>
+                                                        <h5 id='label_cajas_texto'>Repita Contraseña</h5>
+                                                        <input type='password' id='caja_formulario_usuario' name='txtPass2' maxlength='10' value='' placeholder="Repita Contraseña">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="color_fondo_cajas">
+                                                        <h5 id="label_cajas_texto">Seleccionar Imagen</h5>
+                                                        <input type="file" name="btnImagen" id="btnImage">
 
-                                                                <h5><img src="<?php echo $mostrarUsuario['foto']; ?>" id="imagen" width='100' height='100'></h5>
-                                                            </td>
-                                                            <td id='color_fondo_cajas'>
-                                                                <h5 id='label_cajas_texto'>Rol</h5>
+                                                        <h5><img src="<?php echo $mostrarUsuario['foto']; ?>" id="imagen" width='100' height='100'></h5>
+                                                    </td>
+                                                    <td id='color_fondo_cajas'>
+                                                        <h5 id='label_cajas_texto'>Rol</h5>
 
-                                                                <?php
+                                                        <?php
                                                                 echo "
                                                                     <select name='cbRol' id='combos_formulario_usuario'   required >
                                                                     <option> Rol </option>";
@@ -857,10 +857,10 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                                 ?>
-                                                            </td>
-                                                            <td>
-                                                                <h5 id="label_cajas_texto">Pais</h5>
-                                                                <?php
+                                                    </td>
+                                                    <td>
+                                                        <h5 id="label_cajas_texto">Pais</h5>
+                                                        <?php
                                                                 echo "
                                                                         <select name='pai' id='pai'  class='combos_formulario_usuario' required >
                                                                         <option>Pais </option>";
@@ -879,12 +879,12 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                                 ?>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id="label_cajas_texto">Estado</h5>
-                                                                <?php
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 id="label_cajas_texto">Estado</h5>
+                                                        <?php
                                                                 echo "
                                                                     <select name='edo' id='edo'  class='combos_formulario_usuario' >
                                                                     <option>Estado </option>";
@@ -903,10 +903,10 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                                 ?>
-                                                            </td>
-                                                            <td>
-                                                                <h5 id="label_cajas_texto">Municipio</h5>
-                                                                <?php
+                                                    </td>
+                                                    <td>
+                                                        <h5 id="label_cajas_texto">Municipio</h5>
+                                                        <?php
                                                                 echo "
                                                                     <select name='mun' id='mun'  class='combos_formulario_usuario' >
                                                                     <option>Municipio </option>";
@@ -925,10 +925,10 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                                 ?>
-                                                            </td>
-                                                            <td>
-                                                                <h5 id="label_cajas_texto">Ciudad</h5>
-                                                                <?php
+                                                    </td>
+                                                    <td>
+                                                        <h5 id="label_cajas_texto">Ciudad</h5>
+                                                        <?php
                                                                 echo "
                                                                     <select name='ciu' id='ciu'  class='combos_formulario_usuario' >
                                                                     <option>Ciudad </option>";
@@ -947,12 +947,12 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                                 ?>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id="label_cajas_texto">Parroquia</h5>
-                                                                <?php
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h5 id="label_cajas_texto">Parroquia</h5>
+                                                        <?php
                                                                 echo "
                                                                     <select name='par' id='par'  class='combos_formulario_usuario' >
                                                                     <option>Parroquia </option>";
@@ -971,26 +971,26 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                                 ?>
-                                                            </td>
-                                                            <td colspan="2">
-                                                                <h5 id="label_cajas_texto">Dirección</h5>
-                                                                <input type="text" id="caja_formulario_usuario" name="dir" value='<?php echo $mostrarUsuario['Direccion']; ?>' >
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan='3'>
-                                                                <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </form>
-                                            </div>
-                                        </div>
+                                                    </td>
+                                                    <td colspan="2">
+                                                        <h5 id="label_cajas_texto">Dirección</h5>
+                                                        <input type="text" id="caja_formulario_usuario" name="dir" value='<?php echo $mostrarUsuario[' Direccion']; ?>' >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan='3'>
+                                                        <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </form>
                                     </div>
+                                </div>
+                            </div>
 
-                                </td>
-                                <td width="70px" class="ancho">
-                                    <?php
+                        </td>
+                        <td width="70px" class="ancho">
+                            <?php
                                     if ($mostrarUsuario['Estatus'] == 'A') {
 
                                         echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
@@ -1011,24 +1011,24 @@ if (!isset($_SESSION['Correo']))
                                         </a>";
                                     }
                                     ?>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        <!--FIN DEL WHILE-->
-                    </tbody>
-                </table>
-                <?php
+                        </td>
+                    </tr>
+                    <?php } ?>
+                    <!--FIN DEL WHILE-->
+                </tbody>
+            </table>
+            <?php
                 if (isset($mensajeError)) {
                     echo $mensajeError;
                 }
                 ?>
 
-            </div>
-
         </div>
-        <!--FIN DEL CONTENEDOR CONTENIDOS-->
+
+    </div>
+    <!--FIN DEL CONTENEDOR CONTENIDOS-->
 
 
-    </body>
+</body>
 
 </html>

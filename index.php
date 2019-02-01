@@ -21,6 +21,10 @@
         <script src="js/lib/vue.js"></script>
         <script src="js/lib/vue-resource.min.js"></script>
 
+        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="js/mo.min.js"></script>
+        <script type="text/javascript" src="js/irarriba.js"></script>
+
     </head>
 
     <body>
@@ -465,6 +469,10 @@
 
         </footer>
         <!--FIN FOOTER-->
+
+        <!--Boton ir Arriba-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <div id="icobutton" class="up"><span class="fas fa-angle-up"></span></div>
 
     </body>
 

@@ -1,75 +1,33 @@
 /* global */
 
+
 :root {
     --blanco: #fff;
     --negro: #000;
-    --verde: yellowgreen;
-    --amarillo: yellow;
+    --naranja: rgb(241, 129, 3);
+    --gris-claro: rgb(219, 220, 210);
+    --gris-oscuro: rgb(69, 69, 69);
+    --transparente: rgba(100, 100, 100, 0.2);
 }
 
-ul { list-style: none; }
-a { text-decoration: none; color: black;}
-
-/* menu-wrapper */
-
-#menu-wrapper {
-    overflow: hidden;
-    max-width: 100%;
-    cursor: pointer;
+ul {
+    list-style: none;
 }
 
-#menu-wrapper #hamburger-menu {
-    position: relative;
-    width: 25px;
-    height: 20px;
-    margin: 15px;
+a {
+    text-decoration: none;
+    color: black;
 }
 
-#menu-wrapper #hamburger-menu span {
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 2px;
-    border-radius: 10px;
-    color: var(--negro);
-    background-color: var(--blanco);
-    position: absolute;
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: .4s ease-in-out;
-    transition: .4s ease-in-out;
-}
 
-#menu-wrapper #hamburger-menu span:nth-child(1) {
-    top: 0;
-}
+/* contenido no desplegable */
 
-#menu-wrapper #hamburger-menu span:nth-child(2) {
-    top: 9px;
-}
 
-#menu-wrapper #hamburger-menu span:nth-child(3) {
-    top: 18px;
-}
-
-#menu-wrapper #hamburger-menu.open span:nth-child(1) {
-    top: 9px;
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-}
-
-#menu-wrapper #hamburger-menu.open span:nth-child(2) {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    left: -60px;
-}
-
-#menu-wrapper #hamburger-menu.open span:nth-child(3) {
-    top: 9px;
-    -webkit-transform: rotate(-135deg);
-    transform: rotate(-135deg);
+.content-static {
+    font-size: 16px;
+    padding: 20px;
+    -text-transform: uppercase;
+    border-top: 1px solid var(--gris-claro);
 }
 
 
@@ -92,67 +50,46 @@ a { text-decoration: none; color: black;}
     position: absolute;
     width: 100%;
     max-width: 450px;
-    background: white;
-    box-shadow: rgba(100,100,100,0.2) 6px 2px 10px;
+    background: var(--blanco);
+    box-shadow: var(--transparente) 6px 2px 10px;
     z-index: 999;
     overflow-y: auto;
     overflow-x: hidden;
     left: -100%;
 }
 
-#menu-container .menu-list li.accordion-toggle, #menu-container .menu-list .menu-login {
-    font-size: 16px;
-    padding: 20px;
-    text-transform: uppercase;
-    border-top: 1px solid #dbdcd2;
-}
-
-#menu-container .menu-list li.accordion-toggle2, #menu-container .menu-list .menu-login {
-    font-size: 14px;
-    padding: 20px;
-    -text-transform: uppercase;
-    border-top: 1px solid #dbdcd2;
-}
-
 #menu-container .menu-list li:first-of-type {
     border-top: 0;
 }
 
+
 /* accordion */
 
 
-.accordion-toggle, .accordion-content {
+/* esto es para los estilo del toggle */
+.accordion-toggle {
     cursor: pointer;
     font-size: 16px;
     position: relative;
     letter-spacing: 1px;
-}
-.accordion-toggle2, .accordion-content2 {
-    cursor: pointer;
-    font-size: 16px;
-    position: relative;
-    letter-spacing: 1px;
-}
-.accordion-toggle3, .accordion-content3 {
-    cursor: pointer;
-    font-size: 14px;
-    position: relative;
-    letter-spacing: 1px;
+    padding: 20px;
+    text-transform: uppercase;
+    border-top: 1px solid var(--gris-claro);
 }
 
-.accordion-content {
-    display: none;
+/* esto es para el div que queda activado */
+.accordion-toggle.active-tab {
+    background: var(--gris-oscuro);
+    transition: all 0.3s ease;
 }
 
-.accordion-content2 {
-    display: none;
+/* esto es para el enlase que esta en toggle */
+.accordion-toggle a.active {
+    color: var(--blanco);
 }
 
-.accordion-content3 {
-    display: none;
-}
-
-.accordion-toggle a:before, .accordion-toggle a:after {
+/* esto es para el signo + que gira */
+.accordion-toggle a:after {
     content: '';
     display: block;
     position: absolute;
@@ -161,7 +98,7 @@ a { text-decoration: none; color: black;}
     width: 15px;
     height: 2px;
     margin-top: -1px;
-    background-color: #5a5858;
+    background-color: var(--gris-oscuro);
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
@@ -170,6 +107,21 @@ a { text-decoration: none; color: black;}
 }
 
 .accordion-toggle a:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 15px;
+    height: 2px;
+    margin-top: -1px;
+    background-color: var(--gris-oscuro);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s ease-out;
+
     -webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
@@ -177,27 +129,134 @@ a { text-decoration: none; color: black;}
     z-index: 2;
 }
 
-.accordion-toggle.active-tab {
-  background: yellowgreen;
-  transition: all 0.3s ease;
-}
-
-.accordion-toggle2.active-tab {
-  background: yellow;
-  transition: all 0.3s ease;
-}
-
 .accordion-toggle a.active:before {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
-    background: #fff !important;
+    background: var(--blanco) !important;
 }
 
 .accordion-toggle a.active:after {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
-    background: #fff !important;
+    background: var(--blanco) !important;
     opacity: 0;
+}
+
+/* esto es para mostrar oculto todo los submenu */
+.accordion-content {
+    font-size: 16px;
+    position: relative;
+    letter-spacing: 1px;
+    display: none;
+}
+
+
+/* accordion 2 */
+
+
+/* esto es para los estilo del toggle */
+.accordion-toggle2 {
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    letter-spacing: 1px;
+    padding: 20px;
+    -text-transform: uppercase;
+    border-top: 1px solid var(--gris-claro);
+}
+
+/* esto es para el div que queda activado */
+.accordion-toggle2.active-tab {
+    background: var(--naranja);
+    transition: all 0.3s ease;
+}
+
+/* esto es para el enlase que esta en toggle */
+.accordion-toggle2 a.active {
+    color: var(--blanco);
+}
+
+/* esto es para el signo + que gira */
+.accordion-toggle2 a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 15px;
+    height: 2px;
+    margin-top: -1px;
+    background-color: var(--gris-oscuro);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s ease-out;
+}
+
+.accordion-toggle2 a:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 15px;
+    height: 2px;
+    margin-top: -1px;
+    background-color: var(--gris-oscuro);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s ease-out;
+
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 1;
+    z-index: 2;
+}
+
+.accordion-toggle2 a.active:before {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    background: var(--blanco) !important;
+}
+
+.accordion-toggle2 a.active:after {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    background: var(--blanco) !important;
+    opacity: 0;
+}
+
+/* esto es para mostrar oculto todo los submenu */
+.accordion-content2 {
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    letter-spacing: 1px;
+    display: none;
+}
+
+
+/* accordion 3 */
+
+
+/* esto para regular el tamano de fuente en el toggle */
+.accordion-toggle3 {
+    font-size: 16px;
+}
+
+/* esto es para mostrar oculto todo los submenu */
+.accordion-content3 {
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    letter-spacing: 1px;
+    display: none;
 }

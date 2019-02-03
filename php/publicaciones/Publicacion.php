@@ -4,7 +4,8 @@ namespace publicaciones;
 
 
 class Publicacion implements \JsonSerializable {
-
+    
+    private $publicacionId;
     private $titulo;
     private $status;
     private $subCategoriaId;
@@ -22,7 +23,15 @@ class Publicacion implements \JsonSerializable {
         
     }
 
-    public function getTitulo() {
+    public function getPublicacionId() {
+        return $this->publicacionId;
+    }
+
+    public function setPublicacionId($publicacionId) {
+        $this->publicacionId = $publicacionId;
+    }
+
+        public function getTitulo() {
         return $this->titulo;
     }
 
@@ -120,12 +129,18 @@ class Publicacion implements \JsonSerializable {
 
     public function jsonSerialize() {
         return [
+            'publicacion_id' => $this->publicacionId,
             'titulo' => $this->titulo,
             'status' => $this->status,
             'subcategoria_id' => $this->subCategoriaId,
             'foto' => $this->foto,
             'estado' => $this->estado,
-            'motivo' => $this->motivo
+            'motivo' => $this->motivo,
+            'created' => $this->created,
+            'createdby' => $this->createdBy,
+            'updated' => $this->updatedBy,
+            'fecha_publicacion' => $this->F_Publicacion,
+            'publicatedby' => $this->PublicatedBy
         ];
     }
 

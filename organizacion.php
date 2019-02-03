@@ -284,11 +284,11 @@ if (!isset($_SESSION['Correo']))
                         </td>
 
                         <td>
-                            <a href='#<?php echo $mostrarOrganizacion[' codigo']; ?>' id="btnEditar">
+                            <a href='#<?php echo $mostrarOrganizacion['codigo']; ?>' id="btnEditar">
                                 <img src='assets/image/menu/botonesTablas/btnEditar.png'>
                             </a>
 
-                            <div id='<?php echo $mostrarOrganizacion[' codigo']; ?>' class='contenedor_formulario'>
+                            <div id='<?php echo $mostrarOrganizacion['codigo']; ?>' class='contenedor_formulario'>
 
                                 <div id='formulario'>
 
@@ -307,13 +307,13 @@ if (!isset($_SESSION['Correo']))
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Código</h5>
-                                                        <input type='text' id='caja_formulario_usuario' required name='txtCodigoOrganizacion' maxlength='4' readonly value='<?php echo $mostrarOrganizacion[' codigo'] ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' required name='txtCodigoOrganizacion' maxlength='4' readonly value='<?php echo $mostrarOrganizacion['codigo'] ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Nombre Organizacion</h5>
-                                                        <input type='text' id='caja_formulario_usuario' required name='txtNombreOrganizacion' maxlength='100' value='<?php echo $mostrarOrganizacion[' nombre'] ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' required name='txtNombreOrganizacion' maxlength='100' value='<?php echo $mostrarOrganizacion['nombre'] ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>

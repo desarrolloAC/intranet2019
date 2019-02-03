@@ -672,7 +672,7 @@ if (!isset($_SESSION['Correo']))
                                     }//FIN DE SWITCH PRINCIPAL ROL*/
                                     ?>
 
-                            <div id='<?php echo $mostrarPublicacion[' ID_Publicacion']; ?>' class='contenedor_formulario'>
+                            <div id='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>' class='contenedor_formulario'>
 
                                 <div id='formulario'>
 
@@ -691,13 +691,13 @@ if (!isset($_SESSION['Correo']))
                                                 <tr>
                                                     <td>
                                                         <h5></h5>
-                                                        <input type='hidden' class='caja_formulario_usuario' readonly="readonly" name='txtCodigoP' maxlength='3' value='<?php echo $mostrarPublicacion[' ID_Publicacion']; ?>'>
+                                                        <input type='hidden' class='caja_formulario_usuario' readonly="readonly" name='txtCodigoP' maxlength='3' value='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Título</h5>
-                                                        <input type='text' class='caja_formulario_usuario' id='txtTituloP' required name='txtTituloP' maxlength='100' value='<?php echo $mostrarPublicacion[' titulo']; ?>'>
+                                                        <input type='text' class='caja_formulario_usuario' id='txtTituloP' required name='txtTituloP' maxlength='100' value='<?php echo $mostrarPublicacion['titulo']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>

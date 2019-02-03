@@ -316,11 +316,11 @@ if (!isset($_SESSION['Correo']))
 
 
                         <td>
-                            <a href='#<?php echo $mostrarCargo[' codigo']; ?>' id="btnEditar">
+                            <a href='#<?php echo $mostrarCargo['codigo']; ?>' id="btnEditar">
                                 <img src='assets/image/menu/botonesTablas/btnEditar.png'>
                             </a>
 
-                            <div id='<?php echo $mostrarCargo[' codigo']; ?>' class='contenedor_formulario'>
+                            <div id='<?php echo $mostrarCargo['codigo']; ?>' class='contenedor_formulario'>
 
                                 <div id='formulario'>
 
@@ -339,13 +339,13 @@ if (!isset($_SESSION['Correo']))
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Código</h5>
-                                                        <input type='text' id='caja_formulario_usuario' required name='txtCodigo' maxlength='4' readonly value='<?php echo $mostrarCargo[' codigo'] ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' required name='txtCodigo' maxlength='4' readonly value='<?php echo $mostrarCargo['codigo'] ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Nombre Del Cargo</h5>
-                                                        <input type='text' id='caja_formulario_usuario' required name='txtNombre' maxlength='100' value='<?php echo $mostrarCargo[' nombre'] ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' required name='txtNombre' maxlength='100' value='<?php echo $mostrarCargo['nombre'] ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -378,7 +378,7 @@ if (!isset($_SESSION['Correo']))
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Descripción</h5>
-                                                        <input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarCargo[' Descripcion']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarCargo['Descripcion']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>

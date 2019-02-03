@@ -320,19 +320,19 @@ if (!isset($_SESSION['Correo']))
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Código</h5>
-                                                        <input type='text' id='caja_formulario_usuario' name='txtCodigo' maxlength='4' value='<?php echo $mostrarRol[' codigo']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtCodigo' maxlength='4' value='<?php echo $mostrarRol['codigo']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Nombre</h5>
-                                                        <input type='text' id='caja_formulario_usuario' name='txtNombre' maxlength='100' value='<?php echo $mostrarRol[' nombre']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtNombre' maxlength='100' value='<?php echo $mostrarRol['nombre']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Descripción Rol</h5>
-                                                        <input type='text' id='caja_formulario_usuario' name='txtDesc' maxlength="255" value='<?php echo $mostrarRol[' Descripcion']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtDesc' maxlength="255" value='<?php echo $mostrarRol['Descripcion']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>

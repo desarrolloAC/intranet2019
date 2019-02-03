@@ -542,11 +542,11 @@ if (!isset($_SESSION['Correo']))
                         <td class="ancho">
 
 
-                            <a href='#<?php echo $mostrarUsuario[' codigo']; ?>' id='btnEditar'>
+                            <a href='#<?php echo $mostrarUsuario['codigo']; ?>' id='btnEditar'>
                                 <img src='assets/image/menu/botonesTablas/btnEditar.png'>
                             </a>
 
-                            <div id='<?php echo $mostrarUsuario[' codigo']; ?>' class='contenedor_formulario'>
+                            <div id='<?php echo $mostrarUsuario['codigo']; ?>' class='contenedor_formulario'>
 
                                 <div id='formulario'>
 
@@ -565,27 +565,27 @@ if (!isset($_SESSION['Correo']))
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Cédula</h5>
-                                                        <input type='text' id='caja_formulario_usuario' name='txtCedula' maxlength='8' readonly value='<?php echo $mostrarUsuario[' codigo']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtCedula' maxlength='8' readonly value='<?php echo $mostrarUsuario['codigo']; ?>'>
                                                     </td>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Primer Nombre</h5>
-                                                        <input type='text' id='caja_formulario_usuario' name='txtpNombre' maxlength='40' value='<?php echo $mostrarUsuario[' PNombre']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtpNombre' maxlength='40' value='<?php echo $mostrarUsuario['PNombre']; ?>'>
                                                     </td>
 
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Primer Apellido</h5>
-                                                        <input type='text' id='caja_formulario_usuario' name='txtpApellido' maxlength='40' value='<?php echo $mostrarUsuario[' PApellido']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtpApellido' maxlength='40' value='<?php echo $mostrarUsuario['PApellido']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Segundo Nombre</h5>
-                                                        <input type='text' id='caja_formulario_usuario' maxlength='40' name='txtsNombre' value='<?php echo $mostrarUsuario[' SNombre']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' maxlength='40' name='txtsNombre' value='<?php echo $mostrarUsuario['SNombre']; ?>'>
                                                     </td>
 
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Segundo Apellido</h5>
-                                                        <input type='text' id='caja_formulario_usuario' maxlength='40' name='txtsApellido' value='<?php echo $mostrarUsuario[' SApellido']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' maxlength='40' name='txtsApellido' value='<?php echo $mostrarUsuario['SApellido']; ?>'>
                                                     </td>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Género</h5>
@@ -658,7 +658,7 @@ if (!isset($_SESSION['Correo']))
                                                     </td>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Correo</h5>
-                                                        <input type='text' readonly id='caja_formulario_usuario' maxlength='200' name='txtCorreo' value='<?php echo $mostrarUsuario[' Correo']; ?>'>
+                                                        <input type='text' readonly id='caja_formulario_usuario' maxlength='200' name='txtCorreo' value='<?php echo $mostrarUsuario['Correo']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -839,7 +839,7 @@ if (!isset($_SESSION['Correo']))
                                                     </td>
                                                     <td colspan="2">
                                                         <h5 id="label_cajas_texto">Dirección</h5>
-                                                        <input type="text" id="caja_formulario_usuario" name="dir" value='<?php echo $mostrarUsuario[' Direccion']; ?>' >
+                                                        <input type="text" id="caja_formulario_usuario" name="dir" value='<?php echo $mostrarUsuario['Direccion']; ?>' >
                                                     </td>
                                                 </tr>
                                                 <tr>

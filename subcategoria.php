@@ -452,11 +452,11 @@ if (!isset($_SESSION['Correo']))
 
                         <td>
 
-                            <a href='#<?php echo $mostrarSubCategoria[' codigo']; ?>' id="btnEditar">
+                            <a href='#<?php echo $mostrarSubCategoria['codigo']; ?>' id="btnEditar">
                                 <img src='assets/image/menu/botonesTablas/btnEditar.png'>
                             </a>
 
-                            <div id='<?php echo $mostrarSubCategoria[' codigo']; ?>' class='contenedor_formulario'>
+                            <div id='<?php echo $mostrarSubCategoria['codigo']; ?>' class='contenedor_formulario'>
 
                                 <div id='formulario'>
 
@@ -475,13 +475,13 @@ if (!isset($_SESSION['Correo']))
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Código</h5>
-                                                        <input type='text' id='caja_formulario_usuario' name='txtCodigoSubCategoria' maxlength='4' readonly value='<?php echo $mostrarSubCategoria[' codigo']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtCodigoSubCategoria' maxlength='4' readonly value='<?php echo $mostrarSubCategoria['codigo']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>SubCategoría</h5>
-                                                        <input type='text' id='caja_formulario_usuario' name='txtNombreSubCategoria' maxlength='60' value='<?php echo $mostrarSubCategoria[' nombre']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtNombreSubCategoria' maxlength='60' value='<?php echo $mostrarSubCategoria['nombre']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -506,7 +506,7 @@ if (!isset($_SESSION['Correo']))
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Descripción</h5>
-                                                        <input type='text' id='caja_formulario_usuario' name='txtDesc' value='<?php echo $mostrarSubCategoria[' Descripcion']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtDesc' value='<?php echo $mostrarSubCategoria['Descripcion']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>

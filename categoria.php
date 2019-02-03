@@ -296,11 +296,11 @@ if (!isset($_SESSION['Correo']))
 
 
                         <td>
-                            <a href='#<?php echo $mostrarCategoria[' codigo']; ?>' id="btnEditar">
+                            <a href='#<?php echo $mostrarCategoria['codigo']; ?>' id="btnEditar">
                                 <img src='assets/image/menu/botonesTablas/btnEditar.png'>
                             </a>
 
-                            <div id='<?php echo $mostrarCategoria[' codigo']; ?>' class='contenedor_formulario'>
+                            <div id='<?php echo $mostrarCategoria['codigo']; ?>' class='contenedor_formulario'>
 
                                 <div id='formulario'>
 
@@ -319,19 +319,19 @@ if (!isset($_SESSION['Correo']))
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Código</h5>
-                                                        <input type='text' id='caja_formulario_usuario' required name='txtCodigoCategoria' maxlength='4' readonly value='<?php echo $mostrarCategoria[' codigo'] ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' required name='txtCodigoCategoria' maxlength='4' readonly value='<?php echo $mostrarCategoria['codigo'] ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Categoria</h5>
-                                                        <input type='text' id='caja_formulario_usuario' required name='txtNombreCategoria' maxlength='20' value='<?php echo $mostrarCategoria[' nombre'] ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' required name='txtNombreCategoria' maxlength='20' value='<?php echo $mostrarCategoria['nombre'] ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Descripción</h5>
-                                                        <input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarCategoria[' Descripcion']; ?>'>
+                                                        <input type='text' id='caja_formulario_usuario' required name='txtDesc' value='<?php echo $mostrarCategoria['Descripcion']; ?>'>
                                                     </td>
                                                 </tr>
                                                 <tr>

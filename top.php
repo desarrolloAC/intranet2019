@@ -53,14 +53,6 @@
                     <a href="#" title="">Planificacion Estrategica</a>
                 </li>
                 <li>
-                    <a href="#" title="">Manuales</a>
-                    <ul>
-                        <li><a href="assets/document/sistema-integrado/manuales/M-SG-003%20MANUAL%20DE%20SGC%20ISO%209001-2008%20FRUTECH%20V7.pdf" target="_blank">Fruttech</a></li>
-                        <li><a href="assets/document/sistema-integrado/manuales/M-SG-005%20MANUAL%20DE%20SGC%20ISO%209001-2015%20IEC%20V3.pdf" target="_blank">IEC</a></li>
-                        <li><a href="assets/document/sistema-integrado/manuales/M-SG-004-MANUAL-DE-GESTI%C3%93N-VENFRUCA%20V5.pdf" target="_blank">Venfruca</a></li>
-                    </ul>
-                </li>
-                <li>
                     <a href="#" title="">Normas ISO</a>
                     <ul>
                         <li><a href="visorpdf.php?id=iso0" target="_blank">Norma BASC 4:2012</a></li>
@@ -299,7 +291,7 @@
             <a class="menu-link" href="#">Venfruca</a>
         </li>
         <ul class="menu-submenu accordion-content">
-            <li class="content-static"><a class="head" href="http://192.168.0.130/SITE/PROCESOS/Documentos/Manuales/M-SG-004-MANUAL-DE-GESTIÓN-VENFRUCA.pdf" target="_blank">Manual</a></li>
+            <li class="content-static"><a class="head" href="assets/document/sistema-integrado/manuales/M-SG-004-MANUAL-DE-GESTI%C3%93N-VENFRUCA%20V5.pdf" target="_blank">Manual</a></li>
             <li class="content-static"><a class="head" href="http://192.168.0.130/site/procesos/Documentos/F-SG-010 Mapa de Proceso VENFRUCA.pdf" target="_blank">Mapa de Proceso</a></li>
             <!-- Aseguramiento de la Calidad -->
             <li class="accordion-toggle2">
@@ -402,7 +394,7 @@
             <a class="menu-link" href="#">Ind. El Caimàn</a>
         </li>
         <ul class="menu-submenu accordion-content">
-            <li class="content-static"><a class="head" href="http://192.168.0.130/SITE/PROCESOS/Documentos/Manuales/04-M-SG-001-MANUAL-DE-SGC-ISO-9001-2015-IEC.pdf" target="_blank">Manual</a></li>
+            <li class="content-static"><a class="head" href="assets/document/sistema-integrado/manuales/M-SG-005%20MANUAL%20DE%20SGC%20ISO%209001-2015%20IEC%20V3.pdf" target="_blank">Manual</a></li>
             <li class="content-static"><a class="head" href="http://192.168.0.130/site/procesos/Documentos/F-SG-010%20Mapa%20de%20Proceso%20El%20Caiman.pdf" target="_blank">Mapa de Procesos</a></li>
             <!-- Control de Calidad -->
             <li class="accordion-toggle2">
@@ -429,7 +421,7 @@
             <a class="menu-link" href="#">Fruttech</a>
         </li>
         <ul class="menu-submenu accordion-content">
-            <li class="content-static"><a class="head" href="http://192.168.0.130/site/procesos/Documentos/Manuales/M-SG-003 MANUAL_ISO.pdf" target="_blank">Manual</a></li>
+            <li class="content-static"><a class="head" href="assets/document/sistema-integrado/manuales/M-SG-003%20MANUAL%20DE%20SGC%20ISO%209001-2008%20FRUTECH%20V7.pdf" target="_blank">Manual</a></li>
             <li class="content-static"><a class="head" href="http://192.168.0.130/site/procesos/Documentos/F-SG-010-Mapa-de-Proceso-Fruttech.pdf" target="_blank">Mapa de Procesos</a></li>
             <li class="content-static"><a class="head" href="http://192.168.0.130/www/SITE/PUBLICADOS/OPERACIONES%20VENFRUCA/SEGURIDAD%20FISICA/index.html" target="_blank">Procedimientos</a></li>
             <li class="content-static"><a class="head" href="#" target="_blank">Caracterizaciòn de procesos</a></li>

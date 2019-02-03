@@ -1,17 +1,9 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace publicaciones;
 
-/**
- * Description of Publicaciones
- *
- * @author brayan
- */
-class Publicaciones implements JsonSerializable {
+
+class Publicacion implements \JsonSerializable {
 
     private $titulo;
     private $status;
@@ -130,7 +122,10 @@ class Publicaciones implements JsonSerializable {
         return [
             'titulo' => $this->titulo,
             'status' => $this->status,
-            ''
+            'subcategoria_id' => $this->subCategoriaId,
+            'foto' => $this->foto,
+            'estado' => $this->estado,
+            'motivo' => $this->motivo
         ];
     }
 

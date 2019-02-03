@@ -10,10 +10,10 @@
     <meta charset="utf-8">
 
     <link rel="icon" type="image/png" href="favicon.png" />
+
     <link rel="stylesheet" href="css/lib/bootstrap.min.css" media="all" />
 
     <link rel="stylesheet" type="text/css" href="css/index/index.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all" />
 
     <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all" />
@@ -96,7 +96,7 @@
                             <h5 class="tituloAvanceInformativo">{{ item.titulo }}</h5>
                         </div>
                         <div class="imagenAvanceInformativo">
-                            <img id="imagenAvanceInformativo2" :src="item.imagen" alt="Avance informativo">
+                            <img id="imagenAvanceInformativo2" :src="item.foto" alt="Foto">
                         </div>
                     </div>
                 </a>
@@ -106,7 +106,7 @@
 
         <script type="text/javascript">
             //
-            const publicacionesUrl = 'php/index/consultaPublicacionesInfo.php';
+            const publicacionesUrl = 'php/index/consultaPublicacionesCapsulaInformativa.php';
             const capuslaInformativa = new Vue({
                 el: '#capuslaInformativa',
                 created: function() {
@@ -200,7 +200,7 @@
                             <h5 class="tituloAvanceInformativo">{{ item.titulo }}</h5>
                         </div>
                         <div class="imagenAvanceInformativo">
-                            <img id="imagenAvanceInformativo2" :src="item.imagen" alt="Avance informativo">
+                            <img id="imagenAvanceInformativo2" :src="item.foto" alt="Foto">
                         </div>
                     </div>
                 </a>
@@ -313,7 +313,7 @@
 
 
 
-        <!--INICIO CUMPLEAÑEROS DEL MES-->
+        <!--INICIO Talento Humano -->
         <div id="cumpleMes" class="container-fluid capuslaInformativa2">
 
             <div class="row">
@@ -329,7 +329,7 @@
                             <h5 class="tituloAvanceInformativo">{{ item.titulo }}</h5>
                         </div>
                         <div class="imagenAvanceInformativo">
-                            <img id="imagenAvanceInformativo2" :src="item.imagen" alt="Avance informativo">
+                            <img id="imagenAvanceInformativo2" :src="item.foto" alt="Foto">
                         </div>
                     </div>
                 </a>
@@ -339,7 +339,7 @@
 
         <script type="text/javascript">
             //
-            const cumpleMesnUrl = 'php/index/consultaPublicacionesCumpleMes.php';
+            const cumpleMesnUrl = 'php/index/consultaPublicacionesTalentoHumano.php';
             const cumpleMes = new Vue({
                 el: '#cumpleMes',
                 created: function() {
@@ -359,7 +359,7 @@
             });
 
         </script>
-        <!--FIN CUMPLEAÑEROS DEL MES-->
+        <!--FIN Talento Humano -->
 
         <!--INICIO CANVAS-->
         <div class="container-fluid resena">
@@ -406,7 +406,7 @@
                             <h5 class="tituloAvanceInformativo">{{ item.titulo }}</h5>
                         </div>
                         <div class="imagenAvanceInformativo">
-                            <img id="imagenAvanceInformativo2" :src="item.imagen" alt="Avance informativo">
+                            <img id="imagenAvanceInformativo2" :src="item.foto" alt="Foto">
                         </div>
                     </div>
                 </a>
@@ -416,7 +416,7 @@
 
         <script type="text/javascript">
             //
-            const nuevoIngresoUrl = 'php/index/consultaPublicacionesNuevoIngreso.php';
+            const nuevoIngresoUrl = 'php/index/consultaPublicacionesCelebraciones.php';
             const nuevoIngreso = new Vue({
                 el: '#nuevoIngreso',
                 created: function() {

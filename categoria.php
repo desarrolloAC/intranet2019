@@ -16,12 +16,14 @@ if (!isset($_SESSION['Correo']))
 
 <head>
     <title>Intranet Alkes Corp, S.A</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,device-height initial-scale=1.5" />
+    <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
+    <meta charset="utf-8">
 
     <!--INICIO LLAMADA DE ARCHIVOS CSS-->
     <link rel="stylesheet" type="text/css" href="css/structura/estructura.css">
     <link rel="stylesheet" type="text/css" href="css/structura/tablaMenuVertical.css">
+    <link rel="stylesheet" type="text/css" href="css/structura/bandeja.css">
 
     <link rel="icon" type="image/png" href="favicon.png" />
 
@@ -44,151 +46,12 @@ if (!isset($_SESSION['Correo']))
     <script type="text/javascript" src="js/efectoBandeja.js"></script>
     <script type="text/javascript" src="js/setInterval.js"></script>
     <script type="text/javascript" src="js/list.js"></script>
+    <script type="text/javascript" src="js/previsualizarImagen.js"></script>
 
-
-    <script src="js/previsualizarImagen.js" type="text/javascript" charset="utf-8"></script>
-
-
-    <script src="js/lib/vue.js"></script>
-    <script src="js/lib/vue-resource.min.js"></script>
+    <script type="text/javascript" src="js/lib/vue.js"></script>
+    <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>
     <!--FIN LLAMADA ARCHIVOS JS-->
 
-
-
-    <style type="text/css">
-        div#contenedorNombreUsuario {
-            position: relative;
-            top: 2.7cm;
-            left: -0.4cm;
-            float: right;
-        }
-
-        div#bandeja {
-            z-index: 2;
-            position: relative;
-            left: -18cm;
-            top: 1cm;
-            width: 7cm;
-            height: 1cm;
-            float: right;
-            padding: 0.2cm;
-        }
-
-        div#bandeja {
-            background-color: rgb(69, 69, 69);
-            transition: 1s ease-in-out;
-            cursor: pointer;
-            border-radius: 1rem;
-        }
-
-        a#abrirBandeja {
-            z-index: 2;
-            position: relative;
-            top: 0.2cm;
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-            font-weight: bold;
-            margin-left: 0.5cm;
-        }
-
-        img#imagenBandeja {
-            z-index: 2;
-            position: relative;
-            float: left;
-        }
-
-        div#contenidoBandeja {
-            z-index: 2;
-            position: relative;
-            top: -1.2cm;
-            left: -0.2cm;
-            width: 10cm;
-            height: 7cm;
-            background-color: rgb(69, 69, 69);
-            border-radius: 1rem;
-            overflow: auto;
-        }
-
-        div#contenedorNotificaciones {
-            position: relative;
-            width: 9.6cm;
-            height: 2cm;
-            margin-bottom: 0.5cm;
-            text-align: center;
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-color: rgb(255, 255, 255);
-            transition: 1s ease-in-out;
-            font-weight: bold;
-            animation: fondo 5s infinite;
-        }
-
-        a#enlaceNotificaciones {
-            position: relative;
-            top: 0.8cm;
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-            animation: fondo 5s infinite;
-        }
-
-
-        @keyframes fondo {
-            0% {
-                background-color: rgb(69, 69, 69);
-                transition: 1s ease-in-out;
-            }
-
-            100% {
-                background-color: rgb(167, 166, 166);
-                color: rgb(69, 69, 69);
-            }
-        }
-
-        div#nNotificacion {
-            z-index: 3;
-            position: relative;
-            top: -1.4cm;
-            left: 6cm;
-            color: rgb(255, 255, 255);
-            background-color: rgb(69, 69, 69);
-            width: 0.7cm;
-            height: 0.7cm;
-            border-radius: 2rem;
-        }
-
-        h5#rNumero {
-            position: relative;
-            top: 0.1cm;
-            left: 0cm;
-            font-size: 20px;
-            text-align: center;
-        }
-
-    </style>
-
-
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(document).on('submit', '#formularioChat', function() {
-                //Obtenemos datos formulario.
-                var data = $(this).serialize();
-
-                //AJAX.
-                $.ajax({
-                    type: 'POST',
-                    url: 'mensajes/mensaje.php',
-                    data: data,
-                    success: function(data) {
-                        $('#respuesta').html(data).fadeIn();
-                    }
-                });
-                return false;
-            });
-
-        }); //Fin document.
-
-    </script>
 </head>
 
 

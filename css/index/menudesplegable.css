@@ -260,3 +260,8 @@ a {
     letter-spacing: 1px;
     display: none;
 }
+
+/* esto es para el enlase que esta en toggle */
+.accordion-toggle3 a.active {
+    color: var(--naranja);
+}

@@ -1,10 +1,11 @@
 <?php
 
-@session_start();
+session_start();
 
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/publicaciones/Publicacion.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/Autoload.php';
 
 
 $conexion = conectar();
@@ -125,27 +126,24 @@ switch ($_SESSION['ID_Rol']) {
         break;
 }
 
+
 $stmt = mysqli_prepare($conexion, $sql);
 $stmt->bind_param("s", $_SESSION['ID_Organizacion']);
 $stmt->execute() or mysqli_error($conexion);
 
-$list = [];
+$list = array();
+
+var_dump($stmt->get_result());
 
 while ($row = mysqli_fetch_assoc($stmt->get_result())) {
 
-    $inst = new Publicacion();
+    $inst = new publicaciones\Publicacion();
     $inst->setTitulo($row["titulo"]);
-    $inst->setEstatus($row['estatus']);
+    $inst->setStatus($row['estatus']);
     $inst->setSubcategoriaId($row['ID_Subcategoria']);
     $inst->setFoto($row['foto']);
     $inst->setEstado($row["Estado"]);
     $inst->setMotivo($row['motivo']);
-    $inst->setCreate($row["Created"]);
-    $inst->setCreateBy($row['CreatedBy']);
-    $inst->setUpdated($row["Updated"]);
-    $inst->setUpdateBy($row['UpdatedBy']);
-    $inst->setFechaPublicacion($row["F_Publicacion"]);
-    $inst->setPublicateBy($row['PublicatedBy']);
 
     array_push($list, $inst);
 

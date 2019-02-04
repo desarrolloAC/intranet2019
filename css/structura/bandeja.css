@@ -10,7 +10,7 @@ div#bandeja {
     position: relative;
     left: -18cm;
     top: 1cm;
-    width: 7cm;
+    width: 8cm;
     height: 1cm;
     float: right;
     padding: 0.2cm;
@@ -88,8 +88,8 @@ a#enlaceNotificaciones {
 div#nNotificacion {
     z-index: 3;
     position: relative;
-    top: -1.4cm;
-    left: 6cm;
+    top: -1.5cm;
+    left: 7cm;
     color: rgb(255, 255, 255);
     background-color: rgb(69, 69, 69);
     width: 0.7cm;

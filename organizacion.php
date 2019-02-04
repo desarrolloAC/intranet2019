@@ -267,9 +267,7 @@ if (!isset($_SESSION['Correo']))
                         <td>
                             <h5>
                                 <?php
-                                        $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-                                                         FROM   usuario
-                                                         WHERE  Cedula='$mostrarOrganizacion[UpdatedBy]' ";
+                                        $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre FROM usuario WHERE  Cedula='$mostrarOrganizacion[UpdatedBy]' ";
                                         $rs = mysqli_query($conexion, $sql);
                                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                                         echo $row['Nombre'];

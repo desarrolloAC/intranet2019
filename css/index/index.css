@@ -13,8 +13,8 @@
 
 
 .empresa {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     height: auto;
 }
 
@@ -183,7 +183,7 @@ a:active {
 .video {
     position: static;
     height: auto;
-    padding-top: 10px;
+    padding-top: 16px;
 }
 
 /****************************************VIDEO******************************************************************/
@@ -328,11 +328,59 @@ a:active {
     background-color: white;
 }
 
-.image-infografia {
+.slider-info {
     position: relative;
+    left: 0cm;
     top: 0cm;
     width: 100%;
+    margin: auto;
+    overflow: hidden;
 }
+
+.slider-info ul {
+    display: flex;
+	padding: 0;
+    width: 700%;
+    animation: cambio2 17s infinite alternate linear;
+}
+
+.slider-info li {
+    width: 100%;
+    list-style: none;
+}
+
+.slider-info img {
+    position: relative;
+    top: 0cm;
+    left: 0cm;
+    width: 100%;
+    height: 101.5%;
+}
+
+@keyframes cambio2 {
+
+    0% {margin-left: 0;}
+	11% {margin-left: 0;}
+
+	16% {margin-left: -100%;}
+	27% {margin-left: -100%;}
+
+	32% {margin-left: -200%;}
+	43% {margin-left: -200%;}
+
+	48% {margin-left: -300%;}
+	59% {margin-left: -300%;}
+
+    64% {margin-left: -400%;}
+	75% {margin-left: -400%;}
+
+    80% {margin-left: -500%;}
+	91% {margin-left: -500%;}
+
+    96% {margin-left: -600%;}
+	100% {margin-left: -600%;}
+}
+
 
 /****************************************FIN INFOGRAFIA*************************************************************/
 
@@ -482,9 +530,9 @@ img#imagenFacebook:hover {
     display: none;
     position: fixed;
     bottom: 80px;
-    right: 85px;
+    right: 90px;
     border-radius: 50px;
-    padding: 20px 30px;
+    padding: 18px 25px;
     background-color: var(--gris2-color);
     border: solid 1px var(--blanco-color);
     color: var(--blanco-color);
@@ -492,6 +540,6 @@ img#imagenFacebook:hover {
 }
 
 .up span {
-    font-size: 3em;
+    font-size: 30px;
     color: var(--blanco-color);
 }

@@ -39,7 +39,7 @@
 
                 <div class="col-md-3">
                     <div class="card">
-                        <img class="card-img-top" src="assets/image/Logos/alkescorp3.png" alt="Mi Imagen">
+                        <img class="card-img-top" src="assets/image/Logos/LOGOS%20CORPORATIVOS%20ALKES-01.png" alt="Mi Imagen">
                         <div class="card-body">
                             <h4 class="card-title">Alkes Corp</h4>
                             <a href="http://alkes-corp.com/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
@@ -49,7 +49,7 @@
 
                 <div class="col-md-3">
                     <div class="card">
-                        <img class="card-img-top" src="assets/image/Logos/Fruttech.png" alt="Mi Imagen">
+                        <img class="card-img-top" src="assets/image/Logos/LOGOS%20CORPORATIVOS%20FRUTTECH-01.png" alt="Mi Imagen">
                         <div class="card-body">
                             <h4 class="card-title">Fruttech</h4>
                             <a href="http://www.fruttech.com/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
@@ -59,7 +59,7 @@
 
                 <div class="col-md-3">
                     <div class="card">
-                        <img class="card-img-top" src="assets/image/Logos/INDUSTRIAS%20EL%20CAIMAN-01.png" alt="Mi Imagen">
+                        <img class="card-img-top" src="assets/image/Logos/LOGOS%20CORPORATIVOS%20IEC-01.png" alt="Mi Imagen">
                         <div class="card-body">
                             <h4 class="card-title">Industrias el Caiman</h4>
                             <a href="http://www.industriaselcaiman.com.ve/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
@@ -69,7 +69,7 @@
 
                 <div class="col-md-3">
                     <div class="card">
-                        <img class="card-img-top" target="_blank" src="assets/image/Logos/VENFRUCA-01.png" alt="Mi Imagen">
+                        <img class="card-img-top" target="_blank" src="assets/image/Logos/LOGOS%20CORPORATIVOS%20VENFRUCA-01.png" alt="Mi Imagen">
                         <div class="card-body">
                             <h4 class="card-title">Venezolana de Frutas</h4>
                             <a href="http://venfruca.com/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
@@ -143,16 +143,16 @@
                     <div class="slider">
                         <ul>
                             <li>
-                                <img class="img-fluid image-slider" src="assets/image/banner/BANNERS%20IEC-01.jpg" alt="" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-01.jpg" alt="" />
                             </li>
                             <li>
-                                <img class="img-fluid image-slider" src="assets/image/banner/BANNERS%20IEC-08.jpg" alt="" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-08.jpg" alt="" />
                             </li>
                             <li>
-                                <img class="img-fluid image-slider" src="assets/image/banner/BANNERS%20IEC-01.jpg" alt="" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-01.jpg" alt="" />
                             </li>
                             <li>
-                                <img class="img-fluid image-slider" src="assets/image/banner/BANNERS%20IEC-08.jpg" alt="" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-08.jpg" alt="" />
                             </li>
                         </ul>
                     </div>
@@ -440,7 +440,31 @@
         <!--INICIO INFOGRAFIA-->
         <div class="container-fluid infografia">
             <div class="row">
-                <img src="assets/image/infografia/Que%20es%20una%20auditor%C3%ADa-02.png" class="img-fluid image-infografia" alt="Infografia" />
+                <div class="slider-info">
+                    <ul>
+                        <li>
+                            <img class="img-fluid" src="assets/image/infografia/Que%20es%20una%20auditor%C3%ADa-02.png" alt="Infografia" />
+                        </li>
+                        <li>
+                            <img class="img-fluid" src="assets/image/infografia/REPOSO%20M%C3%89DICO-02.png" alt="Infografia" />
+                        </li>
+                        <li>
+                            <img class="img-fluid" src="assets/image/infografia/VENFRUCA-02.png" alt="Infografia" />
+                        </li>
+                        <li>
+                            <img class="img-fluid" src="assets/image/infografia/INFOGRAFIA%20TI%20(VIRUS)-02.png" alt="Infografia" />
+                        </li>
+                        <li>
+                            <img class="img-fluid" src="assets/image/infografia/IEC-02.png" alt="Infografia" />
+                        </li>
+                        <li>
+                            <img class="img-fluid" src="assets/image/infografia/GU%C3%8DA%20DE%20ACCESO-01.png" alt="Infografia" />
+                        </li>
+                        <li>
+                            <img class="img-fluid" src="assets/image/infografia/INFOGRAFIA%20TI%20(VIRUS)-02.png" alt="Infografia" />
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!--FIN INFOGRAFIA-->

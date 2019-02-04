@@ -41,13 +41,26 @@
                     <a href="http://192.168.0.130/site/procesos/Documentos/ORGANIGRAMAS%20ACTUALIZADOS%20-DIC%202016%20V5.pdf" target="_blank">Estructura</a>
                 </li>
                 <li>
-                    <a href="http://192.168.0.130/site/procesos/Documentos/CONTEXTO DE LA ORGANIZACION IEC.pdf" target="_blank">Contexto de la Organizaciòn</a>
-                </li>
-                <li>
                     <a href="#" title="">Misión y Visión Corporativa</a>
+                    <ul>
+                        <li><a href="http://192.168.0.130/site/PROCESOS/Documentos/Mision_y_Vision/AlkesCorp/mision_vision_alkes.pdf" target="_blank">Alkes Corp</a></li>
+                        <li><a href="http://192.168.0.130/site/PROCESOS/Documentos/\Mision_y_Vision/Fruttech/mision_vision_fruttech.pdf" target="_blank">Fruttech</a></li>
+                        <li><a href="http://192.168.0.130/site/PROCESOS/Documentos/Mision_y_Vision/IEC/mision_vision_IEC.pdf" target="_blank">Ind. El Caiman</a></li>
+                        <li><a href="http://192.168.0.130/site/PROCESOS/Documentos/\Mision_y_Vision/venfruca/mision_vision_venfruca.pdf" target="_blank">Venfruca</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#" title="">Políticas</a>
+                    <ul>
+                        <li><a href="http://192.168.0.130/site/procesos/Documentos/Pol%C3%ADtica-de-Gesti%C3%B3n-ALKES-CORP-v4.pdf" target="_blank">Sistema integrado de Gestion</a></li>
+                        <li><a href="http://192.168.0.130/site/procesos/Documentos/Politica%20SSL2015.pdf" target="_blank">Seguridad Laboral</a></li>
+                        <li><a href="http://192.168.0.130/site/procesos/Documentos/PO-TI-001.pdf" target="_blank">Tecnologia de la Informacion</a></li>
+                        <li><a href="http://192.168.0.130/site/procesos/Documentos/PO-SL-001%20PO%20de%20Cons%20Resp.%20de%20Bebidas%20Alcoh%C3%B3licas%20V4.pdf" target="_blank">Bebidas Alcohólicas</a></li>
+                        <li><a href="http://192.168.0.130/site/procesos/Documentos/Politica%20de%20Ambiente%20Venfruca%20firmada.pdf" target="_blank">Política Ambiental</a></li>
+                        <li><a href="http://192.168.0.130/site/procesos/Documentos/Politica%20de%20seguridad%20venfruca.pdf" target="_blank">Salud y Seguridad Laboral</a></li>
+                        <li><a href="http://192.168.0.130/site/procesos/Documentos/PO-AC-001%20Politica%20para%20Devoluciones%20de%20productos%20V1.pdf" target="_blank">Devolución de Producto Terminado</a></li>
+                        <li><a href="http://192.168.0.130/site/procesos/Documentos/PO-LG-001%20POLITICA%20DE%20LOGISTICA%20CORPORATIVA%20V0.pdf" target="_blank">Logística Corporativa</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#" title="">Planificacion Estrategica</a>
@@ -55,12 +68,12 @@
                 <li>
                     <a href="#" title="">Normas ISO</a>
                     <ul>
-                        <li><a href="visorpdf.php?id=iso0" target="_blank">Norma BASC 4:2012</a></li>
-                        <li><a href="visorpdf.php?id=iso1" target="_blank">Norma ISO 22000:2005 </a></li>
-                        <li><a href="visorpdf.php?id=iso2" target="_blank">Norma ISO 19011:2011</a></li>
-                        <li><a href="visorpdf.php?id=iso3" target="_blank">Norma ISO 9001:2015</a></li>
-                        <li><a href="visorpdf.php?id=iso4" target="_blank">Norma ISO 9001:2008 </a></li>
-                        <li><a href="visorpdf.php?id=iso5" target="_blank">Norma ISO 9004:2010</a></li>
+                        <li><a href="visorpdf.php?id=iso1" target="_blank">Norma ISO 9001:2015</a></li>
+                        <li><a href="visorpdf.php?id=iso2" target="_blank">Norma ISO 9000:2015</a></li>
+                        <li><a href="visorpdf.php?id=iso3" target="_blank">Norma ISO 22000:2005 </a></li>
+                        <li><a href="visorpdf.php?id=iso4" target="_blank">Norma ISO 22000:2018 </a></li>
+                        <li><a href="visorpdf.php?id=iso5" target="_blank">Norma ISO 19011:2011</a></li>
+                        <li><a href="visorpdf.php?id=iso6" target="_blank">Norma ISO 19011:2018</a></li>
                     </ul>
                 </li>
             </ul>
@@ -98,8 +111,9 @@
                 <li>
                     <a href="#" title="">Identidad Corporativa</a>
                     <ul>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Formato Unico</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Formato Unico</a></li>
+                        <li><a href="assets/document/identidad-corporativa/Manual%20de%20Identidad%20Corporativa.pdf" target="_blank">Manual de Identidad Corporativa</a></li>
+                        <li><a href="assets/document/identidad-corporativa/PLANTILLAS%20DE%20PRESENTACI%C3%93N.pdf" target="_blank">Manual de Presentaciones</a></li>
+                        <li><a href="assets/document/identidad-corporativa/V1%2020181220.pdf" target="_blank">Vocabulario</a></li>
                     </ul>
                 </li>
             </ul>

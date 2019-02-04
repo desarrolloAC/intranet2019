@@ -101,7 +101,7 @@ if (!isset($_SESSION['Correo']))
                                     <!--INICIO DEL DISEÑO FORMULARIO CREAR USUARIO-->
                                     <div class="contenedor_formulario_categoria">
 
-                                        <form method="POST" action="php/registrarCategoria.php" name="form" id="form">
+                                        <form method="POST" action="php/categoria/registrarCategoria.php" name="form" id="form">
                                             <table id="tabla_formulario_categoria" border="0" cellpadding="7">
                                                 <tr id="titulo_columna_formulario">
                                                     <td colspan="2">
@@ -208,6 +208,7 @@ if (!isset($_SESSION['Correo']))
                             if (mysqli_num_rows($consultaCategoria) == 0) {
                                 $mensajeError = "<h1 id='mensaje_error'style='color: rgb(69,69,69); text-aling: center;'>No existen registros que coincidan con su criterio de busqueda.</h1>";
                             }
+
                         } else {
                             $consultaCategoria = mysqli_query($conexion, " SELECT DISTINCT(cat.ID_Categoria) as codigo,
                                                                                       cat.nombre as nombre,
@@ -308,7 +309,7 @@ if (!isset($_SESSION['Correo']))
 
                                     <div class='contenedor_formulario_categoria'>
 
-                                        <form method='POST' action='php/actualizarCategoria.php'>
+                                        <form method='POST' action='php/categoria/actualizarCategoria.php'>
 
                                             <table id='tabla_formulario_categoria' border='0' cellpadding='7'>
                                                 <tr id='titulo_columna_formulario'>
@@ -349,19 +350,19 @@ if (!isset($_SESSION['Correo']))
                         <td width="70px;">
                             <?php
                                     if ($mostrarCategoria['estatus'] == 'A') {
-                                        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCategoria.php?codigo=".$mostrarCategoria['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
+                                        echo"<a id='btnActivo'      name='btnActivo'      href='php/categoria/actualizarEstadoCategoria.php?codigo=".$mostrarCategoria['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
                                                 <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                         </a>";
 
-                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?codigo=".$mostrarCategoria['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar'>
+                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/categoria/actualizarEstadoCategoria.php?codigo=".$mostrarCategoria['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar'>
                                                 <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                         </a>";
 
                                     } else {
-                                        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCategoria.php?codigo=".$mostrarCategoria['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar'>
+                                        echo"<a id='btnActivo'      name='btnActivo'      href='php/categoria/actualizarEstadoCategoria.php?codigo=".$mostrarCategoria['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar'>
                                                 <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                             </a>";
-                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCategoria.php?codigo=".$mostrarCategoria['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar' style='display: none;'>
+                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/categoria/actualizarEstadoCategoria.php?codigo=".$mostrarCategoria['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar' style='display: none;'>
                                                 <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                             </a>";
                                     }

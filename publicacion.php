@@ -833,72 +833,72 @@ if (!isset($_SESSION['Correo']))
                                             /* INGRESAR EL USUARIO COMO ADMINISTRADOR */
                                             switch ($mostrarPublicacion['Estado']) {
                                                 case EstadoPublicacion::RECHAZADO_A:
-                                                    echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A&usuario=$_SESSION[Cedula]' title='Rechazada por el Autorizador' style='display: none;'>
+                                                    echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A&usuario=$_SESSION[Cedula]' title='Rechazada por el Autorizador' style='display: none;'>
                                                                         <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
                                                                       </a>";
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
                                                                  </a>";
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Reenviar a Autorizador'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Reenviar a Autorizador'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
                                                                  </a>";
                                                     // echo "RECHAZADO_A";
                                                     break;
                                                 case EstadoPublicacion::RECHAZADO_E:
-                                                    echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Rechazada por Editor' style='display: none;'>
+                                                    echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Rechazada por Editor' style='display: none;'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
                                                                  </a>";
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado'	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado'	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
                                                                  </a>";
                                                     // echo "RECHAZADO_E";
                                                     break;
                                                 case EstadoPublicacion::REVISION_E:
-                                                    echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Revisión del Editor' style='display: none;'>
+                                                    echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Revisión del Editor' style='display: none;'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
                                                                  </a>";
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
                                                                  </a>";
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Enviar a Autorizador'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Enviar a Autorizador'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
                                                                  </a>";
                                                     break;
                                                 case EstadoPublicacion::REVISION_A:
-                                                    echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Revisión Final' style='display: none;'>
+                                                    echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Revisión Final' style='display: none;'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png' title='Editar Publicación'>
                                                                  </a>";
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
                                                                  </a>";
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=PUBLICADA&fecha=f&usuario=$_SESSION[Cedula]' title='Publicar'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=PUBLICADA&fecha=f&usuario=$_SESSION[Cedula]' title='Publicar'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/publicar.png'>
                                                                  </a>";
                                                     // echo "REVISION_P";
                                                     break;
                                                 case EstadoPublicacion::PUBLICADA:
                                                     if ($mostrarPublicacion['estatus'] == 'A') {
-                                                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
+                                                        echo"<a id='btnActivo' name='btnActivo' href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
                                                                             <img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
                                                                         </a>";
-                                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar'>
+                                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar'>
                                                                             <img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
                                                                         </a>";
                                                     } else {
-                                                        echo"<a id='btnActivo'      name='btnActivo' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar'>
+                                                        echo"<a id='btnActivo'      name='btnActivo' href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar'>
                                                                             <img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
                                                                         </a>";
-                                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar' style='display: none;'>
+                                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar' style='display: none;'>
                                                                             <img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
                                                                         </a>";
                                                     }
 
                                                     break;
                                                 default:
-                                                    echo"<a id='btnActivo' 		name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=BORR&usuario=$_SESSION[Cedula]' title='Estado Borrador' style='display: none;'>
+                                                    echo"<a id='btnActivo' 		name='btnActivo' 		href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=BORR&usuario=$_SESSION[Cedula]' title='Estado Borrador' style='display: none;'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
                                                                  </a>";
-                                                    echo"<a id='btnDesactivado' 	name='btnDesactivado'	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Enviar a Editor'>
+                                                    echo"<a id='btnDesactivado' 	name='btnDesactivado'	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Enviar a Editor'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
                                                                  </a>";
                                                     //echo EstadoPublicacion::BORR:;
@@ -909,11 +909,11 @@ if (!isset($_SESSION['Correo']))
                                             /* INGRESAR EL USUARIO COMO AUTORIZADOR */
                                             switch ($mostrarPublicacion['Estado']) {
                                                 case EstadoPublicacion::RECHAZADO_A:
-                                                    // echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A' title='Rechazada por el Autorizador'>Rechazada por Autorizador</a>";
+                                                    // echo"<a id='btnActivo' 	 name='btnActivo' 		href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A' title='Rechazada por el Autorizador'>Rechazada por Autorizador</a>";
                                                     // echo "RECHAZADO_A";
                                                     break;
                                                 case EstadoPublicacion::RECHAZADO_E:
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado'	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'></a>";
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado'	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'></a>";
                                                     // echo "RECHAZADO_E";
                                                     break;
                                                 case EstadoPublicacion::REVISION_E:
@@ -921,27 +921,27 @@ if (!isset($_SESSION['Correo']))
                                                     break;
                                                 case EstadoPublicacion::REVISION_A:
 
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_A&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
                                                                 <img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
                                                              </a>";
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=PUBLICADA&fecha=f&usuario=$_SESSION[Cedula]' title='Publicar'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=PUBLICADA&fecha=f&usuario=$_SESSION[Cedula]' title='Publicar'>
                                                                 <img id='imagenBoton' src='assets/image/menu/botonesTablas/publicar.png'>
                                                              </a>";
                                                     // echo "REVISION_P";
                                                     break;
                                                 case EstadoPublicacion::PUBLICADA:
                                                     if ($mostrarPublicacion['estatus'] == 'A') {
-                                                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
+                                                        echo"<a id='btnActivo' name='btnActivo' href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar' style='display: none;'>
                                                                             <img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
                                                                         </a>";
-                                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar'>
+                                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar'>
                                                                             <img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
                                                                         </a>";
                                                     } else {
-                                                        echo"<a id='btnActivo'      name='btnActivo' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar'>
+                                                        echo"<a id='btnActivo'      name='btnActivo' href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=A&usuario=$_SESSION[Cedula]' title='Activar'>
                                                                             <img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
                                                                         </a>";
-                                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar' style='display: none;'>
+                                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estatus=D&usuario=$_SESSION[Cedula]' title='Desactivar' style='display: none;'>
                                                                             <img id='imagenBoton' src='assets/image/menu/botonesTablas/btnOffOn.png'>
                                                                         </a>";
                                                     }
@@ -955,10 +955,10 @@ if (!isset($_SESSION['Correo']))
                                             /* INGRESAR EL USUARIO COMO EDITOR */
                                             switch ($mostrarPublicacion['Estado']) {
                                                 case EstadoPublicacion::RECHAZADO_A:
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
                                                                         <img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
                                                                      </a>";
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Reenviar a Autorizador'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Reenviar a Autorizador'>
                                                                         <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
                                                                      </a>";
                                                     // echo "RECHAZADO_A";
@@ -967,10 +967,10 @@ if (!isset($_SESSION['Correo']))
                                                     // echo "RECHAZADO_E";
                                                     break;
                                                 case EstadoPublicacion::REVISION_E:
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=RECHAZADO_E&usuario=$_SESSION[Cedula]' title='Reenviar a Publicador'>
                                                                         <img id='imagenBoton' src='assets/image/menu/botonesTablas/regresar.png'>
                                                                      </a>";
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Enviar a Autorizador'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado' 	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_A&usuario=$_SESSION[Cedula]' title='Enviar a Autorizador'>
                                                                         <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
                                                                      </a>";
                                                     break;
@@ -991,7 +991,7 @@ if (!isset($_SESSION['Correo']))
                                                     // echo "RECHAZADO_A";
                                                     break;
                                                 case EstadoPublicacion::RECHAZADO_E:
-                                                    echo"<a id='btnDesactivado' name='btnDesactivado'	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
+                                                    echo"<a id='btnDesactivado' name='btnDesactivado'	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Reenviar a Editor'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
                                                                  </a>";
                                                     // echo "RECHAZADO_E";
@@ -1003,10 +1003,10 @@ if (!isset($_SESSION['Correo']))
                                                     // echo "REVISION_P";
                                                     break;
                                                 case EstadoPublicacion::PUBLICADA:
-                                                    //echo"<a id='btnDesactivado'    name='btnDesactivado'  href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E' title='Enviar a Editor'>Enviar a Editor</a>";
+                                                    //echo"<a id='btnDesactivado'    name='btnDesactivado'  href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E' title='Enviar a Editor'>Enviar a Editor</a>";
                                                     break;
                                                 default:
-                                                    echo"<a id='btnDesactivado' 	name='btnDesactivado'	href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Enviar a Editor'>
+                                                    echo"<a id='btnDesactivado' 	name='btnDesactivado'	href='php/publicaciones/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E&usuario=$_SESSION[Cedula]' title='Enviar a Editor'>
                                                                     <img id='imagenBoton' src='assets/image/menu/botonesTablas/siguiente.png'>
                                                                  </a>";
                                                     //echo EstadoPublicacion::BORR:;

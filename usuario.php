@@ -109,7 +109,7 @@ if (!isset($_SESSION['Correo']))
                                     <!--INICIO DEL DISEÑO FORMULARIO CREAR USUARIO-->
                                     <div class="contenedor_formulario_usuario">
 
-                                        <form method="POST" action="php/registroUsuario.php" enctype="multipart/form-data">
+                                        <form method="POST" action="php/usuario/registroUsuario.php" enctype="multipart/form-data">
 
                                             <table id="tabla_formulario_usuario" border="0" cellpadding="7">
                                                 <tr id="titulo_columna_formulario" class="ancho">
@@ -554,7 +554,7 @@ if (!isset($_SESSION['Correo']))
 
                                     <div class='contenedor_formulario_usuario'>
 
-                                        <form method='POST' action='php/actualizarUsuario.php' enctype="multipart/form-data">
+                                        <form method='POST' action='php/usuario/actualizarUsuario.php' enctype="multipart/form-data">
 
                                             <table id='tabla_formulario_usuario' border='0' cellpadding='7'>
                                                 <tr id='titulo_columna_formulario'>
@@ -858,20 +858,20 @@ if (!isset($_SESSION['Correo']))
                             <?php
                                     if ($mostrarUsuario['Estatus'] == 'A') {
 
-                                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
+                                        echo"<a id='btnActivo' name='btnActivo' href='php/usuario/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
                                             <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                         </a>";
 
-                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar'>
+                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/usuario/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar'>
                                             <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                         </a>";
                                     } else {
 
-                                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar'>
+                                        echo"<a id='btnActivo' name='btnActivo' href='php/usuario/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar'>
                                             <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                         </a>";
 
-                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar' style='display: none;'>
+                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/usuario/actualizarEstadoUsuario.php?cedula=".$mostrarUsuario['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar' style='display: none;'>
                                             <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                         </a>";
                                     }

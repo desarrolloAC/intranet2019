@@ -99,7 +99,7 @@ if (!isset($_SESSION['Correo']))
                                     <!--INICIO DEL DISEÑO FORMULARIO CREAR USUARIO-->
                                     <div class="contenedor_formulario_departamento">
 
-                                        <form method="POST" action="php/registrarDepartamento.php">
+                                        <form method="POST" action="php/departamento/registrarDepartamento.php">
                                             <table id="tabla_formulario_departamento" border="0" cellpadding="7">
                                                 <tr id="titulo_columna_formulario">
                                                     <td colspan="2">
@@ -332,7 +332,7 @@ if (!isset($_SESSION['Correo']))
 
                                     <div class='contenedor_formulario_categoria'>
 
-                                        <form method='POST' action='php/actualizarDepartamento.php'>
+                                        <form method='POST' action='php/departamento/actualizarDepartamento.php'>
 
                                             <table id='tabla_formulario_categoria' border='0' cellpadding='7'>
                                                 <tr id='titulo_columna_formulario'>
@@ -389,19 +389,19 @@ if (!isset($_SESSION['Correo']))
                         <td width="70px;">
                             <?php
                                     if ($mostrarDepartamento['estatus'] == 'A') {
-                                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoDepartamento.php?codigo=".$mostrarDepartamento['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
+                                        echo"<a id='btnActivo' name='btnActivo' href='php/departamento/actualizarEstadoDepartamento.php?codigo=".$mostrarDepartamento['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
                                             <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                         </a>";
 
-                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoDepartamento.php?codigo=".$mostrarDepartamento['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar'>
+                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/departamento/actualizarEstadoDepartamento.php?codigo=".$mostrarDepartamento['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar'>
                                             <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                         </a>";
                                     } else {
-                                        echo"<a id='btnActivo' name='btnActivo' href='php/actualizarEstadoDepartamento.php?codigo=".$mostrarDepartamento['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar'>
+                                        echo"<a id='btnActivo' name='btnActivo' href='php/departamento/actualizarEstadoDepartamento.php?codigo=".$mostrarDepartamento['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar'>
                                             <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                         </a>";
 
-                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoDepartamento.php?codigo=".$mostrarDepartamento['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar' style='display: none;'>
+                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/departamento/actualizarEstadoDepartamento.php?codigo=".$mostrarDepartamento['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar' style='display: none;'>
                                             <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                         </a>";
                                     }

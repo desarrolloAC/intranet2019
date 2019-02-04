@@ -25,7 +25,8 @@ if (!isset($_SESSION['Correo']))
         <!--INICIO LLAMADA DE ARCHIVOS CSS-->
         <link rel="stylesheet" type="text/css" href="css/structura/estructura.css">
         <link rel="stylesheet" type="text/css" href="css/structura/tablaMenuVertical.css">
-        
+        <link rel="stylesheet" type="text/css" href="css/structura/bandeja.css">
+
         <link rel="icon" type="image/png" href="favicon.png" />
 
         <link rel="stylesheet" type="text/css" href="css/cargo/opcionCargo.css">

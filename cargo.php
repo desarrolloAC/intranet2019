@@ -101,7 +101,7 @@ if (!isset($_SESSION['Correo']))
                                     <!--INICIO DEL DISEÑO FORMULARIO CREAR USUARIO-->
                                     <div class="contenedor_formulario_cargo">
 
-                                        <form method="POST" action="php/registrarCargo.php" name="form" id="form">
+                                        <form method="POST" action="php/cargo/registrarCargo.php" name="form" id="form">
                                             <table id="tabla_formulario_categoria" border="0" cellpadding="7">
                                                 <tr id="titulo_columna_formulario">
                                                     <td colspan="2">
@@ -328,7 +328,7 @@ if (!isset($_SESSION['Correo']))
 
                                     <div class='contenedor_formulario_categoria'>
 
-                                        <form method='POST' action='php/actualizarCargo.php'>
+                                        <form method='POST' action='php/cargo/actualizarCargo.php'>
 
                                             <table id='tabla_formulario_categoria' border='0' cellpadding='7'>
                                                 <tr id='titulo_columna_formulario'>
@@ -396,17 +396,17 @@ if (!isset($_SESSION['Correo']))
                         <td width="70px;">
                             <?php
                                     if ($mostrarCargo['estatus'] == 'A') {
-                                        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCargo.php?codigo=".$mostrarCargo['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
+                                        echo"<a id='btnActivo'      name='btnActivo'      href='php/cargo/actualizarEstadoCargo.php?codigo=".$mostrarCargo['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar' style='display: none;'>
                                                 <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                             </a>";
-                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCargo.php?codigo=".$mostrarCargo['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar'>
+                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/cargo/actualizarEstadoCargo.php?codigo=".$mostrarCargo['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar'>
                                                 <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                             </a>";
                                     } else {
-                                        echo"<a id='btnActivo'      name='btnActivo'      href='php/actualizarEstadoCargo.php?codigo=".$mostrarCargo['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar'>
+                                        echo"<a id='btnActivo'      name='btnActivo'      href='php/cargo/actualizarEstadoCargo.php?codigo=".$mostrarCargo['codigo']."&estatus=A&usuario=".$_SESSION['Cedula']."' title='Activar'>
                                                 <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                             </a>";
-                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/actualizarEstadoCargo.php?codigo=".$mostrarCargo['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar' style='display: none;'>
+                                        echo"<a id='btnDesactivado' name='btnDesactivado' href='php/cargo/actualizarEstadoCargo.php?codigo=".$mostrarCargo['codigo']."&estatus=D&usuario=".$_SESSION['Cedula']."' title='Desactivar' style='display: none;'>
                                                 <img src='assets/image/menu/botonesTablas/btnOffOn.png' id='imgDesactivar'>
                                             </a>";
                                     }

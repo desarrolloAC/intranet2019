@@ -22,7 +22,7 @@ $cargo = $_POST ['txtCargo'];
 
 $foto = $_FILES['btnImagen']['name'];
 $error = $_FILES['btnImagen']['error'];
-$ruta = $_FILES['btnImagen']['tmp_name'];
+$origen = $_FILES['btnImagen']['tmp_name'];
 
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
@@ -52,7 +52,7 @@ switch ($error) {
 
     default :
 
-        copy($ruta, $destino);
+        copy($origen, $destino);
 
         $insert = " CALL sp_RegistroLogroExtra(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 

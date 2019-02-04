@@ -13,7 +13,7 @@ $cedula = $_SESSION['Cedula'];
 
 $foto = $_FILES['btnImagenCumpleMes']['name'];
 $error = $_FILES['btnImagenCumpleMes']['error'];
-$ruta = $_FILES['btnImagenCumpleMes']['tmp_name'];
+$origen = $_FILES['btnImagenCumpleMes']['tmp_name'];
 
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
@@ -53,7 +53,7 @@ switch ($error) {
 
     default :
 
-        copy($ruta, $destino);
+        copy($origen, $destino);
 
         $insert = " CALL sp_RegistroCumpleañoMes(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 

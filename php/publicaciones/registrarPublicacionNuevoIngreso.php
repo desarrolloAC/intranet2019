@@ -24,7 +24,7 @@ $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
 $foto = $_FILES['btnImagenNuevoAscenso']['name'];
 $error = $_FILES['btnImagenNuevoAscenso']['error'];
-$ruta = $_FILES['btnImagenNuevoAscenso']['tmp_name'];
+$origen = $_FILES['btnImagenNuevoAscenso']['tmp_name'];
 
 
 
@@ -52,7 +52,7 @@ switch ($error) {
 
     default :
 
-        copy($ruta, $destino);
+        copy($origen, $destino);
 
         $insert = " CALL sp_RegistroNuevoIngreso(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 

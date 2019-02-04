@@ -20,7 +20,7 @@ $date = date("Y-m-d_His");
 
 $foto = $_FILES['archivo']['name'];
 $error = $_FILES['archivo']['error'];
-$ruta = $_FILES['archivo']['tmp_name'];
+$origen = $_FILES['archivo']['tmp_name'];
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
@@ -60,7 +60,7 @@ if ($error == 1 || $error1 == 1 || $error2 == 1 || $error3 == 1) {
     die("El tamaño del archivo que ha enviado es nulo.");
 } else {
 
-    if (!copy($ruta, $destino)) {
+    if (!copy($origen, $destino)) {
         die("Error al copiar 1  $destino \n");
     }
 

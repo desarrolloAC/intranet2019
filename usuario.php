@@ -150,26 +150,8 @@ if (!isset($_SESSION['Correo']))
                                                     </td>
                                                 </tr>
                                                 <tr class="ancho">
-                                                    <td class="ancho">
-                                                        <h5 id="label_cajas_texto"> Departamento </h5>
-                                                        <?php
-                                                            echo "
 
-                                                            <select name='txtDpto' class='combos_formulario_usuario' id='txtDpto' required >
-                                                            <option> Departamento </option>";
-
-                                                            $sql = " SELECT d.ID_Departamento,d.Nombre FROM departamento d WHERE d.Estatus='A'";
-                                                            $rs = mysqli_query($conexion, $sql);
-                                                            if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                do {
-                                                                    echo "<option value='$row[ID_Departamento]'> $row[Nombre] </option>";
-                                                                } while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
-                                                            }
-
-                                                            echo "</select>";
-                                                            ?>
-                                                    </td>
-                                                    <td class="ancho">
+                                                    <td colspan="2" class="ancho">
                                                         <h5 id="label_cajas_texto"> Cargo </h5>
                                                         <?php
                                                             echo "<select name='cbCargo' id='combos_formulario_usuario'   required >
@@ -663,26 +645,8 @@ if (!isset($_SESSION['Correo']))
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h5 id="label_cajas_texto"> Departamento </h5>
-                                                        <?php
-                                                                echo "
-                                                                <select name='txtDpto1' class='combos_formulario_usuario' id='txtDpto1' required >
-                                                                <option> Departamento </option>";
-
-                                                                $sql = " SELECT d.ID_Departamento,d.Nombre FROM departamento d WHERE d.Estatus='A'";
-                                                                $rs = mysqli_query($conexion, $sql);
-                                                                if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                    do {
-                                                                        if ($row['Nombre'] == $mostrarUsuario['departamento']) {
-                                                                            echo "<option selected value='$row[ID_Departamento]'> $row[Nombre] </option>";
-                                                                        } else {
-                                                                            echo "<option   value='$row[ID_Departamento]'> $row[Nombre] </option>";
-                                                                        }
-                                                                    } while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
-                                                                }
-
-                                                                echo "</select>";
-                                                                ?>
+                                                        <h5 id="label_cajas_texto"> Telefono </h5>
+                                                        <input type='text' id='caja_formulario_usuario' name='txtTelefono' maxlength='8' readonly value='<?php echo $mostrarUsuario['Telefono']; ?>'>
                                                     </td>
                                                     <td>
                                                         <h5 id='label_cajas_texto'>Contraseña</h5>

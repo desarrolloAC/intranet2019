@@ -15,9 +15,6 @@ div.contenedor_tabla_directorio{
 
 table#tabla_directorio{
 	border-collapse: collapse;
-	border-left: transparent;
-	border-right: transparent;
-	word-break: break-all;
 	width: 100%;
 }
 

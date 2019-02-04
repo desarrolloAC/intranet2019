@@ -17,7 +17,6 @@ $sNombre = $_POST["txtsNombre"];
 $pApellido = $_POST["txtpApellido"];
 $sApellido = $_POST["txtsApellido"];
 $sexo = $_POST["cbSexo"];
-$departamento = $_POST["txtDpto"];
 $cargo = $_POST["cbCargo"];
 $correo = $_POST["txtCorreo"];
 $telefono = $_POST["txttelefono"];

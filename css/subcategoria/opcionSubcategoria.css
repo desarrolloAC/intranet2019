@@ -9,8 +9,6 @@ div[id="contenedor_tabla_subcategoria"]{
 /*DISEÑO DE LA TABLA USUARIOS*/
 table[id="tabla_subcategoria"]{
     border-collapse: collapse;
-    border-left: transparent;
-    border-right: transparent;
 }
 
 tr[id="titulo_columnas"]{

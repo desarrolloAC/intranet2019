@@ -9,9 +9,6 @@ div[id="contenedor_tabla_rol"]{
 /*DISEÑO DE LA TABLA USUARIOS*/
 table[id="tabla_rol"]{
     border-collapse: collapse;
-    border-left: transparent;
-    border-right: transparent;
-    word-break: break-all;
 }
 
 tr[id="titulo_columnas"]{
@@ -83,7 +80,7 @@ a[id="btnEditar"]:active{
 
 /*INPUT BUSCAR*/
 input[id="txtBuscarRol"]{
-    position: relative; width: 10cm; height: 28px; left: 3.7cm;
+    position: relative; width: 10cm; height: 28px; left: 2.5cm;
     background-image: url(../../assets/image/menu/botonesTablas/btnBuscar.png);
     background-repeat: no-repeat;
     background-position: 2px 2px;
@@ -95,7 +92,7 @@ input[id="txtBuscarRol"]{
 
 /*INCIO DEL BOTON BUSCAR*/
 button[id="btnBuscarRol"]{
-    position: relative; width: 100px; height: 30px; left: 4cm;
+    position: relative; width: 100px; height: 30px; left: 3cm;
     background: rgb(241,129,3);/*NARANJA*/
     color: rgb(255,255,255);
     font-weight: bold;

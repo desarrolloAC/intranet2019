@@ -9,9 +9,6 @@ div[id="contenedor_tabla_usuario"]{
 /*DISEÑO DE LA TABLA USUARIOS*/
 table[id="tabla_usuario"]{
     border-collapse: collapse;
-    border-left: transparent;
-    border-right: transparent;
-    word-break: break-all;
 }
 
 tr[id="titulo_columnas"]{
@@ -24,6 +21,10 @@ tr[id="titulo_columnas"]{
 
 .ancho{
     width: 3cm;
+}
+
+.ancho2 {
+    width: 6cm;
 }
 
 tr[id="datos_usuario"]{
@@ -86,7 +87,7 @@ a[id="btnEditar"]:active{
 
 /*INPUT BUSCAR*/
 input[id="txtBuscarUsuario"]{
-    position: relative; width: 10cm; height: 28px; left: 3cm;
+    position: relative; width: 10cm; height: 28px; left: 2cm;
     background-image: url(../../assets/image/menu/botonesTablas/btnBuscar.png);
     background-repeat: no-repeat;
     background-position: 2px 2px;
@@ -98,7 +99,7 @@ input[id="txtBuscarUsuario"]{
 
 /*INCIO DEL BOTON BUSCAR*/
 button[id="btnBuscarUsuario"]{
-    position: relative; width: 100px; height: 30px; left: 3.3cm;
+    position: relative; width: 100px; height: 30px; left: 2.5cm;
     background: rgb(241,129,3);/*NARANJA*/
     color: rgb(255,255,255);
     font-weight: bold;

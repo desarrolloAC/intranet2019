@@ -14,7 +14,7 @@ $pApellido = $_POST["txtpApellido"];
 $sApellido = $_POST["txtsApellido"];
 $sexo = $_POST["cbSexo"];
 $organizacion = $_POST["cbOrganizacion"];
-$departamento = $_POST["txtDpto1"];
+$telefono = $_POST["txtTelefono"];
 $cargo = $_POST["cbCargo"];
 $correo = $_POST["txtCorreo"];
 $pass = $_POST["txtPass"];
@@ -51,7 +51,59 @@ try {
             break;
 
         case EstadoFile::UPLOAD_ERR_NO_FILE:
-            throw new RuntimeException('El archivo no se ha enviado.');
+            //throw new RuntimeException('El archivo no se ha enviado.');
+            
+            //actualizar sin la foto.
+            if (isset($_POST["txtPass"])) {
+
+                $ed = "UPDATE `usuario` SET
+                `ID_Cargo`='$cargo',
+                `ID_Pais`=$pais,
+                `ID_Estado`=$estado,
+                `ID_Municipio`=$municipio,
+                `ID_Parroquia`=$parroquia,
+                `ID_Ciudad`=$ciudad,
+                `PNombre`='$pNombre',
+                `SNombre`='$sNombre',
+                `PApellido`='$pApellido',
+                `SApellido`='$sApellido',
+                `Sexo`='$sexo',
+                `Direccion`='$Direccion'
+                WHERE `Cedula`='$cedula'";
+
+                $seguridad = "UPDATE seguridad Set CLAVE = SHA1('$pass') WHERE CORREO = '$correo'";
+
+                $roles = "UPDATE org_usuario_rol Set ID_Rol = '$rol' WHERE cedula = '$cedula' AND ID_Organizacion='$organizacion' ";
+
+                mysqli_query($conexion, $ed);
+                mysqli_query($conexion, $seguridad);
+                mysqli_query($conexion, $roles);
+                mysqli_query($conexion, "COMMINT");
+                
+            } else {
+
+                $ed = "UPDATE `usuario` SET
+                `ID_Cargo`='$cargo',
+                `ID_Pais`=$pais,
+                `ID_Estado`=$estado,
+                `ID_Municipio`=$municipio,
+                `ID_Parroquia`=$parroquia,
+                `ID_Ciudad`=$ciudad,
+                `PNombre`='$pNombre',
+                `SNombre`='$sNombre',
+                `PApellido`='$pApellido',
+                `SApellido`='$sApellido',
+                `Sexo`='$sexo',
+                `Direccion`='$Direccion'
+                WHERE `Cedula`='$cedula'";
+
+                $roles = "UPDATE org_usuario_rol Set ID_Rol = '$rol' WHERE cedula = '$cedula' AND ID_Organizacion='$organizacion' ";
+
+                mysqli_query($conexion, $ed);
+                mysqli_query($conexion, $roles);
+                mysqli_query($conexion, "COMMINT");
+            }
+            
             break;
 
         default :
@@ -150,8 +202,12 @@ function delete($conexion, $cedula) {
     
     $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $row['Foto'];
     
-    if (!unlink($destino)) {
-        die('No se pudo eliminar el archivo anteriol.');
-    }
     
+    if (file_exists($destino)) {
+    
+        if (!unlink($destino)) {
+            die('No se pudo eliminar el archivo anteriol.');
+        }
+        
+    }
 }

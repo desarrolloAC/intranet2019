@@ -341,7 +341,7 @@ a:active {
     display: flex;
 	padding: 0;
     width: 700%;
-    animation: cambio2 17s infinite alternate linear;
+    animation: cambio2 40s infinite alternate linear;
 }
 
 .slider-info li {

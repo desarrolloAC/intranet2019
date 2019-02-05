@@ -10,32 +10,19 @@
     </a>
 
     <ul class="menu">
-        <!--OPCION ACTUALIDAD-->
+
         <li>
-            <a href="#" title="">Actualidad</a>
-
-            <!--SUBMENU DE ACTUALIDAD-->
+            <a href="#" title="">Aplicaciones</a>
             <ul>
-                <li>
-                    <a href="#" target="_blank">Últimos proyectos y acuerdos</a>
-                </li>
-                <li>
-                    <a href="#" target="_blank">Próximos eventos</a>
-                </li>
-                <li>
-                    <a href="#" target="_blank">Boletín de noticias</a>
-                </li>
+                <li><a href="directorio.php" target="_blank">Directorio</a></li>
+                <li><a href="reserva.php" target="_blank">Reservar de Salas de Reunion</a></li>
+                <li><a href="#" target="_blank">Galeria</a></li>
+                <li><a href="#" target="_blank">Chat</a></li>
             </ul>
-            <!--FIN DEL SUBMENU ACTUALIDAD-->
-
         </li>
-        <!--FIN DE LA OPCION ACTUALIDAD-->
 
-        <!--OPCION INFORMACION-->
         <li>
             <a href="#" title="">Contexto de la Organizacion</a>
-
-            <!--SUBMENU DE INFORMACION-->
             <ul>
                 <li>
                     <a href="http://192.168.0.130/site/procesos/Documentos/ORGANIGRAMAS%20ACTUALIZADOS%20-DIC%202016%20V5.pdf" target="_blank">Estructura</a>
@@ -63,9 +50,6 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" title="">Planificacion Estrategica</a>
-                </li>
-                <li>
                     <a href="#" title="">Normas ISO</a>
                     <ul>
                         <li><a href="visorpdf.php?id=iso1" target="_blank">Norma ISO 9001:2015</a></li>
@@ -77,16 +61,11 @@
                     </ul>
                 </li>
             </ul>
-            <!--FIN DEL SUBMENU INFORMACION-->
-
         </li>
-        <!--FIN DE LA OPCION INFORMACION-->
 
-        <!--OPCION INFORMACION PARA EL TRABAJO-->
         <li>
             <a id="menu-wrapper" href="#" title="">Informacion Documentada</a>
         </li>
-        <!--FIN DE LA OPCION INFORMACION PARA EL TRABAJO-->
 
         <li>
             <a href="#" title="">Descargas</a>
@@ -94,18 +73,27 @@
                 <li>
                     <a href="#" title="">Cuentas por Pagar</a>
                     <ul>
-                        <li>
-                            <a href="php/Descargas.php?id=1" target="_blank">Formato Unico</a>
-                        </li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Formato Unico de Anticipo y Relacion de Gastos</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Relacion de Gastos TEBCA</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#" title="">Gestión Humana</a>
                     <ul>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Solvencia de Egreso del Personal</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Entrevista Tecnica</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Descripcion y Perfil de Competencia del Cargo</a></li>
                         <li><a href="php/Descargas.php?id=1" target="_blank">Formato Unico</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Formato Unico</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Formato Unico</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Formato Unico</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Solicitud de Empleo</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Verificacion de Referencia Laborales</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Inducion Operacional</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Informe de Entrevista</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Check List de Expediente</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Evaluacion de Periodo de Prueba</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Evaluacion de Impacto</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Listado de Asistencia</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Solicitud de Adistramiento</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Solicitud de Personal</a></li>
                     </ul>
                 </li>
                 <li>
@@ -121,11 +109,20 @@
         </li>
 
         <li>
-            <a href="directorio.php">Directorio</a>
+            <a href="#" title="">Enlases de interes</a>
+            <ul>
+                <li><a href="http://192.168.0.4:8000/admin/" target="_blank">Adempiere-Alkes</a></li>
+                <li><a href="http://192.168.0.31:8080/admin/" target="_blank">Adempiere-TKR</a></li>
+                <li><a href="https://www.mercantilbanco.com/mercprod/index.html" target="_blank">Mercantil</a></li>
+                <li><a href="https://www.provincial.com/" target="_blank">BBVA</a></li>
+                <li><a href="https://bonus.com.ve/" target="_blank">Bonus</a></li>
+                <li><a href="http://www.todoticket.com.ve/" target="_blank">TodoTicket</a></li>
+                <li><a href="#" target="_blank">Emergencias</a></li>
+            </ul>
         </li>
 
         <li>
-            <a href="reserva.php">Reservar de Salas de Reunion</a>
+
         </li>
 
     </ul>

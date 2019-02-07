@@ -5,7 +5,9 @@ namespace detalle;
 
 class Logros implements \JsonSerializable {
 
+    private $publicacionId;
     private $organization;
+    private $titulo;
     private $tipo_logro;
     private $contenido;
     private $colaborador;
@@ -17,8 +19,16 @@ class Logros implements \JsonSerializable {
         
     }
 
+    public function getPublicacionId() {
+        return $this->publicacionId;
+    }
+
     public function getOrganization() {
         return $this->organization;
+    }
+
+    public function getTitulo() {
+        return $this->titulo;
     }
 
     public function getTipo_logro() {
@@ -27,6 +37,10 @@ class Logros implements \JsonSerializable {
 
     public function getContenido() {
         return $this->contenido;
+    }
+
+    public function getColaborador() {
+        return $this->colaborador;
     }
 
     public function getDepartamento() {
@@ -41,8 +55,16 @@ class Logros implements \JsonSerializable {
         return $this->foto;
     }
 
+    public function setPublicacionId($publicacionId) {
+        $this->publicacionId = $publicacionId;
+    }
+
     public function setOrganization($organization) {
         $this->organization = $organization;
+    }
+
+    public function setTitulo($titulo) {
+        $this->titulo = $titulo;
     }
 
     public function setTipo_logro($tipo_logro) {
@@ -53,21 +75,27 @@ class Logros implements \JsonSerializable {
         $this->contenido = $contenido;
     }
 
-    public function setCargo($colaborador) {
-        $this->rcolaborador = $colaborador;
+    public function setColaborador($colaborador) {
+        $this->colaborador = $colaborador;
     }
 
     public function setDepartamento($departamento) {
         $this->departamento = $departamento;
     }
 
+    public function setCargo($cargo) {
+        $this->cargo = $cargo;
+    }
+
     public function setFoto($foto) {
         $this->foto = $foto;
     }
-
+    
     public function jsonSerialize() {
         return [
+            'n' => $this->publicacionId,
             'org' => $this->organization,
+            'title' => $this->titulo,
             'tipo' => $this->tipo_logro,
             'dpto' => $this->contenido,
             'carg' => $this->colaborador,

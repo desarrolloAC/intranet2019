@@ -5,32 +5,33 @@ namespace detalle;
 
 class Fallecimiento implements \JsonSerializable {
 
-    private $organization;
+    private $publicacionId;
     private $contenido;
 
     public function __construct() {
         
     }
 
-    public function getOrganization() {
-        return $this->organization;
+    public function getPublicacionId() {
+        return $this->publicacionId;
     }
 
     public function getContenido() {
         return $this->contenido;
     }
 
-    public function setOrganization($organization) {
-        $this->organization = $organization;
+    public function setPublicacionId($publicacionId) {
+        $this->publicacionId = $publicacionId;
     }
 
     public function setContenido($contenido) {
         $this->contenido = $contenido;
     }
 
+    
     public function jsonSerialize() {
         return [
-            'org' => $this->organization,
+            'n' => $this->publicacionId,
             'content' => $this->contenido
         ];
     }

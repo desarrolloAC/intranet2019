@@ -85,7 +85,7 @@ class BoletinInformativo implements \JsonSerializable {
         return [
             'n' => $this->publicacionId,
             'org' => $this->organization,
-            'titulo' => $this->titulo,
+            'title' => $this->titulo,
             'content' => $this->contenido,
             'image1' => $this->imagen1,
             'image2' => $this->imagen2,

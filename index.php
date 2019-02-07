@@ -249,7 +249,7 @@
             <div class="row">
 
                 <div class="col col-lg-6">
-                    <img src="assets/image/banner/likiliki.jpg" class="img-fluid" width="880" height="594" alt="Nuestras Marcas">
+                    <img src="assets/image/banner/BANNERS%20IEC-01.jpg" class="img-fluid" width="880" height="594" alt="Nuestras Marcas">
                 </div>
 
                 <div class="col col-lg-6">
@@ -453,19 +453,19 @@
                 <div class="slider-info">
                     <ul>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/Que%20es%20una%20auditor%C3%ADa-02.png" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/40%20x%2018-03-03.jpg" alt="Infografia" />
                         </li>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/VENFRUCA-02.png" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/40%20x%2018-03-03.jpg" alt="Infografia" />
                         </li>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/INFOGRAFIA%20TI%20(VIRUS)-02.png" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/40%20x%2018-03-03.jpg" alt="Infografia" />
                         </li>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/IEC-02.png" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/40%20x%2018-03-03.jpg" alt="Infografia" />
                         </li>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/REPOSO%20M%C3%89DICO-02.png" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/40%20x%2018-03-03.jpg" alt="Infografia" />
                         </li>
                     </ul>
                 </div>

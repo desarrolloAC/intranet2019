@@ -1,17 +1,9 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace detalle;
 
-/**
- * Description of Noticia
- *
- * @author brayan
- */
-class Fallecimiento implements JsonSerializable {
+
+class Fallecimiento implements \JsonSerializable {
 
     private $organization;
     private $contenido;
@@ -20,28 +12,23 @@ class Fallecimiento implements JsonSerializable {
         
     }
 
-    public
-            function getOrganization() {
+    public function getOrganization() {
         return $this->organization;
     }
 
-    public
-            function getContenido() {
+    public function getContenido() {
         return $this->contenido;
     }
 
-    public
-            function setOrganization($organization) {
+    public function setOrganization($organization) {
         $this->organization = $organization;
     }
 
-    public
-            function setContenido($contenido) {
+    public function setContenido($contenido) {
         $this->contenido = $contenido;
     }
 
-    public
-            function jsonSerialize() {
+    public function jsonSerialize() {
         return [
             'org' => $this->organization,
             'content' => $this->contenido

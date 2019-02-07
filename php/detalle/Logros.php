@@ -1,17 +1,9 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace detalle;
 
-/**
- * Description of Noticia
- *
- * @author brayan
- */
-class Logros implements JsonSerializable {
+
+class Logros implements \JsonSerializable {
 
     private $organization;
     private $tipo_logro;
@@ -25,68 +17,55 @@ class Logros implements JsonSerializable {
         
     }
 
-    public
-            function getOrganization() {
+    public function getOrganization() {
         return $this->organization;
     }
 
-    public
-            function getTipo_logro() {
+    public function getTipo_logro() {
         return $this->tipo_logro;
     }
 
-    public
-            function getContenido() {
+    public function getContenido() {
         return $this->contenido;
     }
 
-    public
-            function getDepartamento() {
+    public function getDepartamento() {
         return $this->departamento;
     }
 
-    public
-            function getCargo() {
+    public function getCargo() {
         return $this->cargo;
     }
 
-    public
-            function getFoto() {
+    public function getFoto() {
         return $this->foto;
     }
 
-    public
-            function setOrganization($organization) {
+    public function setOrganization($organization) {
         $this->organization = $organization;
     }
 
-    public
-            function setTipo_logro($tipo_logro) {
+    public function setTipo_logro($tipo_logro) {
         $this->tipo_logro = $tipo_logro;
     }
 
-    public
-            function setContenido($contenido) {
+    public function setContenido($contenido) {
         $this->contenido = $contenido;
     }
 
-    public
-            function setCargo($colaborador) {
+    public function setCargo($colaborador) {
         $this->rcolaborador = $colaborador;
     }
 
-    public
-            function setDepartamento($departamento) {
+    public function setDepartamento($departamento) {
         $this->departamento = $departamento;
     }
 
-    public
-            function setFoto($foto) {
+    public function setFoto($foto) {
         $this->foto = $foto;
     }
 
-    public
-            function jsonSerialize() {
+    public function jsonSerialize() {
         return [
             'org' => $this->organization,
             'tipo' => $this->tipo_logro,

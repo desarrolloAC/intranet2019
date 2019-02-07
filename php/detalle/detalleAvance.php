@@ -4,13 +4,15 @@ error_reporting(0);
 
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/detalleNoticia/AvanceInformativo.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/Autoload.php';
+
 
 $conexion = conectar();
 
-$n = $_GET['n'];
+$n = $_GET['id'];
 
 
-$sql = "SELECT
+echo $sql = "SELECT
 	 pub.ID_Publicacion AS n,
 	 org.Nombre AS org,
 	 pub.Titulo AS titulo,
@@ -24,18 +26,17 @@ INNER JOIN publicacion_avanceinf paif ON paif.ID_publicacion  = pub.ID_Publicaci
 INNER JOIN subcategoria subc          ON pub.ID_Subcategoria  = subc.ID_Subcategoria
 INNER JOIN categoria cat              ON cat.ID_Categoria     = subc.ID_Categoria
 INNER JOIN organizacion org           ON org.ID_Organizacion  = pub.ID_Organizacion
-WHERE pub.ID_Subcategoria='AVIF' AND pub.Estatus='A' AND pub.Estado='PUBLICADA' AND pub.ID_Publicacion = ? ;";
+WHERE pub.ID_Subcategoria='AVIF' AND pub.Estatus='A' AND pub.Estado='PUBLICADA' AND pub.ID_Publicacion = " . $n ." ;";
 
-$stmt = mysqli_prepare($conexion, $sql);
-$stmt->bind_param("i", $n);
-$stmt->execute() or die(mysqli_error($conexion));
+
+$rs = mysqli_query($conexion, $sql);
 
 $list = null;
 
 
-while ($row = mysqli_fetch_array($stmt->get_result(), MYSQLI_ASSOC)) {
+while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
 
-    $inst = new AvanceInformativo();
+    $inst = new detalle\AvanceInformativo();
     $inst->setPublicacionId($row["n"]);
     $inst->setOrganization($row["org"]);
     $inst->setTitulo($row["titulo"]);

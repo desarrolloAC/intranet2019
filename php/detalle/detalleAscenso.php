@@ -4,6 +4,8 @@ error_reporting(0);
 
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/detalleNoticia/Ascenso.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/Autoload.php';
+
 
 $conexion = conectar();
 
@@ -35,7 +37,7 @@ $list = null;
 
 while ($row = mysqli_fetch_array($stmt->get_result(), MYSQLI_ASSOC)) {
 
-    $inst = new Ascenso();
+    $inst = new detalle\Ascenso();
     $inst->setPublicacionId($row["n"]);
     $inst->setOrganization($row["org"]);
     $inst->setTitulo($row["titulo"]);

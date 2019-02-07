@@ -143,17 +143,27 @@
                     <div class="slider">
                         <ul>
                             <li>
-                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-01.jpg" alt="" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-02.png" alt="banner" />
                             </li>
                             <li>
-                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-08.jpg" alt="" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-08.jpg" alt="banner" />
                             </li>
                             <li>
-                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-01.jpg" alt="" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC.%202-08.png" alt="banner" />
                             </li>
                             <li>
-                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-08.jpg" alt="" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-10.png" alt="banner" />
                             </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-11.png" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC.%202-02.png" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC.%202-05.png" alt="banner" />
+                            </li>
+
                         </ul>
                     </div>
 
@@ -446,9 +456,6 @@
                             <img class="img-fluid" src="assets/image/infografia/Que%20es%20una%20auditor%C3%ADa-02.png" alt="Infografia" />
                         </li>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/REPOSO%20M%C3%89DICO-02.png" alt="Infografia" />
-                        </li>
-                        <li>
                             <img class="img-fluid" src="assets/image/infografia/VENFRUCA-02.png" alt="Infografia" />
                         </li>
                         <li>
@@ -458,10 +465,7 @@
                             <img class="img-fluid" src="assets/image/infografia/IEC-02.png" alt="Infografia" />
                         </li>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/GU%C3%8DA%20DE%20ACCESO-01.png" alt="Infografia" />
-                        </li>
-                        <li>
-                            <img class="img-fluid" src="assets/image/infografia/INFOGRAFIA%20TI%20(VIRUS)-02.png" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/REPOSO%20M%C3%89DICO-02.png" alt="Infografia" />
                         </li>
                     </ul>
                 </div>

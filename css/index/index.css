@@ -340,7 +340,7 @@ a:active {
 .slider-info ul {
     display: flex;
 	padding: 0;
-    width: 700%;
+    width: 500%;
     animation: cambio2 40s infinite alternate linear;
 }
 
@@ -359,36 +359,19 @@ a:active {
 
 @keyframes cambio2 {
 
-    0% {margin-left: 0;}
-	11% {margin-left: 0;}
+    0% {margin-left: -100%;}
+    20% {margin-left: -100%;}
 
-	16% {margin-left: -100%;}
-	27% {margin-left: -100%;}
+    25% {margin-left: -200%;}
+    45% {margin-left: -200%;}
 
-	32% {margin-left: -200%;}
-	43% {margin-left: -200%;}
+    50% {margin-left: -300%;}
+    70% {margin-left: -300%;}
 
-	48% {margin-left: -300%;}
-	59% {margin-left: -300%;}
-
-    64% {margin-left: -400%;}
-	75% {margin-left: -400%;}
-
-    80% {margin-left: -500%;}
-	91% {margin-left: -500%;}
-
-    96% {margin-left: -600%;}
-	100% {margin-left: -600%;}
+    75% {margin-left: -400%;}
+    100% {margin-left: -400%;}
 }
 
-
-/****************************************FIN INFOGRAFIA*************************************************************/
-
-
-
-
-
-/**************************************** FOOTERR ***************************************************/
 
 .footer {
     position: relative;
@@ -429,7 +412,7 @@ h1#tituloNuestrasPaginas {
 .slider ul {
     display: flex;
     padding: 0;
-    width: 500%;
+    width: 700%;
     animation: cambio 10s infinite alternate linear;
 }
 
@@ -447,37 +430,26 @@ h1#tituloNuestrasPaginas {
 
 @keyframes cambio {
 
-    0% {
-        margin-left: 0;
-    }
+    0% {margin-left: 0;}
+	11% {margin-left: 0;}
 
-    20% {
-        margin-left: 0;
-    }
+	16% {margin-left: -100%;}
+	27% {margin-left: -100%;}
 
-    25% {
-        margin-left: -125%;
-    }
+	32% {margin-left: -200%;}
+	43% {margin-left: -200%;}
 
-    45% {
-        margin-left: -125%;
-    }
+	48% {margin-left: -300%;}
+	59% {margin-left: -300%;}
 
-    50% {
-        margin-left: -250%;
-    }
+    64% {margin-left: -400%;}
+	75% {margin-left: -400%;}
 
-    70% {
-        margin-left: -250%;
-    }
+    80% {margin-left: -500%;}
+	91% {margin-left: -500%;}
 
-    75% {
-        margin-left: -375%;
-    }
-
-    100% {
-        margin-left: -375%;
-    }
+    96% {margin-left: -600%;}
+	100% {margin-left: -600%;}
 
 }
 
@@ -486,20 +458,20 @@ h1#tituloNuestrasPaginas {
     background-color: var(--naraja-color);
 }
 
-h1#tituloNuestrasRedes {
+#tituloNuestrasRedes {
     margin-top: 0cm;
     text-align: center;
     color: var(--blanco-color);
 }
 
-img#imagenFacebook {
+#imagenFacebook {
     display: block;
     margin-top: 0.2cm;
     margin-left: 4cm;
     transition: 2s ease-in-out;
 }
 
-img#imagenFacebook:hover {
+#imagenFacebook:hover {
     transition: 2s ease-in-out;
     transform: rotate(360deg);
     cursor: pointer;
@@ -523,8 +495,6 @@ img#imagenFacebook:hover {
 .redes {
     background-color: var(--naraja-color);
 }
-
-/**************************************** FOOTER  ************************************************************/
 
 .up {
     display: none;

@@ -20,10 +20,12 @@
                 <li><a href="#" target="_blank">Chat</a></li>
             </ul>
         </li>
-
         <li>
             <a href="#" title="">Contexto de la Organizacion</a>
             <ul>
+               <li>
+                    <a href="http://192.168.0.130/site/\PROCESOS/Arbol de comunicaciones/arbolComunicaciones.pdf" target="_blank">Arbol de Comunicaciones</a>
+                </li>
                 <li>
                     <a href="http://192.168.0.130/site/procesos/Documentos/ORGANIGRAMAS%20ACTUALIZADOS%20-DIC%202016%20V5.pdf" target="_blank">Estructura</a>
                 </li>
@@ -74,26 +76,26 @@
                     <a href="#" title="">Cuentas por Pagar</a>
                     <ul>
                         <li><a href="php/Descargas.php?id=1" target="_blank">Formato Unico de Anticipo y Relacion de Gastos</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Relacion de Gastos TEBCA</a></li>
+                        <li><a href="php/Descargas.php?id=2" target="_blank">Relacion de Gastos TEBCA</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#" title="">Gestión Humana</a>
                     <ul>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Solvencia de Egreso del Personal</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Entrevista Tecnica</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Descripcion y Perfil de Competencia del Cargo</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Formato Unico</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Solicitud de Empleo</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Verificacion de Referencia Laborales</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Inducion Operacional</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Informe de Entrevista</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Check List de Expediente</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Evaluacion de Periodo de Prueba</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Evaluacion de Impacto</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Listado de Asistencia</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Solicitud de Adistramiento</a></li>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Solicitud de Personal</a></li>
+                        <li><a href="php/Descargas.php?id=3" target="_blank">Solvencia de Egreso del Personal</a></li>
+                        <li><a href="php/Descargas.php?id=4" target="_blank">Entrevista Tecnica</a></li>
+                        <li><a href="php/Descargas.php?id=5" target="_blank">Descripcion y Perfil de Competencia del Cargo</a></li>
+                        <li><a href="php/Descargas.php?id=6" target="_blank">Formato Unico</a></li>
+                        <li><a href="php/Descargas.php?id=7" target="_blank">Solicitud de Empleo</a></li>
+                        <li><a href="php/Descargas.php?id=8" target="_blank">Verificacion de Referencia Laborales</a></li>
+                        <li><a href="php/Descargas.php?id=9" target="_blank">Inducion Operacional</a></li>
+                        <li><a href="php/Descargas.php?id=10" target="_blank">Informe de Entrevista</a></li>
+                        <li><a href="php/Descargas.php?id=11" target="_blank">Check List de Expediente</a></li>
+                        <li><a href="php/Descargas.php?id=12" target="_blank">Evaluacion de Periodo de Prueba</a></li>
+                        <li><a href="php/Descargas.php?id=13" target="_blank">Evaluacion de Impacto</a></li>
+                        <li><a href="php/Descargas.php?id=14" target="_blank">Listado de Asistencia</a></li>
+                        <li><a href="php/Descargas.php?id=15" target="_blank">Solicitud de Adistramiento</a></li>
+                        <li><a href="php/Descargas.php?id=16" target="_blank">Solicitud de Personal</a></li>
                     </ul>
                 </li>
                 <li>
@@ -111,8 +113,8 @@
         <li>
             <a href="#" title="">Enlases de interes</a>
             <ul>
-                <li><a href="http://192.168.0.4:8000/admin/" target="_blank">Adempiere-Alkes</a></li>
-                <li><a href="http://192.168.0.31:8080/admin/" target="_blank">Adempiere-TKR</a></li>
+                <li><a href="http://192.168.0.4:8000/webui/" target="_blank">Adempiere-Alkes</a></li>
+                <li><a href="http://192.168.0.31:8080/webui/" target="_blank">Adempiere-TKR</a></li>
                 <li><a href="https://www.mercantilbanco.com/mercprod/index.html" target="_blank">Mercantil</a></li>
                 <li><a href="https://www.provincial.com/" target="_blank">BBVA</a></li>
                 <li><a href="https://bonus.com.ve/" target="_blank">Bonus</a></li>

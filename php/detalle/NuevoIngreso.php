@@ -4,7 +4,9 @@ namespace detalle;
 
 class NuevoIngreso implements \JsonSerializable {
 
+    private $publicacionId;
     private $organization;
+    private $titulo;
     private $colaborador;
     private $departamento;
     private $cargo;
@@ -15,8 +17,16 @@ class NuevoIngreso implements \JsonSerializable {
         
     }
 
+    public function getPublicacionId() {
+        return $this->publicacionId;
+    }
+
     public function getOrganization() {
         return $this->organization;
+    }
+
+    public function getTitulo() {
+        return $this->titulo;
     }
 
     public function getColaborador() {
@@ -39,8 +49,16 @@ class NuevoIngreso implements \JsonSerializable {
         return $this->contenido;
     }
 
+    public function setPublicacionId($publicacionId) {
+        $this->publicacionId = $publicacionId;
+    }
+
     public function setOrganization($organization) {
         $this->organization = $organization;
+    }
+
+    public function setTitulo($titulo) {
+        $this->titulo = $titulo;
     }
 
     public function setColaborador($colaborador) {
@@ -48,7 +66,7 @@ class NuevoIngreso implements \JsonSerializable {
     }
 
     public function setDepartamento($departamento) {
-        $this->contenido = $departamento;
+        $this->departamento = $departamento;
     }
 
     public function setCargo($cargo) {
@@ -63,14 +81,17 @@ class NuevoIngreso implements \JsonSerializable {
         $this->contenido = $contenido;
     }
 
+    
     public function jsonSerialize() {
         return [
+            'n' => $this->publicacionId,
             'org' => $this->organization,
-            'colaborad' => $this->colaborador,
+            'title' => $this->titulo,
+            'colaborated' => $this->colaborador,
             'dpto' => $this->departamento,
-            'carg' => $this->cargo,
-            'fot' => $this->foto,
-            'cont' => $this->contenido
+            'chargue' => $this->cargo,
+            'image' => $this->foto,
+            'content' => $this->contenido
         ];
     }
 

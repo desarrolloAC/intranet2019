@@ -348,7 +348,7 @@
         </div>
 
         <script type="text/javascript">
-            //
+
             const cumpleMesnUrl = 'php/index/consultaPublicacionesTalentoHumano.php';
             const cumpleMes = new Vue({
                 el: '#cumpleMes',
@@ -425,7 +425,7 @@
         </div>
 
         <script type="text/javascript">
-            //
+
             const nuevoIngresoUrl = 'php/index/consultaPublicacionesCelebraciones.php';
             const nuevoIngreso = new Vue({
                 el: '#nuevoIngreso',

@@ -4,7 +4,9 @@ namespace detalle;
 
 class Promocion implements \JsonSerializable {
 
+    private $publicacionId;
     private $organization;
+    private $titulo;
     private $colaborador;
     private $contenido;
     private $foto;
@@ -13,8 +15,16 @@ class Promocion implements \JsonSerializable {
         
     }
 
+    public function getPublicacionId() {
+        return $this->publicacionId;
+    }
+
     public function getOrganization() {
         return $this->organization;
+    }
+
+    public function getTitulo() {
+        return $this->titulo;
     }
 
     public function getColaborador() {
@@ -29,8 +39,16 @@ class Promocion implements \JsonSerializable {
         return $this->foto;
     }
 
+    public function setPublicacionId($publicacionId) {
+        $this->publicacionId = $publicacionId;
+    }
+
     public function setOrganization($organization) {
         $this->organization = $organization;
+    }
+
+    public function setTitulo($titulo) {
+        $this->titulo = $titulo;
     }
 
     public function setColaborador($colaborador) {
@@ -47,10 +65,12 @@ class Promocion implements \JsonSerializable {
 
     public function jsonSerialize() {
         return [
+            'n' => $this->publicacionId,
             'org' => $this->organization,
-            'colabo' => $this->colaborador,
+            'title' => $this->titulo,
+            'colaborated' => $this->colaborador,
             'content' => $this->contenido,
-            'fot' => $this->foto
+            'image' => $this->foto
         ];
     }
 

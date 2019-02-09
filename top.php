@@ -12,12 +12,12 @@
     <ul class="menu">
 
         <li>
-            <a href="#" title="">Aplicaciones</a>
+            <a href="#" title="">Interactivo</a>
             <ul>
                 <li><a href="directorio.php" target="_blank">Directorio</a></li>
                 <li><a href="reserva.php" target="_blank">Reservar de Salas de Reunion</a></li>
-                <li><a href="#" target="_blank">Galeria</a></li>
-                <li><a href="#" target="_blank">Chat</a></li>
+                <li><a href="#">Galeria</a></li>
+                <li><a href="#">Chat</a></li>
             </ul>
         </li>
         <li>

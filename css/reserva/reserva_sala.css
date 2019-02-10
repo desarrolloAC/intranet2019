@@ -1,36 +1,34 @@
-/*CONTENEDOR CALENDARIO*/
-.contenedor_calendario {
-	z-index: 1;	
-	position: absolute; width: 80%; height: 80%; top: 25%; left: 10%;
+.contenedorContenido {
+    position: relative;
+    top: 3cm;
+    width: 100%;
+    height: auto;
+    padding-top: 5%;
 }
 
-select{
+/*CONTENEDOR CALENDARIO*/
+.calendario {
+    position: relative;
+    top; 0px;
+    left: 5%;
+}
+
+select {
 	position: relative; left: 40%;
 }
 
-h1, h4, h5{
+h1, h4, h5 {
 	text-align: center;
 }
 
-#titulo_mes{
-	background-color: var(--gris-claro-color);
+.titulo_mes {
+	background-color: var(--gris-claro);
+    border: solid 1px var(--gris-oscuro);
 }
 
 #cb_año {
     position: relative; left: 0%; top: 0%;
 	width: 100px;
-	height: 30px;
-}
-
-#cb_sala {
-    position: relative; left: 0%; top: 0%;
-	width: 150px;
-	height: 30px;
-}
-
-#cb_usuario {
-    position: relative; left: 0%; top: 0%;
-	width: 150px;
 	height: 30px;
 }
 
@@ -40,79 +38,93 @@ h1, h4, h5{
 	height: 30px;
 }
 
+#cb_sala {
+    position: relative; left: 0%; top: 0%;
+	width: 150px;
+	height: 30px;
+}
+
+tr,td{
+	text-align: center;
+    padding: 15px;
+}
+
 td[id="numero"]{
-	background-color: var(--gris-claro-color);
-	border-radius: 1rem;
+	background-color: var(--gris-claro);
 }
 
 td[id="numero"]:hover{
-	background-color: var(--gris-color);
+	background-color: var(--gris-oscuro);
 	cursor: pointer;
-	color: var(--blanco-color);
+	color: var(--blanco);
 }
 /*FIN CONTENEDOR CALENDARIO*/
 
 
 /*INICIO CONTENEDOR LISTA*/
-.contenedor_lista{
-	z-index: 1;	
-	position: absolute; width: 56%; height: 102%; top: 0%; left: 52%;
+.tabla_disponibilidad {
+	position: absolute;
+    width: 56%;
+    top: 17%;
+    left: 40%;
 	display: none;
-}
-
-#tabla_disponibilidad {
-    width: 100%;
-}
-
-#titulo_disponibilidad{
-	background-color: var(--gris-claro-color);
-}
-
-#titulo_lista{
-	background-color: var(--negro-color);
-	color: var(--blanco-color);
-}
-
-#fondo:hover{
-	background-color: var(--gris-color);
-	color: var(--blanco-color);
-}
-
-#fondo{
-	background-color: var(--gris-claro-color);
-}
-
-.reservar {
-    padding: 1rem;
-	border-radius: 0.5rem;
-	background-color: var(--verder-color);
-}
-
-.red {
-    background-color: var(--rojo-color);
 }
 
 .cerrar {
     padding: 1rem;
 	border-radius: 0.5rem;
-	background-color: var(--verder-color);
+	background-color: var(--gris-claro);
+    border: solid 2px var(--gris-oscuro);
+    color: var(--negro);
 }
 
 .cerrar:hover {
-    background-color: var(--gris2-color);
-    color: var(--blanco-color);
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
 }
 
+.titulo_disponibilidad {
+	background-color: var(--gris-claro);
+}
 
+.titulo_lista {
+	background-color: var(--gris-oscuro);
+	color: var(--blanco);
+}
+
+.fondo {
+	background-color: var(--gris-claro);
+}
+
+.fondo:hover {
+	background-color: var(--gris-oscuro);
+	color: var(--blanco);
+}
+
+.reservar {
+    padding: 1rem;
+	border-radius: 0.5rem;
+	background-color: var(--gris-claro);
+    border: solid 2px var(--gris-oscuro);
+    color: var(--negro);
+}
+
+.reservar:hover {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+}
+
+.reservado {
+    padding: 1rem;
+	border-radius: 0.5rem;
+	background-color: var(--gris-oscuro);
+    border: solid 2px var(--blanco);
+    color: var(--blanco);
+}
+
+.reservado:hover {
+    background-color: rgb(130,130,130);
+    color: var(--blanco);
+}
 
 /*FIN CONTENEDOR LISTA*/
-
-
-
-
-
-
-
-
-
-

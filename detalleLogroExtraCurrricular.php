@@ -9,14 +9,18 @@
 
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <link rel="stylesheet" type="text/css" href="css/detalle/detalleAvanceInformativo.css" media="all"/>
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css" media="all" />
 
     <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
 
-    <script src="js/lib/vue.js"></script>
-    <script src="js/lib/vue-resource.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/detalle/detalleAvanceInformativo.css" media="all"/>
+
+    <script type="text/javascript" src="js/lib/vue.js"></script>
+    <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>
+
+    <script type="text/javascript" src="js/structura/url.js"></script>
 
 </head>
 
@@ -41,22 +45,6 @@
 
     <script type="text/javascript">
 
-        function obtenerValorParametro(sParametroNombre) {
-
-            var sPaginaURL = window.location.search.substring(1);
-            var sURLVariables = sPaginaURL.split('&');
-
-            for (var i = 0; i < sURLVariables.length; i++) {
-                var sParametro = sURLVariables[i].split('=');
-                if (sParametro[0] == sParametroNombre) {
-                    return sParametro[1];
-                }
-            }
-
-            return '';
-        }
-
-        const detatalleUrl = 'php/detalle/detalleLogros.php?id='+obtenerValorParametro('id');
         const deatalle = new Vue({
             el: '#contenidoAVIF',
             created: function() {
@@ -67,7 +55,7 @@
             },
             methods: {
                 getPublicaciones: function() {
-                    this.$http.get(detatalleUrl).then((responsed) => {
+                    this.$http.get('php/detalle/detalleLogros.php?id='+getParamURL('id')).then((responsed) => {
                         this.item = responsed.body;
                     });
                 }

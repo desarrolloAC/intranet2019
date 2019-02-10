@@ -1,13 +1,26 @@
+/* Primera version despreceated */
 :root {
+/*
     --naraja-color: rgb(241, 129, 3);
     --verder-color: rgb(36, 231, 17);
-    --blanco-color: #fff; 
+    --blanco-color: #fff;
     --vinotinto-color: rgb(100, 0, 0);
     --gris-color: rgb(67, 67, 67);
     --gris2-color: rgb(69, 69, 69);
     --gris-claro-color: rgb(215,215,215);
     --rojo-color: rgb(231,037,018);
     --negro-color: rgb(0,0,0);
+*/
+}
+
+/* Version definitiva, sustituir a esta version */
+:root {
+    --blanco: #fff;
+    --negro: #000;
+    --naranja: rgb(241, 129, 3);
+    --gris-claro: rgb(219, 220, 210);
+    --gris-oscuro: rgb(69, 69, 69);
+    --transparente: transparent;
 }
 
 html{

@@ -43,7 +43,7 @@
     min-height: 11.6cm;
     max-height: 11.6cm;
     border-style: none;
-    background-color: transparent;
+    background-color: var(--transparente);
     font-family: Arial;
     font-size: 12;
 }
@@ -69,9 +69,9 @@
     }
 
     .org {
-	position: absolute; top: 2.9cm; left: 7.5cm;
+	    position: absolute; top: 2.9cm; left: 7.5cm;
         font-size: 15px;
-	color: rgb(255,255,255);
+	    color: var(--blanco);
     }
 
     .contenido {
@@ -83,9 +83,9 @@
         min-height: 11.6cm;
         max-height: 11.6cm;
         border-style: none;
-        background-color: transparent;
+        background-color: var(--transparente);
         font-family: Arial;
         font-size: 12;
     }
-    
+
 }

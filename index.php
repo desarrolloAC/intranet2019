@@ -12,11 +12,12 @@
 
     <link rel="stylesheet" href="css/lib/bootstrap.min.css" media="all" />
 
-    <link rel="stylesheet" type="text/css" href="css/index/index.css" media="all" />
-
     <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all" />
+    
+    <link rel="stylesheet" type="text/css" href="css/index/index.css" media="all" />
+
 
     <script type="text/javascript" src="js/lib/vue.js"></script>
     <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>

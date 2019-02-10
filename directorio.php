@@ -9,14 +9,17 @@
 
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <link rel="stylesheet" type="text/css" href="css/directorio/directorio.css" media="screen">
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css" media="all" />
 
     <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all" />
 
-    <script src="js/lib/vue.js"></script>
-    <script src="js/lib/vue-resource.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/directorio/directorio.css" media="screen">
+
+    <script type="text/javascript" src="js/lib/vue.js"></script>
+    <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>
+
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/perfileslogin/selectPerfiles.js"></script>
 </head>

@@ -1,22 +1,10 @@
-/* global */
-
-
-:root {
-    --blanco: #fff;
-    --negro: #000;
-    --naranja: rgb(241, 129, 3);
-    --gris-claro: rgb(219, 220, 210);
-    --gris-oscuro: rgb(69, 69, 69);
-    --transparente: rgba(100, 100, 100, 0.2);
-}
-
 ul {
     list-style: none;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--negro);
 }
 
 
@@ -51,7 +39,7 @@ a {
     width: 100%;
     max-width: 450px;
     background: var(--blanco);
-    box-shadow: var(--transparente) 6px 2px 10px;
+    box-shadow: rgba(100, 100, 100, 0.2) 6px 2px 10px;
     z-index: 999;
     overflow-y: auto;
     overflow-x: hidden;

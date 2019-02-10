@@ -5,7 +5,6 @@
 
     <head>
         <title>Intranet Alkes Corp, S.A</title>
-
         <meta name="viewport" content="width=device-width,device-height initial-scale=1.5" />
         <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
         <meta charset="utf-8">
@@ -14,11 +13,11 @@
 
         <link rel="stylesheet" href="css/lib/bootstrap.min.css" media="all" />
 
-        <link rel="stylesheet" type="text/css" href="css/login/login.css" media="all">
-
         <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all" />
         <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all" />
         <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all" />
+
+        <link rel="stylesheet" type="text/css" href="css/login/login.css" media="all">
 
     </head>
 
@@ -57,7 +56,7 @@
                                 </div>
 
                                 <div class="form-check">
-                                    <a class="olvido_contrasena" href="recuperarPassLogin.php">¿Olvidó Su Contraseña?</a>
+                                    <a class="olvido_contrasena" href="#">¿Olvidó Su Contraseña?</a>
                                 </div>
                                 <br>
                                 <button type="submit" class="btn Ingresar">Ingresar</button>

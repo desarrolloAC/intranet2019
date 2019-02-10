@@ -6,26 +6,26 @@
 	top: 0cm;
 	width: 100%;
 	height: 3cm;
-	background-color: var(--naraja-color);
+	background-color: var(--naranja);
 }
 
-img#logoAlkes{
+#logoAlkes{
 	position: absolute; left: -3cm; top: 0.2cm;
 	width: 12cm;
 	height: 2.5cm;
 	cursor: pointer;
 }
 
-img#logoUsuario{
+#logoUsuario{
 	position: absolute; left: 33.2cm; top: 0.4cm;
 	width: 2cm;
 	height: 2cm;
 	border-radius: 1rem;
-	transition: 1s ease-in-out;	
+	transition: 1s ease-in-out;
 }
 
-img#logoUsuario:hover{
-	background-color: var(--gris2-color);
+#logoUsuario:hover{
+	background-color: var(--gris-oscuro);
 	transition: 1s ease-in-out;
 	border-radius: 1rem;
 	cursor: pointer;
@@ -35,7 +35,7 @@ img#logoUsuario:hover{
 	z-index: 99;
 	position: fixed; left: 20%;
 	width: 100%;
-	margin-top: 4.5%;	
+	margin-top: 4.5%;
 }
 
 .menu {
@@ -56,15 +56,15 @@ ul, ol {
 }
 
 .menu li a {
-	background: var(--naraja-color);
-	color:var(--blanco-color);
+	background: var(--naranja);
+	color: var(--blanco);
 	text-decoration:none;
 	padding:10px 30px;
 	display:block;
 }
 
 .menu li a:hover {
-	background-color: var(--gris2-color);
+	background-color: var(--gris-oscuro);
 	transform: scale(1.1);
 	transition: 1s ease-in-out;
 }

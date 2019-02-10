@@ -11,11 +11,11 @@ $conexion = conectar();
 
 $n = $_GET['id'];
 
-$sql = "SELECT 
+$sql = "SELECT
 	 pub.ID_Publicacion AS n,
 	 org.Nombre AS org,
 	 pub.Titulo AS titulo,
-         pub.Foto,
+     pub.Foto,
 	 comu.contenido
 FROM publicacion pub
 INNER JOIN publicacion_comunicado comu ON comu.ID_publicacion  = pub.ID_Publicacion
@@ -40,7 +40,7 @@ while ($row = mysqli_fetch_array($stmt->get_result(), MYSQLI_ASSOC)) {
     $inst->setTitulo($row["titulo"]);
     $inst->setFoto($row["Foto"]);
     $inst->setContenido($row['contenido']);
-    
+
     $list = $inst;
 }
 

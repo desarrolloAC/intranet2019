@@ -146,13 +146,13 @@ const root = {
                 $("#usu_" + i).text(this.reservation[i].user);
 
                 if (this.reservation[i].isreserved === "Y") {
-                    $('#reserva_' + i).addClass('red');
-                    $('#reserva_' + i).val('Reservado');
+                    $('#cancelar_' + i).addClass('reservado');
+                    //$('#reserva_' + i).val('Reservado');
                     $('#cancelar_' + i).show();
 
                 } else {
-                    $('#reserva_' + i).removeClass('red');
-                    $('#reserva_' + i).val('Reservar');
+                    $('#cancelar_' + i).removeClass('reservado');
+                    //$('#reserva_' + i).val('Reservar');
                     $('#cancelar_' + i).hide();
 
                 }
@@ -178,7 +178,7 @@ const calendario = new Vue({
     methods: {
         mostrarPanelDisponibilidad: function () {
 
-            $('.contenedor_lista').show();
+            $('.tabla_disponibilidad').show();
 
         },
         consultarReservas: function () {
@@ -633,7 +633,7 @@ const disponibilidad = new Vue({
         },
         ocultarPanelDisponivilidad: function () {
 
-            $('.contenedor_lista').hide();
+            $('.tabla_disponibilidad').hide();
 
         },
         avilitarFormCalendario: function () {

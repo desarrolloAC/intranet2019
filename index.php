@@ -104,7 +104,7 @@
         </div>
 
         <script type="text/javascript">
-            
+
             const publicacionesUrl = 'php/index/consultaPublicacionesCapsulaInformativa.php';
             const capuslaInformativa = new Vue({
                 el: '#capuslaInformativa',
@@ -172,7 +172,7 @@
         </div>
 
         <script>
-            
+
             const video = new Vue({
                 el: '#video',
                 created: function() {
@@ -218,7 +218,7 @@
         </div>
 
         <script type="text/javascript">
-            
+
             const invitacionUrl = 'php/index/consultaPublicacionesInvitaciones.php';
             const invitacion = new Vue({
                 el: '#invitacion',
@@ -296,7 +296,7 @@
         </div>
 
         <script type="text/javascript">
-            
+
             const salasUrl = 'php/index/consultaSalas.php';
             const salas = new Vue({
                 el: '#salas',
@@ -452,7 +452,7 @@
                 <div class="slider-info">
                     <ul>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/40%20x%2018-03-03.jpg" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/GU%C3%8DA%20DE%20ACCESO-01.png" alt="Infografia" />
                         </li>
                         <li>
                             <img class="img-fluid" src="assets/image/infografia/40%20x%2018-03-03.jpg" alt="Infografia" />

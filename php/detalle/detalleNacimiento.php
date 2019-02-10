@@ -15,9 +15,10 @@ $sql = "SELECT
             pub.ID_Publicacion AS n,
             org.Nombre AS org,
             pub.Titulo AS titulo,
+            pub.Foto,
             naci.colaborador,
             naci.contenido,
-            naci.foto
+            naci.foto as image
 FROM publicacion pub
 INNER JOIN publicacion_nacimiento naci ON naci.ID_publicacion  = pub.ID_Publicacion
 INNER JOIN subcategoria subc           ON pub.ID_Subcategoria  = subc.ID_Subcategoria
@@ -41,7 +42,8 @@ while ($row = mysqli_fetch_array($stmt->get_result(), MYSQLI_ASSOC)) {
     $inst->setTitulo($row["titulo"]);
     $inst->setColaborador($row['colaborador']);
     $inst->setContenido($row['contenido']);
-    $inst->setFoto($row['foto']);
+    $inst->setFoto($row['Foto']);
+    $inst->setImage($row['image']);
     
     $list = $inst;
 }

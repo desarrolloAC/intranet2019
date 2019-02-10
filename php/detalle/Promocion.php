@@ -10,6 +10,7 @@ class Promocion implements \JsonSerializable {
     private $colaborador;
     private $contenido;
     private $foto;
+    private $image;
 
     public function __construct() {
         
@@ -62,6 +63,14 @@ class Promocion implements \JsonSerializable {
     public function setFoto($foto) {
         $this->foto = $foto;
     }
+    
+    public function getImage() {
+        return $this->image;
+    }
+
+    public function setImage($image) {
+        $this->image = $image;
+    }
 
     public function jsonSerialize() {
         return [
@@ -70,7 +79,8 @@ class Promocion implements \JsonSerializable {
             'title' => $this->titulo,
             'colaborated' => $this->colaborador,
             'content' => $this->contenido,
-            'image' => $this->foto
+            'photo' => $this->foto,
+            'image' => $this->image
         ];
     }
 

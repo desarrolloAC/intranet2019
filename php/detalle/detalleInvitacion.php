@@ -15,6 +15,7 @@ $sql = "SELECT
 	 pub.ID_Publicacion AS n,
 	 org.Nombre AS org,
 	 pub.Titulo AS titulo,
+         pub.Foto,
 	 invi.contenido,
 	 invi.contenido1
 FROM publicacion pub
@@ -38,6 +39,7 @@ while ($row = mysqli_fetch_array($stmt->get_result(), MYSQLI_ASSOC)) {
     $inst->setPublicacionId($row["n"]);
     $inst->setOrganization($row["org"]);
     $inst->setTitulo($row["titulo"]);
+    $inst->setFoto($row["Foto"]);
     $inst->setContenido($row['contenido']);
     $inst->setContenido1($row['contenido1']);
     

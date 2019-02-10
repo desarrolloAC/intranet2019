@@ -15,10 +15,11 @@ $sql = "SELECT
 	 pub.ID_Publicacion AS n,
 	 org.Nombre AS org,
 	 pub.Titulo AS titulo,
+         pub.Foto,
 	 ingre.colaborador,
 	 ingre.departamento,
 	 ingre.cargo,
-	 ingre.foto,
+	 ingre.foto as image,
 	 ingre.contenido
 FROM publicacion pub
 INNER JOIN publicacion_nuevoingreso ingre ON ingre.ID_publicacion  = ingre.ID_Publicacion
@@ -44,7 +45,8 @@ while ($row = mysqli_fetch_array($stmt->get_result(), MYSQLI_ASSOC)) {
     $inst->setColaborador($row['colaborador']);
     $inst->setDepartamento($row['departamento']);
     $inst->setCargo($row['cargo']);
-    $inst->setFoto($row['foto']);
+    $inst->setFoto($row['Foto']);
+    $inst->setImage($row['image']);
     $inst->setContenido($row['contenido']);
     
     $list = $inst;

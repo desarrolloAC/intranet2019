@@ -11,6 +11,7 @@ class NuevoIngreso implements \JsonSerializable {
     private $departamento;
     private $cargo;
     private $foto;
+    private $image;
     private $contenido;
 
     public function __construct() {
@@ -80,7 +81,16 @@ class NuevoIngreso implements \JsonSerializable {
     public function setContenido($contenido) {
         $this->contenido = $contenido;
     }
+    
+    public function getImage() {
+        return $this->image;
+    }
 
+    public function setImage($image) {
+        $this->image = $image;
+    }
+
+    
     
     public function jsonSerialize() {
         return [
@@ -90,7 +100,8 @@ class NuevoIngreso implements \JsonSerializable {
             'colaborated' => $this->colaborador,
             'dpto' => $this->departamento,
             'chargue' => $this->cargo,
-            'image' => $this->foto,
+            'photo' => $this->foto,
+            'image' => $this->image,
             'content' => $this->contenido
         ];
     }

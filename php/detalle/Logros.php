@@ -14,6 +14,7 @@ class Logros implements \JsonSerializable {
     private $departamento;
     private $cargo;
     private $foto;
+    private $image;
 
     public function __construct() {
         
@@ -91,16 +92,25 @@ class Logros implements \JsonSerializable {
         $this->foto = $foto;
     }
     
+    public function getImage() {
+        return $this->image;
+    }
+
+    public function setImage($image) {
+        $this->image = $image;
+    }
+
+        
     public function jsonSerialize() {
         return [
             'n' => $this->publicacionId,
             'org' => $this->organization,
             'title' => $this->titulo,
             'tipo' => $this->tipo_logro,
-            'dpto' => $this->contenido,
-            'carg' => $this->colaborador,
-            'fot' => $this->departamento,
-            'cont' => $this->foto
+            'content' => $this->contenido,
+            'colaborated' => $this->colaborador,
+            'dpto' => $this->departamento,
+            'photo' => $this->foto
         ];
     }
 

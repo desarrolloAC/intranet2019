@@ -8,6 +8,7 @@ class Postulate implements \JsonSerializable {
     private $publicacionId;
     private $organization;
     private $titulo;
+    private $foto;
     private $requisito;
     private $posiciones;
     private $responsabilidades;
@@ -16,6 +17,14 @@ class Postulate implements \JsonSerializable {
 
     public function __construct() {
         
+    }
+
+    public function getFoto() {
+        return $this->foto;
+    }
+
+    public function setFoto($foto) {
+        $this->foto = $foto;
     }
 
     public function getPublicacionId() {
@@ -91,7 +100,8 @@ class Postulate implements \JsonSerializable {
             'positions' => $this->posiciones,
             'chargue' => $this->responsabilidades,
             'image' => $this->correo,
-            'content' => $this->contenido
+            'content' => $this->contenido,
+            'photo' => $this->foto
         ];
     }
 

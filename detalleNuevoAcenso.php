@@ -33,10 +33,10 @@
 
     <div id="contenidoAVIF" class="contenidoAVIF">
         <div class="contenidoPlantilla">
-            <img class="imagen-detalle" :src="imagen" alt="Detalle de la noticia">
-            <h1 class='titulo'>{{ titulo }}</h1>
-            <h5 class="org">{{ org }}</h5>
-            <textarea class="contenido" readonly>{{ contenido }}</textarea>
+            <img class="imagen-detalle" :src="item.photo" alt="Detalle de la noticia">
+            <h1 class='titulo'>{{ item.title }}</h1>
+            <h5 class="org">{{ item.org }}</h5>
+            <textarea class="contenido" readonly>{{ item.content }}</textarea>
         </div>
     </div>
 
@@ -57,31 +57,26 @@
             return '';
         }
 
-        const detatalleUrl = 'php/detalleNoticia/detalleNoticia.php?n='+obtenerValorParametro('n');
+        const detatalleUrl = 'php/detalle/detalleAscenso.php?id='+obtenerValorParametro('id');
         const deatalle = new Vue({
             el: '#contenidoAVIF',
             created: function() {
                 this.getPublicaciones();
             },
             data: {
-                org: '',
-                titulo: '',
-                contenido: '',
-                imagen: ''
+                item: {}
             },
             methods: {
                 getPublicaciones: function() {
                     this.$http.get(detatalleUrl).then((responsed) => {
-                        this.org = responsed.body.org;
-                        this.titulo = responsed.body.title;
-                        this.contenido = responsed.body.content;
-                        this.imagen = responsed.body.image;
+                        this.item = responsed.body;
                     });
                 }
             }
         });
 
     </script>
+
 
 </main>
 <!--FIN CONTENEDOR DE CONTENIDOS-->

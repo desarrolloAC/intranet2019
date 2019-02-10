@@ -1,5 +1,5 @@
 <?php
-@session_start();
+session_start();
 
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
@@ -11,7 +11,7 @@ $nombreOrg = mysqli_query($conexion, $selectOrg);
 $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 ?>
 
-<link rel="stylesheet" type="text/css" href="boletinInformativo.css">
+<link rel="stylesheet" type="text/css" href="avanceInformativo.css">
 
 <script>
 
@@ -24,6 +24,7 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
             countfield.value = maxlimit - field.value.length;
 
         }
+
     }
 
     function getFileSize(fileName) {
@@ -68,63 +69,64 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
         }
 
     }
+
 </script>
 
 <!--INICIO DIV CONTENEDOR FORMULARIO-->
-<div id="formularioBoletinInformativo" class="contenedorFormulario">
+<div id="formularioAvanceInformativo" class="contenedorFormulario">
 
-    <div id="formularioBoletinInformativo">
+    <div id="formularioAvanceInformativo">
 
         <a href="#" class="cerrar">X</a>
 
-        <form method="POST" action="php/publicaciones/registrarPublicacionBoletinInformativo.php" enctype="multipart/form-data">
+        <form method="POST" action="php/publicaciones/registrarPublicacionAvanceInformativo.php" enctype="multipart/form-data" class="formulario">
 
-            <input id="txtCodigoSubCategoriaBoletinInformativo" type="text" name="txtCodigoSubCategoriaBoletinInformativo" value="BOIF" maxlength="4" readonly>
+            <input id="txtCodigoSubCategoriaAvanceInformativo" type="text" name="txtCodigoSubCategoriaAvanceInformativo" value="AVIF" maxlength="4" readonly>
 
-            <input id="txtCodigoOrganizacionBoletinInformativo" type="text" name="txtCodigoOrganizacionBoletinInformativo" value="<?php echo $org['Nombre']; ?>" maxlength="4">
+            <input id="txtCodigoOrganizacionAvanceInformativo" type="text" name="txtCodigoOrganizacionAvanceInformativo" value="<?php echo $org['Nombre']; ?>" maxlength="4" readonly>
 
-            <input id="txtTituloBoletinInformativo" type="text" name="txtTituloBoletinInformativo" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
+            <input id="txtTituloAvanceInformativo" type="text" name="txtTituloAvanceInformativo" value="" maxlength="100" placeholder="Titulo De La Publicacion" required>
 
-            <textarea id="txtContenidoBoletinInformativo"
-                      name="txtContenidoBoletinInformativo"
-                      onKeyDown="textCounter(this.form.txtContenidoBoletinInformativo, this.form.remLen, 500);"
-                      onKeyUp="textCounter(this.form.txtContenidoBoletinInformativo, this.form.remLen, 500);"
+            <textarea id="txtContenidoAvanceInformativo"
+                      name="txtContenidoAvanceInformativo"
+                      onKeyDown="textCounter(this.form.txtContenidoAvanceInformativo, this.form.remLen, 500);"
+                      onKeyUp="textCounter(this.form.txtContenidoAvanceInformativo, this.form.remLen, 500);"
                       placeholder="Contenido De La Publicacion"
                       required></textarea>
 
-            <input id="ncaracteresBoletinInformativo" readonly type=text name=remLen size=3 maxlength=3 value="500">
+            <input id="ncaracteresAvanceInformativo" readonly type=text name=remLen size=3 maxlength=3 value="500">
 
-            <label id="tituloCaracteresBoletinInformativo">Caracteres Restantes</label>
+            <label id="tituloCaracteresAvanceInformativo">Caracteres Restantes</label>
 
-            <input id="btnImagenBoletinInformativo" type="file" name="archivo"onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
+            <input id="btnImagenAvanceInformativo" type="file" name="archivo" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
                         remove();
                         alert('el fichero supera los 300 KB ')
                     }" required>
 
-            <img id="bolimgSalida" width="26%" height="21%" src="" />
+            <img id="imgSalida" width="26%" height="21%" src="" />
 
-            <input id="btnImagenBoletinInformativo1" type="file" name="archivo1" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
+            <input id="btnImagenAvanceInformativo1" type="file" name="archivo1" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
                         remove();
                         alert('el fichero supera los 300 KB ')
                     }" required>
 
-            <img id="bolimgSalida1" width="26%" height="21%" src="" />
+            <img id="imgSalida1" width="26%" height="21%" src="" />
 
-            <input id="btnImagenBoletinInformativo2" type="file" name="archivo2" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
+            <input id="btnImagenAvanceInformativo2" type="file" name="archivo2" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
                         remove();
                         alert('el fichero supera los 300 KB ')
                     }" required>
 
+            <img id="imgSalida2" width="26%" height="21%" src="" />
 
-            <img id="bolimgSalida2" width="26%" height="21%" src="" />
-            <input id="btnImagenBoletinInformativo3" type="file" name="archivo3" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
+            <input id="btnImagenAvanceInformativo3" type="file" name="archivo3" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
                         remove();
                         alert('el fichero supera los 300 KB ')
                     }" required>
 
+            <img id="imgSalida3" width="26%" height="21%" src="" />
 
-            <img id="bolimgSalida3" width="26%" height="21%" src="" />
-            <input id="btnRegistrarBoletinInformativo" type="submit" name="btnRegistrarBoletinInformativo" value="Registrar">
+            <input id="btnRegistrarAvanceInformativo" type="submit" name="btnRegistrarAvanceInformativo" value="Registrar">
 
         </form>
 

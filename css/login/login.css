@@ -1,24 +1,3 @@
-a {
-    color: var(--negro);
-}
-
-a:link {
-    box-shadow: var(--negro);
-}
-
-a:visited {
-    box-shadow: var(--negro);
-}
-
-a:hover {
-    color: var(--negro);
-}
-
-a:active {
-    box-shadow: var(--negro);
-    background-color: transparent;
-}
-
 .parent {
     position: relative;
     top: 3cm;

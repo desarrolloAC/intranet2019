@@ -1,5 +1,5 @@
 /****************************INICIO DISEÑO VENTANA MODAL FORMULARIO************************************/
-.contenedorFormulario {
+.contenedorFormulario{
     z-index: 1001;
     width: 100%;
     height: 100%;
@@ -13,13 +13,17 @@
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
-
+.logoNuevoIngreso {
+    position: relative;
+    top: 30px;
+    left: 240px;
+}
 .contenedorFormulario:target {
     opacity: 1;
     pointer-events: auto;
 }
 
-.contenedorFormulario > div#formularioCondolencia {
+.contenedorFormulario > div#formularioNuevoIngresoAscenso {
     z-index: 1001;
     width: 12cm;
     height: 15cm;
@@ -30,7 +34,7 @@
     border-radius: 10px;
     background: rgb(255, 255, 255);
     transition: opacity 400ms ease-in-out;
-    background-image: url("../assets/image/plantillas/png/condolencia.png");
+    background-image: url("../../assets/image/plantillas/png/ingresoAscensos.png");
     background-repeat: no-repeat;
     background-position: 0px 0px;
     background-size: 13.1cm 15.5cm;
@@ -57,56 +61,74 @@
 
 /****************************FIN DISEÑO VENTANA MODAL FORMULARIO************************************/
 
-input#txtCodigoSubCategoriaCondolencia {
+input#txtCodigoSubCategoriaNuevoAscenso {
     position: absolute;
     visibility: hidden;
 }
 
-.clai {
-    position: absolute;  
+input#txtNombreCompletoNuevoAscenso {
+    position: absolute;
     top: 3cm;
-    left: 3cm;   
-    
+    width: 6cm;
+    height: 0.5cm;
 }
 
-textarea#txtContenidoCondolencia {
+select#txtDpto {
     position: absolute;
-    top: 6cm;
-    left: 2cm;
-    max-width: 8.9cm;
-    max-height: 5cm;
-    min-width: 8.9cm;
-    min-height: 5cm;
-    width: 8.9cm;
-    height: 5cm;
+    top: 4cm;
+    width: 6.1cm;
+}
+
+select#txtCargo {
+    position: absolute;
+    top: 4.9cm;
+    width: 6.1cm;
+}
+
+textarea#txtContenidoNuevoAscenso {
+    position: absolute;
+    top: 10cm;
+    left: 0.9cm;
+    max-width: 10cm;
+    max-height: 3.8cm;
+    min-width: 10cm;
+    min-height: 3.8cm;
+    width: 10cm;
+    height: 3.8cm;
     font-size: 14px;
     border-color: rgb(69, 69, 69);
 }
 
-input#ncaracteresCondolencia {
+input#ncaracteresNuevoAscenso {
     position: absolute;
-    top: 11.3cm;
-    left: 6cm;
+    top: 14cm;
+    left: 7cm;
     border: none;
     background-color: transparent;
     font-weight: bold;
 }
 
-label#tituloCaracteresCondolencia {
+label#tituloCaracteresNuevoAscenso{
     position: absolute;
-    top: 11.3cm;
-    left: 6.8cm;
+    top: 14cm;
+    left: 8cm;
     font-weight: bold;
-    font-size: 14px;
+}
+
+input#btnImagenNuevoAscenso {
+    position: absolute;
+    top: 6.5cm;
+    left: 5cm;
+    color: transparent;
 }
 
 /*BOTON REGISTAR*/
-input#btnRegistrarCondolencia {
+input#btnRegistrarNuevoAscenso {
     position: absolute;
-    width: 50%;
+    width: 85%;
     height: 20px;
-    left: 3.1cm;
-    top: 14cm;
+    left: 0.8cm;
+    top: 14.6cm;
     background: rgb(241, 129, 3);
     /*NARANJA*/
     color: rgb(255, 255, 255);
@@ -123,8 +145,8 @@ input#btnRegistrarCondolencia {
 }
 
 /*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
-input#btnRegistrarCondolencia:active {
-    top: 14cm;
+input#btnRegistrarNuevoAscenso:active {
+    top: 14.7cm;
     box-shadow: 0px 0px 0px 0px #0A0A0A;
 }
 

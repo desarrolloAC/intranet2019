@@ -8,7 +8,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 //SI EL USUARIO NO ESTA REGISTRADO NO PODRA VISUALIZAR LA PAGINA HASTA NO ESTAR LOGEADO Y LO LLEVARA DIRECTO AL LOGIN
 if (!isset($_SESSION['Correo']))
     header("Location: login.php")
-?>
+    ?>
 
 
 
@@ -40,17 +40,17 @@ if (!isset($_SESSION['Correo']))
         <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
 
 
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/avanceInformativo.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/boletinInformativo.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/comunicado.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/invitacionGeneral.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/nuevoIngresoAscenso.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/logro.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/postulate.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/cumpleMes.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/nacimiento.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/promocionEscolar.css">
-        <link rel="stylesheet" type="text/css" href="formularioPublicaciones/condolencia.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/avanceInformativo.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/boletinInformativo.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/comunicado.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/invitacionGeneral.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/nuevoIngresoAscenso.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/logro.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/postulate.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/cumpleMes.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/nacimiento.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/promocionEscolar.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/condolencia.css">
         <!--FIN DE LLAMADA ARCHIVOS CSS-->
 
         <!--INICIO LLAMADA ARCHIVOS JS-->
@@ -94,10 +94,6 @@ if (!isset($_SESSION['Correo']))
 
             <div id='contenedor_tabla_pcategorias'>
 
-                <link rel="stylesheet" type="text/css" href="../css/categoriasParaPublicar.css">
-                <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-
                 <!--INICIO DE LA TABLA CATEGORIAS PARA PUBLICAR-->
                 <table border="0" width="100%">
                     <tr>
@@ -106,11 +102,13 @@ if (!isset($_SESSION['Correo']))
                             <div id="panel">
                                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                                 <a id="botones" href="#formularioAvanceInformativo">Avance Informativo</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/avanceInformativo.php'; ?>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/avanceInformativo.php'; ?>
                                 <a id="botones" href="#formularioBoletinInformativo">Boletin Informativo</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/boletinInformativo.php'; ?>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/boletinInformativo.php'; ?>
                                 <a id="botones" href="#formularioComunicado">Comunicado</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/comunicado.php'; ?>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/comunicado.php'; ?>
+                                <a id="botones" href="#formularioCondolencia">Condolencia</a>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/condolencia.php'; ?>
                             </div>
                         </td>
                         <td>
@@ -118,7 +116,7 @@ if (!isset($_SESSION['Correo']))
                             <div id="panel1">
                                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                                 <a id="botones" href="#formularioInvitacionGeneral">Generales</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/invitacionGeneral.php'; ?>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/invitacionGeneral.php'; ?>
                                 <a id="botones" href="#">Flayers</a>
                             </div>
                         </td>
@@ -129,13 +127,13 @@ if (!isset($_SESSION['Correo']))
                             <div id="panel2">
                                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                                 <a id="botones" href="#formularioNuevoIngresoAscenso">Nuevo Ingreso</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/nuevoIngresoAscenso.php'; ?>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/nuevoIngresoAscenso.php'; ?>
                                 <a id="botones" href="#formularioNuevoAscenso">Ascenso</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/nuevoAscenso.php'; ?>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/nuevoAscenso.php'; ?>
                                 <a id="botones" href="#formularioLogro">Logro Extracurricular</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/logro.php'; ?>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/logro.php'; ?>
                                 <a id="botones" href="#formularioPostulate">Postulate</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/postulate.php'; ?>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/postulate.php'; ?>
                             </div>
                         </td>
                         <td>
@@ -143,11 +141,11 @@ if (!isset($_SESSION['Correo']))
                             <div id="panel3">
                                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                                 <a id="botones" href="#formularioCumpleMes">Cumpleañero Del Mes</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/cumpleMes.php'; ?>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/cumpleMes.php'; ?>
                                 <a id="botones" href="#formularioNacimiento">Nacimiento</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'].'/intranet/formularioPublicaciones/nacimiento.php'; ?>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/nacimiento.php'; ?>
                                 <a id="botones" href="#formularioPromocionEscolar">Promocion Escolar</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/promocionEscolar.php'; ?>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/promocionEscolar.php'; ?>
                             </div>
                         </td>
                     </tr>
@@ -156,25 +154,15 @@ if (!isset($_SESSION['Correo']))
                             <div id="flip4">Infografia</div>
                             <div id="panel4">
                                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
-                                <a id="botones" href="">Tips</a>
-                                <a id="botones" href="">Recomendaciones</a>
+                                <a id="botones" href="#">Tips</a>
+                                <a id="botones" href="#">Recomendaciones</a>
                             </div>
                         </td>
                         <td>
                             <div id="flip5">Folleto Informativo</div>
                             <div id="panel5">
                                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
-                                <a id="botones" href="">Subir Folleto</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div id="flip6">Condolencias</div>
-                            <div id="panel6">
-                                <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
-                                <a id="botones" href="#formularioCondolencia">Condolencia</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/formularioPublicaciones/condolencia.php'; ?>
+                                <a id="botones" href="#">Subir Folleto</a>
                             </div>
                         </td>
                     </tr>

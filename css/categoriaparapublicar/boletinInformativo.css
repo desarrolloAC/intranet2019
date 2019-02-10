@@ -1,0 +1,179 @@
+/****************************INICIO DISEÑO VENTANA MODAL FORMULARIO************************************/
+.contenedorFormulario {
+    z-index: 1001;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.contenedorFormulario:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.contenedorFormulario > div#formularioBoletinInformativo {
+    z-index: 1001;
+    width: 12cm;
+    height: 16.8cm;
+    position: relative;
+    top: 1cm;
+    margin: 0% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    transition: opacity 400ms ease-in-out;
+    background-image: url("../../assets/image/plantillas/png/boletinInformativo.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: 13.1cm 17.3cm;
+}
+
+.cerrar {
+    background: #606061;
+    color: rgb(255, 255, 255);
+    line-height: 25px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 0px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.cerrar:hover {
+    background: rgb(67, 67, 67);
+}
+
+/****************************FIN DISEÑO VENTANA MODAL FORMULARIO************************************/
+
+input#txtCodigoSubCategoriaBoletinInformativo {
+    position: absolute;
+    visibility: hidden;
+}
+
+input#txtCodigoOrganizacionBoletinInformativo {
+    position: absolute; top: 3cm; left: 4.8cm;
+    width: 2.1cm;
+    height: 0.7cm;
+    background-color: transparent;
+    border-color: transparent;
+    text-align: center;
+    color: rgb(255,255,255);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+input#txtTituloBoletinInformativo {
+    position: absolute; top: 2.2cm; left: 0cm;
+    width: 7.8cm;
+    height: 0.5cm;
+    font-size: 14px;
+    border-color: rgb(69,69,69);
+    border-width: 1px;
+}
+
+textarea#txtContenidoBoletinInformativo {
+    position: absolute; top: 5.4cm; left: 0cm;
+    max-width: 7.2cm;
+    max-height: 9.5cm;
+    min-width: 7.2cm;
+    min-height: 9.5cm;
+    width: 7.2cm;
+    height: 9.5cm;
+    font-size: 14px;
+    border-color: rgb(69,69,69);
+}
+
+input#ncaracteresBoletinInformativo {
+    position: absolute;
+    top: 15.2cm;
+    left: 2.5cm;
+    border:none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+label#tituloCaracteresBoletinInformativo {
+    position: absolute;
+    top: 15.2cm;
+    left: 3.5cm;
+    font-weight: bold;
+}
+
+input#btnImagenBoletinInformativo {
+    position: absolute;
+    top: -0.3cm;
+    left: 9.1cm;
+    margin-top: 1cm;
+    color: transparent;
+}
+img#bolimgSalida{
+    position: absolute; top: 1.3cm; left: 9.1cm;
+}
+
+input#btnImagenBoletinInformativo1 {
+    position: absolute;
+    top: 3.8cm;
+    left: 9.1cm;
+    margin-top: 1cm;
+    color: transparent;
+}
+img#bolimgSalida1{
+    position: absolute; top: 5.4cm; left: 9.1cm;
+}
+
+input#btnImagenBoletinInformativo2 {
+    position: absolute;
+    top: 7.9cm;
+    left: 9.1cm;
+    margin-top: 1cm;
+    color: transparent;
+}
+img#bolimgSalida2{
+    position: absolute; top: 9.5cm; left: 9.1cm;
+}
+input#btnImagenBoletinInformativo3 {
+    position: absolute;
+    top: 11.9cm;
+    left: 9.1cm;
+    margin-top: 1cm;
+    color: transparent;
+}
+img#bolimgSalida3{
+    position: absolute; top: 13.5cm; left: 9.1cm;
+}
+/*BOTON REGISTAR*/
+input#btnRegistrarBoletinInformativo {
+    position: absolute; width: 50%; height: 20px; left: 0.8cm; top: 16cm;
+    background: rgb(241,129,3);/*NARANJA*/
+    color: rgb(255,255,255);
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border:none;
+    cursor: pointer;
+    box-shadow: 0px 5px 0px 0px #0A0A0A;
+    transition: all 100ms linear;
+    touch-callout: none;
+    user-select: none;
+    font-family: "Arial";
+    font-size: 14px;
+}
+
+/*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
+input#btnRegistrarBoletinInformativo:active {
+    top: 16cm;
+    box-shadow: 0px 0px 0px 0px #0A0A0A;
+}
+
+/*FIN DEL BOTON REGISTRAR*/

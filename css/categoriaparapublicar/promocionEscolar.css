@@ -13,17 +13,13 @@
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
-.logoCumpleMes {
-    position: relative;
-    top: 380px;
-    left: 370px;
-}
+
 .contenedorFormulario:target {
     opacity: 1;
     pointer-events: auto;
 }
 
-.contenedorFormulario > div#formularioCumpleMes {
+.contenedorFormulario > div#formularioPromocionEscolar {
     z-index: 1001;
     width: 12cm;
     height: 15cm;
@@ -34,7 +30,7 @@
     border-radius: 10px;
     background: rgb(255, 255, 255);
     transition: opacity 400ms ease-in-out;
-    background-image: url("../assets/image/plantillas/png/cumpleMes.png");
+    background-image: url("../../assets/image/plantillas/png/promocionEscolar.png");
     background-repeat: no-repeat;
     background-position: 0px 0px;
     background-size: 13.1cm 15.5cm;
@@ -61,14 +57,14 @@
 
 /****************************FIN DISEÑO VENTANA MODAL FORMULARIO************************************/
 
-input#txtCodigoSubCategoriaCumpleMes {
+input#txtCodigoSubCategoriaPromocionEscolar {
     position: absolute;
     visibility: hidden;
 }
 
-input#txtNombreCompletoCumpleMes {
+input#txtNombreCompletoPromocionEscolar {
     position: absolute;
-    top: 11.5cm;
+    top: 3.5cm;
     left: 2.5cm;
     width: 7.8cm;
     height: 0.5cm;
@@ -76,46 +72,51 @@ input#txtNombreCompletoCumpleMes {
     border-color: rgb(69, 69, 69);
 }
 
-input#txtFechaCumpleMes {
+textarea#txtContenidoPromocionEscolar {
     position: absolute;
-    top: 10.8cm;
-    left: 6.8cm;
-    width: 3.5cm;
-    height: 0.5cm;
+    top: 8.3cm;
+    left: 3.7cm;
+    max-width: 5.7cm;
+    max-height: 2.5cm;
+    min-width: 5.7cm;
+    min-height: 2.5cm;
+    width: 5.7cm;
+    height: 2.5cm;
     font-size: 14px;
     border-color: rgb(69, 69, 69);
 }
 
-select#txtDpto2 {
+input#ncaracteresPromocionEscolar {
     position: absolute;
-    top: 12.2cm;
-    left: 4cm;
-    width: 5.1cm;
-    height: 0.8cm;
+    top: 11cm;
+    left: 5cm;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
 }
 
-input#btnImagenCumpleMes {
+label#tituloCaracteresPromocionEscolar {
     position: absolute;
-    top: 7cm;
-    left: 2.5cm;
-    margin-top: 1cm;
-    color: transparent;
-}
-
-input#btnImagen1CumpleMes {
-    position: absolute;
-    top: 7cm;
+    top: 11cm;
     left: 7cm;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+input#btnImagenPromocionEscolar {
+    position: absolute;
+    top: 5.2cm;
+    left: 3.1cm;
     margin-top: 1cm;
     color: transparent;
 }
 
 /*BOTON REGISTAR*/
-input#btnRegistrarCumpleMes {
+input#btnRegistrarPromocionEscolar {
     position: absolute;
     width: 50%;
     height: 20px;
-    left: 3.3cm;
+    left: 3.2cm;
     top: 14.7cm;
     background: rgb(241, 129, 3);
     /*NARANJA*/
@@ -133,7 +134,7 @@ input#btnRegistrarCumpleMes {
 }
 
 /*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
-input#btnRegistrarCumpleMes:active {
+input#btnRegistrarPromocionEscolar:active {
     top: 14.7cm;
     box-shadow: 0px 0px 0px 0px #0A0A0A;
 }

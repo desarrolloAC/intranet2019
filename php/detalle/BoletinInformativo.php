@@ -6,6 +6,7 @@ class BoletinInformativo implements \JsonSerializable {
 
     private $publicacionId;
     private $organization;
+    private $foto;
     private $titulo;
     private $contenido;
     private $imagen1;
@@ -15,6 +16,14 @@ class BoletinInformativo implements \JsonSerializable {
 
     public function __construct() {
         
+    }
+
+    public function getFoto() {
+        return $this->foto;
+    }
+
+    public function setFoto($foto) {
+        $this->foto = $foto;
     }
 
     public function getOrganization() {
@@ -85,6 +94,7 @@ class BoletinInformativo implements \JsonSerializable {
         return [
             'n' => $this->publicacionId,
             'org' => $this->organization,
+            'photo' => $this->foto,
             'title' => $this->titulo,
             'content' => $this->contenido,
             'image1' => $this->imagen1,

@@ -8,6 +8,7 @@ $conexion = conectar();
 
 $sql = "SELECT
 	pub.ID_Publicacion AS n,
+        pub.ID_Subcategoria as Subcategoria,
 	pub.Titulo AS Titulo,
 	pub.Foto
 FROM    publicacion pub
@@ -24,6 +25,7 @@ while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
 
     $inst = new index\Publicaciones();
     $inst->setPublicacionId($row["n"]);
+    $inst->setSubcategoriaId($row["Subcategoria"]);
     $inst->setTitulo($row['Titulo']);
     $inst->setFoto($row['Foto']);
 

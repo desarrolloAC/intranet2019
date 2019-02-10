@@ -5,6 +5,7 @@ namespace index;
 class Publicaciones implements \JsonSerializable {
     
     private $publicacionId;
+    private $subcategoriaId;
     private $titulo;
     private $foto;
     
@@ -14,6 +15,10 @@ class Publicaciones implements \JsonSerializable {
 
     public function getPublicacionId() {
         return $this->publicacionId;
+    }
+
+    public function getSubcategoriaId() {
+        return $this->subcategoriaId;
     }
 
     public function getTitulo() {
@@ -28,6 +33,10 @@ class Publicaciones implements \JsonSerializable {
         $this->publicacionId = $publicacionId;
     }
 
+    public function setSubcategoriaId($subcategoriaId) {
+        $this->subcategoriaId = $subcategoriaId;
+    }
+
     public function setTitulo($titulo) {
         $this->titulo = $titulo;
     }
@@ -37,9 +46,11 @@ class Publicaciones implements \JsonSerializable {
     }
 
     
+    
     public function jsonSerialize() {
         return [
             'publicacion_id' => $this->publicacionId,
+            'subcategoria_id' => $this->subcategoriaId,
             'titulo' => $this->titulo,
             'foto' => $this->foto
         ];

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -9,8 +10,7 @@
 
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="css/detalle/detalleNoticiaAVIF.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/detalle/detalleInvitacionGeneral.css" media="all"/>
 
     <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>

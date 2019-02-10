@@ -13,6 +13,7 @@ $n = $_GET['id'];
 
 $sql = "SELECT
 	 pub.ID_Publicacion AS n,
+         pub.Foto,
 	 cond.contenido
 FROM publicacion pub
 INNER JOIN publicacion_fallecimiento cond ON cond.ID_publicacion  = pub.ID_Publicacion
@@ -33,6 +34,7 @@ while ($row = mysqli_fetch_array($stmt->get_result(), MYSQLI_ASSOC)) {
 
     $inst = new detalle\Fallecimiento();
     $inst->setPublicacionId($row["n"]);
+    $inst->setFoto($row["Foto"]);
     $inst->setContenido($row['contenido']);
     
     $list = $inst;

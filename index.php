@@ -4,7 +4,6 @@
 
 <head>
     <title>Intranet Alkes Corp, S.A</title>
-
     <meta name="viewport" content="width=device-width,device-height initial-scale=1.5" />
     <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
     <meta charset="utf-8">
@@ -19,8 +18,8 @@
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all" />
 
-    <script src="js/lib/vue.js"></script>
-    <script src="js/lib/vue-resource.min.js"></script>
+    <script type="text/javascript" src="js/lib/vue.js"></script>
+    <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>
 
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/irarriba.js"></script>
@@ -90,7 +89,7 @@
             </div>
 
             <div class="row">
-                <a v-for="item in list" class="n" :href="'detalleNoticiaAVIF.php?n=' + item.publicacion_id">
+                <a v-for="item in list" class="n" :href="'php/detalle/proxy.php?id=' + item.publicacion_id + '&subcategoria=' + item.subcategoria_id" target="_blank">
                     <div class="contenedorNoticiaCapsulaInformativa">
                         <div class="tituloNoticiaCapsulaInformativa">'
                             <h5 class="tituloAvanceInformativo">{{ item.titulo }}</h5>
@@ -105,7 +104,7 @@
         </div>
 
         <script type="text/javascript">
-            //
+            
             const publicacionesUrl = 'php/index/consultaPublicacionesCapsulaInformativa.php';
             const capuslaInformativa = new Vue({
                 el: '#capuslaInformativa',
@@ -173,7 +172,7 @@
         </div>
 
         <script>
-            //
+            
             const video = new Vue({
                 el: '#video',
                 created: function() {
@@ -194,7 +193,7 @@
 
 
 
-        <!--INICIO INVITACION-->
+        <!--INICIO Invitaciones -->
         <div id="invitacion" class="container-fluid capuslaInformativa2">
 
             <div class="row">
@@ -204,7 +203,7 @@
             </div>
 
             <div class="row">
-                <a v-for="item in list" class="n" :href="'detalleNoticiaAVIF.php?n=' + item.publicacion_id">
+                <a v-for="item in list" class="n" :href="'php/detalle/proxy.php?id=' + item.publicacion_id + '&subcategoria=' + item.subcategoria_id" target="_blank">
                     <div class="contenedorNoticiaCapsulaInformativa">
                         <div class="tituloNoticiaCapsulaInformativa">'
                             <h5 class="tituloAvanceInformativo">{{ item.titulo }}</h5>
@@ -219,7 +218,7 @@
         </div>
 
         <script type="text/javascript">
-            //
+            
             const invitacionUrl = 'php/index/consultaPublicacionesInvitaciones.php';
             const invitacion = new Vue({
                 el: '#invitacion',
@@ -297,7 +296,7 @@
         </div>
 
         <script type="text/javascript">
-            //
+            
             const salasUrl = 'php/index/consultaSalas.php';
             const salas = new Vue({
                 el: '#salas',
@@ -333,7 +332,7 @@
             </div>
 
             <div class="row">
-                <a v-for="item in list" class="n" :href="'detalleNoticiaAVIF.php?n=' + item.publicacion_id">
+                <a v-for="item in list" class="n" :href="'php/detalle/proxy.php?id=' + item.publicacion_id + '&subcategoria=' + item.subcategoria_id" target="_blank">
                     <div class="contenedorNoticiaCapsulaInformativa">
                         <div class="tituloNoticiaCapsulaInformativa">'
                             <h5 class="tituloAvanceInformativo">{{ item.titulo }}</h5>
@@ -400,7 +399,7 @@
 
 
 
-        <!--INICIO NUEVO INGRESO-->
+        <!--INICIO Celebraciones-->
         <div id="nuevoIngreso" class="container-fluid capuslaInformativa2">
 
             <div class="row">
@@ -410,7 +409,7 @@
             </div>
 
             <div class="row">
-                <a v-for="item in list" class="n" :href="'detalleNoticiaAVIF.php?n=' + item.publicacion_id">
+                <a v-for="item in list" class="n" :href="'php/detalle/proxy.php?id=' + item.publicacion_id + '&subcategoria=' + item.subcategoria_id" target="_blank">
                     <div class="contenedorNoticiaCapsulaInformativa">
                         <div class="tituloNoticiaCapsulaInformativa">'
                             <h5 class="tituloAvanceInformativo">{{ item.titulo }}</h5>

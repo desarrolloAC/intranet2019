@@ -10,8 +10,7 @@
 
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <link rel="stylesheet" type="text/css" href="css/index/indexNoticiaCapsulaInformativa.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="css/detalle/detalleNoticiaAVIF.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/detalle/detalleAvanceInformativo.css" media="all"/>
 
     <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
@@ -32,12 +31,12 @@
 <!--INICIO CONTENEDOR DE CONTENIDOS-->
 <main class="contenedorContenido">
 
-    <div id="contenidoAVIF" class="contenidoAVIF">
+    <div id="contenidoCOMU" class="contenidoAVIF">
         <div class="contenidoPlantilla">
-            <img class="imagen-detalle" :src="imagen" alt="Detalle de la noticia">
-            <h1 class='titulo'>{{ titulo }}</h1>
-            <h5 class="org">{{ org }}</h5>
-            <textarea class="contenido" readonly>{{ contenido }}</textarea>
+            <img class="imagen-detalle" :src="item.photo" alt="Detalle de la noticia">
+            <h1 class='titulo'>{{ item.title }}</h1>
+            <h5 class="org">{{ item.org }}</h5>
+            <textarea class="contenido" readonly>{{ item.content }}</textarea>
         </div>
     </div>
 
@@ -58,25 +57,19 @@
             return '';
         }
 
-        const detatalleUrl = 'php/detalleNoticia/detalleNoticia.php?n='+obtenerValorParametro('n');
+        const detatalleUrl = 'php/detalle/detalleFallecimiento.php?id='+obtenerValorParametro('id');
         const deatalle = new Vue({
-            el: '#contenidoAVIF',
+            el: '#contenidoCOMU',
             created: function() {
                 this.getPublicaciones();
             },
             data: {
-                org: '',
-                titulo: '',
-                contenido: '',
-                imagen: ''
+                item: {}
             },
             methods: {
                 getPublicaciones: function() {
                     this.$http.get(detatalleUrl).then((responsed) => {
-                        this.org = responsed.body.org;
-                        this.titulo = responsed.body.title;
-                        this.contenido = responsed.body.content;
-                        this.imagen = responsed.body.image;
+                        this.item = responsed.body;
                     });
                 }
             }

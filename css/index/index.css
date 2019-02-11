@@ -152,15 +152,14 @@ a:active {
     text-decoration: none;
 }
 
-
 .imagenAvanceInformativo{
-	position: absolute;
-	border-style: solid;
-	width: 3.9cm;
-	height: 3.9cm;
-	background-repeat: no-repeat;
-	background-position: 0cm 1.2cm;
-	background-size: 5cm 2.7cm;
+    position: absolute;
+    border-style: solid;
+    width: 3.9cm;
+    height: 3.9cm;
+    background-repeat: no-repeat;
+    background-position: 0cm 1.2cm;
+    background-size: 5cm 2.7cm;
 }
 
 #imagenAvanceInformativo2 {
@@ -182,6 +181,59 @@ a:active {
     position: static;
     height: auto;
     padding-top: 16px;
+}
+
+.slider {
+    position: relative;
+    left: 0cm;
+    top: 0cm;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 700%;
+    animation: cambio 10s infinite alternate linear;
+}
+
+.slider li {
+    width: 100%;
+    list-style: none;
+}
+
+.slider img {
+    position: relative;
+    top: 0cm;
+    left: 0cm;
+    width: 79%;
+}
+
+@keyframes cambio {
+
+    0% {margin-left: 0;}
+    11% {margin-left: 0;}
+
+    16% {margin-left: -100%;}
+    27% {margin-left: -100%;}
+
+    32% {margin-left: -200%;}
+    43% {margin-left: -200%;}
+
+    48% {margin-left: -300%;}
+    59% {margin-left: -300%;}
+
+    64% {margin-left: -400%;}
+    75% {margin-left: -400%;}
+
+    80% {margin-left: -500%;}
+    91% {margin-left: -500%;}
+
+    96% {margin-left: -600%;}
+    100% {margin-left: -600%;}
+
 }
 
 /****************************************VIDEO******************************************************************/
@@ -301,6 +353,7 @@ a:active {
 }
 
 @keyframes modal-open {
+
     from {
         opacity: 0
     }
@@ -337,7 +390,7 @@ a:active {
 
 .slider-info ul {
     display: flex;
-	padding: 0;
+    padding: 0;
     width: 500%;
     animation: cambio2 40s infinite alternate linear;
 }
@@ -396,59 +449,6 @@ a:active {
     margin-top: 0cm;
     text-align: center;
     color: var(--blanco);
-}
-
-.slider {
-    position: relative;
-    left: 0cm;
-    top: 0cm;
-    width: 100%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.slider ul {
-    display: flex;
-    padding: 0;
-    width: 700%;
-    animation: cambio 10s infinite alternate linear;
-}
-
-.slider li {
-    width: 100%;
-    list-style: none;
-}
-
-.slider img {
-    position: relative;
-    top: 0cm;
-    left: 0cm;
-    width: 79%;
-}
-
-@keyframes cambio {
-
-    0% {margin-left: 0;}
-	11% {margin-left: 0;}
-
-	16% {margin-left: -100%;}
-	27% {margin-left: -100%;}
-
-	32% {margin-left: -200%;}
-	43% {margin-left: -200%;}
-
-	48% {margin-left: -300%;}
-	59% {margin-left: -300%;}
-
-    64% {margin-left: -400%;}
-	75% {margin-left: -400%;}
-
-    80% {margin-left: -500%;}
-	91% {margin-left: -500%;}
-
-    96% {margin-left: -600%;}
-	100% {margin-left: -600%;}
-
 }
 
 .nuestrasRedes {

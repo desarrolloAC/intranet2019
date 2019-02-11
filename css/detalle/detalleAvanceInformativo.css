@@ -1,4 +1,3 @@
-
 .contenedorContenido {
     position: relative;
     top: 3cm;
@@ -28,10 +27,47 @@
     box-shadow: 5px 5px 5px 5px;
 }
 
+.image {
+    width: 6cm;
+    height: 4cm;
+}
+
+.image-pub1 {
+    position: absolute;
+    top: 1cm;
+    left: 13.6cm;
+}
+
+.image-pub2 {
+    position: absolute;
+    top: 6cm;
+    left: 13.6cm;
+}
+
+.image-pub3 {
+    position: absolute;
+    top: 11cm;
+    left: 13.6cm;
+}
+
+.image-pub4 {
+    position: absolute;
+    top: 16cm;
+    left: 13.6cm;
+}
+
 .titulo {
     position: absolute; top: 6cm;
     font-family: Arial;
     font-size: 14;
+}
+
+.org {
+    position: absolute;
+    top: 3.7cm;
+    left: 7.5cm;
+    font-size: 15px;
+    color: var(--blanco);
 }
 
 .contenido {
@@ -69,7 +105,9 @@
     }
 
     .org {
-	    position: absolute; top: 2.9cm; left: 7.5cm;
+	    position: absolute;
+        top: 3.7cm;
+        left: 7.5cm;
         font-size: 15px;
 	    color: var(--blanco);
     }

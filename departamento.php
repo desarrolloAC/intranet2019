@@ -77,9 +77,6 @@ if (!isset($_SESSION['Correo']))
 
     <div class="contenedorContenidos">
 
-
-
-
         <div id="contenedor_tabla_departamento">
             <table id="tabla_departamento" border="1">
                 <thead>
@@ -242,7 +239,6 @@ if (!isset($_SESSION['Correo']))
                                                                                       dpto.UpdatedBy,
                                                                                       dpto.Descripcion
                                                                                  FROM departamento dpto
-
                                                                                ORDER BY dpto.ID_Departamento ");
                         }
                         while ($mostrarDepartamento = mysqli_fetch_array($consultaDepartamento, MYSQLI_ASSOC)) {
@@ -284,9 +280,7 @@ if (!isset($_SESSION['Correo']))
                         <td>
                             <h5>
                                 <?php
-                                        $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-                                                         FROM   usuario
-                                                         WHERE  Cedula='$mostrarDepartamento[CreatedBy]' ";
+                                        $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre FROM usuario WHERE  Cedula='$mostrarDepartamento[CreatedBy]' ";
                                         $rs = mysqli_query($conexion, $sql);
                                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                                         echo $row['Nombre'];
@@ -303,9 +297,7 @@ if (!isset($_SESSION['Correo']))
                         <td>
                             <h5>
                                 <?php
-                                        $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
-                                                         FROM   usuario
-                                                         WHERE  Cedula='$mostrarDepartamento[UpdatedBy]' ";
+                                        $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre FROM usuario WHERE  Cedula='$mostrarDepartamento[UpdatedBy]' ";
                                         $rs = mysqli_query($conexion, $sql);
                                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                                         echo $row['Nombre'];

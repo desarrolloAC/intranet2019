@@ -1,7 +1,5 @@
 {
-    "require": {
-        "phpmailer/phpmailer": "^6.0",
-        "luxor/mysql": "0.1",
-        "luxor/http-controller": "0.1"
-    }
+  "require": {
+    "phpmailer/phpmailer": "^6.0"
+  }
 }

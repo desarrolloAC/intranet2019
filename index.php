@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all" />
-    
+
     <link rel="stylesheet" type="text/css" href="css/index/index.css" media="all" />
 
 
@@ -135,7 +135,7 @@
 
             <div class="row">
                 <div class="col col-lg-6">
-                    <video src="assets/video/POLITICA-20181212-173623.webm" type="video/webm" width="880" height="594" autoplay controls></video>
+                    <video class="video" src="assets/video/POLITICA-20181212-173623.webm" type="video/webm" width="880" height="594" autoplay controls></video>
                 </div>
                 <div class="col col-lg-6">
 
@@ -163,7 +163,6 @@
                             <li>
                                 <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC.%202-05.png" alt="banner" />
                             </li>
-
                         </ul>
                     </div>
 
@@ -453,19 +452,19 @@
                 <div class="slider-info">
                     <ul>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/GU%C3%8DA%20DE%20ACCESO-01.png" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/Contexto%20Interno%20ALKES-02.jpg" alt="Infografia" />
                         </li>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/40%20x%2018-03-03.jpg" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/Contexto%20Interno%20FRUTTECH-02.jpg" alt="Infografia" />
                         </li>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/40%20x%2018-03-03.jpg" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/Contexto%20Interno%20IEC-02.jpg" alt="Infografia" />
                         </li>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/40%20x%2018-03-03.jpg" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/Contexto%20Interno%20VENFRUCA-02.jpg" alt="Infografia" />
                         </li>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/40%20x%2018-03-03.jpg" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/INFOGRAFIA%20TI%20(VIRUS)-02.jpg" alt="Infografia" />
                         </li>
                     </ul>
                 </div>

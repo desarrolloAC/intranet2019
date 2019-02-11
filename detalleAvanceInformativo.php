@@ -20,9 +20,7 @@
 
     <script type="text/javascript" src="js/lib/vue.js"></script>
     <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>
-
     <script type="text/javascript" src="js/structura/url.js"></script>
-
 </head>
 
 <body>
@@ -41,6 +39,10 @@
             <h1 class='titulo'>{{ item.title }}</h1>
             <h5 class="org">{{ item.org }}</h5>
             <textarea class="contenido" readonly>{{ item.content }}</textarea>
+            <img class="image image-pub1" :src="item.image1" alt="Imagen">
+            <img class="image image-pub2" :src="item.image2" alt="Imagen">
+            <img class="image image-pub3" :src="item.image3" alt="Imagen">
+            <img class="image image-pub4" :src="item.image4" alt="Imagen">
         </div>
     </div>
 

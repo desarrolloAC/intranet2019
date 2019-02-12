@@ -502,24 +502,95 @@
     <!--INICIO FOOTER-->
     <footer class="container-fluid footer">
 
-        <div class="row">
-            <div class="col col-lg-12 folletoInformativo">
+        <div class="row direccion">
 
+            <div class="col-md-3">
+                <div class="panel">
 
+                  <div class="front">
+                    <div class="box1">
+                        <img class="imagenDireccion" src="assets/image/footer/Pie%20de%20pagina-02.jpg" alt="Dirreccion">
+                    </div>
+                  </div>
+
+                  <div class="back">
+                     <div class="box2">
+                        <p>Back Side</p>
+                    </div>
+                  </div>
+
+                </div>
             </div>
+
+            <div class="col-md-3">
+                <div class="panel">
+                  <div class="front">
+                    <img class="box1" src="assets/image/footer/Pie%20de%20pagina-02.jpg" alt="Dirreccion">
+                  </div>
+                  <div class="back">
+                    <div class="box2">
+                      <p>Back Side</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="panel">
+                  <div class="front">
+                       <img class="box1" src="assets/image/footer/Pie%20de%20pagina-02.jpg" alt="Dirreccion">
+                  </div>
+                  <div class="back">
+                        <div class="box2">
+                            <p>Back Side</p>
+                        </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="panel">
+                  <div class="front">
+                    <img class="box1" src="assets/image/footer/Pie%20de%20pagina-02.jpg" alt="Dirreccion">
+                  </div>
+                  <div class="back">
+                    <div class="box2">
+                      <p>Back Side</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="row">
+
             <div class="col-sm-10 copy">
                 <p id="derechoAutor">Copyright © 2018 Intranet Alkes. All Rights Reserved.</p>
             </div>
+
             <div class="col-sm-2 redes">
                 <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/instagram.png" width="60">
             </div>
+
         </div>
 
     </footer>
     <!--FIN FOOTER-->
+
+    <script>
+    	$(document).ready(function(){
+		// set up hover panels
+		// although this can be done without JavaScript, we've attached these events
+		// because it causes the hover to be triggered when the element is tapped on a touch device
+		$('.panel').hover(function(){
+			$(this).addClass('flip');
+		},function(){
+			$(this).removeClass('flip');
+		});
+	});
+    </script>
+
 
     <!--Boton ir Arriba-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">

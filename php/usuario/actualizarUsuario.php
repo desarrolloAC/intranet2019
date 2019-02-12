@@ -31,14 +31,14 @@ $Direccion = $_POST["dir"];
 
 try {
     $error = $_FILES['btnImagen']['error'];
-    
+
     if (!isset($error) || is_array($error)) {
         throw new RuntimeException('Parametros invalidos.');
     }
-    
+
     switch ($error) {
 
-        case EstadoFile::UPLOAD_ERR_INI_SIZE: 
+        case EstadoFile::UPLOAD_ERR_INI_SIZE:
             throw new RuntimeException('El tamaño del archivo supera el límite permitido por el servidor (argumento upload_max_filesize del archivo php.ini).');
             break;
 
@@ -52,7 +52,7 @@ try {
 
         case EstadoFile::UPLOAD_ERR_NO_FILE:
             //throw new RuntimeException('El archivo no se ha enviado.');
-            
+
             //actualizar sin la foto.
             if (isset($_POST["txtPass"])) {
 
@@ -79,7 +79,7 @@ try {
                 mysqli_query($conexion, $seguridad);
                 mysqli_query($conexion, $roles);
                 mysqli_query($conexion, "COMMINT");
-                
+
             } else {
 
                 $ed = "UPDATE `usuario` SET
@@ -103,23 +103,23 @@ try {
                 mysqli_query($conexion, $roles);
                 mysqli_query($conexion, "COMMINT");
             }
-            
+
             break;
 
         default :
-            
-            
+
+
             //validar el tamano de la imagen
             if ($_FILES['btnImagen']['size'] > 1000000000) {
                 throw new RuntimeException('El archivo supera lo 100 Mb');
             }
-            
+
             //elimina el archivo anterior
             delete($conexion, $cedula);
-            
+
             //origen
             $origen = $_FILES['btnImagen']['tmp_name'];
-            
+
             //destino
             $destino_temp = 'assets/image/directorio/' . date("Y-m-d_his") . strstr($_FILES['btnImagen']['name'], '.');
             $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
@@ -156,7 +156,7 @@ try {
                 mysqli_query($conexion, $seguridad);
                 mysqli_query($conexion, $roles);
                 mysqli_query($conexion, "COMMINT");
-                
+
             } else {
 
                 $ed = "UPDATE `usuario` SET
@@ -181,7 +181,7 @@ try {
                 mysqli_query($conexion, $roles);
                 mysqli_query($conexion, "COMMINT");
             }
-            
+
     }
 
     echo'<script language="javascript">
@@ -190,24 +190,28 @@ try {
         </script>';
 
 
-    
+
 } catch (RuntimeException $exc) {
     echo $exc->getMessage();
-    
+
 }
 
 function delete($conexion, $cedula) {
-    
+
     $row = mysqli_fetch_array(mysqli_query($conexion, "SELECT Foto FROM usuario WHERE Cedula = '$cedula' "), MYSQLI_ASSOC);
-    
+
     $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $row['Foto'];
-    
-    
+
+
     if (file_exists($destino)) {
-    
+
+        if (!chmod($destino, 777)) {
+            die('No se pudo cambiar permiso el archivo anteriol.');
+        }
+
         if (!unlink($destino)) {
             die('No se pudo eliminar el archivo anteriol.');
         }
-        
+
     }
 }

@@ -57,9 +57,6 @@
                         <h5>Nombre Completo</h5>
                     </td>
                     <td>
-                        <h5>Sexo</h5>
-                    </td>
-                    <td>
                         <h5>Organizacion</h5>
                     </td>
                     <td>
@@ -88,9 +85,6 @@
                     </td>
                     <td>
                         <h5>{{ item.nc }}</h5>
-                    </td>
-                    <td>
-                        <h5>{{ item.sexo }}</h5>
                     </td>
                     <td>
                         <h5>{{ item.org }}</h5>

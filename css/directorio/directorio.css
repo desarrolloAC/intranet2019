@@ -46,9 +46,16 @@ tr[id="color_datos"]:hover{
 }
 
 #imagenDirectorio{
-	width: 2cm;
-	height: 2cm;
-	border-radius: 3rem;
+	width: 4cm;
+	height: 4cm;
+	border-radius: 5rem;
+    transition-timing-function: cubic-bezier(.17,.67,.56,.73);
+    transition: 0.3s;
+}
+
+#imagenDirectorio:hover {
+    transform:scale(2.25);
+    transform-origin: left;
 }
 
 /*INPUT BUSCAR*/

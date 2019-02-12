@@ -71,27 +71,6 @@
     color: var(--negro);
 }
 
-a {
-    color: var(--negro);
-}
-
-a:link {
-    box-shadow: var(--negro);
-}
-
-a:visited {
-    box-shadow: var(--negro);
-}
-
-a:hover {
-    color: var(--negro);
-}
-
-a:active {
-    box-shadow: var(--negro);
-    background-color: transparent;
-}
-
 .contenedorNoticiaCapsulaInformativa {
     position: relative;
     left: 0cm;
@@ -208,7 +187,7 @@ a:active {
     position: relative;
     top: 0cm;
     left: 0cm;
-    width: 79%;
+    width: 100%;
 }
 
 @keyframes cambio {
@@ -247,10 +226,10 @@ a:active {
 .salas {
     position: static;
     width: 100%;
-    height: 18.5cm;
+    height: auto;
     background-color: var(--blanco);
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .tituloSalas {
@@ -313,7 +292,6 @@ a:active {
     cursor: pointer;
 }
 
-
 .modal {
     display: none;
     position: fixed;
@@ -368,7 +346,7 @@ a:active {
 
 
 
-/**************************************** INICIO INFOGRAFIA*************************************************************/
+/****************************************INFOGRAFIA*************************************************************/
 
 .infografia {
     position: relative;
@@ -422,6 +400,11 @@ a:active {
     75% {margin-left: -400%;}
     100% {margin-left: -400%;}
 }
+
+/****************************************infografia******************************************************************/
+
+
+/****************************************footer******************************************************************/
 
 
 .footer {
@@ -494,6 +477,11 @@ a:active {
     background-color: var(--naranja);
 }
 
+/****************************************footer******************************************************************/
+
+
+/****************************************boton arriva******************************************************************/
+
 .up {
     display: none;
     position: fixed;
@@ -511,3 +499,5 @@ a:active {
     font-size: 30px;
     color: var(--blanco);
 }
+
+/****************************************boton arriva******************************************************************/

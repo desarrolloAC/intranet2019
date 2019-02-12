@@ -17,7 +17,6 @@
                 <li><a href="directorio.php" target="_blank">Directorio</a></li>
                 <li><a href="reserva.php" target="_blank">Reservar de Salas de Reunion</a></li>
                 <li><a href="#">Galeria</a></li>
-                <li><a href="#">Chat</a></li>
             </ul>
         </li>
         <li>

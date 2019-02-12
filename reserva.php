@@ -10,6 +10,8 @@
         <link rel="icon" type="image/png" href="favicon.png" />
 
         <link rel="stylesheet" href="css/lib/bootstrap.min.css" media="all" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
 
         <link rel="stylesheet" type="text/css" href="css/structura/top.css" media="all" />
         <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all" />
@@ -227,8 +229,8 @@
                     </td>
                     <td>
                         <center>
-                            <input id="reserva_0" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Y">
-                            <input id="cancelar_0" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="X">
+                            <button id="reserva_0" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar"><i class="fas fa-plus-circle"></i></button>
+                            <button id="cancelar_0" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar"><i class="fas fa-ban"></i></button>
                         </center>
                     </td>
                 <tr>
@@ -245,8 +247,8 @@
                     </td>
                     <td>
                         <center>
-                            <input id="reserva_1" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Y">
-                            <input id="cancelar_1" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="X">
+                            <button id="reserva_1" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar"><i class="fas fa-plus-circle"></i></button>
+                            <button id="cancelar_1" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar"><i class="fas fa-ban"></i></button>
                         </center>
                     </td>
                 <tr>
@@ -263,8 +265,8 @@
                     </td>
                     <td>
                         <center>
-                            <input id="reserva_2" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Y">
-                            <input id="cancelar_2" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="X">
+                            <button id="reserva_2" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar"><i class="fas fa-plus-circle"></i></button>
+                            <button id="cancelar_2" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar"><i class="fas fa-ban"></i></button>
                         </center>
                     </td>
                 </tr>
@@ -281,8 +283,8 @@
                     </td>
                     <td>
                         <center>
-                            <input id="reserva_3" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Y">
-                            <input id="cancelar_3" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="X">
+                            <button id="reserva_3" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar"><i class="fas fa-plus-circle"></i></button>
+                            <button id="cancelar_3" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar"><i class="fas fa-ban"></i></button>
                         </center>
                     </td>
                 <tr>
@@ -299,8 +301,8 @@
                     </td>
                     <td>
                         <center>
-                            <input id="reserva_4" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Y">
-                            <input id="cancelar_4" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="X">
+                            <button id="reserva_4" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar"><i class="fas fa-plus-circle"></i></button>
+                            <button id="cancelar_4" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar"><i class="fas fa-ban"></i></button>
                         </center>
                     </td>
                 <tr>
@@ -317,8 +319,8 @@
                     </td>
                     <td>
                         <center>
-                            <input id="reserva_5" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Y">
-                            <input id="cancelar_5" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="X">
+                            <button id="reserva_5" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar"><i class="fas fa-plus-circle"></i></button>
+                            <button id="cancelar_5" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar"><i class="fas fa-ban"></i></button>
                         </center>
                     </td>
                 <tr>
@@ -335,8 +337,8 @@
                     </td>
                     <td>
                         <center>
-                            <input id="reserva_6" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Y">
-                            <input id="cancelar_6" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="X">
+                            <button id="reserva_6" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar"><i class="fas fa-plus-circle"></i></button>
+                            <button id="cancelar_6" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar"><i class="fas fa-ban"></i></button>
                         </center>
                     </td>
                 <tr>
@@ -353,8 +355,8 @@
                     </td>
                     <td>
                         <center>
-                            <input id="reserva_7" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Y">
-                            <input id="cancelar_7" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="X">
+                            <button id="reserva_7" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar"><i class="fas fa-plus-circle"></i></button>
+                            <button id="cancelar_7" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar"><i class="fas fa-ban"></i></button>
                         </center>
                     </td>
                 <tr>
@@ -371,8 +373,8 @@
                     </td>
                     <td>
                         <center>
-                            <input id="reserva_8" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar" value="Y">
-                            <input id="cancelar_8" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar" value="X">
+                            <button id="reserva_8" class="btn reservar" v-on:click="eventoReserva" type="submit" name="btnReservar"><i class="fas fa-plus-circle"></i></button>
+                            <button id="cancelar_8" class="btn reservar" v-on:click="eventoCancelar" type="submit" name="btnCancelar"><i class="fas fa-ban"></i></button>
                         </center>
                     </td>
                 <tr>

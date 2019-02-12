@@ -135,7 +135,7 @@
 
             <div class="row">
                 <div class="col col-lg-6">
-                    <video class="video" src="assets/video/POLITICA-20181212-173623.webm" type="video/webm" width="880" height="594" autoplay controls></video>
+                    <video class="video" src="assets/video/VIDEO%20INTRANET.webm" type="video/webm" width="880" height="594" autoplay controls></video>
                 </div>
                 <div class="col col-lg-6">
 
@@ -248,7 +248,32 @@
             <div class="row">
 
                 <div class="col col-lg-6">
-                    <img src="assets/image/banner/BANNERS%20IEC-01.jpg" class="img-fluid" width="880" height="594" alt="Nuestras Marcas">
+                    <!--INICIO DIV EFECTO SLIDER-->
+                    <div class="slider">
+                        <ul>
+                            <li>
+                                <img class="img-fluid" src="assets/image/salas/SALA%20ALKES.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/salas/SALA%20CENTRO%20DE%20COMPAS%20AK.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/salas/SALA%20DE%20ENTREVISTAS.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/salas/SALA%20FRUTTECH.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/salas/SALA%20VENFRUCA.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/salas/SALA%20ALKES.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/salas/SALA%20CENTRO%20DE%20COMPAS%20AK.jpg" alt="banner" />
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="col col-lg-6">
@@ -499,6 +524,16 @@
     <!--Boton ir Arriba-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <div class="up"><span class="fas fa-angle-up"></span></div>
+
+    <!--ChatBro-->
+
+
+<script id="chatBroEmbedCode">
+/* Chatbro Widget Embed Code Start */
+function ChatbroLoader(chats,async){async=!1!==async;var params={embedChatsParameters:chats instanceof Array?chats:[chats],lang:navigator.language||navigator.userLanguage,needLoadCode:'undefined'==typeof Chatbro,embedParamsVersion:localStorage.embedParamsVersion,chatbroScriptVersion:localStorage.chatbroScriptVersion},xhr=new XMLHttpRequest;xhr.withCredentials=!0,xhr.onload=function(){eval(xhr.responseText)},xhr.onerror=function(){console.error('Chatbro loading error')},xhr.open('GET','//www.chatbro.com/embed.js?'+btoa(unescape(encodeURIComponent(JSON.stringify(params)))),async),xhr.send()}
+/* Chatbro Widget Embed Code End */
+ChatbroLoader({encodedChatId: '234fu'});
+</script>
 
 </body>
 

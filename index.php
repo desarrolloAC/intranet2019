@@ -506,58 +506,70 @@
 
             <div class="col-md-3">
                 <div class="panel">
-
-                  <div class="front">
-                    <div class="box1">
-                        <img class="imagenDireccion" src="assets/image/footer/Pie%20de%20pagina-02.jpg" alt="Dirreccion">
-                    </div>
-                  </div>
-
-                  <div class="back">
-                     <div class="box2">
-                        <p>Back Side</p>
-                    </div>
-                  </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="panel">
-                  <div class="front">
-                    <img class="box1" src="assets/image/footer/Pie%20de%20pagina-02.jpg" alt="Dirreccion">
-                  </div>
-                  <div class="back">
-                    <div class="box2">
-                      <p>Back Side</p>
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="panel">
-                  <div class="front">
-                       <img class="box1" src="assets/image/footer/Pie%20de%20pagina-02.jpg" alt="Dirreccion">
-                  </div>
-                  <div class="back">
-                        <div class="box2">
-                            <p>Back Side</p>
+                   <div class="front">
+                        <div class="box1">
+                            <img class="imagenDireccion" src="assets/image/footer/Pie%20de%20pagina-02.jpg" alt="Dirreccion">
                         </div>
-                  </div>
+                    </div>
+                    <div class="back">
+                        <div class="box2">
+                            <h1>INDUSTRIAS</h1>
+                            <h3>EL CAIMAN</h3>
+                            <p>Ctra. Carretera Nacional Guanare Ospino km 16, Sector Las Cocuizas, Guanare – Edo Portuguesa. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="panel">
+                   <div class="front">
+                        <div class="box1">
+                            <img class="imagenDireccion" src="assets/image/footer/Pie%20de%20pagina-03.jpg" alt="Dirreccion">
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="box2">
+                            <h1>VENFRUCA</h1>
+                            <p>CR. 2 Esquina Calle 7, Local Galpón Nro. 59- A, Zona Industrial III, Barquisimeto – Edo Lara.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="panel">
+                   <div class="front">
+                        <div class="box1">
+                            <img class="imagenDireccion" src="assets/image/footer/Pie%20de%20pagina-04.jpg" alt="Dirreccion">
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="box2">
+                            <h1>ALKES CORP</h1>
+                            <h3>VALENCIA</h3>
+                            <p>CTRA. Principal Local Centro Trenex Galpones 2, 3, 4, y 5 Sector Fundo la Unión San Diego, Valencia. Edo Carabobo.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="panel">
-                  <div class="front">
-                    <img class="box1" src="assets/image/footer/Pie%20de%20pagina-02.jpg" alt="Dirreccion">
-                  </div>
-                  <div class="back">
-                    <div class="box2">
-                      <p>Back Side</p>
+                   <div class="front">
+                        <div class="box1">
+                            <img class="imagenDireccion" src="assets/image/footer/Pie%20de%20pagina-05.jpg" alt="Dirreccion">
+                        </div>
                     </div>
-                  </div>
+                    <div class="back">
+                        <div class="box2">
+                            <h1>ALKES CORP</h1>
+                            <h3>CARACAS</h3>
+                            <p>Av. Libertador, Centro Párima, piso 1, oficina 104 frente a Seguros Mercantil. Caracas.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 

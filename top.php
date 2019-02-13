@@ -118,7 +118,7 @@
                 <li><a href="https://www.provincial.com/" target="_blank">BBVA</a></li>
                 <li><a href="https://bonus.com.ve/" target="_blank">Bonus</a></li>
                 <li><a href="http://www.todoticket.com.ve/" target="_blank">TodoTicket</a></li>
-                <li><a href="#" target="_blank">Emergencias</a></li>
+                <li><a href="assets/document/emergencia/N%C3%9AMERO%20DE%20EMERGENCIA.pdf" target="_blank">Emergencias</a></li>
             </ul>
         </li>
 

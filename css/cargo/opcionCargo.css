@@ -86,6 +86,7 @@ a[id="btnEditar"]:active{
 
 /*INPUT BUSCAR*/
 input[id="txtBuscarCargo"]{
+    display: none;
     position: relative; width: 10cm; height: 28px; left: 2.7cm;
     background-image: url(../../assets/image/menu/botonesTablas/btnBuscar.png);
     background-repeat: no-repeat;
@@ -98,6 +99,7 @@ input[id="txtBuscarCargo"]{
 
 /*INCIO DEL BOTON BUSCAR*/
 button[id="btnBuscarCargo"]{
+    display: none;
     position: relative; width: 100px; height: 30px; left: 3cm;
     background: rgb(241,129,3);/*NARANJA*/
     color: rgb(255,255,255);

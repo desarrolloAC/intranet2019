@@ -63,6 +63,7 @@ a[id="btnRegistrarUsuario"]:active{
 
 /*INPUT BUSCAR*/
 input[id="txtBuscarOrganizacion"]{
+    display: none;
     position: relative; width: 10cm; height: 28px; left: 3.5cm;
     background-image: url(../../assets/image/menu/botonesTablas/btnBuscar.png);
     background-repeat: no-repeat;
@@ -75,6 +76,7 @@ input[id="txtBuscarOrganizacion"]{
 
 /*INCIO DEL BOTON BUSCAR*/
 button[id="btnBuscarOrganizacion"]{
+    display: none;
     position: relative; width: 100px; height: 30px; left: 3.7cm;
     background: rgb(241,129,3);/*NARANJA*/
     color: rgb(255,255,255);

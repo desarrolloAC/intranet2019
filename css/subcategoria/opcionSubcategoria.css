@@ -80,6 +80,7 @@ a[id="btnEditar"]:active{
 
 /*INPUT BUSCAR*/
 input[id="txtBuscarSubCategoria"]{
+    display: none;
     position: relative; width: 10cm; height: 28px; left: 2cm;
     background-image: url(../../assets/image/menu/botonesTablas/btnBuscar.png);
     background-repeat: no-repeat;
@@ -92,6 +93,7 @@ input[id="txtBuscarSubCategoria"]{
 
 /*INCIO DEL BOTON BUSCAR*/
 button[id="btnBuscarSubCategoria"]{
+    display: none;
     position: relative; width: 100px; height: 30px; left: 2.3cm;
     background: rgb(241,129,3);/*NARANJA*/
     color: rgb(255,255,255);

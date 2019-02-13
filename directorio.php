@@ -66,13 +66,13 @@
                         <h5>Cargo</h5>
                     </td>
                     <td>
-                        <h5>Telefono</h5>
+                        <h5>Teléfono</h5>
                     </td>
                     <td>
                         <h5>Correo</h5>
                     </td>
                     <td>
-                        <h5>Direccion</h5>
+                        <h5>Dirección</h5>
                     </td>
                 </tr>
 

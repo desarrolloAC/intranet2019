@@ -93,7 +93,7 @@ if (!isset($_SESSION['Correo']))
 
                         <td width="50" height="50" colspan="4">
 
-                            <h1>Publicacion</h1>
+                            <h1>Publicación</h1>
 
                         </td>
                         <td colspan="10">

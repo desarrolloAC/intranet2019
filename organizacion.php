@@ -101,19 +101,19 @@ if (!isset($_SESSION['Correo']))
                                             <table id="tabla_formulario_organizacion" border="0" cellpadding="7">
                                                 <tr id="titulo_columna_formulario">
                                                     <td colspan="2">
-                                                        <h1 id="titulo_registro_organizacion">Registrar Organizacion</h1>
+                                                        <h1 id="titulo_registro_organizacion">Registrar Organización </h1>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h5 id="label_cajas_texto">Codigo</h5>
+                                                        <h5 id="label_cajas_texto">Código</h5>
                                                         <input type="text" id="caja_formulario_usuario" name="txtCodigoOrganizacion" maxlength="4" required>
                                                     </td>
                                                 </tr>
                                                 <tr>
 
                                                     <td>
-                                                        <h5 id="label_cajas_texto">Nombre De La Organizacion</h5>
+                                                        <h5 id="label_cajas_texto">Nombre De La Organización </h5>
                                                         <input type="text" id="caja_formulario_usuario" name="txtNombreOrganizacion" maxlength="100" required>
                                                     </td>
                                                 </tr>
@@ -170,7 +170,7 @@ if (!isset($_SESSION['Correo']))
                         </td>
 
                         <td width="400px">
-                            <h5>Edicion</h5>
+                            <h5>Edición</h5>
                         </td>
 
                         <td width="400px">
@@ -310,7 +310,7 @@ if (!isset($_SESSION['Correo']))
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h5 id='label_cajas_texto'>Nombre Organizacion</h5>
+                                                        <h5 id='label_cajas_texto'>Nombre Organización</h5>
                                                         <input type='text' id='caja_formulario_usuario' required name='txtNombreOrganizacion' maxlength='100' value='<?php echo $mostrarOrganizacion['nombre'] ?>'>
                                                     </td>
                                                 </tr>

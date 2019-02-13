@@ -228,7 +228,7 @@ if (!isset($_SESSION['Correo']))
                                                 </tr>
                                                 <tr class="ancho">
                                                     <td class="ancho">
-                                                        <h5 id="label_cajas_texto">Pais</h5>
+                                                        <h5 id="label_cajas_texto">País</h5>
                                                         <?php
                                                             echo "
                                                                 <select name='pai' id='pai'  class='combos_formulario_usuario' required >
@@ -688,7 +688,7 @@ if (!isset($_SESSION['Correo']))
                                                                 ?>
                                                     </td>
                                                     <td>
-                                                        <h5 id="label_cajas_texto">Pais</h5>
+                                                        <h5 id="label_cajas_texto">País</h5>
                                                         <?php
                                                                 echo "
                                                                         <select name='pai' id='pai'  class='combos_formulario_usuario' required >

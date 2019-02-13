@@ -105,7 +105,7 @@ if (!isset($_SESSION['Correo']))
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h5 id="label_cajas_texto">Codigo</h5>
+                                                        <h5 id="label_cajas_texto">Código</h5>
                                                         <input type="text" id="caja_formulario_usuario" name="txtCodigoDepartamento" maxlength="4" required>
                                                     </td>
                                                 </tr>
@@ -122,7 +122,7 @@ if (!isset($_SESSION['Correo']))
                                                             $conexion = conectar();
                                                             $sqlOrg = mysqli_query($conexion, " SELECT ID_Organizacion,Nombre FROM organizacion WHERE estatus = 'A' ");
                                                             ?>
-                                                        <h5 id="label_cajas_texto">Organizacion</h5>
+                                                        <h5 id="label_cajas_texto">Organización</h5>
                                                         <select id="combos_formulario_usuario" name="txtOrg" required>
                                                             <option value=""></option>
                                                             <?php
@@ -135,7 +135,7 @@ if (!isset($_SESSION['Correo']))
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h5 id="label_cajas_texto">Descripcion Departamento</h5>
+                                                        <h5 id="label_cajas_texto">Descripción Departamento</h5>
                                                         <input type="text" id="caja_formulario_usuario" name="txtDesc" maxlength="255" required>
                                                     </td>
                                                 </tr>

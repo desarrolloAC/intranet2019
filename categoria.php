@@ -122,7 +122,7 @@ if (!isset($_SESSION['Correo']))
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h5 id="label_cajas_texto">Descripcion Categoría</h5>
+                                                        <h5 id="label_cajas_texto">Descripción Categoría</h5>
                                                         <input type="text" id="caja_formulario_usuario" id="caja_formulario_usuario" name="txtDesc" required>
 
                                                     </td>
@@ -325,7 +325,7 @@ if (!isset($_SESSION['Correo']))
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h5 id='label_cajas_texto'>Categoria</h5>
+                                                        <h5 id='label_cajas_texto'>Categoría</h5>
                                                         <input type='text' id='caja_formulario_usuario' required name='txtNombreCategoria' maxlength='20' value='<?php echo $mostrarCategoria['nombre'] ?>'>
                                                     </td>
                                                 </tr>

@@ -41,12 +41,12 @@
                         <!--INICIO DEL DISEÑO FORMULARIO LOGIN-->
                         <div class="contenedor_login">
 
-                            <h1 class="titulo_iniciarSesion">Iniciar Sesion</h1>
+                            <h1 class="titulo_iniciarSesion">Iniciar Sesión</h1>
 
                             <form method="POST" action="php/login/login.php">
 
                                 <div class="form-group">
-                                    <label for="correo">Direccion de Correo</label>
+                                    <label for="correo">Dirección de Correo</label>
                                     <input type="email" class="form-control2" id="correo" aria-describedby="emailHelp" name="txtCorreo" placeholder="Correo">
                                 </div>
 

@@ -139,7 +139,7 @@ if (!isset($_SESSION['Correo']))
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h5 id="label_cajas_texto">Descripcion SubCategoría</h5>
+                                                        <h5 id="label_cajas_texto">Descripción SubCategoría</h5>
                                                         <input type="text" id="caja_formulario_usuario" id="caja_formulario_usuario" name="txtDesc" required>
 
                                                     </td>

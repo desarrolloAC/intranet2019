@@ -110,7 +110,7 @@ if (!isset($_SESSION['Correo']))
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <h5 id="label_cajas_texto">Codigo</h5>
+                                                        <h5 id="label_cajas_texto">Código</h5>
                                                         <input type="text" id="caja_formulario_usuario" name="txtCodigo" maxlength="4" required>
                                                     </td>
                                                 </tr>

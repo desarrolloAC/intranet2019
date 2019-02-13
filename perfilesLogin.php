@@ -53,7 +53,7 @@
                             <div class="form-group">
                                 <label for="txtOrg">Organización</label>
                                 <select class="form-control2" id="txtOrg" name='txtOrg'>
-                                    <option>Organizacion</option>
+                                    <option>Organización</option>
                                     <option v-for="item in list" :value='item.key'>{{ item.name }}</option>
                                 </select>
                             </div>

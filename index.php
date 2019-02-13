@@ -61,7 +61,7 @@
                     <div class="card">
                         <img class="card-img-top" src="assets/image/Logos/LOGOS%20CORPORATIVOS%20IEC-01.png" alt="Mi Imagen">
                         <div class="card-body">
-                            <h4 class="card-title">Industrias el Caiman</h4>
+                            <h4 class="card-title">Industrias el Caimán</h4>
                             <a href="http://www.industriaselcaiman.com.ve/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
                         </div>
                     </div>
@@ -282,7 +282,7 @@
                     </center>
                     <table class="tablaSala" border="0">
                         <tr class="colorFondo">
-                            <td>Dia</td>
+                            <td>Día</td>
                             <td>Mes</td>
                             <td>Año</td>
                             <td>Sala</td>

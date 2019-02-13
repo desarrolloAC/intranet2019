@@ -582,7 +582,9 @@
             </div>
 
             <div class="col-sm-2 redes">
-                <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/instagram.png" width="60">
+                <a href="https://www.instagram.com/soyalkes/?hl=es-la" target="_blank">
+                    <img id="imagenFacebook" class="efectoRotarRedesSociales" src="assets/image/footer/instagram.png" width="60">
+                </a>
             </div>
 
         </div>

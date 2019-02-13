@@ -16,7 +16,8 @@
             <ul>
                 <li><a href="directorio.php" target="_blank">Directorio</a></li>
                 <li><a href="reserva.php" target="_blank">Reservar de Salas de Reunion</a></li>
-                <li><a href="#">Galeria</a></li>
+                <li><a href="https://photos.app.goo.gl/kVVterMyRCF84bqN8">Galeria</a></li>
+                <li><a href="https://goo.gl/forms/cKJjsCfXXwMRtBMH3">Trivia</a></li>
             </ul>
         </li>
         <li>

@@ -5,16 +5,16 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/index/Salas.php';
 
 $conexion = conectar();
 
-$consultaSala = "SELECT t1.days  	AS Dia,
-                        t1.moth  	AS Mes,
-                        t1.yeart 	AS A,
-                        t1.space 	AS Sala,
-                        t2.cince 	AS Hora_Inicio,
-                        t2.until 	AS Hora_Final,
-                        t2.user  	AS Usuario,
-                        t2.isreserved 	AS Reservado
+$consultaSala = "SELECT t1.days    AS Dia,
+                        t1.moth    AS Mes,
+                        t1.yeart   AS A,
+                        t1.space   AS Sala,
+                        t2.cince   AS Hora_Inicio,
+                        t2.until   AS Hora_Final,
+                        t2.user    AS Usuario,
+                        t2.isreserved   AS Reservado
                     FROM availability t1 INNER JOIN reservation t2 ON t1.availability_id = t2.availability_id
-                    WHERE t2.isreserved = 'Y'";
+                    WHERE t2.isreserved = 'Y' and t1.days=DAYOFMONTH(NOW())";
 
 $resultado = mysqli_query($conexion, $consultaSala);
 

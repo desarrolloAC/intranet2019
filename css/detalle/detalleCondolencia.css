@@ -27,6 +27,13 @@
     box-shadow: 5px 5px 5px 5px;
 }
 
+.clai {
+    position: relative;
+    top: 3cm;
+    left: 3cm;
+
+}
+
 .contenido {
     position: absolute;
     top: 7.5cm;

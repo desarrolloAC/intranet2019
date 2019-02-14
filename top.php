@@ -20,16 +20,13 @@
                 <li><a href="https://goo.gl/forms/cKJjsCfXXwMRtBMH3">Trivia</a></li>
             </ul>
         </li>
+
         <li>
             <a href="#" title="">Contexto de la Organización</a>
             <ul>
-               <li>
-                    <a href="http://192.168.0.130/site/\PROCESOS/Arbol de comunicaciones/arbolComunicaciones.pdf" target="_blank">Árbol de Comunicaciones</a>
-                </li>
-                <li>
-                    <a href="http://192.168.0.130/site/procesos/Documentos/ORGANIGRAMAS%20ACTUALIZADOS%20-DIC%202016%20V5.pdf" target="_blank">Estructura</a>
-                </li>
-                <li>
+                <li><a href="http://192.168.0.130/site/\PROCESOS/Arbol de comunicaciones/arbolComunicaciones.pdf" target="_blank">Arbol de Comunicaciones</a></li>
+                <li><a href="http://192.168.0.130/site/procesos/Documentos/ORGANIGRAMAS%20ACTUALIZADOS%20-DIC%202016%20V5.pdf" target="_blank">Estructura</a></li>
+                <li class="menu-desp1">
                     <a href="#" title="">Misión y Visión Corporativa</a>
                     <ul>
                         <li><a href="http://192.168.0.130/site/PROCESOS/Documentos/Mision_y_Vision/AlkesCorp/mision_vision_alkes.pdf" target="_blank">Alkes Corp</a></li>
@@ -38,7 +35,7 @@
                         <li><a href="http://192.168.0.130/site/PROCESOS/Documentos/\Mision_y_Vision/venfruca/mision_vision_venfruca.pdf" target="_blank">Venfruca</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="menu-desp2">
                     <a href="#" title="">Políticas</a>
                     <ul>
                         <li><a href="http://192.168.0.130/site/procesos/Documentos/Pol%C3%ADtica-de-Gesti%C3%B3n-ALKES-CORP-v4.pdf" target="_blank">Sistema integrado de Gestión</a></li>
@@ -51,7 +48,7 @@
                         <li><a href="http://192.168.0.130/site/procesos/Documentos/PO-LG-001%20POLITICA%20DE%20LOGISTICA%20CORPORATIVA%20V0.pdf" target="_blank">Logística Corporativa</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="menu-desp3">
                     <a href="#" title="">Normas ISO</a>
                     <ul>
                         <li><a href="visorpdf.php?id=iso1" target="_blank">Norma ISO 9001:2015</a></li>
@@ -121,10 +118,6 @@
                 <li><a href="http://www.todoticket.com.ve/" target="_blank">TodoTicket</a></li>
                 <li><a href="assets/document/emergencia/N%C3%9AMERO%20DE%20EMERGENCIA.pdf" target="_blank">Emergencias</a></li>
             </ul>
-        </li>
-
-        <li>
-
         </li>
 
     </ul>

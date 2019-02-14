@@ -27,19 +27,21 @@
     box-shadow: 5px 5px 5px 5px;
 }
 
+.clai {
+    position: absolute;
+    top: 5cm;
+    left: 6cm;
+    font-size: 3em;
+}
+
 .contenido {
     position: absolute;
     top: 7.5cm;
     left: 3.1cm;
-    width: 11.4cm;
-    height: 11.6cm;
-    min-width: 11.4cm;
-    max-width: 11.4cm;
-    min-height: 11.6cm;
-    max-height: 11.6cm;
+    width: 13.7cm;
+    height: 9cm;
     border-style: none;
     background-color: var(--transparente);
-    font-family: Arial;
     font-size: 12;
 }
 
@@ -61,15 +63,10 @@
         position: absolute;
         top: 7.5cm;
         left: 3.1cm;
-        width: 11.4cm;
-        height: 11.6cm;
-        min-width: 11.4cm;
-        max-width: 11.4cm;
-        min-height: 11.6cm;
-        max-height: 11.6cm;
+        width: 13.7cm;
+        height: 9cm;
         border-style: none;
         background-color: var(--transparente);
-        font-family: Arial;
         font-size: 12;
     }
 

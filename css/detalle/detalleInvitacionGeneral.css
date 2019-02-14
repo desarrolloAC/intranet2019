@@ -1,4 +1,3 @@
-
 .contenedorContenido {
     position: relative;
     top: 3cm;
@@ -18,7 +17,7 @@
     height: 20cm;
 }
 
-.imagen-detalle {
+.contenidoPlantilla .imagen-detalle {
     position: relative; top: 0cm; left: 0cm;
     width: 20cm;
     height: 20cm;
@@ -28,64 +27,36 @@
     box-shadow: 5px 5px 5px 5px;
 }
 
-.titulo {
-    position: absolute; top: 6cm;
-    font-family: Arial;
-    font-size: 14;
-}
-
-.contenido {
-    position: absolute; top: 7.5cm; left: 0.1cm;
-    width: 11.4cm;
-    height: 11.6cm;
-    min-width: 11.4cm;
-    max-width: 11.4cm;
-    min-height: 11.6cm;
-    max-height: 11.6cm;
+.contenidoPlantilla .contenido {
+    position: absolute;
+    top: 5cm;
+    left: 1.5cm;
+    width: 16.9cm;
+    height: 7.8cm;
     border-style: none;
     background-color: var(--transparente);
-    font-family: Arial;
     font-size: 12;
+}
+
+.contenidoPlantilla .contenido2 {
+    position: absolute;
+    top: 13cm;
+    left: 8cm;
+    width: 11cm;
+    height: 5cm;
+    border-style: none;
+    background-color: var(--transparente);
+    font-size: 12;
+}
+
+.contenidoPlantilla img {
+    position: absolute;
+    top: 13cm;
+    left: 0.4cm;
 }
 
 @media only screen and (min-width: 1920px) and (max-width: 2500px) {
 
-    .contenidoAVIF {
-        position: relative; top: 2.5cm;
-        width: 100%;
-        height: 9.7cm;
-    }
 
-    .contenidoPlantilla {
-        position: relative; top: 0.1cm; left: 15cm;
-        width: 20cm;
-        height: 21.7cm;
-    }
-
-    .titulo {
-        position: absolute; top: 5.5cm;
-        font-family: Arial;
-        font-size: 14;
-    }
-
-    .org {
-	    position: absolute; top: 2.9cm; left: 7.5cm;
-        font-size: 15px;
-	    color: var(--blanco);
-    }
-
-    .contenido {
-        position: absolute; top: 7.5cm; left: 0.1cm;
-        width: 11.4cm;
-        height: 11.6cm;
-        min-width: 11.4cm;
-        max-width: 11.4cm;
-        min-height: 11.6cm;
-        max-height: 11.6cm;
-        border-style: none;
-        background-color: var(--transparente);
-        font-family: Arial;
-        font-size: 12;
-    }
 
 }

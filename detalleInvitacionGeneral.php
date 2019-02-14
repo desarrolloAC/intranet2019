@@ -35,19 +35,19 @@
 <!--INICIO CONTENEDOR DE CONTENIDOS-->
 <main class="contenedorContenido">
 
-    <div id="contenidoAVIF" class="contenidoAVIF">
+    <div id="contenidoGENE" class="contenidoAVIF">
         <div class="contenidoPlantilla">
             <img class="imagen-detalle" :src="item.photo" alt="Detalle de la noticia">
-            <h1 class='titulo'>{{ item.title }}</h1>
-            <h5 class="org">{{ item.org }}</h5>
             <textarea class="contenido" readonly>{{ item.content }}</textarea>
+            <textarea class="contenido2" readonly>{{ item.content1 }}</textarea>
+            <img class="logoInvitacionGeneral" src="assets/image/Logos/alkescorp.png" type="image/png" width="200" height="200"/>
         </div>
     </div>
 
     <script type="text/javascript">
 
         const deatalle = new Vue({
-            el: '#contenidoAVIF',
+            el: '#contenidoGENE',
             created: function() {
                 this.getPublicaciones();
             },

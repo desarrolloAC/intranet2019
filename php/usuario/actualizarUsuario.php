@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 session_start();
 
 include $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
@@ -205,8 +207,16 @@ function delete($conexion, $cedula) {
 
     if (file_exists($destino)) {
 
-        if (!chmod($destino, 777)) {
-            die('No se pudo cambiar permiso el archivo anteriol.');
+        if (!chown($destino, 'www-data')) {
+            //die('No se pudo cambiar permiso el archivo anteriol.');
+        }
+
+        if (!chgrp($destino, 'www-data')) {
+            //die('No se pudo cambiar permiso el archivo anteriol.');
+        }
+
+        if (!chmod($destino, 0775)) {
+            //die('No se pudo cambiar permiso el archivo anteriol.');
         }
 
         if (!unlink($destino)) {

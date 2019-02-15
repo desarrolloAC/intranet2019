@@ -79,7 +79,7 @@
                 <li>
                     <a href="#" title="">Gestión Humana</a>
                     <ul>
-                        <li><a href="php/Descargas.php?id=3" target="_blank">Solvencia de Egreso del Personal</a></li>
+                        <li><a href="assets/document/gestion-humana/Copia de F-GH-017 SOLVENCIA DE EGRESO DE PERSONAL v2 - copia.xls" target="_blank">Solvencia de Egreso del Personal</a></li>
                         <li><a href="php/Descargas.php?id=4" target="_blank">Entrevista Técnica</a></li>
                         <li><a href="php/Descargas.php?id=5" target="_blank">Descripción y Perfil de Competencia del Cargo</a></li>
                         <li><a href="php/Descargas.php?id=6" target="_blank">Formato Único</a></li>
@@ -210,7 +210,7 @@
             </li>
                 <ul class="menu-submenu accordion-content2">
                 <li class="accordion-toggle3"><a class="menu-link" href="#">Caracterización de Procesos</a></li>
-                <ul class="menu-submenu accordion-content3"> 
+                <ul class="menu-submenu accordion-content3">
                     <li><a class="head" href="assets/document/mercadeo/caracterizacion/F-SG-006 CP V7 Innovación y Desarrollo de Marcas.pdf" target="_blank">Innovación y Desarrollo de Marcas</a></li>
                     <li><a class="head" href="assets/document/mercadeo/caracterizacion/F-SG-006 CP V7 Investigación de Mercado.pdf" target="_blank">Investigación de Mercado</a></li>
                     <li><a class="head" href="assets/document/mercadeo/caracterizacion/F-SG-006 CP V7 Trade Marketing.pdf" target="_blank">Trade Marketing</a></li>
@@ -289,7 +289,7 @@
                 <a class="menu-link" href="#">Finanzas</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                
+
                 <li class="accordion-toggle3"><a class="menu-link" href="#">Tesorería</a></li>
                 <ul class="menu-submenu accordion-content3">
                     <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Tesorer%c3%ada.pdf" target="_blank">Caracterización de Procesos</a></li>

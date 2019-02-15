@@ -49,15 +49,18 @@
 
 .contenidoPlantilla .logoAlkes{
 
-        position: relative;
+    position: relative;
     top: -5cm;
     left: 8.5cm;
 }
 
 .contenidoPlantilla .imagen-nino{
     position: absolute;
-    top: 9.5cm;
-    left: 5cm;
+    top: 8.2cm;
+    left: 3.2cm;
+    width: 200px;
+    height: 200px;
+    border-radius: 6em;
 }
 
 @media only screen and (min-width: 1920px) and (max-width: 2500px) {

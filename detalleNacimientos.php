@@ -39,8 +39,7 @@
         <div class="contenidoPlantilla">
             <img class="imagen-detalle" :src="item.photo" alt="Detalle de la noticia">
             <h1 class='titulo'>{{ item.title }}</h1>
-           <!-- <h5 class="org">{{ item.org }}</h5>-->
-            <img class="imagen-nino" :src="item.image" alt="Detalle de la noticia" width="100cm" height="100cm">
+            <img class="imagen-nino" :src="item.image" alt="Detalle de la noticia" >
             <img class="logoAlkes" src="assets/image/Logos/alkescorp.png" width="100cm" height="100cm">
             <textarea class="contenido" readonly>{{ item.content }}</textarea>
         </div>

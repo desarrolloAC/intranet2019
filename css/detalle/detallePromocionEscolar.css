@@ -29,7 +29,7 @@
 }
 
 .titulo {
-    position: absolute; top: 6cm;
+    position: absolute; top: 10cm;
     font-family: Arial;
     font-size: 14;
 }
@@ -63,7 +63,7 @@
     }
 
     .titulo {
-        position: absolute; top: 5.5cm;
+        position: absolute; top: 10.5cm;
         font-family: Arial;
         font-size: 14;
     }

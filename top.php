@@ -69,35 +69,35 @@
         <li>
             <a href="#" title="">Descargas</a>
             <ul>
-                <li>
+                <li class="menu-desp4" >
                     <a href="#" title="">Cuentas por Pagar</a>
                     <ul>
                         <li><a href="php/Descargas.php?id=1" target="_blank">Formato Único de Anticipo y Relación de Gastos</a></li>
                         <li><a href="php/Descargas.php?id=2" target="_blank">Relación de Gastos TEBCA</a></li>
                     </ul>
                 </li>
-                <li>
+                <li  class="menu-desp5">
                     <a href="#" title="">Gestión Humana</a>
                     <ul>
-                        <li><a href="assets/document/gestion-humana/Copia de F-GH-017 SOLVENCIA DE EGRESO DE PERSONAL v2 - copia.xls" target="_blank">Solvencia de Egreso del Personal</a></li>
-                        <li><a href="php/Descargas.php?id=4" target="_blank">Entrevista Técnica</a></li>
-                        <li><a href="php/Descargas.php?id=5" target="_blank">Descripción y Perfil de Competencia del Cargo</a></li>
-                        <li><a href="php/Descargas.php?id=6" target="_blank">Formato Único</a></li>
-                        <li><a href="php/Descargas.php?id=7" target="_blank">Solicitud de Empleo</a></li>
-                        <li><a href="php/Descargas.php?id=8" target="_blank">Verificación de Referencia Laborales</a></li>
-                        <li><a href="php/Descargas.php?id=9" target="_blank">Inducción Operacional</a></li>
-                        <li><a href="php/Descargas.php?id=10" target="_blank">Informe de Entrevista</a></li>
-                        <li><a href="php/Descargas.php?id=11" target="_blank">Check List de Expediente</a></li>
-                        <li><a href="php/Descargas.php?id=12" target="_blank">Evaluación de Período de Prueba</a></li>
-                        <li><a href="php/Descargas.php?id=13" target="_blank">Evaluación de Impacto</a></li>
-                        <li><a href="php/Descargas.php?id=14" target="_blank">Listado de Asistencia</a></li>
-                        <li><a href="php/Descargas.php?id=15" target="_blank">Solicitud de Adiestramiento</a></li>
-                        <li><a href="php/Descargas.php?id=16" target="_blank">Solicitud de Personal</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-017 SOLVENCIA DE EGRESO DE PERSONAL.xls" target="_blank">Solvencia de Egreso del Personal</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-020 ENTREVISTA TECNICA .xls" target="_blank">Entrevista Técnica</a></li>
+                        <li><a href="assets/document/gestion-humana/DESCRIPCIÓN Y PERFIL DE COMPETENCIAS DEL CARGO.docx" target="_blank">Descripción y Perfil de Competencia del Cargo</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-001 FORMATO UNICO.doc" target="_blank">Formato Único</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-002 SOLICITUD EMPLEO.xlsx" target="_blank">Solicitud de Empleo</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-003 VERIFICACIÓN REFERENCIA LABORAL.xls" target="_blank">Verificación de Referencia Laborales</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-004 INDUCCIÓN OPERACIONAL.xlsm" target="_blank">Inducción Operacional</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-005 INFORME DE ENTREVISTA.xls" target="_blank">Informe de Entrevista</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-006 CHECK LIST EXPEDIENTE.xlsx" target="_blank">Check List de Expediente</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-007 EVALUACIÓN PERIODO DE PRUEBA .xlsx" target="_blank">Evaluación de Período de Prueba</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-010 EVALUACIÓN DE IMPACTO.XLSX" target="_blank">Evaluación de Impacto</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-011 LISTADO DE ASISTENCIA.xls" target="_blank">Listado de Asistencia</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-018 SOLICITUD DE ADIESTRAMIENTO.xlsx" target="_blank">Solicitud de Adiestramiento</a></li>
+                        <li><a href="assets/document/gestion-humana/SOLICITUD DE PERSONAL.xlsm" target="_blank">Solicitud de Personal</a></li>
                     </ul>
                 </li>
-                <li>
+                <li  class="menu-desp6">
                     <a href="#" title="">Identidad Corporativa</a>
-                    <ul>
+                    <ul >
                         <li><a href="assets/document/identidad-corporativa/Manual%20de%20Identidad%20Corporativa.pdf" target="_blank">Manual de Identidad Corporativa</a></li>
                         <li><a href="assets/document/identidad-corporativa/PLANTILLAS%20DE%20PRESENTACI%C3%93N.pdf" target="_blank">Manual de Presentaciones</a></li>
                         <li><a href="assets/document/identidad-corporativa/V1%2020181220.pdf" target="_blank">Vocabulario</a></li>

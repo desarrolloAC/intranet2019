@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
 
-    <link rel="stylesheet" type="text/css" href="css/detalle/detalleAvanceInformativo.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/detalle/detalleCondolencia.css" media="all"/>
 
     <script type="text/javascript" src="js/lib/vue.js"></script>
     <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>

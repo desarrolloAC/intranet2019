@@ -180,7 +180,7 @@
                 <a class="menu-link" href="#">Gestión Humana</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="assets/document/gestion-humana/caracterizacion/F-SG-006%20GESTION%20HUMANA%20VENFRUCA.pdf" target="_blank">Caracterización de Procesos</a></li>
+                <li><a class="head" href="http://192.168.0.130/SITE/PUBLICADOS/GH/#list" target="_blank">Caracterización de Procesos</a></li>
                 <li><a class="head" href="assets/document/gestion-humana/lot/LEY_ORGANICA_DEL_TRABAJO_LOS_TRABAJADORES_Y_LAS_TRABAJADORAS.pdf" target="_blank">Ley Orgánica del Trabajo</a></li>
             </ul>
             <!-- Seguridad y Salud Laboral -->
@@ -262,10 +262,10 @@
             </ul>
             <!-- Asuntos Regulatorio -->
             <li class="accordion-toggle2">
-                <a class="menu-link" href="#">Asuntos Regulatorio</a>
+                <a class="menu-link" href="#">Asuntos Regulatorios</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="http:\\192.168.0.130\SITE\PROCESOS\Documentos\CPF-SG-006 CP V7 Asuntos regulatorios.pdf" target="_blank">Caracterización de Procesos</a></li>
+                <li><a class="head" href="assets/document/asuntos-regulatorios/caracterizacion/F-SG-006 CP V7 Asuntos regulatorios.pdf" target="_blank">Caracterización de Procesos</a></li>
                 <li><a class="head" href="http://192.168.0.130/SITE/PROCESOS/Auntos Regulatorios/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Comercio Exterior -->
@@ -273,7 +273,11 @@
                 <a class="menu-link" href="#">Comercio Exterior</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="#">Caracterización de Procesos</a></li>
+                <li class="accordion-toggle3"> <a class="menu-link"  href="#">Caracterización de Procesos</a></li>
+                <ul class="menu-submenu accordion-content3"> 
+                    <li><a class="head" href="assets/document/comercio-exterior/caracterizacion/F-SG-006 CP V7 Exportación.pdf" target="_blank">Exportación</a></li>
+                    <li><a class="head" href="assets/document/comercio-exterior/caracterizacion/F-SG-006 CP V7 Importación.pdf" target="_blank">Importación</a></li>
+               </ul>
                 <li><a class="head" href="http://192.168.0.130/site/procesos/Comercio%20Exterior/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Ingenieria -->
@@ -281,8 +285,16 @@
                 <a class="menu-link" href="#">Ingeniería</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="#">Proyectos</a></li>
-                <li><a class="head" href="#">Mantenimiento</a></li>
+                <li class="accordion-toggle3"> <a class=menu-link"  href="#">Caracterización de Procesos</a></li>
+                <ul class="menu-submenu accordion-content3"> 
+                    <li><a class="head" href="assets/document/ingenieria/caracterizacion/F-SG-006 CP V7 Proyectos.pdf" target="_blank">Proyecto</a></li>
+                    <li><a class="head" href="assets/document/ingenieria/caracterizacion/F-SG-006 CP V7 Mantenimiento.pdf" target="_blank">Mantenimiento</a></li>
+               </ul>
+                <li class="accordion-toggle3"> <a class="menu-link" href="#">Procedimientos</a></li>
+                <ul class="menu-submenu accordion-content3"> 
+                    <li><a class="head" href="http://192.168.0.130/site/procesos/Ingenieria/Proyecto/index.html#list" target="_blank">Proyecto</a></li>
+                    <li><a class="head" href="http://192.168.0.130/site/procesos/Ingenieria/Mantenimiento/index.html#list" target="_blank">Mantenimiento</a></li>
+               </ul>
             </ul>
             <!-- Finanzas -->
             <li class="accordion-toggle2">
@@ -344,7 +356,7 @@
                 <a class="menu-link" href="#">Relaciones Corporativas</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="http://192.168.0.130/site/procesos/Documentos/CP-V7-pdf/F-SG-006%20CP%20V7%20Gesti%C3%B3n%20de%20Eventos%20Corporativos.pdf" target="_blank">Caracterización de Procesos</a></li>
+                <li><a class="head" href="assets/document/relaciones-corporativas/caracterizacion/F-SG-006 CP V7 Gestión de Eventos Corporativos.pdf" target="_blank">Caracterización de Procesos</a></li>
             </ul>
         </ul>
 
@@ -360,7 +372,7 @@
                 <a class="menu-link" href="#">Aseguramiento de la Calidad</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="#" target="_blank">Caracterizacion de Procesos</a></li>
+                
                 <li><a class="head" href="http://192.168.0.130/site/procesos/Operaciones%20Venfruca/Aseguramiento%20de%20la%20Calidad/index.html#list" target="_blank">Procedimientos</a></li>
                 <li><a class="head" href="http://192.168.0.130/SITE/PROCESOS/Operaciones%20Venfruca/Aseguramiento%20de%20la%20Calidad/Fichas%20tecnicas%20instructivos%20AC/index.html#list" target="_blank">Ficha Técnica-Instructivos</a></li>
             </ul>
@@ -369,7 +381,6 @@
                 <a class="menu-link" href="#">Ambiente</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="http://192.168.0.130/site/procesos/Documentos/Caracterizaciones/F-SG-006%20AMBIENTE.pdf" target="_blank">Caracterización de Procesos</a></li>
                 <li><a class="head" href="http://192.168.0.130/site/procesos/Operaciones%20Venfruca/Ambiente/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Almacèn de Producciòn -->
@@ -377,7 +388,6 @@
                 <a class="menu-link" href="#">Almacén de Producción</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="http://192.168.0.130/site/procesos/Documentos/Caracterizaciones/F-SG-006%20AMBIENTE.pdf" target="_blank">Caracterización de Procesos</a></li>
                 <li><a class="head" href="http://192.168.0.130/site/procesos/Operaciones%20Venfruca/Almacen%20Produccion/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Mantenimiento -->
@@ -385,7 +395,6 @@
                 <a class="menu-link" href="#">Mantenimiento</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="http://192.168.0.130/site/procesos/Documentos/Caracterizaciones/F-SG-006-MANTENIMIENTO-VENFRUCA.pdf" target="_blank">Caracterización de Procesos</a></li>
                 <li><a class="head" href="http://192.168.0.130/site/procesos/Operaciones%20Venfruca/Mantenimiento/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Mantenimiento -->
@@ -393,7 +402,7 @@
                 <a class="menu-link" href="#">Producción</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="#" target="_blank">Caracterizaciòn de Procesos</a></li>
+                
                 <li><a class="head" href="http://192.168.0.130/site/procesos/Operaciones%20Venfruca/Produccion/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Seguridad y Salud Laboral -->
@@ -401,7 +410,6 @@
                 <a class="menu-link" href="#">Seguridad y Salud Laboral</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="http://192.168.0.130/site/procesos/Documentos/Caracterizaciones/F-SG-006%20SEGURIDAD%20LABORAL%20VENFRUCA..pdf" target="_blank">Caracterización de Procesos</a></li>
                 <li><a class="head" href="http://192.168.0.130/site/procesos/Operaciones%20Venfruca/Seguridad%20Laboral/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Desarrollo Agrario -->
@@ -409,7 +417,6 @@
                 <a class="menu-link" href="#">Desarrollo Agrario</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="http://192.168.0.130/site/procesos/Documentos/Caracterizaciones/F-SG-006%20DESARROLLO%20AGRARIO.pdf" target="_blank">Caracterización de Procesos</a></li>
                 <li><a class="head" href="http://192.168.0.130/SITE/PROCESOS/Desarrollo%20Agrario/index.html#list" target="_blank">Procedimientos</a></li>
                 <li><a class="head" href="http://192.168.0.130/site/procesos/Documentos/M_operacionales/F-SF-015%20%20Negocios%20Logisticos.pdf" target="_blank">Cuadro de Mando Operacional</a></li>
             </ul>
@@ -419,15 +426,13 @@
             </li>
             <ul class="menu-submenu accordion-content2">
                 <li><a class="head" href="http://192.168.0.130/SITE/PUBLICADOS/OPERACIONES%20VENFRUCA/SEGURIDAD%20FISICA/index.html#list" target="_blank">Procedimientos</a></li>
-                <li><a class="head" href="#">Formularios</a></li>
-                <li><a class="head" href="#">Instructivos</a></li>
+                
             </ul>
             <!-- Planificaciòn de Producciòn y Mtto. -->
             <li class="accordion-toggle2">
                 <a class="menu-link" href="#">Planificación de Producción y Mtto.</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="http://192.168.0.130/site/procesos/Operaciones%20Venfruca/CARACTERIZACION%20DE%20PROCESOS/PLANIFICACI%C3%93N/F-SG-006%20CP%20V7%20PLANIFICACI%C3%93N.pdf" target="_blank">Caracterizaciòn de Procesos</a></li>
                 <li><a class="head" href="http://192.168.0.130/site/procesos/Operaciones%20Venfruca/Planificación/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Caracterizaciòn de procesos. -->
@@ -485,10 +490,7 @@
         <ul class="menu-submenu accordion-content">
             <li class="content-static"><a class="head" href="assets/document/sistema-integrado/manuales/M-SG-003%20MANUAL%20DE%20SGC%20ISO%209001-2008%20FRUTECH%20V7.pdf" target="_blank">Manual</a></li>
             <li class="content-static"><a class="head" href="http://192.168.0.130/site/procesos/Documentos/F-SG-010-Mapa-de-Proceso-Fruttech.pdf" target="_blank">Mapa de Procesos</a></li>
-            <li class="content-static"><a class="head" href="http://192.168.0.130/www/SITE/PUBLICADOS/OPERACIONES%20VENFRUCA/SEGURIDAD%20FISICA/index.html" target="_blank">Procedimientos</a></li>
-            <li class="content-static"><a class="head" href="#" target="_blank">Caracterización de Procesos</a></li>
-            <li class="content-static"><a class="head" href="#" target="_blank">Cuadro de Mando Operacional</a></li>
-        </ul>
+          </ul>
     </ul>
     <!-- menu-list accordion-->
 

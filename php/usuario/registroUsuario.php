@@ -81,7 +81,7 @@ try {
 
 <<<<<<< Updated upstream
             //mover la foto
-            if (move_uploaded_file($origen, $destino)) {
+            if (!move_uploaded_file($origen, $destino)) {
                 throw new RuntimeException('No se pudo mover el archivo '.$_FILES['btnImagen']['name'].'.');
             }
 =======

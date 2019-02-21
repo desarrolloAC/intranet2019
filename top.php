@@ -274,7 +274,7 @@
             </li>
             <ul class="menu-submenu accordion-content2">
                 <li class="accordion-toggle3"> <a class="menu-link"  href="#">Caracterización de Procesos</a></li>
-                <ul class="menu-submenu accordion-content3"> 
+                <ul class="menu-submenu accordion-content3">
                     <li><a class="head" href="assets/document/comercio-exterior/caracterizacion/F-SG-006 CP V7 Exportación.pdf" target="_blank">Exportación</a></li>
                     <li><a class="head" href="assets/document/comercio-exterior/caracterizacion/F-SG-006 CP V7 Importación.pdf" target="_blank">Importación</a></li>
                </ul>
@@ -286,12 +286,12 @@
             </li>
             <ul class="menu-submenu accordion-content2">
                 <li class="accordion-toggle3"> <a class=menu-link"  href="#">Caracterización de Procesos</a></li>
-                <ul class="menu-submenu accordion-content3"> 
+                <ul class="menu-submenu accordion-content3">
                     <li><a class="head" href="assets/document/ingenieria/caracterizacion/F-SG-006 CP V7 Proyectos.pdf" target="_blank">Proyecto</a></li>
                     <li><a class="head" href="assets/document/ingenieria/caracterizacion/F-SG-006 CP V7 Mantenimiento.pdf" target="_blank">Mantenimiento</a></li>
                </ul>
                 <li class="accordion-toggle3"> <a class="menu-link" href="#">Procedimientos</a></li>
-                <ul class="menu-submenu accordion-content3"> 
+                <ul class="menu-submenu accordion-content3">
                     <li><a class="head" href="http://192.168.0.130/site/procesos/Ingenieria/Proyecto/index.html#list" target="_blank">Proyecto</a></li>
                     <li><a class="head" href="http://192.168.0.130/site/procesos/Ingenieria/Mantenimiento/index.html#list" target="_blank">Mantenimiento</a></li>
                </ul>
@@ -372,7 +372,7 @@
                 <a class="menu-link" href="#">Aseguramiento de la Calidad</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                
+
                 <li><a class="head" href="http://192.168.0.130/site/procesos/Operaciones%20Venfruca/Aseguramiento%20de%20la%20Calidad/index.html#list" target="_blank">Procedimientos</a></li>
                 <li><a class="head" href="http://192.168.0.130/SITE/PROCESOS/Operaciones%20Venfruca/Aseguramiento%20de%20la%20Calidad/Fichas%20tecnicas%20instructivos%20AC/index.html#list" target="_blank">Ficha Técnica-Instructivos</a></li>
             </ul>
@@ -402,7 +402,7 @@
                 <a class="menu-link" href="#">Producción</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                
+
                 <li><a class="head" href="http://192.168.0.130/site/procesos/Operaciones%20Venfruca/Produccion/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Seguridad y Salud Laboral -->
@@ -426,7 +426,7 @@
             </li>
             <ul class="menu-submenu accordion-content2">
                 <li><a class="head" href="http://192.168.0.130/SITE/PUBLICADOS/OPERACIONES%20VENFRUCA/SEGURIDAD%20FISICA/index.html#list" target="_blank">Procedimientos</a></li>
-                
+
             </ul>
             <!-- Planificaciòn de Producciòn y Mtto. -->
             <li class="accordion-toggle2">
@@ -440,19 +440,19 @@
                 <a class="menu-link" href="#">Caracterización de procesos</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP AMBIENTE VF.pdf" target="_blank">Ambiente VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP MANTENIMIENTO CONCENTRADO VF.pdf" target="_blank">Mantenimiento de Concentrado VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP PRODUCCIÓN LINEA DE CONCENTRADO VF.pdf" target="_blank">Producción Línea de Concentrado VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP PRODUCCIÓN LINEA DE PULPA VF.pdf" target="_blank">Producción Línea de Pulpa VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP V7 Almacén de Producción VF.pdf" target="_blank">Almacén de Producción VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP V7 Aseguramiento de la Calidad. Concentrado VF.pdf" target="_blank">Aseguramiento de la Calidad del Concentrado VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP V7 Aseguramiento de la Calidad. Pulpa VF.pdf" target="_blank">Aseguramiento de la Calidad de la Pulpa VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP V7 Desarrollo y Logistica Agricola VF.pdf" target="_blank">Desarrollo y Logística de la Agrícola VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP V7 Gestión de la Formación VF.pdf" target="_blank">Gestión de la Formación VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP V7 PLANIFICACIÓN VF.pdf" target="_blank">Planificación VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP V7 Seguridad Física VF.pdf" target="_blank">Seguridad Física VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP V7 Seguridad Laboral VF.pdf" target="_blank">Seguridad Laboral VF</a></li>
-                <li><a class="head" href="http://192.168.0.130\SITE\PROCESOS\Operaciones Venfruca\CARACTERIZACION DE PROCESOS\F-SG-006 CP V7 SIG Venfruca.pdf" target="_blank">SIG Venfruca</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP AMBIENTE VF.pdf" target="_blank">Ambiente VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP MANTENIMIENTO CONCENTRADO VF.pdf" target="_blank">Mantenimiento de Concentrado VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP PRODUCCIÓN LINEA DE CONCENTRADO VF.pdf" target="_blank">Producción Línea de Concentrado VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP PRODUCCIÓN LINEA DE PULPA VF.pdf" target="_blank">Producción Línea de Pulpa VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Almacén de Producción VF.pdf" target="_blank">Almacén de Producción VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Aseguramiento de la Calidad. Concentrado VF.pdf" target="_blank">Aseguramiento de la Calidad del Concentrado VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Aseguramiento de la Calidad. Pulpa VF.pdf" target="_blank">Aseguramiento de la Calidad de la Pulpa VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Desarrollo y Logistica Agricola VF.pdf" target="_blank">Desarrollo y Logística de la Agrícola VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Gestión de la Formación VF.pdf" target="_blank">Gestión de la Formación VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 PLANIFICACIÓN VF.pdf" target="_blank">Planificación VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Seguridad Física VF.pdf" target="_blank">Seguridad Física VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Seguridad Laboral VF.pdf" target="_blank">Seguridad Laboral VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 SIG Venfruca.pdf" target="_blank">SIG Venfruca</a></li>
             </ul>
         </ul>
 

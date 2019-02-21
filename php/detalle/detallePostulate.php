@@ -22,7 +22,7 @@ $sql = "SELECT
 	 postu.correo,
 	 postu.contenido
 FROM publicacion pub
-INNER JOIN publicacion_postulate postu ON postu.ID_publicacion  = postu.ID_Publicacion
+INNER JOIN publicacion_postulate postu ON pub.ID_publicacion  = postu.ID_Publicacion
 INNER JOIN subcategoria subc          ON pub.ID_Subcategoria  = subc.ID_Subcategoria
 INNER JOIN categoria cat              ON cat.ID_Categoria     = subc.ID_Categoria
 INNER JOIN organizacion org           ON org.ID_Organizacion  = pub.ID_Organizacion
@@ -48,7 +48,7 @@ while ($row = mysqli_fetch_array($stmt->get_result(), MYSQLI_ASSOC)) {
     $inst->setResponsabilidades($row['responsabilidades']);
     $inst->setCorreo($row['correo']);
     $inst->setContenido($row['contenido']);
-    
+
     $list = $inst;
 }
 

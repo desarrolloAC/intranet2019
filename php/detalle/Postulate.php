@@ -2,7 +2,6 @@
 
 namespace detalle;
 
-
 class Postulate implements \JsonSerializable {
 
     private $publicacionId;
@@ -99,7 +98,7 @@ class Postulate implements \JsonSerializable {
             'requirement' => $this->requisito,
             'positions' => $this->posiciones,
             'chargue' => $this->responsabilidades,
-            'image' => $this->correo,
+            'correo' => $this->correo,
             'content' => $this->contenido,
             'photo' => $this->foto
         ];

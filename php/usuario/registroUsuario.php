@@ -37,14 +37,14 @@ $res = $_POST["res"];
 try {
 
     $error = $_FILES['btnImagen']['error'];
-
+    
     if (!isset($error) || is_array($error)) {
         throw new RuntimeException('Parametros invalidos.');
     }
-
+    
     switch ($error) {
 
-        case EstadoFile::UPLOAD_ERR_INI_SIZE:
+        case EstadoFile::UPLOAD_ERR_INI_SIZE: 
             throw new RuntimeException('El tamaño del archivo supera el límite permitido por el servidor (argumento upload_max_filesize del archivo php.ini).');
             break;
 
@@ -66,33 +66,18 @@ try {
             if ($_FILES['btnImagen']['size'] > 1000000000) {
                 throw new RuntimeException('El archivo supera lo 100 Mb');
             }
-
+            
             //origen
-<<<<<<< Updated upstream
             $origen = $_FILES['btnImagen']['tmp_name'];
             
-=======
-            $origen = 'assets/image/directorio/' .$_FILES['btnImagen']['name'];
-
->>>>>>> Stashed changes
             //destino
             $destino_temp = 'assets/image/directorio/' . date("Y-m-d_his") . strstr($_FILES['btnImagen']['name'], '.');
             $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
-<<<<<<< Updated upstream
             //mover la foto
             if (!move_uploaded_file($origen, $destino)) {
                 throw new RuntimeException('No se pudo mover el archivo '.$_FILES['btnImagen']['name'].'.');
             }
-=======
-
-            //mover la foto
-            if (!move_uploaded_file($origen, $destino)) {
-
-             throw new RuntimeException('No se pudo mover el archivo '.$_FILES['btnImagen']['name'].'.');
-
-             }
->>>>>>> Stashed changes
 
             //registrar
             if (isset($pass)) {
@@ -141,10 +126,10 @@ try {
             location.href="../../usuario.php";
         </script>';
 
-
+    
 } catch (RuntimeException $exc) {
     echo $exc->getMessage();
-
+    
 }
 
 

@@ -49,7 +49,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
             <input id="btnRegistrarNacimiento" type="submit" name="btnRegistrarNacimiento" value="Registrar">
 
-
+            
              <?php
             $sql = " SELECT * FROM organizacion o WHERE o.Estatus = 'A' AND o.ID_Organizacion = '" . $_SESSION['ID_Organizacion'] . "';";
             $rs = mysqli_query($conexion, $sql) or die(mysqli_error($conexion));

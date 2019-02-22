@@ -99,8 +99,8 @@ class Postulate implements \JsonSerializable {
             'requirement' => $this->requisito,
             'positions' => $this->posiciones,
             'chargue' => $this->responsabilidades,
-            'image' => $this->correo,
-            'content' => $this->contenido,
+            'correo' => $this->correo,
+            'content1' => $this->contenido,
             'photo' => $this->foto
         ];
     }

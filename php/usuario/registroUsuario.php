@@ -68,17 +68,20 @@ try {
             }
             
             //origen
-            $origen = $_FILES['btnImagen']['tmp_name'];
+            $origen = 'assets/image/directorio/' .$_FILES['btnImagen']['name'];
             
             //destino
             $destino_temp = 'assets/image/directorio/' . date("Y-m-d_his") . strstr($_FILES['btnImagen']['name'], '.');
             $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
-
+            
+           
             //mover la foto
-            if (move_uploaded_file($origen, $destino)) {
-                throw new RuntimeException('No se pudo mover el archivo '.$_FILES['btnImagen']['name'].'.');
-            }
-
+            if (!move_uploaded_file($origen, $destino)) {
+                        
+             throw new RuntimeException('No se pudo mover el archivo '.$_FILES['btnImagen']['name'].'.');
+           
+             }
+           
             //registrar
             if (isset($pass)) {
 

@@ -35,7 +35,7 @@
 }
 
 .contenido {
-    position: absolute; top: 18cm; left: 3.2cm;
+    position: absolute; top: 7.5cm; left: 0.1cm;
     width: 11.4cm;
     height: 11.6cm;
     min-width: 11.4cm;
@@ -47,92 +47,6 @@
     font-family: Arial;
     font-size: 12;
 }
-.organizacion{
-    position: absolute; top: 2.6cm; left: 7cm;
-        width: 3cm;
-        height: 3.6cm;
-        min-width: 3cm;
-        max-width: 6cm;
-        min-height: 3.6cm;
-        max-height: 6cm;
-        border-style: none;
-        color: rgba(255,255,255);
-        background-color: var(--transparente);
-        font-family: Arial;
-        font-size: 12;
-        
-}
-.requisitos{
-    position: absolute; top: 2.6cm; right: 10cm left: 0.2cm;
-        width: 6cm;
-        height: 14cm;
-        min-width: 4m;
-        max-width: 6cm;
-        min-height: 4cm;
-        max-height: 14cm;
-        border-style: none;
-        display: 
-        text-align: justify;
-        background-color: ar(--transparente);
-        font-family: Arial;
-        font-size: 12;
-}
-.posiciones{
-     position: absolute; top: 6cm; left: 7cm;
-        width: 11cm;
-        height: 5cm;
-        min-width: 5m;
-        max-width: 20cm;
-        min-height: 4cm;
-        max-height: 22cm;
-        border-style: none
-        text-align: justify;
-        background-color: var(--transparente);
-        font-family: Arial;
-        font-size: 12;
-}
-.responsabilidades{
-         position: absolute; top: 11.2cm; left: 7cm;
-        width: 11cm;
-        height: 5cm;
-        min-width: 5m;
-        max-width: 20cm;
-        min-heights: 4cm;
-        max-height: 22cm;
-        border-style: none;
-        text-align: justify;
-        background-color:var(--transparente);
-        font-family: Arial;
-        font-size: 12;
-        font-family: Arial;
-}
-.tituloCaracteresCorreo{
-    position: absolute; top: 17cm; left: 0.2cm;
-    font-weight: 100;
-    background-color: var(--transparente);
-    border-style: none;
-    font-family: Arial;
-    font-size: 12;
-   
-}
-.correo{
-      position: absolute; top: 17.5cm; left: 0.2cm;
-    font-weight:100;
-    background-color:var(--transparente);
-    border-style: none;
-    font-family: Arial;
-    font-size: 12;
-}
-.valido{
-       position: absolute; top: 18cm; left: 0.2cm;
-    font-weight: 100;
-    background-color: var(--transparente);
-    border-style: none;
-    font-family: Arial;
-    font-size: 12; 
-}
-
-
 
 @media only screen and (min-width: 1920px) and (max-width: 2500px) {
 
@@ -159,7 +73,7 @@
         font-size: 15px;
 	    color: var(--blanco);
     }
-    
+
     .contenido {
         position: absolute; top: 7.5cm; left: 0.1cm;
         width: 11.4cm;
@@ -174,5 +88,4 @@
         font-size: 12;
     }
 
-   
 }

@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
 
-    <link rel="stylesheet" type="text/css" href="css/detalle/detallePostulate.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/detalle/detalleAvanceInformativo.css" media="all"/>
 
     <script type="text/javascript" src="js/lib/vue.js"></script>
     <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>
@@ -37,21 +37,8 @@
     <div id="contenidoAVIF" class="contenidoAVIF">
         <div class="contenidoPlantilla">
             <img class="imagen-detalle" :src="item.photo" alt="Detalle de la noticia">
-<<<<<<< Updated upstream
             <h1 class='titulo'>{{ item.tipo}}</h1>
             <h5 class="org">{{ item.org }}</h5>
-=======
-            <h1 class='titulo'>{{ item.title }}</h1>
-            <h5 class="organizacion">{{ item.org }}</h5>
-            <h5 class="requisitos">{{ item.requirement}}</h5>
-            <h5 class="posiciones">{{ item.positions}}</h5>
-            <h5 class="responsabilidades">{{ item.chargue}}</h5>
-            <h5 class="correo">{{ item.correo}}</h5>
-            <h5 class="contenido">{{ item.content1}}</h5>
-         
-            <label class="tituloCaracteresCorreo">Si estas interesado en postularte envia tu sintesis curricular a la siguiente direccion electronica:</label>
-            <label class="valido">Valido Hasta: </label>
->>>>>>> Stashed changes
             <textarea class="contenido" readonly>{{ item.content }}</textarea>
         </div>
     </div>

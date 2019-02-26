@@ -40,7 +40,7 @@
                         <img class="imagen-detalle" :src="item.photo" alt="Detalle de la Postulacion">
                         <h1 class='titulo'>{{ item.tipo}}</h1>
                         <h5 class="org">{{ item.org }}</h5>
-                        <h1 class='titulo'>{{ item.title }}</h1>
+                        <!--   <h1 class='titulo'>{{ item.title }}</h1>-->
                         <h5 class="requisitos">{{ item.requirement}}</h5>
                         <h5 class="posiciones">{{ item.positions}}</h5>
                         <h5 class="responsabilidades">{{ item.chargue}}</h5>

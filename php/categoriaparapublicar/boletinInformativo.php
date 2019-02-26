@@ -101,14 +101,14 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
                         alert('el fichero supera los 300 KB ')
                     }" required>
 
-            <img id="bolimgSalida" width="26%" height="21%" src="" />
+            <img id="bolimgSalida" width="24%" height="19%" src="" />
 
             <input id="btnImagenBoletinInformativo1" type="file" name="archivo1" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
                         remove();
                         alert('el fichero supera los 300 KB ')
                     }" required>
 
-            <img id="bolimgSalida1" width="26%" height="21%" src="" />
+            <img id="bolimgSalida1" width="24%" height="19%" src="" />
 
             <input id="btnImagenBoletinInformativo2" type="file" name="archivo2" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
                         remove();
@@ -116,14 +116,14 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
                     }" required>
 
 
-            <img id="bolimgSalida2" width="26%" height="21%" src="" />
+            <img id="bolimgSalida2" width="24%" height="19%" src="" />
             <input id="btnImagenBoletinInformativo3" type="file" name="archivo3" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
                         remove();
                         alert('el fichero supera los 300 KB ')
                     }" required>
 
 
-            <img id="bolimgSalida3" width="26%" height="21%" src="" />
+            <img id="bolimgSalida3" width="24%" height="19%" src="" />
             <input id="btnRegistrarBoletinInformativo" type="submit" name="btnRegistrarBoletinInformativo" value="Registrar">
 
         </form>

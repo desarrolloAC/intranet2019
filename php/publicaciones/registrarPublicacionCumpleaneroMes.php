@@ -11,12 +11,6 @@ $idOrganizacion = $_SESSION['ID_Organizacion'];
 $idSubCategoria = $_POST['txtCodigoSubCategoriaCumpleMes'];
 $cedula = $_SESSION['Cedula'];
 
-$foto = $_FILES['btnImagenCumpleMes']['name'];
-$error = $_FILES['btnImagenCumpleMes']['error'];
-$origen = $_FILES['btnImagenCumpleMes']['tmp_name'];
-
-$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
-$destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
 
 $createdBy = $_SESSION['Cedula'];
@@ -28,6 +22,12 @@ $departamento = $_POST['txtDpto2'];
 $fecha = $_POST['txtFechaCumpleMes'];
 
 
+$foto = $_FILES['btnImagenCumpleMes']['name'];
+$error = $_FILES['btnImagenCumpleMes']['error'];
+$origen = $_FILES['btnImagenCumpleMes']['tmp_name'];
+
+$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
+$destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
 switch ($error) {
 
@@ -53,9 +53,9 @@ switch ($error) {
 
     default :
 
-        copy($origen, $destino);
+        // $copy = copy($origen, $destino);
 
-        $insert = " CALL sp_RegistroCumpleañoMes(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $insert = " CALL sp_RegistroCumple( ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 
         $stmt = mysqli_prepare($conexion, $insert);
@@ -63,12 +63,12 @@ switch ($error) {
                 $idOrganizacion,
                 $idSubCategoria,
                 $cedula,
-                $destino_temp,
                 $createdBy,
                 $updateBy,
                 $nombreCompleto,
                 $departamento,
-                $fecha
+                $fecha,
+                $destino_temp
         );
 
         $stmt->execute();
@@ -79,7 +79,4 @@ echo'<script language="javascript">
     alert("Publicacion Realizada Con Exito");
     location.href="../../publicacion.php";
 </script>';
-
-
-
 ?>

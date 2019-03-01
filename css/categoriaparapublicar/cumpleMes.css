@@ -86,7 +86,10 @@ input#txtFechaCumpleMes {
     border-color: rgb(69, 69, 69);
 }
 img#imgSalidaCumpleMes{
-    position: absolute; top: 6cm; left: 2cm;
+    position: absolute;
+    top: 6cm;
+    left: 2cm;
+    border-radius: 50%;
 }
 
 

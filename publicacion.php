@@ -8,153 +8,151 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 //SI EL USUARIO NO ESTA REGISTRADO NO PODRA VISUALIZAR LA PAGINA HASTA NO ESTAR LOGEADO Y LO LLEVARA DIRECTO AL LOGIN
 if (!isset($_SESSION['Correo']))
     header("Location: login.php")
-
-?>
+    ?>
 
 
 
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Intranet Alkes Corp, S.A</title>
-    <meta name="viewport" content="width=device-width,device-height initial-scale=1.5" />
-    <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
-    <meta charset="utf-8">
+    <head>
+        <title>Intranet Alkes Corp, S.A</title>
+        <meta name="viewport" content="width=device-width,device-height initial-scale=1.5" />
+        <meta name="copyright" content="Copyright © 2018 Intranet Corporativa Rights Reserved.">
+        <meta charset="utf-8">
 
-    <!--INICIO LLAMADA DE ARCHIVOS CSS-->
-    <link rel="stylesheet" type="text/css" href="css/structura/estructura.css">
-    <link rel="stylesheet" type="text/css" href="css/structura/tablaMenuVertical.css">
-    <link rel="stylesheet" type="text/css" href="css/structura/bandeja.css">
+        <!--INICIO LLAMADA DE ARCHIVOS CSS-->
+        <link rel="stylesheet" type="text/css" href="css/structura/estructura.css">
+        <link rel="stylesheet" type="text/css" href="css/structura/tablaMenuVertical.css">
+        <link rel="stylesheet" type="text/css" href="css/structura/bandeja.css">
 
-    <link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="icon" type="image/png" href="favicon.png" />
 
-    <link rel="stylesheet" type="text/css" href="css/cargo/opcionCargo.css">
-    <link rel="stylesheet" type="text/css" href="css/categoria/opcionCategoria.css">
-    <link rel="stylesheet" type="text/css" href="css/departamento/opcionDepartamento.css">
-    <link rel="stylesheet" type="text/css" href="css/organizacion/opcionOrganizacion.css">
-    <link rel="stylesheet" type="text/css" href="css/publicacion/opcionPublicacion.css">
-    <link rel="stylesheet" type="text/css" href="css/rol/opcionRol.css">
-    <link rel="stylesheet" type="text/css" href="css/subcategoria/opcionSubcategoria.css">
-    <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
-    <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
-    <!--FIN DE LLAMADA ARCHIVOS CSS-->
+        <link rel="stylesheet" type="text/css" href="css/cargo/opcionCargo.css">
+        <link rel="stylesheet" type="text/css" href="css/categoria/opcionCategoria.css">
+        <link rel="stylesheet" type="text/css" href="css/departamento/opcionDepartamento.css">
+        <link rel="stylesheet" type="text/css" href="css/organizacion/opcionOrganizacion.css">
+        <link rel="stylesheet" type="text/css" href="css/publicacion/opcionPublicacion.css">
+        <link rel="stylesheet" type="text/css" href="css/rol/opcionRol.css">
+        <link rel="stylesheet" type="text/css" href="css/subcategoria/opcionSubcategoria.css">
+        <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/categoriasParaPublicar.css">
+        <!--FIN DE LLAMADA ARCHIVOS CSS-->
 
-    <!--INICIO LLAMADA ARCHIVOS JS-->
-    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="js/selectdependientes.js"></script>
-    <script type="text/javascript" src="js/efectoBandeja.js"></script>
-    <script type="text/javascript" src="js/setInterval.js"></script>
-    <script type="text/javascript" src="js/list.js"></script>
-    <script type="text/javascript" src="js/previsualizarImagen.js"></script>
+        <!--INICIO LLAMADA ARCHIVOS JS-->
+        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="js/selectdependientes.js"></script>
+        <script type="text/javascript" src="js/efectoBandeja.js"></script>
+        <script type="text/javascript" src="js/setInterval.js"></script>
+        <script type="text/javascript" src="js/list.js"></script>
+        <script type="text/javascript" src="js/previsualizarImagen.js"></script>
 
-    <script type="text/javascript" src="js/lib/vue.js"></script>
-    <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>
-    <!--FIN LLAMADA ARCHIVOS JS-->
+        <script type="text/javascript" src="js/lib/vue.js"></script>
+        <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>
+        <!--FIN LLAMADA ARCHIVOS JS-->
 
-</head>
-
-
-
-<body>
-
-    <!--INICIO CONTENEDOR CABECERA-->
-
-    <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/topAdmin.php'; ?>
-
-    <!--FIN DEL CONTENEDOR CABECERA-->
+    </head>
 
 
 
-    <!--INICIO CONTENEDOR MENU-->
+    <body>
 
-    <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdmin.php'; ?>
+        <!--INICIO CONTENEDOR CABECERA-->
 
-    <!--FIN CONTENEDOR MENU-->
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/topAdmin.php'; ?>
 
-
-
-    <!--INICIO CONTENEDOR CONTENIDOS-->
-
-    <div class="contenedorContenidos">
+        <!--FIN DEL CONTENEDOR CABECERA-->
 
 
-        <div id='contenedor_tabla_publicacion'>
 
-            <script type="text/javascript" src="js/subCategoriaParaRegistrar.js"></script>
-            <script type="text/javascript" src="js/subCategoriaParaEditar.js"></script>
-            <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-            <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+        <!--INICIO CONTENEDOR MENU-->
 
-            <table id="tabla_publicacion" border="1">
-                <thead>
-                    <tr id="titulo_columnas">
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/intranet/menuAdmin.php'; ?>
 
-                        <td width="50" height="50" colspan="4">
+        <!--FIN CONTENEDOR MENU-->
 
-                            <h1>Publicación</h1>
 
-                        </td>
-                        <td colspan="10">
-                            <form method="POST" action=''>
-                                <input type="text" name="txtbuscar" id="txtBuscarPublicacion" placeholder="Buscar Por Título" maxlength="40">
-                                <button type="submit" name="btnBuscarPublicacion" id="btnBuscarPublicacion" title="Buscar una Publicación">Buscar</button>
-                            </form>
-                        </td>
-                    </tr>
-                    <tr id="titulo_columnas">
-                        <td width="600px">
-                            <h5>Código</h5>
-                        </td>
-                        <td width="800px">
-                            <h5>Título</h5>
-                        </td>
 
-                        <td width="800px">
-                            <h5>Categoría</h5>
-                        </td>
+        <!--INICIO CONTENEDOR CONTENIDOS-->
 
-                        <td width="800px">
-                            <h5>Subcategoría</h5>
-                        </td>
+        <div class="contenedorContenidos">
 
-                        <td width="800px">
-                            <h5>Estatus</h5>
-                        </td>
 
-                        <td width="800px">
-                            <h5>Observaciones</h5>
-                        </td>
-                        <td width="800px">
-                            <h5>Creada Por</h5>
-                        </td>
-                        <td width="800px">
-                            <h5>Fecha Creación</h5>
-                        </td>
-                        <td width="800px">
-                            <h5>Actualizada Por</h5>
-                        </td>
-                        <td width="800px">
-                            <h5>Fecha Actualización</h5>
-                        </td>
-                        <td width="800px">
-                            <h5>Publicada Por</h5>
-                        </td>
-                        <td width="800px">
-                            <h5>Fecha Publicación</h5>
-                        </td>
-                        <td width="300px">
-                            <h5>Edición</h5>
-                        </td>
-                        <td width="300px">
-                            <h5>Acción</h5>
-                        </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
+            <div id='contenedor_tabla_publicacion'>
 
+                <script type="text/javascript" src="js/subCategoriaParaRegistrar.js"></script>
+                <script type="text/javascript" src="js/subCategoriaParaEditar.js"></script>
+                <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+                <script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+
+                <table id="tabla_publicacion" border="1">
+                    <thead>
+                        <tr id="titulo_columnas">
+
+                            <td width="50" height="50" colspan="4">
+
+                                <h1>Publicación</h1>
+
+                            </td>
+                            <td colspan="10">
+                                <form method="POST" action=''>
+                                    <input type="text" name="txtbuscar" id="txtBuscarPublicacion" placeholder="Buscar Por Título" maxlength="40">
+                                    <button type="submit" name="btnBuscarPublicacion" id="btnBuscarPublicacion" title="Buscar una Publicación">Buscar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr id="titulo_columnas">
+                            <td width="600px">
+                                <h5>Código</h5>
+                            </td>
+                            <td width="800px">
+                                <h5>Título</h5>
+                            </td>
+
+                            <td width="800px">
+                                <h5>Categoría</h5>
+                            </td>
+
+                            <td width="800px">
+                                <h5>Subcategoría</h5>
+                            </td>
+
+                            <td width="800px">
+                                <h5>Estatus</h5>
+                            </td>
+
+                            <td width="800px">
+                                <h5>Observaciones</h5>
+                            </td>
+                            <td width="800px">
+                                <h5>Creada Por</h5>
+                            </td>
+                            <td width="800px">
+                                <h5>Fecha Creación</h5>
+                            </td>
+                            <td width="800px">
+                                <h5>Actualizada Por</h5>
+                            </td>
+                            <td width="800px">
+                                <h5>Fecha Actualización</h5>
+                            </td>
+                            <td width="800px">
+                                <h5>Publicada Por</h5>
+                            </td>
+                            <td width="800px">
+                                <h5>Fecha Publicación</h5>
+                            </td>
+                            <td width="300px">
+                                <h5>Edición</h5>
+                            </td>
+                            <td width="300px">
+                                <h5>Acción</h5>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
                         include_once $_SERVER['DOCUMENT_ROOT'] . '/intranet/conexion/conexion.php';
                         $conexion = conectar();
 
@@ -419,21 +417,21 @@ if (!isset($_SESSION['Correo']))
 
                         while ($mostrarPublicacion = mysqli_fetch_array($consultaPublicacion, MYSQLI_ASSOC)) {
                             ?>
-                    <tr id="datos_usuario">
-                        <td>
-                            <h5>
-                                <?php echo $mostrarPublicacion['ID_Publicacion']; ?>
-                            </h5>
-                        </td>
+                            <tr id="datos_usuario">
+                                <td>
+                                    <h5>
+                                        <?php echo $mostrarPublicacion['ID_Publicacion']; ?>
+                                    </h5>
+                                </td>
 
-                        <td>
-                            <h5>
-                                <?php echo $mostrarPublicacion['titulo']; ?>
-                            </h5>
-                        </td>
-                        <td>
-                            <h5>
-                                <?php
+                                <td>
+                                    <h5>
+                                        <?php echo $mostrarPublicacion['titulo']; ?>
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5>
+                                        <?php
                                         $sql = " SELECT ( SELECT Nombre
                                                           FROM categoria
                                                           WHERE ID_Categoria=s.ID_Categoria) as Nombre,
@@ -447,11 +445,11 @@ if (!isset($_SESSION['Correo']))
                                         echo $row['Nombre'];
                                         $_SESSION['ID_Categoria'] = $row['ID_Categoria'];
                                         ?>
-                            </h5>
-                        </td>
-                        <td>
-                            <h5>
-                                <?php
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5>
+                                        <?php
                                         $sql = " SELECT Nombre
                                                  FROM subcategoria
                                                  WHERE ID_Subcategoria='$mostrarPublicacion[ID_Subcategoria]'";
@@ -459,11 +457,11 @@ if (!isset($_SESSION['Correo']))
                                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                                         echo $row['Nombre'];
                                         ?>
-                            </h5>
-                        </td>
-                        <td>
-                            <h5>
-                                <?php
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5>
+                                        <?php
                                         switch ($mostrarPublicacion['Estado']) {
                                             case EstadoPublicacion::RECHAZADO_A:
                                                 echo 'RECHAZADA POR AUTORIZADOR';
@@ -485,16 +483,16 @@ if (!isset($_SESSION['Correo']))
                                                 break;
                                         }
                                         ?>
-                            </h5>
-                        </td>
-                        <td>
-                            <h5>
-                                <?php echo $mostrarPublicacion['motivo']; ?>
-                            </h5>
-                        </td>
-                        <td>
-                            <h5>
-                                <?php
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5>
+                                        <?php echo $mostrarPublicacion['motivo']; ?>
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5>
+                                        <?php
                                         $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
                                                      FROM   usuario
                                                      WHERE  Cedula='$mostrarPublicacion[CreatedBy]' ";
@@ -502,17 +500,17 @@ if (!isset($_SESSION['Correo']))
                                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                                         echo $row['Nombre'];
                                         ?>
-                            </h5>
-                        </td>
+                                    </h5>
+                                </td>
 
-                        <td>
-                            <h5>
-                                <?php echo $mostrarPublicacion['Created']; ?>
-                            </h5>
-                        </td>
-                        <td>
-                            <h5>
-                                <?php
+                                <td>
+                                    <h5>
+                                        <?php echo $mostrarPublicacion['Created']; ?>
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5>
+                                        <?php
                                         $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
                                                      FROM   usuario
                                                      WHERE  Cedula='$mostrarPublicacion[UpdatedBy]' ";
@@ -520,16 +518,16 @@ if (!isset($_SESSION['Correo']))
                                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                                         echo $row['Nombre'];
                                         ?>
-                            </h5>
-                        </td>
-                        <td>
-                            <h5>
-                                <?php echo $mostrarPublicacion['Updated']; ?>
-                            </h5>
-                        </td>
-                        <td>
-                            <h5>
-                                <?php
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5>
+                                        <?php echo $mostrarPublicacion['Updated']; ?>
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5>
+                                        <?php
                                         $sql = " SELECT CONCAT(PNombre,' ', PApellido) as Nombre
                                                      FROM   usuario
                                                      WHERE  Cedula='$mostrarPublicacion[PublicatedBy]' ";
@@ -537,174 +535,179 @@ if (!isset($_SESSION['Correo']))
                                         $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
                                         echo $row['Nombre'];
                                         ?>
-                            </h5>
-                        </td>
-                        <td>
-                            <h5>
-                                <?php echo $mostrarPublicacion['F_Publicacion']; ?>
-                            </h5>
-                        </td>
-                        <td>
-                            <?php
-                                    /*
-                                    switch ($_SESSION['ID_Rol']) {
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5>
+                                        <?php echo $mostrarPublicacion['F_Publicacion']; ?>
+                                    </h5>
+                                </td>
+                                <td>
 
-                                        case TypeUsuario::ADMINISTRADOR:
+                                    <?php
+                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
+                                    /* No toque este comentario o se arrepentira */
+                                    /* switch ($_SESSION['ID_Rol']) {
 
-                                            switch ($mostrarPublicacion['Estado']) {
-                                                case EstadoPublicacion::RECHAZADO_A:
-                                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                                                         <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-                                                                     </a>";
+                                      case TypeUsuario::ADMINISTRADOR:
 
-                                                    break;
-                                                case EstadoPublicacion::RECHAZADO_E:
-                                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                                                         <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-                                                                     </a>";
+                                      switch ($mostrarPublicacion['Estado']) {
+                                      case EstadoPublicacion::RECHAZADO_A:
+                                      echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
 
-                                                    break;
-                                                case EstadoPublicacion::REVISION_E:
-                                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                                                         <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-                                                                     </a>";
+                                      break;
+                                      case EstadoPublicacion::RECHAZADO_E:
+                                      echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
 
-                                                    break;
-                                                case EstadoPublicacion::REVISION_A:
-                                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                                                         <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-                                                                     </a>";
+                                      break;
+                                      case EstadoPublicacion::REVISION_E:
+                                      echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
 
-                                                    break;
-                                                case EstadoPublicacion::PUBLICADA:
-                                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                                                         <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-                                                                     </a>";
-                                                    break;
-                                                default:// EstadoPublicacion::BORR:;
-                                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                                                         <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-                                                                     </a>";
-                                                    break;
-                                            } //FIN SWITCH
-                                            break;
-                                        case TypeUsuario::AUTORIZADOR:
+                                      break;
+                                      case EstadoPublicacion::REVISION_A:
+                                      echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
 
-                                            switch ($mostrarPublicacion['Estado']) {
-                                                case EstadoPublicacion::RECHAZADO_A:
+                                      break;
+                                      case EstadoPublicacion::PUBLICADA:
+                                      echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
+                                      break;
+                                      default:// EstadoPublicacion::BORR:;
+                                      echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
+                                      break;
+                                      } //FIN SWITCH
+                                      break;
+                                      case TypeUsuario::AUTORIZADOR:
 
-                                                    break;
-                                                case EstadoPublicacion::RECHAZADO_E:
+                                      switch ($mostrarPublicacion['Estado']) {
+                                      case EstadoPublicacion::RECHAZADO_A:
 
-                                                    break;
-                                                case EstadoPublicacion::REVISION_E:
+                                      break;
+                                      case EstadoPublicacion::RECHAZADO_E:
 
-                                                    break;
-                                                case EstadoPublicacion::REVISION_A:
-                                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                                                             <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-                                                                           </a>";
-                                                    break;
-                                                case EstadoPublicacion::PUBLICADA:
+                                      break;
+                                      case EstadoPublicacion::REVISION_E:
 
-                                                    break;
-                                                default:
+                                      break;
+                                      case EstadoPublicacion::REVISION_A:
+                                      echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
+                                      break;
+                                      case EstadoPublicacion::PUBLICADA:
 
-                                                    break;
-                                            } //FIN SWITCH
-                                            break;
-                                        case TypeUsuario::EDITOR:
+                                      break;
+                                      default:
 
-                                            switch ($mostrarPublicacion['Estado']) {
-                                                case EstadoPublicacion::RECHAZADO_A:
-                                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                                                             <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-                                                                           </a>";
-                                                    break;
-                                                case EstadoPublicacion::RECHAZADO_E:
+                                      break;
+                                      } //FIN SWITCH
+                                      break;
+                                      case TypeUsuario::EDITOR:
 
-                                                    break;
-                                                case EstadoPublicacion::REVISION_E:
-                                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                                                             <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-                                                                           </a>";
-                                                    break;
-                                                case EstadoPublicacion::REVISION_A:
+                                      switch ($mostrarPublicacion['Estado']) {
+                                      case EstadoPublicacion::RECHAZADO_A:
+                                      echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
+                                      break;
+                                      case EstadoPublicacion::RECHAZADO_E:
 
-                                                    break;
-                                                case EstadoPublicacion::PUBLICADA:
-                                                    break;
-                                                default:
+                                      break;
+                                      case EstadoPublicacion::REVISION_E:
+                                      echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
+                                      break;
+                                      case EstadoPublicacion::REVISION_A:
 
-                                                    break;
-                                            } //FIN SWITCH  EDITOR
-                                            break;
-                                        case TypeUsuario::PUBLICADOR:
+                                      break;
+                                      case EstadoPublicacion::PUBLICADA:
+                                      break;
+                                      default:
 
-                                            switch ($mostrarPublicacion['Estado']) {
-                                                case EstadoPublicacion::RECHAZADO_A:
+                                      break;
+                                      } //FIN SWITCH  EDITOR
+                                      break;
+                                      case TypeUsuario::PUBLICADOR:
 
-                                                    break;
-                                                case EstadoPublicacion::RECHAZADO_E:
-                                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                                                               <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-                                                                            </a>";
-                                                    break;
-                                                case EstadoPublicacion::REVISION_E:
-                                                    break;
-                                                case EstadoPublicacion::REVISION_A:
+                                      switch ($mostrarPublicacion['Estado']) {
+                                      case EstadoPublicacion::RECHAZADO_A:
 
-                                                    // echo "REVISION_P";
-                                                    break;
-                                                case EstadoPublicacion::PUBLICADA:
-                                                    //echo"<a id='btnDesactivado'    name='btnDesactivado'  href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E' title='Enviar a Editor'>Enviar a Editor</a>";
-                                                    break;
-                                                default:
-                                                    echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                                                               <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
-                                                                            </a>";
-                                                    break;
-                                            } //FIN SWITCH PUBLICADOR
-                                            break;
-                                        default: //PUBLICADOR
-                                            echo ' <h5></h5>';
-                                            break;
-                                    }//FIN DE SWITCH PRINCIPAL ROL*/
+                                      break;
+                                      case EstadoPublicacion::RECHAZADO_E:
+                                      echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
+                                      break;
+                                      case EstadoPublicacion::REVISION_E:
+                                      break;
+                                      case EstadoPublicacion::REVISION_A:
+
+                                      // echo "REVISION_P";
+                                      break;
+                                      case EstadoPublicacion::PUBLICADA:
+                                      //echo"<a id='btnDesactivado'    name='btnDesactivado'  href='php/actualizarEstadoPublicacion.php?codigo=$mostrarPublicacion[ID_Publicacion]&estado=REVISION_E' title='Enviar a Editor'>Enviar a Editor</a>";
+                                      break;
+                                      default:
+                                      echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
+                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      </a>";
+                                      break;
+                                      } //FIN SWITCH PUBLICADOR
+                                      break;
+                                      default: //PUBLICADOR
+                                      echo ' <h5></h5>';
+                                      break;
+                                      } */
+                                    //FIN DE SWITCH PRINCIPAL ROL
                                     ?>
 
-                            <div id='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>' class='contenedor_formulario'>
+                                    <div id='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>' class='contenedor_formulario'>
 
-                                <div id='formulario'>
+                                        <div id='formulario'>
 
-                                    <a href='#' class='cerrar'>X</a>
+                                            <a href='#' class='cerrar'>X</a>
 
-                                    <div class='contenedor_formulario_publicacion'>
+                                            <div class='contenedor_formulario_publicacion'>
 
-                                        <form method='POST' enctype='multipart/form-data' action='php/actualizarPublicacion.php'>
+                                                <form method='POST' enctype='multipart/form-data' action='php/actualizarPublicacion.php'>
 
-                                            <table id='tabla_formulario_publicacion' border='0' cellpadding='7'>
-                                                <tr id='titulo_columna_formulario'>
-                                                    <td colspan='2'>
-                                                        <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h5></h5>
-                                                        <input type='hidden' class='caja_formulario_usuario' readonly="readonly" name='txtCodigoP' maxlength='3' value='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>'>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h5 id='label_cajas_texto'>Título</h5>
-                                                        <input type='text' class='caja_formulario_usuario' id='txtTituloP' required name='txtTituloP' maxlength='100' value='<?php echo $mostrarPublicacion['titulo']; ?>'>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h5 id="label_cajas_texto">Categoría: </h5>
+                                                    <table id='tabla_formulario_publicacion' border='0' cellpadding='7'>
+                                                        <tr id='titulo_columna_formulario'>
+                                                            <td colspan='2'>
+                                                                <h1 id='titulo_registro_usuario'>Actualizar Datos</h1>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h5></h5>
+                                                                <input type='hidden' class='caja_formulario_usuario' readonly="readonly" name='txtCodigoP' maxlength='3' value='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>'>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h5 id='label_cajas_texto'>Título</h5>
+                                                                <input type='text' class='caja_formulario_usuario' id='txtTituloP' required name='txtTituloP' maxlength='100' value='<?php echo $mostrarPublicacion['titulo']; ?>'>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h5 id="label_cajas_texto">Categoría: </h5>
 
-                                                        <?php
+                                                                <?php
                                                                 echo "
                                                                 <select name='txtCodigoCat' class='combos_formulario_usuario' id='txtCodigoCat' required >
                                                                 <option> Categoría </option>";
@@ -724,12 +727,12 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                                 ?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h5 id="label_cajas_texto">SubCategoría: </h5>
-                                                        <?php
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h5 id="label_cajas_texto">SubCategoría: </h5>
+                                                                <?php
                                                                 echo "
                                                                     <select name='txtCodigoSubC' class='combos_formulario_usuario' id='txtCodigoSubC' required>
                                                                     <option> SubCategoría </option>";
@@ -747,19 +750,17 @@ if (!isset($_SESSION['Correo']))
 
                                                                 echo "</select>";
                                                                 ?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td id="color_fondo_cajas">
-                                                        <h5 id="label_cajas_texto">Seleccionar Imagen</h5>
-                                                        <input type="file" name="btnImagen" id="btnImage">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="color_fondo_cajas">
+                                                                <h5 id="label_cajas_texto">Seleccionar Imagen</h5>
+                                                                <input type="file" name="btnImagen" id="btnImage">
 
-                                                        <h5><img src="<?php echo $mostrarPublicacion['foto']; ?>" id="imagen" width='100' height='100'></h5>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <?php
+                                                                <h5><img src="<?php echo $mostrarPublicacion['foto']; ?>" id="imagen" width='100' height='100'></h5>
+                                                            </td>                                                        <tr>
+                                                            <td>
+                                                                <?php
                                                                 switch ($_SESSION['ID_Rol']) {
                                                                     case TypeUsuario::ADMINISTRADOR:
                                                                         /* INGRESAR EL USUARIO COMO ADMINISTRADOR */
@@ -799,34 +800,34 @@ if (!isset($_SESSION['Correo']))
                                                                         break;
                                                                 }
                                                                 ?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h5 id="label_cajas_texto">Contenido</h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <h5 id="label_cajas_texto">Contenido</h5>
 
-                                                        <textarea name="contenido2" id="contenido2" rows="10" cols="80" required>
+                                                                <textarea name="contenido2" id="contenido2" rows="10" cols="80" required>
                                                                     <?php echo $mostrarPublicacion['contenido']; ?>
                                                                 </textarea>
-                                                        <script>
-                                                            CKEDITOR.replace('contenido2');
+                                                                <script>
+                                                                    CKEDITOR.replace('contenido2');
                                                                 </script>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan='2'>
-                                                        <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </form>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan='2'>
+                                                                <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </td>
+                                </td>
 
-                        <td width="70px;">
-                            <?php
+                                <td width="70px;">
+                                    <?php
                                     switch ($_SESSION['ID_Rol']) {
 
                                         case TypeUsuario::ADMINISTRADOR:
@@ -1018,28 +1019,27 @@ if (!isset($_SESSION['Correo']))
                                             break;
                                     }//FIN DE SWITCH PRINCIPAL ROL
                                     ?>
-                        </td>
+                                </td>
 
-                    </tr>
+                            </tr>
+                            <?php
+                            ?>
+                            <!--FIN DEL WHILE-->
+                        </tbody>
+                    </table>
                     <?php
-                        }
-                        ?>
-                    <!--FIN DEL WHILE-->
-                </tbody>
-            </table>
-            <?php
-                if (isset($mensajeError)) {
-                    echo $mensajeError;
-                }
-                ?>
+                    if (isset($mensajeError)) {
+                        echo $mensajeError;
+                    }
+                    ?>
+
+            </div>
+
 
         </div>
+        <!--FIN DEL CONTENEDOR CONTENIDOS-->
 
 
-    </div>
-    <!--FIN DEL CONTENEDOR CONTENIDOS-->
-
-
-</body>
+    </body>
 
 </html>

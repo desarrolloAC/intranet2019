@@ -45,12 +45,20 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
             <label id="tituloCaracteresNacimiento">Caracteres Restantes</label>
 
-            <input id="btnImagenNacimiento" type="file" name="btnImagenNacimiento" required>
+
+            <input id="btnImagenNacimiento" type="file" name="btnImagenNacimiento" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
+                        remove();
+                        alert('el fichero supera los 300 KB ')
+                    }" required>
+
+
+            <img id="imgSalidaNacimiento" width="30%" height="25%" src="" />
+
 
             <input id="btnRegistrarNacimiento" type="submit" name="btnRegistrarNacimiento" value="Registrar">
 
-            
-             <?php
+
+            <?php
             $sql = " SELECT * FROM organizacion o WHERE o.Estatus = 'A' AND o.ID_Organizacion = '" . $_SESSION['ID_Organizacion'] . "';";
             $rs = mysqli_query($conexion, $sql) or die(mysqli_error($conexion));
             $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);

@@ -1,4 +1,4 @@
-.contenedorContenido {
+contenedorContenido {
     position: relative;
     top: 3cm;
     width: 100%;
@@ -146,7 +146,9 @@
     }
 
     .org {
-        position: absolute; top: 2.9cm; left: 7.5cm;
+        position: absolute;
+        top: 2.9cm;
+        left: 7.5cm;
         font-size: 15px;
         color: var(--blanco);
     }

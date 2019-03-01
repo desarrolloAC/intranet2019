@@ -127,10 +127,8 @@ if (!isset($_SESSION['Correo'])) {
                             <div id="flip2">Talento Humano</div>
                             <div id="panel2">
                                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
-                                <a id="botones" href="#formularioNuevoIngresoAscenso">Nuevo Ingreso</a>
+                                <a id="botones" href="#formularioNuevoIngresoAscenso">Nuevo Ingreso / Ascenso</a>
                                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/nuevoIngresoAscenso.php'; ?>
-                                <a id="botones" href="#formularioNuevoAscenso">Ascenso</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/nuevoAscenso.php'; ?>
                                 <a id="botones" href="#formularioLogro">Logro Extracurricular</a>
                                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/logro.php'; ?>
                                 <a id="botones" href="#formularioPostulate">Postulate</a>

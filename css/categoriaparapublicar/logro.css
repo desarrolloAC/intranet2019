@@ -127,15 +127,23 @@ label#tituloCaracteresLogro {
 
 input#btnImagenLogro {
     position: absolute;
-    top: 9cm;
+    top: 10.5cm;
     left: 9.1cm;
     margin-top: 1cm;
     color: transparent;
-}
 
+}
+img#imgSalidaImagenLogro{
+    position: absolute;
+    top: 7cm;
+    left: 8.5cm;
+    width: 3.7cm;
+    height: 4.5cm;
+    border-radius: 50%;
+}
 input#btnImagen1Logro {
     position: absolute;
-    top: 12cm;
+    top: 8cm;
     left: 9.1cm;
     margin-top: 1cm;
     color: transparent;

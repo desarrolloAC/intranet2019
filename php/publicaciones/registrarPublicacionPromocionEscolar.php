@@ -49,6 +49,7 @@ switch ($error) {
 
         copy($origen, $destino);
 
+
         $insert = " CALL sp_Registropromoescolar(?, ?, ?, ?, ?, ?, ?, ?);";
 
         $stmt = mysqli_prepare($conexion, $insert);
@@ -64,10 +65,7 @@ switch ($error) {
         );
 
         $stmt->execute() or die(mysqli_error($conexion));
-}
-
-
-echo'<script language="javascript">
+}echo'<script language="javascript">
     alert("Publicacion Realizada Con Exito");
     location.href="../../publicacion.php";
 </script>';

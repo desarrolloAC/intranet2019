@@ -16,7 +16,7 @@
 .logoNuevoIngreso {
     position: relative;
     top: 30px;
-    left: 240px;
+    left: 230px;
 }
 .contenedorFormulario:target {
     opacity: 1;
@@ -117,11 +117,28 @@ label#tituloCaracteresNuevoAscenso{
 
 input#btnImagenNuevoAscenso {
     position: absolute;
-    top: 6.5cm;
-    left: 5cm;
+    top: 9.2cm;
+    left: 7cm;
     color: transparent;
 }
 
+img#imgSalidaNuevoAscenso {
+    position: absolute;
+    top: 4.5cm;
+    left: 7cm;
+    width: 3.7cm;
+    height: 4.5cm;
+    border-radius: 50%;
+}
+img#imgSalidaAscenso{
+    position: absolute;
+    top: 4.5cm;
+    left: 7cm;
+    width: 3.7cm;
+    height: 4.5cm;
+    border-radius: 50%;
+
+}
 /*BOTON REGISTAR*/
 input#btnRegistrarNuevoAscenso {
     position: absolute;

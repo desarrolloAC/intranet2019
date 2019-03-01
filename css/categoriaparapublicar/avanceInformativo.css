@@ -17,10 +17,11 @@
 
 .contenedorFormulario > div#formularioAvanceInformativo{
     z-index: 1001;
-    width: 12cm;
-    height: 16.8cm;
+    width: 10cm;
+    height: 15.8cm;
     position: relative; top: 1cm;
     margin: 0% auto;
+    top: 0cm;
     padding: 5px 20px 13px 20px;
     border-radius: 10px;
     background: rgb(255,255,255);
@@ -79,72 +80,88 @@ input#txtTituloAvanceInformativo{
 textarea#txtContenidoAvanceInformativo{
     position: absolute; top: 5.4cm; left: 0cm;
     max-width: 7.2cm;
-    max-height: 9.5cm;
+    max-height: 8.5cm;
     min-width: 7.2cm;
-    min-height: 9.5cm;
+    min-height: 8.5cm;
     width: 7.2cm;
-    height: 9.5cm;
+    height: 8.5cm;
     font-size: 14px;
     border-color: rgb(69,69,69);
 }
 
 input#ncaracteresAvanceInformativo{
     position: absolute;
-    top: 15.2cm;
-    left: 2.5cm;
+    top: 14.2cm;
+    left: 1cm;
     border:none;
     background-color: transparent;
     font-weight: bold;
 }
 
 label#tituloCaracteresAvanceInformativo{
-    position: absolute; top: 15.2cm; left: 3.5cm;
+    position: absolute; top: 14.2cm; left: 2cm;
     font-weight: bold;
 }
 
 input#btnImagenAvanceInformativo{
-    position: absolute; top: -0.3cm; left: 9.1cm;
+    position: absolute;
+    width: 2.6cm;
+    top: -0.3cm;
+    left: 8.1cm;
     margin-top: 1cm;
     color: transparent;
 }
 
 img#imgSalida{
-    position: absolute; top: 0cm; left: 9.1cm;
+    position: absolute; top: 1.4cm; left: 8.1cm;
+    width: 2.6cm;
 }
 
 input#btnImagenAvanceInformativo1{
-    position: absolute; top: 3.8cm; left: 9.1cm;
+    position: absolute;
+    width: 2.6cm;
+    top: 3.4cm;
+    left: 8.1cm;
     margin-top: 1cm;
     color: transparent;
 }
 
 img#imgSalida1{
-    position: absolute; top: 5.4cm; left: 9.1cm;
+    position: absolute; top: 4.9cm; left: 8.1cm;
+    width: 2.6cm;
 }
 
 input#btnImagenAvanceInformativo2{
-    position: absolute; top: 7.9cm; left: 9.1cm;
+    position: absolute;
+    width: 2.6cm;
+    top: 7cm;
+    left: 8.1cm;
     margin-top: 1cm;
     color: transparent;
 }
 
 img#imgSalida2{
-    position: absolute; top: 9.5cm; left: 9.1cm;
+    position: absolute; top: 8.7cm; left: 8.1cm;
+    width: 2.6cm;
 }
 
 input#btnImagenAvanceInformativo3{
-    position: absolute; top: 11.9cm; left: 9.1cm;
+    position: absolute;
+    width: 2.6cm;
+    top: 11.1cm;
+    left: 8.1cm;
     margin-top: 1cm;
     color: transparent;
 }
 
 img#imgSalida3{
-    position: absolute; top: 13.5cm; left: 9.1cm;
+    position: absolute; top: 12.7cm; left: 8.1cm;
+    width: 2.6cm;
 }
 
 /*BOTON REGISTAR*/
 input#btnRegistrarAvanceInformativo{
-    position: absolute; width: 50%; height: 20px; left: 0.8cm; top: 16cm;
+    position: absolute; width: 50%; height: 20px; left: 0.8cm; top: 15cm;
     background: rgb(241,129,3);/*NARANJA*/
     color: rgb(255,255,255);
     font-weight: bold;

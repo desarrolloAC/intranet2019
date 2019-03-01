@@ -11,8 +11,6 @@ $idOrganizacion = $_SESSION['ID_Organizacion'];
 $idSubCategoria = $_POST['txtCodigoSubCategoriaCumpleMes'];
 $cedula = $_SESSION['Cedula'];
 
-
-
 $createdBy = $_SESSION['Cedula'];
 $updateBy = $_SESSION['Cedula'];
 
@@ -53,7 +51,7 @@ switch ($error) {
 
     default :
 
-        // $copy = copy($origen, $destino);
+        copy($origen, $destino);
 
         $insert = " CALL sp_RegistroCumple( ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 

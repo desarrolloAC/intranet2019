@@ -3,7 +3,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/conexion/conexion.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 ?>
 
-<link rel="stylesheet" type="text/css" href="nuevoAscenso.css">
+<link rel="stylesheet" type="text/css" href="nuevoIngresoAscenso.css">
 
 <script>
 
@@ -76,7 +76,9 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
 
 
-            <input id="btnImagenNuevoAscenso" type="file" name="btnImagenNuevoAscenso" required>
+            <input id="btnImagenNuevoAscenso" type="file" name="btnImagenNuevoAscenso" required >
+            <img id="imgSalidaAscenso" width="30%" height="25%" src="" />
+
 
             <?php
             $sql = " SELECT * FROM organizacion o WHERE o.Estatus = 'A' AND o.ID_Organizacion = '" . $_SESSION['ID_Organizacion'] . "';";

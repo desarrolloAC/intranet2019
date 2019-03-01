@@ -108,12 +108,18 @@ label#tituloCaracteresNacimiento {
 
 input#btnImagenNacimiento {
     position: absolute;
-    top: 7cm;
+    top: 10cm;
     left: 2.3cm;
     margin-top: 1cm;
     color: transparent;
 }
 
+img#imgSalidaNacimiento{
+    position: absolute; top: 6.3cm; left: 2.10cm;
+    width: 3.7cm;
+    height: 4.5cm;
+    border-radius: 50%;
+}
 /*BOTON REGISTAR*/
 input#btnRegistrarNacimiento {
     position: absolute;

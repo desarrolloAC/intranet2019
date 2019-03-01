@@ -237,3 +237,117 @@ $(window).load(function () {
         }
     });
 });
+
+
+/**
+ * Nacimientos
+ */
+$(window).load(function () {
+
+    $(function () {
+        $('#btnImagenNacimiento').change(function (e) {
+            addImage(e);
+        });
+
+        function addImage(e) {
+            var file = e.target.files[0],
+                    imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        }
+
+        function fileOnload(e) {
+            var result = e.target.result;
+            $('#imgSalidaNacimiento').attr("src", result);
+        }
+    });
+});
+/**
+ * Logros extracurriculares
+ */
+$(window).load(function () {
+
+    $(function () {
+        $('#btnImagenLogro').change(function (e) {
+            addImage(e);
+        });
+
+        function addImage(e) {
+            var file = e.target.files[0],
+                    imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        }
+
+        function fileOnload(e) {
+            var result = e.target.result;
+            $('#imgSalidaImagenLogro').attr("src", result);
+        }
+    });
+});
+/**
+ * Ascensos
+ */
+$(window).load(function () {
+
+    $(function () {
+        $('#btnImagenNuevoAscenso').change(function (e) {
+            addImage(e);
+        });
+
+        function addImage(e) {
+            var file = e.target.files[0],
+                    imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        }
+
+        function fileOnload(e) {
+            var result = e.target.result;
+            $('#imgSalidaAscenso').attr("src", result);
+        }
+    });
+});
+/**
+ * Promocion Escolar
+ */
+$(window).load(function () {
+
+    $(function () {
+        $('#btnImagenPromocionEscolar').change(function (e) {
+            addImage(e);
+        });
+
+        function addImage(e) {
+            var file = e.target.files[0],
+                    imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        }
+
+        function fileOnload(e) {
+            var result = e.target.result;
+            $('#imgSalidaPromocionEscolar').attr("src", result);
+        }
+    });
+});

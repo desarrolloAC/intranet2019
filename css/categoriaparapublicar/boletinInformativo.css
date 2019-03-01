@@ -60,7 +60,7 @@ input#txtCodigoOrganizacionBoletinInformativo {
 
 input#txtTituloBoletinInformativo {
     position: absolute; top: 2cm; left: 1cm;
-    width: 6.8cm;
+    width: 6.2cm;
     height: 0.5cm;
     font-size: 14px;
     border-color: rgb(69,69,69);
@@ -70,9 +70,9 @@ input#txtTituloBoletinInformativo {
 textarea#txtContenidoBoletinInformativo {
     position: absolute; top: 5.4cm; left: 0.5cm;
     max-width: 6.2cm;
-    max-height: 8.0cm;
+    max-height: 7.5cm;
     min-width: 7.2cm;
-    min-height: 9.5cm;
+    min-height: 8.5cm;
     width: 7.2cm;
     height: 9.5cm;
     font-size: 14px;
@@ -169,7 +169,7 @@ input#btnRegistrarBoletinInformativo:active {
     width: 10cm;
     height: 15.8cm;
     position: relative;
-    top: 1cm;
+    top: 0cm;
     margin: 0% auto;
     padding: 5px 20px 13px 20px;
     border-radius: 10px;

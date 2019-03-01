@@ -74,7 +74,7 @@ input#txtNombreCompletoPromocionEscolar {
 
 textarea#txtContenidoPromocionEscolar {
     position: absolute;
-    top: 8.3cm;
+    top: 9.3cm;
     left: 3.7cm;
     max-width: 5.7cm;
     max-height: 2.5cm;
@@ -88,7 +88,7 @@ textarea#txtContenidoPromocionEscolar {
 
 input#ncaracteresPromocionEscolar {
     position: absolute;
-    top: 11cm;
+    top: 12cm;
     left: 5cm;
     border: none;
     background-color: transparent;
@@ -97,7 +97,7 @@ input#ncaracteresPromocionEscolar {
 
 label#tituloCaracteresPromocionEscolar {
     position: absolute;
-    top: 11cm;
+    top: 12cm;
     left: 7cm;
     font-weight: bold;
     font-size: 11px;
@@ -105,10 +105,19 @@ label#tituloCaracteresPromocionEscolar {
 
 input#btnImagenPromocionEscolar {
     position: absolute;
-    top: 5.2cm;
-    left: 3.1cm;
+    top: 7.5cm;
+    left: 3.2cm;
     margin-top: 1cm;
     color: transparent;
+}
+img#imgSalidaPromocionEscolar {
+    position: absolute;
+    top: 4.3cm;
+    left: 3cm;
+    width: 3.5cm;
+    height: 4cm;
+    border-radius: 50%;
+
 }
 
 /*BOTON REGISTAR*/

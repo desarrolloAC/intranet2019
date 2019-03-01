@@ -40,6 +40,8 @@
             <label id="tituloCaracteresPromocionEscolar">Caracteres Restantes</label>
 
             <input id="btnImagenPromocionEscolar" type="file" name="btnImagenPromocionEscolar" required>
+            <img id="imgSalidaPromocionEscolar" width="30%" height="25%" src="" />
+
 
             <input id="btnRegistrarPromocionEscolar" type="submit" name="btnRegistrarPromocionEscolar" value="Registrar">
 

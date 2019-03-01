@@ -62,24 +62,24 @@ try {
 
         default :
 
-            //validar el tamano de la imagen
+//validar el tamano de la imagen
             if ($_FILES['btnImagen']['size'] > 1000000000) {
                 throw new RuntimeException('El archivo supera lo 100 Mb');
             }
 
-            //origen
+//origen
             $origen = $_FILES['btnImagen']['tmp_name'];
 
-            //destino
+//destino
             $destino_temp = 'assets/image/directorio/' . date("Y-m-d_his") . strstr($_FILES['btnImagen']['name'], '.');
             $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
-            //mover la foto
+//mover la foto
             if (!move_uploaded_file($origen, $destino)) {
-                throw new RuntimeException('No se pudo mover el archivo '.$_FILES['btnImagen']['name'].'.');
+                throw new RuntimeException('No se pudo mover el archivo ' . $_FILES['btnImagen']['name'] . '.');
             }
 
-            //registrar
+//registrar
             if (isset($pass)) {
 
                 $seguridad = "INSERT INTO seguridad VALUES (NULL,'$correo',DEFAULT, SHA1('$pass'),'$pre', '$res');";
@@ -99,7 +99,6 @@ try {
                 mysqli_query($conexion, $ed) or die(mysqli_error($conexion));
                 mysqli_query($conexion, $roles) or die(mysqli_error($conexion));
                 mysqli_query($conexion, "COMMINT");
-
             } else {
 
                 $ed = "INSERT INTO usuario (Cedula, ID_Cargo, ID_Pais, ID_Estado, ID_Municipio, ID_Parroquia,
@@ -116,18 +115,13 @@ try {
                 mysqli_query($conexion, $ed) or die(mysqli_error($conexion));
                 mysqli_query($conexion, $roles) or die(mysqli_error($conexion));
                 mysqli_query($conexion, "COMMINT");
-
             }
-
     }
 
     echo'<script language="javascript">
             alert("Usuario Creado con Éxito.");
             location.href="../../usuario.php";
         </script>';
-
-
 } catch (RuntimeException $exc) {
     echo $exc->getMessage();
-
 }

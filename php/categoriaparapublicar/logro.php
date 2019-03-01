@@ -78,6 +78,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
             </select>
 
             <input id="btnImagenLogro" type="file" name="btnImagenLogro" required>
+            <img id="imgSalidaImagenLogro" width="30%" height="25%" src="" />
 
             <?php
             $sql = " SELECT * FROM organizacion o WHERE o.Estatus = 'A' AND o.ID_Organizacion = '" . $_SESSION['ID_Organizacion'] . "';";

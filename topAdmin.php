@@ -107,7 +107,7 @@
 <script type="text/javascript">
     const contenidoBandeja = new Vue({
         el: '#contenedorCabecera',
-        created: function() {
+        created: function () {
             this.getPublicaciones();
             this.getUsuarioActual();
             this.getNumeroNotificaciones();
@@ -118,21 +118,21 @@
             num: 0
         },
         methods: {
-            getPublicaciones: function() {
+            getPublicaciones: function () {
                 const contenidoBandejaUrl = 'php/notificaciones/GetNotificaciones.php';
 
                 this.$http.get(contenidoBandejaUrl).then((responsed) => {
                     this.list = responsed.body;
                 });
             },
-            getUsuarioActual: function() {
+            getUsuarioActual: function () {
                 const usuarioActualUrl = 'php/notificaciones/GetUsuarioActual.php';
 
                 this.$http.get(usuarioActualUrl).then((responsed) => {
                     this.user = responsed.body[0];
                 });
             },
-            getNumeroNotificaciones: function() {
+            getNumeroNotificaciones: function () {
                 const numeroUrl = 'php/notificaciones/GetNumeroNotificaciones.php';
 
                 this.$http.get(numeroUrl).then((responsed) => {

@@ -1,0 +1,34 @@
+{
+    "name": "luxor/collections",
+    "description": "Modulo para la gestión de colecciones y estructuras de datos en PHP. Aun en desarrollo ne se recomienda su uso.",
+    "type": "library",
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/luxorphp/collections",
+    "keywords": [
+        "luxor",
+        "data-structure"
+    ],
+    "authors": [
+        {
+            "name": "Brayan Martinez",
+            "email": "brayanmartinez827@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Luxor\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Luxor\\": "test/"
+        }
+    }
+    
+}

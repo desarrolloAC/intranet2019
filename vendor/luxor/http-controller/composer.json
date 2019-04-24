@@ -1,0 +1,36 @@
+{
+    "name": "luxor/http-controller",
+    "description": "Módulo para crear un controlador frontal que trabaje sobre http. Aun en desarrollo ne se recomienda su uso",
+    "type": "library",
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/luxor-php/http-controller",
+    "keywords": [
+        "luxor",
+        "https"
+    ],
+    "authors": [
+        {
+            "name": "Brayan Martinez",
+            "email": "brayanmartinez827@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "luxor/collections": "^0.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "luxor/mysql": "^0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Luxor\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Luxor\\": "test/"
+        }
+    }
+    
+}

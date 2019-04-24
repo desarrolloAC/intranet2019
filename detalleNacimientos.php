@@ -38,10 +38,20 @@
     <div id="contenidoAVIF" class="contenidoAVIF">
         <div class="contenidoPlantilla">
             <img class="imagen-detalle" :src="item.photo" alt="Detalle de la noticia">
-            <h1 class='titulo'>{{ item.title }}</h1>
-            <img class="imagen-nino" :src="item.image" alt="Detalle de la noticia" >
+            <h1 class='titulo'>{{ item.colaborated }}</h1>
+            <div v-if=" item.sexo === 'NINO'">
+                 <img class="imagen-nino" :src="item.image" alt="Detalle de la noticia" >
+            </div>
+            <div v-else>
+                <img class="imagen-nina" :src="item.image" alt="Detalle de la noticia" >
+            </div>
+                
+            
             <img class="logoAlkes" src="assets/image/Logos/alkescorp.png" width="100cm" height="100cm">
-            <textarea class="contenido" readonly>{{ item.content }}</textarea>
+             <!--<textarea class="contenido" readonly>{{ item.content }}</textarea>
+            LAS LLAVES NO INTERPRETAN ETIQUETAS HTML POR ESTO SE DEBE USAR EN ESTE CASO LA DIRECTIVA v-html    
+            -->
+            <div class="contenido" v-html="item.content"> </div>
         </div>
     </div>
 

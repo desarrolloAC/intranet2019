@@ -1,4 +1,8 @@
 
+/* Agregar sangría a los parrafos con la class contenido*/
+.contenido > p {
+    text-indent: 40px;
+}
 .contenedorContenido {
     position: relative;
     top: 3cm;
@@ -27,27 +31,64 @@
     background-size: 100% 100%;
     box-shadow: 5px 5px 5px 5px;
 }
-
+.image{
+    position: absolute;top: 10cm; left: 13cm;
+    width: 30%;
+    border-radius: 50%
+}
+.logo{
+    position: absolute;top: 16.5cm; left: 15.5cm;
+    width: 12%
+}
 .titulo {
-    position: absolute; top: 6cm;
+    position: absolute; top: 2cm;left:  1cm;
     font-family: Arial;
     font-size: 14;
 }
 
-.contenido {
-    position: absolute; top: 7.5cm; left: 0.1cm;
-    width: 11.4cm;
+.contenido {   
+    position: absolute; top: 6cm; left: 0.5cm;
+    width: 11cm;
     height: 11.6cm;
-    min-width: 11.4cm;
-    max-width: 11.4cm;
-    min-height: 11.6cm;
-    max-height: 11.6cm;
     border-style: none;
     background-color: var(--transparente);
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 12;
+    text-align: justify;
 }
-
+.org {
+    position: absolute; top: 2.9cm; left: 7.5cm;
+    font-size: 15px;
+    color: var(--blanco);
+}
+.colaborador {
+    position: absolute; top: 15cm; left: 1cm;
+    border-style: none;
+    text-align: center;
+    background-color: var(--transparente);
+    color: var(--blanco);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+}
+.departamento {
+    position: absolute; top: 16cm; left: 1cm;
+    border-style: none;
+    text-align: center;
+    background-color: var(--transparente);
+    color: var(--blanco);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+}
+.cargo {
+    position: absolute; top: 17cm; left: 1cm;
+    border-style: none;
+    text-align: center;
+    background-color: var(--transparente);
+    color: var(--blanco);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+}
 @media only screen and (min-width: 1920px) and (max-width: 2500px) {
 
     .contenidoAVIF {
@@ -63,28 +104,49 @@
     }
 
     .titulo {
-        position: absolute; top: 5.5cm;
+        position: absolute; top: 2cm;left:  1cm;
         font-family: Arial;
         font-size: 14;
     }
 
     .org {
-	    position: absolute; top: 2.9cm; left: 7.5cm;
+	    position: absolute; left: 7.5cm;
         font-size: 15px;
 	    color: var(--blanco);
     }
-
+    .colaborador {
+        position: absolute; top: 15cm; left: 1cm;
+        border-style: none;
+        text-align: center;
+        background-color: var(--transparente);
+        color: var(--blanco);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20pt;
+        font-weight: bold;
+    }
+    .departamento {
+        position: absolute; top: 16cm; left: 1cm;
+        border-style: none;
+        text-align: center;
+        background-color: var(--transparente);
+        color: var(--blanco);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18pt;
+    }
+    .cargo {
+        position: absolute; top: 17cm; left: 1cm;
+        border-style: none;
+        text-align: center;
+        background-color: var(--transparente);
+        color: var(--blanco);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18pt;
+    }
     .contenido {
-        position: absolute; top: 7.5cm; left: 0.1cm;
-        width: 11.4cm;
-        height: 11.6cm;
-        min-width: 11.4cm;
-        max-width: 11.4cm;
-        min-height: 11.6cm;
-        max-height: 11.6cm;
+        position: absolute; top: 5cm; left: 1cm;
         border-style: none;
         background-color: var(--transparente);
-        font-family: Arial;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 12;
     }
 

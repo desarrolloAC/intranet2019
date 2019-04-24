@@ -14,7 +14,7 @@ $sql = "SELECT
 FROM    publicacion pub
 INNER JOIN subcategoria subc    ON pub.ID_Subcategoria  = subc.ID_Subcategoria
 INNER JOIN categoria cat        ON cat.ID_Categoria     = subc.ID_Categoria
-WHERE subc.ID_Subcategoria IN(SELECT ID_Subcategoria FROM subcategoria WHERE ID_Categoria = 'INVI')
+WHERE subc.ID_Subcategoria IN(SELECT ID_Subcategoria FROM subcategoria WHERE ID_Categoria = 'INVI' OR ID_Categoria = 'FLAY')
 AND pub.Estatus='A' AND cat.Estatus='A' AND subc.Estatus='A' AND pub.Estado='PUBLICADA'; ";
 
 $rs = mysqli_query($conexion, $sql);

@@ -23,8 +23,6 @@ $sql = "   SELECT r.ID_Rol,r.Nombre
             AND     r.ID_Rol ='$ID_Rol'
             AND     u.Cedula='$_SESSION[Cedula]' ";
 
-
-
 $rs = mysqli_query($conexion, $sql);
 
 

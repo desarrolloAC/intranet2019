@@ -12,6 +12,9 @@ class CumpleMes implements \JsonSerializable {
     private $contenido;
     private $date;
     private $image;
+    private $departamento;
+    private $logo;
+    private $nombreDepartamento;
 
     public function __construct() {
         
@@ -19,6 +22,13 @@ class CumpleMes implements \JsonSerializable {
 
     public function getPublicacionId() {
         return $this->publicacionId;
+    }
+
+    public function getNombreDepartamento() {
+        return $this->nombreDepartamento;
+    }
+    public function getLogo() {
+        return $this->logo;
     }
 
     public function getOrganization() {
@@ -42,13 +52,21 @@ class CumpleMes implements \JsonSerializable {
     }
 
     public function getDate() {
-        return $this->$date;
+        return $this->date;
     }
 
     public function getFoto() {
-        return $this->foto;
+        return $this->Foto;
     }
-
+    public function getImage() {
+        return $this->image;
+    }
+    public function setLogo($logo) {
+        $this->logo = $logo;
+    }
+    public function setNombreDepartamento($nombreDepartamento) {
+        $this->nombreDepartamento = $nombreDepartamento;
+    }
     public function setPublicacionId($publicacionId) {
         $this->publicacionId = $publicacionId;
     }
@@ -76,17 +94,12 @@ class CumpleMes implements \JsonSerializable {
     public function setDate($date) {
         $this->date = $date;
     }
-
-    public function getImage() {
-        return $this->image;
-    }
-
     public function setImage($image) {
         $this->image = $image;
     }
 
-    public function setFoto($foto) {
-        $this->foto = $foto;
+    public function setFoto($Foto) {
+        $this->Foto = $Foto;
     }
 
     public function jsonSerialize() {
@@ -94,11 +107,12 @@ class CumpleMes implements \JsonSerializable {
             'n' => $this->publicacionId,
             'org' => $this->organization,
             'title' => $this->titulo,
-            'foto' => $this->Foto,
+            'photo' => $this->Foto,
+            'logo' => $this->logo,
+            'image' => $this->image,
             'colaborated' => $this->colaborador,
-            'departament' => $this->departamento,
             'date' => $this->date,
-            'photo' => $this->Image
+            'namedepartment' => $this->nombreDepartamento
         ];
     }
 

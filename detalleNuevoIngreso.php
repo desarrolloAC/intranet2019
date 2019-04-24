@@ -38,10 +38,14 @@
     <div id="contenidoAVIF" class="contenidoAVIF">
         <div class="contenidoPlantilla">
             <img class="imagen-detalle" :src="item.photo" alt="Detalle de la noticia">
-            <h1 class='titulo'>{{ item.colaborad }}</h1>
-            <h2 class='titulo'>{{ item.dpto }}</h2>
-            <h1 class='titulo'>{{ item.carg }}</h1>
-            <textarea class="contenido" readonly>{{ item.content }}</textarea>
+            <h1 class='titulo'>{{ item.colaborated }}</h1>
+            <h2 class='titulo_dpto'>{{ item.dpto }}</h2>
+            <h1 class='titulo_cargo'>{{ item.chargue }}</h1>
+            <img class="imagen-ingreso" :src="item.image"  >
+             <!--<textarea class="contenido" readonly>{{ item.content }}</textarea>
+            LAS LLAVES NO INTERPRETAN ETIQUETAS HTML POR ESTO SE DEBE USAR EN ESTE CASO LA DIRECTIVA v-html    
+            -->
+            <div class="contenido" v-html="item.content"> </div>
         </div>
     </div>
 

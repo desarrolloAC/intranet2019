@@ -15,22 +15,21 @@
             <a href="#" title="">Interactivo</a>
             <ul>
                 <li><a href="directorio.php" target="_blank">Directorio</a></li>
-                <li><a href="reserva.php" target="_blank">Reservar de Salas de Reunion</a></li>
-                <li><a href="https://photos.app.goo.gl/kVVterMyRCF84bqN8">Galeria</a></li>
+                <li><a href="reserva.php" target="_blank">Reservar de salas</a></li>
                 <li><a href="https://goo.gl/forms/cKJjsCfXXwMRtBMH3">Trivia</a></li>
             </ul>
         </li>
 
         <li>
-            <a href="#" title="">Contexto de la Organización</a>
+            <a href="#" title="">Contexto de la organización</a>
             <ul>
-                <li><a href="http://192.168.0.10/sig/\PROCESOS/Arbol de comunicaciones/arbolComunicaciones.pdf" target="_blank">Arbol de Comunicaciones</a></li>
+                <li><a href="http://192.168.0.10/sig/\PROCESOS/Arbol de comunicaciones/arbolComunicaciones.pdf" target="_blank">Árbol de Comunicaciones</a></li>
                 <li><a href="assets/document/estructura/ORGANIGRAMAS%20ACTUALIZADOS%20-DIC%202016%20V5.pdf" target="_blank">Estructura</a></li>
                 <li class="menu-desp1">
                     <a href="#" title="">Misión y Visión Corporativa</a>
                     <ul>
                         <li><a href="assets/document/alkes/mision_vision_alkes.pdf" target="_blank">Alkes Corp</a></li>
-                        <li><a href="assets/document/fruttech/Mision_y_Vision/Fruttech/mision_vision_fruttech.pdf" target="_blank">Fruttech</a></li>
+                        <li><a href="assets/document/fruttech/mision_vision_fruttech.pdf" target="_blank">Fruttech</a></li>
                         <li><a href="assets/document/iec/mision_vision_IEC.pdf" target="_blank">Ind. El Caimán</a></li>
                         <li><a href="assets/document/venfruca/mision_vision_venfruca.pdf" target="_blank">Venfruca</a></li>
                     </ul>
@@ -38,14 +37,14 @@
                 <li class="menu-desp2">
                     <a href="#" title="">Políticas</a>
                     <ul>
-                        <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/Pol%C3%ADtica-de-Gesti%C3%B3n-ALKES-CORP-v4.pdf" target="_blank">Sistema integrado de Gestión</a></li>
+                        <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/Pol%C3%ADtica-de-Gesti%C3%B3n-ALKES-CORP-v4.pdf" target="_blank">Sistema Integrado de Gestión</a></li>
                         <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/Politica%20SSL2015.pdf" target="_blank">Seguridad Laboral</a></li>
                         <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/PO-TI-001.pdf" target="_blank">Tecnología de la Información</a></li>
-                        <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/PO-SL-001%20PO%20de%20Cons%20Resp.%20de%20Bebidas%20Alcoh%C3%B3licas%20V4.pdf" target="_blank">Bebidas Alcohólicas</a></li>
-                        <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/Politica%20de%20Ambiente%20Venfruca%20firmada.pdf" target="_blank">Política Ambiental</a></li>
+                        <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/PO-SL-001%20PO%20de%20Cons%20Resp.%20de%20Bebidas%20Alcoh%C3%B3licas%20V4.pdf" target="_blank">Bebidas alcohólicas</a></li>
+                        <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/Politica%20de%20Ambiente%20Venfruca%20firmada.pdf" target="_blank">Política ambiental</a></li>
                         <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/Politica%20de%20seguridad%20venfruca.pdf" target="_blank">Salud y Seguridad Laboral</a></li>
-                        <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/PO-AC-001%20Politica%20para%20Devoluciones%20de%20productos%20V1.pdf" target="_blank">Devolución de Producto Terminado</a></li>
-                        <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/PO-LG-001%20POLITICA%20DE%20LOGISTICA%20CORPORATIVA%20V0.pdf" target="_blank">Logística Corporativa</a></li>
+                        <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/PO-AC-001%20Politica%20para%20Devoluciones%20de%20productos%20V1.pdf" target="_blank">Devolución de producto terminado</a></li>
+                        <li><a href="http://192.168.0.10/sig/PROCESOS/Documentos/PO-LG-001%20POLITICA%20DE%20LOGISTICA%20CORPORATIVA%20V0.pdf" target="_blank">Logística corporativa</a></li>
                     </ul>
                 </li>
                 <li class="menu-desp3">
@@ -63,7 +62,7 @@
         </li>
 
         <li>
-            <a id="menu-wrapper" href="#" title="">Información Documentada</a>
+            <a id="menu-wrapper" href="#" title="">Información documentada</a>
         </li>
 
         <li>
@@ -72,36 +71,36 @@
                 <li class="menu-desp4" >
                     <a href="#" title="">Cuentas por Pagar</a>
                     <ul>
-                        <li><a href="php/Descargas.php?id=1" target="_blank">Formato Único de Anticipo y Relación de Gastos</a></li>
-                        <li><a href="php/Descargas.php?id=2" target="_blank">Relación de Gastos TEBCA</a></li>
+                        <li><a href="php/Descargas.php?id=1" target="_blank">Formato único de anticipo y relación de gastos</a></li>
+                        <li><a href="php/Descargas.php?id=2" target="_blank">Relación de gastos TEBCA</a></li>
                     </ul>
                 </li>
                 <li  class="menu-desp5">
                     <a href="#" title="">Gestión Humana</a>
                     <ul>
-                        <li><a href="assets/document/gestion-humana/F-GH-017 SOLVENCIA DE EGRESO DE PERSONAL.xls" target="_blank">Solvencia de Egreso del Personal</a></li>
-                        <li><a href="assets/document/gestion-humana/F-GH-020 ENTREVISTA TECNICA .xls" target="_blank">Entrevista Técnica</a></li>
-                        <li><a href="assets/document/gestion-humana/DESCRIPCIÓN Y PERFIL DE COMPETENCIAS DEL CARGO.docx" target="_blank">Descripción y Perfil de Competencia del Cargo</a></li>
-                        <li><a href="assets/document/gestion-humana/F-GH-001 FORMATO UNICO.doc" target="_blank">Formato Único</a></li>
-                        <li><a href="assets/document/gestion-humana/F-GH-002 SOLICITUD EMPLEO.xlsx" target="_blank">Solicitud de Empleo</a></li>
-                        <li><a href="assets/document/gestion-humana/F-GH-003 VERIFICACIÓN REFERENCIA LABORAL.xls" target="_blank">Verificación de Referencia Laborales</a></li>
-                        <li><a href="assets/document/gestion-humana/F-GH-004 INDUCCIÓN OPERACIONAL.xlsm" target="_blank">Inducción Operacional</a></li>
-                        <li><a href="assets/document/gestion-humana/F-GH-005 INFORME DE ENTREVISTA.xls" target="_blank">Informe de Entrevista</a></li>
-                        <li><a href="assets/document/gestion-humana/F-GH-006 CHECK LIST EXPEDIENTE.xlsx" target="_blank">Check List de Expediente</a></li>
-                        <li><a href="assets/document/gestion-humana/F-GH-007 EVALUACIÓN PERIODO DE PRUEBA .xlsx" target="_blank">Evaluación de Período de Prueba</a></li>
-                        <li><a href="assets/document/gestion-humana/F-GH-010 EVALUACIÓN DE IMPACTO.XLSX" target="_blank">Evaluación de Impacto</a></li>
-                        <li><a href="assets/document/gestion-humana/F-GH-011 LISTADO DE ASISTENCIA.xls" target="_blank">Listado de Asistencia</a></li>
-                        <li><a href="assets/document/gestion-humana/F-GH-018 SOLICITUD DE ADIESTRAMIENTO.xlsx" target="_blank">Solicitud de Adiestramiento</a></li>
-                        <li><a href="assets/document/gestion-humana/SOLICITUD DE PERSONAL.xlsm" target="_blank">Solicitud de Personal</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-017 SOLVENCIA DE EGRESO DE PERSONAL.xls" target="_blank">Solvencia de egreso del personal</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-020 ENTREVISTA TECNICA .xls" target="_blank">Entrevista técnica</a></li>
+                        <li><a href="assets/document/gestion-humana/DESCRIPCIÓN Y PERFIL DE COMPETENCIAS DEL CARGO.docx" target="_blank">Descripción y perfil de competencia del cargo</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-001 FORMATO UNICO.doc" target="_blank">Formato único</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-002 SOLICITUD EMPLEO.xlsx" target="_blank">Solicitud de empleo</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-003 VERIFICACIÓN REFERENCIA LABORAL.xls" target="_blank">Verificación de referencia laborales</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-004 INDUCCIÓN OPERACIONAL.xlsm" target="_blank">Inducción operacional</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-005 INFORME DE ENTREVISTA.xls" target="_blank">Informe de entrevista</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-006 CHECK LIST EXPEDIENTE.xlsx" target="_blank">Check list de expediente</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-007 EVALUACIÓN PERIODO DE PRUEBA .xlsx" target="_blank">Evaluación de período de prueba</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-010 EVALUACIÓN DE IMPACTO.XLSX" target="_blank">Evaluación de impacto</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-011 LISTADO DE ASISTENCIA.xls" target="_blank">Listado de asistencia</a></li>
+                        <li><a href="assets/document/gestion-humana/F-GH-018 SOLICITUD DE ADIESTRAMIENTO.xlsx" target="_blank">Solicitud de adiestramiento</a></li>
+                        <li><a href="assets/document/gestion-humana/SOLICITUD DE PERSONAL.xlsm" target="_blank">Solicitud de personal</a></li>
                     </ul>
                 </li>
                 <li  class="menu-desp6">
-                    <a href="#" title="">Identidad Corporativa</a>
+                    <a href="#" title="">Identidad corporativa</a>
                     <ul >
                         <li><a href="assets/document/identidad-corporativa/LOGOS.rar" target="_blank">Logos</a></li>
-                        <li><a href="assets/document/identidad-corporativa/Manual%20de%20Identidad%20Corporativa.pdf" target="_blank">Manual de Identidad Corporativa</a></li>
-                        <li><a href="assets/document/identidad-corporativa/PLANTILLAS%20DE%20PRESENTACI%C3%93N.pdf" target="_blank">Manual de Presentaciones</a></li>
-                        <li><a href="assets/document/identidad-corporativa/PLANTILLAS.rar" target="_blank">Plantillas de Presentación</a></li>
+                        <li><a href="assets/document/identidad-corporativa/Manual%20de%20Identidad%20Corporativa.pdf" target="_blank">Manual de identidad corporativa</a></li>
+                        <li><a href="assets/document/identidad-corporativa/PLANTILLAS%20DE%20PRESENTACI%C3%93N.pdf" target="_blank">Manual de presentaciones</a></li>
+                        <li><a href="assets/document/identidad-corporativa/PLANTILLAS.rar" target="_blank">Plantillas de presentación</a></li>
                         <li><a href="assets/document/identidad-corporativa/TIPOGRAFIA.rar" target="_blank">Tipografía</a></li>
                         <li><a href="assets/document/identidad-corporativa/V1%2020181220.pdf" target="_blank">Vocabulario</a></li>
                     </ul>
@@ -126,7 +125,7 @@
             <a href="#" title="">Evaluación GDA</a>
             <ul >
 
-                <li><a href="alkes/foa/login/index.php" target="_blank">FOA Periodo 2017-2018</a></li>
+                <li><a href="http://Alkes/foa/login/index.php" target="_blank">FOA Período 2017-2018</a></li>
 
             </ul>
         </li>
@@ -174,7 +173,7 @@
                 <a class="menu-link" href="#">Sistema Integrado de Gestión</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li class="accordion-toggle3"><a class="menu-link" href="#">Caracterización de Procesos</a></li>
+                <li class="accordion-toggle3"><a class="menu-link" href="#">Caracterización de procesos</a></li>
                 <ul class="menu-submenu accordion-content3">
                     <li><a class="head" href="assets/document/sistema-integrado/caracterizacion/F-SG-006 CP V7 Control de la Información Documentada.pdf" target="_blank">Control de la Información Documentada</a></li>
                     <li><a class="head" href="assets/document/sistema-integrado/caracterizacion/F-SG-006 CP V7 Auditoría y Gestión de la Conformidad del SG.pdf" target="_blank">Auditoría y Gestión de la Conformidad del SIG</a></li>
@@ -182,9 +181,28 @@
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Sistema%20de%20Gestion/index.html#list" target="_blank">Procedimientos</a></li>
                 <li><a class="head" href="#">Representante por la Dirección</a></li>
                 <li><a class="head" href="assets/document/sistema-integrado/mapa-proceso/F-SG-010%20Mapa%20de%20Proceso%20PSC%20Logistica.pdf" target="_blank">Mapa de Procesos</a></li>
-                <li><a class="head" href="#">Intructivos de Trabajo</a></li>
-                <li><a class="head" href="#">Plan de Emergencia</a></li>
-                <li><a class="head" href="#">Mapa de Procesos</a></li>
+                
+                <li class="accordion-toggle3" ><a class="menu-link" href="#">Intructivos de trabajo</a></li>
+                    <ul class="menu-submenu accordion-content3">
+                        <li><a class="head"  href="assets/document/sistema-integrado/instructivo de trabajo/I-SG-001_Mapa.pdf" target="_blank">Elaboración del mapa de proceso</a></li>
+                        <li><a class="head"  href="assets/document/sistema-integrado/instructivo de trabajo/I-SG-002_Caracterizacion.pdf" target="_blank">Elaboración de la caracterización de proceso</a></li>
+                        <li><a class="head"  href="assets/document/sistema-integrado/instructivo de trabajo/I-SG-003 TECNICAS ESTADISTICAS PARA EL ANALISIS DE LOS DATOS V1.pdf" target="_blank">Técnicas estadística para el análisis de procesos </a></li>
+                        <li><a class="head"  href="assets/document/sistema-integrado/instructivo de trabajo/I-SG-004 Adicion de Responsables en el Diagrama de Procesos.pdf" target="_blank">Adicion de Responsables en el Diagrama de Procesos</a></li>
+                        <li><a class="head"  href="assets/document/sistema-integrado/instructivo de trabajo/I-SG-005 Actualizacion de Archivos en el diagrama.pdf" target="_blank">Actualización de archivos en el diagrama de procesos</a></li>
+                        <li><a class="head"  href="assets/document/sistema-integrado/instructivo de trabajo/I-SG-006 Adicion de Texto en el Diagrama(1).pdf" target="_blank">Adición de Texto en el Diagrama de Procesos</a></li>
+                        <li><a class="head"  href="assets/document/sistema-integrado/instructivo de trabajo/I-SG-007 Generacion de archivos HTML.pdf" target="_blank">Generación de Archivos HTML</a></li>
+                        <li><a class="head"  href="" target="_blank">Evaluación de Riesgos</a></li>
+                        <li><a class="head"  href="assets/document/sistema-integrado/instructivo de trabajo/I-SG-009 PLANIFICACIÓN Y CONTROL DE LOS CAMBIOS AL SIG V0.pdf" target="_blank">Planificación y control de cambios </a></li>
+                    </ul>
+                
+                
+               
+                <li class="accordion-toggle3" ><a class="menu-link" href="#">Plan de Emergencia</a></li>
+                    <ul class="menu-submenu accordion-content3">
+                        <li><a class="head"  href="http://192.168.0.10/sig/PROCESOS/Operaciones Venfruca/Plan de comunicacion/#list" target="_blank">Plan de Comunicación</a></li>
+                        <li><a class="head"  href="assets/document/sistema-integrado/plan_emergencia/Nombramiento%20Responsable%20para%20comunicar%20medio%20publicos.pdf" target="_blank">Emergencias Alimentarias</a></li>
+                    </ul>
+                <li><a class="head" href="assets/document/sistema-integrado/mapa-proceso/F-SG-010 Mapa de Proceso PSC Logistica.pdf">Mapa de procesos</a></li>
                 <li><a class="head" href="assets/document/sistema-integrado/caracterizacion/F-SG-006%20CP%20V7%20Gesti%C3%B3n%20de%20Riesgos.pdf" target="_blank">Gestión de Riesgos</a></li>
             </ul>
             <!-- Gestiòn Humana -->
@@ -192,7 +210,7 @@
                 <a class="menu-link" href="#">Gestión Humana</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="http://192.168.0.10/sig/PUBLICADOS/GH/#list" target="_blank">Caracterización de Procesos</a></li>
+                <li><a class="head" href="http://192.168.0.10/sig/PUBLICADOS/GH/#list" target="_blank">Caracterización de procesos</a></li>
                 <li><a class="head" href="assets/document/gestion-humana/lot/LEY_ORGANICA_DEL_TRABAJO_LOS_TRABAJADORES_Y_LAS_TRABAJADORAS.pdf" target="_blank">Ley Orgánica del Trabajo</a></li>
             </ul>
             <!-- Seguridad y Salud Laboral -->
@@ -200,7 +218,7 @@
                 <a class="menu-link" href="#">Seguridad y Salud Laboral</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="assets/document/salud-laboral/caracterizacion/F-SG-006 CP V7 Seguridad Laboral.pdf">Caracterización de Procesos</a></li>
+                <li><a class="head" href="assets/document/salud-laboral/caracterizacion/F-SG-006 CP V7 Seguridad Laboral.pdf">Caracterización de procesos</a></li>
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Gestion%20Humana/Seguridad%20y%20Salud%20Laboral/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Tecnologia de la Informacion -->
@@ -208,10 +226,10 @@
                 <a class="menu-link" href="#">Tecnología de la Información</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li class="accordion-toggle3"><a class="menu-link" href="#">Caracterización de Procesos</a></li>
+                <li class="accordion-toggle3"><a class="menu-link" href="#">Caracterización de procesos</a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/ti/caracterizacion/F-SG-006 CP V7 Gestión de Proyectos de Software.pdf" target="_blank">Gestión de Proyectos de Software</a></li>
-                    <li><a class="head" href="assets/document/ti/caracterizacion/F-SG-006 CP V7 Redes y Soporte Técnico.pdf" target="_blank">Redes y Soporte Técnico</a></li>
+                    <li><a class="head" href="assets/document/ti/caracterizacion/F-SG-006 CP V7 Gestión de Proyectos de Software.pdf" target="_blank">Gestión de proyectos de software</a></li>
+                    <li><a class="head" href="assets/document/ti/caracterizacion/F-SG-006 CP V7 Redes y Soporte Técnico.pdf" target="_blank">Redes y soporte técnico</a></li>
                 </ul>
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/TI/index.html#list">Procedimientos</a></li>
                 <li><a class="head" href="#">Política</a></li>
@@ -221,11 +239,11 @@
                 <a class="menu-link" href="#">Mercadeo</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li class="accordion-toggle3"><a class="menu-link" href="#">Caracterización de Procesos</a></li>
+                <li class="accordion-toggle3"><a class="menu-link" href="#">Caracterización de procesos</a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/mercadeo/caracterizacion/F-SG-006 CP V7 Innovación y Desarrollo de Marcas.pdf" target="_blank">Innovación y Desarrollo de Marcas</a></li>
-                    <li><a class="head" href="assets/document/mercadeo/caracterizacion/F-SG-006 CP V7 Investigación de Mercado.pdf" target="_blank">Investigación de Mercado</a></li>
-                    <li><a class="head" href="assets/document/mercadeo/caracterizacion/F-SG-006 CP V7 Trade Marketing.pdf" target="_blank">Trade Marketing</a></li>
+                    <li><a class="head" href="assets/document/mercadeo/caracterizacion/F-SG-006 CP V7 Innovación y Desarrollo de Marcas.pdf" target="_blank">Innovación y desarrollo de marcas</a></li>
+                    <li><a class="head" href="assets/document/mercadeo/caracterizacion/F-SG-006 CP V7 Investigación de Mercado.pdf" target="_blank">Investigación de mercado</a></li>
+                    <li><a class="head" href="assets/document/mercadeo/caracterizacion/F-SG-006 CP V7 Trade Marketing.pdf" target="_blank">Trade marketing</a></li>
                 </ul>
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Mercadeo/index.html#diagram/db62bbfd-b1db-4a43-8e2a-0c625848d441" target="_blank">Procedimientos</a></li>
             </ul>
@@ -234,12 +252,12 @@
                 <a class="menu-link" href="#">Ventas</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li class="accordion-toggle3"><a class="menu-link" href="#">Caracterización de Procesos</a></li>
+                <li class="accordion-toggle3"><a class="menu-link" href="#">Caracterización de procesos</a></li>
                 <ul class="menu-submenu accordion-content3">
                     <li><a class="head" href="assets/document/ventas/caracterizacion/F-SG-006 CP V7 Administración de Ventas.pdf" target="_blank">Administración de Ventas</a></li>
-                    <li><a class="head" href="assets/document/ventas/caracterizacion/F-SG-006 CP V7 Operación de Ventas.pdf" target="_blank">Operación de Ventas</a></li>
+                    <li><a class="head" href="assets/document/ventas/caracterizacion/F-SG-006 CP V7 Operación de Ventas.pdf" target="_blank">Operación de ventas</a></li>
                 </ul>
-                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Comercial/index.html#list" target="_blank">Ciclo de Comercialización</a></li>
+                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Comercial/index.html#list" target="_blank">Ciclo de comercialización</a></li>
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/PROCESOS/Administracion de Ventas/index.html" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Abastecimiento y Suministro -->
@@ -247,7 +265,7 @@
                 <a class="menu-link" href="#">Abastecimiento y Suministro</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="asset/document/abastecimiento-suministro/caracterizacion/F-SG-006%20CP%20V7%20Abastecimiento%20y%20suministro.pdf" target="_blank">Caracterización de Procesos</a></li>
+                <li><a class="head" href="assets/document/abastecimiento-suministro/caracterizacion/F-SG-006 CP V7 Abastecimiento y suministro.pdf" target="_blank">Caracterización de procesos</a></li>
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Abastecimiento%20y%20Suministro/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Logistica -->
@@ -255,9 +273,9 @@
                 <a class="menu-link" href="#">Logística</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="assets/document/logistica/caracterizacion/F-SG-006 CP V7 Logística.pdf" target="_blank">Caracterización de Procesos</a></li>
+                <li><a class="head" href="assets/document/logistica/caracterizacion/F-SG-006 CP V7 Logística.pdf" target="_blank">Caracterización de procesos</a></li>
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Logistica/index.html#list" target="_blank">Procedimientos</a></li>
-                <li><a class="head" href="assets/document/logistica/plan/PL-LG-001%20PLAN%20DE%20CALIDAD%20DE%20ALMACEN.pdf" target="_blank">Plan de Calidad del Almacen</a></li>
+                <li><a class="head" href="assets/document/logistica/plan/PL-LG-001%20PLAN%20DE%20CALIDAD%20DE%20ALMACEN.pdf" target="_blank">Plan de calidad del almacén</a></li>
                 <li><a class="head" href="assets/document/logistica/instructivos/I-LG-002 INSTRUCTIVO PARA CONTROL DE TEMPERATURAS DE CAVAS.pdf">Instructivo I-LG-002</a></li>
                 <li><a class="head" href="assets/document/logistica/instructivos/I-LG-004 INSTRUCTIVO PARA LA ELABORACION DE GUIA SADA.pdf">Instructivo I-LG-004</a></li>
                 <li><a class="head" href="assets/document/logistica/instructivos/I-LG-005 INSTRUCTIVO PARA LA ELABORACION E IMPRESION DE FACTURA.pdf">Instructivo I-LG-005</a></li>
@@ -269,7 +287,7 @@
                 <a class="menu-link" href="#">Asuntos Legales</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="assets/document/legales/caracterizacion/F-SG-006%20CP%20V7%20Asuntos%20Legales.pdf" target="_blank">Caracterización de Procesos</a></li>
+                <li><a class="head" href="assets/document/legales/caracterizacion/F-SG-006%20CP%20V7%20Asuntos%20Legales.pdf" target="_blank">Caracterización de procesos</a></li>
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Aspectos%20Legales/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Asuntos Regulatorio -->
@@ -277,15 +295,15 @@
                 <a class="menu-link" href="#">Asuntos Regulatorios</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="assets/document/asuntos-regulatorios/caracterizacion/F-SG-006 CP V7 Asuntos regulatorios.pdf" target="_blank">Caracterización de Procesos</a></li>
-                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/PROCESOS/Auntos Regulatorios/index.html#list" target="_blank">Procedimientos</a></li>
+                <li><a class="head" href="assets/document/asuntos-regulatorios/caracterizacion/F-SG-006 CP V7 Asuntos regulatorios.pdf" target="_blank">Caracterización de procesos</a></li>
+                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Auntos Regulatorios/index.html#list" target="_blank">Procedimientos</a></li>
             </ul>
             <!-- Comercio Exterior -->
             <li class="accordion-toggle2">
                 <a class="menu-link" href="#">Comercio Exterior</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li class="accordion-toggle3"> <a class="menu-link"  href="#">Caracterización de Procesos</a></li>
+                <li class="accordion-toggle3"> <a class="menu-link"  href="#">Caracterización de procesos</a></li>
                 <ul class="menu-submenu accordion-content3">
                     <li><a class="head" href="assets/document/comercio-exterior/caracterizacion/F-SG-006 CP V7 Exportación.pdf" target="_blank">Exportación</a></li>
                     <li><a class="head" href="assets/document/comercio-exterior/caracterizacion/F-SG-006 CP V7 Importación.pdf" target="_blank">Importación</a></li>
@@ -297,7 +315,7 @@
                 <a class="menu-link" href="#">Ingeniería</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li class="accordion-toggle3"> <a class=menu-link"  href="#">Caracterización de Procesos</a></li>
+                <li class="accordion-toggle3"> <a class=menu-link"  href="#">Caracterización de procesos</a></li>
                 <ul class="menu-submenu accordion-content3">
                     <li><a class="head" href="assets/document/ingenieria/caracterizacion/F-SG-006 CP V7 Proyectos.pdf" target="_blank">Proyecto</a></li>
                     <li><a class="head" href="assets/document/ingenieria/caracterizacion/F-SG-006 CP V7 Mantenimiento.pdf" target="_blank">Mantenimiento</a></li>
@@ -316,51 +334,51 @@
 
                 <li class="accordion-toggle3"><a class="menu-link" href="#">Tesorería</a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Tesorer%c3%ada.pdf" target="_blank">Caracterización de Procesos</a></li>
+                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Tesorer%c3%ada.pdf" target="_blank">Caracterización de procesos</a></li>
                 </ul>
                 <li class="accordion-toggle3"><a class="menu-link" href="#">Impuestos</a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Impuestos.pdf" target="_blank">Caracterización de Procesos</a></li>
+                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Impuestos.pdf" target="_blank">Caracterización de procesos</a></li>
                     <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Finanzas/Impuestos/index.html#list" target="_blank">Procedimientos</a></li>
                 </ul>
                 <li class="accordion-toggle3"><a class="menu-link" href="#">Cuentas por Pagar</a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Cuentas%20por%20Pagar.pdf" target="_blank">Caracterización de Procesos</a></li>
+                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Cuentas%20por%20Pagar.pdf" target="_blank">Caracterización de procesos</a></li>
                     <li><a class="head" href="assets/document/finanzas/instructivos/I-XP-001%20GUIA%20DE%20USO%20DE%20CENTROS%20DE%20COSTOS%20Y%20CUENTAS%20CONTABLES%20DE%20GASTOS.pdf" target="_blank">Instructivo I-XP-001 </a></li>
                     <li><a class="head" href="assets/document/finanzas/instructivos/I-XP-002 GUIA PARA CORRECCION DE DIFERENCIAS E.pdf" target="_blank"> Instructivo I-XP-002</a></li>
                     <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Finanzas/Cuentas%20por%20Pagar/index.html#list" target="_blank">Procedimientos</a></li>
                 </ul>
                 <li class="accordion-toggle3"><a class="menu-link" href="#">Compensación y Pagos</a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Compensaci%c3%b3n%20y%20Pagos.pdf" target="_blank">Caracterización de Procesos</a></li>
+                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Compensaci%c3%b3n%20y%20Pagos.pdf" target="_blank">Caracterización de procesos</a></li>
                     <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Finanzas/Tesoreria/index.html#list" target="_blank">Procedimientos</a></li>
                 </ul>
                 <li class="accordion-toggle3"><a class="menu-link" href="#">Gestión Financiera </a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Gesti%c3%b3n%20Financiera.pdf" target="_blank">Caracterización de Procesos</a></li>
+                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Gesti%c3%b3n%20Financiera.pdf" target="_blank">Caracterización de procesos</a></li>
                     <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Finanzas/Gestion%20financiera/index.html#list" target="_blank">Procedimientos</a></li>
                 </ul>
                 <li class="accordion-toggle3"><a class="menu-link" href="#">Archivo </a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Archivo.pdf" target="_blank">Caracterización de Procesos</a></li>
+                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Archivo.pdf" target="_blank">Caracterización de procesos</a></li>
                 </ul>
                 <li class="accordion-toggle3"><a class="menu-link" href="#">Costo y Presupuesto </a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Gerencia%20Estrat%C3%A9gica.pdf" target="_blank">Caracterización de Procesos</a></li>
+                    <li><a class="head" href="assets/document/finanzas/F-SG-006 CP V7 Costos y Presupuesto.pdf" target="_blank">Caracterización de procesos</a></li>
                     <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Finanzas/Costos/Costos%20Produccion/index.html#list" target="_blank">Procedimientos</a></li>
                 </ul>
-                <li class="accordion-toggle3"><a class="menu-link" href="#">Auditoria Int./Ctrl. de Inventario</a></li>
+                <li class="accordion-toggle3"><a class="menu-link" href="#">Auditoría Int./Ctrl. de Inventario</a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Auditor%c3%ada%20Interna%20y%20Ctrol%20de%20Inventario.pdf" target="_blank">Caracterización de Procesos</a></li>
-                    <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Logistica/Control%20de%20Inventario/index.html#list" target="_blank">Procedimientos</a></li>
+                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Auditor%c3%ada%20Interna%20y%20Ctrol%20de%20Inventario.pdf" target="_blank">Caracterización de procesos</a></li>
+                    <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Logistica/Control%20de%20Inventario/#list" target="_blank">Procedimientos</a></li>
                 </ul>
                 <li class="accordion-toggle3"><a class="menu-link" href="#">Contabilidad</a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Contabilidad.pdf" target="_blank">Caracterización de Procesos</a></li>
+                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Contabilidad.pdf" target="_blank">Caracterización de procesos</a></li>
                 </ul>
                 <li class="accordion-toggle3"><a class="menu-link" href="#">Crédito y Cobranzas</a></li>
                 <ul class="menu-submenu accordion-content3">
-                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Cr%c3%a9dito%20y%20Cobranzas.pdf" target="_blank">Caracterización de Procesos</a></li>
+                    <li><a class="head" href="assets/document/finanzas/F-SG-006%20CP%20V7%20Cr%c3%a9dito%20y%20Cobranzas.pdf" target="_blank">Caracterización de procesos</a></li>
                 </ul>
             </ul>
             <!-- Relaciones Corporativas -->
@@ -368,7 +386,7 @@
                 <a class="menu-link" href="#">Relaciones Corporativas</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="assets/document/relaciones-corporativas/caracterizacion/F-SG-006 CP V7 Gestión de Eventos Corporativos.pdf" target="_blank">Caracterización de Procesos</a></li>
+                <li><a class="head" href="assets/document/relaciones-corporativas/caracterizacion/F-SG-006 CP V7 Gestión de Eventos Corporativos.pdf" target="_blank">Caracterización de procesos</a></li>
             </ul>
         </ul>
 
@@ -378,7 +396,7 @@
         </li>
         <ul class="menu-submenu accordion-content">
             <li class="content-static"><a class="head" href="assets/document/sistema-integrado/manuales/M-SG-004-MANUAL-DE-GESTI%C3%93N-VENFRUCA%20V5.pdf" target="_blank">Manual</a></li>
-            <li class="content-static"><a class="head" href="http://192.168.0.10/sig/PROCESOS/Documentos/F-SG-010%20Mapa%20de%20Proceso%20VENFRUCA.pdf" target="_blank">Mapa de Proceso</a></li>
+            <li class="content-static"><a class="head" href="http://192.168.0.10/sig/PROCESOS/Documentos/F-SG-010%20Mapa%20de%20Proceso%20VENFRUCA.pdf" target="_blank">Mapa de proceso</a></li>
             <!-- Aseguramiento de la Calidad -->
             <li class="accordion-toggle2">
                 <a class="menu-link" href="#">Aseguramiento de la Calidad</a>
@@ -386,7 +404,7 @@
             <ul class="menu-submenu accordion-content2">
 
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Operaciones%20Venfruca/Aseguramiento%20de%20la%20Calidad/index.html#list" target="_blank">Procedimientos</a></li>
-                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Operaciones%20Venfruca/Aseguramiento%20de%20la%20Calidad/Fichas%20tecnicas%20instructivos%20AC/index.html#list" target="_blank">Ficha Técnica-Instructivos</a></li>
+                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Operaciones%20Venfruca/Aseguramiento%20de%20la%20Calidad/Fichas%20tecnicas%20instructivos%20AC/index.html#list" target="_blank">Ficha técnica-instructivos</a></li>
             </ul>
             <!-- Ambiente -->
             <li class="accordion-toggle2">
@@ -397,7 +415,7 @@
             </ul>
             <!-- Almacèn de Producciòn -->
             <li class="accordion-toggle2">
-                <a class="menu-link" href="#">Almacén de Producción</a>
+                <a class="menu-link" href="#">Almacén de producción</a>
             </li>
             <ul class="menu-submenu accordion-content2">
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Operaciones%20Venfruca/Almacen%20Produccion/index.html#list" target="_blank">Procedimientos</a></li>
@@ -430,7 +448,7 @@
             </li>
             <ul class="menu-submenu accordion-content2">
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Desarrollo%20Agrario/index.html#list" target="_blank">Procedimientos</a></li>
-                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Documentos/M_operacionales/F-SF-015%20%20Negocios%20Logisticos.pdf" target="_blank">Cuadro de Mando Operacional</a></li>
+                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Documentos/M_operacionales/F-SF-015%20%20Negocios%20Logisticos.pdf" target="_blank">Cuadro de mando operacional</a></li>
             </ul>
             <!-- Dpto. Seguridad Fìsica -->
             <li class="accordion-toggle2">
@@ -453,17 +471,17 @@
             </li>
             <ul class="menu-submenu accordion-content2">
                 <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP AMBIENTE VF.pdf" target="_blank">Ambiente VF</a></li>
-                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP MANTENIMIENTO CONCENTRADO VF.pdf" target="_blank">Mantenimiento de Concentrado VF</a></li>
-                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP PRODUCCIÓN LINEA DE CONCENTRADO VF.pdf" target="_blank">Producción Línea de Concentrado VF</a></li>
-                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP PRODUCCIÓN LINEA DE PULPA VF.pdf" target="_blank">Producción Línea de Pulpa VF</a></li>
-                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Almacén de Producción VF.pdf" target="_blank">Almacén de Producción VF</a></li>
-                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Aseguramiento de la Calidad. Concentrado VF.pdf" target="_blank">Aseguramiento de la Calidad del Concentrado VF</a></li>
-                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Aseguramiento de la Calidad. Pulpa VF.pdf" target="_blank">Aseguramiento de la Calidad de la Pulpa VF</a></li>
-                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Desarrollo y Logistica Agricola VF.pdf" target="_blank">Desarrollo y Logística de la Agrícola VF</a></li>
-                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Gestión de la Formación VF.pdf" target="_blank">Gestión de la Formación VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP MANTENIMIENTO CONCENTRADO VF.pdf" target="_blank">Mantenimiento de concentrado VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP PRODUCCIÓN LINEA DE CONCENTRADO VF.pdf" target="_blank">Producción Línea de concentrado VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP PRODUCCIÓN LINEA DE PULPA VF.pdf" target="_blank">Producción Línea de pulpa VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Almacén de Producción VF.pdf" target="_blank">Almacén de producción VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Aseguramiento de la Calidad. Concentrado VF.pdf" target="_blank">Aseguramiento de la calidad del concentrado VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Aseguramiento de la Calidad. Pulpa VF.pdf" target="_blank">Aseguramiento de la calidad de la pulpa VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Desarrollo y Logistica Agricola VF.pdf" target="_blank">Desarrollo y logística de la agrícola VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Gestión de la Formación VF.pdf" target="_blank">Gestión de la formación VF</a></li>
                 <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 PLANIFICACIÓN VF.pdf" target="_blank">Planificación VF</a></li>
-                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Seguridad Física VF.pdf" target="_blank">Seguridad Física VF</a></li>
-                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Seguridad Laboral VF.pdf" target="_blank">Seguridad Laboral VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Seguridad Física VF.pdf" target="_blank">Seguridad física VF</a></li>
+                <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 Seguridad Laboral VF.pdf" target="_blank">Seguridad laboral VF</a></li>
                 <li><a class="head" href="assets/document/venfruca/caracterizacion/F-SG-006 CP V7 SIG Venfruca.pdf" target="_blank">SIG Venfruca</a></li>
             </ul>
         </ul>
@@ -474,15 +492,15 @@
         </li>
         <ul class="menu-submenu accordion-content">
             <li class="content-static"><a class="head" href="assets/document/sistema-integrado/manuales/M-SG-005%20MANUAL%20DE%20SGC%20ISO%209001-2015%20IEC%20V3.pdf" target="_blank">Manual</a></li>
-            <li class="content-static"><a class="head" href="http://192.168.0.10/sig/PROCESOS/Documentos/F-SG-010%20Mapa%20de%20Proceso%20El%20Caiman.pdf" target="_blank">Mapa de Procesos</a></li>
+            <li class="content-static"><a class="head" href="http://192.168.0.10/sig/PROCESOS/Documentos/F-SG-010%20Mapa%20de%20Proceso%20El%20Caiman.pdf" target="_blank">Mapa de procesos</a></li>
             <!-- Control de Calidad -->
             <li class="accordion-toggle2">
                 <a class="menu-link" href="#">Control de Calidad</a>
             </li>
             <ul class="menu-submenu accordion-content2">
-                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Operaciones%20El%20Caiman/Control%20DE%20Calidad/Procedimientos/index.html#list" target="_blank">Procedimientos</a></li>
+                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Operaciones%20El%20Caiman/Control%20de%20Calidad/Procedimientos/#list" target="_blank">Procedimientos</a></li>
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Documentos/Caracterizaciones/F-SG-006%20CONTROL%20DE%20CALIDAD.pdf" target="_blank">Caracterización de procesos</a></li>
-                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Operaciones%20El%20Caiman/Control%20DE%20Calidad/Intructivos%20y%20fichas%20tecnicas/index.html#list" target="_blank">Instructivos/Ficha Técnica</a></li>
+                <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Operaciones%20El%20Caiman/Control%20de%20Calidad/Intructivos%20y%20fichas%20tecnicas/#list" target="_blank">Instructivos/ficha técnica</a></li>
             </ul>
             <!-- Producciòn -->
             <li class="accordion-toggle2">
@@ -491,7 +509,7 @@
             <ul class="menu-submenu accordion-content2">
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Operaciones%20El%20Caiman/PRODUCCION/index.html#list" target="_blank">Procedimientos</a></li>
                 <li><a class="head" href="http://192.168.0.10/sig/PROCESOS/Documentos/Caracterizaciones/F-SG-006-PRODUCCION-IEC.pdf" target="_blank">Caracterización de procesos</a></li>
-                <li><a class="head" href="#" target="_blank">Instructivos/Ficha Técnica</a></li>
+                <li><a class="head" href="#" target="_blank">Instructivos/ficha técnica</a></li>
             </ul>
         </ul>
 
@@ -501,7 +519,7 @@
         </li>
         <ul class="menu-submenu accordion-content">
             <li class="content-static"><a class="head" href="assets/document/sistema-integrado/manuales/M-SG-003%20MANUAL%20DE%20SGC%20ISO%209001-2008%20FRUTECH%20V7.pdf" target="_blank">Manual</a></li>
-            <li class="content-static"><a class="head" href="http://192.168.0.10/sig/PROCESOS/Documentos/F-SG-010-Mapa-de-Proceso-Fruttech.pdf" target="_blank">Mapa de Procesos</a></li>
+            <li class="content-static"><a class="head" href="http://192.168.0.10/sig/PROCESOS/Documentos/F-SG-010-Mapa-de-Proceso-Fruttech.pdf" target="_blank">Mapa de procesos</a></li>
         </ul>
     </ul>
     <!-- menu-list accordion-->

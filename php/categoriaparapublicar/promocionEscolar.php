@@ -22,7 +22,7 @@
 
         <a href="#" class="cerrar">X</a>
 
-        <form method="POST" action="php/publicaciones/registrarPublicacionPromocionEscolar.php">
+        <form method="POST" action="php/publicaciones/registrarPublicacionPromocionEscolar.php" enctype="multipart/form-data">
 
             <input id="txtCodigoSubCategoriaPromocionEscolar" type="text" name="txtCodigoSubCategoriaPromocionEscolar" value="POES" maxlength="4">
 

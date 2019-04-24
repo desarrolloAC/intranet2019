@@ -240,7 +240,7 @@ $(window).load(function () {
 
 
 /**
- * Nacimientos
+ * Nacimientos Niño
  */
 $(window).load(function () {
 
@@ -264,6 +264,36 @@ $(window).load(function () {
         function fileOnload(e) {
             var result = e.target.result;
             $('#imgSalidaNacimiento').attr("src", result);
+        }
+    });
+});
+
+/**
+ * Nacimientos Niña
+ */
+
+$(window).load(function () {
+
+    $(function () {
+        $('#btnImagenNacimientoNina').change(function (e) {
+            addImage(e);
+        });
+
+        function addImage(e) {
+            var file = e.target.files[0],
+                    imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        }
+
+        function fileOnload(e) {
+            var result = e.target.result;
+            $('#imgSalidaNacimientoNina').attr("src", result);
         }
     });
 });
@@ -319,7 +349,7 @@ $(window).load(function () {
 
         function fileOnload(e) {
             var result = e.target.result;
-            $('#imgSalidaAscenso').attr("src", result);
+            $('#imgSalidaNuevoAscenso').attr("src", result);
         }
     });
 });
@@ -348,6 +378,144 @@ $(window).load(function () {
         function fileOnload(e) {
             var result = e.target.result;
             $('#imgSalidaPromocionEscolar').attr("src", result);
+        }
+    });
+});
+/**
+ * FLAYERS
+ */
+$(window).load(function () {
+
+    $(function () {
+        $('#btnImagenFlayers').change(function (e) {
+            addImage(e);
+        });
+
+        function addImage(e) {
+            var file = e.target.files[0],
+                    imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        }
+
+        function fileOnload(e) {
+            var result = e.target.result;
+            $('#imgSalidaFlayers').attr("src", result);
+        }
+    });
+});
+
+
+
+/**
+ * Actulizar Usuario
+ */
+// Actualizar Imagen 1
+$(window).load(function () {
+
+    $(function () {
+        $('#btnImage1').change(function (e) {
+            addImage(e);
+        });
+
+        function addImage(e) {
+            var file = e.target.files[0],
+                    imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        }
+
+        function fileOnload(e) {
+            var result = e.target.result;
+            $('#imagen1').attr("src", result);
+        }
+    });
+});
+// Actualizar Imagen 2
+$(window).load(function () {
+
+    $(function () {
+        $('#btnImage2').change(function (e) {
+            addImage(e);
+        });
+
+        function addImage(e) {
+            var file = e.target.files[0],
+                    imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        }
+
+        function fileOnload(e) {
+            var result = e.target.result;
+            $('#imagen2').attr("src", result);
+        }
+    });
+});
+// Actualizar Imagen 3
+$(window).load(function () {
+
+    $(function () {
+        $('#btnImage3').change(function (e) {
+            addImage(e);
+        });
+
+        function addImage(e) {
+            var file = e.target.files[0],
+                    imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        }
+
+        function fileOnload(e) {
+            var result = e.target.result;
+            $('#imagen3').attr("src", result);
+        }
+    });
+});
+// Actualizar Imagen 4
+$(window).load(function () {
+
+    $(function () {
+        $('#btnImage4').change(function (e) {
+            addImage(e);
+        });
+
+        function addImage(e) {
+            var file = e.target.files[0],
+                    imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        }
+
+        function fileOnload(e) {
+            var result = e.target.result;
+            $('#imagen4').attr("src", result);
         }
     });
 });

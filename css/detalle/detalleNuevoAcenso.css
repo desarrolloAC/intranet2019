@@ -43,6 +43,11 @@
     font-size: 12;
 }
 
+/* Agregar sangría a los parrafos con la class contenido*/
+.contenido > p {
+    text-indent: 40px;
+}
+
 @media only screen and (min-width: 1920px) and (max-width: 2500px) {
 
     .contenidoAVIF {
@@ -71,6 +76,9 @@
         background-color: var(--transparente);
         font-family: Arial;
         font-size: 12;
+    }
+    .contenido > p {
+        text-indent: 40px;
     }
 
 }

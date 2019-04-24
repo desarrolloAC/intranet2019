@@ -38,9 +38,15 @@
     <div id="contenidoGENE" class="contenidoAVIF">
         <div class="contenidoPlantilla">
             <img class="imagen-detalle" :src="item.photo" alt="Detalle de la noticia">
-            <textarea class="contenido" readonly>{{ item.content }}</textarea>
-            <textarea class="contenido2" readonly>{{ item.content1 }}</textarea>
-            <img class="logoInvitacionGeneral" src="assets/image/Logos/alkescorp.png" type="image/png" width="200" height="200"/>
+            <!--<textarea class="contenido" readonly>{{ item.content }}</textarea>
+            LAS LLAVES NO INTERPRETAN ETIQUETAS HTML POR ESTO SE DEBE USAR EN ESTE CASO LA DIRECTIVA v-html    
+            -->
+            <div class="contenido" v-html="item.content"> </div>
+             <!--<textarea class="contenido" readonly>{{ item.content }}</textarea>
+            LAS LLAVES NO INTERPRETAN ETIQUETAS HTML POR ESTO SE DEBE USAR EN ESTE CASO LA DIRECTIVA v-html    
+            -->
+            <div class="contenido2" v-html="item.content1"> </div>
+            <img class="logoInvitacionGeneral" src="assets/image/Logos/alkescorp.png" type="image/png" />
         </div>
     </div>
 

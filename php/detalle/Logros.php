@@ -15,13 +15,26 @@ class Logros implements \JsonSerializable {
     private $cargo;
     private $foto;
     private $image;
-
+    private $logo;
+    private $nombreDepartamento;
+    private $nombreCargo;
     public function __construct() {
         
     }
 
     public function getPublicacionId() {
         return $this->publicacionId;
+    }
+
+    public function getNombreDepartamento() {
+        return $this->nombreDepartamento;
+    }
+
+    public function getNombreCargo() {
+        return $this->nombreCargo;
+    }
+    public function getLogo() {
+        return $this->logo;
     }
 
     public function getOrganization() {
@@ -55,9 +68,20 @@ class Logros implements \JsonSerializable {
     public function getFoto() {
         return $this->foto;
     }
-
+    public function getImage() {
+        return $this->image;
+    }
     public function setPublicacionId($publicacionId) {
         $this->publicacionId = $publicacionId;
+    }
+    public function setLogo($logo) {
+        $this->logo = $logo;
+    }
+    public function setNombreDepartamento($nombreDepartamento) {
+        $this->nombreDepartamento = $nombreDepartamento;
+    }
+    public function setNombreCargo($nombreCargo) {
+        $this->nombreCargo = $nombreCargo;
     }
 
     public function setOrganization($organization) {
@@ -92,10 +116,6 @@ class Logros implements \JsonSerializable {
         $this->foto = $foto;
     }
     
-    public function getImage() {
-        return $this->image;
-    }
-
     public function setImage($image) {
         $this->image = $image;
     }
@@ -110,7 +130,11 @@ class Logros implements \JsonSerializable {
             'content' => $this->contenido,
             'colaborated' => $this->colaborador,
             'dpto' => $this->departamento,
-            'photo' => $this->foto
+            'photo' => $this->foto,
+            'image' => $this->image,
+            'logo' => $this->logo,
+            'NameDeparat' => $this->nombreDepartamento,
+            'NameCharge' => $this->nombreCargo
         ];
     }
 

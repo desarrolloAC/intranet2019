@@ -57,9 +57,9 @@
 }
 
 .titulo {
-    position: absolute; top: 6cm;
+    position: absolute; top: 7cm;
     font-family: Arial;
-    font-size: 14;
+    font-size: 25pt;
 }
 
 .org {
@@ -71,17 +71,23 @@
 }
 
 .contenido {
-    position: absolute; top: 7.5cm; left: 0.1cm;
-    width: 11.4cm;
+    position: absolute; top: 7.4cm; left: 0.5cm;
+    width: 11cm;
     height: 11.6cm;
-    min-width: 11.4cm;
-    max-width: 11.4cm;
+    min-width: 11cm;
+    max-width: 11cm;
     min-height: 11.6cm;
     max-height: 11.6cm;
     border-style: none;
     background-color: var(--transparente);
     font-family: Arial;
     font-size: 12;
+    text-align: justify;
+}
+
+/* Agregar sangría a los parrafos con la class contenido*/
+.contenido > p {
+    text-indent: 40px;
 }
 
 @media only screen and (min-width: 1920px) and (max-width: 2500px) {
@@ -99,9 +105,9 @@
     }
 
     .titulo {
-        position: absolute; top: 5.5cm;
+        position: absolute; top: 6cm;
         font-family: Arial;
-        font-size: 14;
+        font-size: 25pt;
     }
 
     .org {
@@ -113,17 +119,20 @@
     }
 
     .contenido {
-        position: absolute; top: 7.5cm; left: 0.1cm;
-        width: 11.4cm;
+        position: absolute; top: 7.4cm; left: 0.5cm;
+        width: 5cm;
         height: 11.6cm;
-        min-width: 11.4cm;
-        max-width: 11.4cm;
+        min-width: 11cm;
+        max-width: 11cm;
         min-height: 11.6cm;
         max-height: 11.6cm;
         border-style: none;
         background-color: var(--transparente);
         font-family: Arial;
         font-size: 12;
+        text-align: justify;
     }
-
+    .contenido > p {
+        text-indent: 40px;
+    }
 }

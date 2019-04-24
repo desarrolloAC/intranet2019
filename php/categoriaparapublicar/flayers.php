@@ -79,21 +79,22 @@ $org = mysqli_fetch_array($nombreOrg, MYSQLI_ASSOC);
 
         <a href="#" class="cerrar">X</a>
 
-        <form method="POST" action="php/publicaciones/registrarPublicacionFlayers.php" enctype="multipart/form-data" class="formulario">
-
-            <input id="txtCodigoSubCategoriaFlayers" type="text" name="txtCodigoSubCategoriaFlayers" value="FLAY" maxlength="4" readonly>
-
-            <input id="txtCodigoOrganizacionFlayers" type="text" name="txtCodigoOrganizacionFlayers" value="<?php echo $org['Nombre']; ?>" maxlength="4" readonly>
-
-            <input id="btnImagenFlayers" type="file" name="btnImagenFlayers" required>
-
+        <form method="POST" action="php/publicaciones/registrarPublicacionFlayers.php" enctype="multipart/form-data" class="formulario">           
+            <input id="txtCodigoSubCategoriaFlayers" type="hidden" name="txtCodigoSubCategoriaFlayers" value="FLAY" maxlength="4" readonly>            
+            
+            <input id="btnImagenFlayers" type="file" name="btnImagenFlayers" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
+                        remove();
+                        alert('el fichero supera los 300 KB ')}" required>
             <?php
             $sql = " SELECT * FROM organizacion o WHERE o.Estatus = 'A' AND o.ID_Organizacion = '" . $_SESSION['ID_Organizacion'] . "';";
             $rs = mysqli_query($conexion, $sql) or die(mysqli_error($conexion));
             $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
-            echo '<img class="logoFlayers" src="' . $row['foto'] . '" type="image/png" width="100" height="100"></img>';
+            //echo '<img class="logoFlayers" src="' . $row['foto'] . '" type="image/png" width="100" height="100"></img>';
             ?>
+
+            <img class="logoFlayers" src=<?php echo $row['foto'] ?> type="image/png" width="100" height="100"/>
             <input id="btnRegistrarFlayers" type="submit" name="btnRegistrarFlayers" value="Registrar">
+            <div class="fondo"><img id="imgSalidaFlayers" src="" style="width:100%; height:auto"/></div>
 
         </form>
 

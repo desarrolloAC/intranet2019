@@ -76,6 +76,12 @@ switch ($subcategoria) {
             location.href="../../detallePromocionEscolar.php?id=' . $id . '";
         </script>';
         break;
+    
+    case 'FLAY':
+        echo'<script language="javascript">
+            location.href="../../detalleFlayers.php?id=' . $id . '";
+        </script>';
+        break;
 
     default:
         echo'<script language="javascript">

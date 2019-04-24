@@ -21,16 +21,16 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
 </script>
 
-<!--INICIO DIV CONTENEDOR FORMULARIO-->
+<!--INICIO DIV CONTENEDOR FORMULARIO NIÑO -->
 <div id="formularioNacimiento" class="contenedorFormulario">
 
     <div id="formularioNacimiento">
+       <a href="#" class="cerrar">X</a>
 
-        <a href="#" class="cerrar">X</a>
-
-        <form method="POST" action="php/publicaciones/registrarPublicacionNacimientos.php">
+        <form method="POST" action="php/publicaciones/registrarPublicacionNacimientos.php" enctype="multipart/form-data">
 
             <input id="txtCodigoSubCategoriaNacimiento" type="text" name="txtCodigoSubCategoriaNacimiento" value="NACI" maxlength="4">
+            <input id="txtSexo" type="hidden" name="txtSexo" value="NINO" maxlength="4">
 
             <input id="txtNombreCompletoNacimiento" type="text" name="txtNombreCompletoNacimiento" value="" maxlength="100" placeholder="Nombre Completo" required>
 
@@ -67,6 +67,54 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
         </form>
 
     </div>
-
 </div>
-<!--FIN DIV CONTENEDOR FORMULARIO-->
+<!--FIN DIV CONTENEDOR FORMULARIO NIÑO-->
+
+<!--INICIO DIV CONTENEDOR FORMULARIO NIÑA -->
+<div id="formularioNacimientoNina" class="contenedorFormularioNina">
+
+    <div id="formularioNacimientoNina">
+       <a href="#" class="cerrar">X</a>
+
+        <form method="POST" action="php/publicaciones/registrarPublicacionNacimientos.php" enctype="multipart/form-data">
+
+            <input id="txtCodigoSubCategoriaNacimiento" type="text" name="txtCodigoSubCategoriaNacimiento" value="NACI" maxlength="4">
+            <input id="txtSexo" type="hidden" name="txtSexo" value="NINA" maxlength="4">
+
+            <input id="txtNombreCompletoNacimiento" type="text" name="txtNombreCompletoNacimiento" value="" maxlength="100" placeholder="Nombre Completo" required>
+
+            <textarea id="txtContenidoNacimiento"
+                      name="txtContenidoNacimiento"
+                      onKeyDown="textCounter(this.form.txtContenidoPromocionEscolar, this.form.remLen, 500);"
+                      onKeyUp="textCounter(this.form.txtContenidoPromocionEscolar, this.form.remLen, 500);"
+                      placeholder="Descripcion"
+                      required></textarea>
+
+            <input id="ncaracteresNacimiento" readonly type=text name=remLen size=3 maxlength=3 value="500">
+
+            <label id="tituloCaracteresNacimiento">Caracteres Restantes</label>
+
+
+            <input id="btnImagenNacimientoNina" type="file" name="btnImagenNacimiento" onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
+                        remove();
+                        alert('el fichero supera los 300 KB ')
+                    }" required>
+
+
+            <img id="imgSalidaNacimientoNina" width="30%" height="25%" src="" />
+
+
+            <input id="btnRegistrarNacimiento" type="submit" name="btnRegistrarNacimiento" value="Registrar">
+
+
+            <?php
+            $sql = " SELECT * FROM organizacion o WHERE o.Estatus = 'A' AND o.ID_Organizacion = '" . $_SESSION['ID_Organizacion'] . "';";
+            $rs = mysqli_query($conexion, $sql) or die(mysqli_error($conexion));
+            $row = mysqli_fetch_array($rs, MYSQLI_ASSOC);
+            echo '<img class="logoNacimiento" src="' . $row['foto'] . '" type="image/png" width="100" height="100"></img>';
+            ?>
+        </form>
+
+    </div>
+</div>
+<!--FIN DIV CONTENEDOR FORMULARIO NIÑA-->

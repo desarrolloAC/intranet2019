@@ -15,8 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/structura/media.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/structura/structura.css" media="all"/>
 
-    <link rel="stylesheet" type="text/css" href="css/detalle/detalleAvanceInformativo.css" media="all"/>
-
+    <link rel="stylesheet" type="text/css" href="css/detalle/detalleLogroExtraCurrricular.css" media="all"/>
     <script type="text/javascript" src="js/lib/vue.js"></script>
     <script type="text/javascript" src="js/lib/vue-resource.min.js"></script>
 
@@ -38,8 +37,18 @@
         <div class="contenidoPlantilla">
             <img class="imagen-detalle" :src="item.photo" alt="Detalle de la noticia">
             <h1 class='titulo'>{{ item.tipo }}</h1>
-            <h5 class="org">{{ item.org }}</h5>
-            <textarea class="contenido" readonly>{{ item.content }}</textarea>
+          
+            <!--<textarea class="contenido" readonly>{{ item.content }}</textarea>
+            LAS LLAVES NO INTERPRETAN ETIQUETAS HTML POR ESTO SE DEBE USAR EN ESTE CASO LA DIRECTIVA v-html    
+            -->
+            <div class="contenido" v-html="item.content"> </div>
+            <h5 class="colaborador">{{ item.colaborated }}</h5>
+            <h5 class="departamento">{{ item.department }}</h5>
+            <h5 class="cargo">{{ item.position }}</h5>
+            <img class="image" :src="item.image" alt="Imagen">
+            <img class="logo" :src="item.logo" alt="logo">
+            <h5 class="departamento">{{ item.NameDeparat }}</h5>
+            <h5 class="cargo">{{ item.NameCharge }}</h5>
         </div>
     </div>
 

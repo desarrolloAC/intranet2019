@@ -20,10 +20,10 @@ $colaborador = $_POST['txtNombreCompletoLogro'];
 $departamento = $_POST ['txtDpto'];
 $cargo = $_POST ['txtCargo'];
 
-$foto = $_FILES['btnImagen']['name'];
-$error = $_FILES['btnImagen']['error'];
-$origen = $_FILES['btnImagen']['tmp_name'];
-
+$foto = $_FILES['archivo']['name'];
+$error = $_FILES['archivo']['error'];
+$origen = $_FILES['archivo']['tmp_name'];
+$date = date("Y-m-d H:i:s"); // desvielve fecha en mumero en el siguiente formato(Año-mes-dia hora:minutos:segundo)
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
@@ -51,12 +51,11 @@ switch ($error) {
         break;
 
     default :
-
-        copy($origen, $destino);
-
-        $insert = " CALL sp_RegistroLogroExtra(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-
-
+if (!empty($foto)){
+        if (!copy($origen,$destino)){
+            throw new Exception(" Imagen  ".$foto1."No pudo ser copiada al servidor");
+        }
+        $insert = " CALL sp_RegistroLogroExtra(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($conexion, $insert);
         $stmt->bind_param("sssssssssss",
                 $idOrganizacion,
@@ -73,36 +72,36 @@ switch ($error) {
         );
 
         $stmt->execute() or die(mysqli_error($conexion));
+    }
 }
-
 
 switch ($_SESSION['ID_Rol']) {
 
     case TypeUsuario::ADMINISTRADOR:
         echo'<script language="javascript">
                 alert("Publicacion Realizada Con Exito");
-                location.href="../../menuAdministrador.php";
+                location.href="../../categoriaparapublicar.php";
             </script>';
         break;
 
     case TypeUsuario::AUTORIZADOR:
         echo'<script language="javascript">
                 alert("Publicacion Realizada Con Exito");
-                location.href="../../menuAutorizador.php";
+                location.href="../../categoriaparapublicar.php";
             </script>';
         break;
 
     case TypeUsuario::EDITOR:
         echo'<script language="javascript">
                 alert("Publicacion Realizada Con Exito");
-                location.href="../../menuEditor.php";
+                location.href="../../categoriaparapublicar.php";
             </script>';
         break;
 
     case TypeUsuario::PUBLICADOR:
         echo'<script language="javascript">
                 alert("Publicacion Realizada Con Exito");
-                location.href="../../menuPublicador.php";
+                location.href="../../categoriaparapublicar.php";
             </script>';
         break;
 

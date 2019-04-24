@@ -38,7 +38,10 @@
             <img class="imagen-detalle" :src="item.photo" alt="Detalle de la noticia">
             <h1 class='titulo'>{{ item.title }}</h1>
             <h5 class="org">{{ item.org }}</h5>
-            <textarea class="contenido" readonly>{{ item.content }}</textarea>
+             <!--<textarea class="contenido" readonly>{{ item.content }}</textarea>
+            LAS LLAVES NO INTERPRETAN ETIQUETAS HTML POR ESTO SE DEBE USAR EN ESTE CASO LA DIRECTIVA v-html    
+            -->
+            <div class="contenido" v-html="item.content"> </div>
             <img class="image image-pub1" :src="item.image1" alt="Imagen">
             <img class="image image-pub2" :src="item.image2" alt="Imagen">
             <img class="image image-pub3" :src="item.image3" alt="Imagen">

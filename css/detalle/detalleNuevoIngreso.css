@@ -29,23 +29,50 @@
 }
 
 .titulo {
-    position: absolute; top: 6cm;
+    position: absolute; top: 4.5cm; left: 0.5cm;
     font-family: Arial;
-    font-size: 14;
+    font-weight: bold;
+    font-size: 30pt; 
+}
+.titulo_dpto{
+    position: absolute; top: 6cm; left: 0.5cm;
+    font-family: Arial;
+    font-size: 25pt;
+}
+.titulo_cargo{
+    position: absolute; top: 7cm; left: 0.5cm;
+    font-family: Arial;
+    font-size: 25pt;
 }
 
+
 .contenido {
-    position: absolute; top: 7.5cm; left: 0.1cm;
-    width: 11.4cm;
+    position: absolute; top: 10cm; left: 0.5cm;
+    width: 11cm;
     height: 11.6cm;
-    min-width: 11.4cm;
-    max-width: 11.4cm;
+    min-width: 11cm;
+    max-width: 11cm;
     min-height: 11.6cm;
     max-height: 11.6cm;
     border-style: none;
     background-color: var(--transparente);
     font-family: Arial;
     font-size: 12;
+    text-align: justify;
+}
+
+.imagen-ingreso{
+    position: absolute;
+    top: 8.6cm;
+    left: 12cm;
+    width: 35%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Agregar sangría a los parrafos con la class contenido*/
+.contenido > p {
+    text-indent: 40px;
 }
 
 @media only screen and (min-width: 1920px) and (max-width: 2500px) {
@@ -63,7 +90,7 @@
     }
 
     .titulo {
-        position: absolute; top: 5.5cm;
+        position: absolute; top: 4.5cm;
         font-family: Arial;
         font-size: 14;
     }
@@ -75,17 +102,42 @@
     }
 
     .contenido {
-        position: absolute; top: 7.5cm; left: 0.1cm;
-        width: 11.4cm;
+        position: absolute; top: 10cm; left: 0.5cm;
+        width: 11cm;
         height: 11.6cm;
-        min-width: 11.4cm;
-        max-width: 11.4cm;
+        min-width: 11cm;
+        max-width: 11cm;
         min-height: 11.6cm;
         max-height: 11.6cm;
         border-style: none;
         background-color: var(--transparente);
         font-family: Arial;
         font-size: 12;
+        text-align: justify;
+    }
+
+    .titulo_dpto{
+        position: absolute; top: 6cm; left: 0.5cm;
+        font-family: Arial;
+        font-size: 14;
+    }
+
+    .titulo_cargo{
+        position: absolute; top: 7.2cm; left: 0.5cm;
+        font-family: Arial;
+        font-size: 14;
+    }
+
+    .imagen-ingreso{
+        position: absolute;
+        top: 8.6cm;
+        left: 12cm;
+        width: 35%;
+        height: auto;
+        border-radius: 50%;
+    }
+    .contenido > p {
+        text-indent: 40px;
     }
 
 }

@@ -13,18 +13,18 @@ $idSubCategoria = $_POST['txtCodigoSubCategoriaNuevoAscenso'];
 $cedula = $_SESSION['Cedula'];
 $createdBy = $_SESSION['Cedula'];
 $updateBy = $_SESSION['Cedula'];
-
 $colaborador = $_POST['txtNombreCompletoNuevoAscenso'];
 $departamento = $_POST['txtDpto'];
 $cargo = $_POST['txtCargo'];
 $contenido = $_POST['txtContenidoNuevoAscenso'];
-
+$date = date("Y-m-d H:i:s");
+$foto = $_FILES['Archivo']['name'];
+$error = $_FILES['Archivo']['error'];
+$origen = $_FILES['Archivo']['tmp_name'];
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
-$foto = $_FILES['btnImagenNuevoAscenso']['name'];
-$error = $_FILES['btnImagenNuevoAscenso']['error'];
-$origen = $_FILES['btnImagenNuevoAscenso']['tmp_name'];
+
 
 
 
@@ -52,7 +52,9 @@ switch ($error) {
 
     default :
 
-        copy($origen, $destino);
+    if (!copy($origen,$destino)) {
+        throw new Exception(" Imagen  ".$foto."No pudo ser copiada al servidor");
+    }
 
         $insert = " CALL sp_RegistroNuevoIngreso(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 

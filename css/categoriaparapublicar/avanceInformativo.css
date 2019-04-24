@@ -19,9 +19,8 @@
     z-index: 1001;
     width: 10cm;
     height: 15.8cm;
-    position: relative; top: 1cm;
+    position: relative; top: 3cm;
     margin: 0% auto;
-    top: 0cm;
     padding: 5px 20px 13px 20px;
     border-radius: 10px;
     background: rgb(255,255,255);
@@ -160,7 +159,7 @@ img#imgSalida3{
 }
 
 /*BOTON REGISTAR*/
-input#btnRegistrarAvanceInformativo{
+#btnRegistrarAvanceInformativo{
     position: absolute; width: 50%; height: 20px; left: 0.8cm; top: 15cm;
     background: rgb(241,129,3);/*NARANJA*/
     color: rgb(255,255,255);
@@ -170,15 +169,10 @@ input#btnRegistrarAvanceInformativo{
     cursor: pointer;
     box-shadow: 0px 5px 0px 0px #0A0A0A;
     transition: all 100ms linear;
-    touch-callout: none;
     user-select: none;
     font-family: "Arial";
     font-size: 14px;
 }
 
-/*EFECTO PARA QUE EL BOTON SE VEA TIPO 3D AL DAR CLICK*/
-input#btnRegistrarAvanceInformativo:active {
-    top: 16cm;
-    box-shadow: 0px 0px 0px 0px #0A0A0A;
-}
+
 /*FIN DEL BOTON REGISTRAR*/

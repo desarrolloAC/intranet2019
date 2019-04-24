@@ -93,7 +93,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
             echo "</select>";
             ?>
 
-            <input id="btnImagenCumpleMes" type="file" name="btnImagenCumpleMes"onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
+            <input id="btnImagenCumpleMes" type="file" name="archivo"onchange="if ((getFileSize(this.form.fileName.value)) > 300000) {
                         remove();
                         alert('el fichero supera los 300 KB ')
                     }" required>

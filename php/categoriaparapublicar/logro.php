@@ -39,7 +39,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
         <a href="#" class="cerrar">X</a>
 
-        <form method="POST" action="php/publicaciones/registrarPublicacionLogroExtraCurriculare.php">
+        <form method="POST" action="php/publicaciones/registrarPublicacionLogroExtraCurriculare.php" enctype=multipart/form-data>
 
             <input id="txtCodigoSubCategoriaLogro" type="text" name="txtCodigoSubCategoriaLogro" value="LOEX" maxlength="4">
 
@@ -77,7 +77,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
                 <option value=""> Cargo </option>
             </select>
 
-            <input id="btnImagenLogro" type="file" name="btnImagenLogro" required>
+            <input id="btnImagenLogro" type="file" name="archivo" required>
             <img id="imgSalidaImagenLogro" width="30%" height="25%" src="" />
 
             <?php

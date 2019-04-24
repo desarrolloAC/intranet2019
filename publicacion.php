@@ -33,6 +33,7 @@ if (!isset($_SESSION['Correo']))
         <link rel="stylesheet" type="text/css" href="css/departamento/opcionDepartamento.css">
         <link rel="stylesheet" type="text/css" href="css/organizacion/opcionOrganizacion.css">
         <link rel="stylesheet" type="text/css" href="css/publicacion/opcionPublicacion.css">
+        <link rel="stylesheet" type="text/css" href="css/publicacion/estiloPublicar.css">
         <link rel="stylesheet" type="text/css" href="css/rol/opcionRol.css">
         <link rel="stylesheet" type="text/css" href="css/subcategoria/opcionSubcategoria.css">
         <link rel="stylesheet" type="text/css" href="css/usuario/opcionUsuario.css">
@@ -73,8 +74,14 @@ if (!isset($_SESSION['Correo']))
         <!--FIN CONTENEDOR MENU-->
 
 
+    <!--MENSAJE DE ERRORES-->
+    <?php
+    $errorA="<h1 id='mensaje_error'style='color: rgb(69,69,69); text-aling: center;'>No existen registros que coincidan con su criterio de busqueda.</h1>";
+    $errorB= "<h5 id='mensaje_error'style='color: rgb(69,69,69); text-aling: center;'>Este tipo de publicacion no contiene Imagen.</h5>";    
+    $errorC="El criterio de Busqueda no conincide con la publicacion";
 
-        <!--INICIO CONTENEDOR CONTENIDOS-->
+    ?>
+         <!--INICIO CONTENEDOR CONTENIDOS-->
 
         <div class="contenedorContenidos">
 
@@ -277,7 +284,7 @@ if (!isset($_SESSION['Correo']))
                                                RIGHT JOIN   rol               r ON (oru.ID_Rol=r.ID_Rol)
                                                RIGHT JOIN   organizacion      o ON (oru.ID_Organizacion=o.ID_Organizacion)
                                                RIGHT JOIN   publicacion     pub ON (u.Cedula=pub.Cedula)
-                                               WHERE        pub.estado IN('RECHAZADO_A','REVISION_A','PUBLICADA')
+                                               WHERE        pub.estado IN ('REVISION_A','PUBLICADA')
                                                  AND        pub.ID_Organizacion='$_SESSION[ID_Organizacion]'
                                                ORDER BY     pub.ID_Publicacion DESC";
 
@@ -339,7 +346,7 @@ if (!isset($_SESSION['Correo']))
                                                RIGHT JOIN   rol               r ON (oru.ID_Rol=r.ID_Rol)
                                                RIGHT JOIN   organizacion      o ON (oru.ID_Organizacion=o.ID_Organizacion)
                                                RIGHT JOIN   publicacion     pub ON (u.Cedula=pub.Cedula)
-                                               WHERE        pub.estado IN('REVISION_A','REVISION_E','RECHAZADO_E','RECHAZADO_A')
+                                               WHERE        pub.estado IN ('RECHAZADO_A','REVISION_E')
                                                  AND        pub.ID_Organizacion='$_SESSION[ID_Organizacion]'
                                                ORDER BY     pub.ID_Publicacion DESC ";
 
@@ -403,7 +410,7 @@ if (!isset($_SESSION['Correo']))
                                                RIGHT JOIN   organizacion      o ON (oru.ID_Organizacion=o.ID_Organizacion)
                                                RIGHT JOIN   publicacion     pub ON (u.Cedula=pub.Cedula)
                                                WHERE        pub.Cedula='$_SESSION[Cedula]'
-                                                 AND        pub.estado IN('PUBLICADA','RECHAZADO_E','REVISION_A','BORR','REVISION_E')
+                                                 AND        pub.estado IN ('RECHAZADO_E','BORR')
                                                  AND        pub.ID_Organizacion='$_SESSION[ID_Organizacion]'
                                                ORDER BY     pub.ID_Publicacion DESC";
 
@@ -544,7 +551,7 @@ if (!isset($_SESSION['Correo']))
                                 </td>
                                 <td>
                                     <?php
-                                    /*
+                                    /* boton editar */
                                       switch ($_SESSION['ID_Rol']) {
 
                                       case TypeUsuario::ADMINISTRADOR:
@@ -659,15 +666,16 @@ if (!isset($_SESSION['Correo']))
                                       break;
                                       default:
                                       echo"<a href='#$mostrarPublicacion[ID_Publicacion]' id='btnEditar'>
-                                      <img src='assets/image/menu/botonesTablas/btnEditar.png' title='Editar Publicación'>
+                                      <img src='assets/i!las/btnEditar.png' title='Editar Publicación'>
                                       </a>";
                                       break;
-                                      } //FIN SWITCH PUBLICADOR
+                                      } //FIN SWITCH PUB!
                                       break;
-                                      default: //PUBLICADOR
+                                      default: //PUBLICA!
                                       echo ' <h5></h5>';
                                       break;
-                                      }//FIN DE SWITCH PRINCIPAL ROL */
+                                      }//FIN DE SWITCH PRINCIPAL ROL
+                                      /* _____________________________*/
                                     ?>
 
                                     <div id='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>' class='contenedor_formulario'>
@@ -678,7 +686,7 @@ if (!isset($_SESSION['Correo']))
 
                                             <div class='contenedor_formulario_publicacion'>
 
-                                                <form method='POST' enctype='multipart/form-data' action='php/actualizarPublicacion.php'>
+                                                <form method='POST' enctype='multipart/form-data' action='php/publicaciones/actualizarPublicacion.php'>
 
                                                     <table id='tabla_formulario_publicacion' border='0' cellpadding='7'>
                                                         <tr id='titulo_columna_formulario'>
@@ -688,176 +696,359 @@ if (!isset($_SESSION['Correo']))
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <h5></h5>
+                                                            <?php /** Datos que no se motrataran en el formulario***/?>
                                                                 <input type='hidden' class='caja_formulario_usuario' readonly="readonly" name='txtCodigoP' maxlength='3' value='<?php echo $mostrarPublicacion['ID_Publicacion']; ?>'>
+                                                                <input type='hidden' class='caja_formulario_usuario' readonly="readonly" name='txtCodigoSubC' maxlength='3' value='<?php echo $mostrarPublicacion['ID_Subcategoria']; ?>'>
                                                             </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id='label_cajas_texto'>Título</h5>
-                                                                <input type='text' class='caja_formulario_usuario' id='txtTituloP' required name='txtTituloP' maxlength='100' value='<?php echo $mostrarPublicacion['titulo']; ?>'>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id="label_cajas_texto">Categoría: </h5>
-
+                                                            <tr>
+                                                                <td>
+                                                                    <?php
+                                                                    //Inicio de Titulo
+                                                                    $tit=false;
+                                                                    switch ($mostrarPublicacion['ID_Subcategoria']) {
+                                                                        case 'AVIF':
+                                                                        $tit=true;
+                                                                            break;
+                                                                        case 'BOIF':
+                                                                        $tit=true;
+                                                                            break;
+                                                                        case 'COMU':
+                                                                        $tit=true;
+                                                                            break;
+                                                                        default:
+                                                                        $tit=false;
+                                                                            break;
+                                                                    }   
+                                                                    if(!$tit){
+                                                                        echo "";
+                                                                    }else{
+                                                                        echo"<h5 id='label_cajas_texto'>Titulo: </h5>";
+                                                                        ?><input class=Titulo type='text' name='Titulo' value="<?php echo $mostrarPublicacion['titulo']?>";><?php
+                                                                    }
+                                                                    //Fin de Titulo
+                                                                    ?>
+                                                                </td>
+                                                                <tr>
+                                                                <td>
                                                                 <?php
-                                                                echo "
-                                                                <select name='txtCodigoCat' class='combos_formulario_usuario' id='txtCodigoCat' required >
-                                                                <option> Categoría </option>";
-
-                                                                $sql = " SELECT ID_Categoria, Nombre
-                                                                         FROM categoria
-                                                                         WHERE Estatus='A'";
-                                                                $rs = mysqli_query($conexion, $sql);
-                                                                if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                    do {
-                                                                        if ($_SESSION['ID_Categoria'] == $row['ID_Categoria'])
-                                                                            echo "<option value='$row[ID_Categoria]' selected='selected'> $row[Nombre] </option>";
-                                                                        else
-                                                                            echo "<option value='$row[ID_Categoria]'> $row[Nombre] </option>";
-                                                                    }while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
-                                                                }
-
-                                                                echo "</select>";
+                                                                //Inicio de Fecha 
+                                                                    $valido=false;
+                                                                    switch (($mostrarPublicacion['ID_Subcategoria'])) {
+                                                                        case 'POST':
+                                                                            $sqlValido  =" SELECT Contenido as fecha from publicacion_postulate where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $valido=true;
+                                                                            break; 
+                                                                            case 'CUPL':
+                                                                            $sqlValido  =" SELECT fecha from publicacion_cumpleañomes where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $valido=true;
+                                                                            break;
+                                                                        $valido=false;
+                                                                            break;
+                                                                    }
+                                                                    if(!$valido){
+                                                                        echo "";
+                                                                    }else{
+                                                                        $rs = mysqli_query($conexion,$sqlValido);
+                                                                        if (mysqli_num_rows($rs)>0) {
+                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+                                                                             echo" <h5 id='label_cajas_texto'>Fecha : </h5>";?>
+                                                                            <input class=txtCajaFormulario id="txtFecha" type="date" name="txtFecha" value="<?php echo $row['fecha']?>"><?php                                                                     
+                                                                        };
+                                                                     }  
+                                                                    }
+                                                                //FIn de Fecha 
                                                                 ?>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <h5 id="label_cajas_texto">SubCategoría: </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
                                                                 <?php
-                                                                echo "
-                                                                    <select name='txtCodigoSubC' class='combos_formulario_usuario' id='txtCodigoSubC' required>
-                                                                    <option> SubCategoría </option>";
-
-                                                                $sql = " SELECT ID_Subcategoria,Nombre FROM subcategoria ";
-                                                                $rs = mysqli_query($conexion, $sql);
-                                                                if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                    do {
-                                                                        if ($mostrarPublicacion['ID_Subcategoria'] == $row[ID_Subcategoria])
-                                                                            echo "<option value='$row[ID_Subcategoria]' selected='selected'> $row[Nombre] </option>";
-                                                                        else
-                                                                            echo "<option value='$row[ID_Subcategoria]'> $row[Nombre] </option>";
-                                                                    }while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
-                                                                }
-
-                                                                echo "</select>";
-                                                                ?>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td id="color_fondo_cajas">
-                                                                <h5 id="label_cajas_texto">Seleccionar Imagen</h5>
-                                                                <input type="file" name="btnImagen" id="btnImage">
+                                                                //Inicio Correo 
+                                                                        $A=false;
+                                                                            switch ($mostrarPublicacion['ID_Subcategoria']) {
+                                                                                case 'POST':
+                                                                                    $sqlCorreo="SELECT Correo FROM publicacion_postulate WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                    $A=true;
+                                                                                    break;
+                                                                                default:
+                                                                                    echo"";
+                                                                                    $A=false;
+                                                                                    break;
+                                                                            }
+                                                                                if(!$A){
+                                                                                    echo "";
+                                                                                }else{
+                                                                                    $rs = mysqli_query($conexion,$sqlCorreo);
+                                                                                    if (mysqli_num_rows($rs)>0) {
+                                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+                                                                                         echo" <h5 id='label_cajas_texto'>Correo: </h5>";?>
+                                                                                        <input class=txtCajaFormulario id="txtCorreo" type="text" name="txtCorreo" value="<?php echo $row['Correo']?>"><?php                                                                     
+                                                                                    };
+                                                                                 }
+                                                                            }
+                                                                  //fin de Correo  
+                                                                  ?>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
                                                                 <?php
+                                                                //Inicio de  de Colaborador 
+                                                                $colab=false;
                                                                 switch ($mostrarPublicacion['ID_Subcategoria']) {
-                                                                    case "AVIF":
-                                                                        $sql = "SELECT contenido from publicacion_avanceinf where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row["contenido"];
-                                                                        };
-                                                                        break;
-                                                                    case "BOIF":
-                                                                        $sql = "SELECT contenido from publicacion_boletininf where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row["contenido"];
-                                                                        };
-                                                                        break;
-                                                                    case "COMU":
-                                                                        $sql = "SELECT contenido from publicacion_comunicado where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row["contenido"];
-                                                                        };
-                                                                        break;
-                                                                    case 'CUPL':
-                                                                        $sql = "SELECT colaborador as contenido from publicacion_cumpleañomes where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row["contenido"];
-                                                                        };
-                                                                        break;
-                                                                    case 'COND':
-                                                                        $sql = "SELECT contenido from publicacion_fallecimineto where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row["contenido"];
-                                                                        };
-                                                                        break;
-                                                                    case 'GENE':
-                                                                        $sql = "SELECT contenido from publicacion_invitaciongeneral where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row["contenido"];
-                                                                        };
-                                                                        break;
-                                                                    case 'LOEX':
-                                                                        $sql = " SELECT foto from publicacion_logroext where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row['foto'];
-                                                                            ?>   <img src='<?php echo $row['foto']; ?>' id='imagen' width='100' height='100'> <?php
-                                                                        };
-                                                                        break;
-                                                                    case 'NACI':
-                                                                        $sql = " SELECT contenido from publicacion_nacimiento where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row["contenido"];
-                                                                        };
+                                                                    case 'NUIN':
+                                                                        $sqlColaborador="SELECT colaborador FROM publicacion_nuevoingreso WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                        $colab=true;
                                                                         break;
                                                                     case 'NUAS':
-                                                                        $sql = " SELECT contenido from publicacion_nuevoacenso where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row["contenido"];
-                                                                        };
+                                                                        $colab=true;    
+                                                                        $sqlColaborador="SELECT colaborador FROM publicacion_nuevoascenso WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
                                                                         break;
-                                                                    case 'NUIN':
-                                                                        $sql = " SELECT contenido from publicacion_nuevoingreso where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row["contenido"];
-                                                                        };
+                                                                    case 'LOEX':
+                                                                        $colab=true;    
+                                                                        $sqlColaborador="SELECT colaborador FROM publicacion_logroext WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
                                                                         break;
-                                                                    case 'POST':
-                                                                        $sql = " SELECT contenido from publicacion_postulate where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row["contenido"];
-                                                                        };
+                                                                    case 'CUPL':
+                                                                        $colab=true;
+                                                                        $sqlColaborador="SELECT colaborador FROM publicacion_cumpleañomes WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
                                                                         break;
-                                                                    case 'POES':
-                                                                        $sql = " SELECT contenido from publicacion_promoescolar where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                        $rs = mysqli_query($conexion, $sql);
-
-                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                            echo $row["contenido"];
-                                                                        };
+                                                                    case 'NACI':
+                                                                        $colab=true;
+                                                                        $sqlColaborador="SELECT colaborador FROM publicacion_nacimiento WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
                                                                         break;
+                                                                        case 'POES':
+                                                                        $colab=true;
+                                                                        $sqlColaborador="SELECT colaborador FROM publicacion_promoescolar WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                        break;
+                                                                        
                                                                     default:
-                                                                        echo 'No Pertenece a ninguna publicacion';
+                                                                        echo"";
+                                                                        $colab=false;
                                                                         break;
                                                                 }
-                                                                ?>
+                                                                if (!$colab) {
+                                                                    echo "";
+                                                                }else{
+                                                                    $rs= mysqli_query($conexion,$sqlColaborador);
+                                                                    if (mysqli_num_rows($rs)>0){
+                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+                                                                            echo" <h5 id='label_cajas_texto'>Colaborador: </h5>";?>
+                                                                           <input class=txtCajaFormulario id="txtColaborador" type="text" name="txtColaborador" value="<?php echo $row['colaborador']?>"><?php                                                                     
+                                                                       };
+                                                                    };
+                                                                }; //fin de Colaborador 
+                                                                  ?>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                <?php
+                                                                 //Inicio de Departamento
+                                                                    $dep=false;
+                                                                    switch ($mostrarPublicacion['ID_Subcategoria']) {
+                                                                    case 'NUIN':
+                                                                        $dep=true;
+                                                                        $sqlIDdepartamento="SELECT departamento FROM publicacion_nuevoingreso WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                        break;
+                                                                    case 'NUAS':
+                                                                        $dep=true;
+                                                                        $sqlIDdepartamento="SELECT departamento FROM publicacion_nuevoascenso WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                        break;
+                                                                    case 'LOEX':
+                                                                        $dep=true;
+                                                                        $sqlIDdepartamento="SELECT departamento FROM publicacion_logroext    WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                        break;
+                                                                    case 'CUPL':
+                                                                        $dep=true;
+                                                                        $sqlIDdepartamento="SELECT departamento FROM publicacion_cumpleañomes    WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                        break;
+                                                                        default:
+                                                                        $colab=false;
+                                                                        break;
+                                                                }
 
-                                                            </td>
-                                                        </tr>
+                                                                    if (!$dep) {
+                                                                        echo"";
+                                                                    }else{
+                                                                        $IDdeparatamento;
+                                                                        $rsd = mysqli_query($conexion,$sqlIDdepartamento);
+                                                                        if(mysqli_num_rows($rsd)>0){
+                                                                            while ($row = mysqli_fetch_array($rsd, MYSQLI_ASSOC)) {
+                                                                                $IDdeparatamento=$row['departamento'];
+                                                                            }; 
+                                                                            echo"<h5 id='label_cajas_texto'>Departamento: </h5>";
+                                                                            echo "<select name='txtCodigoDept' class='combos_formulario_usuario' id='txtCodigoDept' required>
+                                                                            <option> Departamento </option>";
+                                                                         $sql = " SELECT ID_Departamento,Nombre from departamento ";
+                                                                         $rs = mysqli_query($conexion, $sql);
+                                                                            if(mysqli_num_rows($rs)>0){
+                                                                                if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)){
+                                                                                    do {
+                                                                                        if ($row['ID_Departamento']==$IDdeparatamento){
+                                                                                            echo "<option value='$row[ID_Departamento]' selected='selected'> $row[Nombre] </option>";
+                                                                                        }else{
+                                                                                            echo "<option value='$row[ID_Departamento]'> $row[Nombre] </option>";
+                                                                                        };   
+                                                                                    }while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
+                                                                                };
+                                                                            };
+                                                                        echo "</select>";
+                                                                    };
+                                                                };//Fin de Departamento
+                                                                  ?>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                <?php
+                                                                //Inicio de Cargo
+                                                                if(($mostrarPublicacion['ID_Subcategoria']=='NUIN')||($mostrarPublicacion['ID_Subcategoria']=='NUAS')|| ($mostrarPublicacion['ID_Subcategoria']=='LOEX')){
+                                                                    echo" <h5 id='label_cajas_texto'>Cargo: </h5>";
+                                                                    switch ($mostrarPublicacion['ID_Subcategoria']) {
+                                                                        case 'NUIN':
+                                                                        $sqlIDdepartamento="SELECT cargo FROM publicacion_nuevoingreso WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            break;
+                                                                        case 'NUAS':
+                                                                        $sqlIDdepartamento="SELECT cargo FROM publicacion_nuevoascenso WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";                                                                        
+                                                                        case 'LOEX':
+                                                                        $sqlIDdepartamento="SELECT cargo FROM publicacion_logroext WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";                                                                        
+                                                                            break;
+                                                                    }
+                                                                    $IDCargo;
+                                                                    $rsc = mysqli_query($conexion,$sqlIDdepartamento);
+                                                                    if(mysqli_num_rows($rsc)>0){
+                                                                        while ($row = mysqli_fetch_array($rsc, MYSQLI_ASSOC)) {
+                                                                            $IDCargo=$row['cargo'];
+                                                                        }
+                                                                    }
+                                                                    echo "<select name='txtCodigoCarg' class='combos_formulario_usuario' id='txtCodigoCarg' required>
+                                                                         <option> Cargo </option>";
+                                                                         
+                                                                         $sql = " SELECT ID_Cargo,Nombre FROM cargo ";
+                                                                         $rs = mysqli_query($conexion, $sql);
+                                                                         if(mysqli_num_rows($rs)>0){
+                                                                            if ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)){
+                                                                                do {
+                                                                                    if ($row['ID_Cargo']==$IDCargo)
+                                                                                        echo "<option value='$row[ID_Cargo]' selected='selected'> $row[Nombre] </option>";
+                                                                                    else
+                                                                                        echo "<option value='$row[ID_Cargo]'> $row[Nombre] </option>";
+                                                                                }while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC));
+                                                                            }
+                                                                         }
+                                                                    
+                                                                    echo "</select>";
+
+                                                                }
+                                                                //Fin de Cargo
+                                                                  ?>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <?php
+                                                                    //Inicio de tipo de,logro
+                                                                       if ($mostrarPublicacion['ID_Subcategoria']=='LOEX') {
+                                                                        $sqlTipo="SELECT tipo_logro FROM publicacion_logroext WHERE ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                        $rs = mysqli_query($conexion,$sqlTipo);
+                                                                            if (mysqli_num_rows($rs)>0) {
+                                                                                while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+                                                                                     echo" <h5 id='label_cajas_texto'>Tipo de logro: </h5>";?>
+                                                                                    <input class=txtCajaFormulario id="txtTipoLogro" type="text" name="txtTipoLogro" value="<?php echo $row['tipo_logro']?>"><?php                                                                     
+                                                                                };
+                                                                             }
+                                                                        }
+                                                                        //Fin de Tipo de Logro
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                            <tr> 
+                                                                <td id="color_fondo_cajas">
+                                                                    <h5 id="label_cajas_texto">Seleccionar Imagen</h5>
+                                                                        <?php
+                                                                //Fotos Publicacion
+                                                                    switch ($mostrarPublicacion['ID_Subcategoria']) {
+                                                                        case "AVIF":
+                                                                            $sqlimage = " SELECT imagen1, imagen2, imagen3, imagen4 from publicacion_avanceinf where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 4;
+                                                                            break;
+                                                                        case "BOIF":
+                                                                            $sqlimage = " SELECT imagen1, imagen2, imagen3, imagen4 FROM publicacion_boletininf where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 4;
+                                                                            break;
+                                                                        case "COMU":
+                                                                            $sqlimage = " SELECT '#' as imagen1 from publicacion_comunicado where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 1;
+                                                                            break;
+                                                                        case 'CUPL':
+                                                                            $sqlimage = " SELECT foto as imagen1 from publicacion_cumpleañomes where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 1;
+                                                                            break;
+                                                                        case 'COND':
+                                                                            $sqlimage = " SELECT '#' as imagen1 from publicacion_fallecimiento where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 1;
+                                                                            break;
+                                                                        case 'GENE':
+                                                                            $sqlimage = " SELECT '#' as imagen1 from publicacion_invitaciongeneral where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 1;
+                                                                            break;
+                                                                        case 'LOEX':
+                                                                            $sqlimage = " SELECT foto as imagen1 from publicacion_logroext where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 1;
+                                                                            break;
+                                                                        case 'NACI':
+                                                                            $sqlimage = " SELECT foto as imagen1 from publicacion_nacimiento where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 1;
+                                                                            break;
+                                                                        case 'NUAS':
+                                                                            $sqlimage = " SELECT foto as imagen1 from publicacion_nuevoacenso where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 1;
+                                                                            break;
+                                                                        case 'NUIN':
+                                                                            $sqlimage = " SELECT foto as imagen1 from publicacion_nuevoingreso where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 1;
+                                                                            break;
+                                                                        case 'POST':
+                                                                            $sqlimage = " SELECT '#' as imagen1 from publicacion_postulate where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 1;
+                                                                            break;
+                                                                        case 'POES':
+                                                                            $sqlimage = " SELECT foto as imagen1 from publicacion_promoescolar where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 1;
+                                                                            break;
+                                                                        case 'FLAY':
+                                                                            $sqlimage = " SELECT foto as imagen1 from publicacion_flayers where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                            $c = 1;
+                                                                            break;
+                                                                        default:
+                                                                        echo $errorC;
+                                                                        break;
+                                                                    }
+                                                                        
+                                                                        $rs = mysqli_query($conexion,$sqlimage);
+                                                                        if (mysqli_num_rows($rs)<=0) {
+                                                                            echo $errorA;
+                                                                            }else{
+                                                                                echo "<div class='padre'>";
+                                                                                while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+                                                                               
+                                                                                    if(($mostrarPublicacion['ID_Subcategoria']=='COMU') || ($mostrarPublicacion['ID_Subcategoria']=='COND')|| ($mostrarPublicacion['ID_Subcategoria']=='GENE') || ($mostrarPublicacion['ID_Subcategoria']=='POST')){
+                                                                                    echo $errorB;
+                                                                                        }else{
+                                                                                            for ($i=1; $i<=$c ; $i++) { 
+                                                                                            echo"<div class='hijo'>";
+                                                                                                ?> <img class="imgEditar"src="<?php echo $row['imagen'.$i];?>" id="<?php echo"imagen".$i;?>"><?php
+                                                                                                ?> <input class="btnImageEditar" type="file" name="<?php echo "archivo".$i;?>" id="<?php echo "btnImage".$i;?>"><?php  
+                                                                                            echo"</div>"; 
+                                                                                            }
+                                                                                        }
+                                                                                    };//FIn de While 
+                                                                                echo "</div>";  // fin de DIV;
+                                                                             };
+                                                                    //Fin de Fotos Publicacion
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
                                                         <tr>
                                                             <td>
                                                                 <?php
@@ -866,9 +1057,7 @@ if (!isset($_SESSION['Correo']))
                                                                         /* INGRESAR EL USUARIO COMO ADMINISTRADOR */
                                                                         echo"
                                                                       <h5 id='label_cajas_texto'>Observaciones de la Edición</h5>
-                                                                         <textarea name='motivo' id='motivo' rows='10' cols='80' >
-                                                                             $mostrarPublicacion[motivo]
-                                                                        </textarea>
+                                                                         <textarea name='motivo' id='motivo' rows='10' cols='100' >$mostrarPublicacion[motivo]</textarea>
                                                                         <script>
                                                                             CKEDITOR.replace( 'motivo' );
                                                                         </script>";
@@ -877,9 +1066,7 @@ if (!isset($_SESSION['Correo']))
                                                                         /* INGRESAR EL USUARIO COMO AUTORIZADOR */
                                                                         echo"
                                                                       <h5 id='label_cajas_texto'>Observaciones de la Edición</h5>
-                                                                         <textarea name='motivo' id='motivo' rows='10' cols='80' >
-                                                                             $mostrarPublicacion[motivo]
-                                                                        </textarea>
+                                                                         <textarea name='motivo' id='motivo' rows='10' cols='100' >$mostrarPublicacion[motivo]</textarea>
                                                                         <script>
                                                                             CKEDITOR.replace( 'motivo' );
                                                                         </script>";
@@ -888,9 +1075,7 @@ if (!isset($_SESSION['Correo']))
                                                                         /* INGRESAR EL USUARIO COMO EDITOR */
                                                                         echo"
                                                                       <h5 id='label_cajas_texto'>Observaciones de la Edición</h5>
-                                                                         <textarea name='motivo' id='motivo' rows='10' cols='80' >
-                                                                             $mostrarPublicacion[motivo]
-                                                                        </textarea>
+                                                                         <textarea name='motivo' id='motivo' rows='10' cols='100' >$mostrarPublicacion[motivo]</textarea>
                                                                         <script>
                                                                             CKEDITOR.replace( 'motivo' );
                                                                         </script>";
@@ -904,116 +1089,156 @@ if (!isset($_SESSION['Correo']))
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <h5 id="label_cajas_texto">Contenido</h5>
-                                                                <textarea name="contenido2" id="contenido2" rows="10" cols="80" required>
-                                                                    <?php
-                                                                    switch ($mostrarPublicacion['ID_Subcategoria']) {
-                                                                        case "AVIF":
-                                                                            $sql = "SELECT contenido from publicacion_avanceinf where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
+                                                                <?php 
+                                                        
+                                                                        // Primer contenido
+                                                                        switch ($mostrarPublicacion['ID_Subcategoria']) {
+                                                                            case "AVIF":
+                                                                                $sqlContenido = "SELECT contenido from publicacion_avanceinf where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                $Con=true;
+                                                                                break;
+                                                                            case "BOIF":
+                                                                                $sqlContenido = "SELECT contenido from publicacion_boletininf where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                $Con=true;
+                                                                                break;
+                                                                            case "COMU":
+                                                                                $sqlContenido = "SELECT contenido from publicacion_comunicado where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                $Con=true;
+                                                                                break;
+                                                                            case 'CUPL':
+                                                                                $sqlContenido = "SELECT colaborador as contenido from publicacion_cumpleañomes where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                $Con=false;
+                                                                                break;
+                                                                            case 'COND':
+                                                                                $sqlContenido = "SELECT contenido from publicacion_fallecimiento where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                $Con=true;
+                                                                                break;
+                                                                            case 'GENE':
+                                                                                $sqlContenido = "SELECT contenido from publicacion_invitaciongeneral where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                $Con=true;
+                                                                                break;
+                                                                            case 'LOEX':
+                                                                                $sqlContenido = " SELECT contenido from publicacion_logroext where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                $Con=true;
+                                                                                break;
+                                                                            case 'NACI':
+                                                                                $sqlContenido = " SELECT contenido from publicacion_nacimiento where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                $Con=true;
+                                                                                break;
+                                                                            case 'NUAS':
+                                                                                $sqlContenido = " SELECT contenido from publicacion_nuevoacenso where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";                                                                      
+                                                                                $Con=true;    
+                                                                            break;
+                                                                            case 'NUIN':
+                                                                                $sqlContenido = " SELECT contenido from publicacion_nuevoingreso where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                $Con=true;  
+                                                                                break;
+                                                                            case 'POST':
+                                                                                $sqlContenido = " SELECT  Requisito as contenido from publicacion_postulate where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                $Con=true;
+                                                                                break;
+                                                                            case 'POES':
+                                                                                $sqlContenido = " SELECT contenido from publicacion_promoescolar where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                                $Con=true;
+                                                                                break;
+                                                                            default:
+                                                                            echo $errorC;
+                                                                            $Con=false;
+                                                                                break;
+                                                                        };// FIN DEL SWITCH CASE
+                                                                        if(!$Con){
+                                                                            echo"";
+                                                                        }else{
+                                                                            $rs = mysqli_query($conexion, $sqlContenido);
+                                                                            if(mysqli_num_rows($rs)<=0){
+                                                                                echo $errorA;
+                                                                            }else{
+                                                                                while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)){
+                                                                                    echo "<h5 id='label_cajas_texto'>Primer Contenido</h5>";  
+                                                                                    ?><textarea name="contenido1" id="contenido1" rows="10" cols="100" required><?php echo $row['contenido'];?></textarea><?php
+                                                                                };
                                                                             };
-                                                                            break;
-                                                                        case "BOIF":
-                                                                            $sql = "SELECT contenido from publicacion_boletininf where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
-                                                                            };
-                                                                            break;
-                                                                        case "COMU":
-                                                                            $sql = "SELECT contenido from publicacion_comunicado where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
-                                                                            };
-                                                                            break;
-                                                                        case 'CUPL':
-                                                                            $sql = "SELECT colaborador as contenido from publicacion_cumpleañomes where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
-                                                                            };
-                                                                            break;
-                                                                        case 'COND':
-                                                                            $sql = "SELECT contenido from publicacion_fallecimineto where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
-                                                                            };
-                                                                            break;
-                                                                        case 'GENE':
-                                                                            $sql = "SELECT contenido from publicacion_invitaciongeneral where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
-                                                                            };
-                                                                            break;
-                                                                        case 'LOEX':
-                                                                            $sql = " SELECT contenido from publicacion_logroext where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
-                                                                            };
-                                                                            break;
-                                                                        case 'NACI':
-                                                                            $sql = " SELECT contenido from publicacion_nacimiento where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
-                                                                            };
-                                                                            break;
-                                                                        case 'NUAS':
-                                                                            $sql = " SELECT contenido from publicacion_nuevoacenso where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
-                                                                            };
-                                                                            break;
-                                                                        case 'NUIN':
-                                                                            $sql = " SELECT contenido from publicacion_nuevoingreso where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
-                                                                            };
-                                                                            break;
-                                                                        case 'POST':
-                                                                            $sql = " SELECT contenido from publicacion_postulate where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
-                                                                            };
-                                                                            break;
-                                                                        case 'POES':
-                                                                            $sql = " SELECT contenido from publicacion_promoescolar where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
-                                                                            $rs = mysqli_query($conexion, $sql);
-
-                                                                            while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-                                                                                echo $row["contenido"];
-                                                                            };
-                                                                            break;
-                                                                        default:
-                                                                            echo 'No Pertenece a ninguna publicacion';
-                                                                            break;
-                                                                    }
-                                                                    ?>
-
-                                                                </textarea>
-
+                                                                        };//Fin del Primer contenido 
+                                                                ?>
+                                                                <script>
+                                                                       CKEDITOR.replace( 'contenido1' );
+                                                                </script>
                                                             </td>
                                                         </tr>
+                                                        <tr>
+                                                            <td>
+                                                            <?php
+                                                            //Segundo Contenido                                                         
+                                                                $con2=false;
+                                                                switch ($mostrarPublicacion['ID_Subcategoria']) {
+                                                                    case 'GENE':
+                                                                        $sqlContenido2="SELECT contenido1 as contenido2 from publicacion_invitaciongeneral where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                        $con2=true;
+                                                                        break;
+                                                                    case 'POST':
+                                                                        $sqlContenido2="SELECT Posiciones as contenido2 from publicacion_postulate where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                        $con2=true;    
+                                                                        break;
+                                                                    default:
+                                                                        $con2=false;
+                                                                        break;
+                                                                }    
+                                                                if(!$con2){
+                                                                    echo"";
+                                                                }else{
+                                                                    
+                                                                    if (mysqli_num_rows($rs)<=0){
+                                                                        echo $errorA;
+                                                                    }else {
+                                                                        $rs = mysqli_query($conexion, $sqlContenido2);
+                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+                                                                            echo "<h5 id='label_cajas_texto'>Segundo Contenido</h5>";  
+                                                                            ?><textarea name="contenido2" id="contenido2" rows="10" cols="100" ><?php echo $row['contenido2']?></textarea><?php
+                                                                        };
+                                                                    };
+                                                                };//FIn del Segundo Contenido
+                                                                ?>
+                                                            <script>
+                                                                CKEDITOR.replace( 'contenido2' );
+                                                            </script>
+                                                            </td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                            <td>
+                                                            <?php
+                                                            //Tercer Contenido                                                         
+                                                                $con3=false;
+                                                                switch ($mostrarPublicacion['ID_Subcategoria']) {
+                                                                    case 'POST':
+                                                                        $sqlContenido3="SELECT Responsabilidades as contenido3 from publicacion_postulate where ID_publicacion='$mostrarPublicacion[ID_Publicacion]'";
+                                                                        $con3=true;    
+                                                                        break;
+                                                                    default:
+                                                                        $con3=false;
+                                                                        break;
+                                                                }    
+                                                                if(!$con3){
+                                                                    echo"";
+                                                                }else{
+                                                                    
+                                                                    if (mysqli_num_rows($rs)<=0){
+                                                                        echo $errorA;
+                                                                    }else {
+                                                                        $rs = mysqli_query($conexion, $sqlContenido3);
+                                                                        while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
+                                                                            echo "<h5 id='label_cajas_texto'>Tercer Contenido</h5>";  
+                                                                            ?><textarea name="contenido3" id="contenido3" rows="10" cols="100" ><?php echo $row['contenido3']?></textarea><?php
+                                                                        };
+                                                                    };
+                                                                };//FIn del Tercer Contenido
+                                                                ?>
+                                                            <script>
+                                                                CKEDITOR.replace( 'contenido3' );
+                                                            </script>
+                                                            </td>
+                                                        </td>
+                                                    </tr>
                                                         <tr>
                                                             <td colspan='2'>
                                                                 <input type='submit' name='btnActualizar' id='btnRegistrar' value='Actualizar'>
@@ -1106,7 +1331,7 @@ if (!isset($_SESSION['Correo']))
                                                     break;
                                             } //FIN SWITCH
                                             break;
-                                        case TypeUsuario::AUTORIZADOR:
+                                            case TypeUsuario::AUTORIZADOR:
                                             /* INGRESAR EL USUARIO COMO AUTORIZADOR */
                                             switch ($mostrarPublicacion['Estado']) {
                                                 case EstadoPublicacion::RECHAZADO_A:

@@ -26,7 +26,7 @@ $sql = "SELECT
              OR dpto.Nombre LIKE '%" . $search . "%' OR car.Nombre LIKE '%" . $search . "%'
              OR org.Nombre LIKE '%" . $search . "%'
              AND us.Estatus = 'A' AND car.Estatus = 'A' AND dpto.Estatus = 'A' AND org.Estatus = 'A'
-            ORDER BY us.Cedula;";
+            ORDER BY nc;";
 
 $rs = mysqli_query($conexion, $sql);
 

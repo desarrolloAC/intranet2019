@@ -29,13 +29,14 @@
 }
 
 .titulo {
-    position: absolute; top: 10cm;
+    position: absolute; top: 4.5cm; left: 5cm;
     font-family: Arial;
     font-size: 14;
+    text-align: center;
 }
 
 .contenido {
-    position: absolute; top: 7.5cm; left: 0.1cm;
+    position: absolute; top: 11cm; left: 4cm;
     width: 11.4cm;
     height: 11.6cm;
     min-width: 11.4cm;
@@ -46,6 +47,20 @@
     background-color: var(--transparente);
     font-family: Arial;
     font-size: 12;
+    text-align: center;
+}
+
+/* Agregar sangría a los parrafos con la class contenido*/
+.contenido > p {
+    text-indent: 40px;
+}
+.contenidoPlantilla .imagen-nino{
+    position: absolute;
+    top: 6cm;
+    left: 4.9cm;
+    width: 185px;
+    height: auto;
+    border-radius: 6em;
 }
 
 @media only screen and (min-width: 1920px) and (max-width: 2500px) {
@@ -63,9 +78,10 @@
     }
 
     .titulo {
-        position: absolute; top: 10.5cm;
+        position: absolute; top: 4.5cm; left: 5cm;
         font-family: Arial;
         font-size: 14;
+        text-align: center;
     }
 
     .org {
@@ -75,7 +91,7 @@
     }
 
     .contenido {
-        position: absolute; top: 7.5cm; left: 0.1cm;
+        position: absolute; top: 11cm; left: 4cm;
         width: 11.4cm;
         height: 11.6cm;
         min-width: 11.4cm;
@@ -86,6 +102,18 @@
         background-color: var(--transparente);
         font-family: Arial;
         font-size: 12;
+        text-align: center;
+    }
+    .contenido > p {
+        text-indent: 40px;
+    }
+    .contenidoPlantilla .imagen-nino{
+        position: absolute;
+        top: 6cm;
+        left: 4.9cm;
+        width: 185px;
+        height: auto;
+        border-radius: 6em;
     }
 
 }

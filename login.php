@@ -55,9 +55,9 @@
                                     <input type="password" class="form-control2" id="pass" aria-describedby="paswordHelp" name="txtPass" placeholder="Contraseña">
                                 </div>
 
-                                <div class="form-check">
+                             <!--   <div class="form-check">
                                     <a class="olvido_contrasena" href="#">¿Olvidó Su Contraseña?</a>
-                                </div>
+                                </div>-->
                                 <br>
                                 <button type="submit" class="btn Ingresar">Ingresar</button>
 

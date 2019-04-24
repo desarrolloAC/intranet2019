@@ -21,7 +21,7 @@
 .imagen-detalle {
     position: relative; top: 0cm; left: 0cm;
     width: 20cm;
-    height: 20cm;
+    height:auto;
     background-repeat: no-repeat;
     background-position: 0cm 0cm;
     background-size: 100% 100%;
@@ -29,22 +29,25 @@
 }
 
 .titulo {
-    position: absolute; top: 6cm;
+    position: absolute; top: 6cm; left:4cm;
     font-family: Arial;
     font-size: 14;
-    left: 7.5cm;
-
+    width:60%;
+    text-align: center;
 }
 
 .contenido {
-    position: absolute; top: 7.5cm; left: 9.1cm;
+    position: absolute; top: 8cm; left: 9.1cm;
     width: 7.7cm;
     height: 6.6cm;
-
     border-style: none;
     background-color: var(--transparente);
     font-family: Arial;
     font-size: 12;
+}
+/* Agregar sangría a los parrafos con la class contenido*/
+.contenido > p {
+    text-indent: 40px;
 }
 
 .contenidoPlantilla .logoAlkes{
@@ -54,15 +57,23 @@
     left: 8.5cm;
 }
 
-.contenidoPlantilla .imagen-nino{
+.contenidoPlantilla .imagen-nina{
     position: absolute;
-    top: 8.2cm;
-    left: 3.2cm;
-    width: 200px;
-    height: 200px;
+    top: 7.8cm;
+    left: 2.97cm;
+    width: 215px;
+    height: auto;
     border-radius: 6em;
 }
 
+.contenidoPlantilla .imagen-nino{
+    position: absolute;
+    top: 8.1cm;
+    left: 3.2cm;
+    width: 215px;
+    height: auto;
+    border-radius: 6em;
+}
 @media only screen and (min-width: 1920px) and (max-width: 2500px) {
 
     .contenidoAVIF {
@@ -78,9 +89,11 @@
     }
 
     .titulo {
-        position: absolute; top: 6cm;
+        position: absolute; top: 6cm; left:4cm;
         font-family: Arial;
         font-size: 14;
+        width:60%;
+        text-align: center;
     }
 
     .org {
@@ -90,7 +103,7 @@
     }
 
     .contenido {
-        position: absolute; top: 7.5cm; left: 9.1cm;
+        position: absolute; top: 8cm; left: 9.1cm;
         width: 7.7cm;
         height: 6.6cm;
 
@@ -98,6 +111,27 @@
         background-color: var(--transparente);
         font-family: Arial;
         font-size: 12;
+    }
+    .contenido > p {
+        text-indent: 40px;
+    }
+    
+    .contenidoPlantilla .imagen-nina{
+        position: absolute;
+        top: 7.8cm;
+        left: 2.97cm;
+        width: 215px;
+        height: auto;
+        border-radius: 6em;
+    }
+    
+    .contenidoPlantilla .imagen-nino{
+        position: absolute;
+        top: 8.1cm;
+        left: 3.2cm;
+        width: 215px;
+        height: auto;
+        border-radius: 6em;
     }
 
 

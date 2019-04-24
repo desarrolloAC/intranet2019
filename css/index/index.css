@@ -166,7 +166,7 @@
     position: relative;
     left: 0cm;
     top: 0cm;
-    width: 100%;
+    width: 124%;
     margin: auto;
     overflow: hidden;
 }
@@ -174,7 +174,7 @@
 .slider ul {
     display: flex;
     padding: 0;
-    width: 700%;
+    width: 900%;
     animation: cambio 10s infinite alternate linear;
 }
 
@@ -187,31 +187,30 @@
     position: relative;
     top: 0cm;
     left: 0cm;
-    width: 100%;
+    width: 200%;
+    height: 101.5%;
 }
 
 @keyframes cambio {
 
     0% {margin-left: 0;}
-    11% {margin-left: 0;}
+    9.1% {margin-left: 0;}
 
-    16% {margin-left: -100%;}
-    27% {margin-left: -100%;}
+    18.2% {margin-left: -82%;}
+    27.3% {margin-left: -82%;}
 
-    32% {margin-left: -200%;}
-    43% {margin-left: -200%;}
+    36.4% {margin-left: -164%;}
+    45.5% {margin-left: -164%;}
+    
+    54.6% {margin-left: -246%;}
+    63.6% {margin-left: -246%;}
+    
+    72.8% {margin-left: -328%;}
+    81.8% {margin-left: -328%;}
+    
+    90.1% {margin-left: -410%;}
+    100% {margin-left: -410%;}
 
-    48% {margin-left: -300%;}
-    59% {margin-left: -300%;}
-
-    64% {margin-left: -400%;}
-    75% {margin-left: -400%;}
-
-    80% {margin-left: -500%;}
-    91% {margin-left: -500%;}
-
-    96% {margin-left: -600%;}
-    100% {margin-left: -600%;}
 
 }
 
@@ -259,6 +258,52 @@
 .colorDato {
     text-align: center;
 }
+
+
+.slider-salas {
+    position: relative;
+    left: 0cm;
+    top: 0cm;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-salas ul {
+    display: flex;
+    padding: 0;
+    width: 699%;
+    animation: cambio3 13s infinite alternate-reverse linear;
+}
+
+.slider-salas li {
+    width: 100%;
+    list-style: none;
+}
+
+.slider-salas img {
+    position: relative;
+    top: 0cm;
+    left: 0cm;
+    width: 100%;
+    height: 101.5%;
+}
+
+@keyframes cambio3 {
+
+    0% {margin-left: 0%;}
+    14.3% {margin-left: 0%;}
+
+    28.6% {margin-left: -100%;}
+    42.9% {margin-left: -100%;}
+
+    57.1% {margin-left: -200%;}
+    71.4% {margin-left: -200%;}
+
+    85.7% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
 
 /****************************************SALAS******************************************************************/
 
@@ -527,7 +572,7 @@
     top: 0.8cm;
     left: 50px;
     text-align: left;
-    font-size: 1.5em;
+    font-size: 14pt;
     margin: 0cm;
     color: var(--blanco);
 }

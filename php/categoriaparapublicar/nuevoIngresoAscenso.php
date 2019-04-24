@@ -38,7 +38,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
         <a href="#" class="cerrar">X</a>
 
-        <form method="POST" action="php/publicaciones/registrarPublicacionNuevoIngreso.php">
+        <form method="POST" action="php/publicaciones/registrarPublicacionNuevoIngreso.php" enctype=multipart/form-data>
 
             <input id="txtCodigoSubCategoriaNuevoAscenso" type="text" name="txtCodigoSubCategoriaNuevoAscenso" value="NUIN" maxlength="4">
 
@@ -76,7 +76,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/intranet/php/estadosLogin.php';
 
 
 
-            <input id="btnImagenNuevoAscenso" type="file" name="btnImagenNuevoAscenso" required>
+            <input id="btnImagenNuevoAscenso" type="file" name="Archivo" required>
             <img id="imgSalidaNuevoAscenso" width="30%" height="25%" src="" />
 
             <?php

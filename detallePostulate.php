@@ -35,20 +35,20 @@
         <main class="contenedorContenido">
 
             <div id="contenidoAVIF" class="contenidoAVIF">
-                <div class="contenidoPlantilla">
                     <div class="contenidoPlantilla">
                         <img class="imagen-detalle" :src="item.photo" alt="Detalle de la Postulacion">
                         <h1 class='titulo'>{{ item.tipo}}</h1>
                         <h5 class="org">{{ item.org }}</h5>
                         <!--   <h1 class='titulo'>{{ item.title }}</h1>-->
-                        <h5 class="requisitos">{{ item.requirement}}</h5>
-                        <h5 class="posiciones">{{ item.positions}}</h5>
-                        <h5 class="responsabilidades">{{ item.chargue}}</h5>
-                        <h5 class="correo">{{ item.correo}}</h5>
-                        <h5 class="contenido">{{ item.content1}}</h5>
+                        <div class="requisitos" v-html="item.requirement"></div>
+                        <div class="posiciones" v-html="item.positions"></div>
+                        <div class="responsabilidades" v-html="item.chargue"></div>
                         <label class="tituloCaracteresCorreo">Si estas interesado en postularte envia tu sintesis curricular a la siguiente direccion electronica:</label>
+                        <h5 class="correo">{{ item.correo}}</h5>                                            
                         <label class="valido">Valido Hasta: </label>
-                        <textarea class="contenido" readonly>{{ item.content }}</textarea>
+                         <!--<textarea class="contenido" readonly>{{ item.content }}</textarea>
+            LAS LLAVES NO INTERPRETAN ETIQUETAS HTML POR ESTO SE DEBE USAR EN ESTE CASO LA DIRECTIVA v-html              -->
+                        <div class="contenido" v-html="item.content"> </div>
                     </div>
                 </div>
 

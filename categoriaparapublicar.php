@@ -11,8 +11,6 @@ if (!isset($_SESSION['Correo'])) {
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 
@@ -52,6 +50,7 @@ if (!isset($_SESSION['Correo'])) {
         <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/nacimiento.css">
         <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/promocionEscolar.css">
         <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/condolencia.css">
+        <link rel="stylesheet" type="text/css" href="css/categoriaparapublicar/flayers.css">
         <!--FIN DE LLAMADA ARCHIVOS CSS-->
 
         <!--INICIO LLAMADA ARCHIVOS JS-->
@@ -72,6 +71,24 @@ if (!isset($_SESSION['Correo'])) {
 
 
     <body>
+
+    <script type="text/javascript">
+    $( document ).ready(function() {
+        $("a[name=nac]").click(function(){
+            $("#sex").toggle("slow");            
+        });
+        $("a[name=btnNino").click(function(){
+            $(this).attr('href','#formularioNacimiento' );
+            $("a[name=btnNina").removeAttr('href');
+                      
+        });
+        $("a[name=btnNina").click(function(){
+            $("a[name=btnNino").removeAttr('href');
+            $(this).attr('href','#formularioNacimientoNina' ); 
+                      
+        });
+    });
+</script>
 
         <!--INICIO CONTENEDOR CABECERA-->
 
@@ -118,7 +135,9 @@ if (!isset($_SESSION['Correo'])) {
                                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                                 <a id="botones" href="#formularioInvitacionGeneral">Generales</a>
                                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/invitacionGeneral.php'; ?>
-                                <a id="botones" href="#">Flayers</a>
+                                <a id="botones" href="#formularioFlayers">Flyers</a>
+                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/flayers.php'; ?>
+                                
                             </div>
                         </td>
                     </tr>
@@ -127,7 +146,7 @@ if (!isset($_SESSION['Correo'])) {
                             <div id="flip2">Talento Humano</div>
                             <div id="panel2">
                                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
-                                <a id="botones" href="#formularioNuevoIngresoAscenso">Nuevo Ingreso / Ascenso</a>
+                                <a id="botones" href="#formularioNuevoIngresoAscenso">Nuevo Ingreso / Creciendo con Alkes</a>
                                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/nuevoIngresoAscenso.php'; ?>
                                 <a id="botones" href="#formularioLogro">Logro Extracurricular</a>
                                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/logro.php'; ?>
@@ -141,8 +160,14 @@ if (!isset($_SESSION['Correo'])) {
                                 <h4 id="titulo_panel">¿Que Puedes Publicar?</h4>
                                 <a id="botones" href="#formularioCumpleMes">Cumpleañero Del Mes</a>
                                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/cumpleMes.php'; ?>
-                                <a id="botones" href="#formularioNacimiento">Nacimiento</a>
-                                <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/nacimiento.php'; ?>
+                                <!--<a id="botones" href="#formularioNacimiento">Nacimiento</a>
+                                <?php //include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/nacimiento.php'; ?>-->
+                                <a id="botones" name="nac">Nacimiento</a>
+                                    <div id="sex" style="display:none">
+                                        <a id="botones" name="btnNino" > Niño </a><?php include $_SERVER['DOCUMENT_ROOT'] . "/intranet/php/categoriaparapublicar/nacimiento.php"; ?>
+                                        <a id="botones" name="btnNina" > Niña </a><?php include $_SERVER['DOCUMENT_ROOT'] . "/intranet/php/categoriaparapublicar/nacimiento.php"; ?>
+                                    </div>
+
                                 <a id="botones" href="#formularioPromocionEscolar">Promocion Escolar</a>
                                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/intranet/php/categoriaparapublicar/promocionEscolar.php'; ?>
                             </div>

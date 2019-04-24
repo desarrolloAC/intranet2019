@@ -43,8 +43,6 @@ switch ($error) {
 
     default :
 
-        copy($origen, $destino);
-
         $insert = " CALL sp_RegistroInvitacionGeneral(?, ?, ?, ?, ?, ?, ?);";
 
 

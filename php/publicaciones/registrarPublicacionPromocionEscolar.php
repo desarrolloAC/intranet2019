@@ -15,10 +15,11 @@ $updateBy = $_SESSION['Cedula'];
 
 $nombreCompleto = $_POST['txtNombreCompletoPromocionEscolar'];
 $contenido = $_POST['txtContenidoPromocionEscolar'];
+$date = date("Y-m-d_His");
 
-$foto = $_FILES['btnImagen']['name'];
-$error = $_FILES['btnImagen']['error'];
-$origen = $_FILES['btnImagen']['tmp_name'];
+$foto = $_FILES['btnImagenPromocionEscolar']['name'];
+$error = $_FILES['btnImagenPromocionEscolar']['error'];
+$origen = $_FILES['btnImagenPromocionEscolar']['tmp_name'];
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 

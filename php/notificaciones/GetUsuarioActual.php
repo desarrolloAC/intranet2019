@@ -16,7 +16,8 @@ $sql = "SELECT
    INNER JOIN org_usuario_rol oru ON(oru.Cedula = u.Cedula)
    INNER JOIN rol rl ON(rl.ID_Rol = oru.ID_Rol)
    INNER JOIN organizacion o ON(o.ID_Organizacion = oru.ID_Organizacion)
-   WHERE u.Correo = '" . $_SESSION['Correo'] . "';";
+   WHERE u.Correo = '" . $_SESSION['Correo'] . "' 
+   AND rl.ID_Rol ='".$_SESSION['ID_Rol']."'";
 
 
 $rs = mysqli_query($conexion, $sql);

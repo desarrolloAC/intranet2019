@@ -16,6 +16,7 @@ class Notificaciones implements JsonSerializable {
     private $publicacionId;
     private $estadoPublicacion;
     private $mensaje;
+    private $numNotificacion;
 
     public function __construct() {
         
@@ -23,6 +24,9 @@ class Notificaciones implements JsonSerializable {
 
     public function getPublicacionId() {
         return $this->publicacionId;
+    }
+    public function getNumNotificacion() {
+        return $this->numNotificacion;
     }
 
     public function getEstadoPublicacion() {
@@ -36,6 +40,10 @@ class Notificaciones implements JsonSerializable {
     public function setPublicacionId($publicacionId) {
         $this->publicacionId = $publicacionId;
     }
+    public function setNumNotificacion($numNotificacion) {
+        $this->numNotificacion = $numNotificacion;
+    }
+
 
     public function setEstadoPublicacion($estadoPublicacion) {
         $this->estadoPublicacion = $estadoPublicacion;
@@ -49,7 +57,8 @@ class Notificaciones implements JsonSerializable {
         return [
             'publicacion_id' => $this->publicacionId,
             'estatado_publicacion' => $this->estadoPublicacion,
-            'mensaje' => $this->mensaje
+            'mensaje' => $this->mensaje,
+            'num' => $this->numNotificacion
         ];
     }
 

@@ -16,7 +16,7 @@
 .logoNuevoIngreso {
     position: relative;
     top: 30px;
-    left: 230px;
+    left: 350px;
 }
 .contenedorFormulario:target {
     opacity: 1;

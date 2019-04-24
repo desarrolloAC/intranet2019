@@ -18,7 +18,8 @@ $sql = "SELECT
             pub.Foto,
             naci.colaborador,
             naci.contenido,
-            naci.foto as image
+            naci.foto as image,
+            naci.sexo
 FROM publicacion pub
 INNER JOIN publicacion_nacimiento naci ON naci.ID_publicacion  = pub.ID_Publicacion
 INNER JOIN subcategoria subc           ON pub.ID_Subcategoria  = subc.ID_Subcategoria
@@ -44,6 +45,8 @@ while ($row = mysqli_fetch_array($stmt->get_result(), MYSQLI_ASSOC)) {
     $inst->setContenido($row['contenido']);
     $inst->setFoto($row['Foto']);
     $inst->setImage($row['image']);
+    $inst->setSexo($row['sexo']);
+    
 
     $list = $inst;
 }

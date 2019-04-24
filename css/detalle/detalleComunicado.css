@@ -28,7 +28,7 @@
 }
 
 .titulo {
-    position: absolute; top: 6cm;
+    position: absolute; top: 6cm; left: 0.5cm;
     font-family: Arial;
     font-size: 14;
 }
@@ -42,7 +42,7 @@
 }
 
 .contenido {
-    position: absolute; top: 7.5cm; left: 0.1cm;
+    position: absolute; top: 7.5cm; left: 0.5cm;
     width: 11.4cm;
     height: 11.6cm;
     min-width: 11.4cm;
@@ -53,6 +53,11 @@
     background-color: var(--transparente);
     font-family: Arial;
     font-size: 12;
+    text-align: justify;
+}
+
+.contenido > p {
+    text-indent: 40px;
 }
 
 @media only screen and (min-width: 1920px) and (max-width: 2500px) {
@@ -84,7 +89,7 @@
     }
 
     .contenido {
-        position: absolute; top: 7.5cm; left: 0.1cm;
+        position: absolute; top: 7.5cm; left: 0.5cm;
         width: 11.4cm;
         height: 11.6cm;
         min-width: 11.4cm;
@@ -95,6 +100,10 @@
         background-color: var(--transparente);
         font-family: Arial;
         font-size: 12;
+        text-align: justify;
+    }
+    .contenido > p {
+        text-indent: 40px;
     }
 
 }

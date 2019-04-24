@@ -20,10 +20,10 @@ $departamento = $_POST['txtDpto2'];
 $fecha = $_POST['txtFechaCumpleMes'];
 
 
-$foto = $_FILES['btnImagenCumpleMes']['name'];
-$error = $_FILES['btnImagenCumpleMes']['error'];
-$origen = $_FILES['btnImagenCumpleMes']['tmp_name'];
-
+$foto = $_FILES['archivo']['name'];
+$error = $_FILES['archivo']['error'];
+$origen = $_FILES['archivo']['tmp_name'];
+$date= date("Y-m-d H:i:s"); // desvielve fecha en mumero en el siguiente formato(Año-mes-dia hora:minutos:segundo)
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 

@@ -353,4 +353,59 @@ input:-ms-input-placeholder {
 .cerrar:hover{
     background: rgb(67,67,67);
 }
+/*Imput*/
+input[class="txtCajaFormulario"]{
+    position: relative; width: 100%; height: 29.5px;
+    margin-left: 0%;
+    border-radius: 0.5rem;
+    background-color: rgb(255,255,255);
+    border-width: 0.5px;
+    border-color: rgb(69,69,69);
+    font-family: "Abyssinica SIL";
+    font-size: 16px;
+}
+input[class="Titulo"]{
+    position: relative; width: 100%; height: 29.5px;
+    margin-left: 0%;
+    border-radius: 0.5rem;
+    background-color: rgb(255,255,255);
+    border-width: 0.5px;
+    border-color: rgb(69,69,69);
+    font-family: "Abyssinica SIL";
+    font-size: 16px;
+}
 /*FIN DISEÑO VENTANA MODAL*/
+
+img[class="imgEditar"]{
+    display: inline-block;
+    width: 500%; 
+    height:500%;
+}
+
+input[class="btnImageEditar"]{
+    position: relative; width: auto; height: 29.5px; left: 140px; right: 300px;
+    display: inline-block;
+    margin: -48.7px;
+    padding: 0%;
+    border-radius: 0.5rem;
+    background-color: rgb(255,255,255);
+    border-width: 0.5px;
+    border-color: rgb(69,69,69);
+    font-family: "Abyssinica SIL";
+    font-size: 10px;
+    color: transparent;
+    align-content: center;
+}
+
+h2[id="EstadoPueblicacion'"]{
+    font-family: "Abyssinica SIL";
+    font-size: 4px;
+    color: rgb(0,0,0);
+    left: 0%;
+}
+
+tr[id="cajaEstado"]{
+    margin: 0%;
+    padding: 0%;
+    left: 0%;
+}

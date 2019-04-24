@@ -14,6 +14,7 @@ $n = $_GET['id'];
 $sql = "SELECT
         pub.ID_Publicacion AS n,
         org.Nombre AS org,
+        org.foto as logo,
         pub.Titulo AS titulo,
         pub.Foto,
         logro.tipo_Logro,
@@ -21,10 +22,14 @@ $sql = "SELECT
         logro.colaborador,
         logro.departamento,
         logro.cargo,
-        logro.foto as image
+        logro.foto as image,
+        dep.Nombre as nombreDepartamento,
+        cg.Nombre as nombreCargo
 FROM publicacion pub
 INNER JOIN publicacion_logroext logro ON pub.ID_publicacion   = logro.ID_Publicacion
 INNER JOIN subcategoria subc          ON pub.ID_Subcategoria  = subc.ID_Subcategoria
+INNER JOIN departamento dep 		  ON dep.ID_Departamento  = logro.departamento
+INNER JOIN cargo        cg  		  ON cg.ID_Cargo 		  = logro.cargo
 INNER JOIN categoria cat              ON cat.ID_Categoria     = subc.ID_Categoria
 INNER JOIN organizacion org           ON org.ID_Organizacion  = pub.ID_Organizacion 
 WHERE pub.ID_Subcategoria = (SELECT pub.ID_Subcategoria FROM publicacion pub WHERE pub.ID_Publicacion =  ?)
@@ -50,6 +55,10 @@ while ($row = mysqli_fetch_array($stmt->get_result(), MYSQLI_ASSOC)) {
     $inst->setCargo($row['cargo']);
     $inst->setFoto($row['Foto']);
     $inst->setImage($row['image']);
+    $inst->setLogo($row['logo']);
+    $inst->setNombreDepartamento($row['nombreDepartamento']);
+    $inst->setNombreCargo($row['nombreCargo']);+
+    
 
     $list = $inst;
 }

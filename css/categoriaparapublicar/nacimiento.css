@@ -1,4 +1,4 @@
-.contenedorFormulario {
+.contenedorFormulario, .contenedorFormularioNina  {
     z-index: 1001;
     width: 100%;
     height: 100%;
@@ -17,7 +17,7 @@
     top: 430px;
     left: 180px;
 }
-.contenedorFormulario:target {
+.contenedorFormulario:target, .contenedorFormularioNina:target {
     opacity: 1;
     pointer-events: auto;
 }
@@ -34,6 +34,23 @@
     background: rgb(255, 255, 255);
     transition: opacity 400ms ease-in-out;
     background-image: url("../../assets/image/plantillas/png/nacimiento.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: 13.1cm 15.5cm;
+}
+
+.contenedorFormularioNina > div#formularioNacimientoNina {
+    z-index: 1001;
+    width: 12cm;
+    height: 15cm;
+    position: relative;
+    top: 1cm;
+    margin: 0% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    transition: opacity 400ms ease-in-out;
+    background-image: url("../../assets/image/plantillas/png/nacimiento_nina.png");
     background-repeat: no-repeat;
     background-position: 0px 0px;
     background-size: 13.1cm 15.5cm;
@@ -114,8 +131,23 @@ input#btnImagenNacimiento {
     color: transparent;
 }
 
+input#btnImagenNacimientoNina {
+    position: absolute;
+    top: 10cm;
+    left: 2.3cm;
+    margin-top: 1cm;
+    color: transparent;
+}
+
 img#imgSalidaNacimiento{
-    position: absolute; top: 6.3cm; left: 2.10cm;
+    position: absolute; top: 6.3cm; left: 2.08cm;
+    width: 3.7cm;
+    height: 4.5cm;
+    border-radius: 50%;
+}
+
+img#imgSalidaNacimientoNina{
+    position: absolute; top: 6cm; left: 1.92cm;
     width: 3.7cm;
     height: 4.5cm;
     border-radius: 50%;
@@ -136,7 +168,6 @@ input#btnRegistrarNacimiento {
     cursor: pointer;
     box-shadow: 0px 5px 0px 0px #0A0A0A;
     transition: all 100ms linear;
-    touch-callout: none;
     user-select: none;
     font-family: "Arial";
     font-size: 14px;

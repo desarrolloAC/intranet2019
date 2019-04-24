@@ -11,6 +11,7 @@ class Nacimiento implements \JsonSerializable {
     private $contenido;
     private $foto;
     private $image;
+    private $sexo;
 
     public function __construct() {
         
@@ -18,6 +19,9 @@ class Nacimiento implements \JsonSerializable {
 
     public function getPublicacionId() {
         return $this->publicacionId;
+    }
+    public function getSexo() {
+        return $this->sexo;
     }
 
     public function getOrganization() {
@@ -42,6 +46,9 @@ class Nacimiento implements \JsonSerializable {
 
     public function setPublicacionId($publicacionId) {
         $this->publicacionId = $publicacionId;
+    }
+    public function setSexo($sexo) {
+        $this->sexo = $sexo;
     }
 
     public function setOrganization($organization) {
@@ -80,7 +87,8 @@ class Nacimiento implements \JsonSerializable {
             'colaborated' => $this->colaborador,
             'content' => $this->contenido,
             'photo' => $this->foto,
-            'image' => $this->image
+            'image' => $this->image,
+            'sexo' => $this->sexo
         ];
     }
 

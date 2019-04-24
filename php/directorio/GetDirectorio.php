@@ -21,7 +21,7 @@ $sql = "SELECT
           INNER JOIN departamento dpto ON dpto.ID_Departamento = car.ID_Departamento
           INNER JOIN organizacion org  ON org.ID_Organizacion = dpto.ID_Organizacion
           WHERE us.Estatus = 'A'
-          ORDER BY us.Cedula;";
+          ORDER BY nc;";
 
 $rs = mysqli_query($conexion, $sql);
 

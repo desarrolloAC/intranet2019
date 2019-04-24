@@ -15,13 +15,14 @@ $updateBy = $_SESSION['Cedula'];
 
 $nombreCompleto = $_POST['txtNombreCompletoNacimiento'];
 $contenido = $_POST['txtContenidoNacimiento'];
+$sexo = $_POST['txtSexo'];
 
-$foto = $_FILES['btnImagen']['name'];
-$error = $_FILES['btnImagen']['error'];
-$origen = $_FILES['btnImagen']['tmp_name'];
+$date = date("Y-m-d_His");
+$foto = $_FILES['btnImagenNacimiento']['name'];
+$error = $_FILES['btnImagenNacimiento']['error'];
+$origen = $_FILES['btnImagenNacimiento']['tmp_name'];
 $destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
-
 
 switch ($error) {
 
@@ -49,10 +50,10 @@ switch ($error) {
 
         copy($origen, $destino);
 
-        $insert = " CALL sp_RegistroNacimiento(?, ?, ?, ?, ?, ?, ?, ?);";
+        $insert = " CALL sp_RegistroNacimiento(?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         $stmt = mysqli_prepare($conexion, $insert);
-        $stmt->bind_param("ssssssss",
+        $stmt->bind_param("sssssssss",
                 $idOrganizacion,
                 $idSubCategoria,
                 $cedula,
@@ -60,7 +61,8 @@ switch ($error) {
                 $updateBy,
                 $nombreCompleto,
                 $contenido,
-                $destino_temp
+                $destino_temp,
+                $sexo
         );
 
         $stmt->execute() or die(mysqli_error($conexion));

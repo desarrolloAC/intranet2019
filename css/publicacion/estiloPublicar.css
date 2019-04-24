@@ -1,0 +1,16 @@
+.padre{
+      
+      justify-content: center;
+      align-items: center;
+      display: inline-block;
+    
+   }
+.hijo{
+     
+      width: 50px;
+      align-items: center;
+      align-items: center;
+      
+   }
+  
+ 

@@ -40,7 +40,7 @@
                     <div class="card">
                         <img class="card-img-top" src="assets/image/Logos/LOGOS%20CORPORATIVOS%20ALKES-01.png" alt="Mi Imagen">
                         <div class="card-body">
-                            <h4 class="card-title">Alkes Corp</h4>
+                            <h4 class="card-title"></h4>
                             <a href="http://alkes-corp.com/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="card">
                         <img class="card-img-top" src="assets/image/Logos/LOGOS%20CORPORATIVOS%20FRUTTECH-01.png" alt="Mi Imagen">
                         <div class="card-body">
-                            <h4 class="card-title">Fruttech</h4>
+                            <h4 class="card-title"></h4>
                             <a href="http://www.fruttech.com/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                     <div class="card">
                         <img class="card-img-top" src="assets/image/Logos/LOGOS%20CORPORATIVOS%20IEC-01.png" alt="Mi Imagen">
                         <div class="card-body">
-                            <h4 class="card-title">Industrias el Caimán</h4>
+                            <h4 class="card-title"></h4>
                             <a href="http://www.industriaselcaiman.com.ve/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                     <div class="card">
                         <img class="card-img-top" target="_blank" src="assets/image/Logos/LOGOS%20CORPORATIVOS%20VENFRUCA-01.png" alt="Mi Imagen">
                         <div class="card-body">
-                            <h4 class="card-title">Venezolana de Frutas</h4>
+                            <h4 class="card-title"></h4>
                             <a href="http://venfruca.com/index.php/es/" target="_blank" class="btn btn-primary">Ir a ...</a>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
 
             <div class="row">
                 <div class="col col-lg-12">
-                    <h1 class="tituloCapsulaInformativa">Capsula Informativa</h1>
+                    <h1 class="tituloCapsulaInformativa">Cápsula informativa</h1>
                 </div>
             </div>
 
@@ -131,36 +131,41 @@ const capuslaInformativa = new Vue({
 
         <!--INICIO VIDEO-->
         <div id="video" class="container-fluid video">
-
-            <div class="row">
-                <div class="col col-lg-6">
-                    <video class="video" src="assets/video/VIDEO%20INTRANET.webm" type="video/webm" width="880" height="594" autoplay controls></video>
-                </div>
-                <div class="col col-lg-6">
-
                     <!--INICIO DIV EFECTO SLIDER-->
                     <div class="slider">
                         <ul>
                             <li>
-                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-02.png" alt="banner" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-01.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-02.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-03.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-04.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-05.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-07.jpg" alt="banner" />
+                            </li>
+                            <li>
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-06.jpg" alt="banner" />
                             </li>
                             <li>
                                 <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-08.jpg" alt="banner" />
                             </li>
                             <li>
-                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC.%202-08.png" alt="banner" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-09.jpg" alt="banner" />
                             </li>
                             <li>
-                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-10.png" alt="banner" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-10.jpg" alt="banner" />
                             </li>
                             <li>
-                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-11.png" alt="banner" />
-                            </li>
-                            <li>
-                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC.%202-02.png" alt="banner" />
-                            </li>
-                            <li>
-                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC.%202-05.png" alt="banner" />
+                                <img class="img-fluid" src="assets/image/banner/BANNERS%20IEC-11.jpg" alt="banner" />
                             </li>
                         </ul>
                     </div>
@@ -248,7 +253,7 @@ const capuslaInformativa = new Vue({
 
                 <div class="col col-lg-6">
                     <!--INICIO DIV EFECTO SLIDER-->
-                    <div class="slider">
+                    <div class="slider-salas">
                         <ul>
                             <li>
                                 <img class="img-fluid" src="assets/image/salas/SALA%20ALKES.jpg" alt="banner" />
@@ -277,7 +282,7 @@ const capuslaInformativa = new Vue({
 
                 <div class="col col-lg-6">
                     <center>
-                        <h1 class="tituloCapsulaInformativa2">Salas Reservadas Hoy</h1>
+                        <h1 class="tituloCapsulaInformativa2">Salas reservadas</h1>
                     </center>
                     <table class="tablaSala" border="0">
                         <tr class="colorFondo">
@@ -346,12 +351,12 @@ const capuslaInformativa = new Vue({
 
 
 
-        <!--INICIO Talento Humano -->
+        <!--INICIO Talento humano -->
         <div id="cumpleMes" class="container-fluid capuslaInformativa2">
 
             <div class="row">
                 <div class="col col-lg-12">
-                    <h1 class="tituloCapsulaInformativa">Talento Humano</h1>
+                    <h1 class="tituloCapsulaInformativa">Talento humano</h1>
                 </div>
             </div>
 
@@ -479,7 +484,7 @@ const capuslaInformativa = new Vue({
                             <img class="img-fluid" src="assets/image/infografia/Contexto%20Interno%20ALKES-02.jpg" alt="Infografia" />
                         </li>
                         <li>
-                            <img class="img-fluid" src="assets/image/infografia/Contexto%20Interno%20FRUTTECH-02.jpg" alt="Infografia" />
+                            <img class="img-fluid" src="assets/image/infografia/Impresoras%20Corporativas-01.png" alt="Infografia" />
                         </li>
                         <li>
                             <img class="img-fluid" src="assets/image/infografia/Contexto%20Interno%20IEC-02.jpg" alt="Infografia" />
@@ -512,9 +517,9 @@ const capuslaInformativa = new Vue({
                     </div>
                     <div class="back">
                         <div class="box2">
-                            <h1>INDUSTRIAS</h1>
-                            <h3>EL CAIMAN</h3>
-                            <p>Ctra. Carretera Nacional Guanare Ospino km 16, Sector Las Cocuizas, Guanare – Edo Portuguesa. </p>
+                            <h1>Industrias</h1>
+                            <h1>El Caimán</h1>
+                            <p>Carretera Nacional Guanare Ospino km 16, Sector Las Cocuizas, Guanare – Edo Portuguesa. </p>
                         </div>
                     </div>
                 </div>
@@ -530,7 +535,7 @@ const capuslaInformativa = new Vue({
                     </div>
                     <div class="back">
                         <div class="box2">
-                            <h1>VENFRUCA</h1>
+                            <h1>Venfruca</h1>
                             <p>CR. 2 Esquina Calle 7, Local Galpón Nro. 59- A, Zona Industrial III, Barquisimeto – Edo Lara.</p>
                         </div>
                     </div>
@@ -547,9 +552,9 @@ const capuslaInformativa = new Vue({
                     </div>
                     <div class="back">
                         <div class="box2">
-                            <h1>ALKES CORP</h1>
-                            <h3>VALENCIA</h3>
-                            <p>CTRA. Principal Local Centro Trenex Galpones 2, 3, 4, y 5 Sector Fundo la Unión San Diego, Valencia. Edo Carabobo.</p>
+                            <h1>Alkes Corp</h1>
+                            <h1>Valencia</h1>
+                            <p>Carretera principal Local Centro Trenex Galpones 2; 3; 4 y 5 Sector Fundo La Unión San Diego, Valencia. Edo Carabobo.</p>
                         </div>
                     </div>
                 </div>
@@ -564,8 +569,8 @@ const capuslaInformativa = new Vue({
                     </div>
                     <div class="back">
                         <div class="box2">
-                            <h1>ALKES CORP</h1>
-                            <h3>CARACAS</h3>
+                            <h1>Alkes Corp</h1>
+                            <h1>Caracas</h1>
                             <p>Av. Libertador, Centro Párima, piso 1, oficina 104 frente a Seguros Mercantil. Caracas.</p>
                         </div>
                     </div>
@@ -625,6 +630,7 @@ const capuslaInformativa = new Vue({
         }
         /* Chatbro Widget Embed Code End */
         ChatbroLoader({encodedChatId: '234fu'});
+     //ChatbroLoader({encodedChatId: '73LYL'});
     </script>
 
 </body>

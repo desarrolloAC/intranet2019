@@ -20,25 +20,25 @@ $date = date("Y-m-d_His");
 $foto = $_FILES['archivo']['name'];
 $error = $_FILES['archivo']['error'];
 $origen = $_FILES['archivo']['tmp_name'];
-$destino_temp = 'assets/image/fotoPublicaciones/' . $date . strstr($foto, '.');
+$destino_temp = 'assets/image/fotoPublicaciones/' .'img1'. $date . strstr($foto, '.');
 $destino = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp;
 
 $foto1 = $_FILES['archivo1']['name'];
 $error1 = $_FILES['archivo1']['error'];
 $ruta1 = $_FILES['archivo1']['tmp_name'];
-$destino_temp1 = 'assets/image/fotoPublicaciones/' . $date . strstr($foto1, '.');
+$destino_temp1 = 'assets/image/fotoPublicaciones/' .'img2'. $date . strstr($foto1, '.');
 $destino1 = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp1;
 
 $foto2 = $_FILES['archivo2']['name'];
 $error2 = $_FILES['archivo2']['error'];
 $ruta2 = $_FILES['archivo2']['tmp_name'];
-$destino_temp2 = 'assets/image/fotoPublicaciones/' . $date . strstr($foto2, '.');
+$destino_temp2 = 'assets/image/fotoPublicaciones/' .'img3'. $date . strstr($foto2, '.');
 $destino2 = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp2;
 
 $foto3 = $_FILES['archivo3']['name'];
 $error3 = $_FILES['archivo3']['error'];
 $ruta3 = $_FILES['archivo3']['tmp_name'];
-$destino_temp3 = 'assets/image/fotoPublicaciones/' . $date . strstr($foto3, '.');
+$destino_temp3 = 'assets/image/fotoPublicaciones/' .'img4'. $date . strstr($foto3, '.');
 $destino3 = $_SERVER['DOCUMENT_ROOT'] . '/intranet/' . $destino_temp3;
 
 
